@@ -1,4 +1,57 @@
+/* Tokens - Mode 1 */
 :root {
-  --white: white;
-  --black: black;
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-56: 3.5rem;
+  --space-64: 4rem;
+
+  /* tokens */
+  --white-500: #ffffffff;
+  --bg-grey: #f8f8f7ff;
+  --gray-100: #d4d4d4ff;
+  --gray-200: #b8b8b7ff;
+  --gray-300: #959593ff;
+  --gray-400: #71716fff;
+  --gray-500: #4e4e4bff;
+  --gray-600: #2a2a27ff;
+  --gray-650: #232321ff;
+  --gray-700: #1c1c1aff;
+  --gray-800: #151514ff;
+  --gray-900: #0e0e0dff;
+  --gray-1000: #080808ff;
+  /* Identity Colors */
+  --identity-blue: #3898e2ff;
+  --identity-pink: #febbedff;
+  --identity-red: #fe3904ff;
+  --identity-soft-red: #fe7d7dff;
+  --identity-green: #9eff70ff;
+  --identity-light-blue: #82e1f1ff;
+
+  /* Colors in use */
+  --white-body-color: var(--bg-grey);
+  --white-body: var(--white-500);
+  --gray-lightest: var(--gray-100);
+  --gray-lighter: var(--gray-200);
+  --gray-light: var(--gray-300);
+  --gray-soft: var(--gray-400);
+  --gray-medium: var(--gray-500);
+  --gray-base: var(--gray-600);
+  --gray-darksoft: var(--gray-650);
+  --gray-dark: var(--gray-700);
+  --gray-darker: var(--gray-800);
+  --gray-darkest: var(--gray-900);
+  --gray-black: var(--gray-1000);
+
+  --container-padding: var(--space-16);
 }

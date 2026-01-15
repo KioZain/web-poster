@@ -3,93 +3,137 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
-const webpack = require('webpack')
 const path = require('path')
+
+// All pages
+const pages = [
+  { template: 'index.html', chunks: ['index', 'menubar'] },
+  { template: 'handbook.html', chunks: ['index', 'menubar'] },
+  { template: 'posters.html', chunks: ['index', 'menubar'] },
+  { template: 'modules.html', chunks: ['index', 'menubar'] },
+
+  // Handbook
+  { template: 'handbook/part_1/chapter_1/introduction.html', chunks: ['menubar', 'index'] },
+  // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
+
+  // Static modules
+  { template: 'modules/static/movement.html', chunks: ['page'] },
+
+
+]
+
+// Creating plugins for each HTML page
+const htmlPlugins = pages.map(({ template, chunks }) => {
+  return new HtmlWebpackPlugin({
+    template: `./src/${template}`,
+    filename: `./${template}`,
+    chunks: chunks,
+    hash: true,
+    scriptLoading: 'blocking',
+  })
+})
 
 module.exports = {
   entry: {
     index: './src/index.js',
-    page: './src/page.jsx'
+    page: './src/page.jsx',
+    menubar: './src/javascript/menubar.js',
   },
+
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'docs')
-    // clean: true
+    path: path.resolve(__dirname, 'docs'),
+    // clean: true,                     
   },
+
   module: {
     rules: [
+      // JS & JSX 
       {
         test: /\.(js|jsx)$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
+
+      // CSS
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
       },
+
       {
         test: /\.html$/i,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
+
+
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash][ext][query]'
-        }
+          filename: 'images/[hash][ext][query]',
+        },
       },
+
       {
         test: /\.(ttf|otf|woff|woff2)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[hash][ext][query]'
-        }
-      }
-    ]
+          filename: 'fonts/[hash][ext][query]',
+        },
+      },
+    ],
   },
+
+
+  // Plugins
   plugins: [
+
     new MiniCssExtractPlugin(),
 
-    // Landing page
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/index.html',
-      filename: './index.html',
-      chunks: ['index']
-    }),
+    // spread operator to add all HTML
+    ...htmlPlugins,
 
-    // Internal pages
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/pages/page.html',
-      filename: './pages/page.html',
-      chunks: ['page']
-    }),
 
-    // Partials
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, './src/partials/analytics.html'),
         location: 'analytics',
         template_filename: '*',
-        priority: 'replace'
-      }
-    ])
+        priority: 'replace',
+      },
+    ]),
+
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/menubar.html'),
+        location: 'menubar',
+        template_filename: '*',
+        priority: 'replace',
+      },
+    ]),
   ],
+
   optimization: {
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
   },
+
   resolve: {
+    extensions: ['.js', '.jsx', '.json'],
     fallback: {
-      stream: require.resolve('stream-browserify')
-    }
-  }
+      stream: require.resolve('stream-browserify'),
+    },
+  },
 }

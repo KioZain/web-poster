@@ -1,0 +1,8 @@
+.A_Logo {
+  width: 90px;
+  height: 40px;
+  background-image: url(../../images/A_Logo.svg);
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

@@ -3,3 +3,13 @@
 @import 'stylesheets/fonts.css';
 @import 'stylesheets/basics.css';
 @import 'stylesheets/index.css';
+/* UDF styles */
+@import 'stylesheets/Components/atoms.css';
+@import 'stylesheets/Components/molecules.css';
+@import 'stylesheets/Components/organisms.css';
+@import 'stylesheets/Components/collections.css';
+@import 'stylesheets/Components/superorganisms.css';
+@import 'stylesheets/Components/wrappers.css';
+@import 'stylesheets/Components/layouts.css';
+/* Responsive */
+@import 'stylesheets/responsive.css';

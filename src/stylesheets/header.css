@@ -1,0 +1,53 @@
+/* ============================================
+   СТИЛИ ДЛЯ HEADER
+   ============================================ */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+/* Логотип */
+.header-logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #e94560;
+  }
+}
+
+/* Навигация */
+.header-nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: #e94560;
+    color: white;
+  }
+}
+
+/* Активная ссылка (опционально) */
+.header-nav a.active {
+  background-color: #e94560;
+  color: white;
+}

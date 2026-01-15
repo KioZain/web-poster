@@ -1,0 +1,25 @@
+.W_HeaderLinks {
+  display: flex;
+  position: absolute;
+
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-direction: row;
+  width: fit-content;
+  /* background: red; */
+  gap: var(--space-32);
+  grid-column: 4 / span 11;
+
+  a {
+    color: var(--gray-650);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    font-size: 1.125rem;
+
+    &:hover {
+      color: var(--gray-medium);
+    }
+  }
+}

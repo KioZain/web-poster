@@ -5,33 +5,20 @@
 html,
 body {
   height: 100%;
-}
-
-body {
-  font-family: 'PT Root UI', Helvetica, Arial, sans-serif;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg-grey);
   font-weight: 400;
 }
 
-.images {
+.demo {
   display: flex;
-
-  * {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
-  }
-
-  .image {
-    &#bgPNG {
-      background-image: url('../images/image.png');
-    }
-
-    &#bgJPG {
-      background-image: url('../images/image.jpg');
-    }
-
-    &#bgSVG {
-      background-image: url('../images/image.svg');
-    }
-  }
+  flex-direction: column;
+  gap: 1rem;
+  margin: 60px auto;
+}
+h1 {
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
 }
