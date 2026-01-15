@@ -1,16 +1,16 @@
 {
-  "name": "static-site-boilerplate",
+  "name": "web poster",
   "version": "2.0.0",
-  "author": "Zakhar Day",
+  "author": "Maxim Kio",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https:///github.com/ZakharDay/static-site-boilerplate"
+    "url": "git+https://github.com/KioZain/web-poster"
   },
   "bugs": {
-    "url": "https://github.com/ZakharDay/static-site-boilerplate/issues"
+    "url": "https://github.com/KioZain/web-poster/issues"
   },
-  "homepage": "https://github.com/ZakharDay/static-site-boilerplate#readme",
+  "homepage": "https://github.com/KioZain/web-poster#readme",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "watch": "webpack --config webpack.dev.js",
