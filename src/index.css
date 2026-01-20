@@ -5,6 +5,7 @@
 @import 'stylesheets/index.css';
 /* UDF styles */
 @import 'stylesheets/Components/atoms.css';
+@import 'stylesheets/Components/quarcs.css';
 @import 'stylesheets/Components/molecules.css';
 @import 'stylesheets/Components/organisms.css';
 @import 'stylesheets/Components/collections.css';

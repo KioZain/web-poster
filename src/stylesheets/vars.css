@@ -54,4 +54,7 @@
   --gray-black: var(--gray-1000);
 
   --container-padding: var(--space-16);
+
+  /* Gap */
+  --container-gap: var(--space-20);
 }

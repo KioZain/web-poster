@@ -6,3 +6,37 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+a.A_Button {
+  display: block;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  height: 48px;
+  padding: var(--space-8) var(--space-24);
+  background-color: var(--gray-base);
+  color: var(--white-500);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+
+  &.secondary {
+    background-color: transparent;
+    border: 2px solid var(--gray-base);
+    color: var(--gray-base);
+  }
+}
+.A_IconText {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  width: fit-content;
+  align-items: center;
+}
+.A_CircleMarker {
+  p.circle {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+  }
+}

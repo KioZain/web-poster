@@ -3,3 +3,8 @@
     --container-padding: 80px;
   }
 }
+@media screen and (max-width: 1024px) {
+  :root {
+    --container-padding: 48px;
+  }
+}

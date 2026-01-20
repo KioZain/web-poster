@@ -7,8 +7,36 @@ header.O_Header {
   justify-content: space-between;
   border-bottom: 1px solid var(--gray-lightest);
   padding: var(--space-12) var(--container-padding);
+  background-color: var(--white-500);
   position: fixed;
   top: 0;
   height: 4rem;
   align-items: center;
+  z-index: 100;
+}
+.O_AboutCard {
+  width: 100%;
+  padding: 0 var(--space-16);
+  border-left: 1.5px dashed var(--gray-darksoft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+.O_AboutPartAction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  max-width: 630px;
+
+  a.A_Button {
+    width: 100%;
+    max-width: 305px;
+    justify-content: center;
+  }
+
+  .M_TimeChapter {
+    p.A_IconText {
+      margin-bottom: var(--space-12);
+    }
+  }
 }

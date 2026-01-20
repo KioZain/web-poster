@@ -15,10 +15,69 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 60px auto;
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--space-32) var(--container-padding);
 }
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--gray-medium);
+}
+
 h1 {
   font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
-  font-size: 48px;
+  font-size: 3.5rem;
   font-weight: 500;
+}
+p.body {
+  font-size: 1.125rem;
+  font-weight: 400;
+
+  line-height: 1.5rem;
+}
+h2 {
+  font-size: 2.5rem;
+  line-height: 2.7rem;
+  font-weight: 500;
+}
+p.subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+p.body-other {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 21px;
+}
+/* Grid */
+.all-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 0px;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 12px;
+    background: red;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 26px;
+}
+/* Color hierarchy */
+.light {
+  color: var(--gray-light);
+}
+/* Right grid container */
+.right-container {
+  display: flex;
+  max-width: 738px;
 }
