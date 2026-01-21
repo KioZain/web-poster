@@ -28,3 +28,11 @@
   flex-direction: column;
   gap: var(--space-12);
 }
+.M_Markers {
+  display: flex;
+  gap: var(--space-12);
+}
+.M_SectionData {
+  display: flex;
+  gap: var(--space-8);
+}

@@ -34,9 +34,20 @@ a.A_Button {
   align-items: center;
 }
 .A_CircleMarker {
-  p.circle {
-    display: inline-block;
-    text-align: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  font-weight: 500;
+}
+/* TextDescription */
+.A_CaptionText {
+  display: flex;
+  max-width: 410px;
+  position: relative;
+  padding: 0 var(--space-12);
+  border-left: 1.5px dashed var(--gray-base);
+  p {
+    color: var(--gray-soft);
   }
 }

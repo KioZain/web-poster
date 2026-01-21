@@ -27,3 +27,12 @@
   background-color: rgb(171, 212, 249);
   border-radius: 0.5rem;
 }
+.Q_Circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
