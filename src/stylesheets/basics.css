@@ -52,6 +52,13 @@ p.body-other {
   font-weight: 400;
   line-height: 21px;
 }
+p.caption-caps {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+}
+
 /* Grid */
 .all-grid {
   display: grid;
@@ -80,4 +87,42 @@ h4 {
 .right-container {
   display: flex;
   max-width: 738px;
+}
+
+.margin-container {
+  width: 100%;
+  max-width: var(--width-container);
+  margin: 0 auto;
+}
+
+/* CoolLoader */
+.loader {
+  display: flex;
+  gap: 8px;
+}
+
+.loader span {
+  width: 13px;
+  height: 13px;
+  background: #4ecdc4;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loader span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
 }
