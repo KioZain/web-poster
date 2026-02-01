@@ -77,3 +77,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.W_PostersWrap {
+  grid-column: 4 / 13;
+}

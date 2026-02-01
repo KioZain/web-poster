@@ -1,0 +1,11 @@
+.C_PostersGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  row-gap: var(--space-12);
+}
+.С_MetaDataPoster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}

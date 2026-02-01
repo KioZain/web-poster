@@ -34,3 +34,19 @@
   width: 100%;
   justify-content: space-between;
 }
+
+/* Poster Page */
+.S_PosterInfo {
+  width: 100%;
+  /* max-width: var(--width-container); */
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding-top: var(--space-32);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  /* background-color: red; */
+}
+.S_Filters {
+  grid-column: 1/4;
+}

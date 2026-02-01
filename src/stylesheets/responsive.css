@@ -1,6 +1,12 @@
-@media screen and (max-width: 1920px) {
+@media (min-width: 1600px) {
   :root {
-    --container-padding: 80px;
+    --grid-margin: 240px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  :root {
+    --container-padding: 240px;
   }
 }
 @media screen and (max-width: 1024px) {
