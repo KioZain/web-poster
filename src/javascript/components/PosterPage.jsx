@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { AIRTABLE_CONFIG } from '../config/airtable.js'
+import ghIcon from '../../images/icons/Q_GithubIcon.svg'
 
 function getPosterIdFromUrl() {
   const params = new URLSearchParams(window.location.search)
@@ -13,17 +14,17 @@ function getPosterIdFromUrl() {
 function transformRecord(record) {
   return {
     id: record.id,
-    name: record.fields.Name || 'Без названия',
-    author: record.fields.Author || 'Неизвестен',
-    year: record.fields.Year || '',
-    type: record.fields.Type || null,
-    layout: record.fields.Layout || null,
-    tags: record.fields.Tags || [],
-    modules: record.fields.Modules || [],
-    cover: record.fields.Cover || '',
-    ghPages: record.fields.GH_pages || '',
-    github: record.fields.Github || '',
-    project: record.fields.Project || ''
+    name: record.fields.Name,
+    author: record.fields.Author,
+    year: record.fields.Year,
+    type: record.fields.Type,
+    layout: record.fields.Layout,
+    tags: record.fields.Tags,
+    modules: record.fields.Modules,
+    cover: record.fields.Cover,
+    ghPages: record.fields.GH_pages,
+    github: record.fields.Github,
+    project: record.fields.Project
   }
 }
 function PosterPage() {
@@ -60,7 +61,6 @@ function PosterPage() {
 
       document.title = `${posterData.name} — Web Poster`
     } catch (err) {
-      console.error('Ошибка загрузки плаката:', err)
       setError(err.message)
     } finally {
       setIsLoading(false)
@@ -69,12 +69,6 @@ function PosterPage() {
 
   useEffect(() => {
     const posterId = getPosterIdFromUrl()
-
-    if (!posterId) {
-      setError('ID плаката не указан в URL')
-      setIsLoading(false)
-      return
-    }
 
     fetchPoster(posterId)
   }, [])
@@ -92,15 +86,11 @@ function PosterPage() {
       <div className="S_PosterInfo margin-container">
         {/* left */}
         <div className="A_PosterCover">
-          {poster.cover ? (
-            <img
-              src={poster.cover}
-              alt={poster.name}
-              className="poster-page__image"
-            />
-          ) : (
-            <div className="poster-page__placeholder">Нет изображения</div>
-          )}
+          <img
+            src={poster.cover}
+            alt={poster.name}
+            className="poster-page__image"
+          />
         </div>
 
         {/* right */}
@@ -109,14 +99,15 @@ function PosterPage() {
             <h2 className="poster-page__title">{poster.name}</h2>
 
             {/* links */}
-            <div className="poster-page__links">
+            <div className="M_EssentialLinks">
               {poster.github && (
                 <a
                   href={poster.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="poster-page__link"
+                  className="subtitle"
                 >
+                  <img src={ghIcon} alt="GitHub" />
                   GitHub репозиторий
                 </a>
               )}
@@ -125,7 +116,7 @@ function PosterPage() {
                   href={poster.project}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="poster-page__link"
+                  className="subtitle"
                 >
                   О проекте
                 </a>

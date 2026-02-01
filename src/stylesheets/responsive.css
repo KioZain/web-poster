@@ -1,16 +1,25 @@
-@media (min-width: 1600px) {
+@media (max-width: 1600px) {
   :root {
+    --width-container: 1240px;
     --grid-margin: 240px;
   }
 }
 
-@media screen and (max-width: 1240px) {
-  :root {
-    --container-padding: 240px;
-  }
-}
 @media screen and (max-width: 1024px) {
   :root {
-    --container-padding: 48px;
+    --width-container: 896px;
+    --grid-columns: 9;
+    --grid-gap: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --grid-columns: 6;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --grid-columns: 3;
+    --container-padding: var(--space-8);
   }
 }

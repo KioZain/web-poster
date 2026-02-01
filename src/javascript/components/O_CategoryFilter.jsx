@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import chevronUp from '../../images/icons/Q_chevron-up.svg'
+import chevronDown from '../../images/icons/Q_chevron-down.svg'
 
 function O_CategoryFilter({ title, children, defaultOpen = true }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
@@ -8,22 +10,23 @@ function O_CategoryFilter({ title, children, defaultOpen = true }) {
   }
 
   return (
-    <div
-      className={`o-category-filter ${isOpen ? 'o-category-filter--open' : ''}`}
-    >
+    <div className={`O_CategoryFilter ${isOpen ? 'open' : ''}`}>
       <button
         type="button"
-        className="o-category-filter__header"
+        className="A_CategoryFilterHeader"
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <span className="o-category-filter__arrow">{isOpen ? '▼' : '▶'}</span>
+        <img
+          src={isOpen ? chevronUp : chevronDown}
+          alt=""
+          className="arrow-icon"
+        />
 
-        <span className="o-category-filter__title">{title}</span>
+        <span className="title">{title}</span>
       </button>
 
-      {/* is shown */}
-      {isOpen && <div className="o-category-filter__content">{children}</div>}
+      {isOpen && <div className="content">{children}</div>}
     </div>
   )
 }

@@ -35,6 +35,19 @@
   justify-content: space-between;
 }
 
+header.S_Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--gray-darksoft);
+  border-bottom: 1px solid var(--gray-lightest);
+  background-color: var(--white-500);
+  position: fixed;
+  top: 0;
+  height: 4rem;
+  z-index: 100;
+}
+
 /* Poster Page */
 .S_PosterInfo {
   width: 100%;

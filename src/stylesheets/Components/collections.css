@@ -1,11 +1,18 @@
 .C_PostersGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-12);
-  row-gap: var(--space-12);
+  align-items: flex-start;
+  gap: var(--grid-gap);
+  min-height: 100vh;
 }
 .С_MetaDataPoster {
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
+}
+/* Filters */
+.C_Filters {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
 }

@@ -28,18 +28,18 @@ export default function Menubar() {
   console.log('Base path:', navLinks)
 
   return (
-    <header className="O_Header">
-      <a className="A_Logo" href="/index.html"></a>
-
-      <div className="W_HeaderLinks">
-        {navLinks.map((link) => (
-          <a key={link.href} href={link.href}>
-            {link.label}
-          </a>
-        ))}
+    <header className="S_Header">
+      <div className="O_HeaderItems">
+        <a className="A_Logo" href="/index.html"></a>
+        <div className="W_HeaderLinks">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <div className="M_IconButtons"></div>
       </div>
-
-      <div className="M_IconButtons"></div>
     </header>
   )
 }

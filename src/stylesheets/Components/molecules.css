@@ -49,3 +49,80 @@
     flex: 1;
   }
 }
+
+/* Inputs and buttons */
+.M_CheckBoxLabel {
+  height: 26px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+
+  .A_FilterLabel {
+    color: var(--gray-base);
+  }
+  &:hover {
+    cursor: pointer;
+
+    .A_FilterLabel {
+      color: var(--gray-light);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.M_HeadAboutPage {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+
+  h1 {
+    grid-column: span 5;
+  }
+
+  .A_CaptionText {
+    grid-column: 10/13;
+  }
+}
+.M_FiltersTitle {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 26px;
+
+  .A_ResetFilters {
+    border: none;
+    background-color: transparent;
+    height: 26px;
+    font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: var(--gray-light);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--gray-base);
+    }
+  }
+}
+
+.M_EssentialLinks {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-20);
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    &:hover {
+      color: var(--gray-soft);
+    }
+  }
+}
+.M_TitleBio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}

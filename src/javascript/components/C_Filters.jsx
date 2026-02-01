@@ -28,14 +28,14 @@ function C_Filters({
   return (
     <div className="C_Filters">
       {options.map((option) => (
-        <label key={option}>
+        <label className="M_CheckBoxLabel" key={option}>
           <input
             type="checkbox"
-            className="c-filters__checkbox"
+            className="Q_CheckBox"
             checked={selectedValues.includes(option)}
             onChange={() => handleCheckboxChange(option)}
           />
-          <span className="c-filters__label">{option}</span>
+          <span className="A_FilterLabel">{option}</span>
         </label>
       ))}
     </div>

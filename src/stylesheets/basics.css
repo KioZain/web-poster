@@ -7,6 +7,7 @@ body {
   height: 100%;
   font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
   margin: 0;
+  background-size: 58px 58px;
   background-color: var(--bg-grey);
   font-weight: 400;
 }
@@ -23,8 +24,9 @@ h1,
 h2,
 h3,
 h4,
+a,
 p {
-  color: var(--gray-medium);
+  color: var(--gray-base);
 }
 
 h1 {
@@ -43,7 +45,7 @@ h2 {
   line-height: 2.7rem;
   font-weight: 500;
 }
-p.subtitle {
+.subtitle {
   font-size: 1.25rem;
   font-weight: 500;
 }

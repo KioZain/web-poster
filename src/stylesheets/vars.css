@@ -65,4 +65,7 @@
 
   /* WidthContainer */
   --width-container: 1440px;
+
+  /* HeaderMargin */
+  --header-offset: 4rem;
 }
