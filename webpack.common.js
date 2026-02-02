@@ -22,6 +22,10 @@ const pages = [
     template: 'handbook/part_1/chapter_1/introduction.html',
     chunks: ['menubar', 'index']
   },
+  {
+    template: 'handbook/part_1/chapter_1/chapter_1.html',
+    chunks: ['menubar', 'index']
+  },
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
   // Static modules

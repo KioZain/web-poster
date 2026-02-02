@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-40);
-  max-width: 630px;
+  grid-column: span 5;
 
   a.A_Button {
     width: 100%;
@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-20);
+  grid-column: 9/13;
 }
 /* PosterPage */
 .O_PosterInfo {
@@ -65,4 +66,84 @@
   /* &:nth-child(2) {
     border-top: 1px dashed var(--Colors-neutral-gray-lighter, #b8b8b7);
   } */
+}
+
+.O_Chapter {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  height: 4rem;
+  border-bottom: 1px solid var(--gray-lightest);
+  color: var(--gray-base);
+  text-decoration: none;
+
+  p:first-child {
+    grid-column: span 1;
+    margin: auto 0;
+  }
+  p:nth-child(2) {
+    grid-column: span 5;
+    margin: auto 0;
+  }
+  p:nth-child(3) {
+    grid-column: span 2;
+    margin: auto 0;
+  }
+
+  .A_Tag {
+    grid-column: span 3;
+    margin: auto 0;
+  }
+  p:last-child {
+    text-align: right;
+    margin: auto 0;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    p {
+      color: var(--gray-soft);
+      cursor: pointer;
+    }
+    span {
+      color: var(--gray-soft);
+      border: 1px solid var(--gray-soft);
+    }
+  }
+}
+.O_CardArticle {
+  text-decoration: none;
+  width: calc(33% - var(--grid-gap));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+
+  .M_ArticleCardBio {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    height: 140px;
+
+    p.caption-caps {
+      color: var(--gray-light);
+    }
+
+    .M_AboutArticle {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+
+      p.body {
+        color: var(--gray-medium);
+      }
+    }
+  }
+
+  &:hover {
+    h4 {
+      text-decoration: underline;
+    }
+  }
 }

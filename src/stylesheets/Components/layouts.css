@@ -4,3 +4,12 @@
   gap: var(--grid-gap);
   position: relative;
 }
+.L_ArticlesPreviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+.L_Chapter {
+  grid-column: 4/13;
+  min-height: 150vh;
+}

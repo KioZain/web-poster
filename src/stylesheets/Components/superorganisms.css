@@ -63,3 +63,44 @@ header.S_Header {
 .S_Filters {
   grid-column: 1/4;
 }
+
+.S_SectionAbout {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  width: 100%;
+
+  a.A_Button {
+    grid-column: span 3;
+    width: 100%;
+  }
+}
+
+/* Handbook */
+.S_HandbookFirstScreen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding: var(--space-40) 0;
+  /* background: navajowhite; */
+
+  .W_SectionAboutInfo {
+    .M_HeadingContainer {
+      grid-column: span 7;
+    }
+    .A_CaptionText {
+      grid-column: 9/13;
+      margin-top: auto;
+    }
+  }
+}
+.S_LeftNavBar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-column: span 3;
+  background: red;
+  position: sticky;
+  top: 100px;
+  align-self: start; /* ← ключевой момент */
+}

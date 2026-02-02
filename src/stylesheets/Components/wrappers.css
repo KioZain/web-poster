@@ -74,8 +74,14 @@
   }
 }
 .W_SectionAboutInfo {
-  display: flex;
-  justify-content: space-between;
+  grid-column: -1 / 1;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+
+  .O_AboutPartAction {
+    margin-top: 3rem;
+  }
 }
 
 .W_PostersWrap {
@@ -89,4 +95,22 @@
   width: 100%;
   max-width: var(--width-container);
   margin: calc(var(--header-offset) + var(--space-64)) auto;
+}
+
+/* PagesWrapper */
+.W_HandbookPageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-64);
+  margin-top: var(--header-offset);
+}
+.W_ChapterPageWrapper {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--width-container);
+  margin-top: var(--header-offset);
+  padding-top: var(--space-40);
 }

@@ -8,8 +8,8 @@
 @import 'stylesheets/Components/quarcs.css';
 @import 'stylesheets/Components/molecules.css';
 @import 'stylesheets/Components/organisms.css';
-@import 'stylesheets/Components/collections.css';
 @import 'stylesheets/Components/superorganisms.css';
+@import 'stylesheets/Components/collections.css';
 @import 'stylesheets/Components/wrappers.css';
 @import 'stylesheets/Components/layouts.css';
 /* Responsive */
