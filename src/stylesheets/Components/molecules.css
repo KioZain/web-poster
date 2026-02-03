@@ -46,7 +46,7 @@
   gap: var(--space-20);
 
   p {
-    flex: 1;
+    width: calc(53% - var(--grid-gap));
   }
 }
 
@@ -177,6 +177,23 @@
 
   a {
     text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.M_Breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 40px;
+  color: var(--gray-soft);
+  border-bottom: 1px solid var(--gray-lightest);
+
+  a {
+    text-decoration: none;
+    color: var(--gray-soft);
+
     &:hover {
       text-decoration: underline;
     }

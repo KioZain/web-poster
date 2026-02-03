@@ -29,7 +29,7 @@ export default function Menubar() {
 
   return (
     <header className="S_Header">
-      <div className="O_HeaderItems">
+      <div className="O_HeaderItems margin-container">
         <a className="A_Logo" href="/index.html"></a>
         <div className="W_HeaderLinks">
           {navLinks.map((link) => (

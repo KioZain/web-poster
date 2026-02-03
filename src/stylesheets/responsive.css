@@ -4,6 +4,16 @@
     --grid-margin: 240px;
   }
 }
+@media screen and (max-width: 1280px) {
+  :root {
+    --width-container: 1080px;
+  }
+
+  .margin-container {
+    max-width: 100%;
+    padding: 0 80px;
+  }
+}
 
 @media screen and (max-width: 1024px) {
   :root {

@@ -83,6 +83,21 @@ function PosterPage() {
   // render this shit plz
   return (
     <div className="poster-page">
+      <nav className="M_Breadcrumbs">
+        <div className="W_BreadCrumbsContainer margin-container">
+          <a className="caption-caps" href="/">
+            Главная
+          </a>
+          •
+          <a className="caption-caps" href="/posters.html">
+            Веб-плакаты
+          </a>
+          •
+          <span className="caption-caps" id="breadcrumb-type">
+            {poster.name}
+          </span>
+        </div>
+      </nav>
       <div className="S_PosterInfo margin-container">
         {/* left */}
         <div className="A_PosterCover">

@@ -13,3 +13,6 @@
   grid-column: 4/13;
   min-height: 150vh;
 }
+.L_Poster {
+  margin-top: var(--header-offset);
+}

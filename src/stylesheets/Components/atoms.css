@@ -105,7 +105,7 @@ button.A_Tab {
 .A_PosterCover {
   width: 100%;
   aspect-ratio: 443 / 628;
-  grid-column: 4/8;
+  grid-column: 1/6;
 
   img {
     width: 100%;
