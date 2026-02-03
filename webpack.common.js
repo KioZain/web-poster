@@ -20,11 +20,11 @@ const pages = [
   // Handbook
   {
     template: 'handbook/part_1/chapter_1/introduction.html',
-    chunks: ['menubar', 'index']
+    chunks: ['menubar', 'index', 'handbook-nav']
   },
   {
     template: 'handbook/part_1/chapter_1/chapter_1.html',
-    chunks: ['menubar', 'index']
+    chunks: ['menubar', 'index', 'handbook-nav']
   },
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
@@ -49,7 +49,8 @@ module.exports = {
     page: './src/page.jsx',
     menubar: './src/javascript/menubar.js',
     posters: './src/javascript/posters.js',
-    'poster-page': './src/javascript/poster-page.js'
+    'poster-page': './src/javascript/poster-page.js',
+    'handbook-nav': './src/javascript/handbook-nav.js'
   },
 
   output: {

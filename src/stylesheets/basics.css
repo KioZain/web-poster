@@ -48,6 +48,11 @@ h2 {
   line-height: 2.7rem;
   font-weight: 500;
 }
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 28px;
+}
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
@@ -79,11 +84,6 @@ p.caption-caps {
   }
 }
 
-h4 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 26px;
-}
 /* Color hierarchy */
 .light {
   color: var(--gray-light);

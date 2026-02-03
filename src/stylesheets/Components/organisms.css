@@ -114,8 +114,8 @@
   }
 }
 .O_CardArticle {
+  width: 100%;
   text-decoration: none;
-  width: calc(33% - var(--grid-gap));
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
@@ -146,4 +146,21 @@
       text-decoration: underline;
     }
   }
+}
+.O_ChapterHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--gray-lightest);
+  margin-bottom: var(--space-40);
+
+  h4 {
+    padding-right: var(--space-40);
+  }
+}
+.O_PartList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 }

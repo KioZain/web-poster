@@ -153,3 +153,15 @@ button.A_Tab {
   border-radius: 4px;
   user-select: none;
 }
+.A_ListItem {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 20px;
+  min-height: 2rem;
+  height: fit-content;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--gray-soft);
+  }
+}

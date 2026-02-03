@@ -25,8 +25,38 @@
 }
 
 .C_Articles {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
   column-gap: var(--grid-gap);
   row-gap: var(--space-40);
+
+  .O_CardArticle {
+    grid-column: span 4;
+
+    /* @media screen and (max-width: 1024px) {
+      grid-column: span 6;
+    }
+    @media screen and (max-width: 768px) {
+      grid-column: span 12;
+    } */
+  }
+}
+.C_CollapsibleLists {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.C_AticleLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  padding-left: 1.8rem;
+
+  a {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
 }

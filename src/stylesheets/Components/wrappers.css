@@ -114,3 +114,10 @@
   margin-top: var(--header-offset);
   padding-top: var(--space-40);
 }
+
+/* NavigationMenu */
+.W_CollapsingLists {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
