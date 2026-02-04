@@ -1,9 +1,6 @@
 .S_HomeScreen {
   width: 100%;
   margin-top: 4rem;
-  /* height: 100vh; */
-  /* max-height: 800px; */
-  /* background: violet; */
   display: flex;
   justify-content: center;
   position: relative;
@@ -108,5 +105,23 @@ header.S_Header {
 
   &::-webkit-scrollbar-track {
     background-color: red;
+  }
+}
+
+.S_FiltersRow {
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      display: flex;
+      grid-column: 1 / -1;
+      gap: var(--space-6);
+      overflow-x: scroll;
+      scroll-padding-right: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      background: transparent;
+    }
   }
 }

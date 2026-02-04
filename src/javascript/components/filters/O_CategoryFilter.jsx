@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import chevronUp from '../../images/icons/Q_chevron-up.svg'
-import chevronDown from '../../images/icons/Q_chevron-down.svg'
+import chevronUp from '../../../images/icons/Q_chevron-up.svg'
+import chevronDown from '../../../images/icons/Q_chevron-down.svg'
 
 function O_CategoryFilter({ title, children, defaultOpen = true }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)

@@ -20,7 +20,7 @@ function S_Filters({
       <div className="M_FiltersTitle">
         <p className="subtitle">Фильтры</p>
         {hasActiveFilters && (
-          <button className="A_ResetFilters" onClick={onReset}>
+          <button onClick={onReset} className="A_ResetFilters">
             Сбросить
           </button>
         )}

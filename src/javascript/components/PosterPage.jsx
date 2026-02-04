@@ -74,11 +74,7 @@ function PosterPage() {
   }, [])
 
   if (isLoading) {
-    return (
-      <div className="poster-page poster-page--loading">
-        <p>Загрузка плаката...</p>
-      </div>
-    )
+    return <span class="loader"></span>
   }
   // render this shit plz
   return (

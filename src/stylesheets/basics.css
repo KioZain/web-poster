@@ -30,8 +30,7 @@ p {
 }
 
 h1 {
-  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 1.5385rem + 2.0513vw, 3.5rem);
   font-weight: 500;
 }
 .body {
@@ -48,6 +47,13 @@ h2 {
   line-height: 2.7rem;
   font-weight: 500;
 }
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+}
+
 h4 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -98,37 +104,30 @@ p.body-other {
   width: 100%;
   max-width: var(--width-container);
   margin: 0 auto;
-  background: yellow;
+  /* background: yellow; */
 }
 
-/* CoolLoader */
+/* HTML: <div class="loader"></div> */
 .loader {
-  display: flex;
-  gap: 8px;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  background: #1d1d1d;
+  box-sizing: border-box;
+  animation: flipX 1s linear infinite;
 }
 
-.loader span {
-  width: 13px;
-  height: 13px;
-  background: #4ecdc4;
-  border-radius: 50%;
-  animation: bounce 1.4s infinite ease-in-out both;
-}
-
-.loader span:nth-child(1) {
-  animation-delay: -0.32s;
-}
-.loader span:nth-child(2) {
-  animation-delay: -0.16s;
-}
-
-@keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
+@keyframes flipX {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
   }
-  40% {
-    transform: scale(1);
+  50% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
   }
 }

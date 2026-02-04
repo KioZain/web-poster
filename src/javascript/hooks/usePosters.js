@@ -4,8 +4,8 @@ import { AIRTABLE_CONFIG } from '../config/airtable.js'
 function transformRecord(record) {
   return {
     id: record.id,
-    name: record.fields.Name || 'Без названия',
-    author: record.fields.Author || 'Неизвестен',
+    name: record.fields.Name || 'none',
+    author: record.fields.Author || 'none',
     year: record.fields.Year || '',
     type: record.fields.Type || null,
     layout: record.fields.Layout || null,

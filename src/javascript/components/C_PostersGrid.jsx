@@ -3,20 +3,12 @@ import PosterCard from './A_PosterCard.jsx'
 
 function PostersGrid({ posters, isLoading, hasMore, onLoadMore }) {
   if (isLoading && posters.length === 0) {
-    return (
-      <div className="posters-catalog__loading">
-        <div class="loader">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    )
+    return <span className="loader"></span>
   }
 
   if (posters.length === 0) {
     return (
-      <div className="posters-catalog__empty">
+      <div>
         <p>no posters for you buddy</p>
       </div>
     )
@@ -31,11 +23,9 @@ function PostersGrid({ posters, isLoading, hasMore, onLoadMore }) {
       </div>
 
       {hasMore && (
-        <div className="load-container">
-          <button onClick={onLoadMore} className="A_Button">
-            Показать ещё
-          </button>
-        </div>
+        <button onClick={onLoadMore} className="A_Button secondary">
+          Показать ещё
+        </button>
       )}
     </div>
   )
