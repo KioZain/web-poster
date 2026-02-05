@@ -38,6 +38,10 @@
     display: none;
   }
 
+  .W_PostersPage {
+    margin: 6rem auto;
+  }
+
   /* .A_Poster {
     width: calc(33.78% - var(--grid-gap));
   } */
@@ -64,10 +68,6 @@
       }
     }
   }
-
-  /* .A_Poster {
-    width: calc(33.65% - var(--grid-gap));
-  } */
 }
 @media screen and (max-width: 480px) {
   :root {

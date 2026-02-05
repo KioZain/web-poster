@@ -1,5 +1,6 @@
 import React from 'react'
 import PosterCard from './A_PosterCard.jsx'
+import notFound from '../../images/notfound.svg'
 
 function PostersGrid({ posters, isLoading, hasMore, onLoadMore }) {
   if (isLoading && posters.length === 0) {
@@ -9,7 +10,11 @@ function PostersGrid({ posters, isLoading, hasMore, onLoadMore }) {
   if (posters.length === 0) {
     return (
       <div>
-        <p>no posters for you buddy</p>
+        <div className="M_NoContent">
+          <img src={notFound} alt="" />
+          <h4>Ничего не найдено</h4>
+          <p className="light">Такой работы не существует</p>
+        </div>
       </div>
     )
   }

@@ -49,8 +49,7 @@ header.S_Header {
 .S_PosterInfo {
   width: 100%;
   /* max-width: var(--width-container); */
-  margin: 0 auto;
-  padding-top: var(--space-32);
+  margin: var(--space-24) auto;
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
@@ -117,7 +116,15 @@ header.S_Header {
       grid-column: 1 / -1;
       gap: var(--space-6);
       overflow-x: scroll;
-      scroll-padding-right: 20px;
+
+      margin-left: calc(-1 * var(--container-padding, 1rem));
+      margin-right: calc(-1 * var(--container-padding, 1rem));
+
+      padding-left: var(--container-padding, 1rem);
+      padding-right: var(--container-padding, 1rem);
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     &::-webkit-scrollbar {

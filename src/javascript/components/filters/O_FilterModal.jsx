@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import {
+  motion,
+  useAnimate,
+  useMotionValue,
+  useDragControls
+} from 'framer-motion'
+import useMeasure from 'react-use-measure'
 import iconClose from '../../../images/icons/Q_close.svg'
 import O_FilterSection from './O_FilterSection.jsx'
 
@@ -11,37 +18,53 @@ function O_FilterModal({
   selectedValues,
   onApply,
   onReset,
-  // all filters
   isAllFilters = false,
   allFiltersData = null
 }) {
-  // while choosing timed
   const [pending, setPending] = useState({})
+
+  const [scope, animate] = useAnimate()
+  const [drawerRef, { height }] = useMeasure()
+  const y = useMotionValue(0)
+  const controls = useDragControls()
+
   useEffect(() => {
     if (isOpen) {
       if (isAllFilters && allFiltersData) {
         setPending({ ...allFiltersData.selectedFilters })
       } else {
-        setPending({ [filterKey]: [...selectedValues] })
+        setPending({ [filterKey]: [...(selectedValues || [])] })
       }
     }
   }, [isOpen, filterKey, selectedValues, isAllFilters, allFiltersData])
+
+  const handleClose = async () => {
+    const yStart = typeof y.get() === 'number' ? y.get() : 0
+
+    await animate(
+      '#filter-drawer',
+      {
+        y: [yStart, height]
+      },
+      { duration: 0.25, ease: 'easeIn' }
+    )
+
+    onClose()
+  }
 
   const handleChange = (key, values) => {
     setPending((prev) => ({ ...prev, [key]: values }))
   }
 
-  // apply
-  const handleApply = () => {
+  const handleApply = async () => {
     if (isAllFilters) {
       onApply(pending)
     } else {
       onApply(filterKey, pending[filterKey] || [])
     }
-    onClose()
+    await handleClose()
   }
 
-  // reset
   const handleReset = () => {
     if (isAllFilters) {
       const empty = {}
@@ -56,23 +79,62 @@ function O_FilterModal({
     }
   }
 
+  const handleHeaderPointerDown = (e) => {
+    controls.start(e)
+  }
+
   if (!isOpen) return null
 
-  // reetuuuuuuuuuurn
   return (
-    <div className="Q_FilterModal" onClick={onClose}>
-      <div className="O_FilterModal" onClick={(e) => e.stopPropagation()}>
-        {/* head*/}
-        <div className="M_FilterModalHeader">
+    <motion.div
+      ref={scope}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      onClick={handleClose}
+      className="Q_FilterModal"
+    >
+      <motion.div
+        id="filter-drawer"
+        ref={drawerRef}
+        onClick={(e) => e.stopPropagation()}
+        initial={{ y: '100%' }}
+        animate={{ y: '0%' }}
+        transition={{ ease: 'easeOut', duration: 0.25 }}
+        className="O_FilterModal"
+        style={{ y }}
+        drag="y"
+        dragControls={controls}
+        onDragEnd={() => {
+          if (y.get() >= 100) {
+            handleClose()
+          }
+        }}
+        dragListener={false}
+        dragConstraints={{ top: 0, bottom: 0 }}
+        dragElastic={{ top: 0, bottom: 0.5 }}
+      >
+        <div
+          className="M_FilterModalHeader"
+          onPointerDown={handleHeaderPointerDown}
+          style={{ touchAction: 'none' }}
+        >
           <div className="drag-handle" />
           <p className="subtitle">{title}</p>
-          <button type="button" className="A_CloseButton" onClick={onClose}>
+          <button
+            type="button"
+            className="A_CloseButton"
+            onClick={(e) => {
+              e.stopPropagation()
+              handleClose()
+            }}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
             <img src={iconClose} alt="" />
           </button>
         </div>
 
-        {/* content */}
-        <div className="C_FilterModalConent margin-container">
+        {/* Content */}
+        <div className="C_FilterModalContent">
           {isAllFilters && allFiltersData ? (
             <>
               {allFiltersData.availableFilters.type?.length > 0 && (
@@ -116,7 +178,6 @@ function O_FilterModal({
               )}
             </>
           ) : (
-            // catefory only one
             <O_FilterSection
               filterKey={filterKey}
               options={options}
@@ -126,7 +187,7 @@ function O_FilterModal({
           )}
         </div>
 
-        {/* footer */}
+        {/* Footer */}
         <div className="M_FilterModalFooter">
           <button
             type="button"
@@ -139,8 +200,8 @@ function O_FilterModal({
             Применить
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 

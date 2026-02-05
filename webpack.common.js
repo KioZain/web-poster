@@ -8,7 +8,7 @@ const path = require('path')
 
 // All pages
 const pages = [
-  { template: 'index.html', chunks: ['index', 'menubar'] },
+  { template: 'index.html', chunks: ['index', 'menubar', 'gsap-animation'] },
   { template: 'handbook.html', chunks: ['index', 'menubar'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
   { template: 'modules.html', chunks: ['index', 'menubar'] },
@@ -39,7 +39,8 @@ const htmlPlugins = pages.map(({ template, chunks }) => {
     filename: `./${template}`,
     chunks: chunks,
     hash: true,
-    scriptLoading: 'blocking'
+    scriptLoading: 'blocking',
+    favicon: 'src/images/icons/favicon.ico'
   })
 })
 
@@ -50,7 +51,8 @@ module.exports = {
     menubar: './src/javascript/menubar.js',
     posters: './src/javascript/posters.js',
     'poster-page': './src/javascript/poster-page.js',
-    'handbook-nav': './src/javascript/handbook-nav.js'
+    'handbook-nav': './src/javascript/handbook-nav.js',
+    'gsap-animation': './src/javascript/gsap/animation.js'
   },
 
   output: {
