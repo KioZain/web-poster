@@ -1,6 +1,8 @@
 .C_PostersGrid {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
   gap: var(--grid-gap);
   min-height: 100vh;

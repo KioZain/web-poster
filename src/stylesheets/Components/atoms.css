@@ -133,7 +133,8 @@ button.A_Tab {
   }
 }
 .A_Poster {
-  width: calc(33.95% - var(--grid-gap));
+  /* width: calc(33.95% - var(--grid-gap)); */
+  grid-template-columns: 1fr;
   border-radius: 2px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;

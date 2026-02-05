@@ -13,6 +13,12 @@
     max-width: 100%;
     padding: 0 80px;
   } */
+
+  .margin-container {
+    max-width: none;
+    width: 100%;
+    padding: 0 clamp(1rem, 3vw, 4rem);
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -20,12 +26,6 @@
     --width-container: 896px;
     --grid-columns: 9;
     --grid-gap: 12px;
-  }
-
-  .margin-container {
-    max-width: none;
-    width: 100%;
-    padding: 0 clamp(1rem, 3vw, 4rem);
   }
 
   /* Layouts */
@@ -38,9 +38,9 @@
     display: none;
   }
 
-  .A_Poster {
+  /* .A_Poster {
     width: calc(33.78% - var(--grid-gap));
-  }
+  } */
 }
 @media screen and (max-width: 768px) {
   :root {
@@ -74,7 +74,7 @@
     --grid-columns: 3;
     --container-padding: var(--space-8);
   }
-  .A_Poster {
-    width: calc(50.9% - var(--grid-gap));
+  .C_PostersGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
