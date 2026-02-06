@@ -16,7 +16,6 @@ export function initInfiniteCarousel() {
     const totalWidth = step * totalItems;
     const duration = totalItems * 2.5;
 
-    // Параметры градации размера
     const minScale = 0.5;
     const maxScale = 1.0;
     const hoverScale = 1.08;
@@ -109,7 +108,7 @@ export function initInfiniteCarousel() {
             const rect = item.getBoundingClientRect();
 
 
-            const itemCenter = rect.left + rect.width / 2;
+                const itemCenter = rect.left + rect.width / 2;
             const distanceFromCenter = Math.abs(itemCenter - center);
             const normalizedDistance = Math.min(distanceFromCenter / center, 1);
             const easedDistance = normalizedDistance * normalizedDistance;
