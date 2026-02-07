@@ -12,7 +12,7 @@
 .O_AboutCard {
   width: 100%;
   padding: 0 var(--space-16);
-  border-left: 1.5px dashed var(--gray-darksoft);
+  border-left: 1.5px dashed var(--gray-lightest);
   display: flex;
   flex-direction: column;
   gap: var(--space-20);
@@ -232,5 +232,37 @@
     max-width: 620px;
     align-items: center;
     text-align: center;
+  }
+}
+.O_ModulesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.O_ModulesBlock {
+  .M_HeadingContainer {
+    width: 100%;
+    max-width: 630px;
+  }
+}
+.O_ModuleCard {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  background: #f3f3f1;
+  width: 100%;
+  border-radius: 6px;
+  gap: var(--space-12);
+  padding: 1rem;
+  text-align: left;
+
+  .Q_ModuleCardCover {
+    width: 100;
+    aspect-ratio: 3 / 2;
+    background: navy;
+    border-radius: 4px;
   }
 }
