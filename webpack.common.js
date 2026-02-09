@@ -10,7 +10,7 @@ const path = require('path')
 const pages = [
   {
     template: 'index.html',
-    chunks: ['index', 'menubar', 'gsap-animation', 'marquee']
+    chunks: ['index', 'menubar', 'gsap-animation', 'marquee', 'scrollposters']
   },
   { template: 'handbook.html', chunks: ['index', 'menubar'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
@@ -56,7 +56,8 @@ module.exports = {
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'gsap-animation': './src/javascript/gsap/animation.js',
-    marquee: './src/javascript/gsap/marquee.js'
+    marquee: './src/javascript/gsap/marquee.js',
+    scrollposters: './src/javascript/gsap/scrollposters.js'
   },
 
   output: {

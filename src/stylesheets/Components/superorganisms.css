@@ -132,3 +132,9 @@ header.S_Header {
     }
   }
 }
+.S_ManyPosters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  height: 100vh;
+}

@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 
-const marquee = document.querySelector('.marquee-content')
+const marquee = document.querySelector('.W_MarqueeContent')
 
 marquee.innerHTML += marquee.innerHTML
 

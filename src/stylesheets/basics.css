@@ -10,6 +10,7 @@ body {
   background-size: 58px 58px;
   background-color: var(--bg-grey);
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 .demo {
@@ -62,6 +63,7 @@ h4 {
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
+  line-height: 1.5rem;
 }
 p.body-other {
   font-size: 1.125rem;

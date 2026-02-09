@@ -209,6 +209,13 @@ button.A_Tab {
   width: fit-content;
   border-radius: 4px;
   user-select: none;
+
+  &.code {
+    font-family: 'Aeonik Mono';
+    text-transform: capitalize;
+    border: 1px solid var(--gray-lightest);
+    color: var(--gray-medium);
+  }
 }
 .A_ListItem {
   font-size: 1rem;
