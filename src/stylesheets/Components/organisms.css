@@ -275,3 +275,9 @@
     );
   }
 }
+.O_ArticleContent {
+  background: navajowhite;
+  min-height: 200px;
+  grid-column: span 2;
+  order: 3;
+}

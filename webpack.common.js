@@ -29,6 +29,10 @@ const pages = [
     template: 'handbook/part_1/chapter_1/chapter_1.html',
     chunks: ['menubar', 'index', 'handbook-nav']
   },
+  {
+    template: 'handbook/part_1/chapter_1/about_webposter.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
   // Static modules

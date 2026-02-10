@@ -109,27 +109,25 @@ p.body-other {
   /* background: yellow; */
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 48px;
-  height: 48px;
-  display: inline-block;
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  background: #1d1d1d;
-  box-sizing: border-box;
-  animation: flipX 1s linear infinite;
-}
+/* Article Typography */
+p.article {
+  font-size: 1.125rem;
+  line-height: 26px;
 
-@keyframes flipX {
-  0% {
-    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  code {
+    display: inline-block;
+    height: 24px;
+    background: #e7e7e4;
+    border-radius: 4px;
+    font-family: 'Aeonik Mono';
+    padding: 0 4px;
   }
-  50% {
-    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
-  }
-  100% {
-    transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--gray-soft);
+      cursor: pointer;
+    }
   }
 }

@@ -107,7 +107,12 @@
   margin-top: var(--header-offset);
   padding-top: var(--space-40);
 }
-
+.W_ArticlePage {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  width: 100%;
+}
 /* NavigationMenu */
 .W_CollapsingLists {
   display: flex;
@@ -138,4 +143,13 @@
   width: 100%;
   display: flex;
   gap: var(--space-8);
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.W_ArticleContentContainer {
+  grid-column: span 7;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
 }

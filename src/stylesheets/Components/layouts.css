@@ -17,3 +17,7 @@
 .L_Poster {
   margin-top: var(--header-offset);
 }
+.L_ArticleBars {
+  margin-top: var(--header-offset) auto 0;
+  margin-top: var(--header-offset);
+}
