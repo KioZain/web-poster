@@ -300,3 +300,18 @@ button.A_Tab {
     border-radius: 2px;
   }
 }
+.A_LineNumbers {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  user-select: none; /* Номера не копируются */
+  font-family: 'Aeonik Mono';
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.A_CodeBlock {
+  white-space: pre;
+  code {
+    line-height: 1.5rem;
+  }
+}

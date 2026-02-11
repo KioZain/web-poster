@@ -31,7 +31,7 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_1/about_webposter.html',
-    chunks: ['menubar', 'index', 'handbook-nav']
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
   },
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
@@ -57,11 +57,12 @@ module.exports = {
     page: './src/page.jsx',
     menubar: './src/javascript/menubar.js',
     posters: './src/javascript/posters.js',
+    marquee: './src/javascript/gsap/marquee.js',
+    scrollposters: './src/javascript/gsap/scrollposters.js',
+    codestyle: './src/javascript/codestyle.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'gsap-animation': './src/javascript/gsap/animation.js',
-    marquee: './src/javascript/gsap/marquee.js',
-    scrollposters: './src/javascript/gsap/scrollposters.js'
   },
 
   output: {
@@ -89,6 +90,11 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
 
       {

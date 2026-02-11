@@ -320,3 +320,11 @@
   justify-content: space-between;
   padding: var(--space-12);
 }
+.O_CodeContent {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+}
+.O_CodeContent {
+  padding: var(--space-12);
+}
