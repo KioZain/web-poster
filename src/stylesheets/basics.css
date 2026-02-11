@@ -131,3 +131,9 @@ p.article {
     }
   }
 }
+
+code {
+  font-family: 'Aeonik Mono';
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+}

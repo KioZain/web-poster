@@ -68,6 +68,12 @@
   aspect-ratio: 3/2;
   border: 1px solid var(--gray-lightest);
   border-radius: 4px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .Q_FilterModal {
   position: fixed;
@@ -79,4 +85,12 @@
 }
 input[type='checkbox'] {
   background-color: red;
+}
+.Q_ArticleHeroImage {
+  grid-column: span 5;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }

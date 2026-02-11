@@ -22,8 +22,7 @@ export default function Menubar() {
   const navLinks = [
     { href: `${basePath}handbook.html`, label: 'Учебник' },
     { href: `${basePath}modules.html`, label: 'Модули' },
-    { href: `${basePath}posters.html`, label: 'Веб-плакаты' },
-    { href: `${basePath}index.html`, label: 'О проекте' }
+    { href: `${basePath}posters.html`, label: 'Веб-плакаты' }
   ]
   console.log('Base path:', navLinks)
 

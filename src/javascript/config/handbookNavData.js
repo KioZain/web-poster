@@ -12,7 +12,7 @@ const handbookNavData = {
                         {
                             id: 'article-1-1-1',
                             title: 'Особенности формата',
-                            href: '/handbook/part_1/chapter_1/features.html'
+                            href: '/handbook/part_1/chapter_1/about_webposter.html'
                         },
                         {
                             id: 'article-1-1-2',

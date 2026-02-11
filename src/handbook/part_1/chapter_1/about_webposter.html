@@ -7,12 +7,54 @@
   </head>
   <body>
     <menubar></menubar>
+    <div class="S_ArticleHead">
+      <nav style="border: none; margin: 0" class="M_Breadcrumbs">
+        <div class="W_BreadCrumbsContainer margin-container">
+          <a class="caption-caps" href="/"> Главная </a>
+          •
+          <a class="caption-caps" href="/posters.html"> Веб-плакаты </a>
+          •
+          <span class="caption-caps"> {article.name} </span>
+        </div>
+      </nav>
+
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Что такое веб-плакат</h1>
+            <div class="A_Tag">Теория</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">3 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img src="../../../images/placeholder.png" alt="hero image" />
+        </div>
+      </div>
+    </div>
     <div class="L_ArticleBars">
       <div class="W_ArticlePage margin-container">
         <!-- HandbookNavigation -->
         <div class="S_LeftNavBar" id="handbook-nav-root"></div>
         <!-- ArticleNavigation -->
-        <div class="O_ArticleContent"></div>
+
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks">
+            <a href="" class="A_ListItem">Заголовок 1</a>
+            <a href="" class="A_ListItem">Заголовок 2</a>
+            <a href="" class="A_ListItem">Заголовок 3</a>
+          </div>
+        </div>
         <!-- Article Content -->
         <div class="W_ArticleContentContainer">
           <div class="M_ParagraphArticle">
@@ -37,16 +79,52 @@
               работать. → Смотреть плакат: «Высотки» — Эвилина Юсупова, 2024
               <code>@keyframes</code>
             </p>
-
-            <pre><code>
-                &lt;div&gt;Какой-то текст&lt;/div&gt;
-            </code></pre>
-            <template>
-              <div class="box">Привет!</div>
-            </template>
           </div>
+          <!-- test code here -->
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab">HTML</button>
+                <button class="A_CodeTab">CSS</button>
+                <button class="A_CodeTab">JavaScript</button>
+              </div>
+              <button class="A_CopyButton">Копировать</button>
+            </div>
+            <pre class="A_CodeArea" data-lang="js">
+            <code>
+const numbers = [1, 2, 3];
+const doubled = numbers.map (n => n)
+  if (a > b && c < d) {
+    console.log('OK');
+}
+            </code>
+          </pre>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Не старайтесь придумать что-то оригинальное с нуля. Часто лучшие
+                работы вырастают из личного опыта или увлечений. Плакат про
+                коллекцию винила или про ритуал утреннего кофе может получиться
+                выразительнее, чем попытка сделать что-то концептуальное.
+              </p>
+            </div>
+          </div>
+
+          <figure class="A_PosterArticle">
+            <img src="../../../images/posters/poster05.png" alt="" />
+            <figcaption>Caption for image is here</figcaption>
+          </figure>
         </div>
       </div>
     </div>
+    <!-- еу -->
+    <footerbar></footerbar>
   </body>
 </html>

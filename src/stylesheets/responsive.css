@@ -28,6 +28,19 @@
     --grid-gap: 12px;
   }
 
+  .W_Footer {
+    gap: var(--space-48);
+
+    .A_DVDLogo,
+    .O_FooterInformation {
+      grid-column: 1 / -1;
+    }
+
+    .A_DVDLogo {
+      order: 2;
+    }
+  }
+
   /* Layouts */
   .L_PostersFilter {
     .W_PostersWrap {
@@ -50,6 +63,37 @@
   :root {
     --grid-columns: 6;
     --grid-gap: 8px;
+  }
+
+  .W_Footer {
+    h4 {
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+    .A_TelegramButton {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .W_FooterDescription {
+    flex-direction: column;
+    gap: var(--space-24);
+
+    .M_FooterInfo,
+    .W_FooterDisclaimer {
+      width: 100%;
+    }
+
+    .M_FooterInfo {
+      .W_FooterHse {
+        flex-direction: row;
+        gap: var(--grid-gap);
+        flex-wrap: wrap;
+      }
+    }
   }
 
   .M_HeadAboutPage {

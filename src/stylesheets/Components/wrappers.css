@@ -144,6 +144,13 @@
   display: flex;
   gap: var(--space-8);
 }
+
+.W_CalloutTextExpand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .W_ArticleContentContainer {
   grid-column: span 7;
@@ -152,4 +159,34 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-48);
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.W_Footer {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+}
+.W_FooterDescription {
+  display: flex;
+  flex-direction: row;
+  gap: var(--grid-gap);
+  font-weight: 500;
+  line-height: 20px;
+
+  .M_FooterInfo,
+  .W_FooterDisclaimer {
+    width: calc(50% - var(--grid-gap));
+  }
+}
+.W_FooterDisclaimer,
+.W_FooterHse {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+.W_ArticleHead {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
 }

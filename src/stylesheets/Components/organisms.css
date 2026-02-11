@@ -275,9 +275,48 @@
     );
   }
 }
+
+.O_CallOut {
+  background: #f3f3f1;
+  border-radius: 6px;
+  padding: var(--space-20);
+  border: 1px solid var(--gray-lightest);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-20);
+  align-items: flex-start;
+}
+.O_FooterInformation {
+  grid-column: 7/ -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+.O_ArticleHead {
+  grid-column: span 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .O_ArticleContent {
-  background: navajowhite;
-  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
   grid-column: span 2;
   order: 3;
+
+  .C_AticleLinks {
+    padding-left: 0;
+    gap: 0;
+  }
+}
+.O_CodeBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--space-12);
 }

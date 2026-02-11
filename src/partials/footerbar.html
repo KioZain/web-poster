@@ -1,0 +1,90 @@
+<div class="S_Footer">
+  <div class="W_Footer margin-container">
+    <div class="A_DVDLogo">
+      <div class="Q_HandleSquare lt"></div>
+      <div class="Q_HandleSquare rt"></div>
+      <div class="Q_HandleSquare lb"></div>
+      <div class="Q_HandleSquare rb"></div>
+      <h1 class="bouncing-logo">
+        web <br />
+        poster
+      </h1>
+    </div>
+    <div class="O_FooterInformation">
+      <div class="M_TelegramAction">
+        <h4>
+          Следи за&nbsp;обновлениями сайта и&nbsp;тизерами новых публикаций
+          в&nbsp;telegram канале
+        </h4>
+        <a href="https://t.me/+BTbWFdc_ReNhNzAy" class="A_TelegramButton"
+          ><div class="Q_Telegram"></div>
+          Подписаться
+        </a>
+      </div>
+      <div class="W_FooterDescription">
+        <div class="M_FooterInfo">
+          <div class="M_TwoLinks">
+            <a href="index.html">О проекте</a>
+            <a href="https://t.me/maxim_kio">Связаться со мной</a>
+          </div>
+          <div class="W_FooterHse">
+            <p class="cation">
+              Made by: Maxim Kirillov
+              <br />
+              Curated by: Zakhar Day
+            </p>
+            <p class="cation">HSE ADC <br />DIPLOMA 2025-2026</p>
+          </div>
+        </div>
+        <div class="W_FooterDisclaimer">
+          <p class="cation light">
+            Все размещённые плакаты принадлежат их&nbsp;авторам. Работы отобраны
+            на&nbsp;основании субъективного предпочтения и&nbsp;личного взгляда
+            автора сайта.
+          </p>
+          <p class="caption light">
+            *Проект является дипломной работой и&nbsp;носит
+            демонстрационно-исследовательский характер. Он&nbsp;не&nbsp;является
+            частью официальной образовательной программы НИУ ВШЭ. *
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const section = document.querySelector('.A_DVDLogo')
+  const logo = document.querySelector('.bouncing-logo')
+  const FPS = 60
+
+  let xPosition = 10
+  let yPosition = 10
+  let xSpeed = 2
+  let ySpeed = 2
+
+  let sectionWidth = section.clientWidth
+  let sectionHeight = section.clientHeight
+
+  function update() {
+    logo.style.left = xPosition + 'px'
+    logo.style.top = yPosition + 'px'
+  }
+
+  setInterval(() => {
+    if (xPosition + logo.clientWidth >= sectionWidth || xPosition <= 0) {
+      xSpeed = -xSpeed
+    }
+    if (yPosition + logo.clientHeight >= sectionHeight || yPosition <= 0) {
+      ySpeed = -ySpeed
+    }
+
+    xPosition += xSpeed
+    yPosition += ySpeed
+    update()
+  }, 1000 / FPS)
+
+  window.addEventListener('resize', () => {
+    sectionWidth = section.clientWidth
+    sectionHeight = section.clientHeight
+  })
+</script>
