@@ -61,7 +61,29 @@
   border: none;
   background: transparent;
   text-decoration: underline;
+  font-family: 'Aeonik Pro';
   font-size: 1rem;
+  color: var(--gray-base);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-2);
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../../images/icons/Q_Copy-20.svg');
+    background-size: cover;
+  }
+
+  &.copied {
+    background-image: url('../../images/icons/Q_Check-20.svg');
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
 }
 
 .A_Button {
@@ -310,7 +332,7 @@ button.A_Tab {
   line-height: 1.5rem;
 }
 .A_CodeBlock {
-  white-space: pre;
+  /* white-space: pre; */
   code {
     line-height: 1.5rem;
   }

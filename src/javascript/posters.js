@@ -8,7 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (container) {
     const root = createRoot(container)
     root.render(<PostersCatalog />)
-  } else {
-    console.warn('Контейнер #posters-catalog-root не найден на странице')
   }
 })

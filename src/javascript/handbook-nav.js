@@ -9,7 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         const root = createRoot(container)
         root.render(<S_LeftNavbar />)
-    } else {
-        console.log('Контейнер #handbook-nav-root не найден на странице')
     }
 })

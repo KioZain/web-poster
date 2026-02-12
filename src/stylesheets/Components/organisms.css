@@ -323,8 +323,6 @@
 .O_CodeContent {
   display: flex;
   flex-direction: row;
-  gap: var(--space-8);
-}
-.O_CodeContent {
+  gap: var(--space-12);
   padding: var(--space-12);
 }
