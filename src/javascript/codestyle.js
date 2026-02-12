@@ -4,7 +4,7 @@ import 'prismjs/components/prism-javascript'
 
 import { trimcode } from './trimcode.js'
 import { theme } from './theme.js'
-
+import { initCodeAreas } from './components/codeblock/S_CodeArea.js'
 function addLineNumbers(codeArea) {
   const codeBlock = codeArea.querySelector('.A_CodeBlock code')
   const lineNumbersContainer = codeArea.querySelector('.A_LineNumbers')
@@ -57,4 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
   theme()
   highlight()
   lineNumbers()
+  initCodeAreas()
 })

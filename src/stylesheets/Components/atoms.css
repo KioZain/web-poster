@@ -60,25 +60,14 @@
 .A_CopyButton {
   border: none;
   background: transparent;
-  text-decoration: underline;
   font-family: 'Aeonik Pro';
   font-size: 1rem;
   color: var(--gray-base);
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--space-2);
-
-  &::before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-image: url('../../images/icons/Q_Copy-20.svg');
-    background-size: cover;
-  }
-
-  &.copied {
-    background-image: url('../../images/icons/Q_Check-20.svg');
-  }
+  padding: 0;
 
   &:hover {
     cursor: pointer;
@@ -86,6 +75,24 @@
   }
 }
 
+.A_CopyButton-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.A_CopyButton__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.A_CopyButton__text {
+  text-decoration: underline;
+}
+
+.A_CopyButton.copied .A_CopyButton__text {
+  text-decoration: none;
+}
 .A_Button {
   display: block;
   display: flex;
@@ -326,10 +333,11 @@ button.A_Tab {
   display: flex;
   flex-direction: column;
   text-align: right;
-  user-select: none; /* Номера не копируются */
+  user-select: none;
   font-family: 'Aeonik Mono';
   font-size: 1.125rem;
   line-height: 1.5rem;
+  color: var(--gray-light);
 }
 .A_CodeBlock {
   /* white-space: pre; */

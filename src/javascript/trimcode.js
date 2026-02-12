@@ -1,5 +1,6 @@
 
 
+// this code makes shit-intended code into beautiful piece of <code>
 export function trimcode(code) {
     let lines = code.split('\n')
 
@@ -9,7 +10,7 @@ export function trimcode(code) {
     if (lines.length > 0 && lines[lines.length - 1].trim() === '') {
         lines.pop()
     }
-
+    // console.log(lines)
     if (lines.length === 0) {
         return ''
     }
@@ -29,7 +30,7 @@ export function trimcode(code) {
                 break
             }
         }
-
+        // console.log(spaceCount)
         if (spaceCount < minIndent) {
             minIndent = spaceCount
         }
@@ -39,7 +40,7 @@ export function trimcode(code) {
         minIndent = 0
     }
 
-
+    // console.log(lines.map)
     const result = lines.map(line => {
         if (line.trim() === '') {
             return ''
