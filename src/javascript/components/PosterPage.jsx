@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { AIRTABLE_CONFIG } from '../config/airtable.js'
+import postersData from '../../data/posters.json'
 import ghIcon from '../../images/icons/Q_GithubIcon.svg'
 
 function getPosterIdFromUrl() {
@@ -7,85 +7,70 @@ function getPosterIdFromUrl() {
   return params.get('id')
 }
 
-/*
-{ id: "...", fields: { Name: "...", ... } } -> { id, name, author, ... }
- */
+function getBasePath() {
+  const path = window.location.pathname
+  const segments = path.split('/').filter((segment) => segment.length > 0)
 
-function transformRecord(record) {
-  return {
-    id: record.id,
-    name: record.fields.Name,
-    author: record.fields.Author,
-    year: record.fields.Year,
-    type: record.fields.Type,
-    layout: record.fields.Layout,
-    tags: record.fields.Tags,
-    modules: record.fields.Modules,
-    cover: record.fields.Cover,
-    ghPages: record.fields.GH_pages,
-    github: record.fields.Github,
-    project: record.fields.Project
+  if (segments.length > 0 && segments[segments.length - 1].includes('.html')) {
+    segments.pop()
   }
+
+  if (segments.length === 0) {
+    return './'
+  }
+
+  return '../'.repeat(segments.length)
 }
+
+// main component
 function PosterPage() {
   const [poster, setPoster] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  async function fetchPoster(posterId) {
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      // GET /v0/{baseId}/{tableName}/{recordId}
-      const url = `https://api.airtable.com/v0/${AIRTABLE_CONFIG.baseId}/${AIRTABLE_CONFIG.tableName}/${posterId}`
-
-      const response = await fetch(url, {
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_CONFIG.apiKey}`
-        }
-      })
-
-      // 404
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('Плакат не найден')
-        }
-        throw new Error(`Ошибка сервера: ${response.status}`)
-      }
-
-      // parsing json
-      const record = await response.json()
-      const posterData = transformRecord(record)
-      setPoster(posterData)
-
-      document.title = `${posterData.name} — Web Poster`
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const basePath = getBasePath()
 
   useEffect(() => {
     const posterId = getPosterIdFromUrl()
 
-    fetchPoster(posterId)
+    if (!posterId) {
+      setError('ID плаката не указан в URL')
+      return
+    }
+
+    const found = postersData.find((p) => p.id === posterId)
+
+    if (!found) {
+      setError(`Плакат с ID "${posterId}" не найден`)
+      return
+    }
+
+    setPoster(found)
+    document.title = `${found.name} — Web Poster`
   }, [])
 
-  if (isLoading) {
-    return <span class="loader"></span>
+  // error
+  if (error) {
+    return (
+      <div className="poster-page__error" style={{ padding: '2rem' }}>
+        <p>{error}</p>
+        <a href={`${basePath}posters.html`}>← Вернуться к каталогу</a>
+      </div>
+    )
   }
-  // render this shit plz
+
+  if (!poster) {
+    return <span className="loader"></span>
+  }
+
+  // main component
   return (
     <div className="poster-page">
       <nav className="M_Breadcrumbs">
         <div className="W_BreadCrumbsContainer margin-container">
-          <a className="caption-caps" href="/">
+          <a className="caption-caps" href={`${basePath}index.html`}>
             Главная
           </a>
           •
-          <a className="caption-caps" href="/posters.html">
+          <a className="caption-caps" href={`${basePath}posters.html`}>
             Веб-плакаты
           </a>
           •
@@ -135,7 +120,7 @@ function PosterPage() {
             </div>
           </div>
 
-          {/* etc */}
+          {/* metadata */}
           <div className="С_MetaDataPoster">
             <div className="M_MetaDataRow">
               <p className="caption-caps">Автор(ка)</p>
@@ -176,7 +161,7 @@ function PosterPage() {
             )}
           </div>
 
-          {/* viewbutton */}
+          {/* view button */}
           {poster.ghPages && (
             <a
               href={poster.ghPages}

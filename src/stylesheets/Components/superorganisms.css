@@ -85,7 +85,7 @@ header.S_Header {
       grid-column: span 7;
     }
     .A_CaptionText {
-      grid-column: 9/13;
+      grid-column: 10/13;
       margin-top: auto;
     }
   }

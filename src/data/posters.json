@@ -1,0 +1,1741 @@
+[
+  {
+    "id": "recHWC5zRhuJX4nyp",
+    "name": "Высотки",
+    "author": "Эвелина Юсупова ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Блюр",
+      "Типографика",
+      "Покадровая анимация",
+      "Ховер"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240359/5856251_w540_m2_s1.jpg",
+    "ghPages": "https://evelishka228.github.io/my_second_project/",
+    "github": "https://github.com/Evelishka228/my_second_project.git",
+    "project": "https://portfolio.hse.ru/Project/240359"
+  },
+  {
+    "id": "recRpqM7cJfdKhR37",
+    "name": "Система завода «Карьер»",
+    "author": "Кочеткова Дарья",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Покадровая анимация",
+      "Типографика",
+      "Микровзаимодействия"
+    ],
+    "modules": [
+      "Текст",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240377/5870571_w1120_m3_s1.jpg",
+    "ghPages": "https://drbvrr.github.io/karier/",
+    "github": "https://github.com/drbvrr/karier",
+    "project": "https://portfolio.hse.ru/Project/240377"
+  },
+  {
+    "id": "recnjlUW8JDJKVrqy",
+    "name": "PARALLEX",
+    "author": "Виктория Николаева ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Хаос",
+      "Покадровая анимация",
+      "Геометрия"
+    ],
+    "modules": [
+      "Трансформация",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240832/5855619_w540_m2_s1.jpg",
+    "ghPages": "https://vikanik08.github.io/poster_web/",
+    "github": "https://github.com/vikanik08/poster_web",
+    "project": "https://portfolio.hse.ru/Project/240832"
+  },
+  {
+    "id": "recMWCMreSmH1XTrC",
+    "name": "СВОД",
+    "author": "Надежда Феофанова",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Покадровая анимация",
+      "Ховер",
+      "Типографика",
+      "Геометрия"
+    ],
+    "modules": [
+      "Трансформация",
+      " Движение",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240825/5855773_w540_m2_s1.jpg",
+    "ghPages": "https://nadezhdafeo.github.io/SVOD_web-plakat/",
+    "github": "https://github.com/NadezhdaFeo/SVOD_web-plakat",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240825_5855773"
+  },
+  {
+    "id": "recwywTNeHcnAfHl3",
+    "name": "ГАНИБАЛЛ",
+    "author": "Арина Гейнбихнер ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Ховер",
+      "Покадровая анимация",
+      "Иллюстрация"
+    ],
+    "modules": [
+      " Движение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240889/5867348_w1120_m3_s1.jpg",
+    "ghPages": "https://arinageynbikhner.github.io/GANIBALL/",
+    "github": "https://github.com/ArinaGeynbikhner/GANIBALL",
+    "project": "https://portfolio.hse.ru/Project/240889"
+  },
+  {
+    "id": "reciPr8yp7UOsS57B",
+    "name": "ДЕТЕКТОР РОВНОГО ПАЦАНА",
+    "author": "Азалия Калимуллина ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Покадровая анимация",
+      "Типографика",
+      "Иллюстрация"
+    ],
+    "modules": [
+      "Трансформация",
+      "Текст",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240188/5858233_w1120_m3_s1.jpg",
+    "ghPages": "https://akkalimullina.github.io/detector_pacanov/",
+    "github": "https://github.com/akkalimullina/detector_pacanov",
+    "project": "https://portfolio.hse.ru/Project/240188#240188_5858233"
+  },
+  {
+    "id": "recZC9aYPjRcR6dix",
+    "name": "SYNTHESIA",
+    "author": "Эвелина Алиева ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Хаос",
+      "Ховер",
+      "Фоновые эффекты",
+      "Типографика",
+      "Геометрия"
+    ],
+    "modules": [
+      "Вращение",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240234/5855546_w540_m2_s1.jpg",
+    "ghPages": "https://ddctn.github.io/synthesia/?clckid=8659b29e",
+    "github": "https://github.com/ddctn/synthesia?clckid=96ee5a39",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240234_5855546"
+  },
+  {
+    "id": "rec8WUvTe3BHZgvLZ",
+    "name": "MINDPLUG",
+    "author": "Ева Кейзер",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Хаос",
+      "Фоновые эффекты",
+      "Типографика",
+      "Коллаж",
+      "Текстуры"
+    ],
+    "modules": [
+      "Текст",
+      "Вращение",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/241078/5870844_w540_m2_s1.jpg",
+    "ghPages": "https://caesarusss.github.io/poster_code/",
+    "github": "https://github.com/caesarusss/poster_code",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#241078_5870844"
+  },
+  {
+    "id": "recqNH9B3HEwfmT3l",
+    "name": "Froud",
+    "author": "Анна Матвеева ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Покадровая анимация",
+      "Типографика",
+      "Пиксели",
+      "Текстуры"
+    ],
+    "modules": [
+      " Движение",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/239597/5843371_w540_m2_s1.jpg",
+    "ghPages": "https://daayamyau.github.io/froud-poster/",
+    "github": "https://github.com/DaaYaMyau/froud-poster",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#239597_5843371"
+  },
+  {
+    "id": "recDG7foG96IgghTI",
+    "name": "2CUST",
+    "author": "Нина Волощенко ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Типографика",
+      "Ховер",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240743/5864697_w1120_m3_s1.jpg",
+    "ghPages": "https://nina2vol.github.io/2CUST_POSTER/",
+    "github": "https://github.com/Nina2Vol/2CUST_POSTER",
+    "project": "https://portfolio.hse.ru/Project/240743#240743_5864697"
+  },
+  {
+    "id": "recYrownjWehmwSJB",
+    "name": "Restro",
+    "author": "София Анпилогова ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Ховер",
+      "Хаос",
+      "Типографика",
+      "Курсор",
+      "Микровзаимодействия"
+    ],
+    "modules": [
+      "Вращение",
+      " Движение",
+      "Трансформация",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/238939/5821221_w540_m2_s1.jpg",
+    "ghPages": "https://sssonz.github.io/restro_advent_calendar/",
+    "github": "https://github.com/sssonz/restro_advent_calendar",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#238939_5821221"
+  },
+  {
+    "id": "recG5lep2leK2WuEp",
+    "name": "cube lab",
+    "author": "Евдокия Васильева ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Покадровая анимация",
+      "Типографика"
+    ],
+    "modules": [
+      "Текст",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240443/5857468_h1610_m3_s1.jpg",
+    "ghPages": "https://dunchekk.github.io/mod2/",
+    "github": "https://github.com/Dunchekk/mod2",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240443_5857468"
+  },
+  {
+    "id": "reckYP3VaHm234CCW",
+    "name": "клиника ACT",
+    "author": "Артëм Ермилин ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Коллаж",
+      "Фотографии",
+      "Покадровая анимация",
+      "Ховер"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240430/5873095_w1120_m3_s1.jpg",
+    "ghPages": "https://dustywrist.github.io/second_module/",
+    "github": "https://github.com/dustywrist/second_module",
+    "project": "https://portfolio.hse.ru/Project/240430"
+  },
+  {
+    "id": "recRvwRGNaAkCf0WN",
+    "name": "re.nova",
+    "author": "Алина Мочалова ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Хаос",
+      "Типографика"
+    ],
+    "modules": [
+      "Трансформация",
+      "Вращение",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240818/5855089_w1120_m3_s1.jpg",
+    "ghPages": "https://vaguesorrow.github.io/web-poster-re-no-va/",
+    "github": "https://github.com/vaguesorrow/web-poster-re-no-va",
+    "project": "https://portfolio.hse.ru/Project/240818#240818_5855089"
+  },
+  {
+    "id": "recZzHu1C6dfXODgd",
+    "name": "BASS-SPOT",
+    "author": "Софья Орлова",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Типографика",
+      "Покадровая анимация",
+      "Пиксели",
+      "Геометрия",
+      "Блюр",
+      "Ховер"
+    ],
+    "modules": [
+      " Движение",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240890/5857921_w540_m2_s1.jpg",
+    "ghPages": "https://sonyaorlovav.github.io/bassspotposter/",
+    "github": "https://github.com/sonyaorlovav/bassspotposter",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240890_5857921"
+  },
+  {
+    "id": "recsFk2xZYyilujkG",
+    "name": "Armor Amour",
+    "author": "Дарья Полушкина ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Пиксели",
+      "Типографика",
+      "Покадровая анимация",
+      "Хаос"
+    ],
+    "modules": [
+      "Вращение",
+      "Текст",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/239925/5866383_w540_m2_s1.jpg",
+    "ghPages": "https://dariapolushkina.github.io/armor_amour/?clckid=c506c60e",
+    "github": "https://github.com/dariapolushkina/armor_amour?clckid=14bb3290",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#239925_5866383"
+  },
+  {
+    "id": "recwSfdt1PxLupYk7",
+    "name": "Allo, Horace?",
+    "author": "Мария Красная ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Текст",
+      "Хаос",
+      "Текстуры",
+      "Тени",
+      "Ховер"
+    ],
+    "modules": [
+      "Трансформация",
+      "Вращение",
+      "Текст",
+      " Движение",
+      "Эффекты"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/239446/5852673_w540_m2_s1.jpg",
+    "ghPages": "https://mariakrasnaya.github.io/web_poster_animated/",
+    "github": "https://github.com/MariaKrasnaya/web_poster_animated.git",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#239446_5852673"
+  },
+  {
+    "id": "recL4PIOZIgaTQUjV",
+    "name": "Зеркально",
+    "author": "Александра Мирошниченко ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Покадровая анимация",
+      "Геометрия"
+    ],
+    "modules": [
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/233417/5645996_w540_m2_s1.jpg",
+    "ghPages": "https://alexamir07.github.io/zercalno/",
+    "github": "https://github.com/alexamir07/zercalno",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#233417_5645996"
+  },
+  {
+    "id": "rec2r0uXYN6boS2U7",
+    "name": "SYNAPSE",
+    "author": "Александр Гагкуев ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Хаос",
+      "Типографика",
+      "Фотографии",
+      "Текстуры",
+      "Ховер"
+    ],
+    "modules": [
+      "Текст",
+      " Движение",
+      "Эффекты"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/232648/5631840_w540_m2_s1.jpg",
+    "ghPages": "https://asanka6.github.io/synapse_poster/",
+    "github": "https://bit.ly/github-synapse",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#232648_5631840"
+  },
+  {
+    "id": "recSb71RiN2s1l47n",
+    "name": "интерфейс сотрудника yuki",
+    "author": "Селимхан Амандурдыев ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Скролл",
+      "Типографика",
+      "Хаос",
+      "Пиксели"
+    ],
+    "modules": [
+      "Текст",
+      " Движение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240830/5859427_w540_m2_s1.jpg",
+    "ghPages": "https://yelouu.github.io/yuki/",
+    "github": "https://github.com/yelouu/yuki",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240830_5859427"
+  },
+  {
+    "id": "recVQS8NUyRJU3d5w",
+    "name": "ХАХАЗИНО",
+    "author": "Мария Карпова ",
+    "year": "2024",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Текстуры",
+      "Хаос",
+      "Покадровая анимация",
+      "Ховер",
+      "Блюр",
+      "Фотографии"
+    ],
+    "modules": [
+      "Трансформация",
+      "Эффекты",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/240941/5860568_w540_m2_s1.jpg",
+    "ghPages": "https://meenshery.github.io/HAHAZINO/",
+    "github": "https://github.com/meenshery/HAHAZINO.git",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1082_1_N_N_N#240941_5860568"
+  },
+  {
+    "id": "recNL0446JCVWzaFd",
+    "name": "Allo, Horace?",
+    "author": "Мария Красная",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Хаос",
+      "Типографика",
+      "Веб-игра"
+    ],
+    "modules": [
+      "Текст",
+      "Холст",
+      "Эффекты",
+      "Ввод"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/247658/6133609_w1120_m3_s1.jpg",
+    "ghPages": "https://mariakrasnaya.github.io/ALLO_site_interactiv/",
+    "github": "https://github.com/MariaKrasnaya/ALLO_site_interactiv.git",
+    "project": "https://portfolio.hse.ru/Project/247658#247658_6133609"
+  },
+  {
+    "id": "recQeYfAnm1wCGTZz",
+    "name": "WITCH'S HAT",
+    "author": "Руслан Мелкумян ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Иллюстрация",
+      "Веб-игра",
+      "Ховер"
+    ],
+    "modules": [
+      "Звук",
+      "Холст",
+      "Перетаскивание",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/248899/6154747_w1120_m3_s1.jpg",
+    "ghPages": "https://follsqq01.github.io/WITCH-WEB-POSTER/?clckid=bd1f64a6",
+    "github": "https://follsqq01.github.io/WITCH-WEB-POSTER/?clckid=bd1f64a6",
+    "project": "https://portfolio.hse.ru/Project/248899"
+  },
+  {
+    "id": "recbISqN2GHea7ASJ",
+    "name": " restro «Вокруг света»",
+    "author": "София Анпилогова ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Веб-игра",
+      "Иллюстрация",
+      "Типографика"
+    ],
+    "modules": [
+      "Курсор",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/247090/5995200_w540_m2_s1.jpg",
+    "ghPages": "https://sssonz.github.io/Around-the-world.-Restro/",
+    "github": "https://github.com/sssonz/Around-the-world.-Restro",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#247090_5995200"
+  },
+  {
+    "id": "recE8mECvadHnDO75",
+    "name": "Дом зеркал",
+    "author": "Александра Мирошниченко ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Иллюстрация",
+      "Ховер",
+      "Текстуры"
+    ],
+    "modules": [
+      "Курсор",
+      "Перетаскивание"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/248964/6060562_w540_m2_s1.jpg",
+    "ghPages": "https://alexamir07.github.io/dom_zerkal/",
+    "github": "https://github.com/alexamir07/dom_zerkal",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#248964_6060562"
+  },
+  {
+    "id": "recTzjEUA4n30Nbo6",
+    "name": "Релиз Правды",
+    "author": "Арина Гейнбихнер ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "3D-модель",
+      "Типографика",
+      "Фоновые эффекты",
+      "Частицы",
+      "Необычная навигация",
+      "Таймер"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "3D",
+      "Курсор",
+      "Текст",
+      "Звук",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251294/6151612_w540_m2_s1.jpg",
+    "ghPages": "https://arinageynbikhner.github.io/Truth-release/",
+    "github": "https://github.com/ArinaGeynbikhner/Truth-release",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251294_6151612"
+  },
+  {
+    "id": "recqu57k4WXJdUBs6",
+    "name": "2CUST",
+    "author": "Нина Волощенко ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Многостраничный",
+    "tags": [
+      "Блюр",
+      "Коллаж",
+      "3D-модель"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "3D",
+      "Эффекты",
+      "Холст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251118/6157465_w540_m2_s1.jpg",
+    "ghPages": "https://nina2vol.github.io/2cust_recycle/",
+    "github": "https://github.com/Nina2Vol/2cust_recycle",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251118_6157465"
+  },
+  {
+    "id": "recXBXH24yAXgwn9o",
+    "name": "СВОД",
+    "author": "Надежда Феофанова ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Веб-игра",
+      "Ховер",
+      "Пазл",
+      "Необычная навигация"
+    ],
+    "modules": [
+      "Холст",
+      "Звук"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251444/6160130_w540_m2_s1.jpg",
+    "ghPages": "https://nadezhdafeo.github.io/SVOD_interactive_webposter/",
+    "github": "https://github.com/NadezhdaFeo/SVOD_interactive_webposter",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251444_6160130"
+  },
+  {
+    "id": "recREZ5hK8c9hAMG9",
+    "name": "COSMOCREW",
+    "author": "Азалия Калимуллина ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фоновые эффекты",
+      "Типографика",
+      "Ховер"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Вращение",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251314/6152371_w540_m2_s1.jpg",
+    "ghPages": "https://akkalimullina.github.io/modul3/",
+    "github": "https://github.com/akkalimullina/modul3",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251314_6152371"
+  },
+  {
+    "id": "recnYAVOFgUOju265",
+    "name": "cube lab 2",
+    "author": "Евдокия Васильева ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Многостраничный",
+    "tags": [
+      "Фоновые эффекты",
+      "Скролл",
+      "Типографика",
+      "3D-модель"
+    ],
+    "modules": [
+      "Текст",
+      "3D"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251335/6155489_w540_m2_s1.jpg",
+    "ghPages": "https://dunchekk.github.io/mod3/",
+    "github": "https://github.com/Dunchekk/mod3",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251335_6155489"
+  },
+  {
+    "id": "recgP38FqBrEhBmuw",
+    "name": "ACT",
+    "author": "Артëм Ермилин ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Блюр",
+      "Типографика",
+      "Фотографии",
+      "Текстуры"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Текст",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/248893/6165456_w540_m2_s1.jpg",
+    "ghPages": "https://dustywrist.github.io/artem_third_module/",
+    "github": "https://github.com/dustywrist/artem_third_module",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#248893_6165456"
+  },
+  {
+    "id": "rec3nMycNXes4DKgu",
+    "name": "BUZZ",
+    "author": "Ирина Кондратенко ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Веб-игра",
+      "Хаос",
+      "Фотографии",
+      "Иллюстрация"
+    ],
+    "modules": [
+      "Холст",
+      "Перетаскивание",
+      "Ввод"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251022/6142694_w540_m2_s1.jpg",
+    "ghPages": "https://iriiiiinaa.github.io/Web-poster-Buzz/",
+    "github": "https://github.com/Iriiiiinaa/Web-poster-Buzz",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251022_6142694"
+  },
+  {
+    "id": "reccs4V0iv0gF6Cdi",
+    "name": "Froud",
+    "author": "Анна Матвеева ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Веб-игра",
+      "Пиксели",
+      "Текстуры",
+      "Необычная навигация",
+      "3D-модель"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "3D"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/247730/6018454_w540_m2_s1.jpg",
+    "ghPages": "https://daayamyau.github.io/Froud-JS/",
+    "github": "https://github.com/DaaYaMyau/Froud-JS",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#247730_6018454"
+  },
+  {
+    "id": "recd56JbNpJlQHI28",
+    "name": "re.nova",
+    "author": "Алина Мочалова ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Хаос",
+      "Типографика",
+      "Фоновые эффекты",
+      "3D-модель"
+    ],
+    "modules": [
+      "Холст",
+      "Перетаскивание",
+      "Трансформация",
+      "Текст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/245937/6143038_w540_m2_s1.jpg",
+    "ghPages": "https://vaguesorrow.github.io/web-poster-renova/?clckid=32a4d491",
+    "github": "https://github.com/vaguesorrow/web-poster-renova?clckid=f47f582d",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#245937_6143038"
+  },
+  {
+    "id": "rec4VwT24ZT99vs6H",
+    "name": "ХАХАЗИНО",
+    "author": "Мария Карпова ",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Пиксели",
+      "Текстуры",
+      "Фотографии",
+      "Ховер",
+      "Веб-игра"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/250912/6139699_w540_m2_s1.jpg",
+    "ghPages": "https://meenshery.github.io/HAHAZINO.job/?clckid=01768193",
+    "github": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#250912_6139699",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#250912_6139699"
+  },
+  {
+    "id": "recs7WwK1zGPbW50p",
+    "name": "PARALLEX",
+    "author": "Виктория Николаева ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Ховер",
+      "3D-модель"
+    ],
+    "modules": [
+      "Скролл",
+      "3D"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/251578/6165963_w540_m2_s1.jpg",
+    "ghPages": "https://vikanik08.github.io/parallleex/",
+    "github": "https://github.com/vikanik08/parallleex",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#251578_6165963"
+  },
+  {
+    "id": "recOKWMdqbuWwOGgp",
+    "name": "Будущее здесь",
+    "author": "Владислав Чурсин",
+    "year": "2025",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Геометрия",
+      "Таймер",
+      "Типографика"
+    ],
+    "modules": [
+      "Вращение",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/250899/6160361_w540_m2_s1.jpg",
+    "ghPages": "https://vlad-chursin.github.io/intime_m3/",
+    "github": "https://clck.ru/3JvDVz",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#250899_6160361"
+  },
+  {
+    "id": "rec9RI1IDtthpp4BS",
+    "name": "Gate 23.5",
+    "author": "Анастасия Бедина ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Текстуры",
+      "Фоновые эффекты",
+      "Типографика",
+      "Покадровая анимация",
+      "Геометрия"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198588/4565262_w540_m2_s1.jpg",
+    "ghPages": "https://anastasiiiiiiiiiiiaaa.github.io/veb-poster-final/",
+    "github": "https://github.com/Anastasiiiiiiiiiiiaaa/veb-poster-final",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198588_4565262"
+  },
+  {
+    "id": "rec7wHI8NqQsneE3F",
+    "name": "архив сплетен",
+    "author": "Нина Овсянникова ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Геометрия",
+      "Типографика",
+      "Текстуры"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198532/4574861_w540_m2_s1.jpg",
+    "ghPages": "https://vikayanina.github.io/web-poster-molva/",
+    "github": "https://github.com/vikayanina/web-poster-molva",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198532_4574861"
+  },
+  {
+    "id": "recb8u7OkhJXp0aeU",
+    "name": "ЧЕШЕМ ЯЗЫКОМ",
+    "author": "Елена Ветошкина ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Хаос",
+      "Фоновые эффекты",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198674/4576340_w540_m2_s1.jpg",
+    "ghPages": "https://alenavweb.github.io/cheshem/",
+    "github": "https://github.com/AlenaVweb/cheshem",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198674_4576340"
+  },
+  {
+    "id": "reclBiKBo4auA6iBx",
+    "name": "КАРА",
+    "author": "Елизавета Цимайло ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Покадровая анимация",
+      "Хаос",
+      "Типографика",
+      "Пиксели",
+      "Ховер",
+      "Фоновые эффекты"
+    ],
+    "modules": [
+      "Текст",
+      " Движение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/197649/4561511_w540_m2_s1.jpg",
+    "ghPages": "https://harukorakuke.github.io/WebPosterKARA/",
+    "github": "https://github.com/HarukoRakuke/WebPosterKARA",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#197649_4561511"
+  },
+  {
+    "id": "recU6U9wZIZIlWxnt",
+    "name": "Летающая тарелка",
+    "author": "Ирина Ким ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Фоновые эффекты",
+      "Геометрия"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198325/4566042_w540_m2_s1.jpg",
+    "ghPages": "https://kimirina.github.io/webposter/",
+    "github": "https://github.com/kimirina/webposter",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198325_4566042"
+  },
+  {
+    "id": "recPAx4m13qsHznmQ",
+    "name": "Технопряд",
+    "author": "Полина Березина ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Иллюстрация",
+      "Ховер",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198136/4572622_w540_m2_s1.jpg",
+    "ghPages": "https://beerezina.github.io/Technopryad/",
+    "github": "https://github.com/beerezina/Technopryad",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198136_4572622"
+  },
+  {
+    "id": "recEI64pRkk0VzAeT",
+    "name": "JET LAG",
+    "author": "Ирина Баженова ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Текстуры",
+      "Геометрия",
+      "Блюр",
+      "Покадровая анимация",
+      "Типографика"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Эффекты"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198380/4561330_w540_m2_s1.jpg",
+    "ghPages": "https://bazhenovairinaa.github.io/webplakatJETLAG/",
+    "github": "https://github.com/bazhenovairinaa/webplakatJETLAG",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198380_4561330"
+  },
+  {
+    "id": "recjucREx7bfTwxo8",
+    "name": "типография звука",
+    "author": "Аделина Кадырова ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Текст",
+      "Текстуры",
+      "Ховер",
+      "Фотографии",
+      "Покадровая анимация",
+      "Блюр"
+    ],
+    "modules": [
+      " Движение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/195917/4564497_w540_m2_s1.jpg",
+    "ghPages": "https://kaddelina.github.io/web-poster-soundtypography/",
+    "github": "https://github.com/kaddelina/web-poster-soundtypography",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#195917_4564497"
+  },
+  {
+    "id": "recuhcCvJZ3PvEhwP",
+    "name": "King",
+    "author": "Андрей Котов ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Пиксели",
+      "Типографика",
+      "Текстуры"
+    ],
+    "modules": [
+      " Движение",
+      "Трансформация",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199105/4577321_w540_m2_s1.jpg",
+    "ghPages": "https://fovkotov.github.io/king-web-poster/",
+    "github": "https://github.com/fovkotov/king-web-poster",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199105_4577321"
+  },
+  {
+    "id": "recgVIjA5tZ5Xej4l",
+    "name": "агентство 360",
+    "author": "Мария Шевчун ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Ховер",
+      "Фотографии",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198430/4561775_w540_m2_s1.jpg",
+    "ghPages": "https://bossmaria.github.io/-360/",
+    "github": "https://github.com/BossMaria/-360/tree/main",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198430_4561775"
+  },
+  {
+    "id": "recbCeUUVZqzRkgft",
+    "name": "по душе",
+    "author": "Валерия Малышева ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Ховер",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198249/4564401_w540_m2_s1.jpg",
+    "ghPages": "https://mifikaji.github.io/poster/",
+    "github": "https://github.com/mifikaji/poster",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198249_4564401"
+  },
+  {
+    "id": "reclyO9KhXXhnfDTL",
+    "name": "СМОТРИ В ОБА",
+    "author": "Нина Овсянникова ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Блюр",
+      "Типографика",
+      "Покадровая анимация",
+      "Ховер",
+      "Фоновые эффекты"
+    ],
+    "modules": [
+      "Трансформация",
+      "Вращение",
+      " Движение",
+      "Эффекты"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198669/4580532_w540_m2_s1.jpg",
+    "ghPages": "https://nivnao.github.io/smotrivoba/",
+    "github": "https://github.com/nivnao/smotrivoba",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198669_4580532"
+  },
+  {
+    "id": "rec9Gi7UCtao1bD44",
+    "name": "Dubuni",
+    "author": "Дарья Чукалина ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Геометрия",
+      "Покадровая анимация",
+      "Ховер"
+    ],
+    "modules": [
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199090/4576480_w540_m2_s1.jpg",
+    "ghPages": "https://chukalka.github.io/Dubuni-wed-plakat/",
+    "github": "https://github.com/chukalka/Dubuni-wed-plakat",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199090_4576480"
+  },
+  {
+    "id": "rech7zzm4y4IgFh6y",
+    "name": " CTRL Z",
+    "author": "Дарья Бушенева ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Иллюстрация",
+      "Ховер",
+      "Текст",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198183/4582103_h1610_m3_s1.jpg",
+    "ghPages": "https://dariabusheneva.github.io/CTRL_Z/",
+    "github": "https://clck.ru/37HorE",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198183_4582103"
+  },
+  {
+    "id": "reccPgxVx2VQJqOuu",
+    "name": "Хахатека",
+    "author": "Алёна Чибичик ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Типографика",
+      "Текст",
+      "Покадровая анимация",
+      "Ховер",
+      "Фотографии"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/198172/4573168_w540_m2_s1.jpg",
+    "ghPages": "https://achibichik.github.io/webposter/",
+    "github": "https://github.com/achibichik/webposter",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#198172_4573168"
+  },
+  {
+    "id": "rec8JY80TgXl6vlVO",
+    "name": "SC",
+    "author": "Сафия Тимофеева ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Типографика"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/194571/4572045_w540_m2_s1.jpg",
+    "ghPages": "https://timofeevasafia.github.io/Web-poster/",
+    "github": "https://clck.ru/37HSFo",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#194571_4572045"
+  },
+  {
+    "id": "rech0HdJb9VVth1Xy",
+    "name": "Диск",
+    "author": "Рахат Юсупов ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Ховер",
+      "Вращение",
+      "Текст",
+      "Типографика"
+    ],
+    "modules": [
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199145/4584635_w540_m2_s1.jpg",
+    "ghPages": "https://yuexex.github.io/posterrrr/",
+    "github": "https://github.com/yuexex/diskweb/",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199145_4584635"
+  },
+  {
+    "id": "recBYhnxzqujLQ8EE",
+    "name": "SILENTIUM",
+    "author": "Максим Глухов ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Типографика",
+      "Фотографии",
+      "Ховер"
+    ],
+    "modules": [
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199113/4577741_w540_m2_s1.jpg",
+    "ghPages": "https://maxgluhov.github.io/KP1/",
+    "github": "https://github.com/MaxGluhov/KP1",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199113_4577741"
+  },
+  {
+    "id": "recwWERDbk4PTvoly",
+    "name": "Trash gallery",
+    "author": "Стефания Семенова ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Коллаж",
+      "Хаос"
+    ],
+    "modules": [
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199096/4576771_w540_m2_s1.jpg",
+    "ghPages": "https://sozochka.github.io/trasher/",
+    "github": "https://github.com/sozochka/trasher",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199096_4576771"
+  },
+  {
+    "id": "rec7k3KCHbI4yRP5p",
+    "name": "Строительная мастерская Билд",
+    "author": "Марина Устиновская ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Геометрия",
+      "Фоновые эффекты",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199172/4579757_w540_m2_s1.jpg",
+    "ghPages": "https://kezend.github.io/Web-bild/",
+    "github": "https://github.com/kezend/Web-bild.git",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199172_4579757"
+  },
+  {
+    "id": "recctVr6gGOPmFTSy",
+    "name": "RE//LOUD",
+    "author": "Полина Кипкало ",
+    "year": "2023",
+    "type": "Статичный",
+    "layout": "Модульный",
+    "tags": [
+      "Фотографии",
+      "Хаос",
+      "Текстуры",
+      "Геометрия"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/199070/4575957_h1610_m3_s1.jpg",
+    "ghPages": "https://pdvachevskaya.github.io/RELOUD/",
+    "github": "https://github.com/pDvachevskaya/RELOUD",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1078_1_N_N_N#199070_4575957"
+  },
+  {
+    "id": "recsIvSurE4Y8zbbI",
+    "name": "King. Интерактивный показ мод",
+    "author": "Андрей Котов",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "3D-модель",
+      "Типографика",
+      "Иллюстрация",
+      "Фоновые эффекты",
+      "Необычная навигация"
+    ],
+    "modules": [
+      "3D",
+      "Клик"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210382/4933580_w540_m2_s1.jpg",
+    "ghPages": "https://fovkotov.github.io/03_003/",
+    "github": "https://github.com/fovkotov/03_003",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210382_4933580"
+  },
+  {
+    "id": "recCFjUeGsRs6DhDv",
+    "name": "Dubuni интерактивный веб-плакат",
+    "author": "Дарья Чукалина ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Типографика",
+      "Блюр",
+      "Пазл"
+    ],
+    "modules": [
+      " Движение",
+      "Клик",
+      "Перетаскивание"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210349/4912093_w540_m2_s1.jpg",
+    "ghPages": "https://chukalka.github.io/interactive_dubuni/",
+    "github": "https://github.com/chukalka/interactive_dubuni",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210349_4912093"
+  },
+  {
+    "id": "recbMJeR26sUTwpdC",
+    "name": "Колаб",
+    "author": "Анна Шпак ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Геометрия",
+      "Иллюстрация"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210257/4908159_w540_m2_s1.jpg",
+    "ghPages": "https://anyashpak.github.io/intrct-colab-farewell/?clckid=d4d2bda1",
+    "github": "https://clck.ru/39jQYK",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210257_4908159"
+  },
+  {
+    "id": "rec1yffcKuFdsWesp",
+    "name": "Собери свой зонт",
+    "author": "Элина Юлун ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Геометрия",
+      "Иллюстрация",
+      "Веб-игра",
+      "Микровзаимодействия"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Клик"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210434/4917687_w540_m2_s1.jpg",
+    "ghPages": "https://elina18yulun.github.io/SoberiZont/",
+    "github": "https://github.com/elina18yulun/SoberiZont",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#209864_4923051"
+  },
+  {
+    "id": "recYs96oLFU3WWG8K",
+    "name": "очистка от отрицательной информации",
+    "author": "Никита Чугайнов ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Типографика",
+      "Веб-игра",
+      "Текст",
+      "Хаос",
+      "Необычная навигация"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Клик",
+      "Холст",
+      "Ввод"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/209864/4923051_w540_m2_s1.jpg",
+    "ghPages": "https://ghuganiks.github.io/",
+    "github": "https://github.com/Ghuganiks/Ghuganiks.github.io",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#209864_4923051"
+  },
+  {
+    "id": "recyyAb2Fz7JGdFBV",
+    "name": "Джазовый концерт",
+    "author": "Екатерина Волкова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Текстуры",
+      "Иллюстрация",
+      "Микровзаимодействия",
+      "Коллаж",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      "Клик",
+      "Перетаскивание",
+      " Движение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210128/4904369_w540_m2_s1.jpg",
+    "ghPages": "https://larimozzza.github.io/chek1/",
+    "github": "https://github.com/larimozzza/chek1",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210128_4904369"
+  },
+  {
+    "id": "reckEKUr4aYSoKNZg",
+    "name": "Terminal Silentium",
+    "author": "Максим Глухов ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "На весь экран",
+    "tags": [
+      "Текстуры",
+      "Фотографии",
+      "Веб-игра",
+      "Пиксели",
+      "Геометрия"
+    ],
+    "modules": [
+      "Клик",
+      "Вращение",
+      "Трансформация"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210268/4931981_w540_m2_s1.jpg",
+    "ghPages": "https://maxgluhov.github.io/Kupol3/",
+    "github": "https://github.com/MaxGluhov/Kupol3",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210268_4931981"
+  },
+  {
+    "id": "recjs70xFOf3LCvop",
+    "name": "Соберись",
+    "author": "Мария Макарова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Геометрия",
+      "Пазл",
+      "Типографика"
+    ],
+    "modules": [
+      " Движение",
+      "Перетаскивание",
+      "Холст",
+      "Курсор"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210605/4925669_w540_m2_s1.jpg",
+    "ghPages": "https://selestinamakarova.github.io/art/",
+    "github": "https://github.com/SelestinaMakarova/art",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210605_4925669"
+  },
+  {
+    "id": "reclHfuQSfyKXtcy7",
+    "name": "Trash gallery",
+    "author": "Стефания Семенова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Хаос",
+      "Текстуры"
+    ],
+    "modules": [
+      " Движение",
+      "Звук",
+      "Клик",
+      "Перетаскивание"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204897/4897238_w540_m2_s1.jpg",
+    "ghPages": "https://github.com/SelestinaMakarova/art",
+    "github": "https://github.com/sozochka/trashik",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204897_4897238"
+  },
+  {
+    "id": "recuNM8SvKAB8OMig",
+    "name": "CTRL Z",
+    "author": "Дарья Бушенева ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [
+      "Иллюстрация",
+      "Геометрия",
+      "Пазл"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/209766/4926379_w540_m2_s1.jpg",
+    "ghPages": "https://dariabusheneva.github.io/CtrlZWebPoster/",
+    "github": "https://github.com/DariaBusheneva/CtrlZWebPoster",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#209766_4926379"
+  },
+  {
+    "id": "recF1KVE1FqtR2T60",
+    "name": "По душе",
+    "author": "Валерия Малышева ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Иллюстрация",
+      "Пазл",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      "Вращение",
+      "Клик"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204858/4924441_w540_m2_s1.jpg",
+    "ghPages": "https://mifikaji.github.io/jsposter/",
+    "github": "https://github.com/mifikaji/jsposter",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204858_4924441"
+  },
+  {
+    "id": "recqTTxHyckrkX7eH",
+    "name": "билд",
+    "author": "Марина Устиновская ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Геометрия",
+      "Типографика",
+      "Ховер"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Трансформация",
+      " Движение",
+      "Холст"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/207769/4922336_w540_m2_s1.jpg",
+    "ghPages": "https://kezend.github.io/bild_3/",
+    "github": "https://github.com/kezend/bibild",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#207769_4922336"
+  },
+  {
+    "id": "recv2sN3TUiE89y52",
+    "name": "Хахатека: Симулятор завода",
+    "author": "Алёна Чибичик ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Иллюстрация",
+      "Геометрия",
+      "Веб-игра"
+    ],
+    "modules": [
+      "Клик"
+    ],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/205113/4742364_h1610_m3_s1.jpg",
+    "ghPages": "https://achibichik.github.io/humorfactory/",
+    "github": "https://github.com/achibichik/humorfactory",
+    "project": "https://portfolio.hse.ru/imagecache/userprojects/205113/4742364_w540_m2_s1.jpg"
+  },
+  {
+    "id": "recsevYwO09005p0w",
+    "name": "Интерфейс работника «КАРЫ»",
+    "author": "Елизавета Цимайло ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": "Модульный",
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204476/4898618_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204476_4898618"
+  },
+  {
+    "id": "rec0Ug02rd1i41taz",
+    "name": "Перемотка",
+    "author": "Вероника Косарева ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/208542/4846593_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#208542_4846593"
+  },
+  {
+    "id": "recVUJbmrPrRwrbAC",
+    "name": "О шрифтах",
+    "author": "Дмитрий Федоров ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/206022/4772685_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#206022_4772685"
+  },
+  {
+    "id": "recxg0PoS8G0olAay",
+    "name": "Сигнал",
+    "author": "Мария Толстова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210537/4922578_h1610_m3_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210537_4922578"
+  },
+  {
+    "id": "reccKJCNYLJYcc2TJ",
+    "name": "RE/LOUD",
+    "author": "Полина Кипкало ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/210547/4926064_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210547_4926064"
+  },
+  {
+    "id": "rec7kIujb3ZUPIuiI",
+    "name": "межгалактические телепортации",
+    "author": "Анастасия Бедина ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/209592/4921608_h1610_m3_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#209592_4921608"
+  },
+  {
+    "id": "recfYbnL1xvQGQu4W",
+    "name": "FRAME 88",
+    "author": "Виола Иосифова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204340/4915226_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204340_4915226"
+  },
+  {
+    "id": "recXame8CWrf5BIO6",
+    "name": "Типография звука",
+    "author": "Анна Кудряшова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204383/4894598_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204383_4894598"
+  },
+  {
+    "id": "recA9ezRk9pdmKG2j",
+    "name": "Чайная звука",
+    "author": "Анна Кудряшова ",
+    "year": "2024",
+    "type": "Динамичный",
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "https://portfolio.hse.ru/imagecache/userprojects/204363/4918323_w540_m2_s1.jpg",
+    "ghPages": "",
+    "github": "",
+    "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204363_4918323"
+  },
+  {
+    "id": "recl1mgW0Oxm3bKUi",
+    "name": "none",
+    "author": "none",
+    "year": "",
+    "type": null,
+    "layout": null,
+    "tags": [],
+    "modules": [],
+    "cover": "",
+    "ghPages": "",
+    "github": "",
+    "project": ""
+  }
+]
