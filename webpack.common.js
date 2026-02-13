@@ -62,7 +62,7 @@ module.exports = {
     codestyle: './src/javascript/codestyle.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
-    'gsap-animation': './src/javascript/gsap/animation.js',
+    'gsap-animation': './src/javascript/gsap/animation.js'
   },
 
   output: {

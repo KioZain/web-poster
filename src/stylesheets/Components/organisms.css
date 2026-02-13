@@ -169,7 +169,7 @@
 .O_PartList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-2);
 }
 
 /* .O_FilterModal__footer .btn-reset,
@@ -297,6 +297,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 5;
+  }
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
+    gap: var(--space-24);
+  }
 }
 .O_ArticleContent {
   display: flex;
@@ -312,6 +320,9 @@
     padding-left: 0;
     gap: 0;
   }
+  @media screen and (max-width: 786px) {
+    display: none;
+  }
 }
 .O_CodeBar {
   width: 100%;
@@ -325,4 +336,15 @@
   flex-direction: row;
   gap: var(--space-12);
   padding: 0 var(--space-12) var(--space-12) var(--space-12);
+}
+.O_BreadCrumbs {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--gray-lightest);
+  margin-top: var(--header-offset);
+  position: sticky;
+  top: var(--header-offset);
+  height: 32px;
+  z-index: 199;
 }

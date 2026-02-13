@@ -123,6 +123,32 @@
   }
 }
 
+.A_NavigationMenuButton {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-right: 1px solid var(--gray-lightest);
+  background: transparent;
+  background-image: url('../../images/icons/Q_LayoutClosed-20.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  display: none;
+
+  &.open {
+    background-image: url('../../images/icons/Q_LayoutOpen-20.svg');
+  }
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.A_CollapseName {
+  font-weight: 500;
+}
+
 .A_FilterDropdown {
   gap: var(--space-2);
   padding: 0px 8px 0px 12px;

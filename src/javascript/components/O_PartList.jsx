@@ -4,7 +4,7 @@ import C_CollapsibleLists from './C_CollapsibleLists.jsx'
 function O_PartList({ part }) {
   return (
     <div className="O_PartList">
-      <p className="subtitle">{part.title}</p>
+      <p className="body bold">{part.title}</p>
 
       <C_CollapsibleLists chapters={part.chapters} />
     </div>

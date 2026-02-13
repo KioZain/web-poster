@@ -34,7 +34,11 @@ function M_ListNavigation({ chapter, defaultOpen = false }) {
       >
         <img src={isOpen ? chevronUp : chevronDown} alt="" aria-hidden="true" />
 
-        <a className="body bold" href={chapter.href} onClick={handleLinkClick}>
+        <a
+          className="A_CollapseName"
+          href={chapter.href}
+          onClick={handleLinkClick}
+        >
           {chapter.title}
         </a>
       </div>

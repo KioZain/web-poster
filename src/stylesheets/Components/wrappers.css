@@ -104,7 +104,6 @@
   width: 100%;
   margin: 0 auto;
   max-width: var(--width-container);
-  margin-top: var(--header-offset);
   padding-top: var(--space-40);
 }
 .W_ArticlePage {
@@ -112,7 +111,36 @@
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
   width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    .S_LeftNavBar {
+      display: none;
+    }
+    .O_ArticleContent {
+      order: 1;
+    }
+  }
 }
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.W_ArticleContentContainer {
+  grid-column: span 7;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+
+  @media screen and (max-width: 1024px) {
+    grid-column: 4/10;
+    order: 2;
+  }
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
+  }
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 /* NavigationMenu */
 .W_CollapsingLists {
   display: flex;
@@ -125,6 +153,7 @@
   gap: var(--space-8);
   width: 100%;
   margin: 0 auto;
+  white-space: nowrap;
 }
 .W_PostersWrap {
   display: flex;
@@ -150,17 +179,6 @@
   flex-direction: column;
   gap: var(--space-12);
 }
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-.W_ArticleContentContainer {
-  grid-column: span 7;
-  width: 100%;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-48);
-}
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .W_Footer {
   display: grid;
@@ -189,4 +207,15 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
+}
+.W_NavCrumbs {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  align-items: center;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+  }
 }

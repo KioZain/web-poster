@@ -93,4 +93,11 @@ input[type='checkbox'] {
     width: 100%;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 4;
+  }
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
+  }
 }
