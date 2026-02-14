@@ -104,3 +104,7 @@
     }
   }
 }
+.С_MobileHeaderLinks {
+  display: flex;
+  flex-direction: column;
+}

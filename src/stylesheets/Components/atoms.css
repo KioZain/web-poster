@@ -22,6 +22,19 @@
   }
 }
 
+/* Inputs */
+input.A_SearchInput {
+  all: unset;
+  font-family: 'Aeonik Pro';
+  font-size: 1.5rem;
+  color: var(--gray-base);
+  font-weight: 500;
+
+  &::placeholder {
+    color: var(--gray-light);
+  }
+}
+
 /* Buttons */
 
 .A_TelegramButton {
@@ -90,6 +103,19 @@
   text-decoration: underline;
 }
 
+.A_MobileHeaderLink {
+  height: 48px;
+  width: 100%;
+  border-bottom: 1px solid var(--gray-lightest);
+  font-size: 1.5rem;
+  color: var(--gray-base);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 .A_CopyButton.copied .A_CopyButton__text {
   text-decoration: none;
 }
@@ -147,6 +173,37 @@
 
 .A_CollapseName {
   font-weight: 500;
+}
+
+.A_IconButton {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+
+  &.hamburger {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: currentColor;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .A_FilterDropdown {

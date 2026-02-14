@@ -305,3 +305,22 @@
   gap: var(--space-12);
   margin-bottom: var(--space-16);
 }
+.M_IconButtons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+}
+.M_SearchBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--grid-gap);
+  justify-content: space-between;
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--gray-lightest);
+  align-items: flex-end;
+
+  .A_Button {
+    width: 200px;
+  }
+}

@@ -164,7 +164,8 @@ module.exports = {
   ],
 
   optimization: {
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [new CssMinimizerPlugin()],
+    runtimeChunk: 'single'
   },
 
   resolve: {

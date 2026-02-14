@@ -1,4 +1,4 @@
-.O_HeaderItems {
+/* .O_HeaderItems {
   width: 100%;
   margin: 0 auto;
   flex-direction: row;
@@ -7,7 +7,7 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .O_AboutCard {
   width: 100%;

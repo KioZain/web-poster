@@ -1,3 +1,16 @@
+.W_HeaderTopNavigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.W_HeaderAllContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
 .W_HeaderLinks {
   display: flex;
   position: absolute;
@@ -21,6 +34,10 @@
     &:hover {
       color: var(--gray-medium);
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 .W_HeadingContainer {
@@ -218,4 +235,9 @@
   &::-webkit-scrollbar {
     background: transparent;
   }
+}
+.W_SearchResults {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
 }
