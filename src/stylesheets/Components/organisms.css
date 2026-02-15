@@ -38,7 +38,7 @@
 .O_AboutInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--space-20);
+  gap: var(--space-16);
   grid-column: 9/13;
 }
 /* PosterPage */
@@ -96,6 +96,8 @@
     gap: var(--space-8);
     padding: var(--space-16) 0;
     height: fit-content;
+    border-top: 1px solid var(--gray-lightest);
+    margin-top: -1px;
 
     &:after {
       content: '';
@@ -167,6 +169,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
+  grid-column: span 4;
 
   .M_ArticleCardBio {
     display: flex;
@@ -194,6 +197,20 @@
       text-decoration: underline;
     }
   }
+  /* responsives */
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 3;
+
+    .M_ArticleCardBio {
+      p.body {
+        font-size: clamp(0.75rem, 0.932rem + 0.301vw, 1.125rem);
+      }
+    }
+  }
+  @media screen and (max-width: 468px) {
+    grid-column: 1/-1;
+  }
 }
 /* List of cpaters */
 .O_ChapterHead {
@@ -206,6 +223,9 @@
 
   h4 {
     padding-right: var(--space-40);
+    @media screen and (max-width: 1024px) {
+      padding: 0;
+    }
   }
 }
 
@@ -393,4 +413,39 @@
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+.O_PartCover {
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-500);
+  background: radial-gradient(
+    400.62% 147.98% at 0% 100%,
+    #fe96e4 0%,
+    #fe3904 32.01%,
+    #fe3904 65.23%,
+    #fe96e4 100%
+  );
+  margin-top: 2rem;
+  border-radius: 6px;
+
+  .M_HeadingContainer {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  p,
+  h2 {
+    color: var(--white-500);
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 2rem;
+    margin-top: 0;
+    border-radius: 0;
+  }
 }

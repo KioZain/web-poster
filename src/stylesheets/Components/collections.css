@@ -31,21 +31,26 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   column-gap: var(--grid-gap);
-  row-gap: var(--space-40);
+  row-gap: var(--space-24);
+  container: articles / inline-size;
 
-  .O_CardArticle {
-    grid-column: span 4;
-
-    @media screen and (max-width: 1024px) {
-      grid-column: span 3;
-    }
-  }
   &.main {
     .O_CardArticle {
       grid-column: span 3;
     }
   }
+
+  @media screen and (max-width: 468px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
+@container articles (width < 638px) and (width > 436px) {
+  .O_CardArticle {
+    grid-column: span 4;
+  }
+}
+
 .C_CollapsibleLists {
   display: flex;
   flex-direction: column;

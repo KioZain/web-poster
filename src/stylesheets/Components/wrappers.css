@@ -93,16 +93,14 @@
     grid-column: span 8;
     /* background-color: red; */
   }
-  .A_CaptionText {
-    grid-column: span 3;
-    margin-top: auto;
-  }
 
   .O_AboutPartAction {
     margin-top: 3rem;
   }
 
   @media screen and (max-width: 1024px) {
+    row-gap: var(--space-20);
+
     .O_AboutPartAction,
     .O_AboutInfo {
       grid-column: 1/-1;
@@ -130,7 +128,7 @@
   gap: var(--space-64);
   margin-top: var(--header-offset);
 }
-.W_ChapterPageWrapper {
+.W_HanbookPageWrapper {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);

@@ -14,11 +14,27 @@
   grid-column: span 9;
   min-width: 0;
   min-height: 150vh;
+  container: chapter / inline-size;
 
   &.navbar-margin {
     grid-column: span 6;
   }
 }
+
+@container chapter (width < 638px) {
+  .C_Articles {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.L_Part {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 0.833rem + 2.963vw, 3.5rem);
+  width: 100%;
+  grid-column: span 9;
+}
+
 .L_Poster {
   margin-top: var(--header-offset);
 }

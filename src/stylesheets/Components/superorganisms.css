@@ -155,3 +155,14 @@ header.S_Header {
   border: 1px solid var(--gray-lightest);
   background: white;
 }
+.S_Chapter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--gray-lightest);
+
+  &:last-child {
+    border: none;
+  }
+}

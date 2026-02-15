@@ -25,6 +25,16 @@ const pages = [
     template: 'handbook/part_1/chapter_1/introduction.html',
     chunks: ['menubar', 'index', 'handbook-nav']
   },
+  // parts
+  {
+    template: 'handbook/part_1/part_1.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  {
+    template: 'handbook/part_2/part_2.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  // chapters
   {
     template: 'handbook/part_1/chapter_1/chapter_1.html',
     chunks: ['menubar', 'index', 'handbook-nav']

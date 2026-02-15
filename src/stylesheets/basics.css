@@ -59,6 +59,10 @@ h4 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 28px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: clamp(1.25rem, 0.729rem + 1.205vw, 1.5rem);
+  }
 }
 .subtitle {
   font-size: 1.25rem;

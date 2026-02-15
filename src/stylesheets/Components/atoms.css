@@ -154,7 +154,6 @@ input.A_SearchInput {
   min-height: 32px;
   border: none;
   border-right: 1px solid var(--gray-lightest);
-  border-left: 1px solid var(--gray-lightest);
   background: transparent;
   background-image: url('../../images/icons/Q_LayoutOpen-20.svg');
   background-position: center;
@@ -294,6 +293,20 @@ button.A_Tab {
   align-items: center;
   gap: var(--space-4);
   font-weight: 500;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: row;
+
+    .Q_Circle {
+      width: 2rem;
+      height: 2rem;
+
+      p.subtitle {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
 }
 /* TextDescription */
 .A_CaptionText {
@@ -303,10 +316,14 @@ button.A_Tab {
   position: relative;
   padding: 0 var(--space-12);
   border-left: 1.5px dashed var(--gray-base);
+  grid-column: span 3;
+  margin-top: auto;
+
   p {
     color: var(--gray-soft);
   }
 }
+
 .A_Poster {
   /* width: calc(33.95% - var(--grid-gap)); */
   grid-template-columns: 1fr;
