@@ -89,8 +89,24 @@
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
 
+  .M_HeadingContainer {
+    grid-column: span 8;
+    /* background-color: red; */
+  }
+  .A_CaptionText {
+    grid-column: span 3;
+    margin-top: auto;
+  }
+
   .O_AboutPartAction {
     margin-top: 3rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .O_AboutPartAction,
+    .O_AboutInfo {
+      grid-column: 1/-1;
+    }
   }
 }
 
@@ -118,10 +134,13 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
-  width: 100%;
-  margin: 0 auto;
-  max-width: var(--width-container);
   padding-top: var(--space-40);
+
+  @media screen and (max-width: 1024px) {
+    .L_Chapter {
+      grid-column: 1/-1;
+    }
+  }
 }
 .W_ArticlePage {
   display: grid;
@@ -146,7 +165,7 @@
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-48);
+  gap: clamp(1.5rem, 1rem + 2.222vw, 3rem);
 
   @media screen and (max-width: 1024px) {
     grid-column: 4/10;
@@ -228,9 +247,8 @@
 .W_NavCrumbs {
   display: flex;
   flex-direction: row;
-  gap: var(--space-4);
+  gap: var(--space-8);
   align-items: center;
-  overflow-x: scroll;
 
   &::-webkit-scrollbar {
     background: transparent;

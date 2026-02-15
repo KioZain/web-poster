@@ -85,16 +85,6 @@ header.S_Header {
   gap: var(--space-24);
   padding: var(--space-40) 0;
   /* background: navajowhite; */
-
-  .W_SectionAboutInfo {
-    .M_HeadingContainer {
-      grid-column: span 7;
-    }
-    .A_CaptionText {
-      grid-column: 10/13;
-      margin-top: auto;
-    }
-  }
 }
 .S_LeftNavBar {
   display: flex;
@@ -113,8 +103,13 @@ header.S_Header {
     background-color: red;
   }
 
+  &.is-open {
+    display: flex;
+  }
+
+  /* HIDING IT EVERYWHERE */
   @media screen and (max-width: 1024px) {
-    grid-column: span 2;
+    display: none;
   }
 }
 

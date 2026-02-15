@@ -11,8 +11,13 @@
   gap: var(--space-48);
 }
 .L_Chapter {
-  grid-column: 4/13;
+  grid-column: span 9;
+  min-width: 0;
   min-height: 150vh;
+
+  &.navbar-margin {
+    grid-column: span 6;
+  }
 }
 .L_Poster {
   margin-top: var(--header-offset);

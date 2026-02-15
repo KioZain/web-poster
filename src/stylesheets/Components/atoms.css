@@ -150,24 +150,29 @@ input.A_SearchInput {
 }
 
 .A_NavigationMenuButton {
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   border: none;
   border-right: 1px solid var(--gray-lightest);
+  border-left: 1px solid var(--gray-lightest);
   background: transparent;
-  background-image: url('../../images/icons/Q_LayoutClosed-20.svg');
+  background-image: url('../../images/icons/Q_LayoutOpen-20.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 24px;
   display: none;
 
-  &.open {
-    background-image: url('../../images/icons/Q_LayoutOpen-20.svg');
+  &.opened {
+    background-image: url('../../images/icons/Q_LayoutClosed-20.svg');
   }
 
   &:hover {
     opacity: 0.7;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: block;
   }
 }
 
@@ -384,6 +389,21 @@ button.A_Tab {
     text-transform: capitalize;
     border: 1px solid var(--gray-lightest);
     color: var(--gray-medium);
+  }
+  /* Only for chapters */
+  @media (max-width: 768px) {
+    &.article-type {
+      border: none;
+      font-weight: 500;
+      padding: 0;
+      font-size: 1.125rem;
+      color: var(--gray-light);
+    }
+
+    &.article-type::after {
+      content: ' · ' attr(data-count) ' статьи';
+      display: inline;
+    }
   }
 }
 .A_ListItem {

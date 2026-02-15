@@ -7,6 +7,7 @@
   </head>
   <body>
     <menubar></menubar>
+    <!-- Breadcrumbs -->
     <div class="O_BreadCrumbs">
       <div class="W_NavCrumbs margin-container">
         <button class="A_NavigationMenuButton"></button>
@@ -23,8 +24,8 @@
         </nav>
       </div>
     </div>
-
-    <div class="W_ChapterPageWrapper">
+    <!-- Breadcrumbs -->
+    <div class="W_ChapterPageWrapper margin-container">
       <div class="S_LeftNavBar" id="handbook-nav-root"></div>
       <div class="L_Chapter">
         <div class="O_ChapterHead">
@@ -103,5 +104,17 @@
     </div>
 
     <footerbar></footerbar>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const button = document.querySelector('.A_NavigationMenuButton')
+        const sidebar = document.querySelector('.S_LeftNavBar')
+        const container = document.querySelector('.L_Chapter')
+
+        button.addEventListener('click', () => {
+          sidebar.classList.toggle('is-open')
+          container.classList.toggle('navbar-margin')
+        })
+      })
+    </script>
   </body>
 </html>

@@ -149,20 +149,33 @@
 
   p.body-other {
     margin-top: auto;
+    width: 100%;
     color: var(--gray-soft);
-
+    /* Number */
     &:nth-child(1) {
       grid-column: span 1;
+
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
+    /* Chapter */
     &:nth-child(2) {
       grid-column: span 5;
     }
+
+    /* Material */
     &:nth-child(3) {
       grid-column: span 2;
     }
+    /* Category */
     &:nth-child(4) {
       grid-column: span 1;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 .M_ListNavigation {
@@ -274,7 +287,7 @@
 }
 .M_AboutArticle {
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .M_Marquee {
@@ -308,7 +321,7 @@
 .M_IconButtons {
   display: flex;
   flex-direction: row;
-  gap: var(--space-8);
+  gap: var(--space-12);
 }
 .M_SearchBar {
   width: 100%;

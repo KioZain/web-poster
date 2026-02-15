@@ -75,36 +75,78 @@
 
 .O_Chapter {
   width: 100%;
-  height: 100%;
+  height: 4rem;
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
-  height: 4rem;
   border-bottom: 1px solid var(--gray-lightest);
   color: var(--gray-base);
   text-decoration: none;
-
+  position: relative;
+  /* number */
   p:first-child {
     grid-column: span 1;
     margin: auto 0;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
+  @media screen and (max-width: 768px) {
+    gap: var(--space-8);
+    padding: var(--space-16) 0;
+    height: fit-content;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      right: 0;
+      bottom: 1rem;
+      background-image: url('../../images/icons/Q_ArrowForward-24.svg');
+      background-position: center;
+    }
+  }
+  /* Name */
   p:nth-child(2) {
     grid-column: span 5;
     margin: auto 0;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1/-1;
+    }
   }
+  /* Amount of articles */
   p:nth-child(3) {
     grid-column: span 2;
     margin: auto 0;
-  }
 
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  /* Tags */
   .A_Tag {
     grid-column: span 3;
     margin: auto 0;
+    @media screen and (max-width: 1024px) {
+      grid-column: span 1;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-column: span 2;
+    }
   }
+  /* Link */
   p:last-child {
     text-align: right;
     margin: auto 0;
     text-decoration: underline;
+
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -153,19 +195,20 @@
     }
   }
 }
-
+/* List of cpaters */
 .O_ChapterHead {
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
   padding-bottom: var(--space-24);
   border-bottom: 1px solid var(--gray-lightest);
-  margin-bottom: var(--space-40);
+  margin-bottom: var(--space-24);
 
   h4 {
     padding-right: var(--space-40);
   }
 }
+
 .O_PartList {
   display: flex;
   flex-direction: column;
@@ -346,5 +389,8 @@
   position: sticky;
   top: var(--header-offset);
   height: 32px;
-  z-index: 199;
+  z-index: 2;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
