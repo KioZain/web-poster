@@ -449,3 +449,15 @@
     border-radius: 0;
   }
 }
+
+.O_DividerBanner {
+  height: 460px;
+  border-radius: 2px;
+  background: linear-gradient(
+    82deg,
+    #fe3904 8.11%,
+    #fe3904 41.58%,
+    #fe96e4 88.91%,
+    rgba(254, 150, 228, 0.5) 100%
+  );
+}

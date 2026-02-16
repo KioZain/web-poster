@@ -76,6 +76,10 @@ header.S_Header {
     grid-column: span 3;
     width: 100%;
   }
+
+  @media screen and (max-width: 1024px) {
+    row-gap: var(--space-40);
+  }
 }
 
 /* Handbook */

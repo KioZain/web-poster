@@ -322,6 +322,21 @@ button.A_Tab {
   p {
     color: var(--gray-soft);
   }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 0;
+    font-size: 1.5rem;
+    border: none;
+
+    p.body-other {
+      font-weight: 500;
+      line-height: 1.5rem;
+    }
+
+    .Q_HandleSquare {
+      display: none;
+    }
+  }
 }
 
 .A_Poster {

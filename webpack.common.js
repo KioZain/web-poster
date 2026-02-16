@@ -25,7 +25,7 @@ const pages = [
     template: 'handbook/part_1/chapter_1/introduction.html',
     chunks: ['menubar', 'index', 'handbook-nav']
   },
-  // parts
+  // Parts of the handbook
   {
     template: 'handbook/part_1/part_1.html',
     chunks: ['menubar', 'index', 'handbook-nav']
@@ -34,7 +34,7 @@ const pages = [
     template: 'handbook/part_2/part_2.html',
     chunks: ['menubar', 'index', 'handbook-nav']
   },
-  // chapters
+  // Chapter 1
   {
     template: 'handbook/part_1/chapter_1/chapter_1.html',
     chunks: ['menubar', 'index', 'handbook-nav']
@@ -43,6 +43,47 @@ const pages = [
     template: 'handbook/part_1/chapter_1/about_webposter.html',
     chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
   },
+  {
+    template: 'handbook/part_1/chapter_1/poster-vs-website.html',
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+  },
+  {
+    template: 'handbook/part_1/chapter_1/print-vs-web.html',
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+  },
+  {
+    template: 'handbook/part_1/chapter_1/static-dynamic.html',
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+  },
+
+  //  Chapter 2
+  {
+    template: 'handbook/part_1/chapter_2/chapter_2.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  {
+    template: 'handbook/part_1/chapter_2/further-development.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  {
+    template: 'handbook/part_1/chapter_2/why-create.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  // Chapter 3
+  {
+    template: 'handbook/part_1/chapter_3/chapter_3.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  {
+    template: 'handbook/part_1/chapter_3/catalog-guide.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  {
+    template: 'handbook/part_1/chapter_3/selected-works.html',
+    chunks: ['menubar', 'index', 'handbook-nav']
+  },
+  // Chapter 2_1
+
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
   // Static modules
