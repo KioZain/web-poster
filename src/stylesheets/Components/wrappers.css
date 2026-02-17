@@ -257,3 +257,46 @@
   flex-direction: column;
   gap: var(--space-20);
 }
+.W_BannerText {
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-20);
+
+  h2,
+  h4 {
+    color: var(--white-500);
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .A_Button {
+    background: var(--white-500);
+    color: var(--gray-medium);
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  .M_ChapterHeading {
+    h4 {
+      font-size: clamp(1.125rem, 0.696rem + 0.893vw, 1.5rem);
+    }
+  }
+}
+.W_BannerContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-32);
+  justify-content: space-between;
+  padding: clamp(1rem, 3vw, 4rem);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}

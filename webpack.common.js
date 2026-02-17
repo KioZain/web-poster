@@ -106,7 +106,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     page: './src/page.jsx',
-    menubar: './src/javascript/menubar.js',
+    menubar: './src/javascript/menubar/menubar.js',
     posters: './src/javascript/posters.js',
     marquee: './src/javascript/gsap/marquee.js',
     scrollposters: './src/javascript/gsap/scrollposters.js',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import searchIcon from '../images/icons/32/Q_Search-32.svg'
-import hamburgerIcon from '../images/icons/32/Q_Hamburger-32.svg'
-import closeIcon from '../images/icons/32/Q_Close-32.svg'
+import searchIcon from '../../images/icons/32/Q_Search-32.svg'
+import hamburgerIcon from '../../images/icons/32/Q_Hamburger-32.svg'
+import closeIcon from '../../images/icons/32/Q_Close-32.svg'
 
 export default function Menubar() {
   // null — всё закрыто, 'menu' — мобильные ссылки, 'search' — поиск

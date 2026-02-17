@@ -480,3 +480,25 @@ button.A_Tab {
     line-height: 1.5rem;
   }
 }
+.A_Illustration {
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  position: relative;
+  width: fit-content;
+  padding: clamp(1rem, -0.143rem + 2.381vw, 2rem);
+  z-index: 2;
+
+  .Q_HandleSquare {
+    background-color: var(--white-500);
+  }
+
+  img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}

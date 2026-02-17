@@ -44,8 +44,8 @@ h1 {
   }
 }
 h2 {
-  font-size: 2.5rem;
-  line-height: 2.7rem;
+  font-size: clamp(2rem, 1.429rem + 1.19vw, 2.5rem);
+  line-height: 115%;
   font-weight: 500;
 }
 
