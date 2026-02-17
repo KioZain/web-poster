@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import postersData from '../../data/posters.json'
 import ghIcon from '../../images/icons/Q_GithubIcon.svg'
+import { getUrl } from '../config/paths.js'
 
 function getPosterIdFromUrl() {
   const params = new URLSearchParams(window.location.search)
   return params.get('id')
+  console.log(params.get('id'))
 }
 
 function getBasePath() {
@@ -52,7 +54,7 @@ function PosterPage() {
     return (
       <div className="poster-page__error" style={{ padding: '2rem' }}>
         <p>{error}</p>
-        <a href={`${basePath}posters.html`}>← Вернуться к каталогу</a>
+        <a href={getUrl('/posters.html')}>← Вернуться к каталогу</a>
       </div>
     )
   }
@@ -66,11 +68,11 @@ function PosterPage() {
     <div className="poster-page">
       <nav className="M_Breadcrumbs">
         <div className="W_BreadCrumbsContainer margin-container">
-          <a className="caption-caps" href={`${basePath}index.html`}>
+          <a className="caption-caps" href={getUrl('/index.html')}>
             Главная
           </a>
           •
-          <a className="caption-caps" href={`${basePath}posters.html`}>
+          <a className="caption-caps" href={getUrl('/posters.html')}>
             Веб-плакаты
           </a>
           •

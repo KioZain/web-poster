@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getUrl } from '../config/paths.js'
 
 import chevronUp from '../../images/icons/Q_chevron-up.svg'
 import chevronDown from '../../images/icons/Q_chevron-down.svg'
@@ -36,7 +37,7 @@ function M_ListNavigation({ chapter, defaultOpen = false }) {
 
         <a
           className="A_CollapseName"
-          href={chapter.href}
+          href={getUrl(chapter.href)}
           onClick={handleLinkClick}
         >
           {chapter.title}
@@ -46,7 +47,11 @@ function M_ListNavigation({ chapter, defaultOpen = false }) {
       {isOpen && (
         <div className="C_AticleLinks">
           {chapter.articles.map((article) => (
-            <a key={article.id} href={article.href} className="A_ListItem">
+            <a
+              key={article.id}
+              href={getUrl(article.href)}
+              className="A_ListItem"
+            >
               {article.title}
             </a>
           ))}

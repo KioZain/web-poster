@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import searchIcon from '../../images/icons/32/Q_Search-32.svg'
 import hamburgerIcon from '../../images/icons/32/Q_Hamburger-32.svg'
 import closeIcon from '../../images/icons/32/Q_Close-32.svg'
+import { getUrl } from '../config/paths.js'
 
 export default function Menubar() {
-  // null — всё закрыто, 'menu' — мобильные ссылки, 'search' — поиск
   const [openPanel, setOpenPanel] = useState(null)
 
   const handleSearchClick = () => {
@@ -15,37 +15,20 @@ export default function Menubar() {
     setOpenPanel((prev) => (prev === 'menu' ? null : 'menu'))
   }
 
-  const getBasePath = () => {
-    const path = window.location.pathname
-    const segments = path.split('/').filter((segment) => segment.length > 0)
-
-    if (
-      segments.length > 0 &&
-      segments[segments.length - 1].includes('.html')
-    ) {
-      segments.pop()
-    }
-
-    if (segments.length === 0) {
-      return './'
-    }
-    return '../'.repeat(segments.length)
-  }
-
-  const basePath = getBasePath()
   const navLinks = [
-    { href: `${basePath}handbook.html`, label: 'Учебник' },
-    { href: `${basePath}modules.html`, label: 'Модули' },
-    { href: `${basePath}posters.html`, label: 'Веб-плакаты' }
+    { href: getUrl('/handbook.html'), label: 'Учебник' },
+    { href: getUrl('/modules.html'), label: 'Модули' },
+    { href: getUrl('/posters.html'), label: 'Веб-плакаты' }
   ]
 
-  const isOpen = openPanel !== null
+  console.log({ href: getUrl('/handbook.html'), label: 'Учебник' })
 
+  const isOpen = openPanel !== null
   return (
     <header className={`S_Header ${isOpen ? 'is-open' : ''}`}>
       <div className="W_HeaderAllContent margin-container">
         <div className="W_HeaderTopNavigation">
-          <a className="A_Logo" href="/index.html"></a>
+          <a className="A_Logo" href={getUrl('/index.html')}></a>
           <div className="W_HeaderLinks">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href}>
@@ -62,7 +45,7 @@ export default function Menubar() {
             >
               <img
                 src={openPanel === 'search' ? closeIcon : searchIcon}
-                alt={openPanel === 'search' ? 'Закрыть поиск' : 'Поиск'}
+                alt=""
               />
             </button>
             <button
@@ -73,7 +56,7 @@ export default function Menubar() {
             >
               <img
                 src={openPanel === 'menu' ? closeIcon : hamburgerIcon}
-                alt={openPanel === 'menu' ? 'Закрыть меню' : 'Меню'}
+                alt=""
               />
             </button>
           </div>

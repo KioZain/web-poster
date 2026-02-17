@@ -3,6 +3,7 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const webpack = require('webpack')
 
 const path = require('path')
 
@@ -175,6 +176,9 @@ module.exports = {
   plugins: [
     new Dotenv(),
     new MiniCssExtractPlugin(),
+    new webpack.DefinePlugin({
+      __BASE_PATH__: JSON.stringify('/')
+    }),
 
     // spread operator to add all HTML
     ...htmlPlugins,
