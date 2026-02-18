@@ -170,3 +170,6 @@ header.S_Header {
     border: none;
   }
 }
+.S_ReadMore {
+  margin-top: 10rem;
+}

@@ -41,7 +41,7 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_1/about_webposter.html',
-    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle', 'anchorlinks']
   },
   {
     template: 'handbook/part_1/chapter_1/poster-vs-website.html',
@@ -111,6 +111,7 @@ module.exports = {
     marquee: './src/javascript/gsap/marquee.js',
     scrollposters: './src/javascript/gsap/scrollposters.js',
     codestyle: './src/javascript/codestyle.js',
+    anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'gsap-animation': './src/javascript/gsap/animation.js'

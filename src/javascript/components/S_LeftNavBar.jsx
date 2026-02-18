@@ -15,4 +15,13 @@ function S_LeftNavbar() {
   )
 }
 
+const button = document.querySelector('.A_NavigationMenuButton')
+const sidebar = document.querySelector('.S_LeftNavBar')
+const container = document.querySelector('.L_Chapter')
+
+button.addEventListener('click', () => {
+  sidebar.classList.toggle('is-open')
+  container.classList.toggle('navbar-margin')
+})
+
 export default S_LeftNavbar

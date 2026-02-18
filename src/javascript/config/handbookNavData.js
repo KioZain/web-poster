@@ -186,7 +186,7 @@ const handbookNavData = {
                 },
                 {
                     id: 'chapter-2-5',
-                    title: 'Интерактивность с JavaScript',
+                    title: 'Интерактив с JavaScript',
                     href: '/handbook/part_2/chapter_5/chapter_2_5.html',
                     articles: [
                         {

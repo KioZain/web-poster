@@ -4,7 +4,6 @@
 
 html,
 body {
-  height: 100%;
   font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
   margin: 0;
   background-size: 58px 58px;
@@ -13,14 +12,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.demo {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 0 auto;
-  width: 100%;
-  padding: var(--space-32) var(--container-padding);
-}
 h1,
 h2,
 h3,
@@ -43,6 +34,7 @@ h1 {
     font-weight: 500;
   }
 }
+
 h2 {
   font-size: clamp(2rem, 1.429rem + 1.19vw, 2.5rem);
   line-height: 115%;
@@ -58,10 +50,10 @@ h3 {
 h4 {
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 125%;
 
   @media screen and (max-width: 1024px) {
-    font-size: clamp(1.25rem, 0.729rem + 1.205vw, 1.5rem);
+    font-size: clamp(1.125rem, 0.729rem + 1.205vw, 1.5rem);
   }
 }
 .subtitle {
@@ -80,7 +72,10 @@ p.body-other {
   letter-spacing: 0.5px;
   line-height: 18px;
 }
-
+b {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
 /* Grid */
 .all-grid {
   display: grid;
@@ -116,7 +111,7 @@ p.body-other {
 /* Article Typography */
 p.article {
   font-size: 1.125rem;
-  line-height: 26px;
+  line-height: 135%;
 
   code {
     display: inline-block;
@@ -133,6 +128,9 @@ p.article {
       color: var(--gray-soft);
       cursor: pointer;
     }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1rem, 0.89rem + 0.49vw, 1.125rem);
   }
 }
 

@@ -1,4 +1,4 @@
-const homeURL = '/web-poster/'
+const homeURL = '/'
 // '/'              
 // '/web-poster/' 
 

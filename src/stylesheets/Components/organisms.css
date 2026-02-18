@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-40);
-  grid-column: span 5;
+  grid-column: span 6;
 
   a.A_Button {
     width: 100%;
@@ -39,7 +39,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
-  grid-column: 9/13;
+  grid-column: -5/-1;
+
+  @media screen and (max-width: 1132px) {
+    grid-column: -6/-1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 5;
+  }
 }
 /* PosterPage */
 .O_PosterInfo {
@@ -348,6 +356,10 @@
   flex-direction: row;
   gap: var(--space-20);
   align-items: flex-start;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 }
 .O_FooterInformation {
   grid-column: 7/ -1;
@@ -374,7 +386,7 @@
   flex-direction: column;
   gap: var(--space-12);
   position: sticky;
-  top: 80px;
+  top: 124px;
   align-self: flex-start;
   grid-column: span 2;
   order: 3;
@@ -471,5 +483,45 @@
     position: absolute;
     top: -50vw;
     left: 34vw;
+  }
+}
+.O_ChapterButtonArrow {
+  text-decoration: none;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+
+  &:hover {
+    b {
+      text-decoration: underline;
+    }
+    opacity: 0.8;
+  }
+
+  &.right {
+    b {
+      text-align: right;
+    }
+  }
+  .A_IconButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f3f1;
+    border-radius: 50%;
+    background-image: url('../../images/icons/Q_ArrowGray-24.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    &.right {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.right {
+    margin-left: auto;
   }
 }
