@@ -71,15 +71,15 @@ function PosterPage() {
           <button class="A_NavigationMenuButton"></button>
           <nav class="M_Breadcrumbs">
             <div class="W_BreadCrumbsContainer">
-              <a className="caption-bold" href={getUrl('/index.html')}>
+              <a className="caption-caps" href={getUrl('/index.html')}>
                 Главная
               </a>
               •
-              <a className="caption-bold" href={getUrl('/posters.html')}>
+              <a className="caption-caps" href={getUrl('/posters.html')}>
                 Веб-плакаты
               </a>
               •
-              <span className="caption-bold" id="breadcrumb-type">
+              <span className="caption-caps" id="breadcrumb-type">
                 {poster.name}
               </span>
             </div>
@@ -111,7 +111,7 @@ function PosterPage() {
                   className="subtitle"
                 >
                   <img src={ghIcon} alt="GitHub" />
-                  GitHub репозиторий
+                  GitHub
                 </a>
               )}
               {poster.project && (

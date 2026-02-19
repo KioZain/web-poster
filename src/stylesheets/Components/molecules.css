@@ -38,6 +38,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
+  grid-column: span 8;
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 6;
+  }
+  @media screen and (max-width: 780px) {
+    grid-column: 1 / -1;
+  }
 }
 .M_Markers {
   display: flex;
@@ -55,10 +63,17 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  gap: var(--space-20);
+  gap: var(--grid-gap);
 
   p {
     width: calc(53% - var(--grid-gap));
+    @media screen and (max-width: 420px) {
+      font-size: 14px;
+    }
+  }
+
+  p:first-child {
+    color: var(--gray-light);
   }
 }
 
@@ -72,11 +87,7 @@
 
   .A_FilterLabel {
     color: var(--gray-base);
-    font-size: 14px;
-    @media screen and (max-width: 1024px) {
-      font-size: 1rem;
-      font-weight: 500;
-    }
+    font-size: 1rem;
   }
   &:hover {
     cursor: pointer;
@@ -138,7 +149,7 @@
 .M_TitleBio {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 .M_Columns {
   width: 100%;

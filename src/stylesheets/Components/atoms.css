@@ -316,47 +316,48 @@ button.A_Tab {
   height: fit-content;
   position: relative;
   padding: 0 var(--space-12);
-  border-left: 1.5px dashed var(--gray-base);
+  border-left: 1.5px dashed var(--gray-medium);
   grid-column: -4 / -1;
   margin-top: auto;
+
+  .Q_HandleSquare {
+    background: var(--gray-medium);
+  }
 
   p {
     color: var(--gray-soft);
   }
 
-  @media screen and (max-width: 1024px) {
-    padding-left: 0;
-    font-size: 1.5rem;
-    border: none;
-
-    p.body-other {
-      font-weight: 500;
-      line-height: 1.5rem;
-    }
-
-    .Q_HandleSquare {
-      display: none;
-    }
-  }
   @media screen and (max-width: 1180px) {
     grid-column: -5 / -1;
+  }
+  @media screen and (max-width: 1024px) {
+    grid-column: -4/-1;
+
+    @media screen and (max-width: 786px) {
+      grid-column: 1/-1;
+      padding-left: 0;
+      font-size: 1.5rem;
+      border: none;
+
+      p.body-other {
+        font-weight: 500;
+        line-height: 1.5rem;
+      }
+
+      .Q_HandleSquare {
+        display: none;
+      }
+    }
   }
 }
 
 .A_Poster {
-  /* width: calc(33.95% - var(--grid-gap)); */
-  grid-template-columns: 1fr;
+  position: relative;
   border-radius: 2px;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  /* position: relative; */
-
-  a {
-    /* background: #000; */
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
 
   img {
     width: 100%;
@@ -365,7 +366,48 @@ button.A_Tab {
   }
 
   &:hover {
-    transform: scale(1.01) rotate(0deg) translate(0px, 0px) skewX(0deg);
+    transform: scale(1.01);
+  }
+
+  .W_PosterAbout {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+
+    /* Начальное состояние */
+    opacity: 0;
+    transform: scale(0.97);
+
+    /* Анимация — тот же тайминг, что и у карточки */
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+
+    h4,
+    p {
+      color: var(--white-500);
+    }
+  }
+
+  &:hover .W_PosterAbout {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @media screen and(max-width:768px) {
+    &:hover .W_PosterAbout {
+      opacity: 0;
+      transform: scale(1);
+    }
   }
 }
 /* PosterPage */
@@ -386,6 +428,7 @@ button.A_Tab {
 
   @media screen and (max-width: 768px) {
     grid-column: 2/6;
+    margin-bottom: 1rem;
   }
   @media screen and (max-width: 528px) {
     grid-column: -1/1;
