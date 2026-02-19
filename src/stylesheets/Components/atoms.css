@@ -231,7 +231,7 @@ input.A_SearchInput {
   height: 40px;
   border-radius: 6px;
   color: var(--gray-base);
-  border: 1.5px solid var(--Colors-neutral-gray-lightest, #d4d4d4);
+  border: 1.5px solid var(--gray-lightest);
   background: transparent;
   cursor: pointer;
   white-space: nowrap;
@@ -372,7 +372,7 @@ button.A_Tab {
 .A_PosterCover {
   width: 100%;
   aspect-ratio: 443 / 628;
-  grid-column: 1/6;
+  grid-column: 2/6;
 
   img {
     width: 100%;

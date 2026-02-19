@@ -56,10 +56,10 @@ header.S_Header {
 .S_PosterInfo {
   width: 100%;
   /* max-width: var(--width-container); */
-  margin: var(--space-24) auto;
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
+  margin-top: clamp(1rem, -0.714rem + 3.571vw, 2.5rem);
   /* background-color: red; */
 }
 .S_Filters {

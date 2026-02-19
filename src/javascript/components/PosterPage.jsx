@@ -66,21 +66,26 @@ function PosterPage() {
   // main component
   return (
     <div className="poster-page">
-      <nav className="M_Breadcrumbs">
-        <div className="W_BreadCrumbsContainer margin-container">
-          <a className="caption-caps" href={getUrl('/index.html')}>
-            Главная
-          </a>
-          •
-          <a className="caption-caps" href={getUrl('/posters.html')}>
-            Веб-плакаты
-          </a>
-          •
-          <span className="caption-caps" id="breadcrumb-type">
-            {poster.name}
-          </span>
+      <div class="O_BreadCrumbs">
+        <div class="W_NavCrumbs margin-container">
+          <button class="A_NavigationMenuButton"></button>
+          <nav class="M_Breadcrumbs">
+            <div class="W_BreadCrumbsContainer">
+              <a className="caption-bold" href={getUrl('/index.html')}>
+                Главная
+              </a>
+              •
+              <a className="caption-bold" href={getUrl('/posters.html')}>
+                Веб-плакаты
+              </a>
+              •
+              <span className="caption-bold" id="breadcrumb-type">
+                {poster.name}
+              </span>
+            </div>
+          </nav>
         </div>
-      </nav>
+      </div>
       <div className="S_PosterInfo margin-container">
         {/* left */}
         <div className="A_PosterCover">
@@ -125,33 +130,33 @@ function PosterPage() {
           {/* metadata */}
           <div className="С_MetaDataPoster">
             <div className="M_MetaDataRow">
-              <p className="caption-caps">Автор(ка)</p>
-              <p className="caption-caps">{poster.author}</p>
+              <p className="caption-bold">Автор(ка)</p>
+              <p className="caption-bold">{poster.author}</p>
             </div>
 
             <div className="M_MetaDataRow">
-              <p className="caption-caps">Год создания</p>
-              <p className="caption-caps">{poster.year}</p>
+              <p className="caption-bold">Год создания</p>
+              <p className="caption-bold">{poster.year}</p>
             </div>
 
             {poster.type && (
               <div className="M_MetaDataRow">
-                <p className="caption-caps">Тип веб-плаката</p>
-                <p className="caption-caps">{poster.type}</p>
+                <p className="caption-bold">Тип веб-плаката</p>
+                <p className="caption-bold">{poster.type}</p>
               </div>
             )}
 
             {poster.layout && (
               <div className="M_MetaDataRow">
-                <p className="caption-caps">Вёрстка</p>
-                <p className="caption-caps">{poster.layout}</p>
+                <p className="caption-bold">Вёрстка</p>
+                <p className="caption-bold">{poster.layout}</p>
               </div>
             )}
 
             {poster.tags && poster.tags.length > 0 && (
               <div className="M_MetaDataRow">
-                <p className="caption-caps">Детали</p>
-                <p className="caption-caps">
+                <p className="caption-bold">Детали</p>
+                <p className="caption-bold">
                   {poster.tags.map((tag, index) => (
                     <span key={tag} className="poster-page__tag">
                       {tag}

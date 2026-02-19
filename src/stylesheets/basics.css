@@ -66,6 +66,12 @@ p.body-other {
   font-weight: 400;
   line-height: 21px;
 }
+.caption-bold {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 130%;
+  color: var(--gray-base);
+}
 .caption-caps {
   font-size: 14px;
   text-transform: uppercase;
