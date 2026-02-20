@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import postersData from '../../data/posters.json'
 import ghIcon from '../../images/icons/Q_GithubIcon.svg'
 import { getUrl } from '../config/paths.js'
+import { getRelatedPosters, getPriorityTag } from '../utils/relatedPosters.js'
+import RelatedPosters from './O_RelatedPosters.jsx'
 
 function getPosterIdFromUrl() {
   const params = new URLSearchParams(window.location.search)
@@ -32,22 +34,38 @@ function PosterPage() {
 
   useEffect(() => {
     const posterId = getPosterIdFromUrl()
-
     if (!posterId) {
-      setError('ID плаката не указан в URL')
+      setError('ID is none')
       return
     }
-
     const found = postersData.find((p) => p.id === posterId)
-
     if (!found) {
       setError(`Плакат с ID "${posterId}" не найден`)
       return
     }
-
     setPoster(found)
     document.title = `${found.name} — Web Poster`
   }, [])
+
+  // Внутри компонента PosterPage, рядом с relatedPosters:
+  const relatedPosters = useMemo(() => {
+    if (!poster) return []
+    return getRelatedPosters(poster, postersData, 12) // увеличили с 6 до 12
+  }, [poster])
+
+  const priorityTag = useMemo(() => {
+    if (!poster) return null
+    return getPriorityTag(poster, postersData)
+  }, [poster])
+
+  if (error) {
+    return (
+      <div className="poster-page__error" style={{ padding: '2rem' }}>
+        <p>{error}</p>
+        <a href={`${basePath}posters.html`}>← Вернуться к каталогу</a>
+      </div>
+    )
+  }
 
   // error
   if (error) {
@@ -111,9 +129,10 @@ function PosterPage() {
                   className="subtitle"
                 >
                   <img src={ghIcon} alt="GitHub" />
-                  GitHub
+                  Репозиторий
                 </a>
               )}
+              <span>•</span>
               {poster.project && (
                 <a
                   href={poster.project}
@@ -166,6 +185,19 @@ function PosterPage() {
                 </p>
               </div>
             )}
+            {poster.tags && poster.tags.length > 0 && (
+              <div className="M_MetaDataRow">
+                <p className="caption-bold">Модули</p>
+                <p className="caption-bold">
+                  {poster.modules.map((module, index) => (
+                    <span key={module} className="poster-page__tag">
+                      {module}
+                      {index < poster.modules.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* view button */}
@@ -181,6 +213,11 @@ function PosterPage() {
           )}
         </div>
       </div>
+      <RelatedPosters
+        posters={relatedPosters}
+        priorityTag={priorityTag}
+        cardSpan={1}
+      />
     </div>
   )
 }

@@ -30,7 +30,7 @@
   display: flex;
   padding: var(--space-48) 0;
   border-top: 1px solid var(--gray-lightest);
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 header.S_Header {

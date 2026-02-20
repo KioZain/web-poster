@@ -59,17 +59,15 @@
 
 /* PosterPage */
 .M_MetaDataRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  gap: var(--grid-gap);
 
   p {
-    width: calc(53% - var(--grid-gap));
-    @media screen and (max-width: 420px) {
-      font-size: 14px;
-    }
+    grid-column: span 1;
   }
 
   p:first-child {
@@ -134,7 +132,7 @@
 .M_EssentialLinks {
   display: flex;
   flex-direction: row;
-  gap: var(--space-20);
+  gap: var(--space-12);
 
   a {
     display: flex;
@@ -144,6 +142,11 @@
     &:hover {
       color: var(--gray-soft);
     }
+  }
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 4px;
   }
 }
 .M_TitleBio {
@@ -351,5 +354,19 @@
 
   &.right {
     align-items: flex-end;
+  }
+}
+.M_RelatedPostersHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.M_ArrowControls {
+  display: flex;
+  gap: var(--space-4);
+
+  @media screen and (max-width: 480px) {
+    display: none;
   }
 }

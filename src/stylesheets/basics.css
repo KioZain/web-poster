@@ -37,7 +37,7 @@ h1 {
 
 h2 {
   font-size: clamp(2rem, 1.429rem + 1.19vw, 2.5rem);
-  line-height: 115%;
+  line-height: 105%;
   font-weight: 500;
 }
 
@@ -52,9 +52,9 @@ h4 {
   font-weight: 500;
   line-height: 125%;
 
-  @media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) {
     font-size: clamp(1.125rem, 0.729rem + 1.205vw, 1.5rem);
-  }
+  } */
 }
 .subtitle {
   font-size: 1.25rem;

@@ -8,6 +8,15 @@
   min-height: 100vh;
   width: 100%;
 }
+
+.C_RelatedPostersTrack {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 220px;
+  gap: var(--space-12);
+  width: max-content;
+}
+
 .С_MetaDataPoster {
   display: flex;
   flex-direction: column;

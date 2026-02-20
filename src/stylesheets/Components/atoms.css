@@ -60,6 +60,24 @@ input.A_SearchInput {
   }
 }
 
+.A_SliderButton {
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+}
+
 .A_CodeTab {
   font-family: 'Aeonik Mono';
   border-radius: 4px;
@@ -410,6 +428,23 @@ button.A_Tab {
     }
   }
 }
+
+.A_RelatedPosterCard {
+  display: block;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 /* PosterPage */
 .A_PosterCover {
   width: 100%;
