@@ -3,10 +3,6 @@ import PosterCard from './A_PosterCard.jsx'
 import notFound from '../../images/notfound.svg'
 
 function PostersGrid({ posters, isLoading, hasMore, onLoadMore }) {
-  if (isLoading && posters.length === 0) {
-    return <span className="loader"></span>
-  }
-
   if (posters.length === 0) {
     return (
       <div>

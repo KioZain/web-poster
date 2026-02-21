@@ -62,7 +62,6 @@ function PostersCatalog() {
       <div className="W_PostersWrap">
         <PostersGrid
           posters={visiblePosters}
-          isLoading={isLoading}
           hasMore={hasMore}
           onLoadMore={handleLoadMore}
         />

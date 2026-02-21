@@ -28,24 +28,27 @@ function getBasePath() {
 
 // main component
 function PosterPage() {
-  const [poster, setPoster] = useState(null)
-  const [error, setError] = useState(null)
+  const [poster] = useState(() => {
+    const posterId = getPosterIdFromUrl()
+    if (!posterId) return null
+    return postersData.find((p) => p.id === posterId) || null
+  })
+
+  const [error] = useState(() => {
+    const posterId = getPosterIdFromUrl()
+    if (!posterId) return 'ID is none'
+    const found = postersData.find((p) => p.id === posterId)
+    if (!found) return `Плакат с ID "${posterId}" не найден`
+    return null
+  })
+
   const basePath = getBasePath()
 
   useEffect(() => {
-    const posterId = getPosterIdFromUrl()
-    if (!posterId) {
-      setError('ID is none')
-      return
+    if (poster) {
+      document.title = `${poster.name} — Web Poster`
     }
-    const found = postersData.find((p) => p.id === posterId)
-    if (!found) {
-      setError(`Плакат с ID "${posterId}" не найден`)
-      return
-    }
-    setPoster(found)
-    document.title = `${found.name} — Web Poster`
-  }, [])
+  }, [poster])
 
   // Внутри компонента PosterPage, рядом с relatedPosters:
   const relatedPosters = useMemo(() => {
