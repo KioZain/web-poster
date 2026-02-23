@@ -4,6 +4,7 @@ import ghIcon from '../../images/icons/Q_GithubIcon.svg'
 import { getUrl } from '../config/paths.js'
 import { getRelatedPosters, getPriorityTag } from '../utils/relatedPosters.js'
 import RelatedPosters from './O_RelatedPosters.jsx'
+import S_RelatedModules from './S_RelatedModules.jsx'
 
 function getPosterIdFromUrl() {
   const params = new URLSearchParams(window.location.search)
@@ -148,7 +149,6 @@ function PosterPage() {
               )}
             </div>
           </div>
-
           {/* metadata */}
           <div className="С_MetaDataPoster">
             <div className="M_MetaDataRow">
@@ -189,17 +189,7 @@ function PosterPage() {
               </div>
             )}
             {poster.tags && poster.tags.length > 0 && (
-              <div className="M_MetaDataRow">
-                <p className="caption-bold">Модули</p>
-                <p className="caption-bold">
-                  {poster.modules.map((module, index) => (
-                    <span key={module} className="poster-page__tag">
-                      {module}
-                      {index < poster.modules.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              </div>
+              <S_RelatedModules modules={poster.modules} />
             )}
           </div>
 

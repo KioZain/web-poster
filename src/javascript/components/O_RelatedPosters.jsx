@@ -54,7 +54,7 @@ function RelatedPosters({ posters, priorityTag, cardSpan = 1 }) {
         <div className="M_RelatedPostersTitle">
           <h4>Похожие веб-плакаты</h4>
           {priorityTag && (
-            <span className="caption-caps light">{priorityTag}</span>
+            <span className="caption-bold light">{priorityTag}</span>
           )}
         </div>
 

@@ -348,7 +348,7 @@
 }
 
 .O_CallOut {
-  background: #f3f3f1;
+  background: #f4f5f6;
   border-radius: 6px;
   padding: var(--space-20);
   border: 1px solid var(--gray-lightest);
@@ -393,7 +393,6 @@
 
   .C_AticleLinks {
     padding-left: 0;
-    gap: 0;
   }
   @media screen and (max-width: 786px) {
     display: none;
