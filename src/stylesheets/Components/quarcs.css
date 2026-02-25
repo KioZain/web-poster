@@ -56,11 +56,44 @@
     font-size: 1rem;
   }
 }
+
+.Q_ModulesIllustration {
+  grid-column: span 1;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90px;
+  max-height: 90px;
+  /* margin-left: auto; */
+  border-radius: 6px;
+  background: linear-gradient(
+    237deg,
+    rgba(122, 223, 241, 0.5) 10.16%,
+    #9eff70 31.92%,
+    #9eff70 47.95%,
+    rgba(122, 223, 241, 0.5) 92.68%
+  );
+
+  @media screen and (max-width: 500px) {
+    grid-column: 1/-1;
+    max-width: none;
+    max-height: none;
+    height: 12rem;
+
+    img {
+      width: 8rem;
+    }
+  }
+}
+
 .Q_PageCover {
   width: 100%;
   /* height: 410px; */
   aspect-ratio: 12 / 4;
-  border-radius: 4px;
+  border-radius: 6px;
   height: 520px;
   object-fit: cover;
 }

@@ -51,9 +51,9 @@
     display: none;
   }
 
-  .W_PostersPage {
+  /* .W_PostersPage {
     margin: 6rem auto;
-  }
+  } */
 
   /* .A_Poster {
     width: calc(33.78% - var(--grid-gap));
@@ -120,10 +120,5 @@
   }
   .C_PostersGrid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and(max-width: 1024px) {
-  .A_CaptionText {
-    background: red;
   }
 }

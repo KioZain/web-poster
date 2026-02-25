@@ -1,0 +1,22 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle cx="36.0185" cy="35.3693" r="2.66226" fill="#71716F"/>
+<g id="Repeat group 4_inner" data-figma-trr="r14u4.6-0f">
+<line x1="34.6331" y1="21.4832" x2="34.6331" y2="17.4832" stroke="#71716F" stroke-width="2.92418" stroke-linecap="round"/>
+</g>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(18.9372 -12.1547) rotate(25.7143)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(41.2727 -14.8892) rotate(51.4286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(62.5827 -7.66185) rotate(77.1429)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(78.6466 8.09584) rotate(102.857)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(86.2827 29.2629) rotate(128.571)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(83.9785 51.6469) rotate(154.286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(72.1904 70.8144) rotate(-180)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(53.2532 82.9691) rotate(-154.286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(30.9177 85.7036) rotate(-128.571)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(9.60766 78.4763) rotate(-102.857)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-6.45622 62.7186) rotate(-77.1429)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-14.0923 41.5515) rotate(-51.4286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-11.7881 19.1675) rotate(-25.7143)"/>
+<path d="M21.8625 62.1219H11.8993C9.74576 62.1219 8 60.3762 8 58.2226V13.4149C8 11.2614 9.74576 9.51562 11.8993 9.51562H21.8625M49.5874 9.51562H59.5506C61.7041 9.51562 63.4499 11.2614 63.4499 13.4149V58.2227C63.4499 60.3762 61.7041 62.1219 59.5506 62.1219H49.5874" stroke="#71716F" stroke-width="2.8"/>
+<path d="M33.3523 8.76745L22.2181 4.31318C22.0906 4.26214 21.9657 4.39739 22.0268 4.52033L24.2389 8.96747C24.2596 9.00895 24.2596 9.05793 24.2389 9.09999L22.0268 13.6092C21.9657 13.7339 22.0906 13.8656 22.2181 13.811L33.3523 9.04386C33.4754 8.99114 33.4754 8.81671 33.3523 8.76745Z" fill="#71716F"/>
+<path d="M37.0852 62.0059L48.9273 57.2684C49.0549 57.2174 49.1798 57.3526 49.1186 57.4756L46.7617 62.2139C46.7411 62.2553 46.7411 62.3043 46.7617 62.3464L49.1186 67.1508C49.1798 67.2755 49.0549 67.4072 48.9273 67.3526L37.0852 62.2823C36.9621 62.2296 36.9621 62.0552 37.0852 62.0059Z" fill="#71716F"/>
+</svg>

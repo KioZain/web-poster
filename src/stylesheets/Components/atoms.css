@@ -352,7 +352,7 @@ button.A_Tab {
   @media screen and (max-width: 1024px) {
     grid-column: -4/-1;
 
-    @media screen and (max-width: 786px) {
+    @media screen and (max-width: 840px) {
       grid-column: 1/-1;
       padding-left: 0;
       font-size: 1.5rem;
@@ -492,9 +492,10 @@ button.A_Tab {
 
 .A_Tag {
   font-size: 1rem;
+  width: fit-content;
+  height: fit-content;
   padding: var(--space-6) var(--space-8);
   border: 1px solid var(--gray-base);
-  width: fit-content;
   border-radius: 4px;
   user-select: none;
 
@@ -540,7 +541,7 @@ button.A_Tab {
 
     &::before {
       content: '';
-      height: 2rem;
+      height: 100%;
       width: 2px;
       position: absolute;
       background: #7adff1;

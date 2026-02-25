@@ -87,7 +87,10 @@ const pages = [
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
   // Static modules
-  { template: 'modules/static/movement.html', chunks: ['page'] }
+  {
+    template: 'modules/static/movement.html',
+    chunks: ['menubar', 'index']
+  }
 ]
 
 // Creating plugins for each HTML page
@@ -176,7 +179,6 @@ module.exports = {
   plugins: [
     new Dotenv(),
     new MiniCssExtractPlugin(),
-
 
     // spread operator to add all HTML
     ...htmlPlugins,

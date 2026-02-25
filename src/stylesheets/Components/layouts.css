@@ -42,4 +42,18 @@
 .L_ArticleBars {
   margin-top: var(--space-32);
 }
+.L_Modules,
+.L_Posters {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: var(--header-offset);
+}
+
+.L_Module {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--header-offset);
+  min-height: 100vh;
+}
 /* comment random */

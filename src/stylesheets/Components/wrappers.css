@@ -102,13 +102,15 @@
   position: relative;
 }
 
-.W_PostersPage {
+.W_PostersPage,
+.W_ModulesPage {
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
   width: 100%;
-  margin: calc(var(--header-offset) + var(--space-64)) auto;
+  /* margin: calc(var(--header-offset) + var(--space-64)) auto; */
   min-height: 100vh;
+  padding: clamp(0.75rem, 3vw, 4rem) 0;
 }
 
 /* PagesWrapper */
@@ -130,6 +132,7 @@
     }
   }
 }
+
 .W_ArticlePage {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
