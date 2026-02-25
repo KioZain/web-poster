@@ -149,6 +149,13 @@
   }
 }
 
+.W_ModuleCoverWrapper {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--space-20);
+  z-index: 2;
+}
+
 .W_ArticleContentContainer h2,
 .W_ArticleContentContainer h3 {
   scroll-margin-top: 8rem;

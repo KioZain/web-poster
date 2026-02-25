@@ -411,3 +411,8 @@
     display: none;
   }
 }
+.M_TitleTextMedium {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}

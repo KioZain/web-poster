@@ -227,6 +227,10 @@
   }
 }
 
+.O_ModulePageCover {
+  position: relative;
+}
+
 .O_PartList {
   display: flex;
   flex-direction: column;
@@ -604,4 +608,7 @@
   margin-top: clamp(4rem, 2rem + 6.667vw, 10rem);
   gap: var(--space-20);
   position: relative;
+}
+.O_ModuleHeadText {
+  grid-column: 4 / 9;
 }
