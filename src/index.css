@@ -15,3 +15,5 @@
 /* Responsive */
 @import 'stylesheets/responsive.css';
 @import 'stylesheets/animations.css';
+/* Demo animations for code previews */
+@import 'stylesheets/demos/demo-movement.css';

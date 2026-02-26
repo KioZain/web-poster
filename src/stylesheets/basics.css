@@ -52,14 +52,14 @@ h4 {
   font-weight: 500;
   line-height: 125%;
 
-  /* @media screen and (max-width: 1024px) {
-    font-size: clamp(1.125rem, 0.729rem + 1.205vw, 1.5rem);
-  } */
+  @media screen and (max-width: 1024px) {
+    font-size: clamp(1.25rem, 0.729rem + 1.205vw, 1.5rem);
+  }
 }
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 130%;
 }
 p.body-other {
   font-size: 1.125rem;
@@ -117,7 +117,7 @@ b {
 /* Article Typography */
 p.article {
   font-size: 1.125rem;
-  line-height: 135%;
+  line-height: 145%;
 
   code {
     display: inline-block;
@@ -125,7 +125,13 @@ p.article {
     background: #e7e7e4;
     border-radius: 4px;
     font-family: 'Aeonik Mono';
-    padding: 0 4px;
+    padding: 2px 6px;
+    white-space: pre;
+
+    @media screen and (max-width: 768px) {
+      font-size: clamp(1rem, 0.89rem + 0.49vw, 1.125rem);
+      padding: 0px 4px;
+    }
   }
   a {
     text-decoration: underline;
@@ -141,7 +147,8 @@ p.article {
 }
 
 code {
-  font-family: 'Aeonik Mono';
+  font-family: 'Aeonik Mono', Roboto, monospace;
   font-size: 1.125rem;
   line-height: 1.25rem;
 }
+/*  */

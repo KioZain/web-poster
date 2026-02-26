@@ -52,39 +52,3 @@
     </div>
   </div>
 </div>
-<!-- <script>
-  const section = document.querySelector('.A_DVDLogo')
-  const logo = document.querySelector('.bouncing-logo')
-  const FPS = 60
-
-  let xPosition = 10
-  let yPosition = 10
-  let xSpeed = 2
-  let ySpeed = 2
-
-  let sectionWidth = section.clientWidth
-  let sectionHeight = section.clientHeight
-
-  function update() {
-    logo.style.left = xPosition + 'px'
-    logo.style.top = yPosition + 'px'
-  }
-
-  setInterval(() => {
-    if (xPosition + logo.clientWidth >= sectionWidth || xPosition <= 0) {
-      xSpeed = -xSpeed
-    }
-    if (yPosition + logo.clientHeight >= sectionHeight || yPosition <= 0) {
-      ySpeed = -ySpeed
-    }
-
-    xPosition += xSpeed
-    yPosition += ySpeed
-    update()
-  }, 1000 / FPS)
-
-  window.addEventListener('resize', () => {
-    sectionWidth = section.clientWidth
-    sectionHeight = section.clientHeight
-  })
-</script> -->

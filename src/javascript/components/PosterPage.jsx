@@ -87,6 +87,7 @@ function PosterPage() {
 
   // main component
   return (
+    // breadCrumbs
     <div className="poster-page">
       <div class="O_BreadCrumbs">
         <div class="W_NavCrumbs margin-container">
@@ -108,8 +109,9 @@ function PosterPage() {
           </nav>
         </div>
       </div>
+      {/* Content */}
       <div className="S_PosterInfo margin-container">
-        {/* left */}
+        {/* poster */}
         <div className="A_PosterCover">
           <img
             src={poster.cover}
@@ -117,92 +119,93 @@ function PosterPage() {
             className="poster-page__image"
           />
         </div>
+        {/* Info */}
+        <div className="W_PosterInfo">
+          <div className="O_PosterInfo">
+            <div className="M_TitleBio">
+              <h2 className="poster-page__title">{poster.name}</h2>
 
-        {/* right */}
-        <div className="O_PosterInfo">
-          <div className="M_TitleBio">
-            <h2 className="poster-page__title">{poster.name}</h2>
+              {/* links */}
+              <div className="M_EssentialLinks">
+                {poster.github && (
+                  <a
+                    href={poster.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="subtitle"
+                  >
+                    <img src={ghIcon} alt="GitHub" />
+                    Репозиторий
+                  </a>
+                )}
+                <span>•</span>
+                {poster.project && (
+                  <a
+                    href={poster.project}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="subtitle"
+                  >
+                    О проекте
+                  </a>
+                )}
+              </div>
+            </div>
+            {/* metadata */}
+            <div className="С_MetaDataPoster">
+              <div className="M_MetaDataRow">
+                <p className="caption-bold">Автор(ка)</p>
+                <p className="caption-bold">{poster.author}</p>
+              </div>
 
-            {/* links */}
-            <div className="M_EssentialLinks">
-              {poster.github && (
-                <a
-                  href={poster.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="subtitle"
-                >
-                  <img src={ghIcon} alt="GitHub" />
-                  Репозиторий
-                </a>
+              <div className="M_MetaDataRow">
+                <p className="caption-bold">Год создания</p>
+                <p className="caption-bold">{poster.year}</p>
+              </div>
+
+              {poster.type && (
+                <div className="M_MetaDataRow">
+                  <p className="caption-bold">Тип веб-плаката</p>
+                  <p className="caption-bold">{poster.type}</p>
+                </div>
               )}
-              <span>•</span>
-              {poster.project && (
-                <a
-                  href={poster.project}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="subtitle"
-                >
-                  О проекте
-                </a>
+
+              {poster.layout && (
+                <div className="M_MetaDataRow">
+                  <p className="caption-bold">Вёрстка</p>
+                  <p className="caption-bold">{poster.layout}</p>
+                </div>
+              )}
+
+              {poster.tags && poster.tags.length > 0 && (
+                <div className="M_MetaDataRow">
+                  <p className="caption-bold">Детали</p>
+                  <p className="caption-bold">
+                    {poster.tags.map((tag, index) => (
+                      <span key={tag} className="poster-page__tag">
+                        {tag}
+                        {index < poster.tags.length - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                  </p>
+                </div>
               )}
             </div>
-          </div>
-          {/* metadata */}
-          <div className="С_MetaDataPoster">
-            <div className="M_MetaDataRow">
-              <p className="caption-bold">Автор(ка)</p>
-              <p className="caption-bold">{poster.author}</p>
-            </div>
-
-            <div className="M_MetaDataRow">
-              <p className="caption-bold">Год создания</p>
-              <p className="caption-bold">{poster.year}</p>
-            </div>
-
-            {poster.type && (
-              <div className="M_MetaDataRow">
-                <p className="caption-bold">Тип веб-плаката</p>
-                <p className="caption-bold">{poster.type}</p>
-              </div>
-            )}
-
-            {poster.layout && (
-              <div className="M_MetaDataRow">
-                <p className="caption-bold">Вёрстка</p>
-                <p className="caption-bold">{poster.layout}</p>
-              </div>
-            )}
-
-            {poster.tags && poster.tags.length > 0 && (
-              <div className="M_MetaDataRow">
-                <p className="caption-bold">Детали</p>
-                <p className="caption-bold">
-                  {poster.tags.map((tag, index) => (
-                    <span key={tag} className="poster-page__tag">
-                      {tag}
-                      {index < poster.tags.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            )}
-            {poster.tags && poster.tags.length > 0 && (
-              <S_RelatedModules modules={poster.modules} />
+            {/* view button */}
+            {poster.ghPages && (
+              <a
+                href={poster.ghPages}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="A_Button"
+              >
+                Посмотреть веб-плакат
+              </a>
             )}
           </div>
-
-          {/* view button */}
-          {poster.ghPages && (
-            <a
-              href={poster.ghPages}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="A_Button"
-            >
-              Посмотреть веб-плакат
-            </a>
+          {/* related modules */}
+          {poster.tags && poster.tags.length > 0 && (
+            <S_RelatedModules modules={poster.modules} />
           )}
         </div>
       </div>

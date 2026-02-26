@@ -89,7 +89,7 @@ const pages = [
   // Static modules
   {
     template: 'modules/static/movement.html',
-    chunks: ['menubar', 'index']
+    chunks: ['menubar', 'index', 'codestyle', 'anchorlinks']
   }
 ]
 

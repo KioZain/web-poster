@@ -193,6 +193,42 @@ input.A_SearchInput {
   }
 }
 
+details.A_More {
+  width: fit-content;
+  color: var(--gray-base);
+  font-size: 1.25rem;
+  /* background: red; */
+  position: relative;
+
+  .chevron {
+    /* background: blue; */
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    /* position: absolute; */
+  }
+
+  p {
+    margin-top: var(--space-8);
+    padding-left: 4px;
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    font-weight: 500;
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+  cursor: pointer;
+}
+
+details[open] .chevron {
+  transform: rotate(180deg);
+}
+
 .A_CollapseName {
   font-weight: 500;
   font-size: 1rem;
@@ -545,7 +581,7 @@ button.A_Tab {
       width: 2px;
       position: absolute;
       background: #7adff1;
-      left: -3px;
+      left: -2px;
     }
   }
 }
@@ -603,6 +639,9 @@ button.A_Tab {
 }
 .A_CodeBlock {
   /* white-space: pre; */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   code {
     line-height: 1.5rem;
   }
@@ -635,7 +674,7 @@ button.A_Tab {
   padding: var(--space-20);
   /* text-align: center; */
 
-  @media screen and(max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: var(--space-12);
   }
 }

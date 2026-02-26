@@ -111,6 +111,13 @@
     }
   }
 }
+
+.M_ModuleDescription {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
 .M_FiltersTitle {
   display: flex;
   width: 100%;
@@ -157,6 +164,33 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
+}
+
+.M_ArticleCardBio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 140px;
+
+  p.caption-caps {
+    color: var(--gray-light);
+  }
+}
+
+.M_AboutArticle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  p.body {
+    color: var(--gray-medium);
+  }
+
+  @media screen and (max-width: 1024px) {
+    p.body {
+      font-size: 1rem;
+    }
+  }
 }
 .M_Columns {
   width: 100%;
@@ -250,6 +284,9 @@
   flex-direction: row;
   height: 24px;
   color: var(--gray-soft);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   a {
     text-decoration: none;
@@ -332,6 +369,12 @@
   h4 {
     font-size: 1.25rem;
   }
+
+  @media screen and(max-width:1240px) {
+    p.body {
+      font-size: clamp(0.9375rem, 0.0486rem + 1.3889vw, 1.125rem);
+    }
+  }
 }
 .M_Marquee {
   width: 100%;
@@ -379,6 +422,9 @@
   .A_Button {
     width: 200px;
   }
+
+  @media screen and (max-width: 768px) {
+  }
 }
 .M_ChapterHeading {
   display: flex;
@@ -415,4 +461,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
+}
+.M_PreviewArea {
+  width: 100%;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: var(--white-500);
+  border-radius: 4px;
+  /* border: 1px solid var(--gray-lightest); */
 }

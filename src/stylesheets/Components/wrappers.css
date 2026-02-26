@@ -113,6 +113,32 @@
   padding: clamp(0.75rem, 3vw, 4rem) 0;
 }
 
+.W_PosterInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+
+  grid-column: 7/11;
+
+  @media screen and (max-width: 1240px) {
+    grid-column: 7/12;
+  }
+  @media screen and (max-width: 1024px) {
+    grid-column: 6 / 10;
+  }
+  @media screen and (max-width: 768px) {
+    grid-column: 2 / -2;
+  }
+  @media screen and (max-width: 528px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.W_ModulesRow {
+  display: flex;
+  gap: var(--space-12);
+}
+
 /* PagesWrapper */
 .W_HandbookPageWrapper {
   display: flex;
@@ -140,9 +166,9 @@
   width: 100%;
 
   @media screen and (max-width: 1024px) {
-    .S_LeftNavBar {
+    /* .S_LeftNavBar {
       display: none;
-    }
+    } */
     .O_ArticleContent {
       order: 1;
     }
@@ -153,6 +179,7 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--space-20);
+  position: relative;
   z-index: 2;
 }
 
@@ -168,7 +195,7 @@
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 1rem + 2.222vw, 3rem);
+  gap: clamp(2rem, 1rem + 2.222vw, 3rem);
 
   @media screen and (max-width: 1024px) {
     grid-column: 4/10;
@@ -178,6 +205,10 @@
     grid-column: 1/-1;
   }
 }
+.W_ArticlePage.modules {
+  grid-column: 4/11;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* NavigationMenu */
@@ -312,19 +343,14 @@
 
   .C_Articles {
     .O_CardArticle {
-      grid-column: span 3;
+      grid-column: span 4;
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
     .C_Articles {
       .O_CardArticle {
-        grid-column: span 4;
-        background: red;
-      }
-
-      .O_CardArticle:last-child {
-        display: none;
+        grid-column: span 3;
       }
     }
   }
@@ -343,4 +369,9 @@
   &:active {
     cursor: grabbing;
   }
+}
+.W_PreviewCodeArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
 }

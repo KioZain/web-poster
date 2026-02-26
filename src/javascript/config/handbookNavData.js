@@ -6,7 +6,7 @@ const handbookNavData = {
             chapters: [
                 {
                     id: 'chapter-1-1',
-                    title: 'Особенности формата',
+                    title: 'Что такое веб-плакат',
                     href: '/handbook/part_1/chapter_1/chapter_1.html',
                     articles: [
                         {

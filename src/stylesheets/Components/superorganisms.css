@@ -104,17 +104,25 @@ header.S_Header {
   height: calc(100vh - 6.5rem);
   overflow-y: scroll;
 
-  &::-webkit-scrollbar-track {
-    background-color: red;
+  /* HIDING IT EVERYWHERE */
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* display: flex; */
+    position: fixed;
+    background-color: var(--bg-grey);
+    padding: clamp(0.75rem, 3vw, 4rem);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 91px;
+    z-index: 5;
   }
 
   &.is-open {
     display: flex;
-  }
-
-  /* HIDING IT EVERYWHERE */
-  @media screen and (max-width: 1024px) {
-    display: none;
   }
 }
 
@@ -157,7 +165,7 @@ header.S_Header {
 }
 .S_CodeArea {
   border-radius: 4px;
-  border: 1px solid var(--gray-lightest);
+  /* border: 1px solid var(--gray-lightest); */
   background: white;
 }
 .S_Chapter {
@@ -173,4 +181,9 @@ header.S_Header {
 }
 .S_ReadMore {
   margin-top: 10rem;
+}
+.S_RelatedModules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
 }

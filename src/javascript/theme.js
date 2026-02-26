@@ -1,23 +1,23 @@
 // colors
 const colors = {
-    mono1: 'hsl(230, 8%, 24%)',   // Основной текст
-    mono2: 'hsl(230, 6%, 44%)',   // Вторичный текст
-    mono3: 'hsl(230, 4%, 64%)',   // Приглушённый текст (комментарии)
+  mono1: 'hsl(230, 8%, 24%)',   // Основной текст
+  mono2: 'hsl(230, 6%, 44%)',   // Вторичный текст
+  mono3: 'hsl(230, 4%, 64%)',   // Приглушённый текст (комментарии)
 
-    // Акцентные цвета
-    hue1: 'hsl(198, 99%, 37%)',   // Голубой (URL, ссылки)
-    hue2: 'hsl(221, 87%, 60%)',   // Синий (функции, переменные, операторы)
-    hue3: 'hsl(301, 63%, 40%)',   // Фиолетовый (ключевые слова)
-    hue4: 'hsl(119, 34%, 47%)',   // Зелёный (строки, селекторы)
-    hue5: 'hsl(5, 74%, 59%)',     // Красный (теги, свойства, важное)
-    hue52: 'hsl(344, 84%, 43%)',  // Тёмно-красный (интерполяция)
-    hue6: 'hsl(35, 99%, 36%)',    // Оранжевый (числа, константы)
+  // Акцентные цвета
+  hue1: 'hsl(198, 99%, 37%)',   // Голубой (URL, ссылки)
+  hue2: 'hsl(221, 87%, 60%)',   // Синий (функции, переменные, операторы)
+  hue3: 'hsl(301, 63%, 40%)',   // Фиолетовый (ключевые слова)
+  hue4: 'hsl(119, 34%, 47%)',   // Зелёный (строки, селекторы)
+  hue5: 'hsl(189, 100%, 40%)',     // Красный (теги, свойства, важное)
+  hue52: 'hsl(344, 84%, 43%)',  // Тёмно-красный (интерполяция)
+  hue6: 'hsl(35, 99%, 36%)',    // Оранжевый (числа, константы)
 
-    // Фон и служебные
-    background: 'hsl(230, 1%, 98%)',
-    selection: 'hsl(230, 1%, 90%)',
-    gutter: 'hsl(230, 1%, 62%)',      // Номера строк
-    guide: 'hsla(230, 8%, 24%, 0.2)', // Направляющие линии
+  // Фон и служебные
+  background: 'hsl(230, 1%, 98%)',
+  selection: 'hsl(230, 1%, 90%)',
+  gutter: 'hsl(230, 1%, 62%)',      // Номера строк
+  guide: 'hsla(230, 8%, 24%, 0.2)', // Направляющие линии
 }
 // css
 const themeStyles = `
@@ -27,7 +27,7 @@ const themeStyles = `
   .token.prolog,
   .token.cdata {
     color: ${colors.mono3};
-    font-style: italic;
+    // font-style: italic;
   }
 
   /* === Пунктуация и сущности === */
@@ -151,10 +151,10 @@ const themeStyles = `
 `
 
 export function theme() {
-    const styleElement = document.createElement('style')
-    styleElement.id = 'code-theme'
-    styleElement.textContent = themeStyles
-    document.head.appendChild(styleElement)
+  const styleElement = document.createElement('style')
+  styleElement.id = 'code-theme'
+  styleElement.textContent = themeStyles
+  document.head.appendChild(styleElement)
 }
 
 export { colors as themeColors }

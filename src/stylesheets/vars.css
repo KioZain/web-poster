@@ -37,7 +37,7 @@
   --identity-soft-red: #fe7d7dff;
   --identity-green: #9eff70ff;
   --identity-light-blue: #82e1f1ff;
-
+  --beautiful-blue: #7adff1;
   /* Colors in use */
   --white-body-color: var(--bg-grey);
   --white-body: var(--white-500);

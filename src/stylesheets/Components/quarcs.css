@@ -137,7 +137,7 @@ input[type='checkbox'] {
 }
 .Q_ModulesCover {
   width: 100%;
-  height: 270px;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;

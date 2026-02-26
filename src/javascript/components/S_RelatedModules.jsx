@@ -1,6 +1,7 @@
 import React from 'react'
 import modulesMap from '../config/modulesMap.js'
 import { getUrl } from '../config/paths.js'
+import arrowIcon from '../../images/icons/Q_ArrowForward-24.svg'
 
 function S_RelatedModules({ modules }) {
   const knownModules = modules
@@ -24,12 +25,17 @@ function S_RelatedModules({ modules }) {
           return (
             <a key={name} href={getUrl(moduleData.url)} className="O_ModuleRow">
               <div className="W_ModulesRow">
-                <img src="" alt="" className="Q_ModuleRowIcon" />
+                <img
+                  src={moduleData.icon}
+                  alt={name}
+                  className="Q_ModuleRowIcon"
+                />
                 <div className="M_ModuleDescription">
                   <p className="caption-bold">{name}</p>
                   <p className="caption light">{moduleData.language}</p>
                 </div>
               </div>
+              <img className="arrowIcon" src={arrowIcon} alt="" />
             </a>
           )
         })}
