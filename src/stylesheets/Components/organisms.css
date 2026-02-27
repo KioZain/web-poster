@@ -513,24 +513,31 @@
 .O_PartCover {
   height: 480px;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   color: var(--white-500);
-  background: radial-gradient(
-    400.62% 147.98% at 0% 100%,
-    #fe96e4 0%,
-    #fe3904 32.01%,
-    #fe3904 65.23%,
-    #fe96e4 100%
-  );
+  border-radius: 4px;
+  overflow: hidden;
   margin-top: 2rem;
-  border-radius: 6px;
+
+  img.part-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+  }
 
   .M_HeadingContainer {
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 400px;
+    position: relative;
+    z-index: 2;
   }
 
   p,

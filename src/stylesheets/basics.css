@@ -102,10 +102,10 @@ b {
   color: var(--gray-light);
 }
 /* Right grid container */
-.right-container {
+/* .right-container {
   display: flex;
   max-width: 738px;
-}
+} */
 
 .margin-container {
   width: 100%;

@@ -188,6 +188,10 @@
   scroll-margin-top: 8rem;
 }
 
+.W_ArticleContentContainer .M_ParagraphArticle[id] {
+  scroll-margin-top: 8rem;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .W_ArticleContentContainer {
   grid-column: span 7;
@@ -343,7 +347,7 @@
 
   .C_Articles {
     .O_CardArticle {
-      grid-column: span 4;
+      grid-column: span 3;
     }
   }
 

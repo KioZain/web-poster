@@ -59,13 +59,14 @@
     <div class="L_Module">
       <!-- Content here -->
       <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar" id="modules-nav-root"></div>
         <div class="O_ArticleContent">
           <p class="subtitle">Содержание</p>
           <div class="C_AticleLinks"></div>
         </div>
         <div class="W_ArticleContentContainer">
           <!-- paragraph -->
-          <div class="M_ParagraphArticle">
+          <div id="about" class="M_ParagraphArticle">
             <h3>О модуле</h3>
             <p class="article">
               Веб-плакат живёт во времени. В отличие от печатного плаката, где
@@ -79,7 +80,7 @@
             </p>
           </div>
           <!-- paragraph -->
-          <div class="M_ParagraphArticle">
+          <div id="linear" class="M_ParagraphArticle">
             <h3>Линейное движение</h3>
             <p class="article">
               Объект едет из точки A в точку B по прямой. Туда — обратно, туда —
@@ -152,7 +153,7 @@
             </div>
           </div>
           <!-- pendulum-movement -->
-          <div class="M_ParagraphArticle">
+          <div id="pendulum" class="M_ParagraphArticle">
             <h3>Колебательное движение</h3>
             <p class="article">
               Представьте маятник настенных часов или качели. Объект
@@ -241,7 +242,7 @@ transform: translateX(-50%);
             </div>
           </div>
           <!-- Pulse-movement -->
-          <div class="M_ParagraphArticle">
+          <div id="pulse" class="M_ParagraphArticle">
             <h3>Пульсация</h3>
             <p class="article">
               Объект ритмично увеличивается и уменьшается — как будто дышит.
@@ -308,7 +309,7 @@ animation: movement-pulse 2s ease-in-out infinite;
           </div>
 
           <!-- Drift -->
-          <div class="M_ParagraphArticle">
+          <div id="drift" class="M_ParagraphArticle">
             <h3>Дрифт</h3>
             <p class="article">
               Мягкое, почти незаметное перемещение — как если бы объект плыл в
@@ -435,7 +436,7 @@ animation: movement-pulse 2s ease-in-out infinite;
           </div>
 
           <!-- ElasticMovement -->
-          <div class="M_ParagraphArticle">
+          <div id="elastic" class="M_ParagraphArticle">
             <h3>Эластичное движение</h3>
             <p class="article">
               Объект пролетает целевую точку и возвращается назад — как пружина
@@ -526,7 +527,7 @@ animation: movement-pulse 2s ease-in-out infinite;
             </p>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="orbit" class="M_ParagraphArticle">
             <h3>Орбитальное движение</h3>
             <p class="article">
               Объект движется по кругу или эллипсу — как планета вокруг звезды.
@@ -635,7 +636,7 @@ animation: movement-pulse 2s ease-in-out infinite;
 
           <!-- PseudoRandomMovement -->
 
-          <div class="M_ParagraphArticle">
+          <div id="pseudo-random" class="M_ParagraphArticle">
             <h3>Псведослучайное движение</h3>
             <p class="article">
               Это один из самых выразительных паттернов для веб-плакатов, и при

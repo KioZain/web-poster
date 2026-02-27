@@ -99,9 +99,10 @@
 }
 .Q_ArticleImage {
   width: 100%;
-  aspect-ratio: 3/2;
-  border: 1px solid var(--gray-lightest);
+  aspect-ratio: 5/3;
+  background: white;
   border-radius: 4px;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -122,6 +123,8 @@ input[type='checkbox'] {
 }
 .Q_ArticleHeroImage {
   grid-column: span 5;
+  border-radius: 4px;
+  overflow: hidden;
 
   img {
     width: 100%;

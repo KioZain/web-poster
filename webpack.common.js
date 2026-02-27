@@ -89,7 +89,7 @@ const pages = [
   // Static modules
   {
     template: 'modules/static/movement.html',
-    chunks: ['menubar', 'index', 'codestyle', 'anchorlinks']
+    chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
   }
 ]
 
@@ -117,6 +117,7 @@ module.exports = {
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
+    'modules-nav': './src/javascript/modules-nav.js',
     'gsap-animation': './src/javascript/gsap/animation.js'
   },
 

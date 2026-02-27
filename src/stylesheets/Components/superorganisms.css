@@ -100,10 +100,26 @@ header.S_Header {
   position: sticky;
   top: 124px;
   align-self: start;
-  /* height: calc(100vh - 10rem); */
-  height: calc(100vh - 6.5rem);
+  height: calc(100vh - 9rem);
   overflow-y: scroll;
 
+  &::-webkit-scrollbar-track {
+    background: transparent; /* убирает фон */
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    max-height: 6px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #dddddd;
+    border-radius: 999px;
+  }
   /* HIDING IT EVERYWHERE */
   @media screen and (max-width: 1024px) {
     display: none;
