@@ -1,0 +1,54 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-pseudo-random">
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+    <div class="demo-pr-dot"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes pseudo-random-move {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100px, -50px); }
+  50% { transform: translate(-30px, 80px); }
+  75% { transform: translate(60px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+.demo-pr-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pseudo-random-move ease-in-out infinite alternate;
+}
+
+/* Каждый элемент получает свою длительность и позицию */
+.demo-pr-dot:nth-child(1) { top: 20%; left: 10%; animation-duration: 4s; }
+.demo-pr-dot:nth-child(2) { top: 60%; left: 25%; animation-duration: 5.5s; animation-delay: -1s; }
+.demo-pr-dot:nth-child(3) { top: 35%; left: 55%; animation-duration: 3.5s; animation-delay: -2.5s; }
+.demo-pr-dot:nth-child(4) { top: 75%; left: 70%; animation-duration: 6s; animation-delay: -0.5s; }
+.demo-pr-dot:nth-child(5) { top: 15%; left: 80%; animation-duration: 4.5s; animation-delay: -3s; }
+.demo-pr-dot:nth-child(6) { top: 50%; left: 45%; animation-duration: 7s; animation-delay: -1.5s; }
+.demo-pr-dot:nth-child(7) { top: 80%; left: 15%; animation-duration: 5s; animation-delay: -4s; }
+.demo-pr-dot:nth-child(8) { top: 40%; left: 90%; animation-duration: 3s; animation-delay: -2s; }
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-elastic">
+    <div class="demo-elastic-ball"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes movement-elastic {
+  0% {
+    transform: translateY(-100px);
+  }
+  /* проскочил вниз */
+  30% {
+    transform: translateY(20px);   
+  }
+  /* подпрыгнул обратно */
+  50% {
+    transform: translateY(-10px);  
+  }
+  /* ещё раз проскочил */
+  65% {
+    transform: translateY(5px);    
+  }
+  /* почти затух */
+  80% {
+    transform: translateY(-2px);   
+  }
+  /* замер */
+  100% {
+    transform: translateY(0);      
+  }
+}
+
+.demo-elastic-ball {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+  animation: movement-elastic 1.5s ease-out infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

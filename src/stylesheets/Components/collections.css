@@ -48,7 +48,11 @@
 
   &.main {
     .O_CardArticle {
-      grid-column: span 3;
+      grid-column: span 4;
+
+      .M_AboutArticle {
+        width: 90%;
+      }
     }
   }
 

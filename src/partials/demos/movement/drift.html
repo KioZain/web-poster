@@ -1,0 +1,59 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-drift">
+    <div class="demo-drift-wrapper-x">
+      <div class="demo-drift-wrapper-y">
+        <div class="demo-drift-element"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes drift-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(80px); }
+}
+
+@keyframes drift-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+}
+
+@keyframes drift-rotate {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+/* Обёртки для наложения нескольких transform-анимаций */
+.demo-drift-wrapper-x {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  animation: drift-x 23s ease-in-out infinite;
+}
+
+.demo-drift-wrapper-y {
+  animation: drift-y 17s ease-in-out infinite;
+}
+
+.demo-drift-element {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: drift-rotate 31s ease-in-out infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

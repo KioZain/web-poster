@@ -65,37 +65,40 @@
           <div class="C_AticleLinks"></div>
         </div>
         <div class="W_ArticleContentContainer">
-          <!-- paragraph -->
+          <!-- ---------------------------- -->
           <div id="about" class="M_ParagraphArticle">
             <h3>О модуле</h3>
             <p class="article">
-              Веб-плакат живёт во времени. В отличие от печатного плаката, где
-              динамика передаётся через композицию и экспрессию формы, здесь
-              движение — буквальное. Элементы вращаются, смещаются, пульсируют,
-              дрейфуют по экрану. CSS-анимации через
+              Веб-плакат живёт во&nbsp;времени. В&nbsp;отличие от&nbsp;печатного
+              плаката, где динамика передаётся через композицию
+              и&nbsp;экспрессию формы, здесь движение&nbsp;&mdash; буквальное.
+              Элементы вращаются, смещаются, пульсируют, дрейфуют
+              по&nbsp;экрану. CSS-анимации через
               <code>@keyframes</code> дают дизайнеру контроль над тем, как и
               когда зритель воспринимает визуальное сообщение. Замедлить,
-              ускорить, зациклить — всё это становится частью авторского
-              инструментария.
+              ускорить, зациклить&nbsp;&mdash; всё это становится частью
+              авторского инструментария.
             </p>
           </div>
-          <!-- paragraph -->
           <div id="linear" class="M_ParagraphArticle">
             <h3>Линейное движение</h3>
             <p class="article">
-              Объект едет из точки A в точку B по прямой. Туда — обратно, туда —
-              обратно. Или просто туда и исчезает. Это самый базовый тип
-              движения, и начинать стоит именно с него — чтобы почувствовать,
-              как вообще работает связка <code>@keyframes</code> +
+              Объект едет из&nbsp;точки&nbsp;A в&nbsp;точку&nbsp;B
+              по&nbsp;прямой. Туда&nbsp;&mdash; обратно, туда &mdash; обратно.
+              Или просто туда и&nbsp;исчезает. Это самый базовый тип движения,
+              и&nbsp;начинать стоит именно с&nbsp;него&nbsp;&mdash; чтобы
+              почувствовать, как вообще работает связка
+              <code>@keyframes</code> +
               <code>animation</code>
             </p>
             <p class="article">
-              Технически всё просто: вы описываете два состояния — начальное и
-              конечное, — а браузер интерполирует переход между ними. Свойство
+              Технически всё просто: вы&nbsp;описываете два
+              состояния&nbsp;&mdash; начальное и конечное,&nbsp;&mdash;
+              а&nbsp;браузер интерполирует переход между ними. Свойство
               <code>animation-direction: alternate</code> заставляет объект
               возвращаться обратно, создавая маятниковый эффект. А
               <code>infinite</code>
-              зацикливает движение, чтобы анимация не останавливалась.
+              зацикливает движение, чтобы анимация не&nbsp;останавливалась.
             </p>
             <details class="A_More">
               <summary>
@@ -107,52 +110,19 @@
               </summary>
 
               <p class="article">
-                Обратите внимание на <code>calc(100% - 80px)</code> — это способ
-                сделать так, чтобы объект не вылезал за границы контейнера.
-                Функция <code>calc()</code>
-                вычитает ширину самого элемента из ширины родителя, и квадрат
-                аккуратно доезжает до правого края. Без этого приёма объект
-                частично уедет за пределы видимой области.
+                Обратите внимание на <code>calc(100% - 80px)</code> &mdash; это
+                способ сделать так, чтобы объект не&nbsp;вылезал за&nbsp;границы
+                контейнера. Функция <code>calc()</code>
+                вычитает ширину самого элемента из&nbsp;ширины родителя,
+                и&nbsp;квадрат аккуратно доезжает до&nbsp;правого края. Без
+                этого приёма объект частично уедет за&nbsp;пределы видимой
+                области.
               </p>
             </details>
           </div>
-          <!-- lineart movement -->
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-linear">
-              <div class="demo-cube"></div>
-            </div>
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <!-- Контейнер для React-компонента кнопки -->
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-.demo-cube {
-  position: absolute;
-  animation: movement-linear 5s linear infinite alternate;
-}
-
-@keyframes movement-linear {
-  from {
-    left: 0;
-  }
-  to {
-    left: calc(100% - 40px);
-  }
-}
-/* Вычитаем ширину 40 px объекта для корректной анимации */
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
-          <!-- pendulum-movement -->
+          <!-- linear-code -->
+          <linear></linear>
+          <!-- ---------------------------- -->
           <div id="pendulum" class="M_ParagraphArticle">
             <h3>Колебательное движение</h3>
             <p class="article">
@@ -162,70 +132,17 @@
               потому что мы видим его в физическом мире постоянно.
             </p>
             <p class="article">
-              Секрет колебательного движения — в свойстве transform-origin. По
-              умолчанию вращение через <code>rotate</code> происходит вокруг
-              центра элемента, что выглядит как кручение на месте. Стоит
-              сместить точку трансформации — скажем, в верхнюю часть объекта — и
-              вращение превращается в качание, словно объект подвешен на нитке.
+              Секрет колебательного движения&nbsp;&mdash; в&nbsp;свойстве
+              transform-origin. По умолчанию вращение через
+              <code>rotate</code> происходит вокруг центра элемента, что
+              выглядит как кручение на&nbsp;месте. Стоит сместить точку
+              трансформации&nbsp;&mdash; скажем, в&nbsp;верхнюю часть
+              объекта&nbsp;&mdash; и вращение превращается в&nbsp;качание,
+              словно объект подвешен на&nbsp;нитке.
             </p>
           </div>
           <!-- pendulum-code -->
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-pendulum">
-              <div class="demo-pendulum">
-                <div class="demo-pendulum-ball"></div>
-              </div>
-            </div>
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <!-- Контейнер для React-компонента кнопки -->
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes movement-pendulum {
-  from {
-    transform: rotate(-25deg);
-  }
-  to {
-    transform: rotate(25deg);
-  }
-}
-
-.demo-pendulum {
-position: absolute;
-top: 10%;
-left: 50%;
-width: 6px;
-height: 180px;
-background: rgba(255, 255, 255, 0.3);
-
-/* Точка опоры — верхний центр */
-transform-origin: top center;
-animation: movement-pendulum 2s ease-in-out infinite alternate;
-}
-
-.demo-pendulum-ball {
-position: absolute;
-bottom: -20px;
-left: 50%;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: #fff;
-transform: translateX(-50%);
-}
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
-          <!-- CalloutBlock -->
+          <pendulum></pendulum>
           <div class="O_CallOut">
             <img
               src="../../images/icons/Q_CallOutIconWarning.svg"
@@ -234,88 +151,46 @@ transform: translateX(-50%);
             />
             <div class="W_CalloutTextExpand">
               <p class="subtitle">
-                Частая ошибка — забыть про <code>transform-origin</code>. Без
-                его настройки <code>rotate</code> вращает объект вокруг
-                собственного центра, и вместо маятника вы получаете вертушку.
-                Если вам нужно качание — всегда задавайте точку опоры явно.
+                Частая ошибка&nbsp;&mdash; забыть про
+                <code>transform-origin</code>. Без его настройки
+                <code>rotate</code> вращает объект вокруг собственного центра,
+                и&nbsp;вместо маятника вы&nbsp;получаете вертушку. Если вам
+                нужно качание&nbsp;&mdash; всегда задавайте точку опоры явно.
               </p>
             </div>
           </div>
-          <!-- Pulse-movement -->
+          <!-- ---------------------------- -->
           <div id="pulse" class="M_ParagraphArticle">
             <h3>Пульсация</h3>
             <p class="article">
-              Объект ритмично увеличивается и уменьшается — как будто дышит.
-              Пульсация отлично работает для привлечения внимания к конкретному
-              элементу: кнопке, логотипу, точке на карте. При этом она
-              достаточно мягкая, чтобы не раздражать, особенно если использовать
-              плавный тайминг и умеренную амплитуду.
+              Объект ритмично увеличивается и&nbsp;уменьшается&nbsp;&mdash; как
+              будто дышит. Пульсация отлично работает для привлечения внимания
+              к&nbsp;конкретному элементу: кнопке, логотипу, точке
+              на&nbsp;карте. При этом она достаточно мягкая, чтобы
+              не&nbsp;раздражать, особенно если использовать плавный тайминг
+              и&nbsp;умеренную амплитуду.
             </p>
             <p class="article">
               Реализуется через <code>transform: scale()</code> Важно понимать
-              разницу между пульсацией и «морганием»: пульсация — это
-              масштабирование, а моргание — это смена прозрачности через
+              разницу между пульсацией и&nbsp;&laquo;морганием&raquo;:
+              пульсация&nbsp;&mdash; это масштабирование,
+              а&nbsp;моргание&nbsp;&mdash; это смена прозрачности через
               <code>opacity</code> Кайфовое решение: комбинировать оба свойства.
-              Когда объект одновременно увеличивается и становится чуть
-              прозрачнее на пике, эффект выглядит живее.
+              Когда объект одновременно увеличивается и&nbsp;становится чуть
+              прозрачнее на&nbsp;пике, эффект выглядит живее.
             </p>
           </div>
-          <!-- pulseCode -->
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-pulse">
-              <div class="demo-pulse-circle"></div>
-            </div>
+          <!-- pulse-code -->
+          <pulse></pulse>
 
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes movement-pulse {
-0% {
-transform: scale(1);
-opacity: 1;
-}
-50% {
-transform: scale(1.3);
-opacity: 0.7;
-}
-100% {
-transform: scale(1);
-opacity: 1;
-}
-}
-.demo-pulse-circle {
-position: absolute;
-top: 50%;
-left: 50%;
-width: 80px;
-height: 80px;
-border-radius: 50%;
-background: #fff;
-transform: translate(-50%, -50%);
-animation: movement-pulse 2s ease-in-out infinite;
-}
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Drift -->
+          <!-- ---------------------------- -->
           <div id="drift" class="M_ParagraphArticle">
             <h3>Дрифт</h3>
             <p class="article">
-              Мягкое, почти незаметное перемещение — как если бы объект плыл в
-              невесомости. Дрифт работает в медитативных, атмосферных
-              композициях и часто используется для фоновых слоёв: декоративных
-              фигур, текстур, размытых пятен.
+              Мягкое, почти незаметное перемещение&nbsp;&mdash; как если&nbsp;бы
+              объект плыл в невесомости. Дрифт работает в&nbsp;медитативных,
+              атмосферных композициях и&nbsp;часто используется для фоновых
+              слоёв: декоративных фигур, текстур, размытых пятен.
             </p>
             <p class="article">
               Весь фокус в&nbsp;длительности и&nbsp;комбинировании. Одна
@@ -328,7 +203,8 @@ animation: movement-pulse 2s ease-in-out infinite;
               ось строго предсказуема.
             </p>
           </div>
-
+          <!-- drift-code -->
+          <drift></drift>
           <div class="O_CallOut">
             <img
               src="../../images/icons/Q_CallOutIconAdvice.svg"
@@ -344,75 +220,17 @@ animation: movement-pulse 2s ease-in-out infinite;
             </div>
           </div>
 
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-drift">
-              <div class="demo-drift-wrapper-x">
-                <div class="demo-drift-wrapper-y">
-                  <div class="demo-drift-element"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes drift-x {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(80px); }
-}
-
-@keyframes drift-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-60px); }
-}
-
-@keyframes drift-rotate {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(15deg); }
-}
-
-/* Обёртки для наложения нескольких transform-анимаций */
-.demo-drift-wrapper-x {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  animation: drift-x 23s ease-in-out infinite;
-}
-
-.demo-drift-wrapper-y {
-  animation: drift-y 17s ease-in-out infinite;
-}
-
-.demo-drift-element {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  animation: drift-rotate 31s ease-in-out infinite;
-}
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
           <div class="M_ParagraphArticle">
             <p class="article">
-              Здесь важен технический момент. CSS не позволяет применить
-              несколько <code>@keyframes</code> к одному свойству
-              <code>transform</code> на одном элементе — последнее перезапишет
-              предыдущее. Поэтому используется трюк с вложенными обёртками:
-              каждый уровень вложенности отвечает за свою ось движения. Внешний
-              <code>div</code> двигает по <code>X</code>, средний — по
-              <code>Y</code>, внутренний — вращает. Вместе они создают сложную
-              траекторию из простых компонентов.
+              Здесь важен технический момент. CSS не&nbsp;позволяет применить
+              несколько <code>@keyframes</code> к&nbsp;одному свойству
+              <code>transform</code> на&nbsp;одном элементе&nbsp;&mdash;
+              последнее перезапишет предыдущее. Поэтому используется трюк
+              с&nbsp;вложенными обёртками: каждый уровень вложенности отвечает
+              за&nbsp;свою ось движения. Внешний <code>div</code> двигает по
+              <code>X</code>, средний&nbsp;&mdash; по <code>Y</code>,
+              внутренний&nbsp;&mdash; вращает. Вместе они создают сложную
+              траекторию из&nbsp;простых компонентов.
             </p>
           </div>
 
@@ -424,199 +242,87 @@ animation: movement-pulse 2s ease-in-out infinite;
             />
             <div class="W_CalloutTextExpand">
               <p class="subtitle">
-                Если вы попытаетесь записать несколько
-                <code>transform</code> анимаций на один элемент через запятую в
-                свойстве <code>animation</code>, анимации запустятся, но каждый
-                <code>@keyframes</code> перезапишет значение
-                <code>transform</code> предыдущего. <br /><br />В результате вы
-                увидите только последнюю анимацию. Решение — вложенные обёртки,
-                по одной на каждую ось.
+                Если вы&nbsp;попытаетесь записать несколько
+                <code>transform</code> анимаций на&nbsp;один элемент через
+                запятую в свойстве <code>animation</code>, анимации запустятся,
+                но&nbsp;каждый <code>@keyframes</code> перезапишет значение
+                <code>transform</code> предыдущего.
+                <br /><br />В&nbsp;результате вы увидите только последнюю
+                анимацию. Решение&nbsp;&mdash; вложенные обёртки, по&nbsp;одной
+                на&nbsp;каждую ось.
               </p>
             </div>
           </div>
 
-          <!-- ElasticMovement -->
+          <!-- ---------------------------- -->
           <div id="elastic" class="M_ParagraphArticle">
             <h3>Эластичное движение</h3>
             <p class="article">
-              Объект пролетает целевую точку и возвращается назад — как пружина
-              или резинка. Подпрыгивает, чуть проскакивает, ещё раз
-              подпрыгивает, и постепенно затухает. Это придаёт анимации
-              характер, энергию, игривость — что-то среднее между мультяшным и
-              физическим.
+              Объект пролетает целевую точку и&nbsp;возвращается
+              назад&nbsp;&mdash; как пружина или резинка. Подпрыгивает, чуть
+              проскакивает, ещё раз подпрыгивает, и&nbsp;постепенно затухает.
+              Это придаёт анимации характер, энергию, игривость&nbsp;&mdash;
+              что-то среднее между мультяшным и физическим.
             </p>
             <p class="article">
-              Реализуется через многошаговый <code>@keyframes</code>, в котором
-              объект «перелетает» через целевую точку несколько раз с
-              уменьшающейся амплитудой. Вы задаёте промежуточные кадры вручную:
-              допустим, элемент должен приземлиться на
-              <code>translateY(0)</code>, но по пути проходит через
+              Реализуется через многошаговый <code>@keyframes</code>,
+              в&nbsp;котором объект &laquo;перелетает&raquo; через целевую точку
+              несколько раз с уменьшающейся амплитудой. Вы&nbsp;задаёте
+              промежуточные кадры вручную: допустим, элемент должен приземлиться
+              на <code>translateY(0)</code>, но&nbsp;по&nbsp;пути проходит через
               <code>translateY(-60px)</code>, потом
               <code>translateY(10px)</code>, потом
-              <code>translateY(-5px)</code>, и только потом останавливается.
+              <code>translateY(-5px)</code>, и&nbsp;только потом
+              останавливается.
             </p>
           </div>
 
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-elastic">
-              <div class="demo-elastic-ball"></div>
-            </div>
-
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes movement-elastic {
-  0% {
-    transform: translateY(-100px);
-  }
-  /* проскочил вниз */
-  30% {
-    transform: translateY(20px);   
-  }
-  /* подпрыгнул обратно */
-  50% {
-    transform: translateY(-10px);  
-  }
-  /* ещё раз проскочил */
-  65% {
-    transform: translateY(5px);    
-  }
-  /* почти затух */
-  80% {
-    transform: translateY(-2px);   
-  }
-  /* замер */
-  100% {
-    transform: translateY(0);      
-  }
-}
-
-.demo-elastic-ball {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #fff;
-  transform: translateX(-50%);
-  animation: movement-elastic 1.5s ease-out infinite;
-}
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
           <div class="M_ParagraphArticle">
             <p class="article">
-              Есть альтернатива — кастомная функция <code>cubic-bezier()</code>,
-              которая позволяет создать эффект перелёта для простых переходов.
-              Но для сложных, многофазных пружинных колебаний она не подходит —
-              нужны ручные ключевые кадры.
+              Есть альтернатива&nbsp;&mdash; кастомная функция
+              <code>cubic-bezier()</code>, которая позволяет создать эффект
+              перелёта для простых переходов. Но&nbsp;для сложных, многофазных
+              пружинных колебаний она не&nbsp;подходит &mdash; нужны ручные
+              ключевые кадры.
               <a href="https://www.cssportal.com/css-cubic-bezier-generator/"
                 >Генератор cubic-bezier</a
               >
             </p>
           </div>
-
+          <elastic></elastic>
           <div id="orbit" class="M_ParagraphArticle">
             <h3>Орбитальное движение</h3>
             <p class="article">
-              Объект движется по кругу или эллипсу — как планета вокруг звезды.
-              Выглядит эффектно, особенно когда несколько элементов вращаются с
-              разной скоростью. Встречается в веб-плакатах с космической,
-              научной или абстрактной тематикой.
+              Объект движется по&nbsp;кругу или эллипсу&nbsp;&mdash; как планета
+              вокруг звезды. Выглядит эффектно, особенно когда несколько
+              элементов вращаются с разной скоростью. Встречается
+              в&nbsp;веб-плакатах с&nbsp;космической, научной или абстрактной
+              тематикой.
             </p>
             <p class="article">
-              Самый удобный способ реализации — анимировать не сам объект, а его
-              обёртку. Представьте невидимый рычаг, который вращается вокруг
-              центра. На конце рычага закреплён объект. Рычаг крутится — объект
-              описывает окружность. Технически это <code>rotate</code> на
-              родительском контейнере, а дочерний элемент просто смещён от
-              центра через
+              Самый удобный способ реализации&nbsp;&mdash; анимировать
+              не&nbsp;сам объект, а&nbsp;его обёртку. Представьте невидимый
+              рычаг, который вращается вокруг центра. На&nbsp;конце рычага
+              закреплён объект. Рычаг крутится&nbsp;&mdash; объект описывает
+              окружность. Технически это <code>rotate</code> на родительском
+              контейнере, а&nbsp;дочерний элемент просто смещён от центра через
               <code>translate</code>
             </p>
           </div>
 
-          <!-- OrbitMovement -->
-          <div class="W_PreviewCodeArea">
-            <div class="M_PreviewArea" data-demo="movement-orbit">
-              <div class="demo-orbit-path"></div>
-              <div class="demo-orbit-center"></div>
-              <div class="demo-orbit-arm">
-                <div class="demo-orbit-planet"></div>
-              </div>
-            </div>
-
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes orbit-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes orbit-counter-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-/* Невидимый рычаг, вращающийся вокруг центра */
-.demo-orbit-arm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  animation: orbit-spin 6s linear infinite;
-}
-
-/* Объект, смещённый от центра вращения */
-.demo-orbit-planet {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff;
-  /* Смещение задаёт радиус орбиты */
-  top: -120px;
-  left: -20px;
-  /* Контр-вращение сохраняет ориентацию */
-  animation: orbit-counter-spin 6s linear infinite;
-}
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
-
+          <!-- ---------------------------- -->
           <div class="M_ParagraphArticle">
             <p class="article">
-              Есть нюанс: если на вращающемся контейнере лежит текст или
-              изображение, оно тоже будет вращаться — и станет нечитаемым. Чтобы
-              это исправить, на дочерний элемент навешивается контр-вращение:
-              такое же <code>rotate</code>, но в обратную сторону и с той же
-              скоростью. Объект движется по орбите, но сохраняет свою
+              Есть нюанс: если на&nbsp;вращающемся контейнере лежит текст или
+              изображение, оно тоже будет вращаться&nbsp;&mdash; и&nbsp;станет
+              нечитаемым. Чтобы это исправить, на&nbsp;дочерний элемент
+              навешивается контр-вращение: такое&nbsp;же <code>rotate</code>,
+              но&nbsp;в&nbsp;обратную сторону и&nbsp;с&nbsp;той&nbsp;же
+              скоростью. Объект движется по&nbsp;орбите, но&nbsp;сохраняет свою
               ориентацию.
             </p>
           </div>
-
+          <orbit></orbit>
           <div class="O_CallOut">
             <img
               src="../../images/icons/Q_CallOutIconAdvice.svg"
@@ -626,98 +332,46 @@ animation: movement-pulse 2s ease-in-out infinite;
             <div class="W_CalloutTextExpand">
               <p class="subtitle">
                 Для эллиптической орбиты добавьте
-                <code>transform: scaleY(0.5)</code> на обёртку всей системы —
-                круговое вращение сплющится в эллипс. Это проще, чем выстраивать
-                эллиптическую траекторию через <code>translateX</code> и
-                <code>translateY</code> с разными амплитудами.
+                <code>transform: scaleY(0.5)</code> на&nbsp;обёртку всей системы
+                &mdash; круговое вращение сплющится в&nbsp;эллипс. Это проще,
+                чем выстраивать эллиптическую траекторию через
+                <code>translateX</code> и <code>translateY</code> с&nbsp;разными
+                амплитудами.
               </p>
             </div>
           </div>
 
-          <!-- PseudoRandomMovement -->
-
+          <!-- ---------------------------- -->
           <div id="pseudo-random" class="M_ParagraphArticle">
             <h3>Псведослучайное движение</h3>
             <p class="article">
-              Это один из самых выразительных паттернов для веб-плакатов, и при
-              этом — обманчиво простой. Принцип такой: несколько одинаковых
-              объектов получают одну и ту же анимацию, но с разными
+              Это один из&nbsp;самых выразительных паттернов для веб-плакатов,
+              и&nbsp;при этом&nbsp;&mdash; обманчиво простой. Принцип такой:
+              несколько одинаковых объектов получают одну и&nbsp;ту&nbsp;же
+              анимацию, но&nbsp;с&nbsp;разными
               <code>animation-duration</code> и <code>animation-delay</code>.
               Из-за рассинхронизации зрителю кажется, что объекты двигаются
-              хаотично, хотя каждый из них следует строго предсказуемой
+              хаотично, хотя каждый из&nbsp;них следует строго предсказуемой
               траектории.
             </p>
             <p class="article">
-              Чем больше объектов — тем убедительнее иллюзия случайности. Если у
-              восьми элементов длительности от <code>3s</code> до
-              <code>7s</code> с шагом <code>0.5s</code>, их паттерны совпадут
-              заново очень нескоро, и глаз просто не успевает считать
-              повторения. Это работает примерно как полиритмы в музыке: каждый
-              голос прост, но вместе они создают сложную фактуру.
+              Чем больше объектов&nbsp;&mdash; тем убедительнее иллюзия
+              случайности. Если у восьми элементов длительности от
+              <code>3s</code> до <code>7s</code> с&nbsp;шагом <code>0.5s</code>,
+              их&nbsp;паттерны совпадут заново очень нескоро, и&nbsp;глаз просто
+              не&nbsp;успевает считать повторения. Это работает примерно как
+              полиритмы в&nbsp;музыке: каждый голос прост, но&nbsp;вместе они
+              создают сложную фактуру.
             </p>
           </div>
-
-          <div class="W_PreviewCodeArea">
-            <!-- MOVEMENT-PSEUDO-RANDOM — Псевдослучайное движение -->
-            <div class="M_PreviewArea" data-demo="movement-pseudo-random">
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-              <div class="demo-pr-dot"></div>
-            </div>
-
-            <div class="S_CodeArea">
-              <div class="O_CodeBar">
-                <div class="M_CodeTabs">
-                  <button class="A_CodeTab active">CSS</button>
-                </div>
-                <div class="A_CopyButton-container"></div>
-              </div>
-
-              <div class="O_CodeContent">
-                <div class="A_LineNumbers"></div>
-                <pre class="A_CodeBlock"><code class="language-css">
-@keyframes pseudo-random-move {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(100px, -50px); }
-  50% { transform: translate(-30px, 80px); }
-  75% { transform: translate(60px, 20px); }
-  100% { transform: translate(0, 0); }
-}
-
-.demo-pr-dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #fff;
-  animation: pseudo-random-move ease-in-out infinite alternate;
-}
-
-/* Каждый элемент получает свою длительность и позицию */
-.demo-pr-dot:nth-child(1) { top: 20%; left: 10%; animation-duration: 4s; }
-.demo-pr-dot:nth-child(2) { top: 60%; left: 25%; animation-duration: 5.5s; animation-delay: -1s; }
-.demo-pr-dot:nth-child(3) { top: 35%; left: 55%; animation-duration: 3.5s; animation-delay: -2.5s; }
-.demo-pr-dot:nth-child(4) { top: 75%; left: 70%; animation-duration: 6s; animation-delay: -0.5s; }
-.demo-pr-dot:nth-child(5) { top: 15%; left: 80%; animation-duration: 4.5s; animation-delay: -3s; }
-.demo-pr-dot:nth-child(6) { top: 50%; left: 45%; animation-duration: 7s; animation-delay: -1.5s; }
-.demo-pr-dot:nth-child(7) { top: 80%; left: 15%; animation-duration: 5s; animation-delay: -4s; }
-.demo-pr-dot:nth-child(8) { top: 40%; left: 90%; animation-duration: 3s; animation-delay: -2s; }
-            </code>
-          </pre>
-              </div>
-            </div>
-          </div>
+          <pseudorandom></pseudorandom>
           <div class="M_ParagraphArticle">
             <p class="article">
-              Обратите внимание на отрицательные <code>animation-delay</code> —
-              это позволяет прокрутить анимацию в прошлое, чтобы при загрузке
-              страницы объекты стартовали не из одной точки. Без этого приёма в
-              первую секунду все точки синхронно дёрнутся в одну сторону, и
+              Обратите внимание на&nbsp;отрицательные
+              <code>animation-delay</code> &mdash; это позволяет прокрутить
+              анимацию в&nbsp;прошлое, чтобы при загрузке страницы объекты
+              стартовали не&nbsp;из&nbsp;одной точки. Без этого приёма в первую
+              секунду все точки синхронно дёрнутся в&nbsp;одну сторону, и
               иллюзия случайности сломается.
             </p>
           </div>
@@ -729,15 +383,14 @@ animation: movement-pulse 2s ease-in-out infinite;
             />
             <div class="W_CalloutTextExpand">
               <p class="subtitle">
-                Попробуйте использовать не только разные длительности, но и
-                разную прозрачность, размер, или даже слегка разные траектории
-                через отдельные <code>@keyframes</code>. Чем больше параметров
-                варьируется, тем натуральнее выглядит результат.
+                Попробуйте использовать не&nbsp;только разные длительности,
+                но&nbsp;и разную прозрачность, размер, или даже слегка разные
+                траектории через отдельные <code>@keyframes</code>. Чем больше
+                параметров варьируется, тем натуральнее выглядит результат.
               </p>
             </div>
           </div>
-
-          <!-- End of the article -->
+          <!-- end -->
         </div>
       </div>
     </div>

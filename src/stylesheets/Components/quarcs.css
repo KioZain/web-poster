@@ -40,8 +40,18 @@
 .Q_SmallPatternImage {
   height: 4rem;
   width: 4rem;
+  min-width: 4rem;
+  max-height: 4rem;
+  aspect-ratio: 1/1;
   background-color: rgb(171, 212, 249);
-  border-radius: 0.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .Q_Circle {
   width: 40px;
@@ -108,6 +118,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.03);
+    }
   }
 }
 .Q_FilterModal {

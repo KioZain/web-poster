@@ -1,4 +1,8 @@
-import gsap from 'gsap'
+import { gsap } from 'gsap'
+
+import { SplitText } from 'gsap/SplitText';
+gsap.registerPlugin(SplitText);
+
 
 export function initInfiniteCarousel() {
   const wrapper = document.querySelector('.carousel-wrapper')
@@ -128,5 +132,37 @@ export function initInfiniteCarousel() {
 
   console.log('Carousel initialized:', { totalItems, step, totalWidth })
 }
+
+
+// gsap.from("#quote", {
+//   clipPath: "inset(0 50% 0 50%)",
+//   duration: .7, ease: "power3.inOut",
+//   delay: 0.4,
+//   stagger: 0.15,
+// });
+
+// gsap.from('.M_Buttons', {
+//   clipPath: "inset(0 0 100% 0)",
+//   duration: 0.5, ease: "power2.out",
+//   delay: 0.6,
+//   stagger: 0.15,
+// });
+
+
+
+
+
+
+gsap.registerPlugin(SplitText);
+const split = SplitText.create("h1", { type: "words" });
+
+gsap.from(split.words, {
+  opacity: 0, y: 35,
+  stagger: 0.07, duration: 1.2,
+  ease: "power4.out",
+  stagger: 0.15,
+});
+
+
 
 document.addEventListener('DOMContentLoaded', initInfiniteCarousel)

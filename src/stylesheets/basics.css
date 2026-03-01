@@ -43,8 +43,12 @@ h2 {
 
 h3 {
   font-size: 2rem;
-  line-height: 2.4rem;
+  line-height: 115%;
   font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1.5rem, 1.0588rem + 1.9608vw, 2rem);
+  }
 }
 
 h4 {
@@ -72,6 +76,11 @@ p.body-other {
   line-height: 130%;
   color: var(--gray-base);
 }
+p.caption {
+  font-size: 1rem;
+  line-height: 125%;
+}
+
 .caption-caps {
   font-size: 14px;
   text-transform: uppercase;
@@ -83,7 +92,7 @@ b {
   font-size: 1.125rem;
 }
 /* Grid */
-.all-grid {
+/* .all-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
@@ -95,7 +104,7 @@ b {
     column-gap: 12px;
     background: red;
   }
-}
+} */
 
 /* Color hierarchy */
 .light {
@@ -125,7 +134,7 @@ p.article {
     background: #e7e7e4;
     border-radius: 4px;
     font-family: 'Aeonik Mono';
-    padding: 2px 6px;
+    padding: 2px 4px;
     white-space: pre;
 
     @media screen and (max-width: 768px) {
@@ -149,6 +158,10 @@ p.article {
 code {
   font-family: 'Aeonik Mono', Roboto, monospace;
   font-size: 1.125rem;
-  line-height: 1.25rem;
+  line-height: 145%;
+
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1rem, 0.89rem + 0.49vw, 1.125rem);
+  }
 }
 /*  */

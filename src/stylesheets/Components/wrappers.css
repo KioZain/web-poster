@@ -54,35 +54,28 @@
   padding: var(--space-16) var(--space-24);
 }
 .W_AboutCards {
-  display: grid;
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
-  justify-content: space-between;
   width: 100%;
+  max-width: var(--index-max);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
   gap: var(--grid-gap);
+  margin: 0 auto;
 
-  .O_AboutCard:first-child {
-    grid-column: span 4;
-  }
-  .O_AboutCard:nth-child(2) {
-    grid-column: 7/10;
-  }
-  .O_AboutCard:nth-child(3) {
-    grid-column: 10/13;
-  }
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-
+  @media screen and (max-width: 880px) {
     .O_AboutCard {
-      max-width: 100%;
-    }
+      grid-column: 1 / -1;
+      max-width: 486px;
+      margin: 0 auto;
+      height: 240px;
 
-    .W_TwoCards {
-      flex-direction: column;
-      min-width: 100%;
+      p.light {
+        font-size: 1.125rem;
+      }
     }
   }
 }
+
 .W_SectionAboutInfo {
   grid-column: -1 / 1;
   display: grid;
@@ -91,9 +84,6 @@
 
   .O_AboutPartAction {
     margin-top: 3rem;
-  }
-
-  @media screen and (max-width: 1024px) {
   }
 }
 

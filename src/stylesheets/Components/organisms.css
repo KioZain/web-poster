@@ -1,10 +1,22 @@
 .O_AboutCard {
   width: 100%;
-  padding: 0 var(--space-16);
-  border-left: 1.5px dashed var(--gray-lightest);
   display: flex;
   flex-direction: column;
+  padding: var(--space-16);
   gap: var(--space-20);
+  background: #f1f3f3;
+  border-radius: 8px;
+  height: 300px;
+  justify-content: space-between;
+  position: relative;
+
+  p.number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-weight: 500;
+    color: var(--gray-light);
+  }
 }
 .O_AboutPartAction {
   display: flex;
@@ -417,10 +429,10 @@
 }
 
 .O_CallOut {
-  background: #f4f5f6;
+  background: #f3f3f1;
   border-radius: 6px;
   padding: var(--space-20);
-  border: 1px solid var(--gray-lightest);
+  /* border: 1px solid var(--gray-lightest); */
   display: flex;
   flex-direction: row;
   gap: var(--space-20);
@@ -497,7 +509,16 @@
   display: flex;
   flex-direction: row;
   gap: var(--space-12);
-  padding: 0 var(--space-12) var(--space-12) var(--space-12);
+  padding: 0 var(--space-12) var(--space-12);
+
+  & .A_CodeBlock {
+    display: none;
+
+    &.active,
+    &:only-of-type {
+      display: block;
+    }
+  }
 }
 .O_BreadCrumbs {
   background-color: white;
@@ -512,15 +533,10 @@
 }
 .O_PartCover {
   height: 480px;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
   color: var(--white-500);
-  border-radius: 4px;
   overflow: hidden;
-  margin-top: 2rem;
-
+  position: relative;
+  margin: 0 auto;
   img.part-cover {
     width: 100%;
     height: 100%;
@@ -529,6 +545,14 @@
     left: 0;
     object-fit: cover;
     z-index: 1;
+  }
+
+  .W_PartCover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .M_HeadingContainer {

@@ -1,0 +1,58 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-orbit">
+    <div class="demo-orbit-path"></div>
+    <div class="demo-orbit-center"></div>
+    <div class="demo-orbit-arm">
+      <div class="demo-orbit-planet"></div>
+    </div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-counter-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Невидимый рычаг, вращающийся вокруг центра */
+.demo-orbit-arm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  animation: orbit-spin 6s linear infinite;
+}
+
+/* Объект, смещённый от центра вращения */
+.demo-orbit-planet {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  /* Смещение задаёт радиус орбиты */
+  top: -120px;
+  left: -20px;
+  /* Контр-вращение сохраняет ориентацию */
+  animation: orbit-counter-spin 6s linear infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

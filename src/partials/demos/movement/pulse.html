@@ -1,0 +1,46 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-pulse">
+    <div class="demo-pulse-circle"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes movement-pulse {
+0% {
+transform: scale(1);
+opacity: 1;
+}
+50% {
+transform: scale(1.3);
+opacity: 0.7;
+}
+100% {
+transform: scale(1);
+opacity: 1;
+}
+}
+.demo-pulse-circle {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background: #fff;
+transform: translate(-50%, -50%);
+animation: movement-pulse 2s ease-in-out infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

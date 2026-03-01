@@ -1,5 +1,7 @@
 .S_HomeScreen {
   width: 100%;
+  height: calc(100vh - var(--header-offset));
+  background: violet;
   margin-top: 4rem;
   display: flex;
   justify-content: center;
@@ -16,6 +18,12 @@
     position: absolute;
     top: 1rem;
   }
+}
+
+.S_IntroAbout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
 }
 
 .S_ArticlesPreviewSection {

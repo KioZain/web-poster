@@ -69,4 +69,6 @@
 
   /* HeaderMargin */
   --header-offset: 4rem;
+
+  --index-max: 1064px;
 }

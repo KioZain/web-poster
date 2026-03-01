@@ -11,13 +11,12 @@
     <menubar></menubar>
 
     <div class="S_HomeScreen">
-      <img src="images/homescreen.png" alt="" />
       <div class="W_HeadingContainer">
         <div class="Q_HandleSquare lt"></div>
         <div class="Q_HandleSquare rt"></div>
         <div class="Q_HandleSquare rb"></div>
         <div class="Q_HandleSquare lb"></div>
-        <h1>Интерактивный учебник <br />по веб-плакату</h1>
+        <h1 class="text-go-gsap">Интерактивный учебник <br />по веб-плакату</h1>
         <div class="M_Buttons">
           <a href="handbook.html" class="A_Button">Перейти в учебник</a>
           <a href="" class="A_Button secondary">О веб-плакате</a>
@@ -26,57 +25,67 @@
     </div>
     <!-- TextAbout -->
     <div class="W_HomePageWrapper margin-container">
-      <div class="M_BigTextAbout">
-        <p class="caption-caps light">Веб-плакат — это</p>
-        <h2 class="right-container">
-          Практический и творческий инструмент для дизайнеров, осваивающих
-          веб-вёрстку
-        </h2>
-      </div>
+      <section class="S_IntroAbout">
+        <div class="M_BigTextAbout centered">
+          <p class="caption-caps light">Что такое веб-плакат</p>
+          <h2>
+            Веб-плакат&nbsp;&mdash; одностраничный короткий и&nbsp;яркий сайт,
+            где код становится выразительным средством дизайнера
+          </h2>
+        </div>
 
-      <div class="W_AboutCards">
-        <!-- first -->
-        <div class="O_AboutCard">
-          <div class="M_HeadingPicture">
-            <div class="Q_SmallPatternImage"></div>
-            <h4>Одностраничный <br />сайт-высказывание</h4>
+        <div class="W_AboutCards">
+          <!-- first -->
+          <div class="O_AboutCard">
+            <p class="caption-caps number">[ 1 ]</p>
+            <div class="Q_SmallPatternImage">
+              <img src="./images/Q_SmallPatternImage1.png" alt="" />
+            </div>
+            <div class="M_TitleText">
+              <p class="subtitle">Пространство для экспериментов</p>
+              <p class="caption light">
+                Формат сайта, где можно свободно пробовать новое. Здесь нет
+                интерфейсных правил, а&nbsp;есть браузер как чистый холст.
+              </p>
+            </div>
           </div>
-          <p class="body-other">
-            Веб-плакат&nbsp;&mdash; это интерактивная страница, где
-            ты&nbsp;выражаешь свою идею или сообщение через визуал,
-            а&nbsp;не&nbsp;продаёшь услугу или рассказываешь длинную историю.
-          </p>
-        </div>
-        <!-- second -->
-        <div class="O_AboutCard">
-          <div class="M_HeadingPicture">
-            <div class="Q_SmallPatternImage"></div>
-            <h4>Научись дизайнить <br />через код</h4>
+          <!-- second -->
+          <div class="O_AboutCard">
+            <p class="caption-caps number">[ 2 ]</p>
+            <div class="Q_SmallPatternImage">
+              <img src="./images/Q_SmallPatternImage2.png" alt="" />
+            </div>
+            <div class="M_TitleText">
+              <p class="subtitle">Особая форма <br />авторского высказвания</p>
+              <p class="caption light">
+                Наследие печатного плаката&nbsp;&mdash; коммуницировать через
+                визуальный язык. В&nbsp;браузере такой плакат приобретает слой
+                интерактивности
+              </p>
+            </div>
           </div>
-          <p class="body-other">
-            Формат учит применять на&nbsp;практике HTML, CSS и&nbsp;JavaScript
-            для воплощения визуальных, креативных и&nbsp;концептуальных идей
-            в&nbsp;дизайне
-          </p>
-        </div>
-        <!-- third -->
-        <div class="O_AboutCard">
-          <div class="M_HeadingPicture">
-            <div class="Q_SmallPatternImage"></div>
-            <h4>Недушное программирование</h4>
+          <!-- third -->
+          <div class="O_AboutCard">
+            <p class="caption-caps number">[ 3 ]</p>
+            <div class="Q_SmallPatternImage">
+              <img src="./images/Q_SmallPatternImage3.png" alt="" />
+            </div>
+            <div class="M_TitleText">
+              <p class="subtitle">Код через визуальное мышление</p>
+              <p class="caption light">
+                Делается на&nbsp;HTML, CSS и&nbsp;JS&nbsp;&mdash; базовых
+                технологиях веба. Осваивайте вёрстку через визуал,
+                а&nbsp;не&nbsp;через абстрактные задачи.
+              </p>
+            </div>
           </div>
-          <p class="body-other">
-            Обучайся через практику&nbsp;&mdash; создавай анимации, вёрстку
-            и&nbsp;интерактив для своей идеи, а&nbsp;не&nbsp;повторяй
-            абстрактные примеры.
-          </p>
         </div>
-      </div>
+      </section>
       <!-- HseBlock -->
       <div class="S_GalleryPosterBlock">
         <div class="O_TitleSlider">
           <div class="M_HeadingContainer">
-            <h2>Методика обучения прямиком из HSE ART AND DESIGN*</h2>
+            <h2>Методика обучения прямиком из&nbsp;HSE ART AND DESIGN*</h2>
             <div class="A_IconText">
               <p class="subtitle light">7 лет практики · 300+ проектов</p>
             </div>
@@ -137,10 +146,10 @@
                     width="24"
                     height="24"
                   />
-                  <p class="subtitle light">2 часа 24 минуты</p>
+                  <p class="subtitle light">97 минут чтения</p>
                 </div>
 
-                <h2>Поэтапное руководство по созданию веб-плаката</h2>
+                <h2>Поэтапное руководство по&nbsp;созданию веб-плаката</h2>
               </div>
             </div>
 
@@ -163,9 +172,10 @@
                 <div class="Q_HandleSquare rt"></div>
                 <div class="Q_HandleSquare rb"></div>
                 <p class="body-other">
-                  Изучай веб-вёрстку своём темпе. Возвращайся к объяснениям
-                  сколько угодно раз. Учебник проводит поэтапно от формирования
-                  концепции до полной реализации и публикации веб-плаката
+                  Изучай веб-вёрстку своём темпе. Возвращайся к&nbsp;объяснениям
+                  сколько угодно раз. Учебник проводит поэтапно
+                  от&nbsp;формирования концепции до&nbsp;полной реализации
+                  и&nbsp;публикации веб-плаката
                 </p>
               </div>
             </div>
@@ -175,54 +185,52 @@
         <!-- Chapers -->
         <div class="C_Articles main">
           <!-- First Article -->
-          <a class="O_CardArticle" href="">
-            <div class="Q_ArticleImage"></div>
+          <a
+            class="O_CardArticle"
+            href="./handbook/part_1/chapter_1/about_webposter.html"
+          >
+            <div class="Q_ArticleImage">
+              <img src="./images/handbook/covers/handbook_1-1-1.png" alt="" />
+            </div>
             <div class="M_ArticleCardBio">
-              <p class="caption-caps">Теория · 5 минут</p>
+              <p class="caption-caps">Теория · 3 минуты</p>
               <div class="M_AboutArticle">
-                <h4>Article name</h4>
+                <h4>Особенности формата</h4>
                 <p class="body">
-                  Article bio about web-poster in a short way described with a
-                  few words
+                  Краткая история появления формата веб-плаката и&nbsp;его
+                  ключевые особенности
                 </p>
               </div>
             </div>
           </a>
           <!-- SecondArticle -->
           <a class="O_CardArticle" href="">
-            <div class="Q_ArticleImage"></div>
+            <div class="Q_ArticleImage">
+              <img src="./images/handbook/covers/handbook_1-1-4.png" alt="" />
+            </div>
             <div class="M_ArticleCardBio">
-              <p class="caption-caps">Теория · 5 минут</p>
+              <p class="caption-caps">Теория · 4 минуты</p>
               <div class="M_AboutArticle">
-                <h4>Article name</h4>
+                <h4>Статичный и динамичный веб-плакат</h4>
                 <p class="body">
-                  Article bio about web-poster in a short way described with a
-                  few words
+                  Два типа веб-плакатов по&nbsp;уровню интерактивности. Какие
+                  задачи решает каждый и&nbsp;какой выбрать.
                 </p>
               </div>
             </div>
           </a>
           <!-- Third Article -->
-          <a class="O_CardArticle" href="">
-            <div class="Q_ArticleImage"></div>
-            <div class="M_ArticleCardBio">
-              <p class="caption-caps">Теория · 5 минут</p>
-              <div class="M_AboutArticle">
-                <h4>Article name</h4>
-                <p class="body">
-                  Article bio about web-poster in a short way described with a
-                  few words
-                </p>
-              </div>
+          <a
+            class="O_CardArticle"
+            href="./handbook/part_1/chapter_2/why-create.html"
+          >
+            <div class="Q_ArticleImage">
+              <img src="./images/handbook/covers/handbook_1-2-1.png" alt="" />
             </div>
-          </a>
-          <!-- Fourth Article -->
-          <a class="O_CardArticle" href="">
-            <div class="Q_ArticleImage"></div>
             <div class="M_ArticleCardBio">
               <p class="caption-caps">Теория · 5 минут</p>
               <div class="M_AboutArticle">
-                <h4>Article name</h4>
+                <h4>Зачем создавать веб-плакат</h4>
                 <p class="body">
                   Article bio about web-poster in a short way described with a
                   few words
@@ -259,63 +267,6 @@
               <span class="A_Tag code">requestAnimationFrame</span>
               <span class="A_Tag code">classList</span>
             </ul>
-          </div>
-          <div class="C_Modules">
-            <!-- First card -->
-            <a href="index.html" class="O_ModuleCard">
-              <div class="Q_ModuleCardCover"></div>
-              <div class="M_ArticleCardBio">
-                <p class="caption-caps">CSS · Легко</p>
-                <div class="M_AboutArticle">
-                  <h4>Трансформация</h4>
-                  <p class="body">
-                    Меняйте форму, масштаб и&nbsp;перспективу объектов через
-                    разлиные свойства
-                  </p>
-                </div>
-              </div>
-            </a>
-            <!-- Second card -->
-            <a href="index.html" class="O_ModuleCard">
-              <div class="Q_ModuleCardCover"></div>
-              <div class="M_ArticleCardBio">
-                <p class="caption-caps">CSS · Легко</p>
-                <div class="M_AboutArticle">
-                  <h4>Вращение</h4>
-                  <p class="body">
-                    Превратите элементы в&nbsp;динамичные акцентычерез вращение
-                  </p>
-                </div>
-              </div>
-            </a>
-            <!-- Third card -->
-            <a href="index.html" class="O_ModuleCard">
-              <div class="Q_ModuleCardCover"></div>
-              <div class="M_ArticleCardBio">
-                <p class="caption-caps">JavaScript · Средне</p>
-                <div class="M_AboutArticle">
-                  <h4>Перетаскивание</h4>
-                  <p class="body">
-                    Добавьте объектам и&nbsp;элементам вес и&nbsp;реалистичность
-                    с&nbsp;drag and drop
-                  </p>
-                </div>
-              </div>
-            </a>
-            <!-- Fourd card -->
-            <a href="index.html" class="O_ModuleCard">
-              <div class="Q_ModuleCardCover"></div>
-              <div class="M_ArticleCardBio">
-                <p class="caption-caps">JavaScript · Средне</p>
-                <div class="M_AboutArticle">
-                  <h4>Клик</h4>
-                  <p class="body">
-                    Добавьте реакции и&nbsp;взаимодействия, срабатывающие
-                    по&nbsp;клику
-                  </p>
-                </div>
-              </div>
-            </a>
           </div>
         </div>
       </div>

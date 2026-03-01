@@ -1,0 +1,55 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-pendulum">
+    <div class="demo-pendulum">
+      <div class="demo-pendulum-ball"></div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab active">CSS</button>
+      </div>
+      <!-- Контейнер для React-компонента кнопки -->
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock"><code class="language-css">
+@keyframes movement-pendulum {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+.demo-pendulum {
+position: absolute;
+top: 10%;
+left: 50%;
+width: 6px;
+height: 180px;
+background: rgba(255, 255, 255, 0.3);
+
+/* Точка опоры — верхний центр */
+transform-origin: top center;
+animation: movement-pendulum 2s ease-in-out infinite alternate;
+}
+
+.demo-pendulum-ball {
+position: absolute;
+bottom: -20px;
+left: 50%;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: #fff;
+transform: translateX(-50%);
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

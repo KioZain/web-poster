@@ -86,6 +86,13 @@ input.A_SearchInput {
   padding: var(--space-6) var(--space-12);
   font-size: 14px;
   background: transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &.active {
+    background-color: var(--gray-medium);
+    color: var(--white-500);
+  }
 }
 
 .A_CopyButton {
@@ -635,7 +642,12 @@ button.A_Tab {
   font-family: 'Aeonik Mono';
   font-size: 1.125rem;
   line-height: 1.5rem;
+  width: 23px;
   color: var(--gray-light);
+
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1rem, 0.89rem + 0.49vw, 1.125rem);
+  }
 }
 .A_CodeBlock {
   /* white-space: pre; */

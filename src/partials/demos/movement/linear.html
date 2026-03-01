@@ -1,0 +1,44 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="movement-linear">
+    <div class="demo-cube"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-cube"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <!-- Добавлены data-lang="css" и active -->
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-cube {
+  position: absolute;
+  animation: movement-linear 5s linear infinite alternate;
+}
+
+@keyframes movement-linear {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 40px);
+  }
+}
+/* Вычитаем ширину 40 px объекта для корректной анимации */
+      </code></pre>
+    </div>
+  </div>
+</div>
