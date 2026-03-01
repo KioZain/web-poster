@@ -94,3 +94,85 @@
 }
 
 /* bullshit */
+.slider {
+  width: 12px;
+  height: 12px;
+  background: red;
+  border-radius: 60%;
+  position: absolute;
+}
+@keyframes slide1 {
+  0% {
+    top: 3vw;
+  }
+  50% {
+    top: 6.6vw;
+  }
+  100% {
+    top: 3vw;
+  }
+}
+@keyframes slide2 {
+  0% {
+    top: 6.6vw;
+  }
+  50% {
+    top: 3.5vw;
+  }
+  100% {
+    top: 6.6vw;
+  }
+}
+@keyframes slide3 {
+  0% {
+    top: 7.2vw;
+  }
+  50% {
+    top: 5.5vw;
+  }
+  100% {
+    top: 7.2vw;
+  }
+}
+@keyframes slide4 {
+  0% {
+    top: 5vw;
+  }
+  50% {
+    top: 7vw;
+  }
+  100% {
+    top: 5vw;
+  }
+}
+@keyframes slide5 {
+  0% {
+    top: 5vw;
+  }
+  50% {
+    top: 3vw;
+  }
+  100% {
+    top: 5vw;
+  }
+}
+#slider1 {
+  left: 2.45vw;
+  animation: slide1 3s cubic-bezier(0.8, 0, 0.21, 0.99) infinite;
+}
+#slider2 {
+  left: 3.69vw;
+  animation: slide2 3s cubic-bezier(0.8, 0, 0.21, 0.99) infinite;
+}
+#slider3 {
+  left: 4.9vw;
+  animation: slide3 3s cubic-bezier(0.8, 0, 0.21, 0.99) infinite;
+}
+#slider4 {
+  left: 6.18vw;
+  animation: slide4 3s cubic-bezier(0.8, 0, 0.21, 0.99) infinite;
+}
+#slider5 {
+  left: 7.43vw;
+  animation: slide5 3s cubic-bezier(0.8, 0, 0.21, 0.99) infinite;
+}

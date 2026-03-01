@@ -160,6 +160,7 @@ input.A_SearchInput {
   font-family: 'Aeonik Pro';
   font-size: 1rem;
   transition: 0.3s all ease-in-out;
+  cursor: pointer;
 
   &.secondary {
     background: transparent;
@@ -169,8 +170,18 @@ input.A_SearchInput {
     font-size: 1rem;
   }
 
-  &:hover {
-    cursor: pointer;
+  &.small {
+    height: 40px;
+    padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
+    background: transparent;
+    font-size: 1rem;
+    gap: var(--space-4);
+    border: 2px solid var(--gray-base);
+    color: var(--gray-base);
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 

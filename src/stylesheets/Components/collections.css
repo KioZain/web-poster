@@ -103,16 +103,21 @@
 }
 .C_PostersRow {
   width: 100%;
-  background: #fae;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -36px;
 
   .W_RowPostersAnim {
     display: flex;
     flex-direction: row;
-    gap: var(--space-2);
+    gap: var(--space-4);
 
     .Q_PosterImage {
-      flex: 1;
       height: 420px;
+      height: 28vw;
+      aspect-ratio: 5/7;
 
       img {
         width: 100%;

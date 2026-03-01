@@ -179,7 +179,29 @@ header.S_Header {
   display: flex;
   flex-direction: column;
   gap: var(--space-40);
-  height: 100vh;
+
+  .W_PosterThreeRows {
+    display: flex;
+    gap: var(--space-4);
+    flex-direction: column;
+  }
+
+  .C_PostersRow:nth-child(3) {
+    background: red;
+    .W_RowPostersAnim {
+      .Q_PosterImage {
+        height: 24vw;
+      }
+    }
+  }
+  .C_PostersRow:nth-child(4) {
+    background: red;
+    .W_RowPostersAnim {
+      .Q_PosterImage {
+        height: 20vw;
+      }
+    }
+  }
 }
 .S_ArticleHead {
   background-color: white;
@@ -210,4 +232,9 @@ header.S_Header {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
+}
+.S_Modules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
 }

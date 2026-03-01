@@ -236,6 +236,46 @@
   width: 100%;
   display: flex;
   gap: var(--space-8);
+  width: max-content;
+}
+
+.W_PreviewBlocks {
+  width: 100%;
+  max-width: var(--index-max);
+  flex-direction: row;
+  gap: var(--grid-gap);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  .M_PreviewArea {
+    grid-column: span 3;
+    min-height: auto;
+    height: 210px;
+    background: #f1f3f3;
+
+    p {
+      position: absolute;
+      /* transform: translateY(50%); */
+      transform: translate(30%, 30%);
+    }
+
+    &:nth-child(2) {
+      grid-column: span 4;
+      height: 258px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .eye-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-16);
+      }
+    }
+  }
 }
 
 .W_CalloutTextExpand {
