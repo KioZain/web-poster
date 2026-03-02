@@ -1,10 +1,10 @@
 const homeURL = '/'
-// '/'              
-// '/web-poster/' 
+// '/'
+// '/web-poster/'
 
 export function getUrl(path) {
-    const cleanPath = path.replace(/^\//, '')
-    return homeURL + cleanPath
+  const cleanPath = path.replace(/^\//, '')
+  return homeURL + cleanPath
 }
 
 export { homeURL }
