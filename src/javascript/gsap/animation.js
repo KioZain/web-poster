@@ -10,7 +10,6 @@ export function initInfiniteCarousel() {
 
   if (!track || items.length === 0) return
 
-  // === ДИНАМИЧЕСКОЕ ВЫЧИСЛЕНИЕ РАЗМЕРОВ ===
   function getItemDimensions() {
     const firstItem = items[0]
     const rect = firstItem.getBoundingClientRect()
@@ -25,7 +24,6 @@ export function initInfiniteCarousel() {
     }
   }
 
-  // Параметры градации размера
   const minScale = 0.65
   const maxScale = 1.0
 
@@ -140,21 +138,11 @@ tl.to('#lt', { x: -W / 2, duration: fast, ease: 'power2.inOut' }, 0)
   .to('#rb', { y: H / 2 - sq, duration: slow, ease: 'power2.inOut' }, '<')
 
 gsap.registerPlugin(SplitText)
-// ===== SPLIT TEXT =====
 
 const split = SplitText.create('.text-go-gsap', { type: 'words' })
-
-// Общая длительность таймлайна квадратиков
 const totalDuration = tl.duration()
-
-// Маленькая задержка в начале текста
 const textDelay = 0.5
-
-// Сколько слов
 const wordsCount = split.words.length
-
-// Мы хотим, чтобы текст закончился в totalDuration
-// Формула: delay + duration + stagger*(wordsCount-1) = totalDuration
 
 const textDuration = 0.6
 const textStagger =
@@ -173,10 +161,6 @@ tl.from(
 )
 
 const buttons = document.querySelector('#buttonsGsap')
-
-// финальная длительность всей сцены
-
-// хотим, чтобы кнопки появились чуть раньше конца
 const buttonsDuration = 0.5
 const buttonsStart = totalDuration - buttonsDuration - 0.15
 
@@ -189,27 +173,6 @@ tl.from(
     ease: 'power2.out'
   },
   buttonsStart
-)
-
-const svgs = document.querySelectorAll('.frame-svg')
-
-// небольшая анимация "пульса"
-const svgDuration = 0.6
-const svgStart = tl.duration() - svgDuration - 0.2
-
-tl.fromTo(
-  svgs,
-  {
-    scale: 1,
-    transformOrigin: '50% 50%'
-  },
-  {
-    scale: 1.2,
-    duration: svgDuration,
-    ease: 'power2.out',
-    stagger: 0.05
-  },
-  svgStart
 )
 
 document.addEventListener('DOMContentLoaded', initInfiniteCarousel)
