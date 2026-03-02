@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+  font-family: 'Aeonik Pro';
   margin: 0;
   background-size: 58px 58px;
   background-color: var(--bg-grey);
