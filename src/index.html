@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Web Poster | Интерактивный учебник по веб-плакату</title>
+    <title>Web Poster</title>
     <analytics></analytics>
   </head>
 
@@ -12,16 +12,24 @@
 
     <div class="S_HomeScreen">
       <div class="W_HeadingContainer">
-        <div class="Q_HandleSquare lt"></div>
-        <div class="Q_HandleSquare rt"></div>
-        <div class="Q_HandleSquare rb"></div>
-        <div class="Q_HandleSquare lb"></div>
+        <div id="lt" class="Q_HandleSquare lt"></div>
+        <div id="rt" class="Q_HandleSquare rt"></div>
+        <div id="rb" class="Q_HandleSquare rb"></div>
+        <div id="lb" class="Q_HandleSquare lb"></div>
         <h1 class="text-go-gsap">Интерактивный учебник <br />по веб-плакату</h1>
-        <div class="M_Buttons">
+        <div id="buttonsGsap" class="M_Buttons">
           <a href="handbook.html" class="A_Button">Перейти в учебник</a>
-          <a href="" class="A_Button secondary">О веб-плакате</a>
+          <!-- <a href="" class="A_Button secondary">О веб-плакате</a> -->
         </div>
       </div>
+      <picture class="home">
+        <source
+          srcset="./images/homeMobilesvg.svg"
+          media="(max-width: 486px)"
+          type="image/svg+xml"
+        />
+        <img src="./images/homesvg.svg" alt="" />
+      </picture>
     </div>
     <!-- TextAbout -->
     <div class="W_HomePageWrapper margin-container">
@@ -260,7 +268,7 @@
           <div class="Q_HandleSquare rb"></div>
           <div class="Q_HandleSquare lb"></div>
           <div class="M_HeadingContainer">
-            <h2>Не пишите весь код сам — воспользуйся готовым</h2>
+            <h2>Не пишите весь код сам — воспользуйтесь готовым</h2>
             <div class="M_ParagraphButton">
               <p class="subtitle light">
                 Готовые решения с&nbsp;визуальными демонстрациями и&nbsp;кодом,
@@ -314,106 +322,104 @@
       </div>
 
       <!-- LastBlock -->
-      <div class="S_ManyPosters">
-        <div class="O_SquaredBlock">
-          <div class="Q_HandleSquare lt"></div>
-          <div class="Q_HandleSquare rt"></div>
-          <div class="Q_HandleSquare rb"></div>
-          <div class="Q_HandleSquare lb"></div>
+      <section>
+        <div class="S_ManyPosters">
+          <div class="O_SquaredBlock">
+            <div class="Q_HandleSquare lt"></div>
+            <div class="Q_HandleSquare rt"></div>
+            <div class="Q_HandleSquare rb"></div>
+            <div class="Q_HandleSquare lb"></div>
 
-          <div class="M_HeadingContainer">
-            <h2>Все плакаты, годы, опыт и&nbsp;приёмы в&nbsp;одном месте</h2>
-            <div class="M_ParagraphButton">
-              <p class="subtitle light">
-                Коллекция студенческих работ 2019&ndash;2025 годов
-                с&nbsp;фильтрацией по&nbsp;году, стилям и&nbsp;технологиям
+            <div class="M_HeadingContainer">
+              <h2>Все плакаты, годы, опыт и&nbsp;приёмы в&nbsp;одном месте</h2>
+              <div class="M_ParagraphButton">
+                <p class="subtitle light">
+                  Коллекция студенческих работ 2019&ndash;2025 годов
+                  с&nbsp;фильтрацией по&nbsp;году, стилям и&nbsp;технологиям
+                </p>
+              </div>
+            </div>
+
+            <a href="posters.html" class="A_Button small"
+              >Заглянуть в каталог
+              <img src="./images/icons/Q_ArrowForward-24.svg" alt=""
+            /></a>
+          </div>
+          <div class="C_PostersRow">
+            <div class="fade-container"></div>
+            <div class="W_RowPostersAnim">
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+            </div>
+          </div>
+          <div class="C_PostersRow">
+            <div class="fade-container"></div>
+            <div class="W_RowPostersAnim">
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+            </div>
+          </div>
+          <div class="C_PostersRow">
+            <div class="fade-container"></div>
+            <div class="W_RowPostersAnim">
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+              <div class="Q_PosterImage"></div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="O_MailBlock">
+          <div class="W_MailWrapper">
+            <div class="M_TitleText">
+              <h2>Оставайся в курсе всех грядущих обновлений</h2>
+              <p class="subtitle">
+                Оставьте элеткронную почту, чтобы получать свежие новости
               </p>
             </div>
-          </div>
-
-          <a href="modules.html" class="A_Button small"
-            >Заглянуть в каталог
-            <img src="./images/icons/Q_ArrowForward-24.svg" alt=""
-          /></a>
-        </div>
-        <!-- <div class="W_PosterThreeRows"> -->
-        <div class="C_PostersRow">
-          <div class="W_RowPostersAnim">
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster02.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster03.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster04.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster05.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster06.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster07.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster08.png" alt="" />
+            <div class="M_InputButton">
+              <input
+                type="email"
+                placeholder="Электронная почта"
+                type="text"
+                class="A_Input"
+              />
+              <button class="A_Button">Подписаться</button>
             </div>
           </div>
         </div>
-        <div class="C_PostersRow">
-          <div class="W_RowPostersAnim">
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster02.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster03.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster04.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster05.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster06.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster07.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster08.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="C_PostersRow">
-          <div class="W_RowPostersAnim">
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster02.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster03.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster04.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster05.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster06.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster07.png" alt="" />
-            </div>
-            <div class="Q_PosterImage">
-              <img src="images/posters/poster08.png" alt="" />
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-      </div>
+      </section>
     </div>
 
     <footerbar></footerbar>

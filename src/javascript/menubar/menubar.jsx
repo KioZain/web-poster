@@ -37,7 +37,7 @@ export default function Menubar() {
             ))}
           </div>
           <div className="M_IconButtons">
-            <button
+            {/* <button
               className="A_IconButton search"
               onClick={handleSearchClick}
               aria-label="Поиск"
@@ -47,7 +47,7 @@ export default function Menubar() {
                 src={openPanel === 'search' ? closeIcon : searchIcon}
                 alt=""
               />
-            </button>
+            </button> */}
             <button
               className="A_IconButton hamburger"
               onClick={handleMenuClick}

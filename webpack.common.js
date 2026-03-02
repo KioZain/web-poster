@@ -41,7 +41,14 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_1/about_webposter.html',
-    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle', 'anchorlinks']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating'
+    ]
   },
   {
     template: 'handbook/part_1/chapter_1/poster-vs-website.html',
@@ -115,6 +122,7 @@ module.exports = {
     scrollposters: './src/javascript/gsap/scrollposters.js',
     codestyle: './src/javascript/codestyle.js',
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
+    rating: './src/javascript/rating.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'modules-nav': './src/javascript/modules-nav.js',
@@ -192,6 +200,14 @@ module.exports = {
         priority: 'replace'
       }
     ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/rate.html'),
+        location: 'rate',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
 
     new HtmlWebpackPartialsPlugin([
       {
@@ -235,7 +251,10 @@ module.exports = {
     ]),
     new HtmlWebpackPartialsPlugin([
       {
-        path: path.join(__dirname, './src/partials/demos/movement/elastic.html'),
+        path: path.join(
+          __dirname,
+          './src/partials/demos/movement/elastic.html'
+        ),
         location: 'elastic',
         template_filename: '*',
         priority: 'replace'
@@ -251,7 +270,10 @@ module.exports = {
     ]),
     new HtmlWebpackPartialsPlugin([
       {
-        path: path.join(__dirname, './src/partials/demos/movement/pendulum.html'),
+        path: path.join(
+          __dirname,
+          './src/partials/demos/movement/pendulum.html'
+        ),
         location: 'pendulum',
         template_filename: '*',
         priority: 'replace'
@@ -259,7 +281,10 @@ module.exports = {
     ]),
     new HtmlWebpackPartialsPlugin([
       {
-        path: path.join(__dirname, './src/partials/demos/movement/pseudorandom.html'),
+        path: path.join(
+          __dirname,
+          './src/partials/demos/movement/pseudorandom.html'
+        ),
         location: 'pseudorandom',
         template_filename: '*',
         priority: 'replace'
@@ -272,7 +297,7 @@ module.exports = {
         template_filename: '*',
         priority: 'replace'
       }
-    ]),
+    ])
   ],
 
   optimization: {

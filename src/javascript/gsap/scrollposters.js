@@ -3,10 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// === Настройки ===
-const SHIFT = 250
-const SCRUB = 3
-const START = 'top center' // ← регулируй: когда все анимации стартуют одновременно
+const SHIFT = 150
+const SCRUB = 2
+const START = 'top center'
 
 const rows = document.querySelectorAll('.C_PostersRow')
 const firstRow = rows[0]
@@ -19,18 +18,19 @@ rows.forEach((row, index) => {
     x: direction,
     ease: 'power2.out',
     scrollTrigger: {
-      trigger: firstRow,        // все триггеры привязаны к первой строке — старт одновременный
+      trigger: firstRow,
       start: START,
       end: () => {
-        // конец у каждой строки свой — привязан к её нижнему краю
-        const rowBottom = row.getBoundingClientRect().top + window.scrollY + row.offsetHeight
-        const firstRowTop = firstRow.getBoundingClientRect().top + window.scrollY
+        const rowBottom =
+          row.getBoundingClientRect().top + window.scrollY + row.offsetHeight
+        const firstRowTop =
+          firstRow.getBoundingClientRect().top + window.scrollY
         const distance = rowBottom - firstRowTop
-        return `+=${distance}`   // конец = старт + расстояние до низа конкретной строки
+        return `+=${distance}`
       },
-      invalidateOnRefresh: true, // пересчитывает end при ресайзе
-      scrub: SCRUB,
-      // markers: true,
-    },
+      invalidateOnRefresh: true,
+      scrub: SCRUB
+      // markers: true
+    }
   })
 })

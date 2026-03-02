@@ -43,15 +43,14 @@
 .W_HeadingContainer {
   text-align: center;
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   gap: var(--space-24);
   color: var(--gray-soft);
   justify-content: center;
   align-items: center;
   position: relative;
-  max-width: 846px;
-  height: fit-content;
-  padding: var(--space-16) var(--space-24);
 }
 .W_AboutCards {
   width: 100%;
@@ -67,7 +66,7 @@
       grid-column: 1 / -1;
       max-width: 486px;
       margin: 0 auto;
-      height: 240px;
+      /* height: 240px; */
 
       p.light {
         font-size: 1.125rem;
@@ -229,7 +228,8 @@
 .W_HomePageWrapper {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: clamp(6rem, 10vw, 10rem);
+  margin-top: clamp(2rem, 10vw, 3rem);
 }
 .W_MarqueeContent {
   height: 100%;

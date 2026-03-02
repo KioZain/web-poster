@@ -161,6 +161,7 @@ input.A_SearchInput {
   font-size: 1rem;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
+  border: none;
 
   &.secondary {
     background: transparent;
@@ -350,6 +351,11 @@ button.A_Tab {
     font-size: 1rem;
     color: var(--gray-light);
   }
+
+  &.inactive {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
 }
 
 /* --------------------------------- */
@@ -523,6 +529,22 @@ button.A_Tab {
     grid-column: -1/1;
   }
 }
+
+.A_Input {
+  font-size: 1.125rem;
+  outline: none;
+  border-radius: 6px;
+  height: 48px;
+  border: none;
+  padding: var(--space-8) var(--space-12);
+  color: var(--gray-base);
+  font-family: 'Aeonik Pro';
+
+  &:focus-visible {
+    outline: 2px solid var(--gray-base);
+  }
+}
+
 .A_CategoryFilterHeader {
   border: none;
   display: flex;
@@ -542,6 +564,20 @@ button.A_Tab {
     height: 20px;
     background-color: red;
   } */
+}
+
+.A_Reaction {
+  height: 48px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .A_Tag {

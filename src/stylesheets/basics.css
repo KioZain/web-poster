@@ -10,6 +10,7 @@ body {
   background-color: var(--bg-grey);
   font-weight: 400;
   scroll-behavior: smooth;
+  /* overflow-y: scroll; */
 }
 
 h1,
@@ -36,7 +37,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2rem, 1.429rem + 1.19vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.429rem + 1.19vw, 2.5rem);
   line-height: 105%;
   font-weight: 500;
 }
@@ -64,6 +65,10 @@ h4 {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 130%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.125rem;
+  }
 }
 p.body-other {
   font-size: 1.125rem;
@@ -209,4 +214,18 @@ code {
   transform: scaleY(0);
   transform-origin: top center;
   z-index: 10;
+}
+section.blurred {
+  position: relative;
+
+  .blur-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    top: 5px;
+    width: 110%;
+
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
