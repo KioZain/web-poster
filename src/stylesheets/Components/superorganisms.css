@@ -71,6 +71,12 @@
     }
   }
 }
+.text-to-gsap {
+  visibility: hidden;
+}
+#buttonsGsap {
+  visibility: hidden;
+}
 
 .S_IntroAbout {
   display: flex;

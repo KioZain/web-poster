@@ -124,6 +124,8 @@ gsap.set('#lt', { x: -(sq + gap), y: -(sq + gap) })
 gsap.set('#rt', { x: gap, y: -(sq + gap) })
 gsap.set('#lb', { x: -(sq + gap), y: gap })
 gsap.set('#rb', { x: gap, y: gap })
+gsap.set('.text-go-gsap', { visibility: 'visible' })
+gsap.set('#buttonsGsap', { visibility: 'visible' })
 
 const tl = gsap.timeline()
 
@@ -138,7 +140,6 @@ tl.to('#lt', { x: -W / 2, duration: fast, ease: 'power2.inOut' }, 0)
   .to('#rb', { y: H / 2 - sq, duration: slow, ease: 'power2.inOut' }, '<')
 
 gsap.registerPlugin(SplitText)
-
 const split = SplitText.create('.text-go-gsap', { type: 'words' })
 const totalDuration = tl.duration()
 const textDelay = 0.5

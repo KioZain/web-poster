@@ -186,8 +186,12 @@
       }
     } */
   }
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 486px) {
     grid-column: 1/-1;
+
+    .M_ArticleCardBio {
+      height: fit-content;
+    }
   }
 }
 /* List of cpaters */
@@ -785,13 +789,27 @@
     align-items: center;
     border: 1px solid var(--gray-lightest);
     gap: var(--space-4);
+    height: 52px;
+    border-radius: 6px;
+    padding: var(--space-8) var(--space-8) var(--space-8) var(--space-6);
 
-    b {
-      font-size: 1rem;
+    &.right {
+      p {
+        text-align: left;
+      }
     }
 
-    .C_KeysButton {
-      display: none;
+    .M_ChapterButton {
+      p {
+        width: 100%;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      p.caption.light:first-child {
+        display: none;
+      }
     }
   }
 }

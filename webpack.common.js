@@ -53,15 +53,39 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_1/poster-vs-website.html',
-    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   {
     template: 'handbook/part_1/chapter_1/print-vs-web.html',
-    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   {
     template: 'handbook/part_1/chapter_1/static-dynamic.html',
-    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
 
   //  Chapter 2

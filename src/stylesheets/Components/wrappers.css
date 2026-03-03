@@ -393,6 +393,22 @@
   display: flex;
   justify-content: space-between;
   margin-top: 6rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: var(--space-8);
+
+    .O_ChapterButtonArrow {
+      width: 100%;
+      text-align: left;
+
+      &.right {
+        .M_ChapterButton.right {
+          order: 1;
+        }
+      }
+    }
+  }
 }
 
 .W_RelatedPostersViewport {

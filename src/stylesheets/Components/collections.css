@@ -40,13 +40,13 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   column-gap: var(--grid-gap);
-  row-gap: var(--space-24);
+  row-gap: var(--space-32);
 
   &.handbook {
     container: articles / inline-size;
   }
 
-  &.main {
+  /* &.main {
     .O_CardArticle {
       grid-column: span 4;
 
@@ -54,7 +54,7 @@
         width: 90%;
       }
     }
-  }
+  } */
 
   @media screen and (max-width: 468px) {
     grid-template-columns: repeat(3, 1fr);

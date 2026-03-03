@@ -62,8 +62,10 @@
   height: 48px;
   display: inline-block;
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
   background: #1d1d1d;
   box-sizing: border-box;
   animation: flipX 1s linear infinite;
