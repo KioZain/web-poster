@@ -1,18 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отличие от классического плаката</title>
   </head>
   <body>
     <menubar></menubar>
-    <div class="demo">
-      <h1>Это введение в веб-плакат</h1>
-      <p>
-        В этом разделе вы узнаете о том, что такое веб-плакат, его основные
-        характеристики и преимущества.
-      </p>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_1.html">
+              Знакомство с веб-плакатом
+            </a>
+            •
+            <span class="caption-caps">Статичный и динамичный веб-плакат</span>
+          </div>
+        </nav>
+      </div>
     </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Статичный и динамичный веб-плакат</h1>
+            <div class="A_Tag">Теория</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">3 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_1-1-4.png"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <div class="M_ParagraphArticle">
+            <h3>Заголовок</h3>
+            <p class="article">текст статьи</p>
+          </div>
+
+          <!-- iframe -->
+          <div class="M_PreviewPoster">
+            <img class="close" src="../../../images/icons/Q_close.svg" alt="" />
+            <iframe
+              src="https://chukalka.github.io/Dubuni-wed-plakat/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%"
+              height="480"
+              frameborder="4"
+            ></iframe>
+            <button class="A_Button secondary">
+              Посмотреть плакат
+              <img src="../../../images/icons/Q_Expand.svg" alt="" />
+            </button>
+          </div>
+          <!-- extracallout -->
+          <div class="A_ExtraCallout">
+            <div class="Q_HandleSquare lt"></div>
+            <div class="Q_HandleSquare lb"></div>
+            <div class="Q_HandleSquare rt"></div>
+            <div class="Q_HandleSquare rb"></div>
+
+            <h4>
+              Если убрать с вашей страницы все кнопки «Купить», «Подписаться» и
+              «Узнать больше» — останется ли смысл? Если да, перед вами скорее
+              плакат. Если страница без CTA теряет причину существования — это
+              лендинг.
+            </h4>
+          </div>
+
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img
+              src="https://portfolio.hse.ru/imagecache/userprojects/197649/4561533_h1610_m3_s1.jpg"
+              alt=""
+            />
+            <figcaption>
+              <a href="https://harukorakuke.github.io/WebPosterKARA/"
+                >КАРА, Елизавета Цимайло, 2023</a
+              >
+            </figcaption>
+          </figure>
+
+          <!-- callout -->
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Модальные окна и всплывающие элементы внутри веб-плаката
+                допустимы пока они расширяют единое пространство. Но если их
+                становится много и они начинают работать как отдельные скорее
+                как отдельные страницы, плакат превращается в сайт.
+              </p>
+            </div>
+          </div>
+
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от печатного плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличия от сайта и лендинга</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичный и динамичный веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-1-1-3"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar></footerbar>
   </body>
 </html>

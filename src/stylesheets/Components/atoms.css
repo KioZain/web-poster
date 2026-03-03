@@ -671,7 +671,8 @@ button.A_Tab {
     border-radius: 2px;
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 9 / 6;
+    border-radius: 4px;
+    aspect-ratio: 5 / 3;
   }
   img.poster {
     width: 100%;

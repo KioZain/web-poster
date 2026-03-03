@@ -124,8 +124,8 @@ gsap.set('#lt', { x: -(sq + gap), y: -(sq + gap) })
 gsap.set('#rt', { x: gap, y: -(sq + gap) })
 gsap.set('#lb', { x: -(sq + gap), y: gap })
 gsap.set('#rb', { x: gap, y: gap })
-gsap.set('.text-go-gsap', { visibility: 'visible' })
-gsap.set('#buttonsGsap', { visibility: 'visible' })
+// gsap.set('.text-go-gsap', { visibility: 'visible' })
+// gsap.set('#buttonsGsap', { visibility: 'visible' })
 
 const tl = gsap.timeline()
 
@@ -141,6 +141,7 @@ tl.to('#lt', { x: -W / 2, duration: fast, ease: 'power2.inOut' }, 0)
 
 gsap.registerPlugin(SplitText)
 const split = SplitText.create('.text-go-gsap', { type: 'words' })
+gsap.set(split.words, { opacity: 0 })
 const totalDuration = tl.duration()
 const textDelay = 0.5
 const wordsCount = split.words.length
@@ -149,11 +150,16 @@ const textDuration = 0.6
 const textStagger =
   (totalDuration - textDelay - textDuration) / (wordsCount - 1)
 
-tl.from(
+const buttons = document.querySelector('#buttonsGsap')
+const buttonsDuration = 0.5
+const buttonsStart = totalDuration - buttonsDuration - 0.15
+
+tl.fromTo(
   split.words,
+  { opacity: 0, y: 35 },
   {
-    opacity: 0,
-    y: 35,
+    opacity: 1,
+    y: 0,
     duration: textDuration,
     stagger: textStagger,
     ease: 'power4.out'
@@ -161,15 +167,12 @@ tl.from(
   textDelay
 )
 
-const buttons = document.querySelector('#buttonsGsap')
-const buttonsDuration = 0.5
-const buttonsStart = totalDuration - buttonsDuration - 0.15
-
-tl.from(
+tl.fromTo(
   buttons,
+  { opacity: 0, y: 20 },
   {
-    opacity: 0,
-    y: 20,
+    opacity: 1,
+    y: 0,
     duration: buttonsDuration,
     ease: 'power2.out'
   },

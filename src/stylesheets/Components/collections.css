@@ -40,7 +40,7 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   column-gap: var(--grid-gap);
-  row-gap: var(--space-32);
+  row-gap: var(--space-40);
 
   &.handbook {
     container: articles / inline-size;

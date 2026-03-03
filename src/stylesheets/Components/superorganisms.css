@@ -71,11 +71,9 @@
     }
   }
 }
-.text-to-gsap {
-  visibility: hidden;
-}
+
 #buttonsGsap {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .S_IntroAbout {
@@ -291,7 +289,7 @@ header.S_Header {
   }
 }
 .S_ReadMore {
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 .S_RelatedModules {
   display: flex;

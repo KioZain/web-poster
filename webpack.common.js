@@ -95,11 +95,27 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_2/further-development.html',
-    chunks: ['menubar', 'index', 'handbook-nav']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   {
     template: 'handbook/part_1/chapter_2/why-create.html',
-    chunks: ['menubar', 'index', 'handbook-nav']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   // Chapter 3
   {
@@ -108,11 +124,27 @@ const pages = [
   },
   {
     template: 'handbook/part_1/chapter_3/catalog-guide.html',
-    chunks: ['menubar', 'index', 'handbook-nav']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   {
     template: 'handbook/part_1/chapter_3/selected-works.html',
-    chunks: ['menubar', 'index', 'handbook-nav']
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
   },
   // Chapter 2_1
 

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Во что можно развивать веб-плакат</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_1.html">
+              Знакомство с веб-плакатом
+            </a>
+            •
+            <span class="caption-caps">Во что можно развивать веб-плакат</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Во что можно развивать веб-плакат</h1>
+            <div class="A_Tag">Теория</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">3 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_1-2-2.png"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p class="article">
+            В&nbsp;предыдущих статьях мы&nbsp;говорили о&nbsp;веб-плакате как
+            о&nbsp;формате с&nbsp;довольно чёткими границами: одна страница,
+            HTML, CSS, JavaScript, авторское высказывание. Но&nbsp;у&nbsp;этих
+            границ есть интересное свойство&nbsp;&mdash; они обозначают
+            стартовую позицию, а&nbsp;не&nbsp;потолок. Когда вы&nbsp;освоили
+            базовый стек и&nbsp;почувствовали уверенность в&nbsp;коде, перед
+            вами открывается целый ландшафт инструментов, которые можно
+            подключить к&nbsp;веб-плакату и&nbsp;вывести его совсем
+            на&nbsp;другой уровень выразительности. Давайте посмотрим, что лежит
+            за&nbsp;пределами ванильного HTML/CSS/JS&nbsp;&mdash; и&nbsp;почему
+            веб-плакат оказывается удобной точкой входа во&nbsp;всё это.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Использование Canvas</h3>
+            <p class="article">
+              Базовый веб-плакат работает с&nbsp;DOM-элементами&nbsp;&mdash;
+              div-ами, текстовыми блоками, SVG-формами. Это мощный
+              инструментарий, но&nbsp;у&nbsp;него есть потолок: когда вам нужны
+              сотни движущихся частиц, генеративные паттерны или плавные
+              деформации форм в&nbsp;реальном времени, DOM начинает буксовать.
+              Здесь на&nbsp;сцену выходит <code>&lt;canvas&gt;</code> &mdash;
+              HTML-элемент, который предоставляет пиксельное полотно для
+              рисования через JavaScript.
+            </p>
+            <p class="article">
+              Работать с <code>&lt;canvas&gt;</code> напрямую можно,
+              но&nbsp;довольно трудоёмко. Именно поэтому существуют библиотеки,
+              которые оборачивают его в&nbsp;удобный интерфейс. Вот несколько
+              из&nbsp;тех, что особенно хорошо ложатся на&nbsp;формат
+              веб-плаката:
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>P5.js</h3>
+            <p class="article">
+              P5.js пожалуй, самая популярная библиотека для креативного кодинга
+              в браузере. Выросла из Processing, среды, которую создавали
+              специально для художников и дизайнеров. В p5.js можно в несколько
+              строк нарисовать генеративную композицию, добавить реакцию на
+              мышь, подключить звук или видео. Всегда приятно и кайфово смотреть
+              на всякие фракталы и безумные штуки, которые поражают количеством
+              случайных деталей. Чистая красота математики.
+            </p>
+          </div>
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img
+              src="../../../images/handbook/article_6/p5flowfield.png"
+              alt=""
+            />
+            <figcaption>Пример генеративной графики на P5.js</figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>Paper.js</h3>
+            <p class="article">
+              Paper.js — библиотека для работы с векторной графикой на canvas.
+              Если p5.js ближе к пиксельному рисованию, то Paper.js думает
+              кривыми, путями и формами — что привычнее для дизайнеров,
+              работающих с Illustrator или Figma. Хорошо подходит для плакатов,
+              где нужны сложные трансформации векторных объектов.
+            </p>
+          </div>
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img src="../../../images/handbook/article_6/paper.png" alt="" />
+            <figcaption>Пример графики на Paper.js</figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>GSAP</h3>
+            <p class="article">
+              GSAP (GreenSock) — анимационная библиотека, которая работает и с
+              DOM, и с canvas. Она не про рисование, а про движение: code
+              timeline-анимации, easing-функции, координация сложных
+              последовательностей. Если CSS <code>@keyframes</code> — это
+              простые циклические движения, то GSAP — это режиссёрский пульт, с
+              которого можно управлять десятками анимаций одновременно,
+              синхронизировать их, ставить на паузу, запускать по триггеру.
+            </p>
+          </div>
+
+          <!-- callout -->
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Подключить любую из&nbsp;этих библиотек к&nbsp;веб-плакату
+                технически просто&nbsp;&mdash; один тег &lt;script&gt;
+                в&nbsp;HTML-файле. Сложность в другом: каждая библиотека
+                предлагает свою логику мышления. P5.js думает кадрами (draw
+                loop), Paper.js&nbsp;&mdash; объектами на&nbsp;холсте, GSAP
+                &mdash;&nbsp;таймлайнами. Переход к&nbsp;ним из&nbsp;ванильного
+                JS&nbsp;&mdash; это освоение нового диалекта,
+                а&nbsp;не&nbsp;нового языка.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Звук и 3D графика</h3>
+            <p class="article">
+              Визуальная выразительность — не единственное направление роста.
+              Браузер умеет работать со звуком, и это открывает совершенно
+              отдельный пласт возможностей. Вот например на наш взгляд один из
+              веб-плакатов, которые активно использует звук в качестве основно
+              приёма для погружения зрителя в пространство.
+            </p>
+            <p class="article">
+              Каждый из этих инструментов расширяет сенсорную палитру
+              веб-плаката. Визуальное высказывание может стать аудиовизуальным.
+              Плоская страница может обрести глубину. Статичная композиция может
+              отзываться на звук с микрофона или данные с гироскопа телефона.
+              Границы определяются воображением автора и его готовностью
+              разбираться в документации.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Tone.js</h3>
+            <p class="article">
+              Библиотека для создания интерактивного звука и музыки в браузере.
+              С её помощью можно сделать плакат, который звучит: элементы издают
+              тоны при наведении, скролл модулирует частоту, клик запускает
+              ритмический рисунок. Короче полный боекомлект для того, чтобы
+              устроить зрителю настоящий Берлинский рейв на странице браузера.
+              Но есть и альтернативный путь, когда мы пытаемся погрузить зрителя
+              в определённую атмосферу или передать какую-то сложную
+              выразительную идею с помощью звукового сообщения.
+            </p>
+          </div>
+
+          <!-- image -->
+
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img
+              src="https://portfolio.hse.ru/imagecache/userprojects/209592/4921609_h1610_m3_s1.jpg"
+              alt=""
+            />
+            <figcaption>
+              <a href="https://anastasiiiiiiiiiiiaaa.github.io/art8/"
+                >Межгалактические телпортации, Анастасия Бедина, 2024</a
+              >
+            </figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>Three.js</h3>
+            <p class="article">
+              Three.js&nbsp;&mdash; библиотека для 3D-графики в&nbsp;браузере
+              через WebGL. Это уже серьёзный технический скачок,
+              но&nbsp;результаты впечатляют: трёхмерные объекты, свет, камера,
+              текстуры&nbsp;&mdash; всё внутри одной HTML-страницы. Правда мало
+              кто доживает до&nbsp;части, когда начинается реальная математика
+              и&nbsp;настройки шейдеров.
+            </p>
+          </div>
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img src="../../../images/handbook/article_6/three.png" alt="" />
+            <figcaption>Пример графики на Three.js</figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>Модульный подход</h3>
+            <p class="article">
+              Вот идея, которая, на&nbsp;наш взгляд, заслуживает отдельного
+              внимания. Когда вы&nbsp;освоили canvas-библиотеки, перед вами
+              открывается возможность думать о&nbsp;веб-плакате как
+              о&nbsp;наборе модулей&nbsp;&mdash; нескольких холстов внутри одной
+              страницы, каждый из&nbsp;которых решает свою визуальную задачу,
+              но&nbsp;все вместе они формируют единое высказывание.
+            </p>
+            <p class="article">
+              Представьте: один canvas рисует генеративный фон
+              на&nbsp;p5.js&nbsp;&mdash; бесконечно мутирующий паттерн. Поверх
+              него лежит второй canvas с&nbsp;интерактивной типографикой
+              на&nbsp;Paper.js&nbsp;&mdash; буквы, которые деформируются при
+              наведении. А&nbsp;третий слой&nbsp;&mdash; DOM-элементы
+              с&nbsp;GSAP-анимациями, выстраивающие информационный нарратив
+              через скролл. Вся страница&nbsp;&mdash; один плакат,
+              но&nbsp;каждый слой работает на&nbsp;собственном движке.
+            </p>
+            <p class="article">
+              Такой подход напоминает работу с&nbsp;композитингом в&nbsp;видео
+              или слоями в&nbsp;Photoshop&nbsp;&mdash; знакомая дизайнерам
+              логика, перенесённая в&nbsp;код. При этом структура остаётся
+              одностраничной: вы&nbsp;всё ещё создаёте веб-плакат, просто его
+              внутренняя архитектура стала раз в сто сложнее.
+            </p>
+          </div>
+          <div class="A_ExtraCallout">
+            <div class="Q_HandleSquare lt"></div>
+            <div class="Q_HandleSquare lb"></div>
+            <div class="Q_HandleSquare rt"></div>
+            <div class="Q_HandleSquare rb"></div>
+
+            <h4>
+              Модульность — это ещё и практическое удобство. Каждый canvas можно
+              разрабатывать и тестировать отдельно, а потом собирать в финальную
+              композицию. Если один слой сломался, остальные продолжают
+              работать. Это приучает думать о коде как о системе компонентов —
+              навык, который пригодится далеко за пределами плакатов.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Веб-плакат как точка входа</h3>
+            <p class="article">
+              Вернёмся к&nbsp;тому, с&nbsp;чего начинали. Веб-плакат
+              в&nbsp;своей базовой форме &mdash;&nbsp;это HTML, CSS
+              и&nbsp;JavaScript. Это вполне достаточный набор, чтобы создать
+              выразительную работу. Многие из&nbsp;лучших студенческих плакатов
+              в&nbsp;каталоге сделаны именно на&nbsp;этом стеке, без единой
+              внешней библиотеки.
+            </p>
+            <p class="article">
+              Но&nbsp;если вам захочется пойти дальше&nbsp;&mdash; дорога
+              открыта. P5.js для генеративной графики, GSAP для сложных
+              анимаций, Tone.js для звука, Three.js для 3D, Paper.js для
+              вектора. Каждая библиотека &mdash; это расширение словаря,
+              а&nbsp;не&nbsp;смена языка. Вы&nbsp;по-прежнему работаете
+              в&nbsp;браузере, по-прежнему пишете JavaScript, по-прежнему
+              создаёте одну страницу.
+            </p>
+            <p class="article">
+              В&nbsp;этом смысле веб-плакат&nbsp;&mdash; это действительно
+              холст. Чистое пространство, которое вы&nbsp;заполняете теми
+              инструментами, которые подходят под вашу идею. Можно ограничиться
+              карандашом и&nbsp;бумагой (CSS-анимации и&nbsp;DOM). Можно достать
+              масло и&nbsp;мастихин (canvas-библиотеки). Можно подключить
+              проектор и&nbsp;колонки (WebGL и Web Audio). Формат выдерживает
+              всё это, оставаясь при этом собой &mdash; одной страницей
+              с&nbsp;авторским высказыванием.
+            </p>
+          </div>
+
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от печатного плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличия от сайта и лендинга</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичный и динамичный веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-1-1-3"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar></footerbar>
+  </body>
+</html>

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Статичный и динамичный веб-плакат</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_1.html">
+              Знакомство с веб-плакатом
+            </a>
+            •
+            <span class="caption-caps">Статичный и динамичный веб-плакат</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Статичный и динамичный веб-плакат</h1>
+            <div class="A_Tag">Теория</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">3 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_1-1-4.png"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p class="article">
+            Итак, мы разобрались, что такое веб-плакат, чем он отличается от
+            печатного плаката, лендинга и сайта. Теперь стоит заглянуть внутрь
+            самого формата — потому что веб-плакаты бывают разными. Технически
+            их можно разделить на два типа: статичные и динамичные. Названия
+            немного обманчивы, так что давайте сразу уточним, что за ними стоит.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Статичный плакат</h3>
+            <p class="article">
+              Первое и самое частое заблуждение: «статичный веб-плакат — это
+              плакат без анимации». Это не так. Статичные веб-плакаты могут быть
+              очень живыми визуально — с вращающимися элементами, пульсирующими
+              формами, мерцающими фонами и переливающимися градиентами. Слово
+              «статичный» здесь описывает технический подход, а не визуальный
+              результат.
+            </p>
+            <p class="article">
+              Статичный веб-плакат создаётся средствами HTML и CSS — без
+              JavaScript. Всё движение на странице реализовано через
+              CSS-инструменты: <code>@keyframes</code> задают циклические
+              анимации, <code>transitions</code> обеспечивают плавные переходы
+              между состояниями, а псевдокласс <code>:hover</code> позволяет
+              элементам реагировать на наведение курсора. Этих инструментов
+              достаточно, чтобы создать визуально насыщенную, живую страницу.
+            </p>
+            <p class="article">
+              Что при этом отсутствует — это реакция на конкретные действия
+              пользователя. Статичный плакат не знает, куда вы кликнули, не
+              отслеживает положение курсора, не реагирует на перетаскивание
+              элементов. Анимации в нём запрограммированы заранее и
+              проигрываются по своему сценарию — зритель наблюдает и скроллит,
+              но не управляет.
+            </p>
+          </div>
+
+          <!-- iframe -->
+          <div class="M_PreviewPoster">
+            <img class="close" src="../../../images/icons/Q_close.svg" alt="" />
+            <iframe
+              src="https://nadezhdafeo.github.io/SVOD_web-plakat/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%"
+              height="480"
+              frameborder="4"
+            ></iframe>
+            <button class="A_Button secondary">
+              Посмотреть плакат
+              <img src="../../../images/icons/Q_Expand.svg" alt="" />
+            </button>
+          </div>
+
+          <!-- extracallout -->
+          <div class="A_ExtraCallout">
+            <div class="Q_HandleSquare lt"></div>
+            <div class="Q_HandleSquare lb"></div>
+            <div class="Q_HandleSquare rt"></div>
+            <div class="Q_HandleSquare rb"></div>
+
+            <h4>
+              В образовательной программе Школы дизайна статичный веб-плакат —
+              это проект второго модуля. Студенты к этому моменту освоили HTML и
+              CSS, но ещё не приступили к JavaScript. Формат идеально
+              показывает, сколько выразительности можно вытянуть из всего лишь
+              двух технологий.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Динамичный плакат</h3>
+            <p class="article">
+              Динамичный веб-плакат наследует всё, что есть у статичного, — те
+              же CSS-анимации, ту же вёрстку, те же композиционные структуры. Но
+              поверх этого появляется JavaScript с его
+              <code>addEventListener()</code> — обработчиками событий. И это
+              меняет природу взаимодействия.
+            </p>
+            <p class="article">
+              Теперь плакат может реагировать на клик, отслеживать движение
+              мыши, обрабатывать скролл программно, воспринимать касания на
+              мобильных устройствах. Появляется возможность перетаскивания
+              элементов по странице. Можно скрывать и показывать слои, менять
+              состояния по условию, выстраивать сценарии взаимодействия.
+            </p>
+            <p class="article">
+              Принципиальная разница с статичным типом — в направлении
+              коммуникации. Статичный плакат транслирует: он проигрывает
+              заложенный автором сценарий, зритель наблюдает. Динамичный плакат
+              реагирует: он отвечает на действия зрителя, подстраивается,
+              раскрывает новые слои. Коммуникация из монолога превращается в
+              диалог.
+            </p>
+          </div>
+
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img
+              src="https://portfolio.hse.ru/imagecache/userprojects/247658/6133610_h1610_m3_s1.jpg"
+              alt=""
+            />
+            <figcaption>
+              <a href="https://mariakrasnaya.github.io/ALLO_site_interactiv/"
+                >АЛО ГОРАЦИЙ? Мария Красная , 2025</a
+              >
+            </figcaption>
+          </figure>
+
+          <p class="article">
+            На практике это выглядит так: в статичном плакате вы видите, как
+            элементы вращаются и пульсируют по заданному ритму. В динамичном —
+            вы наводите курсор, и элементы разлетаются от него, или кликаете на
+            объект и он раскрывает скрытое содержание, или перетаскиваете форму
+            и под ней обнаруживается текст. Каждое ваше действие — это ввод, на
+            который плакат даёт визуальный ответ.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Одноэкранный формат</h3>
+            <p class="article">
+              С появлением JavaScript-интерактивности возникает ещё одна штука,
+              которой у статичных плакатов, как правило, нет, — одноэкранный
+              формат. Это плакат, в котором всё происходит в рамках видимой
+              области браузера, без скролла вообще. Повествование строится
+              целиком через взаимодействие: клики открывают модальные окна,
+              наведение меняет состояния, действия зрителя переключают
+              визуальные режимы.
+            </p>
+            <p class="article">
+              Одноэкранный формат требует другого подхода к проектированию. Вся
+              коммуникация должна поместиться в одном видимом поле, а
+              интерактивные элементы должны быть достаточно заметными, чтобы
+              зритель понял — здесь можно что-то сделать. В статичном плакате
+              скролл сам подсказывает «двигайся дальше». Здесь такой подсказки
+              нет
+            </p>
+          </div>
+          <!-- image -->
+          <figure class="A_ImageArticle">
+            <img
+              src="https://portfolio.hse.ru/imagecache/userprojects/210382/4933495_h1610_m3_s1.jpg"
+              alt=""
+            />
+            <figcaption>
+              <a href="https://mariakrasnaya.github.io/ALLO_site_interactiv/"
+                >KING, Андрей Котов , 2024</a
+              >
+            </figcaption>
+          </figure>
+          <!-- callout -->
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Одноэкранный формат требует другого подхода к проектированию.
+                Вся коммуникация должна поместиться в одном видимом поле, а
+                интерактивные элементы должны быть достаточно заметными, чтобы
+                зритель понял — здесь можно что-то сделать. В статичном плакате
+                скролл сам подсказывает: «двигайся дальше». Здесь такой
+                подсказки нет.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Какой выбрать</h3>
+            <p class="article">
+              Статичный и динамичный — это не хуже и лучше, скучнее или круче,
+              проще или сложнее. Это два набора инструментов, каждый из которых
+              подходит для своих задач.Статичный плакат хорош там, где
+              визуальная экспрессия самодостаточна: плотные анимации, ритмичные
+              композиции, выстроенный скролл-нарратив. Он проще в реализации,
+              предсказуемее в поведении и позволяет сосредоточиться на
+              графическом решении, не отвлекаясь на программирование сценариев
+              взаимодействия.
+            </p>
+            <p class="article">
+              Динамичный плакат раскрывается там, где важен диалог со зрителем:
+              скрытые слои, реакция на действия, нелинейные сценарии. Он сложнее
+              технически, но открывает возможности, недоступные в рамках чистого
+              CSS, — от отслеживания позиции курсора до генерации визуальных
+              элементов в реальном времени.
+            </p>
+            <p class="article">
+              В учебной программе Школы дизайна эти типы разведены по модулям не
+              случайно. Сначала студент осваивает выразительные возможности CSS
+              — и убеждается, что их много. Затем добавляет JavaScript — и
+              получает инструменты для принципиально нового уровня
+              взаимодействия. Каждый шаг опирается на предыдущий.
+            </p>
+            <p class="article">
+              На этом мы завершаем первую главу — теперь у вас есть понимание
+              того, что такое веб-плакат, чем он отличается от смежных форматов
+              и какие типы существуют внутри него. В следующей главе поговорим о
+              том, зачем вообще стоит создавать веб-плакат и куда этот опыт
+              может привести.
+            </p>
+          </div>
+
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от печатного плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличия от сайта и лендинга</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичный и динамичный веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-1-1-4"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar></footerbar>
+  </body>
+</html>
