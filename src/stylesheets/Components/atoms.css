@@ -169,6 +169,7 @@ input.A_SearchInput {
     color: var(--gray-base);
     font-weight: 500;
     font-size: 1rem;
+    gap: var(--space-8);
   }
 
   &.small {
@@ -736,17 +737,4 @@ button.A_Tab {
   @media screen and (max-width: 768px) {
     padding: var(--space-12);
   }
-}
-.A_KeyButton {
-  color: var(--gray-medium);
-  border: 1px solid var(--gray-medium);
-  font-family: 'Aeonik Mono';
-  font-size: 14px;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  border-radius: 4px;
-  min-width: 2rem;
 }

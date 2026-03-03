@@ -47,7 +47,8 @@ const pages = [
       'handbook-nav',
       'codestyle',
       'anchorlinks',
-      'rating'
+      'rating',
+      'preview'
     ]
   },
   {
@@ -123,6 +124,7 @@ module.exports = {
     codestyle: './src/javascript/codestyle.js',
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     rating: './src/javascript/rating.js',
+    preview: './src/javascript/preview.js',
     'poster-page': './src/javascript/poster-page.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'modules-nav': './src/javascript/modules-nav.js',

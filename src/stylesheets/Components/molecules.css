@@ -55,6 +55,10 @@
   gap: var(--space-8);
   grid-column: span 8;
 
+  h1 {
+    width: 90%;
+  }
+
   @media screen and (max-width: 1024px) {
     grid-column: span 6;
   }
@@ -450,7 +454,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  p.subtitle {
+  gap: var(--space-2);
+
+  p:nth-child(1) {
     color: var(--gray-medium);
   }
 
@@ -485,4 +491,54 @@
   background: var(--white-500);
   border-radius: 4px;
   /* border: 1px solid var(--gray-lightest); */
+}
+.M_PreviewPoster {
+  display: flex;
+  flex-direction: column;
+
+  img.close {
+    margin-left: auto;
+    display: none;
+  }
+
+  button {
+    width: 100%;
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    background: var(--white-500);
+    position: relative;
+    border-radius: 6px;
+    gap: var(--space-8);
+    overflow: hidden;
+
+    /* Мобайл, закрытое состояние: кнопка видна, iframe скрыт */
+    iframe {
+      display: none;
+    }
+
+    button {
+      display: flex;
+    }
+
+    img.close {
+      display: none; /* крест скрыт пока закрыто */
+    }
+
+    /* Мобайл, открытое состояние: JS добавил класс is-open */
+    &.is-open {
+      iframe {
+        display: block;
+      }
+
+      button {
+        display: none;
+      }
+
+      img.close {
+        display: block;
+      }
+    }
+  }
 }

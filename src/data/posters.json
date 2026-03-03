@@ -1605,11 +1605,21 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [],
-    "modules": [],
+    "tags": [
+      "Геометрия",
+      "Хаос",
+      "Пазл",
+      "Типографика"
+    ],
+    "modules": [
+      " Движение",
+      "Вращение",
+      "Перетаскивание",
+      "Скролл"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204476/4898618_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://harukorakuke.github.io/InteractivePosterKARA/",
+    "github": "https://github.com/HarukoRakuke/InteractivePosterKARA",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204476_4898618"
   },
   {
@@ -1618,12 +1628,20 @@
     "author": "Вероника Косарева ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "Лонгрид",
+    "tags": [
+      "Фотографии",
+      "Типографика",
+      "Микровзаимодействия",
+      "Пазл"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Клик"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/208542/4846593_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://nikakosareva.github.io/peremotka-s-lab/",
+    "github": "https://github.com/nikakosareva/peremotka-s-lab",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#208542_4846593"
   },
   {
@@ -1632,12 +1650,17 @@
     "author": "Дмитрий Федоров ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "На весь экран",
+    "tags": [
+      "Фотографии",
+      "Типографика"
+    ],
+    "modules": [
+      "Перетаскивание"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/206022/4772685_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://fedorovvdmitry.github.io/fontseverywhere/",
+    "github": "https://github.com/fedorovvdmitry/fontseverywhere",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#206022_4772685"
   },
   {
@@ -1645,13 +1668,20 @@
     "name": "Сигнал",
     "author": "Мария Толстова ",
     "year": "2024",
-    "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "type": "Статичный",
+    "layout": "Лонгрид",
+    "tags": [
+      "Типографика",
+      "Геометрия",
+      "Частицы"
+    ],
+    "modules": [
+      " Движение",
+      "Эффекты"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210537/4922578_h1610_m3_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://yunoneeds.github.io/signal/",
+    "github": "https://github.com/yunoneeds/signal",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210537_4922578"
   },
   {
@@ -1660,12 +1690,18 @@
     "author": "Полина Кипкало ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "На весь экран",
+    "tags": [
+      "Иллюстрация",
+      "Необычная навигация"
+    ],
+    "modules": [
+      "Клик",
+      "Вращение"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210547/4926064_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://pdvachevskaya.github.io/RE-LOUD-web-poster/?clckid=fd2740d3",
+    "github": "https://clck.ru/39jdtn",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#210547_4926064"
   },
   {
@@ -1674,12 +1710,22 @@
     "author": "Анастасия Бедина ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "На весь экран",
+    "tags": [
+      "Необычная навигация",
+      "Текстуры",
+      "Фотографии",
+      "Хаос"
+    ],
+    "modules": [
+      "Звук",
+      "Вращение",
+      " Движение",
+      "Перетаскивание"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/209592/4921608_h1610_m3_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://anastasiiiiiiiiiiiaaa.github.io/art8/",
+    "github": "https://github.com/Anastasiiiiiiiiiiiaaa/art8",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#209592_4921608"
   },
   {
@@ -1688,12 +1734,20 @@
     "author": "Виола Иосифова ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "Лонгрид",
+    "tags": [
+      "Типографика",
+      "Покадровая анимация",
+      "Геометрия"
+    ],
+    "modules": [
+      "Трансформация",
+      " Движение",
+      "Перетаскивание"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204340/4915226_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://violochkin.github.io/viola-iosi/",
+    "github": "https://github.com/Violochkin/viola-iosi",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204340_4915226"
   },
   {
@@ -1702,12 +1756,21 @@
     "author": "Анна Кудряшова ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "Модульный",
+    "tags": [
+      "Типографика",
+      "Ховер",
+      "Покадровая анимация"
+    ],
+    "modules": [
+      "Звук",
+      "Клик",
+      "Перетаскивание",
+      "Холст"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204383/4894598_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://kaddelina.github.io/shelf_project/",
+    "github": "https://github.com/kaddelina/shelf_project",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204383_4894598"
   },
   {
@@ -1716,26 +1779,19 @@
     "author": "Анна Кудряшова ",
     "year": "2024",
     "type": "Динамичный",
-    "layout": null,
-    "tags": [],
-    "modules": [],
+    "layout": "Лонгрид",
+    "tags": [
+      "Иллюстрация",
+      "Текстуры",
+      "Пазл"
+    ],
+    "modules": [
+      "Перетаскивание",
+      "Клик"
+    ],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204363/4918323_w540_m2_s1.jpg",
-    "ghPages": "",
-    "github": "",
+    "ghPages": "https://kudryashhh.github.io/initeal_tea/",
+    "github": "https://github.com/kudryashhh/initeal_tea",
     "project": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2023_1079_1_N_N_N#204363_4918323"
-  },
-  {
-    "id": "recl1mgW0Oxm3bKUi",
-    "name": "none",
-    "author": "none",
-    "year": "",
-    "type": null,
-    "layout": null,
-    "tags": [],
-    "modules": [],
-    "cover": "",
-    "ghPages": "",
-    "github": "",
-    "project": ""
   }
 ]

@@ -718,7 +718,7 @@
 }
 
 .O_DividerBanner {
-  border-radius: 2px;
+  border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -746,16 +746,17 @@
   display: flex;
   flex-direction: row;
   gap: var(--space-16);
+  transition: opacity 0.3 ease;
 
   &:hover {
-    b {
+    p:nth-child(2) {
       text-decoration: underline;
     }
     opacity: 0.8;
   }
 
   &.right {
-    b {
+    p {
       text-align: right;
     }
   }
@@ -778,6 +779,20 @@
 
   &.right {
     margin-left: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    border: 1px solid var(--gray-lightest);
+    gap: var(--space-4);
+
+    b {
+      font-size: 1rem;
+    }
+
+    .C_KeysButton {
+      display: none;
+    }
   }
 }
 .O_RelatedPosters {
