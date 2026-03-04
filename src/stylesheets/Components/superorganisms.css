@@ -74,6 +74,14 @@
 
 #buttonsGsap {
   opacity: 0;
+
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+    gap: var(--space-6);
+    .A_Button {
+      width: 100%;
+    }
+  }
 }
 
 .S_IntroAbout {
@@ -299,5 +307,8 @@ header.S_Header {
 .S_Modules {
   display: flex;
   flex-direction: column;
-  gap: var(--space-32);
+
+  &.home {
+    gap: var(--space-32);
+  }
 }

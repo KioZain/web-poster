@@ -25,7 +25,7 @@
 
 [data-demo='movement-pendulum'] .demo-pendulum {
   position: absolute;
-  top: 10%;
+  top: 3%;
   left: 50%;
   width: 6px;
   height: 180px;
@@ -150,7 +150,7 @@
   height: 240px;
   margin-top: -120px;
   margin-left: -120px;
-  border: 1px dashed rgba(122, 223, 241, 0.6);
+  border: 1px dashed rgba(122, 223, 241, 0.8);
   border-radius: 50%;
 }
 

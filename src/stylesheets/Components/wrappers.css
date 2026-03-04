@@ -256,7 +256,9 @@
     grid-column: span 3;
     min-height: auto;
     height: 210px;
-    background: #f1f3f3;
+    background: #ffff;
+    border-radius: 6px;
+    /* border: 1px solid var(--gray-lightest); */
 
     p {
       position: absolute;
