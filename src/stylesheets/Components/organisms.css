@@ -610,6 +610,7 @@
   align-self: flex-start;
   grid-column: span 2;
   order: 3;
+  padding-left: var(--space-8);
 
   .C_AticleLinks {
     padding-left: 0;

@@ -34,6 +34,10 @@ h1 {
   &.bold {
     font-weight: 500;
   }
+
+  /* @media screen and (max-width: 393px) {
+    font-size: ;
+  } */
 }
 
 h2 {

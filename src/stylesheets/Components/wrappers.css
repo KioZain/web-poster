@@ -161,6 +161,7 @@
     .O_ArticleContent {
       order: 1;
       grid-column: span 3;
+      padding-left: 0;
     }
   }
 }
