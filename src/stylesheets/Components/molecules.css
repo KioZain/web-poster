@@ -55,10 +55,6 @@
   gap: var(--space-8);
   grid-column: span 8;
 
-  h1 {
-    width: 90%;
-  }
-
   @media screen and (max-width: 1024px) {
     grid-column: span 6;
   }
