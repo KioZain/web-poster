@@ -13,14 +13,27 @@
   <div class="S_CodeArea">
     <div class="O_CodeBar">
       <div class="M_CodeTabs">
-        <button class="A_CodeTab active">CSS</button>
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
       </div>
       <div class="A_CopyButton-container"></div>
     </div>
 
     <div class="O_CodeContent">
       <div class="A_LineNumbers"></div>
-      <pre class="A_CodeBlock"><code class="language-css">
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+&lt;div class="demo-pr-dot"&gt;&lt;/div&gt;
+</code></pre>
+
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
 @keyframes pseudo-random-move {
   0% { transform: translate(0, 0); }
   25% { transform: translate(100px, -50px); }

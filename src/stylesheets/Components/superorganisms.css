@@ -273,6 +273,9 @@ header.S_Header {
       }
     }
   }
+  .O_SquaredBlock {
+    margin-bottom: 4rem;
+  }
 }
 .S_ArticleHead {
   background-color: white;
