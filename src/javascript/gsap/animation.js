@@ -199,3 +199,4 @@ bubon.addEventListener('mouseenter', () => {
 
 document.addEventListener('DOMContentLoaded', initInfiniteCarousel)
 // reaksjdlkajsldjaksjdlkajslkdjBL
+// asdasd
