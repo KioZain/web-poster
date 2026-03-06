@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerBtn.classList.toggle('close', isOpen)
     hamburgerBtn.setAttribute('aria-expanded', isOpen)
     header.classList.toggle('is-open', isOpen)
-
-    // Закрываем поиск если был открыт
     searchResults.classList.remove('open')
     searchBtn.classList.remove('close')
     searchBtn.setAttribute('aria-expanded', false)
@@ -26,8 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn.classList.toggle('close', isOpen)
     searchBtn.setAttribute('aria-expanded', isOpen)
     header.classList.toggle('is-open', isOpen)
-
-    // Закрываем мобильное меню если было открыто
     mobileLinks.classList.remove('open')
     hamburgerBtn.classList.remove('close')
     hamburgerBtn.setAttribute('aria-expanded', false)

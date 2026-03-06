@@ -51,7 +51,6 @@ function PosterPage() {
     }
   }, [poster])
 
-  // Внутри компонента PosterPage, рядом с relatedPosters:
   const relatedPosters = useMemo(() => {
     if (!poster) return []
     return getRelatedPosters(poster, postersData, 12) // увеличили с 6 до 12
@@ -91,7 +90,6 @@ function PosterPage() {
     <div className="poster-page">
       <div class="O_BreadCrumbs">
         <div class="W_NavCrumbs margin-container">
-          <button class="A_NavigationMenuButton"></button>
           <nav class="M_Breadcrumbs">
             <div class="W_BreadCrumbsContainer">
               <a className="caption-caps" href={'/index.html'}>

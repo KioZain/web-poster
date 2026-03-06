@@ -120,7 +120,7 @@ header.S_Header {
   overflow: hidden;
 
   &.is-open {
-    height: 100dvh;
+    height: 100vh;
   }
 }
 
