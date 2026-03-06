@@ -30,9 +30,25 @@
     display: inline-block;
     width: fit-content;
     font-size: 1.125rem;
+    position: relative;
 
     &:hover {
-      color: var(--gray-medium);
+      color: var(--gray-soft);
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 2px;
+      background: black;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
 

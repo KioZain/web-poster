@@ -179,5 +179,23 @@ tl.fromTo(
   buttonsStart
 )
 
+const bubon = document.querySelector('#shimer')
+console.log(bubon)
+bubon.addEventListener('mouseenter', () => {
+  const overlay = document.createElement('span')
+
+  overlay.style.cssText = `position:absolute;
+  top:0;
+  left:-100%;
+  width:70%;
+  height:100%;background:linear-gradient(90deg,transparent,rgba(255, 255, 255, 0.1),transparent);`
+  bubon.appendChild(overlay)
+  gsap.to(overlay, {
+    left: '200%',
+    duration: 1.5,
+    onComplete: () => overlay.remove()
+  })
+})
+
 document.addEventListener('DOMContentLoaded', initInfiniteCarousel)
 // reaksjdlkajsldjaksjdlkajslkdjBL

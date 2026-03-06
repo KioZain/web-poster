@@ -150,9 +150,10 @@ input.A_SearchInput {
   width: fit-content;
   align-items: center;
   justify-content: center;
+  position: relative;
   height: 48px;
   padding: var(--space-8) var(--space-24);
-  background: linear-gradient(0deg, #151514 70.7%, #5d5d5c 110.42%);
+  background: linear-gradient(0deg, #2a2a27 70.7%, #5d5d5c 110.42%);
   color: var(--white-500);
   border-radius: 6px;
   text-decoration: none;
@@ -161,12 +162,13 @@ input.A_SearchInput {
   font-size: 1rem;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
+  overflow: hidden;
   border: none;
 
   &.secondary {
     background: transparent;
-    border: 2px solid var(--gray-base);
-    color: var(--gray-base);
+    border: 2px solid var(--gray-medium);
+    color: var(--gray-medium);
     font-weight: 500;
     font-size: 1rem;
     gap: var(--space-8);
