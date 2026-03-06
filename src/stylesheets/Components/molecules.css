@@ -197,17 +197,19 @@
 .M_AboutArticle {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
 
   p.body {
     color: var(--gray-medium);
+    font-size: 1rem;
+    line-height: 140%;
   }
 
-  @media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) {
     p.body {
       font-size: 1rem;
     }
-  }
+  } */
 }
 .M_Columns {
   width: 100%;
@@ -384,7 +386,7 @@
 }
 .M_AboutArticle {
   h4 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   @media screen and(max-width:1240px) {

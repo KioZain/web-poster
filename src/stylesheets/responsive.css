@@ -25,7 +25,7 @@
   :root {
     --width-container: 896px;
     --grid-columns: 9;
-    --grid-gap: 12px;
+    /* --grid-gap: 12px; */
   }
 
   .W_Footer {
