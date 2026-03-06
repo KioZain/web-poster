@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import searchIcon from '../../images/icons/32/Q_Search-32.svg'
 import hamburgerIcon from '../../images/icons/32/Q_Hamburger-32.svg'
 import closeIcon from '../../images/icons/32/Q_Close-32.svg'
-import { getUrl } from '../config/paths.js'
+// import { getUrl } from '../config/paths.js'
 
 export default function Menubar() {
   const [openPanel, setOpenPanel] = useState(null)
@@ -16,19 +16,19 @@ export default function Menubar() {
   }
 
   const navLinks = [
-    { href: getUrl('/handbook.html'), label: 'Учебник' },
-    { href: getUrl('/modules.html'), label: 'Модули' },
-    { href: getUrl('/posters.html'), label: 'Веб-плакаты' }
+    { href: '/handbook.html', label: 'Учебник' },
+    { href: '/modules.html', label: 'Модули' },
+    { href: '/posters.html', label: 'Веб-плакаты' }
   ]
 
-  console.log({ href: getUrl('/handbook.html'), label: 'Учебник' })
+  console.log({ href: '/handbook.html', label: 'Учебник' })
 
   const isOpen = openPanel !== null
   return (
     <header className={`S_Header ${isOpen ? 'is-open' : ''}`}>
       <div className="W_HeaderAllContent margin-container">
         <div className="W_HeaderTopNavigation">
-          <a className="A_Logo" href={getUrl('/index.html')}></a>
+          <a className="A_Logo" href={'/index.html'}></a>
           <div className="W_HeaderLinks">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href}>

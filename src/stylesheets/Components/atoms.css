@@ -267,17 +267,21 @@ details[open] .chevron {
   height: 2rem;
 
   &.hamburger {
-    appearance: none;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
     color: currentColor;
     display: none;
+    background-image: url('../../images/icons/32/Q_Hamburger-32.svg');
 
     @media screen and (max-width: 768px) {
       display: block;
     }
+  }
+
+  &.search {
+    background-image: url('../../images/icons/32/Q_Search-32.svg');
+  }
+
+  &.close {
+    background-image: url('../../images/icons/32/Q_Close-32.svg');
   }
 
   &:hover {

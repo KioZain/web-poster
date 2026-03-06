@@ -124,6 +124,16 @@ header.S_Header {
   }
 }
 
+.icon-close {
+  display: none;
+}
+.S_Header.is-open .icon-close {
+  display: block;
+}
+.S_Header.is-open .icon-hamburger {
+  display: none;
+}
+
 /* Poster Page */
 .S_PosterInfo {
   width: 100%;

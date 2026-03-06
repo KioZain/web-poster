@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import postersData from '../../data/posters.json'
 import ghIcon from '../../images/icons/Q_GithubIcon.svg'
-import { getUrl } from '../config/paths.js'
+// import { getUrl } from '../config/paths.js'
 import { getRelatedPosters, getPriorityTag } from '../utils/relatedPosters.js'
 import RelatedPosters from './O_RelatedPosters.jsx'
 import S_RelatedModules from './S_RelatedModules.jsx'
@@ -12,20 +12,20 @@ function getPosterIdFromUrl() {
   console.log(params.get('id'))
 }
 
-function getBasePath() {
-  const path = window.location.pathname
-  const segments = path.split('/').filter((segment) => segment.length > 0)
+// function getBasePath() {
+//   const path = window.location.pathname
+//   const segments = path.split('/').filter((segment) => segment.length > 0)
 
-  if (segments.length > 0 && segments[segments.length - 1].includes('.html')) {
-    segments.pop()
-  }
+//   if (segments.length > 0 && segments[segments.length - 1].includes('.html')) {
+//     segments.pop()
+//   }
 
-  if (segments.length === 0) {
-    return './'
-  }
+//   if (segments.length === 0) {
+//     return './'
+//   }
 
-  return '../'.repeat(segments.length)
-}
+//   return '../'.repeat(segments.length)
+// }
 
 // main component
 function PosterPage() {
@@ -43,7 +43,7 @@ function PosterPage() {
     return null
   })
 
-  const basePath = getBasePath()
+  // const basePath = getBasePath()
 
   useEffect(() => {
     if (poster) {
@@ -62,21 +62,21 @@ function PosterPage() {
     return getPriorityTag(poster, postersData)
   }, [poster])
 
-  if (error) {
-    return (
-      <div className="poster-page__error" style={{ padding: '2rem' }}>
-        <p>{error}</p>
-        <a href={`${basePath}posters.html`}>← Вернуться к каталогу</a>
-      </div>
-    )
-  }
+  // if (error) {
+  //   return (
+  //     <div className="poster-page__error" style={{ padding: '2rem' }}>
+  //       <p>{error}</p>
+  //       <a href={`${basePath}posters.html`}>← Вернуться к каталогу</a>
+  //     </div>
+  //   )
+  // }
 
   // error
   if (error) {
     return (
       <div className="poster-page__error" style={{ padding: '2rem' }}>
         <p>{error}</p>
-        <a href={getUrl('/posters.html')}>← Вернуться к каталогу</a>
+        <a href={'/posters.html'}>← Вернуться к каталогу</a>
       </div>
     )
   }
@@ -94,11 +94,11 @@ function PosterPage() {
           <button class="A_NavigationMenuButton"></button>
           <nav class="M_Breadcrumbs">
             <div class="W_BreadCrumbsContainer">
-              <a className="caption-caps" href={getUrl('/index.html')}>
+              <a className="caption-caps" href={'/index.html'}>
                 Главная
               </a>
               •
-              <a className="caption-caps" href={getUrl('/posters.html')}>
+              <a className="caption-caps" href={'/posters.html'}>
                 Веб-плакаты
               </a>
               •

@@ -1,1 +1,49 @@
-<div id="menuRoot"></div>
+<header class="S_Header" id="siteHeader">
+  <div class="W_HeaderAllContent margin-container">
+    <div class="W_HeaderTopNavigation">
+      <a class="A_Logo" href="/index.html"></a>
+
+      <div class="W_HeaderLinks">
+        <a href="/handbook.html">Учебник</a>
+        <a href="/modules.html">Модули</a>
+        <a href="/posters.html">Веб-плакаты</a>
+      </div>
+
+      <div class="M_IconButtons">
+        <button
+          class="A_IconButton search"
+          id="searchButton"
+          aria-label="Поиск"
+          aria-expanded="false"
+        ></button>
+        <button
+          class="A_IconButton hamburger"
+          id="hamburgerButton"
+          aria-label="Меню"
+          aria-expanded="false"
+        ></button>
+      </div>
+    </div>
+
+    <!-- Поиск — пока заглушка, потом сюда войдёт React-компонент -->
+    <div class="W_SearchResults">
+      <div class="M_SearchBar">
+        <input
+          type="text"
+          placeholder="Поиск по учебнику"
+          class="A_SearchInput"
+        />
+        <button class="A_Button">Найти</button>
+      </div>
+      <div class="A_Found caption-caps"></div>
+      <div class="C_Articles result"></div>
+    </div>
+
+    <!-- Мобильные ссылки -->
+    <div class="С_MobileHeaderLinks">
+      <a class="A_MobileHeaderLink" href="/handbook.html">Учебник</a>
+      <a class="A_MobileHeaderLink" href="/modules.html">Модули</a>
+      <a class="A_MobileHeaderLink" href="/posters.html">Веб-плакаты</a>
+    </div>
+  </div>
+</header>

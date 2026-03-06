@@ -1,6 +1,6 @@
 import React from 'react'
 import modulesMap from '../config/modulesMap.js'
-import { getUrl } from '../config/paths.js'
+// import { getUrl } from '../config/paths.js'
 import arrowIcon from '../../images/icons/Q_ArrowForward-24.svg'
 
 function S_RelatedModules({ modules }) {
@@ -23,7 +23,7 @@ function S_RelatedModules({ modules }) {
           const moduleData = modulesMap[name]
 
           return (
-            <a key={name} href={getUrl(moduleData.url)} className="O_ModuleRow">
+            <a key={name} href={moduleData.url} className="O_ModuleRow">
               <div className="W_ModulesRow">
                 <img
                   src={moduleData.icon}

@@ -132,8 +132,13 @@
   }
 }
 .С_MobileHeaderLinks {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
+
+  &.open {
+    display: flex;
+  }
 }
 .C_Tags {
   display: flex;
