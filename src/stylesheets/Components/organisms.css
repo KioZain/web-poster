@@ -730,12 +730,13 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
   background: linear-gradient(
-    82deg,
-    #fe3904 8.11%,
-    #fe3904 41.58%,
-    #fe96e4 88.91%,
-    rgba(254, 150, 228, 0.5) 100%
+    275deg,
+    #fe96e4 14.41%,
+    #fe3904 44.67%,
+    #fe3904 57.44%,
+    #fe96e4 97.07%
   );
 
   img.polygon {
