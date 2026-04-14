@@ -194,6 +194,9 @@ input.A_SearchInput {
     }
   }
 
+  .smt {
+  }
+
   &.small {
     height: 40px;
     padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
