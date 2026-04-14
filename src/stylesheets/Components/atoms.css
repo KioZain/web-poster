@@ -1,10 +1,15 @@
 .A_Logo {
   width: 90px;
   height: 40px;
-  background-image: url(../../images/A_Logo.svg);
+  /* background-color: red; */
   cursor: pointer;
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
+
+  #logoAnimation {
+    top: -40%;
+    left: 0%;
+    position: absolute;
+  }
 }
 
 .A_DVDLogo {
@@ -20,6 +25,17 @@
   h1 {
     line-height: 40px;
   }
+}
+
+.A_VideoContainer {
+  width: 100%;
+  max-width: 800px;
+  height: 472px;
+  border: 5px solid var(--gray-soft);
+  background: var(--white-500);
+  border-radius: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 /* Inputs */
@@ -155,7 +171,7 @@ input.A_SearchInput {
   padding: var(--space-8) var(--space-24);
   background: linear-gradient(0deg, #2a2a27 70.7%, #5d5d5c 110.42%);
   color: var(--white-500);
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   font-family: 'Aeonik Pro';
@@ -172,6 +188,10 @@ input.A_SearchInput {
     font-weight: 500;
     font-size: 1rem;
     gap: var(--space-8);
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   &.small {
@@ -184,7 +204,7 @@ input.A_SearchInput {
     color: var(--gray-base);
 
     &:hover {
-      opacity: 0.7;
+      opacity: 0.6;
     }
   }
 }
@@ -496,6 +516,58 @@ button.A_Tab {
   }
 }
 
+/* Skeletons */
+
+.Q_PosterCover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  overflow: hidden;
+  background: var(--gray-lightest);
+}
+
+.Q_PosterCover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--gray-lightest) 0%,
+    var(--gray-light-shimmer, #ececec) 50%,
+    var(--gray-lightest) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.Q_PosterCover.loaded::before {
+  opacity: 0;
+}
+
+.Q_PosterCover img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.Q_PosterCover.loaded img {
+  opacity: 1;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .A_RelatedPosterCard {
   display: block;
   border-radius: 2px;
@@ -743,4 +815,14 @@ button.A_Tab {
   @media screen and (max-width: 768px) {
     padding: var(--space-12);
   }
+}
+.A_PreviewHeader {
+  /* display: flex; */
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 44px;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px 12px 0 0;
 }

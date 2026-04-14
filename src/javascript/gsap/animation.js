@@ -154,6 +154,14 @@ const buttons = document.querySelector('#buttonsGsap')
 const buttonsDuration = 0.5
 const buttonsStart = totalDuration - buttonsDuration - 0.15
 
+const videoStart = textDelay - 0.4 // появляется за 0.4s до текста
+
+tl.fromTo(
+  '.A_VideoContainer',
+  { opacity: 0, y: 40 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+  videoStart
+)
 tl.fromTo(
   split.words,
   { opacity: 0, y: 35 },

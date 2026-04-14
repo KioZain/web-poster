@@ -48,19 +48,19 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 115%;
   font-weight: 500;
 
   @media screen and (max-width: 768px) {
-    font-size: clamp(1.5rem, 1.0588rem + 1.9608vw, 2rem);
+    font-size: clamp(1.5rem, 1.0588rem + 1.9608vw, 1.75rem);
   }
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  line-height: 125%;
+  line-height: 130%;
 
   @media screen and (max-width: 1024px) {
     font-size: clamp(1.25rem, 0.729rem + 1.205vw, 1.5rem);

@@ -48,6 +48,8 @@
     "airtable": "^0.12.2",
     "framer-motion": "^12.31.1",
     "gsap": "^3.14.2",
+    "lottie-react": "^2.4.1",
+    "lottie-web": "^5.13.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

@@ -495,50 +495,59 @@
 .M_PreviewPoster {
   display: flex;
   flex-direction: column;
+  background: var(--white-500);
+  position: relative;
+  border-radius: 6px;
+  gap: var(--space-8);
+  overflow: hidden;
 
   img.close {
     margin-left: auto;
     display: none;
+    cursor: pointer;
   }
 
   button {
     width: 100%;
     display: none;
+    background-color: inherit;
   }
 
-  @media screen and (max-width: 768px) {
-    background: var(--white-500);
-    position: relative;
-    border-radius: 6px;
-    gap: var(--space-8);
-    overflow: hidden;
+  iframe {
+    display: none;
+  }
 
-    /* Мобайл, закрытое состояние: кнопка видна, iframe скрыт */
+  button {
+    display: flex;
+  }
+
+  img.close {
+    display: none;
+  }
+
+  &.is-open {
     iframe {
-      display: none;
+      display: block;
     }
 
     button {
-      display: flex;
+      display: none;
     }
 
     img.close {
-      display: none; /* крест скрыт пока закрыто */
-    }
-
-    /* Мобайл, открытое состояние: JS добавил класс is-open */
-    &.is-open {
-      iframe {
-        display: block;
-      }
-
-      button {
-        display: none;
-      }
-
-      img.close {
-        display: block;
-      }
+      display: block;
     }
   }
+}
+
+.M_PreviewPoster.is-open .A_PreviewHeader {
+  display: flex;
+}
+
+.M_PreviewPoster.is-open button {
+  display: none;
+}
+
+.M_PreviewPoster.is-open iframe {
+  display: block;
 }

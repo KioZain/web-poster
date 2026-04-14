@@ -31,9 +31,21 @@
     width: fit-content;
     font-size: 1.125rem;
     position: relative;
+    transition: 0.3s ease;
 
-    &:hover {
-      color: var(--gray-soft);
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--gray-650);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s;
+    }
+
+    &:hover::before {
+      width: 100%;
     }
 
     /* &::after {
