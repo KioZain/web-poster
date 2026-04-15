@@ -8,7 +8,7 @@
 .L_ArticlesPreviewSection {
   display: flex;
   flex-direction: column;
-  gap: var(--space-48);
+  gap: var(--space-40);
 
   &.blured {
     position: relative;

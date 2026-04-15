@@ -1,7 +1,7 @@
 .Q_HandleSquare {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: var(--gray-base);
 
   &.lt {
@@ -75,9 +75,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 4.5rem;
-  max-height: 4.5rem;
-  margin-left: auto;
+  max-width: 5rem;
+  max-height: 5rem;
+  /* margin-left: auto; */
   border-radius: 12px;
   background: linear-gradient(
     237deg,
@@ -92,6 +92,11 @@
     height: 4rem;
   }
 
+  @media screen and (max-width: 768px) {
+    max-width: 5rem;
+    max-height: 5rem;
+  }
+
   @media screen and (max-width: 500px) {
     grid-column: 1/-1;
     max-width: none;
@@ -99,7 +104,8 @@
     height: 12rem;
 
     img {
-      width: 8rem;
+      width: 6rem;
+      height: 6rem;
     }
   }
 }

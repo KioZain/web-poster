@@ -17,6 +17,10 @@
     font-weight: 500;
     color: var(--gray-light);
   }
+
+  .M_TitleText {
+    gap: 0.5rem;
+  }
 }
 .O_AboutPartAction {
   display: flex;
@@ -35,11 +39,14 @@
       margin-bottom: var(--space-12);
     }
   }
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 .O_AboutInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--space-16);
+  gap: var(--space-12);
   grid-column: -5/-1;
 
   @media screen and (max-width: 1132px) {
@@ -237,6 +244,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+
+  p.body.bold {
+    font-size: 1rem;
+  }
+
+  .A_CollapseName {
+    font-size: 15px;
+  }
 }
 
 .O_FilterSection {
@@ -477,13 +492,18 @@
   }
 
   @media screen and (max-width: 768px) {
+    .W_ImageContentModule {
+      grid-column: 1/-1;
+    }
+
     .A_Tag,
     p.pseudolink {
       display: none;
     }
 
     p.count {
-      grid-column: 2 / 5;
+      font-weight: 400;
+      grid-column: 2 / 4;
       color: var(--gray-light);
 
       &::before {
@@ -604,7 +624,7 @@
 .O_ArticleContent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-6);
   position: sticky;
   top: 124px;
   align-self: flex-start;
@@ -631,6 +651,10 @@
 
   &.is-hidden {
     display: none;
+  }
+
+  p.subtitle {
+    font-size: 1rem;
   }
 }
 /* .W_ArticlePage.modules {

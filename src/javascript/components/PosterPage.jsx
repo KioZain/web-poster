@@ -196,6 +196,7 @@ function PosterPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="A_Button"
+                id="shimer"
               >
                 Посмотреть веб-плакат
               </a>

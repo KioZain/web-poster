@@ -24,21 +24,18 @@ p {
 }
 
 h1 {
-  font-size: clamp(2rem, 1.5385rem + 2.0513vw, 3.5rem);
+  font-size: clamp(1.875rem, 1.296rem + 1.907vi, 3rem);
   font-weight: 500;
+  line-height: 105%;
 }
 .body {
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 115%;
+  line-height: 125%;
 
   &.bold {
     font-weight: 500;
   }
-
-  /* @media screen and (max-width: 393px) {
-    font-size: ;
-  } */
 }
 
 h2 {
@@ -71,19 +68,21 @@ h4 {
   font-weight: 500;
   line-height: 130%;
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     font-size: 1.125rem;
-  }
+  } */
 }
+
 p.body-other {
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 125%;
 }
+
 .caption-bold {
   font-size: 1rem;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 140%;
   color: var(--gray-base);
 }
 p.caption {
@@ -101,30 +100,11 @@ b {
   font-weight: 500;
   font-size: 1.125rem;
 }
-/* Grid */
-/* .all-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 1.25rem;
-  grid-row-gap: 0px;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(9, 1fr);
-    column-gap: 12px;
-    background: red;
-  }
-} */
 
 /* Color hierarchy */
 .light {
   color: var(--gray-light);
 }
-/* Right grid container */
-/* .right-container {
-  display: flex;
-  max-width: 738px;
-} */
 
 .margin-container {
   width: 100%;
@@ -143,7 +123,7 @@ p.article {
     background: #e7e7e4;
     border-radius: 4px;
     font-family: 'Aeonik Mono';
-    padding: 2px 4px;
+    padding: 1px 4px 3px;
     white-space: pre;
 
     @media screen and (max-width: 768px) {

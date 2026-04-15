@@ -167,11 +167,11 @@ input.A_SearchInput {
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 48px;
+  height: 44px;
   padding: var(--space-8) var(--space-24);
   background: linear-gradient(0deg, #2a2a27 70.7%, #5d5d5c 110.42%);
   color: var(--white-500);
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   font-family: 'Aeonik Pro';
@@ -383,8 +383,10 @@ button.A_Tab {
   }
 
   &.inactive {
-    opacity: 0.3;
-    cursor: not-allowed;
+    p {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -434,28 +436,26 @@ button.A_Tab {
 
   p {
     color: var(--gray-soft);
+    font-size: 1.125rem;
   }
 
   @media screen and (max-width: 1180px) {
     grid-column: -5 / -1;
   }
+
   @media screen and (max-width: 1024px) {
-    grid-column: -4/-1;
+    grid-column: 1/-1;
+    padding-left: 0;
+    font-size: 1.5rem;
+    border: none;
 
-    @media screen and (max-width: 840px) {
-      grid-column: 1/-1;
-      padding-left: 0;
-      font-size: 1.5rem;
-      border: none;
+    p.body-other {
+      font-weight: 500;
+      line-height: 1.5rem;
+    }
 
-      p.body-other {
-        font-weight: 500;
-        line-height: 1.5rem;
-      }
-
-      .Q_HandleSquare {
-        display: none;
-      }
+    .Q_HandleSquare {
+      display: none;
     }
   }
 }
@@ -694,7 +694,7 @@ button.A_Tab {
   }
 }
 .A_ListItem {
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
   line-height: 125%;
   min-height: 1.5rem;

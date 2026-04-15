@@ -411,6 +411,7 @@
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 1.5rem;
   }
 }
 .W_ReadMore {
@@ -478,4 +479,15 @@
     #7adff1 98.54%
   );
   margin-bottom: -6rem;
+}
+.W_ImageContentModule {
+  display: flex;
+  flex-direction: row;
+  gap: var(--grid-gap);
+  grid-column: span 5;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    grid-column: 1/-1;
+  }
 }
