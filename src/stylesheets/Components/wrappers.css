@@ -110,7 +110,11 @@
   gap: var(--grid-gap);
 
   .O_AboutPartAction {
-    margin-top: 3rem;
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    row-gap: var(--space-12);
   }
 }
 
@@ -160,7 +164,7 @@
 .W_HandbookPageWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, -0.167rem + 3.472vw, 4.5rem);
+  gap: clamp(2.5rem, -0.167rem + 3.472vw, 4.5rem);
   margin-top: var(--header-offset);
 }
 .W_HanbookPageWrapper {
@@ -371,7 +375,7 @@
   }
 }
 .W_BannerText {
-  max-width: 420px;
+  max-width: 432px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -381,9 +385,6 @@
   h2,
   h4 {
     color: var(--white-500);
-  }
-  h2 {
-    margin-bottom: 1rem;
   }
 
   .A_Button {
@@ -396,8 +397,14 @@
   }
 
   .M_ChapterHeading {
-    h4 {
-      font-size: clamp(1.125rem, 0.696rem + 0.893vw, 1.5rem);
+    gap: var(--space-12);
+  }
+  @media screen and (max-width: 786px) {
+    max-width: none;
+    width: 100%;
+
+    a.A_Button {
+      width: 100%;
     }
   }
 }

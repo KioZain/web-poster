@@ -29,13 +29,21 @@
 
 .A_VideoContainer {
   width: 100%;
-  max-width: 800px;
-  height: 472px;
-  border: 5px solid var(--gray-soft);
+  max-width: 720px;
+  /* height: 472px; */
+  border: 5px solid var(--gray-light);
+  aspect-ratio: 90 / 59;
   background: var(--white-500);
   border-radius: 20px;
   position: relative;
+  overflow: hidden;
   z-index: 10;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /* Inputs */
@@ -194,9 +202,6 @@ input.A_SearchInput {
     }
   }
 
-  .smt {
-  }
-
   &.small {
     height: 40px;
     padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
@@ -210,6 +215,15 @@ input.A_SearchInput {
       opacity: 0.6;
     }
   }
+
+  /* @media screen and (max-width: 486px) {
+    height: 40px;
+    font-size: 14px;
+
+    &.secondary {
+      font-size: 14px;
+    }
+  } */
 }
 
 .A_NavigationMenuButton {
@@ -384,7 +398,7 @@ button.A_Tab {
 
   &.inactive {
     p {
-      opacity: 0.7;
+      color: var(--gray-light);
       cursor: not-allowed;
     }
   }
@@ -394,28 +408,35 @@ button.A_Tab {
 .A_IconText {
   display: flex;
   flex-direction: row;
-  gap: var(--space-8);
+  gap: var(--space-4);
   width: fit-content;
   align-items: center;
+
+  p.subtitle {
+    font-size: 18px;
+  }
 }
 .A_CircleMarker {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   gap: var(--space-4);
   font-weight: 500;
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: row;
+  flex-direction: row;
 
-    .Q_Circle {
-      width: 2rem;
-      height: 2rem;
+  .Q_Circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--gray-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      p.subtitle {
-        font-size: 14px;
-        font-weight: 500;
-      }
+    p.subtitle {
+      font-size: 15px;
+      font-weight: 500;
     }
   }
 }

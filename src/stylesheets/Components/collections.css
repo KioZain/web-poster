@@ -37,9 +37,19 @@
 
   @media screen and (max-width: 768px) {
     border: none;
-    border-bottom: 1px solid var(--gray-lightest);
+    overflow-x: auto;
+    margin-left: calc(-1 * var(--container-padding, 1rem));
+    margin-right: calc(-1 * var(--container-padding, 1rem));
+
+    padding-left: var(--container-padding, 1rem);
+    padding-right: var(--container-padding, 1rem);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     .A_Tab {
+      min-width: 132px;
+      border-bottom: 1px solid var(--gray-lightest);
       .Q_HandleLine {
         display: none;
       }

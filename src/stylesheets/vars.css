@@ -71,4 +71,6 @@
   --header-offset: 4rem;
 
   --index-max: 1064px;
+  /* innerWhiteshadow */
+  --inner-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.5) inset;
 }

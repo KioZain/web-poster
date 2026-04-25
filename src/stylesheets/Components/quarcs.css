@@ -44,16 +44,17 @@
   max-height: 4rem;
   aspect-ratio: 1/1;
   background-color: rgb(171, 212, 249);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-shadow: var(--inner-shadow);
   }
 }
-.Q_Circle {
+/* .Q_Circle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -65,7 +66,7 @@
   p.subtitle {
     font-size: 1rem;
   }
-}
+} */
 
 .Q_ModulesIllustration {
   grid-column: span 1;
@@ -78,7 +79,8 @@
   max-width: 5rem;
   max-height: 5rem;
   /* margin-left: auto; */
-  border-radius: 12px;
+  border-radius: 1rem;
+  box-shadow: var(--inner-shadow);
   background: linear-gradient(
     237deg,
     rgba(122, 223, 241, 0.5) 10.16%,
@@ -114,7 +116,7 @@
   width: 100%;
   /* height: 410px; */
   aspect-ratio: 12 / 4;
-  border-radius: 6px;
+  border-radius: 12px;
   height: 520px;
   object-fit: cover;
 }
@@ -122,7 +124,7 @@
   width: 100%;
   aspect-ratio: 5/3;
   background: white;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
 
   img {

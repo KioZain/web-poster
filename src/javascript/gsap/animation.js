@@ -12,6 +12,7 @@ export function initInfiniteCarousel() {
 
   function getItemDimensions() {
     const firstItem = items[0]
+
     const rect = firstItem.getBoundingClientRect()
     const style = getComputedStyle(track)
     const gap = parseFloat(style.gap) || 16
@@ -62,7 +63,7 @@ export function initInfiniteCarousel() {
     const { step } = dimensions
     const totalItems = items.length
     const totalWidth = step * totalItems
-    const pixelsPerSecond = 50
+    const pixelsPerSecond = 25
     const duration = totalWidth / pixelsPerSecond
     const startOffset = -step
 
@@ -87,7 +88,7 @@ export function initInfiniteCarousel() {
         })
       },
       repeat: -1,
-      onUpdate: updateScales
+      // onUpdate: updateScales
     })
 
     updateScales()

@@ -25,11 +25,17 @@
       background: rgba(255, 255, 255, 0.1);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    gap: var(--space-24);
+  }
 }
 .L_Chapter {
   grid-column: span 9;
+  /* background-color: red; */
   min-width: 0;
-  min-height: calc(100vh - 91px);
+  position: relative;
+  /* min-height: calc(100vh - 91px); */
   container: chapter / inline-size;
 
   &.navbar-margin {

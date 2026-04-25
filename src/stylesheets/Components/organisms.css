@@ -4,8 +4,8 @@
   flex-direction: column;
   padding: var(--space-16);
   gap: var(--space-20);
-  background: #f1f3f3;
-  border-radius: 8px;
+  background: var(--white-500);
+  border-radius: 12px;
   height: 300px;
   justify-content: space-between;
   position: relative;
@@ -39,8 +39,13 @@
       margin-bottom: var(--space-12);
     }
   }
-  @media screen and (max-width: 768px) {
-    margin-top: 0;
+
+  @media screen and (max-width: 1024px) {
+    grid-column: span 5;
+  }
+
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
   }
 }
 .O_AboutInfo {
@@ -49,12 +54,24 @@
   gap: var(--space-12);
   grid-column: -5/-1;
 
+  .A_CaptionText {
+    margin: 0;
+    p.body-other {
+      font-size: 17px;
+    }
+  }
+
   @media screen and (max-width: 1132px) {
     grid-column: -6/-1;
   }
 
   @media screen and (max-width: 1024px) {
-    grid-column: span 5;
+    grid-column: span 4;
+  }
+
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
+    gap: var(--space-8);
   }
 }
 /* PosterPage */
@@ -589,7 +606,7 @@
 
 .O_CallOut {
   background: #f3f3f1;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: var(--space-20);
   /* border: 1px solid var(--gray-lightest); */
   display: flex;
@@ -754,7 +771,7 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   background: linear-gradient(
     275deg,
     #fe96e4 14.41%,
