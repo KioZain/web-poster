@@ -1,0 +1,73 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-morph">
+    <div class="demo-morph-shape"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-morph-shape"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-morph-shape {
+  width: 160px;
+  height: 160px;
+  background: #fff;
+  animation: transform-morph 6s ease-in-out infinite;
+}
+ 
+@keyframes transform-morph {
+  0% {
+    /* Скруглённый квадрат (8 точек) */
+    clip-path: polygon(
+      30% 0%, 70% 0%, 100% 30%, 100% 70%,
+      70% 100%, 30% 100%, 0% 70%, 0% 30%
+    );
+  }
+  25% {
+    /* Звезда */
+    clip-path: polygon(
+      50% 0%, 65% 35%, 100% 35%, 75% 55%,
+      85% 100%, 50% 70%, 15% 100%, 25% 55%
+    );
+  }
+  50% {
+    /* Круг-аппроксимация */
+    clip-path: polygon(
+      50% 0%, 85% 15%, 100% 50%, 85% 85%,
+      50% 100%, 15% 85%, 0% 50%, 15% 15%
+    );
+  }
+  75% {
+    /* Ромб */
+    clip-path: polygon(
+      50% 5%, 80% 25%, 95% 50%, 80% 75%,
+      50% 95%, 20% 75%, 5% 50%, 20% 25%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      30% 0%, 70% 0%, 100% 30%, 100% 70%,
+      70% 100%, 30% 100%, 0% 70%, 0% 30%
+    );
+  }
+}
+/* Все полигоны должны иметь одинаковое количество точек */
+      </code></pre>
+    </div>
+  </div>
+</div>

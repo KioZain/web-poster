@@ -1,0 +1,61 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-order">
+    <div class="demo-order-origin"></div>
+    <div class="demo-order-a"></div>
+    <div class="demo-order-b"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-order-origin"&gt;&lt;/div&gt;
+&lt;!-- A: translate → rotate --&gt;
+&lt;div class="demo-order-a"&gt;&lt;/div&gt;
+&lt;!-- B: rotate → translate --&gt;
+&lt;div class="demo-order-b"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+/* Объект A: сначала translate, потом rotate */
+.demo-order-a {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  animation: order-tr 4s ease-in-out infinite alternate;
+}
+ 
+/* Объект B: сначала rotate, потом translate */
+.demo-order-b {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.4);
+  animation: order-rt 4s ease-in-out infinite alternate;
+}
+ 
+@keyframes order-tr {
+  0%   { transform: translate(0,0) rotate(0deg); }
+  100% { transform: translate(120px,0) rotate(90deg); }
+}
+ 
+@keyframes order-rt {
+  0%   { transform: rotate(0deg) translate(0,0); }
+  100% { transform: rotate(90deg) translate(120px,0); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

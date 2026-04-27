@@ -1,0 +1,44 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-skew">
+    <div class="demo-skew-block"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-skew-block"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-skew-block {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 180px;
+  height: 80px;
+  margin-left: -90px;
+  background: #fff;
+  animation: transform-skew 3s ease-in-out infinite alternate;
+}
+ 
+@keyframes transform-skew {
+  0%   { transform: skewX(-15deg); }
+  100% { transform: skewX(15deg); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

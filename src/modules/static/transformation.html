@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Трансформации | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Трансформации</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/StaticModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Трасформации</h2>
+            <p class="subtitle">
+              Меняем форму, масштаб и положение объектов, выстраивая яркие
+              эффекты
+            </p>
+          </div>
+          <div class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="#71716F"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">15 минут чтения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar"></div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <!-- ---------------------------- -->
+          <div id="about" class="M_ParagraphArticle">
+            <h3>О модуле</h3>
+            <p class="article">
+              В модулях «Движение» и «Вращение» мы работали с отдельными
+              функциями <code>transform</code>, <code>translate</code> перемещал
+              объекты, <code>rotate</code> крутили их. Здесь мы разбираем
+              оставшуюся палитру: <code>scale</code>, <code>skew</code>,
+              <code>clip-path</code>, <code>perspective</code> и учились
+              комбинировать их друг с другом. Модуль устроен компактнее
+              предыдущих. Чуть меньше объяснений, чуть больше кода и примеров.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Масштабирование</h3>
+            <p class="article">
+              Объект увеличивается или уменьшается.
+              <code>scale(1)</code> исходный размер, <code>scale(1.5)</code> в
+              полтора раза больше, <code>scale(0)</code> — невидимая точка. В
+              отличие от изменения <code>width</code>/ <code>height</code>,
+              масштабирование через <code>scale</code> не сдвигает соседние
+              элементы и не пересчитывает раскладку — объект трансформируется на
+              месте, в своей визуальной плоскости.
+            </p>
+            <p class="article">
+              Анимированный <code>scale</code> хорош для появления элементов.
+              <code>scale(0)</code> → <code>scale(1)</code> — объект вырастает
+              из точки. Добавьте <code>opacity:0 → 1</code> для мягкости.
+              Обратный вариант c <code>scale(1) → scale(0)</code> схлопывает
+              объект в точку.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Обратите внимание: <code>scale</code> масштабирует всё
+                содержимое элемента, включая текст, обводку и тени. Если вам
+                нужно масштабировать только контейнер, а текст оставить
+                читаемым, придётся компенсировать <code>scale</code> на дочерних
+                элементах.
+              </p>
+            </details>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте поставить рядом три фигуры: круг, квадрат и
+                треугольник с&nbsp;одной и&nbsp;той&nbsp;же анимацией вращения.
+                Это хорошее упражнение, чтобы почувствовать, как геометрия формы
+                меняет визуальное восприятие одного и&nbsp;того&nbsp;же
+                технического приёма.
+              </p>
+            </div>
+          </div>
+          <scale></scale>
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Ассиметрия</h3>
+            <p class="article">
+              <code>scaleX</code> и <code>scaleY</code> работают по отдельности
+              и это открывает территорию деформаций. Объект сжимается по
+              горизонтали и вытягивается по вертикали или наоборот.
+            </p>
+
+            <p class="article">
+              Приём особенно выразителен для абстрактных фигур: круг, который
+              ритмично превращается в вертикальный овал, а потом в
+              горизонтальный. Или полоски эквалайзера — ряд элементов, каждый из
+              которых пульсирует по <code>scaleY</code> с разной амплитудой и
+              задержкой.
+            </p>
+          </div>
+          <stretch></stretch>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Если вы применяете <code>scaleX</code> или <code>scaleY</code> к
+                элементу с текстом, буквы тоже тянутся или сжимаются. Иногда это
+                нужный дизайнерский эффект, но чаще текст становится нечитаемым.
+                Если хотите деформировать контейнер, не трогая текст,
+                компенсируйте трансформацию на дочернем элементе:
+                <code>scaleY(2)</code> на родителе, <code>scaleY(0.5)</code> на
+                тексте.
+              </p>
+            </div>
+          </div>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Скос</h3>
+            <p class="article">
+              <code>skewX</code> и <code>skewY</code> наклоняют элемент,
+              превращая прямоугольник в параллелограмм. Визуально это ощущение
+              скорости, напора, курсивности. В типографических плакатах
+              <code>skew</code> создаёт летящие текстовые блоки — заголовок под
+              углом, словно сдвинутый порывом ветра.
+            </p>
+
+            <p class="article">
+              Анимированный <code>skew</code> с небольшой амплитудой (5–15°)
+              даёт деформацию другого характера, чем дрожь через
+              <code>rotate</code>. Если <code>rotate</code> трясёт объект, то
+              <code>skew</code> его мнёт, сдвигая горизонтальные линии
+              относительно друг друга. Попробуйте оба ффекта на одном элементе и
+              практически сразу разница в ощущениях станет заметна.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                <code>skewX</code> наклоняет по горизонтали: верхняя и нижняя
+                грани смещаются в разные стороны. <code>skewY</code> — по
+                вертикали: левая и правая грани. Комбинация обоих даёт сложную
+                ромбовидную деформацию.
+              </p>
+            </details>
+          </div>
+          <skew></skew>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Хорошим решением для декоративных полос в плакате сделать
+                несколько горизонтальных полосок с одинаковым
+                <code>skewX</code>, расставленных вертикально. Получается
+                динамичный паттерн наклонных параллелограммов, который делается
+                тремя строчками CSS.
+              </p>
+            </div>
+          </div>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Отражение</h3>
+            <p class="article">
+              <code>scaleX(-1)</code> зеркалит элемент по горизонтали.
+              <code>scaleY(-1)</code> — по вертикали. Мгновенный переворот, без
+              промежуточных состояний. Казалось бы, простой трюк — но в
+              комбинации с анимацией и дублированием он открывает интересные
+              возможности.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Два одинаковых объекта рядом, один из которых отражён — эффект
+                симметрии, чернильного пятна Роршаха, отражения в воде.
+                Анимированное отражение через <code>scaleX(1)</code> и
+                <code>scaleX(-1)</code> — быстрый флип, визуально похожий на
+                3D-переворот, но без <code>perspective</code>. Для текстовых
+                элементов это создаёт эффект обратного чтения, зеркальной
+                надписи.
+              </p>
+            </details>
+          </div>
+          <flip></flip>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Сквош и стретч</h3>
+            <p class="article">
+              Принцип из классической анимации Диснея, когда объект при движении
+              деформируется. Мяч, падающий на поверхность, в момент удара
+              сплющивается по вертикали и расширяется по горизонтали. При
+              отскоке происходит наоборот, вытягивается вверх и сужается. Это
+              добавляет движению вес и характер, превращает механическое
+              перемещение в живое, мультяшное и живое.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Технически это комбинация <code>translateY</code> с
+                <code>scaleX</code> / <code>scaleY</code> в одном многошаговом
+                <code>@keyframes</code>. В момент приземления —
+                <code>scaleY(0.6)</code> <code>scaleX(1.3)</code>, в момент
+                взлёта — <code>scaleY(1.2)</code> <code>scaleX(0.85)</code>.
+              </p>
+            </details>
+          </div>
+          <squash></squash>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Важно <code>transform-origin: bottom center</code>, чтобы объект
+                деформировался от точки контакта, а не от своего центра, иначе
+                он будет зависать в воздухе при сплющивании.
+              </p>
+            </div>
+          </div>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Перспективный наклон</h3>
+            <p class="article">
+              Приём создаёт ощущение глубины у плоских элементов. Текстовый блок
+              с <code>perspective: 800px</code> и
+              <code>rotateX(5deg)</code> выглядит так, словно он чуть отклонён
+              от зрителя. Изображение с <code>rotateY(10deg)</code> будто стоит
+              под углом, как рамка на полке. Такая плавная анимация с лёгким
+              покачиванием в перспективе делает карточку или блок объёмным и
+              живым.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Значение perspective на родителе определяет расстояние камеры.
+                Маленькое значение в <code>(200–400px)</code> — агрессивная
+                перспектива, грани сильно уходят вдаль.
+                <code>(800–1200px)</code> дают мягкую, едва заметную глубину.
+              </p>
+            </details>
+          </div>
+
+          <perspective></perspective>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Морфинг формы</h3>
+            <p class="article">
+              <code>clip-path: polygon()</code> позволяет вырезать из элемента
+              произвольную фигуру, которая анимируется. Квадрат плавно
+              перетекает в звезду, звезда в круг,а круг в ромб. Выглядит так,
+              будто форма живая, будто она дышит и меняется.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Технически всё просто: вы задаёте несколько ключевых кадров с
+                разными <code>polygon()</code>, а браузер интерполирует точки
+                между ними. Есть одно жёсткое правило: количество точек в каждом
+                полигоне должно совпадать. Если в первом кадре 6 точек, а во
+                втором 8 — браузер не сможет интерполировать и просто
+                перепрыгнет к следующей форме без анимации.
+              </p>
+            </details>
+          </div>
+
+          <morph></morph>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Порядок точек в полигоне влияет на траекторию морфинга. Первая
+                точка первой формы интерполируется в первую точку второй формы,
+                вторая во вторую, и так далее. Если порядок сбит, форма при
+                переходе будет скручиваться в непредсказуемый клубок. Иногда это
+                именно тот эффект, который нужен, но чаще стоит следить за
+                последовательностью.
+              </p>
+            </div>
+          </div>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Глитч</h3>
+            <p class="article">
+              Эффект, когда элемент разрывается на горизонтальные полосы,
+              которые сдвигаются в разные стороны и произвольно наклоняются в
+              разные стороны. Классический глитч-арт, адаптированный под
+              технологии CSS.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Техника строится на псевдоэлементах <code>::before</code> и
+                <code>::after</code>. Основной элемент, его
+                <code>::before</code> и <code>::after</code> — три слоя одного и
+                того же содержимого. Каждый слой получает свой
+                <code>clip-path</code>, свой <code>translate</code> и свой
+                цветовой сдвиг. Анимация быстрая и рваная с
+                <code>animation-timing-function: steps(1)</code> вместо плавного
+                тайминга.
+              </p>
+            </details>
+          </div>
+
+          <glitch></glitch>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Порядок трансформаций</h3>
+            <p class="article">
+              Это концептуальный паттерн, который объясняет почему
+              <code>translate(100px)</code> <code>rotate(45deg)</code> и
+              <code>rotate(45deg)</code> <code>translate(100px)</code> дают
+              разный результат. Каждая функция в <code>transform</code> работает
+              в системе координат, которую изменила предыдущая.
+            </p>
+
+            <p class="article">
+              Представьте, что вы стоите лицом к стене. Сначала шаг вправо,
+              потом поворот, вы шагнули вправо и повернулись на месте. Сначала
+              поворот, потом шаг вправо и вы повернулись, теперь вправо для вас
+              это уже другое направление, потому что ваша система координат
+              повернулась вместе с вами.
+            </p>
+            <p class="article">
+              В демо ниже два одинаковых объекта получают одинаковый набор
+              трансформаций, но в разном порядке. Разница в конечной позиции —
+              наглядное доказательство того, что порядок имеет значение.
+            </p>
+          </div>
+          <order></order>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Трёхмерная раскладка</h3>
+            <p class="article">
+              Несколько плоских элементов, расположенных в 3D-пространстве через
+              <code>translateZ</code> и <code>rotateY</code>, формируют объёмную
+              конструкцию веера. По сути это развитие цилиндрического текста из
+              модуля «Вращение», но с произвольной геометрией и более свободной
+              раскладкой.
+            </p>
+
+            <p class="article">
+              Каждый элемент смещён по оси Z на разное расстояние и повёрнут на
+              свой угол. С <code>perspective</code> на родителе ближние элементы
+              выглядят крупнее, дальние наоборот меньше. Медленное вращение всей
+              конструкции через <code>rotateY</code> на контейнере и вы
+              получаете карусель, которая демонстрирует все элементы по очереди.
+            </p>
+            <p class="article">
+              В отличие от цилиндра, где все элементы на одном радиусе, здесь
+              можно варьировать <code>translateZ</code> для каждого. Кто-то
+              ближе, кто-то дальше. Это создаёт ощущение глубины и
+              пространственной сложности.
+            </p>
+          </div>
+          <spread></spread>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Взрыв</h3>
+            <p class="article">
+              Группа объектов, изначально собранных в одной точке или в
+              компактной форме, разлетается в разные стороны. Каждый элемент
+              получает свой вектор через <code>translate</code>, свой угол через
+              <code>rotate</code>, своё масштабирование через
+              <code>scale</code>. Обратный эффект, когда элементы собираются из
+              хаоса в цельную форму работает не менее выразительно.
+            </p>
+
+            <p class="article">
+              Для сборки достаточно инвертировать анимацию: начать с
+              разлетевшихся позиций и привести всё к центру.
+              <code>animation-fill-mode: forwards</code> зафиксирует конечное
+              состояние.
+            </p>
+          </div>
+
+          <explode></explode>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                При разлёте объекты могут выйти за пределы контейнера с
+                <code>overflow: hidden</code> и просто обрежутся. Если вам
+                нужно, чтобы объекты улетали за экран, то убедитесь, что у
+                контейнера достаточно пространства, или уберите
+                <code>overflow: hidden</code>
+              </p>
+            </div>
+          </div>
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>Дышащая геометрия</h3>
+            <p class="article">
+              Несколько пересекающихся геометрических фигур, каждая из которых
+              медленно трансформируется по-своему: одна слегка увеличивается
+              через <code>scale</code>, другая сужается по X через
+              <code>scaleX</code>, третья наклоняется через <code>skew</code>,
+              четвёртая чуть вращается. Разные длительности гарантируют, что
+              паттерн повторения не считывается.
+            </p>
+            <p class="article">
+              Паттерн хорошо работает как фоновый слой. Декоративные формы за
+              основным содержанием плаката, которые создают ощущение глубины и
+              движения без отвлечения внимания.
+            </p>
+          </div>
+          <breathing></breathing>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Для по-настоящему органичного дыхания используйте на каждой
+                фигуре несколько вложенных обёрток с разными трансформациями.
+                Одна обёртка отвечает за scale, другая — за <code>skew</code>,
+                третья — за <code>rotate</code>. Каждая со своей длительностью.
+              </p>
+            </div>
+          </div>
+
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

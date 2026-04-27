@@ -1,0 +1,53 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-perspective-tilt">
+    <div class="demo-tilt-scene">
+      <div class="demo-tilt-card"></div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-tilt-scene"&gt;
+  &lt;div class="demo-tilt-card"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+/* Контейнер задаёт перспективу */
+.demo-tilt-scene {
+  perspective: 600px;
+}
+ 
+.demo-tilt-card {
+  width: 160px;
+  height: 200px;
+  background: #fff;
+  border-radius: 8px;
+  animation: perspective-tilt 6s ease-in-out infinite;
+}
+ 
+@keyframes perspective-tilt {
+  0%   { transform: rotateY(0deg) rotateX(0deg); }
+  25%  { transform: rotateY(12deg) rotateX(-5deg); }
+  50%  { transform: rotateY(0deg) rotateX(0deg); }
+  75%  { transform: rotateY(-12deg) rotateX(5deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

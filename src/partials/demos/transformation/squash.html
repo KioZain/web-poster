@@ -1,0 +1,71 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-squash-stretch">
+    <div class="demo-ball-shadow"></div>
+    <div class="demo-ball"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-ball-shadow"&gt;&lt;/div&gt;
+&lt;div class="demo-ball"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-ball {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  /* Деформация от нижней грани */
+  transform-origin: bottom center;
+  animation: squash-stretch 1s ease infinite;
+}
+ 
+@keyframes squash-stretch {
+  0%   { transform: translateY(0) scaleX(1.3) scaleY(0.6); }
+  15%  { transform: translateY(-20px) scaleX(0.9) scaleY(1.15); }
+  40%  { transform: translateY(-120px) scaleX(1) scaleY(1); }
+  65%  { transform: translateY(-20px) scaleX(0.9) scaleY(1.15); }
+  85%  { transform: translateY(0) scaleX(1.3) scaleY(0.6); }
+  100% { transform: translateY(0) scaleX(1) scaleY(1); }
+}
+ 
+/* Тень, реагирующая на высоту мяча */
+.demo-ball-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: 60px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  animation: squash-shadow 1s ease infinite;
+}
+ 
+@keyframes squash-shadow {
+  0%   { transform: scaleX(1.2); opacity: 0.3; }
+  40%  { transform: scaleX(0.5); opacity: 0.08; }
+  85%  { transform: scaleX(1.2); opacity: 0.3; }
+  100% { transform: scaleX(1); opacity: 0.25; }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

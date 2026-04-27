@@ -1,0 +1,66 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-explode">
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+    <div class="demo-explode-piece"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+&lt;div class="demo-explode-piece"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-explode-piece {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  animation: 2.5s ease-out infinite;
+}
+ 
+/* Каждый фрагмент летит в свою сторону */
+.demo-explode-piece:nth-child(1) { animation-name: explode-1; }
+.demo-explode-piece:nth-child(2) { animation-name: explode-2; }
+/* ...и так далее для каждого */
+ 
+@keyframes explode-1 {
+  0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(140px,-100px) rotate(180deg) scale(0.3); opacity: 0; }
+}
+ 
+@keyframes explode-2 {
+  0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(-120px,-80px) rotate(-150deg) scale(0.2); opacity: 0; }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-flip">
+    <div class="demo-flip-axis"></div>
+    <div class="demo-flip-original"></div>
+    <div class="demo-flip-mirror"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-flip-axis"&gt;&lt;/div&gt;
+&lt;div class="demo-flip-original"&gt;&lt;/div&gt;
+&lt;div class="demo-flip-mirror"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-flip-original {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 60px;
+  height: 100px;
+  background: #fff;
+  border-radius: 4px 30px 4px 4px;
+  animation: flip-pulse-right 3s ease-in-out infinite;
+}
+ 
+.demo-flip-mirror {
+  position: absolute;
+  top: 30%;
+  left: calc(75% - 60px);
+  width: 60px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px 30px 4px 4px;
+  /* Зеркальное отражение */
+  transform: scaleX(-1);
+  animation: flip-pulse-left 3s ease-in-out infinite;
+}
+ 
+.demo-flip-axis {
+  position: absolute;
+  top: 20%; left: 50%;
+  width: 1px; height: 60%;
+  background: rgba(255, 255, 255, 0.15);
+}
+ 
+@keyframes flip-pulse-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+}
+ 
+@keyframes flip-pulse-left {
+  0%, 100% { transform: scaleX(-1) translateX(0); }
+  50% { transform: scaleX(-1) translateX(30px); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

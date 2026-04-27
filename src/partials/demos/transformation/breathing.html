@@ -1,0 +1,62 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-breathing">
+    <div class="demo-breath-shape"></div>
+    <div class="demo-breath-shape"></div>
+    <div class="demo-breath-shape"></div>
+    <div class="demo-breath-shape"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-breath-shape"&gt;&lt;/div&gt;
+&lt;div class="demo-breath-shape"&gt;&lt;/div&gt;
+&lt;div class="demo-breath-shape"&gt;&lt;/div&gt;
+&lt;div class="demo-breath-shape"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-breath-shape {
+  position: absolute;
+  border-radius: 30% 70% 50% 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+ 
+/* Каждая фигура — своя форма, размер и анимация */
+.demo-breath-shape:nth-child(1) {
+  width: 200px; height: 180px;
+  animation: breath-1 11s ease-in-out infinite;
+}
+ 
+.demo-breath-shape:nth-child(2) {
+  width: 180px; height: 160px;
+  border-radius: 50% 30% 70% 40%;
+  animation: breath-2 7s ease-in-out infinite;
+}
+ 
+@keyframes breath-1 {
+  0%, 100% { transform: scale(1) skew(0deg); }
+  50%      { transform: scale(1.08) skew(3deg); }
+}
+ 
+@keyframes breath-2 {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(0.92) rotate(8deg); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

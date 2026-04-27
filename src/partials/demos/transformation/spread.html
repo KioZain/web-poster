@@ -1,0 +1,77 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-3d-spread">
+    <div class="demo-spread-scene">
+      <div class="demo-spread-wrap">
+        <div class="demo-spread-card"></div>
+        <div class="demo-spread-card"></div>
+        <div class="demo-spread-card"></div>
+        <div class="demo-spread-card"></div>
+        <div class="demo-spread-card"></div>
+        <div class="demo-spread-card"></div>
+      </div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-spread-scene"&gt;
+  &lt;div class="demo-spread-wrap"&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+    &lt;div class="demo-spread-card"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-spread-scene {
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+ 
+.demo-spread-wrap {
+  transform-style: preserve-3d;
+  animation: spread-spin 16s linear infinite;
+}
+ 
+.demo-spread-card {
+  width: 80px;
+  height: 110px;
+  background: #fff;
+  border-radius: 6px;
+  backface-visibility: hidden;
+}
+ 
+/* 6 карточек по кругу, шаг 60° */
+.demo-spread-card:nth-child(1) { transform: rotateY(0deg)   translateZ(140px); }
+.demo-spread-card:nth-child(2) { transform: rotateY(60deg)  translateZ(140px); }
+.demo-spread-card:nth-child(3) { transform: rotateY(120deg) translateZ(140px); }
+.demo-spread-card:nth-child(4) { transform: rotateY(180deg) translateZ(140px); }
+.demo-spread-card:nth-child(5) { transform: rotateY(240deg) translateZ(140px); }
+.demo-spread-card:nth-child(6) { transform: rotateY(300deg) translateZ(140px); }
+ 
+@keyframes spread-spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<!-- linear.html -->
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="transform-glitch">
+    <div class="demo-glitch-block"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-glitch-block"&gt;&lt;/div&gt;
+&lt;!-- ::before и ::after создаются через CSS --&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-glitch-block {
+  width: 180px;
+  height: 80px;
+  background: #fff;
+  position: relative;
+}
+ 
+.demo-glitch-block::before,
+.demo-glitch-block::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: inherit;
+}
+ 
+.demo-glitch-block::before {
+  animation: glitch-top 3s steps(1) infinite;
+}
+ 
+.demo-glitch-block::after {
+  animation: glitch-bottom 3s steps(1) infinite;
+}
+ 
+@keyframes glitch-top {
+  0%, 24%, 63%, 100% {
+    clip-path: inset(0 0 60% 0);
+    transform: translate(0) skewX(0);
+    opacity: 0;
+  }
+  20% {
+    clip-path: inset(0 0 60% 0);
+    transform: translate(-8px, -2px) skewX(-4deg);
+    opacity: 1;
+  }
+  62% {
+    clip-path: inset(0 0 50% 0);
+    transform: translate(10px, -1px) skewX(5deg);
+    opacity: 1;
+  }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>
