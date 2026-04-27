@@ -1,0 +1,61 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-offset-origin">
+    <div class="M_PreviewArea" data-demo="rotation-offset-origin">
+      <div class="demo-offset-pivot"></div>
+      <div class="demo-offset-line"></div>
+    </div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-offset-pivot"&gt;&lt;/div&gt;
+&lt;div class="demo-offset-line"&gt;&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+<!-- paste here -->
+@keyframes rotation-offset {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+  }
+
+  .demo-offset-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 4px;
+  background: #fff;
+
+  /* Точка вращения — левый край линии */
+  transform-origin: left center;
+  animation: rotation-offset 5s linear infinite;
+}
+
+/* Маленькая точка в центре для наглядности */
+
+.demo-offset-pivot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

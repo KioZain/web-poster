@@ -1,0 +1,67 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-cascade">
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+    <div class="demo-cascade-slat"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+  &lt;div class="demo-cascade-slat"&gt;&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+@keyframes rotation-cascade {
+  0%   { transform: rotate(-90deg); }
+  40%  { transform: rotate(5deg); }
+  70%  { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.demo-cascade-slat {
+  position: absolute;
+  width: 50px;
+  height: 140px;
+  background: #fff;
+  border-radius: 3px;
+  transform-origin: top center;
+
+  /* Начальное состояние до старта анимации */
+  transform: rotate(-90deg);
+  animation: rotation-cascade 0.8s ease-out both;
+}
+
+.demo-cascade-slat:nth-child(1) { left: 8%;  top: 25%; animation-delay: 0s; }
+.demo-cascade-slat:nth-child(2) { left: 18%; top: 25%; animation-delay: 0.1s; }
+.demo-cascade-slat:nth-child(3) { left: 28%; top: 25%; animation-delay: 0.2s; }
+.demo-cascade-slat:nth-child(4) { left: 38%; top: 25%; animation-delay: 0.3s; }
+.demo-cascade-slat:nth-child(5) { left: 48%; top: 25%; animation-delay: 0.4s; }
+.demo-cascade-slat:nth-child(6) { left: 58%; top: 25%; animation-delay: 0.5s; }
+.demo-cascade-slat:nth-child(7) { left: 68%; top: 25%; animation-delay: 0.6s; }
+.demo-cascade-slat:nth-child(8) { left: 78%; top: 25%; animation-delay: 0.7s; }
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,14 @@
+import cover_1_1_1 from '../../images/handbook/covers/handbook_1-1-1.png'
+import cover_1_1_2 from '../../images/handbook/covers/handbook_1-1-2.png'
+import cover_1_1_3 from '../../images/handbook/covers/handbook_1-1-3.png'
+import cover_1_1_4 from '../../images/handbook/covers/handbook_1-1-4.png'
+import cover_1_2_1 from '../../images/handbook/covers/handbook_1-2-1.png'
+import cover_1_2_2 from '../../images/handbook/covers/handbook_1-2-2.png'
+import cover_1_3_1 from '../../images/handbook/covers/handbook_1-3-1.png'
+import cover_1_3_2 from '../../images/handbook/covers/handbook_1-3-2.png'
+
+
+
 const handbookNavData = {
   parts: [
     {
@@ -12,22 +23,38 @@ const handbookNavData = {
             {
               id: 'article-1-1-1',
               title: 'Особенности формата',
-              href: '/handbook/part_1/chapter_1/about_webposter.html'
+              href: '/handbook/part_1/chapter_1/about_webposter.html',
+              cover: cover_1_1_1,
+              readingTime: 3,
+              articleType: 'Теория',
+              description: 'Краткая история появления формата веб-плаката и его ключевые особенности'
             },
             {
               id: 'article-1-1-2',
               title: 'Отличие от классического плаката',
-              href: '/handbook/part_1/chapter_1/print-vs-web.html'
+              href: '/handbook/part_1/chapter_1/print-vs-web.html',
+              cover: cover_1_1_2,
+              readingTime: 4,
+              articleType: 'Теория',
+              description: 'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
             },
             {
               id: 'article-1-1-3',
               title: 'Отличия от лендинга и сайта',
-              href: '/handbook/part_1/chapter_1/poster-vs-website.html'
+              href: '/handbook/part_1/chapter_1/poster-vs-website.html',
+              cover: cover_1_1_3,
+              readingTime: 3,
+              articleType: 'Теория',
+              description: 'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
             },
             {
               id: 'article-1-1-4',
               title: 'Статичный и динамичный веб-плакат',
-              href: '/handbook/part_1/chapter_1/static-dynamic.html'
+              href: '/handbook/part_1/chapter_1/static-dynamic.html',
+              cover: cover_1_1_4,
+              readingTime: 5,
+              articleType: 'Теория',
+              description: 'Граница между плакатом как высказыванием и сайтом как инструментом'
             }
           ]
         },
@@ -39,12 +66,20 @@ const handbookNavData = {
             {
               id: 'article-1-2-1',
               title: 'Зачем создавать веб-плакат',
-              href: '/handbook/part_1/chapter_2/why-create.html'
+              href: '/handbook/part_1/chapter_2/why-create.html',
+              cover: cover_1_2_1,
+              readingTime: 4,
+              articleType: 'Теория',
+              description: 'Что практика создзания веб-плаката даёт дизайнеру и причём тут разработка'
             },
             {
               id: 'article-1-2-2',
               title: 'Во что можно развить веб-плакат',
-              href: '/handbook/part_1/chapter_2/further-development.html'
+              href: '/handbook/part_1/chapter_2/further-development.html',
+              cover: cover_1_2_2,
+              readingTime: 5,
+              articleType: 'Теория',
+              description: 'Несколько библиотек и идей как можно прокачать свой веб-плакат'
             }
           ]
         },
@@ -52,16 +87,25 @@ const handbookNavData = {
           id: 'chapter-1-3',
           title: 'Примеры и насмотренность',
           href: '/handbook/part_1/chapter_3/chapter_3.html',
+
           articles: [
             {
               id: 'article-1-3-1',
               title: 'Избранные веб-плакаты 2020-2025',
-              href: '/handbook/part_1/chapter_3/selected-works.html'
+              href: '/handbook/part_1/chapter_3/selected-works.html',
+              cover: cover_1_3_1,
+              readingTime: 3,
+              articleType: 'Теория',
+              description: 'Самые яркие студенческие проекты в формате веб-плаката'
             },
             {
               id: 'article-1-3-2',
               title: 'Как пользоваться каталогом',
-              href: '/handbook/part_1/chapter_3/catalog-guide.html'
+              href: '/handbook/part_1/chapter_3/catalog-guide.html',
+              cover: cover_1_3_2,
+              readingTime: 3,
+              articleType: 'Теория',
+              description: 'Как пользоваться каталогом на сайте и чем он полезен'
             }
           ]
         }

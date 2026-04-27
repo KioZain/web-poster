@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Вращение | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Вращение</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/StaticModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Вращение</h2>
+            <p class="subtitle">
+              Крутим наклоням и раскачиваем элементы через rotate,
+              transform-origin
+            </p>
+          </div>
+          <div class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="#71716F"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">12 минут чтения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar"></div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <!-- ---------------------------- -->
+          <div id="about" class="M_ParagraphArticle">
+            <h3>О модуле</h3>
+            <p class="article">
+              Вращение&nbsp;&mdash; это, пожалуй, самое
+              &laquo;дизайнерское&raquo; свойство CSS. Один и тот&nbsp;же
+              <code>rotate(45deg)</code> на&nbsp;квадрате, круге и треугольнике
+              даёт три совершенно разных визуальных результата. Квадрат при
+              вращении мерцает углами, рисуя воображаемую окружность. Круг
+              выглядит так, будто ничего не&nbsp;происходит. Треугольник создаёт
+              агрессивную, колющую динамику.
+            </p>
+            <p class="article">
+              В&nbsp;модуле &laquo;Движение&raquo; мы&nbsp;уже касались вращения
+              мельком&nbsp;&mdash; маятник, орбиты и&nbsp;тд. Здесь разберём
+              свойство как самостоятельный приём. От простого кручения
+              до&nbsp;3D-переворотов и&nbsp;вращающихся типографических
+              конструкций.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Непрерывное вращение</h3>
+            <p class="article">
+              Объект крутится. Бесконечно, ровно, без остановки. Это самый
+              простой паттерн вращения&nbsp;&mdash; и&nbsp;при этом один
+              из&nbsp;самых выразительных, если правильно подобрать форму
+              объекта.
+            </p>
+            <p class="article">
+              Тайминг тоже влияет на&nbsp;характер. <code>linear</code> &mdash;
+              механическое, роботическое кручение, как вентилятор.
+              <code>ease-in-out</code> &mdash;&nbsp;более живое, органическое, с
+              замедлением в&nbsp;крайних точках. Для декоративных элементов,
+              которые крутятся на&nbsp;фоне, <code>linear</code> обычно подходит
+              лучше &mdash; равномерное вращение меньше привлекает внимание
+              и&nbsp;спокойно работает фоновым слоем.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Обратите внимание на <code>calc(100% - 80px)</code> &mdash; это
+                способ сделать так, чтобы объект не&nbsp;вылезал за&nbsp;границы
+                контейнера. Функция <code>calc()</code>
+                вычитает ширину самого элемента из&nbsp;ширины родителя,
+                и&nbsp;квадрат аккуратно доезжает до&nbsp;правого края. Без
+                этого приёма объект частично уедет за&nbsp;пределы видимой
+                области.
+              </p>
+            </details>
+          </div>
+          <continious></continious>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте поставить рядом три фигуры: круг, квадрат и
+                треугольник с&nbsp;одной и&nbsp;той&nbsp;же анимацией вращения.
+                Это хорошее упражнение, чтобы почувствовать, как геометрия формы
+                меняет визуальное восприятие одного и&nbsp;того&nbsp;же
+                технического приёма.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Смещённая ось</h3>
+            <p class="article">
+              Одно и&nbsp;то&nbsp;же свойство rotate может выглядеть совершенно
+              по-разному &mdash;&nbsp;всё зависит от&nbsp;того, где находится
+              точка опоры. По&nbsp;умолчанию элемент вращается вокруг своего
+              центра. Стоит сдвинуть
+              <code>transform-origin</code> &mdash;&nbsp;и&nbsp;визуальный
+              эффект меняется до неузнаваемости.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                <code>transform-origin: top left</code> &mdash;&nbsp;элемент
+                вращается как дверь на&nbsp;петлях, закреплённых в&nbsp;левом
+                верхнем углу.
+                <code>transform-origin: top center</code> &mdash;&nbsp;маятник,
+                подвешенный за&nbsp;верхнюю грань.
+                <code>transform-origin: 200% center</code> &mdash; объект
+                описывает широкую дугу вокруг точки, которая находится далеко
+                за&nbsp;его пределами.
+              </p>
+            </details>
+          </div>
+
+          <offset></offset>
+
+          <p class="article">
+            Этот паттерн особенно выразителен для прямоугольных элементов:
+            полосок, линий, текстовых блоков. Линия, вращающаяся из&nbsp;своего
+            левого края, работает как стрелка часов. Текстовая плашка,
+            &laquo;откидывающаяся&raquo; из&nbsp;верхней грани&nbsp;&mdash; как
+            крышка, которая открывается.
+          </p>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                transform-origin задаёт точку опоры относительно самого
+                элемента, а не родителя. Если вы пишете
+                <code>transform-origin: 0% 0%</code>, это верхний левый угол
+                элемента, а не контейнера. Чтобы вращать объект вокруг точки,
+                лежащей за его пределами, используйте значения больше
+                <code>100%</code> или отрицательные — например,
+                <code>transform-origin: -50px center </code>
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Покачивание и дрожь</h3>
+            <p class="article">
+              Маленький диапазон вращения&nbsp;&mdash;
+              от&nbsp;&minus;3&deg;&nbsp;до&nbsp;3&deg;&nbsp;&mdash;
+              с&nbsp;коротким циклом. Объект крутится, дрожит, трясётся,
+              вибрирует. Это приём обладает сильным эмоциональным зарядом,
+              который хорошо передаёт тревогу, напряжение, нестабильность,
+              короткое замыкание.
+            </p>
+
+            <p class="article">
+              Хорошей идей применять эффект к&nbsp;нескольким элементам
+              с&nbsp;разной скоростью или амплитудой. Один дрожит быстро
+              и&nbsp;мелко, другой &mdash; чуть медленнее и&nbsp;крупнее. Вместе
+              они создают ощущение, что вся композиция трясётся, хотя каждый
+              объект анимирован по-своему.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                CSS. Минимальный <code>rotate()</code> с&nbsp;отклонением
+                в&nbsp;несколько градусов и&nbsp;коротким
+                <code>animation-duration (0.1–0.3s)</code> создаёт убедительный
+                эффект тремора. Для более органичной дрожи используйте
+                многошаговый <code>@keyframes</code> с&nbsp;неравномерными
+                углами. Если все кадры симметричны (&minus;3&deg;, 3&deg;,
+                &minus;3&deg;, 3&deg;), дрожь выглядит механически. Добавьте
+                неравномерность (&minus;2&deg;, 3&deg;, &minus;1&deg;, 2.5&deg;,
+                &minus;3&deg;) и&nbsp;движение станет натуральнее, менее
+                предсказуемым.
+              </p>
+            </details>
+          </div>
+
+          <wobble></wobble>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Сила этого паттерна в&nbsp;сдержанности. Амплитуда дрожи
+                в&nbsp;3&deg; достаточна, чтобы передать напряжение. Если
+                увеличить до&nbsp;10&ndash;15&deg;, это уже будет раскачивание,
+                а&nbsp;не&nbsp;дрожь, и&nbsp;эмоциональный эффект изменится.
+                Не&nbsp;парься, если поначалу кажется, что ничего не происходит
+                2&ndash;3 градуса отклонения на&nbsp;маленьких объектах работают
+                тонко, но&nbsp;считываются.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Каскад вращений</h3>
+            <p class="article">
+              Группа объектов, каждый из&nbsp;которых вращается
+              с&nbsp;нарастающей задержкой. Первый повернулся через мгновение
+              второй, потом третий. Получается эффект раскрывающегося веера,
+              жалюзи, домино из вращающихся карточек.
+            </p>
+
+            <p class="article">
+              В&nbsp;сочетании с <code>transform-origin</code> каскад становится
+              ещё выразительнее. Если все полоски вращаются из&nbsp;своего
+              верхнего края, они падают вниз одна за&nbsp;другой.
+              Из&nbsp;нижнего поднимаются. Из&nbsp;левого раскрываются как
+              страницы книги.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Принцип тот&nbsp;же, что в&nbsp;каскадном паттерне
+                из&nbsp;модуля &laquo;Движение&raquo;,
+                <code>nth-child</code> и <code>animation-delay</code>,
+                но&nbsp;здесь анимируется именно <code>rotate()</code>.
+                И&nbsp;вот в&nbsp;чём разница: каскад перемещений создаёт волну,
+                каскад вращений создаёт раскрытие. Ряд вертикальных полосок,
+                которые последовательно откидываются&nbsp;&mdash; это жалюзи.
+              </p>
+            </details>
+          </div>
+
+          <cascade></cascade>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Обратите внимание на <code>animation-fill-mode: both</code> и
+                начальное значение <code>transform: rotate(-90deg)</code> на
+                самом элементе. Без этого полоски на&nbsp;долю секунды мелькнут
+                в своём конечном (вертикальном) положении, а&nbsp;потом прыгнут
+                в начальное. <code>both</code>гарантирует, что элемент принимает
+                стили первого кадра ещё до&nbsp;того, как анимация стартует.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Контр-вращение</h3>
+            <p class="article">
+              Два объекта вращаются одновременно в&nbsp;противоположных
+              направлениях. Один&nbsp;&mdash; по&nbsp;часовой стрелке,
+              другой&nbsp;&mdash; против. Этот паттерн сразу создаёт визуальное
+              напряжение, ощущение механизма, сцепленных шестерёнок.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Техника элементарная&nbsp;&mdash; та&nbsp;же анимация, но&nbsp;с
+                <code>rotate(-360deg)</code>
+                вместо <code>rotate(360deg)</code>. Разницу в&nbsp;скоростях
+                тоже стоит попробовать: если один объект крутится в&nbsp;два
+                раза быстрее другого, соотношение их&nbsp;углов постоянно
+                меняется, и&nbsp;визуальный рисунок становится сложнее.
+              </p>
+            </details>
+          </div>
+
+          <counter></counter>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте добавить третий, ещё более мелкий элемент внутри со
+                своей скоростью и&nbsp;направлением. Три слоя контр-вращения с
+                разными длительностями создают гипнотический эффект, где паттерн
+                повторения почти не&nbsp;считывается.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Масштабирование</h3>
+            <p class="article">
+              Комбинация <code>rotate</code> и <code>scale</code> в&nbsp;одном
+              <code>@keyframes</code>. Объект закручивается и&nbsp;одновременно
+              уменьшается&nbsp;&mdash; словно его засасывает в&nbsp;воронку. Или
+              наоборот: раскручивается из&nbsp;точки, разворачиваясь
+              в&nbsp;полный размер. Это сильный приём для появления
+              и&nbsp;исчезновения элементов, который выглядит динамичнее, чем
+              простое <code>fade-in</code>.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                В <code>@keyframes</code> можно комбинировать
+                <code>rotate</code> и <code>scale</code> в&nbsp;одном свойстве
+                transform, через пробел: <code>transform: rotate(720deg)</code>
+                <code>scale(0)</code>. Браузер интерполирует оба значения
+                одновременно, и&nbsp;объект плавно раскручивается
+                из&nbsp;невидимости.
+              </p>
+            </details>
+          </div>
+          <scaling></scaling>
+
+          <div class="M_ParagraphArticle">
+            <h3>3D-вращение</h3>
+            <p class="article">
+              До&nbsp;сих пор все вращения происходили в&nbsp;плоскости экрана
+              вокруг оси Z, которая смотрит на&nbsp;зрителя. Но&nbsp;в&nbsp;CSS
+              можно вращать и&nbsp;вокруг осей&nbsp;X и&nbsp;Y, и&nbsp;тогда
+              элемент переворачивается в&nbsp;пространстве.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Для 3D-эффекта нужны два дополнительных свойства.
+                <code>perspective</code> на&nbsp;родительском контейнере задаёт
+                расстояние от&nbsp;зрителя до&nbsp;сцены&nbsp;&mdash; чем меньше
+                значение, тем интереснее перспектива.
+                <code>backface-visibility: hidden</code> скрывает обратную
+                сторону элемента, что нужно для двусторонних карточек (иначе
+                зритель видит зеркально отражённое содержимое).
+                <br />
+                <code>rotateY(180deg)</code> переворачивает элемент вокруг
+                вертикальной оси&nbsp;&mdash; как дверь.
+                <code>rotateX(180deg)</code> вокруг горизонтальной, как крышка
+                рояля.
+                <code>rotate3d(1, 1, 0, 180deg)</code> по&nbsp;диагональной оси,
+                что выглядит менее привычно и&nbsp;потому интереснее для
+                экспериментов.
+              </p>
+            </details>
+          </div>
+
+          <threed></threed>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Не&nbsp;забывайте <code>transform-style: preserve-3d</code> на
+                вращающемся элементе, если внутри него есть дочерние слои
+                (передняя и&nbsp;задняя стороны карточки). Без этого свойства
+                дочерние элементы схлопнутся в&nbsp;плоскость, и&nbsp;3D-эффект
+                исчезнет.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Перспективное вращение</h3>
+            <p class="article">
+              Несколько текстовых элементов, расставленных по&nbsp;кругу в
+              3D-пространстве, вращаются как карусель или барабан. Каждый
+              элемент повёрнут на&nbsp;свою долю от&nbsp;360&deg; и&nbsp;смещён
+              по&nbsp;оси&nbsp;Z через
+              <code>translateZ</code>, что выстраивает
+              их&nbsp;в&nbsp;окружность. С <code>perspective</code> и
+              <code>preserve-3d</code> на&nbsp;родителе &mdash; конструкция
+              вращается как единый цилиндр из&nbsp;слов.
+            </p>
+            <p class="article">
+              Это выразительный приём для типографических веб-плакатов.
+              Вращающийся барабан из&nbsp;названий, дат, цитат создаёт ощущение
+              бесконечного потока.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Технически каждый элемент&nbsp;&mdash; это обычный
+                <code>div</code> или <code>span</code>, повёрнутый через
+                <code>rotateY</code> на&nbsp;свою долю полного оборота: первый
+                на&nbsp;0&deg;, второй на&nbsp;45&deg;, третий на&nbsp;90&deg;
+                и&nbsp;так далее (для 8&nbsp;элементов&nbsp;&mdash; шаг
+                45&deg;). <code>translateZ</code> задаёт радиус цилиндра. Вся
+                конструкция вращается одной анимацией на&nbsp;контейнере &mdash;
+                <code>rotateY(0deg)</code> <code>rotateY(360deg)</code>.
+                Отдельные элементы не&nbsp;анимируются, они просто расставлены в
+                пространстве.
+              </p>
+            </details>
+          </div>
+
+          <cylinder></cylinder>
+
+          <p class="article">
+            Радиус цилиндра определяется значением <code>translateZ</code>. Чем
+            больше значение тем шире цилиндр и&nbsp;дальше друг от&nbsp;друга
+            стоят элементы. Подбирайте радиус в&nbsp;зависимости от&nbsp;длины
+            текста: короткие слова допускают маленький радиус, длинные фразы
+            потребуют больше пространства, чтобы не&nbsp;накладываться друг
+            на&nbsp;друга.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                <code>backface-visibility: hidden</code> на&nbsp;каждом элементе
+                цилиндра скрывает текст, когда он&nbsp;оказывается
+                на&nbsp;дальней стороне. Без этого свойства вы&nbsp;увидите
+                зеркально отражённые слова с&nbsp;изнанки, что обычно выглядит
+                неряшливо. Впрочем, в некоторых плакатах именно этот эффект
+                может работать как осознанный визуальный приём.
+                Экспериментируйте и&nbsp;дерзайте.
+              </p>
+            </div>
+          </div>
+
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

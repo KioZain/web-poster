@@ -366,14 +366,19 @@
 }
 .W_SearchResults {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: var(--space-20);
-  display: none;
-
-  &.open {
-    display: flex;
-  }
 }
+
+#search-root {
+  display: none;
+}
+
+#search-root.open {
+  display: flex;
+}
+
 .W_BannerText {
   max-width: 432px;
   width: 100%;
@@ -497,4 +502,13 @@
     flex-direction: column;
     grid-column: 1/-1;
   }
+}
+.W_Authors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: var(--space-24);
+  padding-top: var(--space-32);
+  border-top: 1px solid var(--gray-lightest);
 }

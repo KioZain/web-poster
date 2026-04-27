@@ -169,7 +169,6 @@ input.A_SearchInput {
   text-decoration: none;
 }
 .A_Button {
-  display: block;
   display: flex;
   width: fit-content;
   align-items: center;

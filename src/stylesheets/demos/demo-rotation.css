@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════
+   ROTATION-CONTINUOUS 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-continuous'] .demo-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  border: 4px solid var(--beautiful-blue);
+  animation: rotation-continuous 4s linear infinite;
+}
+
+@keyframes rotation-continuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-OFFSET-ORIGIN 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-offset-origin'] .demo-offset-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 4px;
+  background: var(--beautiful-blue);
+  /* Ось вращения — левый край линии */
+  transform-origin: left center;
+  animation: rotation-offset 5s linear infinite;
+}
+
+[data-demo='rotation-offset-origin'] .demo-offset-pivot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: rgba(122, 223, 241, 0.7);
+  z-index: 2;
+}
+
+@keyframes rotation-offset {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-WOBBLE 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-wobble'] .demo-wobble-rect {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 120px;
+  height: 160px;
+  margin-left: -60px;
+  background: var(--beautiful-blue);
+  border-radius: 4px;
+  animation: rotation-wobble 0.3s ease-in-out infinite;
+}
+
+@keyframes rotation-wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-3deg);
+  }
+  30% {
+    transform: rotate(2deg);
+  }
+  45% {
+    transform: rotate(-2.5deg);
+  }
+  60% {
+    transform: rotate(1.5deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-CASCADE 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-cascade'] .demo-cascade-slat {
+  position: absolute;
+  width: 50px;
+  height: 140px;
+  background: var(--beautiful-blue);
+  border-radius: 3px;
+  transform-origin: top center;
+  transform: rotate(-90deg);
+  animation: rotation-cascade 3.8s ease-out infinite;
+}
+
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(1) {
+  left: 8%;
+  top: 25%;
+  animation-delay: 0s;
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(2) {
+  left: 18%;
+  top: 25%;
+  animation-delay: 0.1s;
+  background: rgba(122, 223, 241, 0.9);
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(3) {
+  left: 28%;
+  top: 25%;
+  animation-delay: 0.2s;
+  background: rgba(122, 223, 241, 0.8);
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(4) {
+  left: 38%;
+  top: 25%;
+  animation-delay: 0.3s;
+  background: rgba(122, 223, 241, 0.7);
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(5) {
+  left: 48%;
+  top: 25%;
+  animation-delay: 0.4s;
+  background: rgba(122, 223, 241, 0.6);
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(6) {
+  left: 58%;
+  top: 25%;
+  animation-delay: 0.5s;
+  background: rgba(122, 223, 241, 0.5);
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(7) {
+  left: 68%;
+  top: 25%;
+  animation-delay: 0.6s;
+  background: rgba(122, 223, 241, 0.4);
+  /* background: red; */
+}
+[data-demo='rotation-cascade'] .demo-cascade-slat:nth-child(8) {
+  left: 78%;
+  top: 25%;
+  animation-delay: 0.7s;
+  background: rgba(122, 223, 241, 0.3);
+}
+
+@keyframes rotation-cascade {
+  0% {
+    transform: rotate(-90deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-COUNTER
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-counter'] .demo-counter-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -80px;
+  border: 3px solid var(--beautiful-blue);
+  animation: rotation-cw 8s linear infinite;
+}
+
+[data-demo='rotation-counter'] .demo-counter-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -45px;
+  border: 3px solid rgba(122, 223, 241, 0.7);
+  animation: rotation-ccw 5s linear infinite;
+}
+
+@keyframes rotation-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-SCALE 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-scale'] .demo-scale-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  background: var(--beautiful-blue);
+  border-radius: 8px;
+  animation: rotation-scale-in 2s ease-out infinite;
+}
+
+@keyframes rotation-scale-in {
+  0% {
+    transform: rotate(540deg) scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: rotate(-20deg) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-3D 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-3d'] .demo-3d-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -60px;
+  perspective: 600px;
+}
+
+[data-demo='rotation-3d'] .demo-3d-card {
+  width: 100%;
+  height: 100%;
+  background: var(--beautiful-blue);
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  animation: rotation-3d-flip 4s ease-in-out infinite;
+}
+
+@keyframes rotation-3d-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   ROTATION-TEXT-CYLINDER 
+   ═══════════════════════════════════════ */
+
+[data-demo='rotation-text-cylinder'] .demo-cylinder-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -100px;
+  perspective: 500px;
+}
+
+[data-demo='rotation-text-cylinder'] .demo-cylinder-drum {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotation-cylinder 12s linear infinite;
+}
+
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Aeonik Pro';
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--beautiful-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backface-visibility: hidden;
+}
+
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(2) {
+  transform: rotateY(45deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(3) {
+  transform: rotateY(90deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(4) {
+  transform: rotateY(135deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(5) {
+  transform: rotateY(180deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(6) {
+  transform: rotateY(225deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(7) {
+  transform: rotateY(270deg) translateZ(130px);
+}
+[data-demo='rotation-text-cylinder'] .demo-cylinder-item:nth-child(8) {
+  transform: rotateY(315deg) translateZ(130px);
+}
+
+@keyframes rotation-cylinder {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

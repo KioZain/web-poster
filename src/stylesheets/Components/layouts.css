@@ -83,3 +83,11 @@
   margin-top: var(--space-32);
 }
 /* comment random */
+.L_About {
+  display: flex;
+  max-width: 738px;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: calc(var(--header-offset) + 3rem);
+  margin-bottom: 10rem;
+}

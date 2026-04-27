@@ -1,0 +1,60 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-counter">
+    <div class="demo-counter-outer"></div>
+    <div class="demo-counter-inner"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-counter-outer"&gt;&lt;/div&gt;
+&lt;div class="demo-counter-inner"&gt;&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+@keyframes rotation-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotation-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.demo-counter-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -80px;
+  border: 3px solid #fff;
+  animation: rotation-cw 8s linear infinite;
+}
+
+.demo-counter-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -45px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  animation: rotation-ccw 5s linear infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

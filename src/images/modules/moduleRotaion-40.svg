@@ -1,0 +1,43 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_i_4148_30988)">
+<rect width="40" height="40" rx="6" fill="url(#paint0_linear_4148_30988)"/>
+<path d="M12.0814 36H7C5.34315 36 4 34.6569 4 33V7C4 5.34315 5.34315 4 7 4H12.0814M27.9186 36H33C34.6569 36 36 34.6569 36 33V7C36 5.34315 34.6569 4 33 4H27.9186" stroke="#71716F" stroke-width="1.58"/>
+<circle cx="20" cy="20.3145" r="1.62857" fill="#71716F"/>
+<g id="Repeat group 4_inner" data-figma-trr="r14u4.6-0f">
+<line x1="19.21" y1="12.0649" x2="19.21" y2="9.67596" stroke="#71716F" stroke-width="1.58" stroke-linecap="round"/>
+</g>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(10.6578 -6.69716) rotate(25.7143)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(23.166 -8.10684) rotate(51.4286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(35.0471 -3.94983) rotate(77.1429)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(43.9479 4.95052) rotate(102.857)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(48.1056 16.8314) rotate(128.571)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(46.6966 29.3396) rotate(154.286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(40 39.9978) rotate(-180)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(29.3422 46.695) rotate(-154.286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(16.834 48.1046) rotate(-128.571)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(4.95293 43.9476) rotate(-102.857)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-3.94791 35.0473) rotate(-77.1429)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-8.10557 23.1664) rotate(-51.4286)"/>
+<use xlink:href="#Repeat%20group%204_inner" transform="translate(-6.69658 10.6582) rotate(-25.7143)"/>
+<path d="M18.9027 3.88728L13.2347 1.6198C13.1676 1.59293 13.1018 1.66413 13.134 1.72885L14.259 3.99042C14.2698 4.01226 14.2698 4.03805 14.259 4.06018L13.134 6.35334C13.1018 6.41896 13.1676 6.48832 13.2347 6.45956L18.9027 4.0328C18.9675 4.00505 18.9675 3.91322 18.9027 3.88728Z" fill="#71716F"/>
+<path d="M21.3714 35.8873L27.0393 33.6198C27.1065 33.5929 27.1722 33.6641 27.1401 33.7288L26.0151 35.9904C26.0042 36.0123 26.0042 36.038 26.0151 36.0602L27.14 38.3533C27.1722 38.419 27.1065 38.4883 27.0393 38.4596L21.3714 36.0328C21.3066 36.005 21.3066 35.9132 21.3714 35.8873Z" fill="#71716F"/>
+</g>
+<defs>
+<filter id="filter0_i_4148_30988" x="0" y="0" width="40" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_4148_30988"/>
+</filter>
+<linearGradient id="paint0_linear_4148_30988" x1="40" y1="-3.54839" x2="-7.69713" y2="27.6057" gradientUnits="userSpaceOnUse">
+<stop offset="0.132776" stop-color="#7ADFF1" stop-opacity="0.5"/>
+<stop offset="0.344226" stop-color="#9EFF70"/>
+<stop offset="0.5" stop-color="#9EFF70"/>
+<stop offset="0.934746" stop-color="#7ADFF1" stop-opacity="0.5"/>
+</linearGradient>
+</defs>
+</svg>

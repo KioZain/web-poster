@@ -355,6 +355,10 @@ header.S_Header {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
+
+  .M_TitleText {
+    gap: var(--space-2);
+  }
 }
 .S_Modules {
   display: flex;

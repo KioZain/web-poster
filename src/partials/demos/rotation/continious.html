@@ -1,0 +1,47 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-continuous">
+    <div class="demo-spinner"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="M_PreviewArea"&gt;
+  &lt;div class="demo-spinner"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+@keyframes rotation-continuous {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.demo-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  /* Квадрат с прозрачной серединой —
+  чтобы вращение считывалось визуально */
+
+  border: 4px solid #fff;
+  animation: rotation-continuous 4s linear infinite;
+} 
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

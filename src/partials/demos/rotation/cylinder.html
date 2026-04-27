@@ -1,0 +1,97 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-text-cylinder">
+    <div class="demo-cylinder-scene">
+      <div class="demo-cylinder-drum">
+        <div class="demo-cylinder-item">Плакат</div>
+        <div class="demo-cylinder-item">Дизайн</div>
+        <div class="demo-cylinder-item">Код</div>
+        <div class="demo-cylinder-item">Форма</div>
+        <div class="demo-cylinder-item">Ритм</div>
+        <div class="demo-cylinder-item">Экран</div>
+        <div class="demo-cylinder-item">Скролл</div>
+        <div class="demo-cylinder-item">Время</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-cylinder-scene"&gt;
+  &lt;div class="demo-cylinder-drum"&gt;
+    &lt;div class="demo-cylinder-item"&gt;Плакат&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Дизайн&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Код&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Форма&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Ритм&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Экран&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Скролл&lt;/div&gt;
+    &lt;div class="demo-cylinder-item"&gt;Время&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+@keyframes rotation-cylinder {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Контейнер перспективы */
+.demo-cylinder-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -100px;
+  perspective: 500px;
+}
+
+/* Вращающийся барабан */
+.demo-cylinder-drum {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotation-cylinder 12s linear infinite;
+}
+
+/* Каждый текстовый элемент на барабане */
+.demo-cylinder-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backface-visibility: hidden;
+}
+
+/* Расставляем 8 элементов по кругу */
+.demo-cylinder-item:nth-child(1) { transform: rotateY(0deg)    translateZ(130px); }
+.demo-cylinder-item:nth-child(2) { transform: rotateY(45deg)   translateZ(130px); }
+.demo-cylinder-item:nth-child(3) { transform: rotateY(90deg)   translateZ(130px); }
+.demo-cylinder-item:nth-child(4) { transform: rotateY(135deg)  translateZ(130px); }
+.demo-cylinder-item:nth-child(5) { transform: rotateY(180deg)  translateZ(130px); }
+.demo-cylinder-item:nth-child(6) { transform: rotateY(225deg)  translateZ(130px); }
+.demo-cylinder-item:nth-child(7) { transform: rotateY(270deg)  translateZ(130px); }
+.demo-cylinder-item:nth-child(8) { transform: rotateY(315deg)  translateZ(130px); }
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

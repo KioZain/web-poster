@@ -12,6 +12,10 @@ const pages = [
     template: 'index.html',
     chunks: ['index', 'menubar', 'gsap-animation', 'marquee', 'scrollposters']
   },
+  {
+    template: 'about.html',
+    chunks: ['index', 'menubar']
+  },
   { template: 'handbook.html', chunks: ['index', 'menubar'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
   { template: 'modules.html', chunks: ['index', 'menubar'] },
@@ -154,7 +158,11 @@ const pages = [
   {
     template: 'modules/static/movement.html',
     chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
-  }
+  },
+  {
+    template: 'modules/static/rotation.html',
+    chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
+  },
 ]
 
 // Creating plugins for each HTML page
@@ -355,7 +363,72 @@ module.exports = {
         template_filename: '*',
         priority: 'replace'
       }
-    ])
+    ]),
+    // rotation modules
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/threed.html'),
+        location: 'threed',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/cascade.html'),
+        location: 'cascade',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/continious.html'),
+        location: 'continious',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/counter.html'),
+        location: 'counter',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/cylinder.html'),
+        location: 'cylinder',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/offset.html'),
+        location: 'offset',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/scaling.html'),
+        location: 'scaling',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/rotation/wobble.html'),
+        location: 'wobble',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
   ],
 
   optimization: {

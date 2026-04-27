@@ -4,23 +4,60 @@ import { createRoot } from 'react-dom/client'
 import S_LeftNavbar from './components/S_LeftNavBar.jsx'
 import handbookNavData from './config/handbookNavData.js'
 
-// last chapter
+// CHANGE IT
 const LAST_AVAILABLE_CHAPTER = 'chapter-1-4'
 
-// sidebar
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('handbook-nav-root')
 
   if (container) {
+    const activeChapterId = getActiveChapterId()
     const root = createRoot(container)
-    root.render(<S_LeftNavbar />)
+    root.render(<S_LeftNavbar activeChapterId={activeChapterId} />)
   }
 
+  // Prev next
   initArticleNavigation()
   initChapterNavigation()
 })
 
-// article nav
+function getActiveChapterId() {
+  const navContainer = document.querySelector('.W_ArticleButtonsNavigation')
+
+  if (!navContainer) {
+    console.error('[Navbar] .W_ArticleButtonsNavigation не найден на странице')
+    return null
+  }
+
+  if (navContainer.dataset.chapterId) {
+    return navContainer.dataset.chapterId
+  }
+
+  if (navContainer.dataset.articleId) {
+    return findChapterByArticleId(navContainer.dataset.articleId, handbookNavData)
+  }
+
+  console.error(
+    '[Navbar] .W_ArticleButtonsNavigation найден, но нет ни data-chapter-id, ни data-article-id'
+  )
+  return null
+}
+
+function findChapterByArticleId(articleId, navData) {
+  for (const part of navData.parts) {
+    for (const chapter of part.chapters) {
+      for (const article of chapter.articles) {
+        if (article.id === articleId) {
+          return chapter.id
+        }
+      }
+    }
+  }
+
+  return null
+}
+
+
 function initArticleNavigation() {
   const navContainer = document.querySelector('.W_ArticleButtonsNavigation')
   if (!navContainer) return
@@ -28,14 +65,11 @@ function initArticleNavigation() {
   const currentId = navContainer.dataset.articleId
 
   if (!currentId) {
-    console.warn('[ArticleNav] Контейнер найден, но data-article-id не указан')
     return
   }
 
   const allArticles = flattenArticles(handbookNavData)
-  const currentIndex = allArticles.findIndex(
-    (article) => article.id === currentId
-  )
+  const currentIndex = allArticles.findIndex((article) => article.id === currentId)
 
   if (currentIndex === -1) {
     console.log(`net article :( "${currentId}"`)
@@ -43,17 +77,7 @@ function initArticleNavigation() {
   }
 
   const prev = currentIndex > 0 ? allArticles[currentIndex - 1] : null
-  const next =
-    currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null
-
-  console.log(
-    'Предыдущая статья:',
-    prev ? `${prev.title} (${prev.id})` : 'нет статьи'
-  )
-  console.log(
-    'Следующая статья:',
-    next ? `${next.title} (${next.id})` : 'нет статьи'
-  )
+  const next = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null
 
   renderNavButtons(navContainer, prev, next)
 }
@@ -64,18 +88,14 @@ function flattenArticles(navData) {
   for (const part of navData.parts) {
     for (const chapter of part.chapters) {
       for (const article of chapter.articles) {
-        result.push({
-          id: article.id,
-          title: article.title,
-          href: article.href
-        })
+        result.push({ id: article.id, title: article.title, href: article.href })
       }
     }
   }
   return result
 }
 
-// chapter nav
+
 function initChapterNavigation() {
   const navContainer = document.querySelector('.W_ArticleButtonsNavigation')
   if (!navContainer) return
@@ -88,9 +108,7 @@ function initChapterNavigation() {
   }
 
   const allChapters = flattenChapters(handbookNavData)
-  const currentIndex = allChapters.findIndex(
-    (chapter) => chapter.id === currentId
-  )
+  const currentIndex = allChapters.findIndex((chapter) => chapter.id === currentId)
 
   if (currentIndex === -1) {
     console.log(`net chapter :( "${currentId}"`)
@@ -98,63 +116,48 @@ function initChapterNavigation() {
   }
 
   const prev = currentIndex > 0 ? allChapters[currentIndex - 1] : null
-  const next =
-    currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null
-
-  console.log(
-    'Предыдущая глава:',
-    prev ? `${prev.title} (${prev.id})` : 'нет главы'
-  )
-  console.log(
-    'Следующая глава:',
-    next ? `${next.title} (${next.id})` : 'нет главы'
-  )
+  const next = currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null
 
   renderNavButtons(navContainer, prev, next)
 }
 
-// flattenning tree
 function flattenChapters(navData) {
   const result = []
 
   for (const part of navData.parts) {
     for (const chapter of part.chapters) {
-      // Временное ограничение: дошли до границы — останавливаемся
       if (chapter.id === LAST_AVAILABLE_CHAPTER) return result
 
-      result.push({
-        id: chapter.id,
-        title: chapter.title,
-        href: chapter.href
-      })
+      result.push({ id: chapter.id, title: chapter.title, href: chapter.href })
     }
   }
   return result
 }
+
 
 function renderNavButtons(container, prev, next) {
   const parts = []
 
   if (prev) {
     parts.push(`
-    <a href="${prev.href}" class="O_ChapterButtonArrow left">
+      <a href="${prev.href}" class="O_ChapterButtonArrow left">
         <div class="A_IconButton left"></div>
         <div class="M_ChapterButton">
-        <p class="caption light">Назад</p>
+          <p class="caption light">Назад</p>
           <p class="caption-bold">${prev.title}</p>
         </div>
-    </a>`)
+      </a>`)
   }
 
   if (next) {
     parts.push(`
-    <a href="${next.href}" class="O_ChapterButtonArrow right">
+      <a href="${next.href}" class="O_ChapterButtonArrow right">
         <div class="M_ChapterButton right">
-        <p class="caption light">Далее</p>
+          <p class="caption light">Далее</p>
           <p class="caption-bold">${next.title}</p>
         </div>
         <div class="A_IconButton right"></div>
-    </a>`)
+      </a>`)
   }
 
   container.innerHTML = parts.join('')

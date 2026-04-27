@@ -321,6 +321,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+
+  &.result {
+    grid-column: 1/-1;
+  }
 }
 
 .M_CodeTabs {
@@ -438,11 +442,9 @@
   border-bottom: 1px solid var(--gray-lightest);
   align-items: flex-end;
 
-  .A_Button {
-    width: 140px;
-  }
-
-  @media screen and (max-width: 768px) {
+  input.A_SearchInput {
+    width: 100%;
+    height: 32px;
   }
 }
 .M_ChapterHeading {
@@ -489,7 +491,7 @@
   position: relative;
   overflow: hidden;
   background: var(--white-500);
-  border-radius: 4px;
+  border-radius: 12px;
   /* border: 1px solid var(--gray-lightest); */
 }
 .M_PreviewPoster {
@@ -550,4 +552,21 @@
 
 .M_PreviewPoster.is-open iframe {
   display: block;
+}
+.M_Author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 340px;
+
+  img {
+    max-width: 90px;
+    aspect-ratio: 1/1;
+    margin-bottom: var(--space-4);
+  }
+
+  p.caption {
+    color: var(--gray-soft);
+    line-height: 140%;
+  }
 }

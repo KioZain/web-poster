@@ -1,0 +1,51 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="rotation-scale">
+    <div class="demo-scale-shape"></div>
+  </div>
+
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-scale-shape"&gt;&lt;/div&gt;
+</code></pre>
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+@keyframes rotation-scale-in {
+0% {
+  transform: rotate(540deg) scale(0);
+  opacity: 0;
+}
+70% {
+  transform: rotate(-20deg) scale(1.05);
+  opacity: 1;
+}
+100% {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+}
+.demo-scale-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  background: #fff;
+  border-radius: 8px;
+  animation: rotation-scale-in 2s ease-out infinite;
+}
+            </code>
+          </pre>
+    </div>
+  </div>
+</div>

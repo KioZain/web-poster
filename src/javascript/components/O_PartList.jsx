@@ -1,12 +1,14 @@
 import React from 'react'
 import C_CollapsibleLists from './C_CollapsibleLists.jsx'
 
-function O_PartList({ part }) {
+function O_PartList({ part, activeChapterId }) {
   return (
     <div className="O_PartList">
       <p className="body bold">{part.title}</p>
-
-      <C_CollapsibleLists chapters={part.chapters} />
+      <C_CollapsibleLists
+        chapters={part.chapters}
+        activeChapterId={activeChapterId}
+      />
     </div>
   )
 }
