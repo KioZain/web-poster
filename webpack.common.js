@@ -168,7 +168,7 @@ const pages = [
     chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
   },
   {
-    template: 'modules/static/transformation.html',
+    template: 'modules/static/text.html',
     chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
   },
   {
@@ -585,6 +585,66 @@ module.exports = {
           './src/partials/demos/transformation/spread.html'
         ),
         location: 'spread',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    // Text
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/gradient.html'),
+        location: 'gradient',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(
+          __dirname,
+          './src/partials/demos/text/glitchletters.html'
+        ),
+        location: 'glitchletters',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/layers.html'),
+        location: 'layers',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/perletter.html'),
+        location: 'perletter',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/stroke.html'),
+        location: 'stroke',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/circular.html'),
+        location: 'circular',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/text/typewriter.html'),
+        location: 'typewriter',
         template_filename: '*',
         priority: 'replace'
       }

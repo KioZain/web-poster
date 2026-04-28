@@ -1,0 +1,55 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-shadow-layers">
+    <div class="demo-neon-text">Блюр</div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-blur-text"&gt;Блюр&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-blur-text {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fff;
+  animation: blur-pulse 3s ease-in-out infinite alternate;
+}
+ 
+@keyframes blur-pulse {
+  0% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa;
+  }
+  100% {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #0fa,
+      0 0 40px #0fa;
+  }
+}
+/* Каждый слой text-shadow добавляет
+   глубину свечения */
+      </code></pre>
+    </div>
+  </div>
+</div>

@@ -73,22 +73,23 @@ function S_Search() {
           {filteredArticles.length} результата найдено
         </div>
       )}
+      <div className="scroll-results">
+        <div className="C_Articles result">
+          {showLoader && <div className="loader" />}
 
-      <div className="C_Articles result">
-        {showLoader && <div className="loader" />}
+          {showResults &&
+            hasResults &&
+            filteredArticles.map((article) => (
+              <O_CardArticle key={article.id} article={article} />
+            ))}
 
-        {showResults &&
-          hasResults &&
-          filteredArticles.map((article) => (
-            <O_CardArticle key={article.id} article={article} />
-          ))}
-
-        {showResults && !hasResults && (
-          <div className="M_TitleText result">
-            <h4>Кажется, ничего не нашлось</h4>
-            <p>Измените свой запрос</p>
-          </div>
-        )}
+          {showResults && !hasResults && (
+            <div className="M_TitleText result">
+              <h4>Кажется, ничего не нашлось</h4>
+              <p>Измените свой запрос</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

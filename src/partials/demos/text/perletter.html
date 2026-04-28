@@ -1,0 +1,63 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-per-letter">
+    <div class="demo-letter-wrap">
+      <span class="demo-letter" style="--i: 0">П</span>
+      <span class="demo-letter" style="--i: 1">л</span>
+      <span class="demo-letter" style="--i: 2">а</span>
+      <span class="demo-letter" style="--i: 3">к</span>
+      <span class="demo-letter" style="--i: 4">а</span>
+      <span class="demo-letter" style="--i: 5">т</span>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-letter-wrap"&gt;
+  &lt;span class="demo-letter" style="--i:0"&gt;П&lt;/span&gt;
+  &lt;span class="demo-letter" style="--i:1"&gt;л&lt;/span&gt;
+  &lt;span class="demo-letter" style="--i:2"&gt;а&lt;/span&gt;
+  &lt;span class="demo-letter" style="--i:3"&gt;к&lt;/span&gt;
+  &lt;span class="demo-letter" style="--i:4"&gt;а&lt;/span&gt;
+  &lt;span class="demo-letter" style="--i:5"&gt;т&lt;/span&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-letter-wrap {
+  display: flex;
+  font-size: 52px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+ 
+.demo-letter {
+  display: inline-block;
+  color: #fff;
+  opacity: 0;
+  animation: letter-pop 0.5s ease-out both infinite;
+  /* Задержка через CSS-переменную */
+  animation-delay: calc(0.07s * var(--i));
+}
+ 
+@keyframes letter-pop {
+  0%   { opacity: 0; transform: translateY(30px); }
+  30%  { opacity: 1; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

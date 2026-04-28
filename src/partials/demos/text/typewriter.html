@@ -1,0 +1,54 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-typewriter">
+    <div class="demo-typewriter-text">Web-poster·HSE</div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-typewriter-text"&gt;Web-poster·HSE&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-typewriter-text {
+  font-family: 'Courier New', monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation:
+    typewriter-reveal 3s steps(14) infinite,
+    typewriter-cursor 0.6s steps(1) infinite;
+}
+ 
+/* steps(14) — по числу символов в тексте */
+@keyframes typewriter-reveal {
+  0%   { width: 0; }
+  50%  { width: 14ch; }
+  95%  { width: 14ch; }
+  100% { width: 0; }
+}
+ 
+@keyframes typewriter-cursor {
+  0%, 100% { border-color: #fff; }
+  50%      { border-color: transparent; }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

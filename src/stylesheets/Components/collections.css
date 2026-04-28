@@ -67,6 +67,23 @@
     container: articles / inline-size;
   }
 
+  &.result {
+    row-gap: var(--grid-gap);
+    max-height: 80vh;
+    /* background: blue; */
+    padding-bottom: 5rem;
+    padding-right: 12px;
+    overflow-y: auto;
+    .O_CardArticle {
+      grid-column: span 3;
+      /* background: red; */
+    }
+
+    &::-webkit-scrollbar {
+      background: transparent;
+    }
+  }
+
   @media screen and (max-width: 468px) {
     grid-template-columns: repeat(3, 1fr);
   }

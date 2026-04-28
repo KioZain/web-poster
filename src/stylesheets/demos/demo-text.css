@@ -1,0 +1,364 @@
+/* ═══════════════════════════════════════
+   TEXT-GRADIENT 
+   ═══════════════════════════════════════ */
+
+[data-demo='text-gradient'] .demo-gradient-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Aeonik Pro';
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  background: linear-gradient(
+    90deg,
+    #9eff70,
+    #84ecff,
+    #9eff70,
+    #84ecff,
+    #9eff70
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: text-gradient-flow 4s linear infinite;
+}
+
+@keyframes text-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ═══════════════════════════════════════
+   TEXT-STROKE
+   ═══════════════════════════════════════ */
+
+[data-demo='text-stroke'] .demo-stroke-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Aeonik Pro';
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--beautiful-blue);
+}
+
+/* ═══════════════════════════════════════
+   TEXT-SHADOW
+   ═══════════════════════════════════════ */
+
+[data-demo='text-shadow-layers'] .demo-neon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Aeonik Pro';
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--beautiful-blue);
+  animation: neon-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  0% {
+    text-shadow:
+      0 0 4px var(--beautiful-blue),
+      0 0 11px var(--beautiful-blue),
+      0 0 19px var(--beautiful-blue),
+      0 0 40px rgb(122, 223, 241),
+      0 0 80px rgb(122, 223, 241);
+  }
+  100% {
+    text-shadow:
+      0 0 2px var(--beautiful-blue),
+      0 0 5px var(--beautiful-blue),
+      0 0 10px var(--beautiful-blue),
+      0 0 20px rgb(122, 223, 241),
+      0 0 40px rgb(122, 223, 241);
+  }
+}
+
+/* ═══════════════════════════════════════
+   TEXT-PER-LETTER
+   ═══════════════════════════════════════ */
+
+[data-demo='text-per-letter'] .demo-letter-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  font-family: 'Aeonik Pro';
+  font-size: 52px;
+  font-weight: 800;
+}
+
+[data-demo='text-per-letter'] .demo-letter {
+  display: inline-block;
+  color: var(--beautiful-blue);
+  opacity: 0;
+  animation: letter-pop 1.5s ease-out both infinite;
+  animation-delay: calc(0.07s * var(--i));
+}
+
+@keyframes letter-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════
+   TEXT-GLITCH 
+   ═══════════════════════════════════════ */
+
+[data-demo='text-glitch'] .demo-glitch-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Aeonik Pro';
+  font-size: 64px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--beautiful-blue);
+}
+
+[data-demo='text-glitch'] .demo-glitch-text::before,
+[data-demo='text-glitch'] .demo-glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[data-demo='text-glitch'] .demo-glitch-text::before {
+  color: #ff3333;
+  animation: glitch-text-top 3s steps(1) infinite;
+  z-index: -1;
+}
+
+[data-demo='text-glitch'] .demo-glitch-text::after {
+  color: #3333ff;
+  animation: glitch-text-bottom 3s steps(1) infinite;
+  z-index: -1;
+}
+
+@keyframes glitch-text-top {
+  0%,
+  100% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  15% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-4px, -2px);
+    opacity: 1;
+  }
+  17% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(3px, 1px);
+    opacity: 1;
+  }
+  19% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  55% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  57% {
+    clip-path: inset(5% 0 70% 0);
+    transform: translate(5px, -1px);
+    opacity: 1;
+  }
+  58% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-text-bottom {
+  0%,
+  100% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  15% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(3px, 2px);
+    opacity: 1;
+  }
+  17% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-5px, 0);
+    opacity: 1;
+  }
+  19% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  55% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  57% {
+    clip-path: inset(70% 0 5% 0);
+    transform: translate(-4px, 1px);
+    opacity: 1;
+  }
+  58% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════
+   TEXT-TYPEWRITER
+   ═══════════════════════════════════════ */
+
+[data-demo='text-typewriter'] .demo-typewriter-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Aeonik Fono';
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--beautiful-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  /* Курсор */
+  border-right: 3px solid var(--beautiful-blue);
+  width: 0;
+  animation:
+    typewriter-reveal 3s steps(14) infinite,
+    typewriter-cursor 0.6s steps(1) infinite;
+}
+
+@keyframes typewriter-reveal {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 14ch;
+  }
+  95% {
+    width: 14ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typewriter-cursor {
+  0%,
+  100% {
+    border-color: var(--beautiful-blue);
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ═══════════════════════════════════════
+   TEXT-CIRCULAR
+   ═══════════════════════════════════════ */
+
+[data-demo='text-circular'] .demo-circular-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  animation: circular-spin 12s linear infinite;
+}
+
+[data-demo='text-circular'] .demo-circular-letter {
+  position: absolute;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--beautiful-blue);
+  width: 20px;
+  margin-left: -10px;
+  text-align: center;
+  transform-origin: center center;
+}
+
+[data-demo='text-circular'] .demo-circular-letter:nth-child(1) {
+  transform: rotate(0deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(2) {
+  transform: rotate(30deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(3) {
+  transform: rotate(60deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(4) {
+  transform: rotate(90deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(5) {
+  transform: rotate(120deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(6) {
+  transform: rotate(150deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(7) {
+  transform: rotate(180deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(8) {
+  transform: rotate(210deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(9) {
+  transform: rotate(240deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(10) {
+  transform: rotate(270deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(11) {
+  transform: rotate(300deg) translateY(-100px);
+}
+[data-demo='text-circular'] .demo-circular-letter:nth-child(12) {
+  transform: rotate(330deg) translateY(-100px);
+}
+
+@keyframes circular-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

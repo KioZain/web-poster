@@ -1,0 +1,51 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-gradient">
+    <div class="demo-gradient-text">Градиент</div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-gradient-text"&gt;градиент&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-gradient-text {
+  font-size: 64px;
+  font-weight: 900;
+  background: linear-gradient(
+    90deg,
+    #9eff70,
+    #84ecff,
+    #9eff70,
+    #84ecff,
+    #9eff70
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: text-gradient-flow 4s linear infinite;
+}
+ 
+@keyframes text-gradient-flow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

@@ -7,8 +7,6 @@ import cover_1_2_2 from '../../images/handbook/covers/handbook_1-2-2.png'
 import cover_1_3_1 from '../../images/handbook/covers/handbook_1-3-1.png'
 import cover_1_3_2 from '../../images/handbook/covers/handbook_1-3-2.png'
 
-
-
 const handbookNavData = {
   parts: [
     {
@@ -27,7 +25,8 @@ const handbookNavData = {
               cover: cover_1_1_1,
               readingTime: 3,
               articleType: 'Теория',
-              description: 'Краткая история появления формата веб-плаката и его ключевые особенности'
+              description:
+                'Краткая история появления формата веб-плаката и его ключевые особенности'
             },
             {
               id: 'article-1-1-2',
@@ -36,7 +35,8 @@ const handbookNavData = {
               cover: cover_1_1_2,
               readingTime: 4,
               articleType: 'Теория',
-              description: 'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
+              description:
+                'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
             },
             {
               id: 'article-1-1-3',
@@ -45,7 +45,8 @@ const handbookNavData = {
               cover: cover_1_1_3,
               readingTime: 3,
               articleType: 'Теория',
-              description: 'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
+              description:
+                'Что происходит с плакатом, когда он попадает в цифровую среду браузера'
             },
             {
               id: 'article-1-1-4',
@@ -54,7 +55,8 @@ const handbookNavData = {
               cover: cover_1_1_4,
               readingTime: 5,
               articleType: 'Теория',
-              description: 'Граница между плакатом как высказыванием и сайтом как инструментом'
+              description:
+                'Граница между плакатом как высказыванием и сайтом как инструментом'
             }
           ]
         },
@@ -70,7 +72,8 @@ const handbookNavData = {
               cover: cover_1_2_1,
               readingTime: 4,
               articleType: 'Теория',
-              description: 'Что практика создзания веб-плаката даёт дизайнеру и причём тут разработка'
+              description:
+                'Что практика создзания веб-плаката даёт дизайнеру и причём тут разработка'
             },
             {
               id: 'article-1-2-2',
@@ -79,7 +82,8 @@ const handbookNavData = {
               cover: cover_1_2_2,
               readingTime: 5,
               articleType: 'Теория',
-              description: 'Несколько библиотек и идей как можно прокачать свой веб-плакат'
+              description:
+                'Несколько библиотек и идей как можно прокачать свой веб-плакат'
             }
           ]
         },
@@ -96,7 +100,8 @@ const handbookNavData = {
               cover: cover_1_3_1,
               readingTime: 3,
               articleType: 'Теория',
-              description: 'Самые яркие студенческие проекты в формате веб-плаката'
+              description:
+                'Самые яркие студенческие проекты в формате веб-плаката'
             },
             {
               id: 'article-1-3-2',
@@ -105,7 +110,8 @@ const handbookNavData = {
               cover: cover_1_3_2,
               readingTime: 3,
               articleType: 'Теория',
-              description: 'Как пользоваться каталогом на сайте и чем он полезен'
+              description:
+                'Как пользоваться каталогом на сайте и чем он полезен'
             }
           ]
         }

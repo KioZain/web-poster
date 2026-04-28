@@ -1,0 +1,88 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-circular">
+    <div class="demo-circular-wrap">
+      <span class="demo-circular-letter">В</span>
+      <span class="demo-circular-letter">Е</span>
+      <span class="demo-circular-letter">Б</span>
+      <span class="demo-circular-letter">·</span>
+      <span class="demo-circular-letter">П</span>
+      <span class="demo-circular-letter">Л</span>
+      <span class="demo-circular-letter">А</span>
+      <span class="demo-circular-letter">К</span>
+      <span class="demo-circular-letter">А</span>
+      <span class="demo-circular-letter">Т</span>
+      <span class="demo-circular-letter">·</span>
+      <span class="demo-circular-letter">★</span>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-circular-wrap"&gt;
+  &lt;span class="demo-circular-letter"&gt;В&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;Е&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;Б&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;·&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;П&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;Л&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;А&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;К&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;А&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;Т&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;·&lt;/span&gt;
+  &lt;span class="demo-circular-letter"&gt;★&lt;/span&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-circular-wrap {
+  position: relative;
+  animation: circular-spin 12s linear infinite;
+}
+ 
+.demo-circular-letter {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  width: 20px;
+  margin-left: -10px;
+  text-align: center;
+}
+ 
+/* 12 букв, шаг 30° (360/12), радиус 100px */
+.demo-circular-letter:nth-child(1)  { transform: rotate(0deg)   translateY(-100px); }
+.demo-circular-letter:nth-child(2)  { transform: rotate(30deg)  translateY(-100px); }
+.demo-circular-letter:nth-child(3)  { transform: rotate(60deg)  translateY(-100px); }
+.demo-circular-letter:nth-child(4)  { transform: rotate(90deg)  translateY(-100px); }
+.demo-circular-letter:nth-child(5)  { transform: rotate(120deg) translateY(-100px); }
+.demo-circular-letter:nth-child(6)  { transform: rotate(150deg) translateY(-100px); }
+.demo-circular-letter:nth-child(7)  { transform: rotate(180deg) translateY(-100px); }
+.demo-circular-letter:nth-child(8)  { transform: rotate(210deg) translateY(-100px); }
+.demo-circular-letter:nth-child(9)  { transform: rotate(240deg) translateY(-100px); }
+.demo-circular-letter:nth-child(10) { transform: rotate(270deg) translateY(-100px); }
+.demo-circular-letter:nth-child(11) { transform: rotate(300deg) translateY(-100px); }
+.demo-circular-letter:nth-child(12) { transform: rotate(330deg) translateY(-100px); }
+ 
+@keyframes circular-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

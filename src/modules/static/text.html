@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Текст | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Текст</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/StaticModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Текст</h2>
+            <p class="subtitle">
+              Управляем цветом, эффектами и&nbsp;градиентами в&nbsp;веб
+              типографике
+            </p>
+          </div>
+          <div class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="#71716F"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">13 минут чтения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar"></div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <!-- ---------------------------- -->
+          <div id="about" class="M_ParagraphArticle">
+            <h3>О модуле</h3>
+            <p class="article">
+              Типографика в веб-плакате работает иначе, чем в печатном. Здесь
+              буквы могут светиться, рассыпаться, заполняться изображением или
+              появляться посимвольно. CSS даёт дизайнеру набор свойств, которые
+              превращают обычный заголовок в визуальное высказывание. Этот
+              модуль собирает типографические приёмы, которые студенты чаще
+              всего применяют в своих работах.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Градиентный текст</h3>
+            <p class="article">
+              Текст, залитый плавным переходом цвета вместо однотонной заливки.
+              Приём часто встречается в веб-плакатах с яркой, экспрессивной
+              палитрой, где одного цвета для заголовка недостаточно. Градиент
+              может быть статичным или анимированным, когда цветовая волна
+              медленно протекает сквозь буквы.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Эффект строится на трёх свойствах, которые работают вместе.
+                Свойство background задаёт градиент на элемент как обычный фон.
+                Затем <code>background-clip:text</code> обрезает этот фон по
+                контуру букв, и градиент становится видимым только внутри
+                текста. Последний шаг — color: transparent, который делает саму
+                заливку текста прозрачной, чтобы градиентный фон проступил.
+                <br />
+                Для анимации нужно увеличить <code>background-size</code> до
+                200–300% ширины элемента. Это создаёт «запас» градиента за
+                пределами видимой области. Затем через
+                <code>@keyframes</code> анимируется
+                <code>background-position</code>, и градиент плавно скользит по
+                буквам.
+              </p>
+            </details>
+          </div>
+          <!-- linear-code -->
+
+          <gradient></gradient>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте использовать градиент из трёх и более цветов, чтобы
+                при анимации переходы выглядели более плавными. Два цвета
+                создают ощущение маятника, а несколько цветов формируют текучий
+                поток, где сложно уловить начало и конец цикла.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Контурный текст</h3>
+            <p class="article">
+              Буквы превращаются в контуры, сохраняя только обводку. На крупном
+              кегле это выглядит как плакатная графика, где типографика работает
+              скорее как форма, чем как носитель смысла. Приём хорош для
+              декоративных заголовков и фоновых надписей, которые задают ритм
+              композиции, но не перетягивают на себя внимание.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                За обводку отвечает свойство <code>-webkit-text-stroke</code>,
+                которое принимает толщину линии и цвет. Чтобы заливка исчезла,
+                нужно задать <code>color: transparent</code>. В результате
+                остаётся только контур символов. Толщина обводки сильно влияет
+                на восприятие. Тонкая обводка в <code>1–2px</code> создаёт
+                лёгкий, воздушный текст. Толстая обводка в
+                <code>4–6px</code> придаёт буквам графичность и вес, но на
+                мелком кегле может съесть форму символа, потому что обводка
+                рисуется по центру контура и частично заходит внутрь буквы.
+                буквам.
+              </p>
+            </details>
+          </div>
+          <stroke></stroke>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Свойство <code>-webkit-text-stroke</code> до сих пор работает
+                только с вендорным префиксом <code>-webkit</code>, хотя
+                поддерживается всеми современными браузерами. Не забывайте
+                задавать <code>color</code> в качестве фоллбэка для редких
+                случаев, когда обводка не отображается.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Блюр</h3>
+            <p class="article">
+              Несколько значений <code>text-shadow</code>, наложенных друг на
+              друга, создают объём и глубину. Три-пять теней с нарастающим
+              размытием и смещением превращают плоский текст в нечто трёхмерное.
+              В зависимости от настроек можно получить неоновое свечение,
+              ретро-эффект выдавленного текста или мягкий объём.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Свойство <code>text-shadow</code> принимает несколько значений
+                через запятую, где каждое значение добавляет отдельный слой
+                тени. Первая тень рисуется ближе всего к тексту, последняя
+                оказывается в самом низу стопки.
+              </p>
+            </details>
+          </div>
+
+          <layers></layers>
+
+          <div class="M_ParagraphArticle">
+            <h3>Посимвольная анимация</h3>
+            <p class="article">
+              Каждая буква появляется отдельно, со своей задержкой. Буквы могут
+              выпрыгивать снизу, всплывать с затуханием, рассыпаться по экрану и
+              собираться обратно. Этот приём развивает каскадный паттерн из
+              модуля «Движение», но применяет его к типографике, где эффект
+              ощущается особенно выразительно, потому что зритель непроизвольно
+              следит за каждой буквой.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Для посимвольной анимации каждая буква оборачивается в отдельный
+                span. Все спаны получают одну и ту же анимацию, но с нарастающей
+                <code>animation-delay</code> через <code>nth-child</code> или
+                инлайновую CSS-переменную <code>--i</code>. Важно помнить про
+                пробелы между словами. Пробел тоже нужно обернуть в span, иначе
+                слова слипнутся.
+              </p>
+              <p class="article">
+                Формула задержки обычно выглядит как
+                <code>animation-delay: calc(0.05s * var(--i))</code>, где
+                <code>--i</code> задаётся в HTML как
+                <code>style="--i: 0"</code>, <code>style="--i: 1</code>" и так
+                далее. Шаг в 0.05–0.1 секунды создаёт быструю
+                последовательность, 0.15–0.2 секунды делают появление более
+                торжественным.
+              </p>
+            </details>
+          </div>
+
+          <perletter></perletter>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Без <code>animation-fill-mode: both</code> буквы мелькнут в
+                своём конечном состоянии до начала анимации, а потом прыгнут в
+                начальный кадр. <code>both</code> гарантирует, что каждый символ
+                принимает стили первого кадра ещё до старта задержки и сохраняет
+                стили последнего кадра после завершения
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Глитч</h3>
+            <p class="article">
+              Одна из адаптированных версий глитча для типографики. Текст на
+              мгновение разрывается на горизонтальные полосы, которые сдвигаются
+              в стороны с хроматическим разложением по цветам. Приём с сильным
+              характером, который задаёт тон всей композиции и хорошо работает в
+              плакатах с тематикой технологий, ошибок или киберпанка.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Глитч строится на псевдоэлементах <code>::before</code> и
+                <code>::after</code>, которые дублируют текст через
+                <code>content: attr(data-text)</code>. Каждый псевдоэлемент
+                размещается точно поверх оригинала через
+                <code>position: absolute</code> и получает свой цвет для
+                имитации RGB-разложения. Обычно
+                <code>::before</code> окрашивается в красноватый оттенок, а
+                <code>::after</code> в голубой.
+              </p>
+              <p class="article">
+                Анимация использует <code>clip-path: inset()</code> для
+                вырезания горизонтальных полос и <code>translateX</code> для их
+                смещения вбок. Тайминг через <code>steps(1)</code> вместо
+                плавного перехода создаёт мгновенные переключения, который и
+                создаёт сам эффект глитча.
+              </p>
+            </details>
+          </div>
+
+          <glitchletters></glitchletters>
+
+          <div class="M_ParagraphArticle">
+            <h3>Печатная машинка</h3>
+            <p class="article">
+              Текст появляется посимвольно, словно его набирают в реальном
+              времени. Мигающий курсор справа усиливает иллюзию. Приём хорошо
+              работает для заголовков, цитат и коротких фраз, где
+              последовательное появление букв создаёт ритм чтения и удерживает
+              внимание.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Эффект достигается анимацией ширины элемента от нуля до полного
+                размера. Текст уже присутствует в разметке, но скрыт за счёт
+                <code>overflow: hidden</code> и <code>width: 0</code>. Через
+                <code>@keyframes</code> ширина увеличивается до 100%, и буквы
+                «появляются» слева направо.
+              </p>
+              <p class="article">
+                Тайминг-функция <code>steps()</code> делает появление
+                дискретным, а не плавным. Количество шагов должно совпадать с
+                количеством символов в тексте, чтобы каждый шаг открывал ровно
+                одну букву. Для строки из 12 символов используйте
+                <code>steps(12)</code>.
+              </p>
+              <p class="article">
+                Курсор реализуется через <code>border-right</code> на том же
+                элементе. Отдельная анимация мигания переключает
+                <code>border-color</code> между видимым и прозрачным состоянием
+                с помощью <code>steps(1)</code>.
+              </p>
+            </details>
+          </div>
+          <typewriter></typewriter>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Важное ограничение заключается в том, что эффект корректно
+                работает только с моноширинными шрифтами, где каждый символ
+                занимает одинаковую ширину. С пропорциональными шрифтами шаги
+                будут неравномерными, и иллюзия посимвольного набора сломается.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Текст по кругу</h3>
+            <p class="article">
+              Буквы выстраиваются по окружности, формируя круговую надпись.
+              Каждый символ повёрнут на свой угол относительно общего центра.
+              Приём часто встречается в декоративных элементах веб-плакатов,
+              таких как печати, эмблемы, или медленно вращающихся надписей на
+              фоне.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Каждая буква оборачивается в отдельный <code>span</code> с
+                <code>position: absolute</code>. Все спаны размещаются в
+                контейнере с <code>position: relative</code>, из центра которого
+                строится окружность.
+              </p>
+              <p class="article">
+                На каждый span применяется transform: <code>rotate(Ndeg)</code>
+                <code>translateY(-Rpx)</code>, где <code>N</code> — угол
+                поворота буквы, а <code>R</code> — радиус окружности. Для 12
+                букв шаг составляет 30° (360° / 12). Первая буква получает
+                <code>rotate(0deg)</code>, вторая <code>rotate(30deg)</code>,
+                третья <code>rotate(60deg) </code>и так далее.
+              </p>
+              <p class="article">
+                Обратите внимание на порядок трансформаций.
+                <code>rotate</code> идёт первым, потому что он поворачивает
+                систему координат элемента, и последующий
+                <code>translateY</code> сдвигает букву вверх относительно уже
+                повёрнутой оси, что и выстраивает её на нужную позицию
+                окружности.
+              </p>
+              <p class="article">
+                Для вращения всей конструкции достаточно одной анимации
+                <code>rotate</code>
+                на родительском контейнере. Отдельные буквы не анимируются и
+                остаются на своих местах.
+              </p>
+            </details>
+          </div>
+
+          <circular></circular>
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Радиус окружности подбирайте в зависимости от количества букв и
+                размера шрифта. Если буквы наползают друг на друга, увеличьте
+                значение <code>translateY</code>. Для длинных слов или фраз
+                можно уменьшить кегль или увеличить радиус. Попробуйте также
+                расставить буквы не равномерно, а с разным шагом для создания
+                более свободной, органичной композиции
+              </p>
+            </div>
+          </div>
+          <!-- ---------------------------- -->
+
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

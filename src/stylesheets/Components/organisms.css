@@ -617,7 +617,7 @@
 }
 
 .O_CallOut {
-  background: #f3f3f1;
+  background: #eeeeec;
   border-radius: 12px;
   padding: var(--space-20);
   /* border: 1px solid var(--gray-lightest); */

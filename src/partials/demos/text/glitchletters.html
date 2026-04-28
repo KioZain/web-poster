@@ -1,0 +1,75 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="text-glitch">
+    <div class="demo-glitch-text" data-text="GLITCH">GLITCH</div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;!-- data-text дублирует текст для ::before и ::after --&gt;
+&lt;div class="demo-glitch-text" data-text="GLITCH"&gt;GLITCH&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-glitch-text {
+  font-size: 64px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+}
+ 
+.demo-glitch-text::before,
+.demo-glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+}
+ 
+/* Красный слой */
+.demo-glitch-text::before {
+  color: #ff3333;
+  animation: glitch-text-top 3s steps(1) infinite;
+  z-index: -1;
+}
+ 
+/* Синий слой */
+.demo-glitch-text::after {
+  color: #3333ff;
+  animation: glitch-text-bottom 3s steps(1) infinite;
+  z-index: -1;
+}
+ 
+@keyframes glitch-text-top {
+  0%, 19%, 58%, 100% {
+    clip-path: inset(0 0 80% 0);
+    transform: translate(0);
+    opacity: 0;
+  }
+  15% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-4px, -2px);
+    opacity: 1;
+  }
+  57% {
+    clip-path: inset(5% 0 70% 0);
+    transform: translate(5px, -1px);
+    opacity: 1;
+  }
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,6 @@
-<!-- linear.html -->
 <div class="W_PreviewCodeArea">
-  <!-- Preview area -->
-  <div class="M_PreviewArea" data-demo="movement-linear">
-    <div class="demo-cube"></div>
+  <div class="M_PreviewArea" data-demo="text-stroke">
+    <div class="demo-stroke-text">Контур</div>
   </div>
   <div class="S_CodeArea">
     <div class="O_CodeBar">
@@ -15,29 +13,26 @@
 
     <div class="O_CodeContent">
       <div class="A_LineNumbers"></div>
-      <!-- HTML code -->
+
       <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
-&lt;div class="demo-cube"&gt;&lt;/div&gt;
+&lt;div class="demo-stroke-text"&gt;Контур&lt;/div&gt;
       </code></pre>
-      <!-- Css Code -->
+
       <pre
         class="A_CodeBlock active"
         data-lang="css"
       ><code class="language-css">
-.demo-cube {
-  position: absolute;
-  animation: movement-linear 5s linear infinite alternate;
+.demo-stroke-text {
+  font-size: 72px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
 }
-
-@keyframes movement-linear {
-  from {
-    left: 0;
-  }
-  to {
-    left: calc(100% - 40px);
-  }
-}
-/* Вычитаем ширину 40 px объекта для корректной анимации */
+/* Толщина обводки влияет на восприятие:
+   1-2px — лёгкий контур,
+   4-6px — графичный, плакатный текст */
       </code></pre>
     </div>
   </div>
