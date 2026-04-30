@@ -95,7 +95,7 @@ const handbookNavData = {
           articles: [
             {
               id: 'article-1-3-1',
-              title: 'Избранные веб-плакаты 2020-2025',
+              title: 'Избранные веб-плакаты 2019-2025',
               href: '/handbook/part_1/chapter_3/selected-works.html',
               cover: cover_1_3_1,
               readingTime: 3,
