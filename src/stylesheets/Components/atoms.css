@@ -769,10 +769,10 @@ button.A_Tab {
   }
 
   img {
-    border-radius: 2px;
+    border-radius: 6px;
     width: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     aspect-ratio: 5 / 3;
   }
   img.poster {
@@ -781,6 +781,7 @@ button.A_Tab {
     height: 100%;
     object-fit: cover;
     aspect-ratio: 5/7;
+    border-radius: 2px;
   }
 }
 .A_LineNumbers {

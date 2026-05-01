@@ -3,7 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Создание веб-плаката</title>
+    <title>Дизайн и разработка веб-плаката</title>
+    <analytics></analytics>
   </head>
-  <body></body>
+  <body>
+    <menubar></menubar>
+    <!-- Breadcrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="part_2.html">
+              Дизайн и разработка веб-плаката
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="O_PartCover">
+      <div class="W_PartCover margin-container">
+        <div class="M_HeadingContainer second">
+          <p class="subtitle light">II Часть</p>
+
+          <h2>Дизайн и разработка <br />веб-плаката</h2>
+          <div class="A_IconText">
+            <img
+              src="../../images/icons/Q_TimeGray.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <p class="subtitle light">2 часа · 39 минут</p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../../images/handbook/secondpart.webp"
+        alt=""
+        class="part-cover"
+      />
+    </div>
+
+    <!-- PageContainer -->
+    <div class="W_HanbookPageWrapper margin-container">
+      <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+      <div class="L_Part">
+        <!-- About this part -->
+        <div class="M_BigTextAbout">
+          <p class="caption-caps light">Содержание</p>
+          <h4 class="right-container">
+            Практическая часть проводит от&nbsp; самой идеи до&nbsp;публикации
+            работы. Каждая глава&nbsp;&mdash; этап процесса. Сначала понимаем,
+            что хотим сделать, только потом проектируем.
+          </h4>
+        </div>
+        <!-- First chapter -->
+        <div class="S_Chapter">
+          <div class="M_ChapterHeading">
+            <h4>2.1 Идея и концепция</h4>
+            <p class="subtitle light">Теория · 4 статьи</p>
+          </div>
+          <!-- First chapter -->
+          <div class="C_Articles handbook">
+            <!-- First Article -->
+            <a
+              class="O_CardArticle"
+              href="../part_1/chapter_1/about_webposter.html"
+            >
+              <div class="Q_ArticleImage">
+                <img
+                  src="../../images/handbook/covers/handbook_1-1-1.png"
+                  alt=""
+                />
+              </div>
+              <div class="M_ArticleCardBio">
+                <p class="caption-caps">Теория · 5 минут</p>
+                <div class="M_AboutArticle">
+                  <h4>Особенности формата</h4>
+                  <p class="body">
+                    Краткая история появления формата веб-плаката и его ключевые
+                    особенности
+                  </p>
+                </div>
+              </div>
+            </a>
+            <!-- SecondArticle -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
 </html>
