@@ -6,67 +6,70 @@ gsap.registerPlugin(SplitText)
 export function initInfiniteCarousel() {
   const wrapper = document.querySelector('.carousel-wrapper')
   const track = document.querySelector('.carousel-track')
-  const items = document.querySelectorAll('.carousel-item')
+  const items = Array.from(document.querySelectorAll('.carousel-item'))
 
   if (!track || items.length === 0) return
 
-  function getItemDimensions() {
-    const firstItem = items[0]
-
-    const rect = firstItem.getBoundingClientRect()
-    const style = getComputedStyle(track)
-    const gap = parseFloat(style.gap) || 16
-
-    return {
-      width: rect.width,
-      height: rect.height,
-      gap: gap,
-      step: rect.width + gap
-    }
-  }
-
   const minScale = 0.65
   const maxScale = 1.0
+  const pixelsPerSecond = 50
 
-  let dimensions = getItemDimensions()
+  let halfItemWidth = 0
+  let viewportCenterInTrack = 0
+  let maxDistance = 0
+  let step = 0
+  let totalWidth = 0
+
   let tl = null
+  let scaleSetters = []
+  let logCounter = 0
 
-  function getViewportCenter() {
-    return window.innerWidth / 2
-  }
+  function cacheLayout() {
+    const itemRect = items[0].getBoundingClientRect()
+    const trackRect = track.getBoundingClientRect()
+    const gap = parseFloat(getComputedStyle(track).gap) || 16
 
-  function updateScales() {
-    const center = getViewportCenter()
+    halfItemWidth = itemRect.width / 2
+    const viewportCenter = window.innerWidth / 2
+    viewportCenterInTrack = viewportCenter - trackRect.left
+    maxDistance = Math.min(viewportCenter, window.innerWidth * 0.6)
+    step = itemRect.width + gap
+    totalWidth = step * items.length
 
-    items.forEach((item) => {
-      const rect = item.getBoundingClientRect()
-      const itemCenter = rect.left + rect.width / 2
-
-      const distanceFromCenter = Math.abs(itemCenter - center)
-      const maxDistance = Math.min(center, window.innerWidth * 0.6)
-      const normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1)
-
-      const easedDistance = Math.pow(normalizedDistance, 1.5)
-      const scale = maxScale - (maxScale - minScale) * easedDistance
-
-      gsap.set(item, { scale: scale })
+    console.log('[cacheLayout]', {
+      trackLeft: trackRect.left,
+      viewportCenter,
+      viewportCenterInTrack,
+      halfItemWidth,
+      maxDistance,
+      step,
+      totalWidth
     })
   }
 
-  function initAnimation() {
-    if (tl) {
-      tl.kill()
+  function updateScales() {
+    for (let i = 0; i < items.length; i++) {
+      let x = gsap.getProperty(items[i], 'x')
+      x = x % totalWidth
+      if (x > totalWidth - step) x -= totalWidth
+
+      const itemCenter = x + halfItemWidth
+      const distance = Math.abs(itemCenter - viewportCenterInTrack)
+      const normalized = distance < maxDistance ? distance / maxDistance : 1
+      const eased = Math.pow(normalized, 1.5)
+      const scale = maxScale - (maxScale - minScale) * eased
+
+      gsap.set(items[i], { scale })
     }
+  }
 
-    dimensions = getItemDimensions()
+  function initAnimation() {
+    if (tl) tl.kill()
 
-    const { step } = dimensions
-    const totalItems = items.length
-    const totalWidth = step * totalItems
-    const pixelsPerSecond = 25
-    const duration = totalWidth / pixelsPerSecond
+    cacheLayout()
+
     const startOffset = -step
-
+    const duration = totalWidth / pixelsPerSecond
     gsap.set(items, {
       x: (i) => startOffset + i * step,
       yPercent: -50,
@@ -74,40 +77,41 @@ export function initInfiniteCarousel() {
       scale: 1
     })
 
+    // scaleSetters = items.map((item) => gsap.quickSetter(item, 'scale'))
+
+    console.log('[init] gsap.version =', gsap.version)
+    console.log(
+      '[init] items =',
+      items.length,
+      'scaleSetters =',
+      scaleSetters.length,
+      'typeof setter =',
+      typeof scaleSetters[0]
+    )
+
     tl = gsap.to(items, {
-      duration: duration,
+      duration,
       ease: 'none',
       x: `+=${totalWidth}`,
       modifiers: {
         x: gsap.utils.unitize((x) => {
           let val = parseFloat(x) % totalWidth
-          if (val > totalWidth - step) {
-            val -= totalWidth
-          }
+          if (val > totalWidth - step) val -= totalWidth
           return val
         })
       },
       repeat: -1,
-      // onUpdate: updateScales
+      onUpdate: updateScales
     })
 
     updateScales()
-
-    console.log('Carousel initialized:', {
-      itemWidth: dimensions.width,
-      step: step,
-      totalWidth: totalWidth,
-      duration: duration
-    })
   }
 
   // === RESIZE HANDLER ===
   let resizeTimeout
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout)
-    resizeTimeout = setTimeout(() => {
-      initAnimation()
-    }, 250)
+    resizeTimeout = setTimeout(initAnimation, 250)
   })
 
   initAnimation()

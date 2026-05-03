@@ -232,12 +232,12 @@
     grid-column: 1/-1;
   }
 
-  p.article:first-child {
+  /* p.article:first-child {
     background: rgba(122, 223, 241, 0.15);
     padding: 24px;
     font-weight: 500;
     border-radius: 12px;
-  }
+  } */
 }
 .W_ArticlePage.modules {
   grid-column: 4/11;

@@ -176,11 +176,19 @@
   &:hover {
     p {
       color: var(--gray-soft);
-      cursor: pointer;
     }
     span {
       color: var(--gray-soft);
       border: 1px solid var(--gray-soft);
+    }
+  }
+
+  &.inactive {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    p:last-child {
+      text-decoration: none;
     }
   }
 }
@@ -244,6 +252,7 @@
   padding-right: var(--space-8);
   height: 3.75rem;
   display: flex;
+  margin-top: -1px;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--gray-lightest);
@@ -911,7 +920,7 @@
   height: 400px;
   background-image: url('../../images/mailBackground.webp');
   background-size: cover;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   margin-top: 4rem;
 
@@ -952,7 +961,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      padding: var(--space-16);
+      padding: var(--space-20);
     }
 
     @media screen and (max-width: 486px) {

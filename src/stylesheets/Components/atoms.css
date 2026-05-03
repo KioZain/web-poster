@@ -667,7 +667,7 @@ button.A_Tab {
   font-size: 1.125rem;
   outline: none;
   border-radius: 6px;
-  height: 48px;
+  height: 44px;
   border: none;
   padding: var(--space-8) var(--space-12);
   color: var(--gray-base);

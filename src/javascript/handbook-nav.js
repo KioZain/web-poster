@@ -5,7 +5,7 @@ import S_LeftNavbar from './components/S_LeftNavBar.jsx'
 import handbookNavData from './config/handbookNavData.js'
 
 // CHANGE IT
-const LAST_AVAILABLE_CHAPTER = 'chapter-2-1'
+const LAST_AVAILABLE_CHAPTER = 'chapter-2-2'
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('handbook-nav-root')
@@ -34,7 +34,10 @@ function getActiveChapterId() {
   }
 
   if (navContainer.dataset.articleId) {
-    return findChapterByArticleId(navContainer.dataset.articleId, handbookNavData)
+    return findChapterByArticleId(
+      navContainer.dataset.articleId,
+      handbookNavData
+    )
   }
 
   console.error(
@@ -57,7 +60,6 @@ function findChapterByArticleId(articleId, navData) {
   return null
 }
 
-
 function initArticleNavigation() {
   const navContainer = document.querySelector('.W_ArticleButtonsNavigation')
   if (!navContainer) return
@@ -69,7 +71,9 @@ function initArticleNavigation() {
   }
 
   const allArticles = flattenArticles(handbookNavData)
-  const currentIndex = allArticles.findIndex((article) => article.id === currentId)
+  const currentIndex = allArticles.findIndex(
+    (article) => article.id === currentId
+  )
 
   if (currentIndex === -1) {
     console.log(`net article :( "${currentId}"`)
@@ -77,7 +81,8 @@ function initArticleNavigation() {
   }
 
   const prev = currentIndex > 0 ? allArticles[currentIndex - 1] : null
-  const next = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null
+  const next =
+    currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null
 
   renderNavButtons(navContainer, prev, next)
 }
@@ -88,13 +93,16 @@ function flattenArticles(navData) {
   for (const part of navData.parts) {
     for (const chapter of part.chapters) {
       for (const article of chapter.articles) {
-        result.push({ id: article.id, title: article.title, href: article.href })
+        result.push({
+          id: article.id,
+          title: article.title,
+          href: article.href
+        })
       }
     }
   }
   return result
 }
-
 
 function initChapterNavigation() {
   const navContainer = document.querySelector('.W_ArticleButtonsNavigation')
@@ -108,7 +116,9 @@ function initChapterNavigation() {
   }
 
   const allChapters = flattenChapters(handbookNavData)
-  const currentIndex = allChapters.findIndex((chapter) => chapter.id === currentId)
+  const currentIndex = allChapters.findIndex(
+    (chapter) => chapter.id === currentId
+  )
 
   if (currentIndex === -1) {
     console.log(`net chapter :( "${currentId}"`)
@@ -116,7 +126,8 @@ function initChapterNavigation() {
   }
 
   const prev = currentIndex > 0 ? allChapters[currentIndex - 1] : null
-  const next = currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null
+  const next =
+    currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null
 
   renderNavButtons(navContainer, prev, next)
 }
@@ -133,7 +144,6 @@ function flattenChapters(navData) {
   }
   return result
 }
-
 
 function renderNavButtons(container, prev, next) {
   const parts = []

@@ -129,6 +129,7 @@
   gap: var(--grid-gap);
   width: 100%;
 }
+
 .C_PostersRow {
   width: 100%;
   display: flex;
