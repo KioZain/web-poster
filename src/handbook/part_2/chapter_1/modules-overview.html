@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Статичные и динамичные модули</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Статичные и динамичные модули</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Статичные и динамичные модули</h1>
+            <div class="A_Tag">Теория</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">4 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-1-3.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!---------------------- Content here ---------------------->
+
+          <p class="article">
+            Прежде чем открывать редактор кода, стоит задать себе ещё один
+            вопрос: что на&nbsp;вашей странице будет двигаться, а&nbsp;что
+            реагировать на действия пользователя. Иными словами, где
+            в&nbsp;плакате проходит граница между анимацией
+            <code>CSS</code> и&nbsp;интерактивностью <code>JavaScript</code>.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Два видя модулей</h3>
+            <p class="article">
+              Вспомните разделение, которое мы&nbsp;разбирали в&nbsp;статье про
+              статичные и&nbsp;динамичные веб-плакаты. Статические
+              модули&nbsp;&mdash; это всё, что живёт своей жизнью без участия
+              пользователя. Вращающиеся формы, пульсирующие фоны, бегущие
+              строки, мерцающий текст. Они создают визуальную среду
+              и&nbsp;задают ритм, но&nbsp;не&nbsp;реагируют на&nbsp;действия
+              зрителя.
+            </p>
+            <p class="article">
+              Динамические модули&nbsp;&mdash; это элементы, которые откликаются
+              на конкретное действие. Наведение курсора раскрывает скрытый слой,
+              клик переключает состояние, перетаскивание перемещает объект,
+              движение мыши деформирует композицию. Здесь зритель становится
+              участником.
+            </p>
+            <p class="article">
+              На&nbsp;этапе концепции полезно пройтись по&nbsp;макету
+              и&nbsp;отметить для каждого элемента, к&nbsp;какому типу
+              он&nbsp;относится. Буквально нарисуйте на&nbsp;черновике или
+              в&nbsp;Figma два цвета: один для статических модулей, другой для
+              реагирующих на&nbsp;действия пользователя. Эта карта покажет, как
+              распределяется внимание на&nbsp;странице и&nbsp;где возникают
+              точки взаимодействия.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Плотность на&nbsp;экране</h3>
+            <p class="article">
+              Когда на&nbsp;одном экране одновременно происходит слишком многое
+              &mdash; десяток анимаций, несколько кликабельных зон, мерцающий
+              фон &mdash; зритель теряется. Он&nbsp;не&nbsp;понимает, куда
+              смотреть и&nbsp;с&nbsp;чем взаимодействовать. Плотность
+              визуального шума может работать как художественный приём,
+              мы&nbsp;видели это в&nbsp;работах вроде &laquo;Кары&raquo;, но
+              даже там хаос фона контрастирует с&nbsp;читаемыми элементами
+              переднего плана.
+            </p>
+            <p class="article">
+              Подумайте о&nbsp;каждом экране как об&nbsp;отдельной сцене.
+              Сколько вещей происходит одновременно? Есть&nbsp;ли среди них
+              что-то, на&nbsp;чём взгляд может остановиться? Если всё движется
+              с&nbsp;одинаковой скоростью и одинаковой амплитудой, ни&nbsp;один
+              элемент не&nbsp;выделяется. Контраст между подвижным
+              и&nbsp;неподвижным, между быстрым и&nbsp;медленным работает
+              на&nbsp;иерархию внимания точно так&nbsp;же, как контраст размеров
+              в типографике.
+            </p>
+            <p class="article">
+              Простое правило: на&nbsp;одном экране&nbsp;&mdash; одна
+              интерактивная зона. Это не жёсткое ограничение, а&nbsp;отправная
+              точка. Если зритель видит перед собой три кликабельных элемента,
+              два
+              <code>drag-and-drop</code>-объекта и&nbsp;мерцающую кнопку,
+              он&nbsp;скорее всего не&nbsp;нажмёт ни&nbsp;на&nbsp;что.
+              Если&nbsp;же среди движущегося фона выделяется один элемент,
+              который явно приглашает к&nbsp;взаимодействию, шансы
+              на&nbsp;контакт резко возрастают.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Поймёт&nbsp;ли зритель</h3>
+            <p class="article">
+              Это, пожалуй, самый недооценённый вопрос при проектировании
+              интерактива. Вы&nbsp;придумали механику, где при клике
+              на&nbsp;объект раскрывается скрытый слой. Но&nbsp;зритель
+              не&nbsp;знает, что этот объект кликабелен. Он&nbsp;видит статичный
+              элемент среди других статичных элементов и&nbsp;просто скроллит
+              дальше.
+            </p>
+            <p class="article">
+              В&nbsp;работе &laquo;Алло, Гораций?&raquo; эта задача решена
+              аккуратно. Все интерактивные элементы сопровождаются
+              <code>cursor: pointer</code> и&nbsp;визуальными изменениями при
+              наведении, а&nbsp;после завершения действия появляется обратная
+              связь &mdash; мигающий экран и&nbsp;текст, который подсказывает,
+              что секция пройдена. Зритель всегда понимает, где
+              он&nbsp;находится и&nbsp;что может делать.
+            </p>
+            <p class="article">
+              Есть несколько способов подсказать зрителю, что элемент
+              интерактивен. Визуальная инаковость: кликабельный элемент должен
+              чем-то отличаться от&nbsp;окружения&nbsp;&mdash; цветом, формой,
+              поведением. Если всё вокруг статично, а&nbsp;один объект слегка
+              покачивается, то&nbsp;это уже отличная визуальная подсказка.
+              Реакция на
+              <code>hover</code>: даже простое изменение
+              <code>opacity</code> или сдвиг на&nbsp;пару пикселей при наведении
+              курсора сигнализирует о&nbsp;возможности взаимодействия. Текстовые
+              подсказки или&nbsp;же маркер с&nbsp;вопросиком одни из&nbsp;самых
+              надёжных способов дать зрителю конкретное представление, что
+              он&nbsp;должен сделать.
+            </p>
+          </div>
+
+          <!-- Extracallout -->
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Ощущение, когда страница откликается на&nbsp;твоё действие, само
+              по себе создаёт вовлечение. Но&nbsp;чтобы оно возникло, зритель
+              должен сначала понять, что интерактивный элемент вообще
+              существует.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Библиотека модулей</h3>
+            <p class="article">
+              На&nbsp;этом этапе вам не&nbsp;нужно знать, как именно реализовать
+              задуманное. Вам нужно понять, что вы&nbsp;хотите, чтобы
+              происходило. При наведении фон меняет цвет, при скролле текст
+              появляется побуквенно, при клике объект разворачивается. Простые
+              формулировки формулировки на&nbsp;уровне поведения.
+            </p>
+            <p class="article">
+              Именно здесь пригодится библиотека модулей с&nbsp;нашего сайта.
+              Каждый модуль описывает конкретный визуальный или интерактивный
+              приём с примером кода и&nbsp;демонстрацией результата. Вам
+              не&nbsp;нужно читать все модули подряд. Достаточно просмотреть
+              список и&nbsp;отметить&nbsp;те, которые совпадают с&nbsp;вашими
+              задумками и&nbsp;планами.
+            </p>
+            <p class="article">
+              Модули устроены так, чтобы их&nbsp;можно было комбинировать. Один
+              плакат может использовать &laquo;Движение&raquo; для фоновых
+              элементов, &laquo;Ховер&raquo; для интерактивных подсказок
+              и&nbsp;&laquo;Блюр&raquo; для эффекта глубины. Планирование
+              модулей на&nbsp;этапе концепции экономит время, потому что
+              вы&nbsp;заранее понимаете, из&nbsp;каких технических кирпичиков
+              будет собран ваш плакат.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Помните о&nbsp;том, что некоторые модули вроде Hover или&nbsp;же
+                Drag and Drop могут быть не&nbsp;доступны пользователям
+                на&nbsp;некоторых устройствах. Например, большинство решений
+                с&nbsp;перетскиванием попросту не&nbsp;будут работать
+                на&nbsp;мобильных устройствах. Такие риски необходимо понимать
+                и&nbsp;учитывтаь на&nbsp;уровне проектирования, важно давать
+                всем пользователям одинаково насыщенный опыт изучения плаката.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Простая схема для начала</h3>
+            <p class="article">
+              Перед тем как писать код, попробуйте ответить на&nbsp;четыре
+              вопроса.
+            </p>
+            <p class="article">
+              Что движется само? Перечислите элементы, которые будут анимированы
+              через
+              <code>CSS</code> без участия пользователя.
+            </p>
+            <p class="article">
+              Что реагирует на&nbsp;зрителя? Перечислите элементы, которые
+              должны откликаться на <code>hover</code>, клик, скролл или другие
+              действия.
+            </p>
+            <p class="article">
+              Сколько всего происходит на&nbsp;одном экране? Проверьте, не
+              перегружена&nbsp;ли сцена. Если на&nbsp;одном экране больше
+              двух-трёх одновременных событий, подумайте, можно&nbsp;ли что-то
+              перенести на следующий экран или убрать. Хотя если ваша концепиция
+              требует максимального визуального хаоса, то&nbsp;подумайте как
+              можно ещё сильнее докрутить эту идею до&nbsp;максимума.
+            </p>
+            <p class="article">
+              Поймёт&nbsp;ли зритель, с&nbsp;чем можно взаимодействовать? Для
+              каждого интерактивного элемента придумайте подсказку, визуальную,
+              текстовую или через поведение при <code>hover</code>.
+            </p>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="../../../modules.html">Библиотека модулей</a>
+              </li>
+            </ol>
+          </div>
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-1-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

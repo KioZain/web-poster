@@ -150,7 +150,59 @@ const pages = [
       'preview'
     ]
   },
-  // Chapter 2_1
+  // ----------------------------------------------------------
+  // Part 2
+  // Chapter 1
+  {
+    template: 'handbook/part_2/chapter_1/chapter_2_1.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  // Finding idea
+  {
+    template: 'handbook/part_2/chapter_1/finding-idea.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_1/defining-style.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_1/modules-overview.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
