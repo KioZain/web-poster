@@ -1,0 +1,62 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-underline">
+    <div class="demo-underline-row">
+      <span class="demo-underline-link">Слева</span>
+      <span class="demo-underline-link from-center">Центр</span>
+      <span class="demo-underline-link from-right">Справа</span>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;span class="demo-underline-link"&gt;Слева&lt;/span&gt;
+&lt;span class="demo-underline-link from-center"&gt;Центр&lt;/span&gt;
+&lt;span class="demo-underline-link from-right"&gt;Справа&lt;/span&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-underline-link {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+ 
+.demo-underline-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+ 
+.demo-underline-link:hover::after {
+  transform: scaleX(1);
+}
+ 
+/* Варианты направления */
+.from-center::after { transform-origin: center; }
+.from-right::after  { transform-origin: right; }
+      </code></pre>
+    </div>
+  </div>
+</div>

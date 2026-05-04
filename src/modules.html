@@ -24,33 +24,46 @@
         </div>
 
         <div class="S_Modules">
-          <div class="M_Columns modules">
-            <p class="body-other">Модуль</p>
-            <p class="body-other">Язык</p>
-            <p class="body-other">Решения</p>
-          </div>
-          <div class="C_ModulesRow">
-            <!-- Movement -->
-            <a href="./modules/static/movement.html" class="O_Module">
-              <div class="W_ImageContentModule">
-                <div class="Q_ModulesIllustration">
-                  <img src="./images/modules/Q_Movement.svg" alt="" />
-                </div>
-                <div class="M_TitleText">
-                  <p class="body bold">Движение</p>
-                  <p class="body light">
-                    Базовые анимации движения для создания выразительности в
-                    веб-плакате
-                  </p>
-                </div>
-              </div>
+          <!-- Tab menu -->
 
-              <div class="A_Tag">CSS</div>
-              <p class="body bold count" data-language="CSS">7</p>
-              <p class="body bold pseudolink">Перейти</p>
-            </a>
-            <!-- <section class="blurred"> -->
-            <!-- <div class="blur-content"></div>
+          <div class="W_TabsModules">
+            <div class="M_TwoButtons">
+              <button class="A_TabModule active" data-tab="static">
+                Статичные
+              </button>
+              <button class="A_TabModule" data-tab="dynamic">Динамичные</button>
+            </div>
+
+            <div class="M_Columns modules">
+              <p class="body-other">Модуль</p>
+              <p class="body-other">Язык</p>
+              <p class="body-other">Решения</p>
+            </div>
+
+            <div id="static" class="W_ModulesWrap">
+              <!-- Static -->
+              <div class="C_ModulesRow">
+                <!-- Movement -->
+                <a href="./modules/static/movement.html" class="O_Module">
+                  <div class="W_ImageContentModule">
+                    <div class="Q_ModulesIllustration">
+                      <img src="./images/modules/Q_Movement.svg" alt="" />
+                    </div>
+                    <div class="M_TitleText">
+                      <p class="body bold">Движение</p>
+                      <p class="body light">
+                        Базовые анимации движения для создания выразительности в
+                        веб-плакате
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="A_Tag">CSS</div>
+                  <p class="body bold count" data-language="CSS">7</p>
+                  <p class="body bold pseudolink">Перейти</p>
+                </a>
+                <!-- <section class="blurred"> -->
+                <!-- <div class="blur-content"></div>
               <div class="O_UnavaliableContent">
                 <img
                   style="width: 24px; margin: 0 auto"
@@ -66,65 +79,70 @@
                   </p>
                 </div>
               </div> -->
-            <!-- Rotation -->
-            <a href="./modules/static/rotation.html" class="O_Module">
-              <div class="W_ImageContentModule">
-                <div class="Q_ModulesIllustration">
-                  <img src="./images/modules/Q_Rotation.svg" alt="" />
-                </div>
-                <div class="M_TitleText">
-                  <p class="body bold">Вращение</p>
-                  <p class="body light">
-                    Крутим наклоням и раскачиваем элементы через rotate,
-                    transform-origin
-                  </p>
-                </div>
-              </div>
+                <!-- Rotation -->
+                <a href="./modules/static/rotation.html" class="O_Module">
+                  <div class="W_ImageContentModule">
+                    <div class="Q_ModulesIllustration">
+                      <img src="./images/modules/Q_Rotation.svg" alt="" />
+                    </div>
+                    <div class="M_TitleText">
+                      <p class="body bold">Вращение</p>
+                      <p class="body light">
+                        Крутим наклоням и раскачиваем элементы через rotate,
+                        transform-origin
+                      </p>
+                    </div>
+                  </div>
 
-              <div class="A_Tag">CSS</div>
-              <p class="body bold count" data-language="CSS">12</p>
-              <p class="body bold pseudolink">Перейти</p>
-            </a>
-            <!-- Transofrmation -->
-            <a href="./modules/static/transformation.html" class="O_Module">
-              <div class="W_ImageContentModule">
-                <div class="Q_ModulesIllustration">
-                  <img src="./images/modules/Q_Transform.svg" alt="" />
-                </div>
-                <div class="M_TitleText">
-                  <p class="body bold">Трансформация</p>
-                  <p class="body light">
-                    Меняем форму, масштаб и положение объектов, выстраивая яркие
-                    эффекты
-                  </p>
-                </div>
-              </div>
+                  <div class="A_Tag">CSS</div>
+                  <p class="body bold count" data-language="CSS">12</p>
+                  <p class="body bold pseudolink">Перейти</p>
+                </a>
+                <!-- Transofrmation -->
+                <a href="./modules/static/transformation.html" class="O_Module">
+                  <div class="W_ImageContentModule">
+                    <div class="Q_ModulesIllustration">
+                      <img src="./images/modules/Q_Transform.svg" alt="" />
+                    </div>
+                    <div class="M_TitleText">
+                      <p class="body bold">Трансформация</p>
+                      <p class="body light">
+                        Меняем форму, масштаб и положение объектов, выстраивая
+                        яркие эффекты
+                      </p>
+                    </div>
+                  </div>
 
-              <div class="A_Tag">CSS</div>
-              <p class="body bold count" data-language="CSS">12</p>
-              <p class="body bold pseudolink">Перейти</p>
-            </a>
-            <!-- Text -->
-            <a href="./modules/static/text.html" class="O_Module">
-              <div class="W_ImageContentModule">
-                <div class="Q_ModulesIllustration">
-                  <img src="./images/modules/Q_Text.svg" alt="" />
-                </div>
-                <div class="M_TitleText">
-                  <p class="body bold">Текст</p>
-                  <p class="body light">
-                    Управляем цветом, эффектами и&nbsp;градиентами в&nbsp;веб
-                    типографике
-                  </p>
-                </div>
-              </div>
+                  <div class="A_Tag">CSS</div>
+                  <p class="body bold count" data-language="CSS">12</p>
+                  <p class="body bold pseudolink">Перейти</p>
+                </a>
+                <!-- Text -->
+                <a href="./modules/static/text.html" class="O_Module">
+                  <div class="W_ImageContentModule">
+                    <div class="Q_ModulesIllustration">
+                      <img src="./images/modules/Q_Text.svg" alt="" />
+                    </div>
+                    <div class="M_TitleText">
+                      <p class="body bold">Текст</p>
+                      <p class="body light">
+                        Управляем цветом, эффектами и&nbsp;градиентами
+                        в&nbsp;веб типографике
+                      </p>
+                    </div>
+                  </div>
 
-              <div class="A_Tag">CSS</div>
-              <p class="body bold count" data-language="CSS">8</p>
-              <p class="body bold pseudolink">Перейти</p>
-            </a>
-            <!-- </section> -->
+                  <div class="A_Tag">CSS</div>
+                  <p class="body bold count" data-language="CSS">8</p>
+                  <p class="body bold pseudolink">Перейти</p>
+                </a>
+                <!-- </section> -->
+              </div>
+            </div>
+            <div id="dynamic" class="W_ModulesWrap"></div>
           </div>
+
+          <!-- Dynamic -->
         </div>
       </div>
     </div>

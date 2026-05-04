@@ -1,0 +1,51 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-tilt">
+    <div class="demo-tilt-scene">
+      <div class="demo-tilt-card"></div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-tilt-scene"&gt;
+  &lt;div class="demo-tilt-card"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-tilt-scene {
+  perspective: 600px;
+}
+ 
+.demo-tilt-card {
+  width: 160px;
+  height: 120px;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+ 
+.demo-tilt-card:hover {
+  transform: rotateX(-5deg) rotateY(5deg);
+  box-shadow: -8px 12px 30px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

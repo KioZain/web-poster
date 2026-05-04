@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ховер | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Ховер</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/StaticModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Ховер</h2>
+            <p class="subtitle">
+              Добавляем базовый интерактив и реакцию статичным элементам через
+              наведение курсора
+            </p>
+          </div>
+          <div class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="#71716F"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">3 минуты чтения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar"></div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <!-- ---------------------------- -->
+          <!-- start -->
+
+          <div class="M_ParagraphArticle">
+            <h3>О&nbsp;модуле <span class="copy"></span></h3>
+            <p class="article">
+              В&nbsp;предыдущих модулях все анимации запускались при загрузке
+              страницы и&nbsp;шли своим чередом, не&nbsp;реагируя
+              на&nbsp;зрителя. Ховер это меняет. Псевдокласс
+              <code>:hover</code> активируется, когда курсор оказывается над
+              элементом, и&nbsp;выключается, когда курсор уходит. Плакат
+              перестаёт быть просто движущейся картинкой и&nbsp;становится
+              пространством, которое откликается на&nbsp;присутствие зрителя.
+            </p>
+            <p class="article">
+              Технически <code>:hover</code> &mdash; это условие.
+              Вы&nbsp;описываете два состояния элемента, обычное и&nbsp;при
+              наведении, а&nbsp;браузер переключается между ними. Без
+              дополнительных настроек переключение происходит мгновенно, рывком.
+              Чтобы переход стал плавным, нужно свойство
+              <code>transition</code>.
+            </p>
+          </div>
+
+          <div id="transition" class="M_ParagraphArticle">
+            <h3>Transition и&nbsp;плавность <span class="copy"></span></h3>
+            <p class="article">
+              Свойство <code>transition</code> задаёт, как именно браузер будет
+              интерполировать изменение между двумя состояниями. Оно принимает
+              четыре параметра: какое свойство анимировать, как долго,
+              с&nbsp;какой функцией замедления и&nbsp;с&nbsp;какой задержкой.
+            </p>
+            <p class="article">
+              Запись <code>transition: transform 0.3s ease</code> означает, что
+              любое изменение <code>transform</code> на&nbsp;этом элементе будет
+              происходить плавно за&nbsp;0.3 секунды с&nbsp;замедлением
+              в&nbsp;конце. Можно перечислить несколько свойств через запятую,
+              если нужно анимировать каждое с&nbsp;разными параметрами.
+              А&nbsp;можно написать <code>transition: all 0.3s ease</code>,
+              чтобы анимировались все изменяемые свойства сразу, хотя
+              у&nbsp;этого подхода есть побочный эффект: если вы&nbsp;случайно
+              изменили на&nbsp;ховере <code>padding</code> или
+              <code>color</code>, они тоже начнут плавно переключаться, что
+              может быть неожиданно.
+            </p>
+          </div>
+
+          <div id="can-animate" class="M_ParagraphArticle">
+            <h3>Что можно анимировать <span class="copy"></span></h3>
+            <p class="article">
+              Свойства CSS делятся на&nbsp;три группы по&nbsp;стоимости для
+              браузера.
+            </p>
+            <p class="article">
+              Самые дешёвые для рендеринга <code>transform</code> и
+              <code>opacity</code>. Они обрабатываются на&nbsp;GPU
+              и&nbsp;не&nbsp;вызывают пересчёт раскладки страницы. Если
+              у&nbsp;вас есть выбор, всегда отдавайте предпочтение этим двум.
+            </p>
+            <p class="article">
+              Свойства средней стоимости требуют перерисовки,
+              но&nbsp;не&nbsp;пересчёта раскладки. Сюда входят
+              <code>color</code>, <code>background-color</code>,
+              <code>box-shadow</code>, <code>text-shadow</code>,
+              <code>border-color</code>, <code>filter</code> и
+              <code>clip-path</code>. Они работают плавно в&nbsp;большинстве
+              ситуаций.
+            </p>
+            <p class="article">
+              Дорогие свойства вызывают пересчёт раскладки всей страницы. Это
+              <code>width</code>, <code>height</code>, <code>padding</code>,
+              <code>margin</code>, <code>top</code>, <code>left</code> и
+              подобные. Анимировать их&nbsp;можно, но&nbsp;на&nbsp;сложных
+              страницах переходы могут подтормаживать.
+            </p>
+            <p class="article">
+              Есть свойства, которые не&nbsp;анимируются вовсе. Среди них
+              <code>display</code>, <code>font-family</code>,
+              <code>position</code> и <code>overflow</code>. Если вам нужно
+              плавно показать скрытый элемент, используйте
+              <code>opacity</code> и <code>visibility</code> вместо
+              <code>display: none</code>.
+            </p>
+          </div>
+
+          <div id="assymetry" class="M_ParagraphArticle">
+            <h3>Асимметрия входа и&nbsp;выхода <span class="copy"></span></h3>
+            <p class="article">
+              Тонкий приём, который сразу поднимает качество ховер-эффектов.
+              Идея в&nbsp;том, чтобы задать разный тайминг для наведения
+              и&nbsp;для ухода курсора.
+            </p>
+            <p class="article">
+              <code>transition</code> на&nbsp;самом элементе в&nbsp;обычном
+              состоянии управляет выходом, то&nbsp;есть возвратом
+              в&nbsp;исходное состояние, когда курсор ушёл. А
+              <code>transition</code> внутри <code>:hover</code> управляет
+              входом. Быстрый вход (0.15s) и медленный выход (0.4s) создают
+              ощущение, что элемент мгновенно откликается на&nbsp;присутствие
+              курсора, но&nbsp;расслабленно возвращается обратно.
+            </p>
+          </div>
+
+          <div id="effects" class="M_ParagraphArticle">
+            <h3>
+              Разделение триггера и&nbsp;эффекта <span class="copy"></span>
+            </h3>
+            <p class="article">
+              Если <code>:hover</code> меняет позицию самого элемента, например
+              через <code>translateY(-10px)</code>, возникает проблема на
+              границе зоны наведения. Курсор наводится на&nbsp;элемент, тот
+              уезжает вверх, курсор оказывается за&nbsp;пределами элемента,
+              ховер выключается, элемент возвращается обратно под курсор, ховер
+              включается снова. Получается дёргание.
+            </p>
+            <p class="article">
+              Решение в&nbsp;том, чтобы разделить триггер и&nbsp;эффект. Ховер
+              вешается на обёртку, которая остаётся неподвижной,
+              а&nbsp;визуальные изменения применяются к&nbsp;дочернему элементу
+              внутри неё. Обёртка не&nbsp;двигается, значит курсор
+              не&nbsp;теряет контакт, а&nbsp;дочерний элемент спокойно
+              анимируется.
+            </p>
+          </div>
+
+          <div id="base" class="M_ParagraphArticle">
+            <h3>Базовый отклик <span class="copy"></span></h3>
+            <p class="article">
+              Три свойства на&nbsp;одном элементе: лёгкое увеличение через
+              <code>scale</code>, появление тени через <code>box-shadow</code> и
+              небольшое смещение вверх через <code>translateY</code>. Вместе они
+              создают ощущение, что объект приподнимается над поверхностью. Этот
+              паттерн демонстрирует асимметрию входа и&nbsp;выхода, где вход
+              быстрый, а&nbsp;выход мягкий и&nbsp;замедленный.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                На&nbsp;элементе в&nbsp;обычном состоянии задан
+                <code>transition: all 0.4s ease</code>, который управляет
+                возвратом. Внутри <code>:hover</code> стоит
+                <code>transition: all 0.15s ease</code>, который управляет
+                реакцией на&nbsp;наведение. Разница ощущается тактильно, хотя на
+                первый взгляд кажется малозаметной.
+              </p>
+              <p class="article">
+                Три свойства перечислены в&nbsp;одном
+                <code>transform</code> через пробел:
+                <code>translateY(-6px) scale(1.03)</code>. Тень добавляется
+                отдельно через <code>box-shadow</code>, потому что она
+                не&nbsp;является частью
+                <code>transform</code> и&nbsp;анимируется как самостоятельное
+                свойство.
+              </p>
+            </details>
+          </div>
+          <basic></basic>
+
+          <div id="open" class="M_ParagraphArticle">
+            <h3>Раскрытие содержимого <span class="copy"></span></h3>
+            <p class="article">
+              Карточка, при наведении на&nbsp;которую выезжает скрытый текстовый
+              блок. Текст изначально невидим через <code>opacity: 0</code> и
+              смещён вниз через <code>translateY(20px)</code>. На&nbsp;ховере он
+              плавно поднимается на&nbsp;место и&nbsp;становится видимым. Этот
+              паттерн показывает, как ховер на&nbsp;родителе может управлять
+              дочерним элементом через конструкцию
+              <code>.card:hover .card-info</code>.
+            </p>
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                На&nbsp;элементе в&nbsp;обычном состоянии задан
+                <code>transition: all 0.4s ease</code>, который управляет
+                возвратом. Внутри <code>:hover</code> стоит
+                <code>transition: all 0.15s ease</code>, который управляет
+                реакцией на&nbsp;наведение. Разница ощущается тактильно, хотя на
+                первый взгляд кажется малозаметной.
+              </p>
+              <p class="article">
+                Ховер применяется к&nbsp;родительскому контейнеру
+                <code>.demo-reveal-card</code>, а&nbsp;визуальные изменения
+                задаются на&nbsp;дочернем элементе
+                <code>.demo-reveal-info</code> через составной селектор
+                <code>.demo-reveal-card:hover .demo-reveal-info</code>. Это и
+                есть принцип разделения триггера и&nbsp;эффекта. Обёртка
+                остаётся неподвижной, а&nbsp;внутренний блок анимируется.
+              </p>
+              <p class="article">
+                Сама карточка тоже реагирует на&nbsp;ховер лёгким затемнением
+                фона, чтобы текст на&nbsp;ней читался лучше. Два эффекта
+                на&nbsp;одном ховере создают ощущение цельного, продуманного
+                взаимодействия.
+              </p>
+            </details>
+          </div>
+
+          <reveal></reveal>
+          <div id="underline" class="M_ParagraphArticle">
+            <h3>Подчёркивание-линия <span class="copy"></span></h3>
+            <p class="article">
+              Текстовая ссылка, у&nbsp;которой при наведении вырастает
+              подчёркивание. Линия реализована через псевдоэлемент
+              <code>::after</code> с <code>scaleX(0)</code> в&nbsp;обычном
+              состоянии и <code>scaleX(1)</code> на&nbsp;ховере. Свойство
+              <code>transform-origin</code> управляет направлением роста:
+              <code>left</code> и&nbsp;линия выезжает слева,
+              <code>center</code> &mdash; расходится от&nbsp;центра,
+              <code>right</code> &mdash; зеркально справа налево.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                На&nbsp;элементе в&nbsp;обычном состоянии задан
+                <code>transition: all 0.4s ease</code>, который управляет
+                возвратом. Внутри <code>:hover</code> стоит
+                <code>transition: all 0.15s ease</code>, который управляет
+                реакцией на&nbsp;наведение. Разница ощущается тактильно, хотя на
+                первый взгляд кажется малозаметной.
+              </p>
+              <p class="article">
+                Псевдоэлемент <code>::after</code> позиционируется абсолютно
+                относительно ссылки, занимает всю ширину через
+                <code>width: 100%</code> и&nbsp;имеет высоту в&nbsp;2&mdash;3px.
+                В&nbsp;обычном состоянии он&nbsp;сжат до&nbsp;нуля через
+                <code>transform: scaleX(0)</code>.
+              </p>
+              <p class="article">
+                На <code>:hover</code> масштаб возвращается к
+                <code>scaleX(1)</code>, и&nbsp;линия вырастает вдоль текста.
+                Меняя одно лишь свойство <code>transform-origin</code>,
+                вы&nbsp;получаете три визуально разных эффекта.
+              </p>
+            </details>
+            <p class="article"></p>
+          </div>
+
+          <underline></underline>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте использовать этот приём с
+                <code>transform-origin: left</code> на&nbsp;ховере и
+                <code>transform-origin: right</code> в&nbsp;обычном состоянии.
+                Линия будет выезжать слева направо при наведении и&nbsp;утекать
+                в&nbsp;правую сторону при уходе курсора. Получается ощущение
+                непрерывного движения.
+              </p>
+            </div>
+          </div>
+
+          <div id="shadowing" class="M_ParagraphArticle">
+            <h3>Затемнение группы <span class="copy"></span></h3>
+            <p class="article">
+              Ряд элементов, при наведении на&nbsp;один из&nbsp;которых
+              остальные затемняются. Этот приём создаёт визуальный фокус
+              и&nbsp;помогает зрителю сосредоточиться на&nbsp;конкретном
+              объекте. Технически ховер применяется к&nbsp;родительскому
+              контейнеру, который снижает
+              <code>opacity</code> всех дочерних элементов,
+              а&nbsp;на&nbsp;конкретном ребёнке <code>:hover</code> возвращает
+              <code>opacity: 1</code>.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Когда курсор наводится на&nbsp;родительский контейнер, все
+                дочерние элементы получают <code>opacity: 0.3</code> через
+                селектор <code>.container:hover .item</code>. Затем конкретный
+                элемент, на&nbsp;который наведён курсор, восстанавливает свою
+                видимость через
+                <code>.container:hover .item:hover { opacity: 1 }</code>.
+              </p>
+              <p class="article">
+                Специфичность второго правила выше, поэтому оно выигрывает.
+                Важно, чтобы <code>transition</code> стоял на&nbsp;самих
+                дочерних элементах, а&nbsp;не&nbsp;на&nbsp;контейнере, тогда
+                затемнение и&nbsp;проявление будут плавными для каждого элемента
+                индивидуально.
+              </p>
+            </details>
+          </div>
+
+          <siblings></siblings>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Вместо <code>opacity</code> попробуйте
+                <code>filter: blur(2px)</code> для затемнённых элементов.
+                Размытие соседей фокусирует взгляд на&nbsp;активном элементе ещё
+                сильнее. Но&nbsp;учтите, что <code>filter: blur</code> может
+                тормозить на&nbsp;мобильных устройствах, если элементов много.
+              </p>
+            </div>
+          </div>
+
+          <div id="fill" class="M_ParagraphArticle">
+            <h3>Заливка фона <span class="copy"></span></h3>
+            <p class="article">
+              Кнопка, фон которой при наведении заливается слева направо цветом.
+              Эффект строится на&nbsp;псевдоэлементе <code>::before</code>,
+              который изначально сжат через
+              <code>scaleX(0)</code> и&nbsp;раскрывается на ховере. Текст
+              остаётся поверх заливки через <code>position: relative</code> и
+              <code>z-index</code>, чтобы не оказаться под цветным слоем.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Псевдоэлемент <code>::before</code> позиционируется абсолютно
+                внутри кнопки и&nbsp;занимает всю её&nbsp;площадь через
+                <code>inset: 0</code>. В&nbsp;обычном состоянии он&nbsp;невидим
+                через <code>transform: scaleX(0)</code> и
+                <code>transform-origin: left</code>.
+              </p>
+              <p class="article">
+                На <code>:hover</code> он&nbsp;раскрывается до
+                <code>scaleX(1)</code>, заполняя фон кнопки цветом. Текст кнопки
+                должен иметь <code>position: relative</code> и
+                <code>z-index: 1</code>, чтобы оставаться поверх псевдоэлемента.
+                Цвет текста тоже можно менять на&nbsp;ховере, чтобы
+                он&nbsp;оставался контрастным на&nbsp;новом фоне.
+              </p>
+            </details>
+          </div>
+
+          <fill></fill>
+
+          <div id="perspective" class="M_ParagraphArticle">
+            <h3>Перспективный наклон <span class="copy"></span></h3>
+            <p class="article">
+              Карточка, которая при наведении слегка наклоняется в&nbsp;3D.
+              Мягкий
+              <code>rotateX</code> и <code>rotateY</code> на&nbsp;3&ndash;5&deg;
+              создают тактильное ощущение, словно объект отзывается
+              на&nbsp;прикосновение. Этот паттерн перекликается
+              с&nbsp;Перспективным наклоном из&nbsp;модуля Трансформации,
+              но&nbsp;здесь он&nbsp;управляется ховером,
+              а&nbsp;не&nbsp;бесконечной анимацией.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Контейнер получает <code>perspective: 600px</code>, чтобы задать
+                глубину 3D-пространства. Сама карточка на
+                <code>:hover</code> получает
+                <code>transform: rotateX(-5deg) rotateY(5deg)</code>, что
+                наклоняет её&nbsp;в&nbsp;пространстве.
+              </p>
+              <p class="article">
+                Значения в&nbsp;3&ndash;5&deg; достаточно для тактильного
+                ощущения. Большие углы в&nbsp;10&ndash;15&deg; делают эффект
+                драматичнее, но&nbsp;на&nbsp;маленьких элементах могут выглядеть
+                чрезмерно.
+              </p>
+            </details>
+          </div>
+          <tilt></tilt>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Для чистого CSS-решения наклон одинаков в&nbsp;любой точке
+                карточки. Чтобы направление наклона зависело от&nbsp;позиции
+                курсора, понадобится JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <div id="magnetic" class="M_ParagraphArticle">
+            <h3>Магнитный эффект <span class="copy"></span></h3>
+            <p class="article">
+              Группа элементов, при наведении на&nbsp;один из&nbsp;которых
+              соседние отталкиваются в&nbsp;стороны. Это создаёт ощущение
+              магнитного поля, где элементы реагируют друг на&nbsp;друга.
+              Технически эффект строится на комбинаторе <code>~</code> (общий
+              сиблинг), который позволяет стилизовать элементы, следующие
+              за&nbsp;наведённым, и&nbsp;на <code>:hover</code> родителя для
+              элементов, стоящих до&nbsp;него.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Когда курсор наводится на&nbsp;элемент, все его последующие
+                соседи через комбинатор <code>~</code> получают
+                <code>translateX(15px)</code>, сдвигаясь вправо. Предыдущие
+                соседи не&nbsp;поддаются стилизации через CSS напрямую, поэтому
+                используется обходной путь: на&nbsp;ховере родителя все элементы
+                сдвигаются влево, а&nbsp;сам наведённый элемент и&nbsp;его
+                последующие соседи компенсируют этот сдвиг.
+              </p>
+              <p class="article">
+                В&nbsp;результате элементы расходятся от&nbsp;наведённого. Этот
+                приём ограничен чистым CSS и&nbsp;работает только для
+                горизонтальных рядов. Для более сложных магнитных
+                взаимодействий, где элементы отталкиваются во&nbsp;всех
+                направлениях, понадобится JavaScript.
+              </p>
+            </details>
+          </div>
+
+          <magnetic></magnetic>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Важно помнить, что комбинатор <code>~</code> работает только с
+                последующими сиблингами, которые идут после наведённого в
+                HTML-разметке. Предыдущие соседи недоступны через CSS. Если вам
+                нужно, чтобы элементы расходились симметрично, используйте трюк
+                с ховером на родителе или переключитесь на JavaScript.
+              </p>
+            </div>
+          </div>
+          <!-- end -->
+          <div class="W_ArticleButtonsNavigation margin-container">
+            <a href="text.html" class="O_ChapterButtonArrow left">
+              <div class="A_IconButton left"></div>
+              <div class="M_ChapterButton left">
+                <p class="caption-light">Назад</p>
+                <p class="caption-bold">Текст</p>
+              </div>
+            </a>
+            <!-- <a href="text.html" class="O_ChapterButtonArrow right">
+              <div class="M_ChapterButton right">
+                <p class="caption-light">Далее</p>
+                <p class="caption-bold">Текст</p>
+              </div>
+              <div class="A_IconButton right"></div>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

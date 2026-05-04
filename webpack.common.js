@@ -18,7 +18,7 @@ const pages = [
   },
   { template: 'handbook.html', chunks: ['index', 'menubar'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
-  { template: 'modules.html', chunks: ['index', 'menubar'] },
+  { template: 'modules.html', chunks: ['index', 'menubar', 'tabs-modules'] },
   {
     template: 'posters/poster.html',
     chunks: ['index', 'menubar', 'poster-page']
@@ -203,7 +203,6 @@ const pages = [
     ]
   },
 
-
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
   // Static modules
@@ -254,6 +253,7 @@ module.exports = {
     rating: './src/javascript/rating.js',
     preview: './src/javascript/preview.js',
     'poster-page': './src/javascript/poster-page.js',
+    'tabs-modules': './src/javascript/tabs-modules.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'modules-nav': './src/javascript/modules-nav.js',
     'gsap-animation': './src/javascript/gsap/animation.js'
@@ -697,6 +697,63 @@ module.exports = {
       {
         path: path.join(__dirname, './src/partials/demos/text/typewriter.html'),
         location: 'typewriter',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    // Hover
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/basic.html'),
+        location: 'basic',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/fill.html'),
+        location: 'fill',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/reveal.html'),
+        location: 'reveal',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/siblings.html'),
+        location: 'siblings',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/tilt.html'),
+        location: 'tilt',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/underline.html'),
+        location: 'underline',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/demos/hover/magnetic.html'),
+        location: 'magnetic',
         template_filename: '*',
         priority: 'replace'
       }

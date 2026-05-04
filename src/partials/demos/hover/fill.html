@@ -1,0 +1,67 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-fill">
+    <div class="demo-fill-btn">
+      <span class="demo-fill-label">Наведи</span>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-fill-btn"&gt;
+  &lt;span class="demo-fill-label"&gt;Наведи&lt;/span&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-fill-btn {
+  padding: 16px 48px;
+  border: 2px solid #fff;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+ 
+.demo-fill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: 0;
+}
+ 
+.demo-fill-btn:hover::before {
+  transform: scaleX(1);
+}
+ 
+/* Текст остаётся поверх заливки */
+.demo-fill-label {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  transition: color 0.35s ease;
+}
+ 
+.demo-fill-btn:hover .demo-fill-label {
+  color: #1a1a2e;
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

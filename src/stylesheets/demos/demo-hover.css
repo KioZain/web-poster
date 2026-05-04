@@ -1,0 +1,282 @@
+/* ═══════════════════════════════════════
+   HOVER-BASIC 
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-basic'] .demo-basic-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -70px;
+  background: var(--beautiful-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+[data-demo='hover-basic'] .demo-basic-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(116, 117, 143, 0.3);
+  /* Вход — быстрый, резкий */
+  transition: all 0.15s ease;
+}
+
+/* ═══════════════════════════════════════
+   HOVER-REVEAL
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-reveal'] .demo-reveal-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 140px;
+  margin-top: -70px;
+  margin-left: -90px;
+  border: 1px solid var(--beautiful-blue);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+[data-demo='hover-reveal'] .demo-reveal-title {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Aeonik Pro';
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--beautiful-blue);
+  transition: top 0.3s ease;
+}
+
+[data-demo='hover-reveal'] .demo-reveal-card:hover .demo-reveal-title {
+  top: 20%;
+}
+
+[data-demo='hover-reveal'] .demo-reveal-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-family: 'Aeonik Pro';
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--beautiful-blue);
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+[data-demo='hover-reveal'] .demo-reveal-card:hover .demo-reveal-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   HOVER-UNDERLINE 
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-underline'] .demo-underline-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 40px;
+}
+
+[data-demo='hover-underline'] .demo-underline-link {
+  position: relative;
+  font-family: 'Aeonik Pro';
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--beautiful-blue);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+[data-demo='hover-underline'] .demo-underline-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--beautiful-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+[data-demo='hover-underline'] .demo-underline-link:hover::after {
+  transform: scaleX(1);
+}
+
+[data-demo='hover-underline'] .demo-underline-link.from-center::after {
+  transform-origin: center;
+}
+
+[data-demo='hover-underline'] .demo-underline-link.from-right::after {
+  transform-origin: right;
+}
+
+/* ═══════════════════════════════════════
+   HOVER-DIM-SIBLINGS
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-dim-siblings'] .demo-dim-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 16px;
+}
+
+[data-demo='hover-dim-siblings'] .demo-dim-item {
+  width: 80px;
+  height: 100px;
+  background: var(--beautiful-blue);
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+[data-demo='hover-dim-siblings'] .demo-dim-row:hover .demo-dim-item {
+  opacity: 0.3;
+}
+[data-demo='hover-dim-siblings'] .demo-dim-row .demo-dim-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════
+   HOVER-FILL 
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-fill'] .demo-fill-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 48px;
+  border: 2px solid var(--beautiful-blue);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+[data-demo='hover-fill'] .demo-fill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--beautiful-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: 0;
+}
+
+[data-demo='hover-fill'] .demo-fill-btn:hover::before {
+  transform: scaleX(1);
+}
+
+[data-demo='hover-fill'] .demo-fill-label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Aeonik Pro';
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--beautiful-blue);
+  transition: color 0.35s ease;
+}
+
+[data-demo='hover-fill'] .demo-fill-btn:hover .demo-fill-label {
+  color: #1a1a2e;
+}
+
+/* ═══════════════════════════════════════
+   HOVER-TILT
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-tilt'] .demo-tilt-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -80px;
+  perspective: 600px;
+}
+
+[data-demo='hover-tilt'] .demo-tilt-card {
+  width: 100%;
+  height: 100%;
+  background: var(--beautiful-blue);
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-demo='hover-tilt'] .demo-tilt-card:hover {
+  transform: rotateX(-5deg) rotateY(5deg);
+  box-shadow: -8px 12px 30px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* ═══════════════════════════════════════
+   HOVER-MAGNETIC 
+   ═══════════════════════════════════════ */
+
+[data-demo='hover-magnetic'] .demo-magnetic-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 12px;
+}
+
+[data-demo='hover-magnetic'] .demo-magnetic-dot {
+  width: 50px;
+  height: 50px;
+  background: var(--beautiful-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+[data-demo='hover-magnetic'] .demo-magnetic-row:hover .demo-magnetic-dot {
+  transform: translateX(-8px);
+  opacity: 0.5;
+}
+
+[data-demo='hover-magnetic'] .demo-magnetic-row .demo-magnetic-dot:hover {
+  transform: translateX(0) scale(1.2);
+  opacity: 1;
+}
+
+[data-demo='hover-magnetic']
+  .demo-magnetic-row
+  .demo-magnetic-dot:hover
+  ~ .demo-magnetic-dot {
+  transform: translateX(8px);
+  opacity: 0.5;
+}

@@ -91,23 +91,24 @@
 }
 
 /* Inputs and buttons */
+
 .M_CheckBoxLabel {
   height: 26px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2px;
+  gap: var(--space-4);
+  cursor: pointer;
 
   .A_FilterLabel {
     color: var(--gray-base);
     font-size: 1rem;
+    transition: color 0.15s ease;
   }
-  &:hover {
-    cursor: pointer;
 
+  &:hover {
     .A_FilterLabel {
-      color: var(--gray-light);
-      transition: all 0.3s ease;
+      color: var(--gray-soft);
     }
   }
 }
@@ -327,6 +328,38 @@
   }
 }
 
+.M_TwoButtons {
+  gap: 0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space-12);
+
+  button.A_TabModule:first-child {
+    padding-right: 12px;
+
+    &.active {
+      padding-left: 0;
+    }
+  }
+
+  button.A_TabModule:last-child {
+    padding-left: 12px;
+
+    &.active {
+      padding-left: 12;
+    }
+  }
+
+  button.A_TabModule:first-child::after {
+    content: '';
+    width: 1px;
+    height: 24px;
+    background: var(--gray-lightest);
+    position: absolute;
+    right: 0;
+  }
+}
+
 .M_CodeTabs {
   display: flex;
   gap: var(--space-4);
@@ -411,6 +444,52 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
+
+  h3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    &:hover {
+      span.copy {
+        opacity: 0.5;
+        visibility: visible;
+      }
+    }
+
+    span.copy {
+      width: 30px;
+      height: 30px;
+      /* position: absolute; */
+      background-image: url('../../images/icons/linkChain.svg');
+      background-size: cover;
+      margin-left: 6px;
+      /* bottom: 2px; */
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.4 ease-in;
+      /* opacity: 0;
+      visibility: hidden; */
+      /* transition:
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out,
+        transform 0.3s ease-in-out; */
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  /* @media screen and (max-width: 768px) {
+    h3 {
+      span.copy {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  } */
 }
 .M_TelegramAction {
   display: flex;

@@ -1,0 +1,44 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-basic">
+    <div class="demo-basic-card"></div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-basic-card"&gt;&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-basic-card {
+  width: 140px;
+  height: 100px;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  /* Выход — медленный */
+  transition: all 0.4s ease;
+}
+ 
+.demo-basic-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  /* Вход — быстрый */
+  transition: all 0.15s ease;
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

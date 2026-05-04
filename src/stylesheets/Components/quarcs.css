@@ -148,9 +148,41 @@
   display: flex;
   align-items: flex-end;
 }
-input[type='checkbox'] {
-  background-color: red;
+
+.Q_CheckBox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1.5px solid var(--gray-lightest);
+  border-radius: 4px;
+  background-color: transparent;
+  position: relative;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  cursor: pointer;
 }
+
+.Q_CheckBox:checked {
+  background-color: var(--gray-base);
+  border-color: var(--gray-base);
+}
+
+.Q_CheckBox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border-right: 2px solid var(--white-500);
+  border-bottom: 2px solid var(--white-500);
+  transform: rotate(45deg);
+}
+
 .Q_ArticleHeroImage {
   grid-column: span 5;
   border-radius: 4px;

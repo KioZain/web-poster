@@ -243,6 +243,10 @@
   grid-column: 4/11;
 }
 
+.W_ModulesWrap.is-hidden {
+  display: none;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* NavigationMenu */

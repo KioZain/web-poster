@@ -1,0 +1,55 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-reveal">
+    <div class="demo-reveal-card">
+      <div class="demo-reveal-title">Наведи</div>
+      <div class="demo-reveal-info">
+        Ты открыл секрет, молодец! Держи огурец!
+      </div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-reveal-card"&gt;
+  &lt;div class="demo-reveal-title"&gt;Плакат&lt;/div&gt;
+  &lt;div class="demo-reveal-info"&gt;Скрытое описание&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-reveal-card {
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+ 
+.demo-reveal-info {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+ 
+/* Ховер на родителе, эффект на дочернем */
+.demo-reveal-card:hover .demo-reveal-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

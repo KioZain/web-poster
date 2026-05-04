@@ -1,0 +1,70 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="hover-magnetic">
+    <div class="demo-magnetic-row">
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+      <div class="demo-magnetic-dot"></div>
+    </div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab active" data-lang="css">CSS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="demo-magnetic-row"&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+  &lt;div class="demo-magnetic-dot"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="css"
+      ><code class="language-css">
+.demo-magnetic-dot {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+ 
+/* Ховер на контейнере сдвигает всех влево */
+.demo-magnetic-row:hover .demo-magnetic-dot {
+  transform: translateX(-8px);
+  opacity: 0.5;
+}
+ 
+/* Наведённый элемент возвращается */
+.demo-magnetic-row .demo-magnetic-dot:hover {
+  transform: translateX(0) scale(1.2);
+  opacity: 1;
+}
+ 
+/* Соседи справа сдвигаются вправо */
+.demo-magnetic-row .demo-magnetic-dot:hover ~ .demo-magnetic-dot {
+  transform: translateX(8px);
+  opacity: 0.5;
+}
+      </code></pre>
+    </div>
+  </div>
+</div>
