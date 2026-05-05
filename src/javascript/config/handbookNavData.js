@@ -6,6 +6,12 @@ import cover_1_2_1 from '../../images/handbook/covers/handbook_1-2-1.png'
 import cover_1_2_2 from '../../images/handbook/covers/handbook_1-2-2.png'
 import cover_1_3_1 from '../../images/handbook/covers/handbook_1-3-1.png'
 import cover_1_3_2 from '../../images/handbook/covers/handbook_1-3-2.png'
+//  Second part
+import cover_2_1_1 from '../../images/handbook/covers/handbook_2-1-1.webp'
+import cover_2_1_2 from '../../images/handbook/covers/handbook_2-1-2.webp'
+import cover_2_1_3 from '../../images/handbook/covers/handbook_2-1-3.webp'
+import cover_2_2_1 from '../../images/handbook/covers/handbook_2-2-1.webp'
+import cover_2_2_3 from '../../images/handbook/covers/handbook_2-2-3.webp'
 
 const handbookNavData = {
   parts: [
@@ -130,17 +136,32 @@ const handbookNavData = {
             {
               id: 'article-2-1-1',
               title: 'Как придумать тему',
-              href: '/handbook/part_2/chapter_1/finding-idea.html'
+              href: '/handbook/part_2/chapter_1/finding-idea.html',
+              cover: cover_2_1_1,
+              readingTime: 3,
+              articleType: 'Теория',
+              description:
+                'Откуда брать идеи и как проверить, что тема не слишком абстрактная и не развалится в процессе.'
             },
             {
               id: 'article-2-1-2',
               title: 'Как определить стиль',
-              href: '/handbook/part_2/chapter_1/defining-style.html'
+              href: '/handbook/part_2/chapter_1/defining-style.html',
+              cover: cover_2_1_2,
+              readingTime: 6,
+              articleType: 'Теория',
+              description:
+                'Минимализм, хаос, пиксели, коллажи и прочее, как найти стиль для развития нарратива плаката'
             },
             {
               id: 'article-2-1-3',
               title: 'Статичные и динамичные модули',
-              href: '/handbook/part_2/chapter_1/modules-overview.html'
+              href: '/handbook/part_2/chapter_1/modules-overview.html',
+              cover: cover_2_1_3,
+              readingTime: 4,
+              articleType: 'Теория',
+              description:
+                'Определяем интерактив и анимации в веб-плакате на этапе концепции'
             }
           ]
         },

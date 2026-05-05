@@ -5,7 +5,7 @@ import S_LeftNavbar from './components/S_LeftNavBar.jsx'
 import handbookNavData from './config/handbookNavData.js'
 
 // CHANGE IT
-const LAST_AVAILABLE_CHAPTER = 'chapter-2-2'
+const LAST_AVAILABLE_CHAPTER = 'chapter-2-3'
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('handbook-nav-root')

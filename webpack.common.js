@@ -165,6 +165,19 @@ const pages = [
       'preview'
     ]
   },
+  // Chapter 2
+  {
+    template: 'handbook/part_2/chapter_2/chapter_2_2.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
   // Finding idea
   {
     template: 'handbook/part_2/chapter_1/finding-idea.html',
@@ -192,6 +205,18 @@ const pages = [
   },
   {
     template: 'handbook/part_2/chapter_1/modules-overview.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_2/grid-composition.html',
     chunks: [
       'menubar',
       'index',
@@ -297,7 +322,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        test: /\.(png|jpg|jpeg|gif|webp|svg)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'images/[hash][ext][query]'

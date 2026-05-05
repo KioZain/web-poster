@@ -50,7 +50,7 @@ h3 {
   font-weight: 500;
 
   @media screen and (max-width: 768px) {
-    font-size: clamp(1.5rem, 1.0588rem + 1.9608vw, 1.75rem);
+    font-size: clamp(1.25rem, 1.0588rem + 1.9608vw, 1.75rem);
   }
 }
 
@@ -121,7 +121,7 @@ p.article {
     display: inline-block;
     height: 24px;
     /* background: rgba(122, 223, 241, 0.5); */
-    background: #e7e7e4;
+    background: rgba(0, 0, 0, 0.07);
     border-radius: 4px;
     font-family: 'Aeonik Mono';
     padding: 0px 4px;

@@ -209,6 +209,8 @@
 .W_ArticleContentContainer h2,
 .W_ArticleContentContainer h3 {
   scroll-margin-top: 8rem;
+  /* border-bottom: 1px solid var(--gray-lightest);
+  padding-bottom: var(--space-12); */
 }
 
 .W_ArticleContentContainer .M_ParagraphArticle[id] {
@@ -232,13 +234,26 @@
     grid-column: 1/-1;
   }
 
-  /* p.article:first-child {
+  p.article#first:first-child {
     background: rgba(122, 223, 241, 0.15);
-    padding: 24px;
+    padding: var(--space-24);
+    border-radius: 0.75rem;
+    border: 2px solid var(--beautiful-blue);
     font-weight: 500;
-    border-radius: 12px;
-  } */
+    height: fit-content;
+    color: var(--gray-soft);
+
+    @media screen and (max-width: 486px) {
+      padding: var(--space-0);
+      background-color: transparent;
+      border: none;
+      padding-left: 12px;
+      border-left: 2px solid var(--beautiful-blue);
+      border-radius: 0;
+    }
+  }
 }
+
 .W_ArticlePage.modules {
   grid-column: 4/11;
 }

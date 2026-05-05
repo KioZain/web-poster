@@ -6,16 +6,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Блюр",
-      "Типографика",
-      "Покадровая анимация",
-      "Ховер"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Блюр", "Типографика", "Покадровая анимация", "Ховер"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240359/5856251_w540_m2_s1.jpg",
     "ghPages": "https://evelishka228.github.io/my_second_project/",
     "github": "https://github.com/Evelishka228/my_second_project.git",
@@ -28,15 +20,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Покадровая анимация",
-      "Типографика",
-      "Микровзаимодействия"
-    ],
-    "modules": [
-      "Текст",
-      " Движение"
-    ],
+    "tags": ["Покадровая анимация", "Типографика", "Микровзаимодействия"],
+    "modules": ["Текст", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240377/5870571_w1120_m3_s1.jpg",
     "ghPages": "https://drbvrr.github.io/karier/",
     "github": "https://github.com/drbvrr/karier",
@@ -49,15 +34,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Хаос",
-      "Покадровая анимация",
-      "Геометрия"
-    ],
-    "modules": [
-      "Трансформация",
-      " Движение"
-    ],
+    "tags": ["Хаос", "Покадровая анимация", "Геометрия"],
+    "modules": ["Трансформация", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240832/5855619_w540_m2_s1.jpg",
     "ghPages": "https://vikanik08.github.io/poster_web/",
     "github": "https://github.com/vikanik08/poster_web",
@@ -70,17 +48,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Покадровая анимация",
-      "Ховер",
-      "Типографика",
-      "Геометрия"
-    ],
-    "modules": [
-      "Трансформация",
-      " Движение",
-      "Текст"
-    ],
+    "tags": ["Покадровая анимация", "Ховер", "Типографика", "Геометрия"],
+    "modules": ["Трансформация", " Движение", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240825/5855773_w540_m2_s1.jpg",
     "ghPages": "https://nadezhdafeo.github.io/SVOD_web-plakat/",
     "github": "https://github.com/NadezhdaFeo/SVOD_web-plakat",
@@ -93,15 +62,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Ховер",
-      "Покадровая анимация",
-      "Иллюстрация"
-    ],
-    "modules": [
-      " Движение",
-      "Трансформация"
-    ],
+    "tags": ["Ховер", "Покадровая анимация", "Иллюстрация"],
+    "modules": [" Движение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240889/5867348_w1120_m3_s1.jpg",
     "ghPages": "https://arinageynbikhner.github.io/GANIBALL/",
     "github": "https://github.com/ArinaGeynbikhner/GANIBALL",
@@ -114,16 +76,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Покадровая анимация",
-      "Типографика",
-      "Иллюстрация"
-    ],
-    "modules": [
-      "Трансформация",
-      "Текст",
-      "Вращение"
-    ],
+    "tags": ["Покадровая анимация", "Типографика", "Иллюстрация"],
+    "modules": ["Трансформация", "Текст", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240188/5858233_w1120_m3_s1.jpg",
     "ghPages": "https://akkalimullina.github.io/detector_pacanov/",
     "github": "https://github.com/akkalimullina/detector_pacanov",
@@ -136,17 +90,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Хаос",
-      "Ховер",
-      "Фоновые эффекты",
-      "Типографика",
-      "Геометрия"
-    ],
-    "modules": [
-      "Вращение",
-      " Движение"
-    ],
+    "tags": ["Хаос", "Ховер", "Фоновые эффекты", "Типографика", "Геометрия"],
+    "modules": ["Вращение", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240234/5855546_w540_m2_s1.jpg",
     "ghPages": "https://ddctn.github.io/synthesia/?clckid=8659b29e",
     "github": "https://github.com/ddctn/synthesia?clckid=96ee5a39",
@@ -159,18 +104,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Хаос",
-      "Фоновые эффекты",
-      "Типографика",
-      "Коллаж",
-      "Текстуры"
-    ],
-    "modules": [
-      "Текст",
-      "Вращение",
-      " Движение"
-    ],
+    "tags": ["Хаос", "Фоновые эффекты", "Типографика", "Коллаж", "Текстуры"],
+    "modules": ["Текст", "Вращение", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/241078/5870844_w540_m2_s1.jpg",
     "ghPages": "https://caesarusss.github.io/poster_code/",
     "github": "https://github.com/caesarusss/poster_code",
@@ -183,16 +118,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Покадровая анимация",
-      "Типографика",
-      "Пиксели",
-      "Текстуры"
-    ],
-    "modules": [
-      " Движение",
-      "Текст"
-    ],
+    "tags": ["Покадровая анимация", "Типографика", "Пиксели", "Текстуры"],
+    "modules": [" Движение", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/239597/5843371_w540_m2_s1.jpg",
     "ghPages": "https://daayamyau.github.io/froud-poster/",
     "github": "https://github.com/DaaYaMyau/froud-poster",
@@ -205,15 +132,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Типографика",
-      "Ховер",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение",
-      "Текст"
-    ],
+    "tags": ["Типографика", "Ховер", "Покадровая анимация"],
+    "modules": [" Движение", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240743/5864697_w1120_m3_s1.jpg",
     "ghPages": "https://nina2vol.github.io/2CUST_POSTER/",
     "github": "https://github.com/Nina2Vol/2CUST_POSTER",
@@ -226,19 +146,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Ховер",
-      "Хаос",
-      "Типографика",
-      "Курсор",
-      "Микровзаимодействия"
-    ],
-    "modules": [
-      "Вращение",
-      " Движение",
-      "Трансформация",
-      "Текст"
-    ],
+    "tags": ["Ховер", "Хаос", "Типографика", "Курсор", "Микровзаимодействия"],
+    "modules": ["Вращение", " Движение", "Трансформация", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/238939/5821221_w540_m2_s1.jpg",
     "ghPages": "https://sssonz.github.io/restro_advent_calendar/",
     "github": "https://github.com/sssonz/restro_advent_calendar",
@@ -251,15 +160,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фотографии",
-      "Покадровая анимация",
-      "Типографика"
-    ],
-    "modules": [
-      "Текст",
-      " Движение"
-    ],
+    "tags": ["Фотографии", "Покадровая анимация", "Типографика"],
+    "modules": ["Текст", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240443/5857468_h1610_m3_s1.jpg",
     "ghPages": "https://dunchekk.github.io/mod2/",
     "github": "https://github.com/Dunchekk/mod2",
@@ -272,16 +174,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Коллаж",
-      "Фотографии",
-      "Покадровая анимация",
-      "Ховер"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Коллаж", "Фотографии", "Покадровая анимация", "Ховер"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240430/5873095_w1120_m3_s1.jpg",
     "ghPages": "https://dustywrist.github.io/second_module/",
     "github": "https://github.com/dustywrist/second_module",
@@ -294,15 +188,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Хаос",
-      "Типографика"
-    ],
-    "modules": [
-      "Трансформация",
-      "Вращение",
-      " Движение"
-    ],
+    "tags": ["Хаос", "Типографика"],
+    "modules": ["Трансформация", "Вращение", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240818/5855089_w1120_m3_s1.jpg",
     "ghPages": "https://vaguesorrow.github.io/web-poster-re-no-va/",
     "github": "https://github.com/vaguesorrow/web-poster-re-no-va",
@@ -323,10 +210,7 @@
       "Блюр",
       "Ховер"
     ],
-    "modules": [
-      " Движение",
-      "Текст"
-    ],
+    "modules": [" Движение", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240890/5857921_w540_m2_s1.jpg",
     "ghPages": "https://sonyaorlovav.github.io/bassspotposter/",
     "github": "https://github.com/sonyaorlovav/bassspotposter",
@@ -339,17 +223,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Пиксели",
-      "Типографика",
-      "Покадровая анимация",
-      "Хаос"
-    ],
-    "modules": [
-      "Вращение",
-      "Текст",
-      "Трансформация"
-    ],
+    "tags": ["Пиксели", "Типографика", "Покадровая анимация", "Хаос"],
+    "modules": ["Вращение", "Текст", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/239925/5866383_w540_m2_s1.jpg",
     "ghPages": "https://dariapolushkina.github.io/armor_amour/?clckid=c506c60e",
     "github": "https://github.com/dariapolushkina/armor_amour?clckid=14bb3290",
@@ -362,20 +237,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Текст",
-      "Хаос",
-      "Текстуры",
-      "Тени",
-      "Ховер"
-    ],
-    "modules": [
-      "Трансформация",
-      "Вращение",
-      "Текст",
-      " Движение",
-      "Эффекты"
-    ],
+    "tags": ["Текст", "Хаос", "Текстуры", "Тени", "Ховер"],
+    "modules": ["Трансформация", "Вращение", "Текст", " Движение", "Эффекты"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/239446/5852673_w540_m2_s1.jpg",
     "ghPages": "https://mariakrasnaya.github.io/web_poster_animated/",
     "github": "https://github.com/MariaKrasnaya/web_poster_animated.git",
@@ -388,14 +251,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Покадровая анимация",
-      "Геометрия"
-    ],
-    "modules": [
-      " Движение"
-    ],
+    "tags": ["Иллюстрация", "Покадровая анимация", "Геометрия"],
+    "modules": [" Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/233417/5645996_w540_m2_s1.jpg",
     "ghPages": "https://alexamir07.github.io/zercalno/",
     "github": "https://github.com/alexamir07/zercalno",
@@ -408,18 +265,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Хаос",
-      "Типографика",
-      "Фотографии",
-      "Текстуры",
-      "Ховер"
-    ],
-    "modules": [
-      "Текст",
-      " Движение",
-      "Эффекты"
-    ],
+    "tags": ["Хаос", "Типографика", "Фотографии", "Текстуры", "Ховер"],
+    "modules": ["Текст", " Движение", "Эффекты"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/232648/5631840_w540_m2_s1.jpg",
     "ghPages": "https://asanka6.github.io/synapse_poster/",
     "github": "https://bit.ly/github-synapse",
@@ -432,17 +279,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Скролл",
-      "Типографика",
-      "Хаос",
-      "Пиксели"
-    ],
-    "modules": [
-      "Текст",
-      " Движение",
-      "Трансформация"
-    ],
+    "tags": ["Скролл", "Типографика", "Хаос", "Пиксели"],
+    "modules": ["Текст", " Движение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240830/5859427_w540_m2_s1.jpg",
     "ghPages": "https://yelouu.github.io/yuki/",
     "github": "https://github.com/yelouu/yuki",
@@ -463,11 +301,7 @@
       "Блюр",
       "Фотографии"
     ],
-    "modules": [
-      "Трансформация",
-      "Эффекты",
-      "Вращение"
-    ],
+    "modules": ["Трансформация", "Эффекты", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/240941/5860568_w540_m2_s1.jpg",
     "ghPages": "https://meenshery.github.io/HAHAZINO/",
     "github": "https://github.com/meenshery/HAHAZINO.git",
@@ -480,17 +314,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Хаос",
-      "Типографика",
-      "Веб-игра"
-    ],
-    "modules": [
-      "Текст",
-      "Холст",
-      "Эффекты",
-      "Ввод"
-    ],
+    "tags": ["Хаос", "Типографика", "Веб-игра"],
+    "modules": ["Текст", "Холст", "Эффекты", "Ввод"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/247658/6133609_w1120_m3_s1.jpg",
     "ghPages": "https://mariakrasnaya.github.io/ALLO_site_interactiv/",
     "github": "https://github.com/MariaKrasnaya/ALLO_site_interactiv.git",
@@ -503,17 +328,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Иллюстрация",
-      "Веб-игра",
-      "Ховер"
-    ],
-    "modules": [
-      "Звук",
-      "Холст",
-      "Перетаскивание",
-      "Курсор"
-    ],
+    "tags": ["Иллюстрация", "Веб-игра", "Ховер"],
+    "modules": ["Звук", "Холст", "Перетаскивание", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/248899/6154747_w1120_m3_s1.jpg",
     "ghPages": "https://follsqq01.github.io/WITCH-WEB-POSTER/?clckid=bd1f64a6",
     "github": "https://follsqq01.github.io/WITCH-WEB-POSTER/?clckid=bd1f64a6",
@@ -526,15 +342,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Веб-игра",
-      "Иллюстрация",
-      "Типографика"
-    ],
-    "modules": [
-      "Курсор",
-      " Движение"
-    ],
+    "tags": ["Веб-игра", "Иллюстрация", "Типографика"],
+    "modules": ["Курсор", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/247090/5995200_w540_m2_s1.jpg",
     "ghPages": "https://sssonz.github.io/Around-the-world.-Restro/",
     "github": "https://github.com/sssonz/Around-the-world.-Restro",
@@ -547,15 +356,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Иллюстрация",
-      "Ховер",
-      "Текстуры"
-    ],
-    "modules": [
-      "Курсор",
-      "Перетаскивание"
-    ],
+    "tags": ["Иллюстрация", "Ховер", "Текстуры"],
+    "modules": ["Курсор", "Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/248964/6060562_w540_m2_s1.jpg",
     "ghPages": "https://alexamir07.github.io/dom_zerkal/",
     "github": "https://github.com/alexamir07/dom_zerkal",
@@ -576,14 +378,7 @@
       "Необычная навигация",
       "Таймер"
     ],
-    "modules": [
-      "Перетаскивание",
-      "3D",
-      "Курсор",
-      "Текст",
-      "Звук",
-      "Вращение"
-    ],
+    "modules": ["Перетаскивание", "3D", "Курсор", "Текст", "Звук", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251294/6151612_w540_m2_s1.jpg",
     "ghPages": "https://arinageynbikhner.github.io/Truth-release/",
     "github": "https://github.com/ArinaGeynbikhner/Truth-release",
@@ -596,17 +391,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Многостраничный",
-    "tags": [
-      "Блюр",
-      "Коллаж",
-      "3D-модель"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "3D",
-      "Эффекты",
-      "Холст"
-    ],
+    "tags": ["Блюр", "Коллаж", "3D-модель"],
+    "modules": ["Перетаскивание", "3D", "Эффекты", "Холст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251118/6157465_w540_m2_s1.jpg",
     "ghPages": "https://nina2vol.github.io/2cust_recycle/",
     "github": "https://github.com/Nina2Vol/2cust_recycle",
@@ -619,16 +405,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Веб-игра",
-      "Ховер",
-      "Пазл",
-      "Необычная навигация"
-    ],
-    "modules": [
-      "Холст",
-      "Звук"
-    ],
+    "tags": ["Веб-игра", "Ховер", "Пазл", "Необычная навигация"],
+    "modules": ["Холст", "Звук"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251444/6160130_w540_m2_s1.jpg",
     "ghPages": "https://nadezhdafeo.github.io/SVOD_interactive_webposter/",
     "github": "https://github.com/NadezhdaFeo/SVOD_interactive_webposter",
@@ -641,16 +419,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фоновые эффекты",
-      "Типографика",
-      "Ховер"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Вращение",
-      "Курсор"
-    ],
+    "tags": ["Фоновые эффекты", "Типографика", "Ховер"],
+    "modules": ["Перетаскивание", "Вращение", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251314/6152371_w540_m2_s1.jpg",
     "ghPages": "https://akkalimullina.github.io/modul3/",
     "github": "https://github.com/akkalimullina/modul3",
@@ -663,16 +433,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Многостраничный",
-    "tags": [
-      "Фоновые эффекты",
-      "Скролл",
-      "Типографика",
-      "3D-модель"
-    ],
-    "modules": [
-      "Текст",
-      "3D"
-    ],
+    "tags": ["Фоновые эффекты", "Скролл", "Типографика", "3D-модель"],
+    "modules": ["Текст", "3D"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251335/6155489_w540_m2_s1.jpg",
     "ghPages": "https://dunchekk.github.io/mod3/",
     "github": "https://github.com/Dunchekk/mod3",
@@ -685,17 +447,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Блюр",
-      "Типографика",
-      "Фотографии",
-      "Текстуры"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Текст",
-      " Движение"
-    ],
+    "tags": ["Блюр", "Типографика", "Фотографии", "Текстуры"],
+    "modules": ["Перетаскивание", "Текст", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/248893/6165456_w540_m2_s1.jpg",
     "ghPages": "https://dustywrist.github.io/artem_third_module/",
     "github": "https://github.com/dustywrist/artem_third_module",
@@ -708,17 +461,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Веб-игра",
-      "Хаос",
-      "Фотографии",
-      "Иллюстрация"
-    ],
-    "modules": [
-      "Холст",
-      "Перетаскивание",
-      "Ввод"
-    ],
+    "tags": ["Веб-игра", "Хаос", "Фотографии", "Иллюстрация"],
+    "modules": ["Холст", "Перетаскивание", "Ввод"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251022/6142694_w540_m2_s1.jpg",
     "ghPages": "https://iriiiiinaa.github.io/Web-poster-Buzz/",
     "github": "https://github.com/Iriiiiinaa/Web-poster-Buzz",
@@ -738,10 +482,7 @@
       "Необычная навигация",
       "3D-модель"
     ],
-    "modules": [
-      "Перетаскивание",
-      "3D"
-    ],
+    "modules": ["Перетаскивание", "3D"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/247730/6018454_w540_m2_s1.jpg",
     "ghPages": "https://daayamyau.github.io/Froud-JS/",
     "github": "https://github.com/DaaYaMyau/Froud-JS",
@@ -754,18 +495,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Хаос",
-      "Типографика",
-      "Фоновые эффекты",
-      "3D-модель"
-    ],
-    "modules": [
-      "Холст",
-      "Перетаскивание",
-      "Трансформация",
-      "Текст"
-    ],
+    "tags": ["Хаос", "Типографика", "Фоновые эффекты", "3D-модель"],
+    "modules": ["Холст", "Перетаскивание", "Трансформация", "Текст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/245937/6143038_w540_m2_s1.jpg",
     "ghPages": "https://vaguesorrow.github.io/web-poster-renova/?clckid=32a4d491",
     "github": "https://github.com/vaguesorrow/web-poster-renova?clckid=f47f582d",
@@ -778,17 +509,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Пиксели",
-      "Текстуры",
-      "Фотографии",
-      "Ховер",
-      "Веб-игра"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Курсор"
-    ],
+    "tags": ["Пиксели", "Текстуры", "Фотографии", "Ховер", "Веб-игра"],
+    "modules": ["Перетаскивание", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/250912/6139699_w540_m2_s1.jpg",
     "ghPages": "https://meenshery.github.io/HAHAZINO.job/?clckid=01768193",
     "github": "https://portfolio.hse.ru/?filter=1_4_N_11_N_2024_1083_1_N_N_N#250912_6139699",
@@ -801,14 +523,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Ховер",
-      "3D-модель"
-    ],
-    "modules": [
-      "Скролл",
-      "3D"
-    ],
+    "tags": ["Ховер", "3D-модель"],
+    "modules": ["Скролл", "3D"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/251578/6165963_w540_m2_s1.jpg",
     "ghPages": "https://vikanik08.github.io/parallleex/",
     "github": "https://github.com/vikanik08/parallleex",
@@ -821,16 +537,8 @@
     "year": "2025",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фотографии",
-      "Геометрия",
-      "Таймер",
-      "Типографика"
-    ],
-    "modules": [
-      "Вращение",
-      " Движение"
-    ],
+    "tags": ["Фотографии", "Геометрия", "Таймер", "Типографика"],
+    "modules": ["Вращение", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/250899/6160361_w540_m2_s1.jpg",
     "ghPages": "https://vlad-chursin.github.io/intime_m3/",
     "github": "https://clck.ru/3JvDVz",
@@ -851,11 +559,7 @@
       "Покадровая анимация",
       "Геометрия"
     ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Трансформация"
-    ],
+    "modules": [" Движение", "Вращение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198588/4565262_w540_m2_s1.jpg",
     "ghPages": "https://anastasiiiiiiiiiiiaaa.github.io/veb-poster-final/",
     "github": "https://github.com/Anastasiiiiiiiiiiiaaa/veb-poster-final",
@@ -868,17 +572,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Геометрия",
-      "Типографика",
-      "Текстуры"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Трансформация"
-    ],
+    "tags": ["Иллюстрация", "Геометрия", "Типографика", "Текстуры"],
+    "modules": [" Движение", "Вращение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198532/4574861_w540_m2_s1.jpg",
     "ghPages": "https://vikayanina.github.io/web-poster-molva/",
     "github": "https://github.com/vikayanina/web-poster-molva",
@@ -891,16 +586,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Хаос",
-      "Фоновые эффекты",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение",
-      "Трансформация"
-    ],
+    "tags": ["Геометрия", "Хаос", "Фоновые эффекты", "Покадровая анимация"],
+    "modules": [" Движение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198674/4576340_w540_m2_s1.jpg",
     "ghPages": "https://alenavweb.github.io/cheshem/",
     "github": "https://github.com/AlenaVweb/cheshem",
@@ -921,11 +608,7 @@
       "Ховер",
       "Фоновые эффекты"
     ],
-    "modules": [
-      "Текст",
-      " Движение",
-      "Трансформация"
-    ],
+    "modules": ["Текст", " Движение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/197649/4561511_w540_m2_s1.jpg",
     "ghPages": "https://harukorakuke.github.io/WebPosterKARA/",
     "github": "https://github.com/HarukoRakuke/WebPosterKARA",
@@ -938,15 +621,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Фоновые эффекты",
-      "Геометрия"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Иллюстрация", "Фоновые эффекты", "Геометрия"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198325/4566042_w540_m2_s1.jpg",
     "ghPages": "https://kimirina.github.io/webposter/",
     "github": "https://github.com/kimirina/webposter",
@@ -959,16 +635,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Иллюстрация",
-      "Ховер",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Геометрия", "Иллюстрация", "Ховер", "Покадровая анимация"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198136/4572622_w540_m2_s1.jpg",
     "ghPages": "https://beerezina.github.io/Technopryad/",
     "github": "https://github.com/beerezina/Technopryad",
@@ -988,11 +656,7 @@
       "Покадровая анимация",
       "Типографика"
     ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Эффекты"
-    ],
+    "modules": [" Движение", "Вращение", "Эффекты"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198380/4561330_w540_m2_s1.jpg",
     "ghPages": "https://bazhenovairinaa.github.io/webplakatJETLAG/",
     "github": "https://github.com/bazhenovairinaa/webplakatJETLAG",
@@ -1013,10 +677,7 @@
       "Покадровая анимация",
       "Блюр"
     ],
-    "modules": [
-      " Движение",
-      "Трансформация"
-    ],
+    "modules": [" Движение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/195917/4564497_w540_m2_s1.jpg",
     "ghPages": "https://kaddelina.github.io/web-poster-soundtypography/",
     "github": "https://github.com/kaddelina/web-poster-soundtypography",
@@ -1029,16 +690,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Пиксели",
-      "Типографика",
-      "Текстуры"
-    ],
-    "modules": [
-      " Движение",
-      "Трансформация",
-      "Вращение"
-    ],
+    "tags": ["Пиксели", "Типографика", "Текстуры"],
+    "modules": [" Движение", "Трансформация", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199105/4577321_w540_m2_s1.jpg",
     "ghPages": "https://fovkotov.github.io/king-web-poster/",
     "github": "https://github.com/fovkotov/king-web-poster",
@@ -1051,16 +704,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Ховер",
-      "Фотографии",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Геометрия", "Ховер", "Фотографии", "Покадровая анимация"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198430/4561775_w540_m2_s1.jpg",
     "ghPages": "https://bossmaria.github.io/-360/",
     "github": "https://github.com/BossMaria/-360/tree/main",
@@ -1073,15 +718,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Ховер",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Иллюстрация", "Ховер", "Покадровая анимация"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198249/4564401_w540_m2_s1.jpg",
     "ghPages": "https://mifikaji.github.io/poster/",
     "github": "https://github.com/mifikaji/poster",
@@ -1102,12 +740,7 @@
       "Ховер",
       "Фоновые эффекты"
     ],
-    "modules": [
-      "Трансформация",
-      "Вращение",
-      " Движение",
-      "Эффекты"
-    ],
+    "modules": ["Трансформация", "Вращение", " Движение", "Эффекты"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198669/4580532_w540_m2_s1.jpg",
     "ghPages": "https://nivnao.github.io/smotrivoba/",
     "github": "https://github.com/nivnao/smotrivoba",
@@ -1120,14 +753,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Геометрия",
-      "Покадровая анимация",
-      "Ховер"
-    ],
-    "modules": [
-      " Движение"
-    ],
+    "tags": ["Геометрия", "Покадровая анимация", "Ховер"],
+    "modules": [" Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199090/4576480_w540_m2_s1.jpg",
     "ghPages": "https://chukalka.github.io/Dubuni-wed-plakat/",
     "github": "https://github.com/chukalka/Dubuni-wed-plakat",
@@ -1147,10 +774,7 @@
       "Текст",
       "Покадровая анимация"
     ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198183/4582103_h1610_m3_s1.jpg",
     "ghPages": "https://dariabusheneva.github.io/CTRL_Z/",
     "github": "https://clck.ru/37HorE",
@@ -1170,11 +794,7 @@
       "Ховер",
       "Фотографии"
     ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Курсор"
-    ],
+    "modules": [" Движение", "Вращение", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/198172/4573168_w540_m2_s1.jpg",
     "ghPages": "https://achibichik.github.io/webposter/",
     "github": "https://github.com/achibichik/webposter",
@@ -1187,14 +807,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Типографика"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Геометрия", "Типографика"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/194571/4572045_w540_m2_s1.jpg",
     "ghPages": "https://timofeevasafia.github.io/Web-poster/",
     "github": "https://clck.ru/37HSFo",
@@ -1207,15 +821,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Ховер",
-      "Вращение",
-      "Текст",
-      "Типографика"
-    ],
-    "modules": [
-      "Вращение"
-    ],
+    "tags": ["Ховер", "Вращение", "Текст", "Типографика"],
+    "modules": ["Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199145/4584635_w540_m2_s1.jpg",
     "ghPages": "https://yuexex.github.io/posterrrr/",
     "github": "https://github.com/yuexex/diskweb/",
@@ -1228,14 +835,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Типографика",
-      "Фотографии",
-      "Ховер"
-    ],
-    "modules": [
-      " Движение"
-    ],
+    "tags": ["Типографика", "Фотографии", "Ховер"],
+    "modules": [" Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199113/4577741_w540_m2_s1.jpg",
     "ghPages": "https://maxgluhov.github.io/KP1/",
     "github": "https://github.com/MaxGluhov/KP1",
@@ -1248,14 +849,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фотографии",
-      "Коллаж",
-      "Хаос"
-    ],
-    "modules": [
-      " Движение"
-    ],
+    "tags": ["Фотографии", "Коллаж", "Хаос"],
+    "modules": [" Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199096/4576771_w540_m2_s1.jpg",
     "ghPages": "https://sozochka.github.io/trasher/",
     "github": "https://github.com/sozochka/trasher",
@@ -1268,14 +863,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Геометрия",
-      "Фоновые эффекты",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      " Движение"
-    ],
+    "tags": ["Геометрия", "Фоновые эффекты", "Покадровая анимация"],
+    "modules": [" Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199172/4579757_w540_m2_s1.jpg",
     "ghPages": "https://kezend.github.io/Web-bild/",
     "github": "https://github.com/kezend/Web-bild.git",
@@ -1288,17 +877,8 @@
     "year": "2023",
     "type": "Статичный",
     "layout": "Модульный",
-    "tags": [
-      "Фотографии",
-      "Хаос",
-      "Текстуры",
-      "Геометрия"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Трансформация"
-    ],
+    "tags": ["Фотографии", "Хаос", "Текстуры", "Геометрия"],
+    "modules": [" Движение", "Вращение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/199070/4575957_h1610_m3_s1.jpg",
     "ghPages": "https://pdvachevskaya.github.io/RELOUD/",
     "github": "https://github.com/pDvachevskaya/RELOUD",
@@ -1318,10 +898,7 @@
       "Фоновые эффекты",
       "Необычная навигация"
     ],
-    "modules": [
-      "3D",
-      "Клик"
-    ],
+    "modules": ["3D", "Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210382/4933580_w540_m2_s1.jpg",
     "ghPages": "https://fovkotov.github.io/03_003/",
     "github": "https://github.com/fovkotov/03_003",
@@ -1334,17 +911,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Типографика",
-      "Блюр",
-      "Пазл"
-    ],
-    "modules": [
-      " Движение",
-      "Клик",
-      "Перетаскивание"
-    ],
+    "tags": ["Геометрия", "Типографика", "Блюр", "Пазл"],
+    "modules": [" Движение", "Клик", "Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210349/4912093_w540_m2_s1.jpg",
     "ghPages": "https://chukalka.github.io/interactive_dubuni/",
     "github": "https://github.com/chukalka/interactive_dubuni",
@@ -1357,14 +925,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Геометрия",
-      "Иллюстрация"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Курсор"
-    ],
+    "tags": ["Геометрия", "Иллюстрация"],
+    "modules": ["Перетаскивание", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210257/4908159_w540_m2_s1.jpg",
     "ghPages": "https://anyashpak.github.io/intrct-colab-farewell/?clckid=d4d2bda1",
     "github": "https://clck.ru/39jQYK",
@@ -1377,17 +939,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Иллюстрация",
-      "Веб-игра",
-      "Микровзаимодействия"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Клик"
-    ],
+    "tags": ["Геометрия", "Иллюстрация", "Веб-игра", "Микровзаимодействия"],
+    "modules": [" Движение", "Вращение", "Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210434/4917687_w540_m2_s1.jpg",
     "ghPages": "https://elina18yulun.github.io/SoberiZont/",
     "github": "https://github.com/elina18yulun/SoberiZont",
@@ -1400,19 +953,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Типографика",
-      "Веб-игра",
-      "Текст",
-      "Хаос",
-      "Необычная навигация"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Клик",
-      "Холст",
-      "Ввод"
-    ],
+    "tags": ["Типографика", "Веб-игра", "Текст", "Хаос", "Необычная навигация"],
+    "modules": ["Перетаскивание", "Клик", "Холст", "Ввод"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/209864/4923051_w540_m2_s1.jpg",
     "ghPages": "https://ghuganiks.github.io/",
     "github": "https://github.com/Ghuganiks/Ghuganiks.github.io",
@@ -1432,11 +974,7 @@
       "Коллаж",
       "Покадровая анимация"
     ],
-    "modules": [
-      "Клик",
-      "Перетаскивание",
-      " Движение"
-    ],
+    "modules": ["Клик", "Перетаскивание", " Движение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210128/4904369_w540_m2_s1.jpg",
     "ghPages": "https://larimozzza.github.io/chek1/",
     "github": "https://github.com/larimozzza/chek1",
@@ -1449,18 +987,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Текстуры",
-      "Фотографии",
-      "Веб-игра",
-      "Пиксели",
-      "Геометрия"
-    ],
-    "modules": [
-      "Клик",
-      "Вращение",
-      "Трансформация"
-    ],
+    "tags": ["Текстуры", "Фотографии", "Веб-игра", "Пиксели", "Геометрия"],
+    "modules": ["Клик", "Вращение", "Трансформация"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210268/4931981_w540_m2_s1.jpg",
     "ghPages": "https://maxgluhov.github.io/Kupol3/",
     "github": "https://github.com/MaxGluhov/Kupol3",
@@ -1473,18 +1001,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Геометрия",
-      "Пазл",
-      "Типографика"
-    ],
-    "modules": [
-      " Движение",
-      "Перетаскивание",
-      "Холст",
-      "Курсор"
-    ],
+    "tags": ["Иллюстрация", "Геометрия", "Пазл", "Типографика"],
+    "modules": [" Движение", "Перетаскивание", "Холст", "Курсор"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210605/4925669_w540_m2_s1.jpg",
     "ghPages": "https://selestinamakarova.github.io/art/",
     "github": "https://github.com/SelestinaMakarova/art",
@@ -1497,17 +1015,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фотографии",
-      "Хаос",
-      "Текстуры"
-    ],
-    "modules": [
-      " Движение",
-      "Звук",
-      "Клик",
-      "Перетаскивание"
-    ],
+    "tags": ["Фотографии", "Хаос", "Текстуры"],
+    "modules": [" Движение", "Звук", "Клик", "Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204897/4897238_w540_m2_s1.jpg",
     "ghPages": "https://github.com/SelestinaMakarova/art",
     "github": "https://github.com/sozochka/trashik",
@@ -1520,15 +1029,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Иллюстрация",
-      "Геометрия",
-      "Пазл"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение"
-    ],
+    "tags": ["Иллюстрация", "Геометрия", "Пазл"],
+    "modules": [" Движение", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/209766/4926379_w540_m2_s1.jpg",
     "ghPages": "https://dariabusheneva.github.io/CtrlZWebPoster/",
     "github": "https://github.com/DariaBusheneva/CtrlZWebPoster",
@@ -1541,15 +1043,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Иллюстрация",
-      "Пазл",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      "Вращение",
-      "Клик"
-    ],
+    "tags": ["Иллюстрация", "Пазл", "Покадровая анимация"],
+    "modules": ["Вращение", "Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204858/4924441_w540_m2_s1.jpg",
     "ghPages": "https://mifikaji.github.io/jsposter/",
     "github": "https://github.com/mifikaji/jsposter",
@@ -1562,17 +1057,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Геометрия",
-      "Типографика",
-      "Ховер"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Трансформация",
-      " Движение",
-      "Холст"
-    ],
+    "tags": ["Геометрия", "Типографика", "Ховер"],
+    "modules": ["Перетаскивание", "Трансформация", " Движение", "Холст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/207769/4922336_w540_m2_s1.jpg",
     "ghPages": "https://kezend.github.io/bild_3/",
     "github": "https://github.com/kezend/bibild",
@@ -1585,14 +1071,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Иллюстрация",
-      "Геометрия",
-      "Веб-игра"
-    ],
-    "modules": [
-      "Клик"
-    ],
+    "tags": ["Иллюстрация", "Геометрия", "Веб-игра"],
+    "modules": ["Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/205113/4742364_h1610_m3_s1.jpg",
     "ghPages": "https://achibichik.github.io/humorfactory/",
     "github": "https://github.com/achibichik/humorfactory",
@@ -1605,18 +1085,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Геометрия",
-      "Хаос",
-      "Пазл",
-      "Типографика"
-    ],
-    "modules": [
-      " Движение",
-      "Вращение",
-      "Перетаскивание",
-      "Скролл"
-    ],
+    "tags": ["Геометрия", "Хаос", "Пазл", "Типографика"],
+    "modules": [" Движение", "Вращение", "Перетаскивание", "Скролл"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204476/4898618_w540_m2_s1.jpg",
     "ghPages": "https://harukorakuke.github.io/InteractivePosterKARA/",
     "github": "https://github.com/HarukoRakuke/InteractivePosterKARA",
@@ -1629,16 +1099,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Фотографии",
-      "Типографика",
-      "Микровзаимодействия",
-      "Пазл"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Клик"
-    ],
+    "tags": ["Фотографии", "Типографика", "Микровзаимодействия", "Пазл"],
+    "modules": ["Перетаскивание", "Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/208542/4846593_w540_m2_s1.jpg",
     "ghPages": "https://nikakosareva.github.io/peremotka-s-lab/",
     "github": "https://github.com/nikakosareva/peremotka-s-lab",
@@ -1651,13 +1113,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Фотографии",
-      "Типографика"
-    ],
-    "modules": [
-      "Перетаскивание"
-    ],
+    "tags": ["Фотографии", "Типографика"],
+    "modules": ["Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/206022/4772685_w540_m2_s1.jpg",
     "ghPages": "https://fedorovvdmitry.github.io/fontseverywhere/",
     "github": "https://github.com/fedorovvdmitry/fontseverywhere",
@@ -1670,15 +1127,8 @@
     "year": "2024",
     "type": "Статичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Типографика",
-      "Геометрия",
-      "Частицы"
-    ],
-    "modules": [
-      " Движение",
-      "Эффекты"
-    ],
+    "tags": ["Типографика", "Геометрия", "Частицы"],
+    "modules": [" Движение", "Эффекты"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210537/4922578_h1610_m3_s1.jpg",
     "ghPages": "https://yunoneeds.github.io/signal/",
     "github": "https://github.com/yunoneeds/signal",
@@ -1691,14 +1141,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Иллюстрация",
-      "Необычная навигация"
-    ],
-    "modules": [
-      "Клик",
-      "Вращение"
-    ],
+    "tags": ["Иллюстрация", "Необычная навигация"],
+    "modules": ["Клик", "Вращение"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/210547/4926064_w540_m2_s1.jpg",
     "ghPages": "https://pdvachevskaya.github.io/RE-LOUD-web-poster/?clckid=fd2740d3",
     "github": "https://clck.ru/39jdtn",
@@ -1711,18 +1155,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "На весь экран",
-    "tags": [
-      "Необычная навигация",
-      "Текстуры",
-      "Фотографии",
-      "Хаос"
-    ],
-    "modules": [
-      "Звук",
-      "Вращение",
-      " Движение",
-      "Перетаскивание"
-    ],
+    "tags": ["Необычная навигация", "Текстуры", "Фотографии", "Хаос"],
+    "modules": ["Звук", "Вращение", " Движение", "Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/209592/4921608_h1610_m3_s1.jpg",
     "ghPages": "https://anastasiiiiiiiiiiiaaa.github.io/art8/",
     "github": "https://github.com/Anastasiiiiiiiiiiiaaa/art8",
@@ -1735,16 +1169,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Типографика",
-      "Покадровая анимация",
-      "Геометрия"
-    ],
-    "modules": [
-      "Трансформация",
-      " Движение",
-      "Перетаскивание"
-    ],
+    "tags": ["Типографика", "Покадровая анимация", "Геометрия"],
+    "modules": ["Трансформация", " Движение", "Перетаскивание"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204340/4915226_w540_m2_s1.jpg",
     "ghPages": "https://violochkin.github.io/viola-iosi/",
     "github": "https://github.com/Violochkin/viola-iosi",
@@ -1753,21 +1179,12 @@
   {
     "id": "recXame8CWrf5BIO6",
     "name": "Типография звука",
-    "author": "Анна Кудряшова ",
+    "author": "Аделина Кадырова",
     "year": "2024",
     "type": "Динамичный",
     "layout": "Модульный",
-    "tags": [
-      "Типографика",
-      "Ховер",
-      "Покадровая анимация"
-    ],
-    "modules": [
-      "Звук",
-      "Клик",
-      "Перетаскивание",
-      "Холст"
-    ],
+    "tags": ["Типографика", "Ховер", "Покадровая анимация"],
+    "modules": ["Звук", "Клик", "Перетаскивание", "Холст"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204383/4894598_w540_m2_s1.jpg",
     "ghPages": "https://kaddelina.github.io/shelf_project/",
     "github": "https://github.com/kaddelina/shelf_project",
@@ -1780,15 +1197,8 @@
     "year": "2024",
     "type": "Динамичный",
     "layout": "Лонгрид",
-    "tags": [
-      "Иллюстрация",
-      "Текстуры",
-      "Пазл"
-    ],
-    "modules": [
-      "Перетаскивание",
-      "Клик"
-    ],
+    "tags": ["Иллюстрация", "Текстуры", "Пазл"],
+    "modules": ["Перетаскивание", "Клик"],
     "cover": "https://portfolio.hse.ru/imagecache/userprojects/204363/4918323_w540_m2_s1.jpg",
     "ghPages": "https://kudryashhh.github.io/initeal_tea/",
     "github": "https://github.com/kudryashhh/initeal_tea",
