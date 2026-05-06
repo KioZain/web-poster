@@ -49,3 +49,9 @@
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('../fonts/AeonikPro-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
