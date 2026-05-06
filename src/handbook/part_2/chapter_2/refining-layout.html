@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доработка главного экрана</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Доработка главного экрана</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Доработка главного экрана</h1>
+            <div class="A_Tag">Дизайн</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">5 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-2-2.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Макет в&nbsp;Figma готов, структура определена, модули спланированы.
+            Прежде чем переходить к&nbsp;коду, стоит уделить отдельное внимание
+            первому экрану. Это&nbsp;то, что зритель видит в&nbsp;момент
+            загрузки страницы, ещё до&nbsp;первого скролла или клика.
+            От&nbsp;того, как выглядит и работает этот экран, зависит,
+            останется&nbsp;ли зритель дальше или закроет вкладку.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Входное окно</h3>
+            <p class="article">
+              В&nbsp;отличие от&nbsp;печатного плаката, который зритель
+              схватывает целиком за&nbsp;одно мгновение, веб-плакат раскрывается
+              постепенно. Первый экран&nbsp;&mdash; это единственная часть,
+              которую гарантированно увидит каждый. Всё, что ниже линии скролла,
+              зритель увидит только в&nbsp;том случае, если первый экран его
+              заинтересовал.
+            </p>
+            <p class="article">
+              Ярослав Субботин подчёркивает, что плакат, который просто висит на
+              стене, работает по&nbsp;другим правилам композиции. Здесь
+              мы&nbsp;должны понимать, что плакат скроллится,
+              и&nbsp;на&nbsp;каждом экране есть пятно, которое держит
+              композицию.
+            </p>
+          </div>
+
+          <figure class="A_ImageArticle">
+            <img
+              src="../../../images/handbook/main screen/detector.gif"
+              alt=""
+            />
+            <figcaption>
+              Главный экран, Дектор ровного пацана, Азалия Калимуллина , 2024
+            </figcaption>
+          </figure>
+
+          <div class="M_PreviewPoster">
+            <div class="A_PreviewHeader">
+              <p class="subtitle">Детектор ровного пацана</p>
+              <img
+                class="close"
+                src="../../../images/icons/Q_close.svg"
+                alt=""
+              />
+            </div>
+            <iframe
+              src="https://akkalimullina.github.io/detector_pacanov/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%"
+              height="480"
+              frameborder="4"
+            ></iframe>
+            <button class="A_Button secondary">
+              Посмотреть плакат
+              <img src="../../../images/icons/Q_Expand.svg" alt="" />
+            </button>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Первый экран&nbsp;&mdash; это пятно номер один, и&nbsp;оно должно
+              работать сильнее всех остальных.
+            </h4>
+          </div>
+
+          <p class="article">
+            Что должен делать первый экран? Он&nbsp;должен за&nbsp;несколько
+            секунд дать зрителю понять три вещи: о&nbsp;чём этот плакат (тема),
+            каким языком он говорит (стиль), и&nbsp;что здесь можно делать (тип
+            взаимодействия). Если на&nbsp;первом экране уже есть
+            движение&nbsp;&mdash; зритель понимает, что страница живая. Если
+            есть <code>hover</code> эффект, то&nbsp;понимает, что можно
+            взаимодействовать. Если есть визуальная подсказка о&nbsp;скролле, то
+            понимает, что внизу есть продолжение.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Проверка первого экрана</h3>
+            <p class="article">
+              <b>Первый приём</b>, который помогает оценить, насколько хорошо
+              читается ваш первый экран. Откройте макет в&nbsp;Figma, создайте
+              поверх него прямоугольник размером с&nbsp;экран и&nbsp;примените
+              к&nbsp;нему <code>background blur</code> со&nbsp;значением около
+              10&ndash;15&nbsp;пикселей. Результат покажет вам, как выглядит
+              ваша композиция в&nbsp;расфокусе.
+            </p>
+          </div>
+          <figure class="A_ImageArticle">
+            <img src="../../../images/handbook/main screen/blur.png" alt="" />
+            <figcaption></figcaption>
+          </figure>
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Если даже через размытие вы&nbsp;различаете крупные пятна,
+              направления движения и&nbsp;общий ритм&nbsp;&mdash; композиция
+              работает. Если всё сливается в однородную кашу&nbsp;&mdash;
+              вероятно, не&nbsp;хватает контраста между элементами, или все они
+              примерно одного размера и&nbsp;веса. Этот тест занимает десять
+              секунд, но&nbsp;сразу показывает проблемы с&nbsp;иерархией.
+            </p>
+            <p class="article">
+              <b>Второй полезный приём</b>&nbsp;&mdash; уменьшить масштаб макета
+              до&nbsp;25&ndash;30%. На&nbsp;таком масштабе мелкие детали
+              пропадают, и&nbsp;вы&nbsp;видите только крупную структуру. Если
+              она считывается&nbsp;&mdash; всё в&nbsp;порядке. Если превращается
+              в&nbsp;серое пятно&nbsp;&mdash; стоит поработать над контрастом
+              масштабов.
+            </p>
+          </div>
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте показать первый экран кому-нибудь на&nbsp;три
+                секунды, а потом спросить: &laquo;О&nbsp;чём это?&raquo;
+                и&nbsp;&laquo;Что тут можно делать?&raquo;. Если человек
+                затрудняется ответить, экран требует доработки. Три
+                секунды&nbsp;&mdash; примерно столько, сколько зритель тратит
+                на&nbsp;решение скроллить дальше или закрыть
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Одноэкранный формат</h3>
+            <p class="article">
+              Если ваш плакат работает в&nbsp;одноэкранном формате, то&nbsp;есть
+              без скролла, всё сказанное выше становится ещё критичнее.
+              У&nbsp;вас нет второго экрана, который мог&nbsp;бы компенсировать
+              слабый первый. Всё, что вы&nbsp;хотите сказать и&nbsp;показать,
+              должно уместиться в&nbsp;одном видимом окне браузера.
+            </p>
+          </div>
+          <figure class="A_ImageArticle">
+            <img src="../../../images/handbook/main screen/eva.png" alt="" />
+            <figcaption>NOX, Ева Ливинская, 2023</figcaption>
+          </figure>
+
+          <div class="M_PreviewPoster">
+            <div class="A_PreviewHeader">
+              <p class="subtitle">NOX</p>
+              <img
+                class="close"
+                src="../../../images/icons/Q_close.svg"
+                alt=""
+              />
+            </div>
+            <iframe
+              src="https://mireahhh.github.io/interactiveee/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%"
+              height="480"
+              frameborder="4"
+            ></iframe>
+            <button class="A_Button secondary">
+              Посмотреть плакат
+              <img src="../../../images/icons/Q_Expand.svg" alt="" />
+            </button>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Одноэкранные плакаты обычно работают через модальности &mdash;
+              всплывающие окна, переключаемые состояния, слои, которые
+              появляются поверх основного экрана. Работа NOX устроена именно
+              так: три мини-игры открываются поверх основного экрана, а&nbsp;по
+              завершении каждой зритель возвращается на&nbsp;то&nbsp;же место,
+              где накапливаются результаты.
+            </p>
+            <p class="article">
+              Здесь важно сказать про распространённую ошибку. Когда модальных
+              окон становится слишком много и&nbsp;каждое из&nbsp;них
+              перекрывает предыдущее, зритель теряет ощущение единого
+              пространства. Формально вы&nbsp;остаётесь на&nbsp;одной
+              <code>HTML</code>странице, но&nbsp;по ощущению это уже больше
+              похоже на&nbsp;сайт с&nbsp;навигацией. Как отмечают преподаватели
+              Школы дизайна, когда поверхность одной страницы открывает много
+              нового контента и&nbsp;зритель проваливается из&nbsp;одного
+              пространства в&nbsp;другое, плакат перестаёт быть плакатом.
+            </p>
+          </div>
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Хорошее правило для одноэкранного плаката: основной экран всегда
+              остаётся точкой возврата. Модальности расширяют его, а&nbsp;не
+              заменяют. Зритель может уйти в&nbsp;игру, в&nbsp;раскрывающийся
+              блок, в полноэкранную анимацию, но&nbsp;всегда возвращается
+              на&nbsp;тот&nbsp;же экран, с которого начал. Это сохраняет
+              целостность пространства.
+            </h4>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Чеклист проверки</h3>
+            <ol class="C_List">
+              <li>
+                <b>Считывается&nbsp;ли тема за&nbsp;три секунды?</b> Если нет,
+                возможно, стоит усилить заголовок или убрать отвлекающие
+                элементы.
+              </li>
+              <li>
+                <b>Есть&nbsp;ли визуальная иерархия?</b> Проверьте через
+                блюр-тест или уменьшение масштаба.
+              </li>
+              <li>
+                <b>Понятно&nbsp;ли, что страница интерактивна?</b> Если
+                на&nbsp;первом экране есть движение, hover-реакция или текстовая
+                подсказка &mdash; зритель поймёт, что здесь можно что-то делать.
+              </li>
+              <li>
+                <b>Понятно&nbsp;ли, что внизу есть продолжение?</b> Для
+                скроллируемых плакатов это критически важно. Обрезанный элемент,
+                стрелочка вниз или просто незавершённая композиция&nbsp;&mdash;
+                любая подсказка, что за&nbsp;границей экрана что-то есть.
+              </li>
+              <li>
+                <b
+                  >Если это одноэкранный плакат,
+                  то&nbsp;не&nbsp;перегружен&nbsp;ли экран модальностями?</b
+                >
+                Убедитесь, что основной экран остаётся якорем, а&nbsp;не
+                промежуточным слоем.
+              </li>
+            </ol>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://practicaltypography.com/"
+                  >Мэтью Баттерик о визуальной иерархии на экране</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-2-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

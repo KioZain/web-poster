@@ -21,6 +21,7 @@
     position: absolute;
     width: 140px;
     height: 90px;
+    line-height: 0.8;
   }
   h1 {
     line-height: 40px;
@@ -888,7 +889,7 @@ button.A_Tab {
     width: 100%;
     object-fit: cover;
     /* border-radius: 4px; */
-    aspect-ratio: 5 / 3;
+    /* aspect-ratio: 5 / 3;s */
   }
   img.poster {
     width: 100%;

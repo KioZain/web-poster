@@ -10,7 +10,9 @@ import cover_1_3_2 from '../../images/handbook/covers/handbook_1-3-2.png'
 import cover_2_1_1 from '../../images/handbook/covers/handbook_2-1-1.webp'
 import cover_2_1_2 from '../../images/handbook/covers/handbook_2-1-2.webp'
 import cover_2_1_3 from '../../images/handbook/covers/handbook_2-1-3.webp'
+// --
 import cover_2_2_1 from '../../images/handbook/covers/handbook_2-2-1.webp'
+import cover_2_2_2 from '../../images/handbook/covers/handbook_2-2-2.webp'
 import cover_2_2_3 from '../../images/handbook/covers/handbook_2-2-3.webp'
 
 const handbookNavData = {
@@ -173,17 +175,33 @@ const handbookNavData = {
             {
               id: 'article-2-2-1',
               title: 'Сетка и композиция',
-              href: '/handbook/part_2/chapter_2/grid-composition.html'
+              href: '/handbook/part_2/chapter_2/grid-composition.html',
+              cover: cover_2_1_2,
+              readingTime: 6,
+              articleType: 'Дизайн',
+              description:
+                'Концептуальный и функциональный обзор сеток в вебе и композиции в веб-плакатах'
+
             },
             {
               id: 'article-2-2-2',
               title: 'Доработка главного экрана',
-              href: '/handbook/part_2/chapter_2/refining-layout.html'
+              href: '/handbook/part_2/chapter_2/refining-layout.html',
+              cover: cover_2_1_2,
+              readingTime: 6,
+              articleType: 'Дизайн',
+              description:
+                'О важности первого экрана и какие особенности стоит учитывать при его разработке'
             },
             {
               id: 'article-2-2-3',
               title: 'Адаптивный и респонсивный дизайн',
-              href: '/handbook/part_2/chapter_2/adaptive-responsive.html'
+              href: '/handbook/part_2/chapter_2/adaptive-responsive.html',
+              cover: cover_2_1_2,
+              readingTime: 6,
+              articleType: 'Дизайн',
+              description:
+                'В чём разница между подходами и зачем нужны адаптивы. Сколько версий делать и какие брейкпоинты выбирать.'
             },
             {
               id: 'article-2-2-4',

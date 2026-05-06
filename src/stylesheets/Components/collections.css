@@ -16,6 +16,37 @@
   gap: var(--space-12);
   width: max-content;
 }
+ol.C_List {
+  list-style: none;
+  counter-reset: c-list-counter;
+  padding: 0;
+  margin: 0;
+
+  li {
+    counter-increment: c-list-counter;
+    position: relative;
+    padding-left: 1.25em;
+    font-size: 1.125rem;
+    line-height: 150%;
+
+    & + li {
+      margin-top: 1em;
+    }
+
+    &::before {
+      content: counter(c-list-counter) '.';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-variant-numeric: tabular-nums;
+      color: inherit;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: clamp(1rem, 0.89rem + 0.49vw, 1.125rem);
+    }
+  }
+}
 
 .С_MetaDataPoster {
   display: flex;
@@ -81,6 +112,15 @@
 
     &::-webkit-scrollbar {
       background: transparent;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-right: 0;
+      gap: var(--space-32);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
