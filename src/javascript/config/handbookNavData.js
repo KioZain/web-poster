@@ -14,6 +14,8 @@ import cover_2_1_3 from '../../images/handbook/covers/handbook_2-1-3.webp'
 import cover_2_2_1 from '../../images/handbook/covers/handbook_2-2-1.webp'
 import cover_2_2_2 from '../../images/handbook/covers/handbook_2-2-2.webp'
 import cover_2_2_3 from '../../images/handbook/covers/handbook_2-2-3.webp'
+import cover_2_2_4 from '../../images/handbook/covers/handbook_2-2-4.webp'
+import cover_2_2_5 from '../../images/handbook/covers/handbook_2-2-5.webp'
 
 const handbookNavData = {
   parts: [
@@ -181,7 +183,6 @@ const handbookNavData = {
               articleType: 'Дизайн',
               description:
                 'Концептуальный и функциональный обзор сеток в вебе и композиции в веб-плакатах'
-
             },
             {
               id: 'article-2-2-2',
@@ -206,17 +207,22 @@ const handbookNavData = {
             {
               id: 'article-2-2-4',
               title: 'Разработка адаптивов',
-              href: '/handbook/part_2/chapter_2/creating-breakpoints.html'
+              href: '/handbook/part_2/chapter_2/creating-breakpoints.html',
+              articleType: 'Дизайн',
+              cover: 'cover_2_2_4',
+              readingTime: 4,
+              description:
+                'Финальная доработка адаптивов перед вёрсткой. Что можно упростить, что обязательно сохранить'
             },
             {
               id: 'article-2-2-5',
               title: 'Подготовка графики и фотографий',
-              href: '/handbook/part_2/chapter_2/preparing-assets.html'
-            },
-            {
-              id: 'article-2-2-6',
-              title: 'Какой подход к вёрстке выбрать',
-              href: '/handbook/part_2/chapter_2/choosing-approach.html'
+              href: '/handbook/part_2/chapter_2/preparing-assets.html',
+              articleType: 'Дизайн',
+              cover: 'cover_2_2_4',
+              readingTime: 4,
+              description:
+                'Форматы изображений, оптимизация веса, что нужно сделать до переноса в код'
             }
           ]
         }

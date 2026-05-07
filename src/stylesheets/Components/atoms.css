@@ -29,6 +29,7 @@
 }
 
 .A_VideoContainer {
+  visibility: hidden;
   max-width: 720px;
   padding: 8px;
   /* width: 100%; */

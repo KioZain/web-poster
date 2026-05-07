@@ -114,6 +114,9 @@
 #buttonsGsap {
   opacity: 0;
 }
+.text-go-gsap {
+  visibility: hidden;
+}
 
 .S_IntroAbout {
   display: flex;

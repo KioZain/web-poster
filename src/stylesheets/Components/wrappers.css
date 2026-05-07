@@ -80,6 +80,11 @@
   align-items: center;
   position: relative;
 }
+
+.W_HeadingContainer .Q_HandleSquare {
+  visibility: hidden;
+}
+
 .W_AboutCards {
   width: 100%;
   max-width: var(--index-max);

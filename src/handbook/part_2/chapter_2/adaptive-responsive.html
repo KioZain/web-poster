@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доработка главного экрана</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Адаптивный и респонсивный дизайн</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Адаптивный и респонсивный дизайн</h1>
+            <div class="A_Tag">Дизайн</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">5 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-2-3.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Ваш плакат будут смотреть на&nbsp;разных экранах. Широкий монитор,
+            ноутбук, планшет, телефон, и&nbsp;на&nbsp;каждом из&nbsp;них
+            страница должна выглядеть осмысленно. В&nbsp;веб-дизайне существуют
+            два подхода к&nbsp;тому, как обеспечить это, и&nbsp;они часто
+            путаются между собой. Давайте разберёмся, чем отличается
+            респонсивный дизайн от&nbsp;адаптивного и какой из&nbsp;них лучше
+            подходит для веб-плаката.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Респонсивный дизайн</h3>
+            <p class="article">
+              <b>Респонсивный (responsive) дизайн</b>&nbsp;&mdash; это подход,
+              при котором макет плавно подстраивается под любую ширину экрана.
+              Колонки, изображения и&nbsp;текстовые блоки сжимаются
+              и&nbsp;перестраиваются непрерывно, без скачков. Если
+              вы&nbsp;возьмёте окно браузера и&nbsp;начнёте медленно его сужать,
+              содержимое будет плавно перетекать, адаптируясь к&nbsp;каждому
+              промежуточному размеру.
+            </p>
+            <p class="article">
+              Технически это достигается через относительные единицы (проценты,
+              <code>vw</code>, <code>fr</code>) и&nbsp;CSS-свойства
+              <code>Flexbox</code> и <code>Grid</code>. Элементы задаются не
+              фиксированной шириной в&nbsp;пикселях, а&nbsp;пропорциональной.
+              Например, &laquo;занимай&nbsp;50% ширины контейнера&raquo; или
+              &laquo;занимай одну долю из&nbsp;трёх&raquo;. Когда контейнер
+              меняет размер, элементы меняются вместе с&nbsp;ним.
+            </p>
+            <p class="article">
+              Для веб-плаката респонсивный подход означает, что вы&nbsp;создаёте
+              одну раскладку, которая сама подстраивается. Это удобно
+              и&nbsp;требует минимальной поддержки, но&nbsp;ограничивает
+              контроль: вы&nbsp;не&nbsp;можете точно определить, как выглядит
+              плакат на&nbsp;конкретном устройстве, потому что промежуточных
+              состояний бесконечно много.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Адаптивный дизайн</h3>
+            <p class="article">
+              <b>Адаптивный (adaptive) дизайн</b> работает иначе. Вместо плавной
+              подстройки вы&nbsp;создаёте несколько фиксированных раскладок,
+              каждая из&nbsp;которых рассчитана на&nbsp;определённый диапазон
+              ширины экрана. Когда зритель открывает страницу, браузер
+              определяет ширину окна и отображает подходящую версию. Между этими
+              версиями нет плавного перехода&nbsp;&mdash; макет
+              &laquo;переключается&raquo; при пересечении заданной точки.
+            </p>
+            <p class="article">
+              Этот подход даёт больше контроля. Вы&nbsp;точно знаете, как
+              выглядит плакат на&nbsp;десктопе, планшете и&nbsp;телефоне, потому
+              что для каждого нарисовали отдельную раскладку. Но&nbsp;это
+              и&nbsp;требует больше работы, ведь по&nbsp;сути
+              вы&nbsp;проектируете не&nbsp;один макет, а&nbsp;несколько.
+            </p>
+          </div>
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Большинство современных веб-проектов, включая веб-плакаты,
+                используют гибридный подход. Основа строится респонсивно, на
+                относительных единицах и&nbsp;гибких сетках.
+                А&nbsp;в&nbsp;нескольких точках (брейкпоинтах) через
+                <code>media queries</code> вносятся адаптивные
+                корректировки&nbsp;&mdash; например, убирается боковая колонка
+                или меняется количество колонок в&nbsp;сетке
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Брейкпоинты</h3>
+            <p class="article">
+              Стандартный набор, от которого можно отталкиваться, выглядит так.
+            </p>
+            <ol class="C_List">
+              <li><b>Мобильные экраны </b>— до 480 пикселей</li>
+              <li>
+                <b>Крупные мобильные и маленькие планшеты</b> — от 481 до 768
+                пикселей.
+              </li>
+              <li><b>Планшеты</b>— от 769 до 1024 пикселей.</li>
+              <li><b>Десктоп</b>— от 1025 пикселей и выше</li>
+              <li><b>Широкие мониторы</b> — от 1440 пикселей.</li>
+            </ol>
+
+            <p class="article">
+              Но&nbsp;здесь есть тонкость. Хорошая практика&nbsp;&mdash; ставить
+              брейкпоинты не по&nbsp;стандартным значениям устройств,
+              а&nbsp;по&nbsp;точкам, где ваш конкретный макет начинает
+              &laquo;ломаться&raquo;. Откройте плакат в&nbsp;браузере и плавно
+              сужайте окно. В&nbsp;какой-то момент текст станет слишком мелким,
+              элементы начнут налезать друг на&nbsp;друга или композиция
+              потеряет смысл. Вот в&nbsp;этих точках и&nbsp;нужны брейкпоинты.
+            </p>
+            <p class="article">
+              Для веб-плаката в&nbsp;учебном контексте обычно достаточно
+              двух-трёх брейкпоинтов. Полноценная версия для десктопа
+              (от&nbsp;1024&nbsp;пикселей), упрощённая для планшета
+              (768&ndash;1023&nbsp;пикселя) и&nbsp;мобильная версия (до
+              767&nbsp;пикселей). Студенческие работы редко требуют пяти-шести
+              точек переключения, как коммерческие сайты.
+            </p>
+          </div>
+
+          <figure class="A_ImageArticle">
+            <img
+              src="../../../images/handbook/adaptive responsive/adaptive.png"
+              alt="Картинка"
+            />
+            <figcaption>
+              Принцип адаптивного дизайна, Карьер, Дарья Кочеткова, 2024
+            </figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>Практические советы</h3>
+            <p class="article">
+              Несколько конкретных рекомендаций, которые сэкономят время.
+            </p>
+            <p class="article">
+              Начинайте с&nbsp;мобильной версии. Подход mobile-first
+              подразумевает, что вы&nbsp;сначала пишете CSS для самого
+              маленького экрана, а&nbsp;потом добавляете через media queries
+              правила для более широких. Это проще, чем идти в&nbsp;обратную
+              сторону, потому что добавлять элементы легче, чем убирать.
+              На&nbsp;маленьком экране вы&nbsp;оставляете только самое важное,
+              а&nbsp;на&nbsp;большом&nbsp;&mdash; разворачиваете.
+            </p>
+            <p class="article">
+              Используйте относительные единицы. Вместо
+              <code>width:300px</code> пишите <code>width:50%</code> или
+              <code>width:30vw</code>. Вместо <code>font-size:16px</code> для
+              заголовков попробуйте
+              <code>font-size:clamp(1.5rem, 4vw, 3rem)</code>, который
+              масштабирует текст плавно в&nbsp;заданном диапазоне. Это снижает
+              количество ручных корректировок в <code>media queries</code>.
+            </p>
+            <p class="article">
+              А&nbsp;также держите памятку с&nbsp;готовыми брейкпоинтами для
+              адаптивного дизайна.
+            </p>
+          </div>
+
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab active" data-lang="css">CSS</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock active"
+                data-lang="css"
+              ><code class="language-css">
+@media screen and (min-width: 1280px) {
+  /* Desktop */
+}
+
+@media screen and (max-width: 1279px){
+  /* iPad Landscape */
+}
+
+@media screen and (max-width: 1024px){
+  /* iPad Portrait */
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  /* iPhone Portrait */
+}
+
+@media screen and (max-device-width: 480px) and (orientation: landscape) {
+  /* iPhone Landscape */
+}
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Для веб-плаката адаптивность&nbsp;&mdash; это вопрос уважения
+              к&nbsp;зрителю. Если человек открывает ваш плакат на&nbsp;телефоне
+              и&nbsp;видит нечитаемую кашу, он&nbsp;не&nbsp;будет искать
+              десктоп, чтобы посмотреть как задумано. Он просто закроет вкладку.
+              Даже минимальная адаптация делает работу доступной для аудитории,
+              которая всё чаще смотрит на&nbsp;мир через экран телефона.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Что выбрать</h3>
+            <p class="article">
+              Если ваш плакат построен на&nbsp;блочной структуре с&nbsp;чёткими
+              секциями, респонсивный подход на&nbsp;Flexbox или Grid
+              с&nbsp;парой брейкпоинтов будет достаточным. Секции перестроятся
+              из&nbsp;нескольких колонок в&nbsp;одну, и содержимое останется
+              читаемым.
+            </p>
+            <p class="article">
+              Если плакат хаотичный или непрерывный, с&nbsp;абсолютным
+              позиционированием и&nbsp;viewport-единицами, он&nbsp;будет
+              масштабироваться пропорционально по&nbsp;умолчанию. Но&nbsp;стоит
+              проверить, не&nbsp;становятся&nbsp;ли мелкие элементы нечитаемыми
+              на&nbsp;маленьких экранах. Иногда одного брейкпоинта на
+              <code>768</code> пикселей достаточно, чтобы укрупнить текст
+              и&nbsp;увеличить отступы для мобильного просмотра.
+            </p>
+            <p class="article">
+              Если плакат одноэкранный, адаптивность особенно важна, потому что
+              всё содержимое должно уместиться в&nbsp;одном видимом окне
+              на&nbsp;любом устройстве. Здесь viewport-единицы <code>vw</code>,
+              <code>vh</code>vh&nbsp;ваши лучшие друзья, поскольку они
+              привязывают размеры элементов к&nbsp;размеру окна автоматически.
+            </p>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design"
+                  >Гайд по респонсивному дизайну от MDN</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://responsivedesignchecker.com/"
+                  >Быстрая проверка адаптивов через ссылку</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://lukew.com/ff/entry.asp?933"
+                  >Статья от автора mobile-first подхода</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-2-3"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>
