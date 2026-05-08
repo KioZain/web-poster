@@ -122,8 +122,8 @@ const W = container.offsetWidth
 const H = container.offsetHeight
 const sq = 6
 const gap = 2
-const fast = 0.6
-const slow = 0.9
+const fast = 0.4
+const slow = 0.6
 
 gsap.set('#lt', { x: -(sq + gap), y: -(sq + gap), visibility: 'visible' })
 gsap.set('#rt', { x: gap, y: -(sq + gap), visibility: 'visible' })

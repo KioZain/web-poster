@@ -263,6 +263,18 @@ const pages = [
       'preview'
     ]
   },
+  {
+    template: 'handbook/part_2/chapter_2/preparing-assets.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 

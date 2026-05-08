@@ -227,3 +227,22 @@ section.blurred {
     background: rgba(255, 255, 255, 0.1);
   }
 }
+.toaster {
+  position: absolute;
+  background-image: url('../images/handbook/preparing\ assets/toaster-sprite.gif');
+  width: 64px;
+  height: 64px;
+  animation: flap 0.4s steps(4) infinite alternate;
+  transform: translateX(-45%);
+  left: 45%;
+  top: 35%;
+  transform: scale(1.5);
+}
+@keyframes flap {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -256px;
+  }
+}

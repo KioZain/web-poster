@@ -48,9 +48,9 @@
     margin-top: var(--space-24);
   }
 
-  .W_ArticleButtonsNavigation {
+  /* .W_ArticleButtonsNavigation {
     margin-top: auto;
-  }
+  } */
 }
 
 @container chapter (width < 638px) {

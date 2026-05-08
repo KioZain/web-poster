@@ -178,7 +178,7 @@ const handbookNavData = {
               id: 'article-2-2-1',
               title: 'Сетка и композиция',
               href: '/handbook/part_2/chapter_2/grid-composition.html',
-              cover: cover_2_1_2,
+              cover: cover_2_2_1,
               readingTime: 6,
               articleType: 'Дизайн',
               description:
@@ -188,7 +188,7 @@ const handbookNavData = {
               id: 'article-2-2-2',
               title: 'Доработка главного экрана',
               href: '/handbook/part_2/chapter_2/refining-layout.html',
-              cover: cover_2_1_2,
+              cover: cover_2_2_2,
               readingTime: 6,
               articleType: 'Дизайн',
               description:
@@ -198,7 +198,7 @@ const handbookNavData = {
               id: 'article-2-2-3',
               title: 'Адаптивный и респонсивный дизайн',
               href: '/handbook/part_2/chapter_2/adaptive-responsive.html',
-              cover: cover_2_1_2,
+              cover: cover_2_2_2,
               readingTime: 6,
               articleType: 'Дизайн',
               description:
@@ -209,7 +209,7 @@ const handbookNavData = {
               title: 'Разработка адаптивов',
               href: '/handbook/part_2/chapter_2/creating-breakpoints.html',
               articleType: 'Дизайн',
-              cover: 'cover_2_2_4',
+              cover: cover_2_2_4,
               readingTime: 4,
               description:
                 'Финальная доработка адаптивов перед вёрсткой. Что можно упростить, что обязательно сохранить'
@@ -219,7 +219,7 @@ const handbookNavData = {
               title: 'Подготовка графики и фотографий',
               href: '/handbook/part_2/chapter_2/preparing-assets.html',
               articleType: 'Дизайн',
-              cover: 'cover_2_2_4',
+              cover: cover_2_2_5,
               readingTime: 4,
               description:
                 'Форматы изображений, оптимизация веса, что нужно сделать до переноса в код'
