@@ -226,6 +226,7 @@ const handbookNavData = {
             }
           ]
         }
+        // chapter 3
         // {
         //   id: 'chapter-2-3',
         //   title: 'Вёрстка веб-плаката',
@@ -255,9 +256,10 @@ const handbookNavData = {
         //       id: 'article-2-3-5',
         //       title: 'Вёрстка адаптивов',
         //       href: '/handbook/part_2/chapter_3/media-quireies.html'
-        //     },
+        //     }
         //   ]
         // },
+        // chapter 4
         // {
         //   id: 'chapter-2-4',
         //   title: 'Анимации в CSS',
@@ -280,6 +282,7 @@ const handbookNavData = {
         //     }
         //   ]
         // },
+        // chapter 5
         // {
         //   id: 'chapter-2-5',
         //   title: 'Интерактив с JavaScript',
@@ -302,6 +305,7 @@ const handbookNavData = {
         //     }
         //   ]
         // },
+        // ---------chapter 6----------
         // {
         //   id: 'chapter-2-6',
         //   title: 'Публикация и продвижение',

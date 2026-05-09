@@ -275,6 +275,80 @@ const pages = [
       'preview'
     ]
   },
+  // Chapter 2
+
+  {
+    template: 'handbook/part_2/chapter_3/chapter_2_3.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/grid-flex-absolute.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/project-structure.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/units.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/media-queries.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/working-with-svg.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
