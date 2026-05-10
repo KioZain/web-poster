@@ -1,0 +1,257 @@
+[data-demo='svg-inline'] {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+[data-demo='svg-inline'] .star {
+  fill: #fe3904;
+  stroke: none;
+}
+
+[data-demo='svg-inline'] .circle-outline {
+  fill: none;
+  stroke: #9eff70;
+  stroke-width: 3;
+}
+
+[data-demo='svg-inline'] .rect-dual {
+  fill: #7adff1;
+  /* stroke: #fe3904; */
+  stroke-width: 2;
+}
+
+[data-demo='svg-hover-fill'] {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+[data-demo='svg-hover-fill'] .hover-shape {
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+
+[data-demo='svg-hover-fill'] .hover-circle {
+  fill: #fe3904;
+}
+
+[data-demo='svg-hover-fill'] .hover-circle:hover {
+  fill: #9eff70;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+[data-demo='svg-hover-fill'] .hover-rect {
+  fill: none;
+  stroke: #7adff1;
+  stroke-width: 3;
+}
+
+[data-demo='svg-hover-fill'] .hover-rect:hover {
+  fill: #7adff1;
+  stroke: black;
+}
+
+[data-demo='svg-hover-fill'] .hover-star {
+  fill: #fe96e4;
+  transform-origin: center;
+}
+
+[data-demo='svg-hover-fill'] .hover-star:hover {
+  fill: #fe3904;
+  transform: rotate(36deg);
+  transform-origin: center;
+}
+
+[data-demo='svg-hover-transform'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+[data-demo='svg-hover-transform'] .icon-plus .bg {
+  fill: black;
+  transition: fill 0.3s ease;
+}
+
+[data-demo='svg-hover-transform'] .icon-plus .cross {
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition:
+    stroke 0.3s ease,
+    transform 0.3s ease;
+  transform-origin: 12px 12px;
+}
+
+[data-demo='svg-hover-transform'] .icon-plus:hover .bg {
+  fill: #fe3904;
+}
+
+[data-demo='svg-hover-transform'] .icon-plus:hover .cross {
+  transform: rotate(90deg);
+}
+
+[data-demo='svg-keyframes-pulse'] {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+[data-demo='svg-keyframes-pulse'] .pulse-circle {
+  fill: #fe3904;
+  animation: svg-pulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes svg-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+[data-demo='svg-keyframes-pulse'] .spin-rect {
+  fill: #9eff70;
+  animation: svg-spin 4s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes svg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[data-demo='svg-keyframes-pulse'] .bounce-star {
+  fill: #7adff1;
+  animation: svg-bounce 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes svg-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+[data-demo='svg-line-draw'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+[data-demo='svg-line-draw'] .draw-path {
+  fill: none;
+  stroke: #fe3904;
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: svg-draw 3s ease forwards infinite alternate;
+}
+
+@keyframes svg-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+[data-demo='svg-line-draw-hover'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+
+  p {
+    color: #fe3904;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    top: 32px;
+    text-align: center;
+  }
+}
+
+[data-demo='svg-line-draw-hover'] .draw-hover-path {
+  fill: none;
+  stroke: #fe3904;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1.5s ease;
+}
+
+[data-demo='svg-line-draw-hover'] svg:hover .draw-hover-path {
+  stroke-dashoffset: 0;
+}
+
+[data-demo='svg-combo'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #111;
+}
+
+[data-demo='svg-combo'] .combo-bg {
+  fill: #222;
+  transition: fill 0.4s ease;
+}
+
+[data-demo='svg-combo'] .combo-ring {
+  fill: none;
+  stroke: #fe3904;
+  stroke-width: 2;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition:
+    stroke-dashoffset 0.8s ease,
+    stroke 0.4s ease;
+  transform-origin: center;
+}
+
+[data-demo='svg-combo'] .combo-icon {
+  fill: #666;
+  transition:
+    fill 0.3s ease,
+    transform 0.4s ease;
+  transform-origin: center;
+}
+
+[data-demo='svg-combo'] svg:hover .combo-bg {
+  fill: #333;
+}
+
+[data-demo='svg-combo'] svg:hover .combo-ring {
+  stroke-dashoffset: 0;
+  stroke: #9eff70;
+}
+
+[data-demo='svg-combo'] svg:hover .combo-icon {
+  fill: white;
+  transform: scale(1.1);
+}

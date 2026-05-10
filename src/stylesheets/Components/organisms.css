@@ -745,13 +745,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: var(--space-12);
+  padding: var(--space-16);
 }
 .O_CodeContent {
   display: flex;
   flex-direction: row;
   gap: var(--space-12);
-  padding: 0 var(--space-12) var(--space-12);
+  padding: 0 var(--space-16) var(--space-16);
 
   & .A_CodeBlock {
     display: none;

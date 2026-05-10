@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Организация проекта</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps"
+              >Относительные и абсолютные величины</span
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Относительные &NoBreak;и абсолютные величины</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">7 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Когда вы&nbsp;задаёте элементу ширину, высоту или размер шрифта, вы
+            указываете число и&nbsp;единицу измерения. От&nbsp;выбора единицы
+            зависит, как элемент поведёт себя на&nbsp;разных экранах. Одни
+            единицы фиксированные и не&nbsp;меняются, другие подстраиваются под
+            размер окна или родительского блока. В&nbsp;этой статье разберём,
+            какие единицы существуют и&nbsp;когда какую использовать
+            в&nbsp;контексте веб-плаката.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Пиксели (px)</h3>
+            <p class="article">
+              Пиксель <code>px</code> &mdash; самая понятная единица. Один
+              пиксель равен одной точкой на&nbsp;экране. Если вы&nbsp;написали
+              <code>width: 200px</code>, блок будет шириной ровно 200 пикселей
+              на&nbsp;любом устройстве и&nbsp;при любом размере окна.
+              Он&nbsp;не&nbsp;сожмётся на телефоне и&nbsp;не&nbsp;растянется
+              на&nbsp;мониторе.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-px">
+              <div class="box-px-small">100&times;100&nbsp;px</div>
+              <div class="box-px-medium">200&times;100&nbsp;px</div>
+              <div class="box-px-large">300&times;100&nbsp;px</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box-small"&gt;100×100 px&lt;/div&gt;
+&lt;div class="box-medium"&gt;200×100 px&lt;/div&gt;
+&lt;div class="box-large"&gt;300×100 px&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.box-small {
+  width: 100px;
+  height: 100px;
+}
+ 
+.box-medium {
+  width: 200px;
+  height: 100px;
+}
+/* Пиксели — фиксированные.
+   Сужай окно — блоки не изменятся. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Пиксели хороши там, где нужна предсказуемость. Толщина рамки,
+              размер иконки, ширина промежутка между элементами удобно задавать
+              в&nbsp;пикселях, потому что эти значения не&nbsp;должны меняться
+              от&nbsp;экрана к экрану.
+            </p>
+            <p class="article">
+              Проблема начинается, когда пикселями задаётся всё подряд. Блок
+              шириной
+              <code>800px</code> красиво смотрится на&nbsp;десктопе,
+              но&nbsp;на&nbsp;телефоне шириной
+              <code>390px</code> он&nbsp;вылезет за&nbsp;край экрана. Заголовок
+              размером <code>64px</code> будет доминировать на&nbsp;десктопе,
+              но&nbsp;на мобильном займёт три строки и&nbsp;превратится
+              в&nbsp;кашу. Пиксели не адаптируются, и&nbsp;это
+              их&nbsp;ограничение.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Проценты (%)</h3>
+            <p class="article">
+              Проценты <code>%</code> &mdash; первый шаг к&nbsp;гибкости.
+              Значение <code>width: 50%</code> означает &laquo;займи половину
+              ширины родительского контейнера&raquo;. Если родитель стал уже,
+              ребёнок тоже сужается. Это делает раскладку адаптивной без
+              дополнительных усилий.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-percent">
+              <div class="parent">
+                <div class="child-50">width: 50%</div>
+                <div class="child-75">width: 75%</div>
+                <div class="child-100">width: 100%</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="parent"&gt;
+  &lt;div class="child-50"&gt;width: 50%&lt;/div&gt;
+  &lt;div class="child-75"&gt;width: 75%&lt;/div&gt;
+  &lt;div class="child-100"&gt;width: 100%&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.child-50 { width: 50%; }
+.child-75 { width: 75%; }
+.child-100 { width: 100%; }
+ 
+/* Проценты считаются от ширины родителя.
+   Родитель стал уже — дети тоже. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Попробуйте изменить ширину окна браузера, и&nbsp;вы&nbsp;увидите,
+              как блоки подстраиваются. Проценты отлично работают для
+              горизонтального деления пространства внутри контейнеров. Три блока
+              по
+              <code>width: 33.33%</code> всегда займут ровно три колонки,
+              независимо от&nbsp;ширины экрана.
+            </p>
+            <p class="article">
+              Важный нюанс: проценты для высоты <code>height: 50%</code>
+              работают только если у&nbsp;родителя задана конкретная высота. Без
+              неё браузер не&nbsp;знает, от&nbsp;чего считать&nbsp;50%,
+              и&nbsp;игнорирует значение. Это частый источник путаницы
+              у&nbsp;начинающих.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Вьюпорты (vw, vh)</h3>
+            <p class="article">
+              Viewport-единицы пожалуй, самые полезные единицы для веб-плаката.
+              <code>1vw</code> равен одному проценту от&nbsp;ширины окна
+              браузера, <code>1vh</code> занимает один процент от&nbsp;высоты.
+              В&nbsp;отличие от процентов, они считаются
+              не&nbsp;от&nbsp;родителя, а&nbsp;от&nbsp;видимой области экрана.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-viewport">
+              <div class="vw-bar">width: 50vw</div>
+              <div class="vh-box">height: 30vh</div>
+              <div class="vw-text">5vw текст</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="vw-bar"&gt;width: 50vw&lt;/div&gt;
+&lt;div class="vw-text"&gt;5vw текст&lt;/div&gt;
+&lt;div class="vh-box"&gt;height: 30vh&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.vw-bar {
+  width: 50vw;
+  height: 60px;
+}
+ 
+.vw-text {
+  font-size: 5vw;
+}
+ 
+.vh-box {
+  height: 30vh;
+}
+/* 1vw = 1% ширины окна браузера.
+   1vh = 1% высоты окна браузера.
+   Сужай окно — всё масштабируется. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Это значит, что элемент с <code>width: 50vw</code> всегда занимает
+              ровно половину экрана, независимо от&nbsp;того, внутри какого
+              контейнера он&nbsp;находится. А&nbsp;текст с
+              <code>font-size: 5vw</code> маштабируется плавно вместе
+              с&nbsp;окном &mdash; на&nbsp;широком экране он&nbsp;крупный,
+              на&nbsp;узком сжимается пропорционально.
+            </p>
+            <p class="article">
+              Для веб-плаката viewport-единицы&nbsp;&mdash; это инструмент
+              пропорционального масштабирования. Если вы&nbsp;зададите все
+              размеры в
+              <code>vw</code>, плакат будет выглядеть как уменьшенная копия
+              самого себя на&nbsp;любом экране. Все пропорции сохраняются.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-vw-poster">
+              <div class="poster-circle"></div>
+              <div class="poster-circle-2"></div>
+              <div class="poster-title">Космос</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;section class="poster"&gt;
+  &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;div class="circle-2"&gt;&lt;/div&gt;
+  &lt;h1 class="title"&gt;Космос&lt;/h1&gt;
+&lt;/section&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.title {
+  font-size: 8vw;
+}
+ 
+.circle {
+  position: absolute;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+/* Всё в vw — плакат масштабируется
+   пропорционально при любой ширине окна.
+   Идеально для хаотичных и непрерывных
+   композиций. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Этот подход идеально работает для хаотичных и&nbsp;непрерывных
+              композиций с&nbsp;абсолютным позиционированием. Декоративные круги
+              размером
+              <code>15vw</code> на&nbsp;широком экране будут большими,
+              на&nbsp;узком маленькими, но&nbsp;их&nbsp;соотношение
+              с&nbsp;остальными элементами не изменится.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                В&nbsp;каталоге веб-плакатов многие одноэкранные работы
+                построены целиком на&nbsp;viewport-единицах. Это позволяет
+                им&nbsp;масштабироваться пропорционально без единого
+                <code>media query</code>. Если ваш плакат имеет композицию без
+                длинных текстов, <code>vw</code> подход может стать самым
+                простым путём к адаптивности.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Универсальные (rem)</h3>
+            <p class="article">
+              <code>rem</code> (root&nbsp;em)&nbsp;&mdash; единица, которая
+              считается от&nbsp;размера шрифта корневого элемента
+              <code>&lt;html&gt;</code>. По&nbsp;умолчанию браузер устанавливает
+              <code>font-size: 16px</code> для <code>&lt;html&gt</code>, поэтому
+              <code>1rem = 16px</code>, <code>1.5rem = 24px</code>,
+              <code>2rem = 32px</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-rem">
+              <div class="text-1rem">1rem = 16px (базовый)</div>
+              <div class="text-1-5rem">1.5rem = 24px</div>
+              <div class="text-2rem">2rem = 32px</div>
+              <div class="text-3rem">3rem = 48px</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;p class="text-1rem"&gt;1rem = 16px&lt;/p&gt;
+&lt;p class="text-1-5rem"&gt;1.5rem = 24px&lt;/p&gt;
+&lt;p class="text-2rem"&gt;2rem = 32px&lt;/p&gt;
+&lt;p class="text-3rem"&gt;3rem = 48px&lt;/p&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+html { font-size: 16px; }
+ 
+.text-1rem   { font-size: 1rem; }
+.text-1-5rem { font-size: 1.5rem; }
+.text-2rem   { font-size: 2rem; }
+.text-3rem   { font-size: 3rem; }
+ 
+/* rem считается от font-size в html.
+   Меняешь одно значение в :root —
+   вся типографика масштабируется. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Зачем использовать <code>rem</code>, если можно просто писать
+              пиксели? Потому что <code>rem</code> создаёт систему. Если вся
+              типографика задана в <code>rem</code>, достаточно изменить одно
+              значение в <code>:root</code>, чтобы пропорционально
+              масштабировать все тексты на&nbsp;странице. В
+              <code>media query</code> для мобильного экрана вы&nbsp;уменьшаете
+              <code>font-size</code> у <code>html</code> с <code>16px</code> до
+              <code>14px</code>, и&nbsp;вся типографика автоматически становится
+              мельче, сохраняя пропорции между заголовками и&nbsp;основным
+              текстом.
+            </p>
+            <p class="article">
+              Для отступов и&nbsp;промежутков <code>rem</code> тоже полезен.
+              <code>padding: 1.5rem</code> и <code>gap: 1rem</code> создают
+              ритм, привязанный к&nbsp;типографической шкале. Если
+              вы&nbsp;измените базовый размер шрифта, отступы изменятся вместе
+              с&nbsp;ним.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Чем опасные вьюпорты</h3>
+            <p class="article">
+              Viewport-единицы для текста дают красивый эффект пропорционального
+              масштабирования, но&nbsp;у&nbsp;них есть серьёзная проблема.
+              На&nbsp;очень маленьких экранах текст может стать нечитаемо
+              мелким, а&nbsp;на&nbsp;очень больших&nbsp;&mdash; неприлично
+              крупным.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-text-compare">
+              <div class="text-fixed">Заголовок 32px</div>
+              <div class="label">
+                font-size: 32px&nbsp;&mdash; не&nbsp;меняется при ресайзе
+              </div>
+              <div class="text-fluid">Заголовок 4vw</div>
+              <div class="label">
+                font-size: 4vw&nbsp;&mdash; растёт и&nbsp;сжимается вместе
+                с&nbsp;окном
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;h1 class="text-fixed"&gt;Заголовок 32px&lt;/h1&gt;
+&lt;h1 class="text-fluid"&gt;Заголовок 4vw&lt;/h1&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.text-fixed { font-size: 32px; }
+.text-fluid { font-size: 4vw; }
+ 
+/* На экране 1440px: 4vw = 57.6px.
+   На экране 390px: 4vw = 15.6px.
+   Чистый vw может стать нечитаемым
+   на маленьких экранах — используйте
+   clamp() для ограничения. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Заголовок с <code>font-size: 4vw</code> на&nbsp;экране
+              <code>1440px</code> имеет размер около
+              58&nbsp;пикселей&nbsp;&mdash; отлично. На экране
+              <code>390px</code> он&nbsp;сжимается до&nbsp;15.6 пикселей,мельче
+              основного текста, читать невозможно. На&nbsp;4K-мониторе шириной
+              <code>3840px</code> он&nbsp;вырастает до&nbsp;154&nbsp;пикселей,
+              а&nbsp;это уже чрезмерно.
+            </p>
+            <p class="article">
+              Решение&nbsp;&mdash; функция <code>clamp()</code>, которая
+              ограничивает значение сверху и&nbsp;снизу.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-clamp">
+              <div class="clamp-title">Заголовок на&nbsp;clamp()</div>
+              <div class="clamp-subtitle">
+                Подзаголовок тоже масштабируется, но&nbsp;в&nbsp;своём диапазоне
+                от&nbsp;14&nbsp;до 24&nbsp;пикселей
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;h1 class="title"&gt;Заголовок на clamp()&lt;/h1&gt;
+&lt;p class="subtitle"&gt;Подзаголовок тоже...&lt;/p&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.title {
+  font-size: clamp(24px, 5vw, 64px);
+}
+ 
+.subtitle {
+  font-size: clamp(14px, 2vw, 24px);
+}
+ 
+/* clamp(минимум, предпочтительное, максимум)
+   Текст растёт с окном, но никогда
+   не станет меньше 24px
+   и больше 64px. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Запись <code>font-size: clamp(24px, 5vw, 64px)</code> означает:
+              &laquo;используй <code>5vw</code>, но&nbsp;никогда не&nbsp;меньше
+              <code>24px</code> и&nbsp;не&nbsp;больше <code>64px</code>&raquo;.
+              Текст масштабируется плавно в&nbsp;заданном диапазоне
+              и&nbsp;остаётся читаемым на любом экране. Это лучший способ
+              задавать размер заголовков в веб-плакате.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                <code>clamp()</code> работает не&nbsp;только с
+                <code>font-size</code>. Его можно использовать для
+                <code>padding</code>, <code>gap</code>, <code>width</code> и
+                любого другого свойства, которое принимает числовые значения.
+                Например, <code>padding: clamp(16px, 3vw, 48px)</code> создаёт
+                отступы, которые растут с&nbsp;экраном,
+                но&nbsp;не&nbsp;становятся ни&nbsp;слишком маленькими,
+                ни&nbsp;слишком большими.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Что писать, а&nbsp;что нет</h3>
+            <p class="article">
+              В <code>vw</code> и <code>vh</code> стоит задавать размеры
+              декоративных элементов&nbsp;&mdash; кругов, фигур,
+              фонов&nbsp;&mdash; которые должны масштабироваться
+              пропорционально. Позиции абсолютно спозиционированных объектов
+              через <code>top</code> и <code>left</code> удобно выражать
+              в&nbsp;процентах или <code>vw</code>.
+            </p>
+            <p class="article">
+              Высоту полноэкранных секций естественно задавать через
+              <code>height: 100vh</code>. Размеры шрифтов заголовков тоже можно
+              писать в <code>vw</code>, но&nbsp;обязательно через
+              <code>clamp()</code> с&nbsp;минимумом и&nbsp;максимумом.
+            </p>
+            <p class="article">
+              В <code>px</code> или <code>rem</code> стоит оставить основной
+              текст <code>font-size: 16px</code> или <code>1rem</code>,
+              промежутки между элементами (<code>gap: 16px</code>), толщину
+              рамок <code>border: 1px</code>, скругления углов
+              <code>border-radius: 8px</code> и&nbsp;ширину контейнеров
+              с&nbsp;текстовым содержимым <code>max-width: 600px</code>
+            </p>
+            <p class="article">
+              Логика простая. Если элемент визуальный и&nbsp;декоративный,
+              то&nbsp;ему хорошо на&nbsp;viewport-единицах, пусть
+              масштабируется. Если элемент несёт текст и&nbsp;информацию,
+              то&nbsp;ему нужна стабильная читаемость, а значит, фиксированные
+              или ограниченные значения.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="units-when">
+              <div class="decor-vw"></div>
+              <div class="decor-vw-2"></div>
+              <div class="content-px">
+                <h2>Декор&nbsp;&mdash; vw, текст&nbsp;&mdash; clamp</h2>
+                <p>
+                  Круги масштабируются с&nbsp;окном, а&nbsp;текст остаётся
+                  читаемым на любом экране.
+                </p>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;section class="hero"&gt;
+  &lt;div class="decor"&gt;&lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;h2&gt;Заголовок&lt;/h2&gt;
+    &lt;p&gt;Описание плаката...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Декор — пропорциональный */
+.decor {
+  width: 20vw;
+  height: 20vw;
+}
+ 
+/* Заголовок — масштабируемый с границами */
+h2 {
+  font-size: clamp(20px, 4vw, 48px);
+}
+ 
+/* Основной текст — фиксированный */
+p {
+  font-size: 16px;
+  max-width: 400px;
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              В&nbsp;этом примере декоративные круги заданы в <code>vw</code> и
+              масштабируются с&nbsp;окном, заголовок использует
+              <code>clamp()</code> для контролируемого масштабирования, а
+              основной текст стоит на&nbsp;фиксированных <code>16px</code> и
+              ограничен по&nbsp;ширине через <code>max-width</code>. Три
+              единицы, каждая на&nbsp;своём месте.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Шпаргалка</h3>
+            <p class="article">
+              <code>px</code> &mdash;&nbsp;фиксированный размер,
+              не&nbsp;меняется. Для мелких деталей, рамок, иконок.
+            </p>
+            <p class="article">
+              <code>%</code> &mdash;&nbsp;доля от&nbsp;родителя. Гибко
+              по&nbsp;ширине, капризно по высоте. Для деления пространства
+              внутри контейнеров.
+            </p>
+            <p class="article">
+              <code>vw</code> &mdash;&nbsp;доля от&nbsp;ширины экрана. Для
+              пропорционального масштабирования элементов и&nbsp;декора.
+            </p>
+            <p class="article">
+              <code>vh</code> &mdash;&nbsp;доля от&nbsp;высоты экрана. Для
+              полноэкранных секций
+              <code>100vh</code>
+            </p>
+            <p class="article">
+              <code>rem</code> &mdash;&nbsp;доля от&nbsp;базового шрифта. Для
+              типографики и ритмичных отступов.
+            </p>
+            <p class="article">
+              <code>clamp(min, preferred, max)</code> &mdash;&nbsp;значение
+              с&nbsp;границами. Для заголовков и&nbsp;адаптивных размеров,
+              которые должны масштабироваться, но&nbsp;не&nbsp;уходить
+              в&nbsp;крайности.
+            </p>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://utopia.fyi/"
+                  >Калькулятор значений для clamp()</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://nekocalc.com/px-to-rem-converter"
+                  >Калькулятор значений для rem</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://cssunitconverter.vercel.app/px-to-vw"
+                  >Калькулятор значений для vw</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-3-3"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

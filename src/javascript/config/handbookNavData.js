@@ -225,40 +225,40 @@ const handbookNavData = {
                 'Форматы изображений, оптимизация веса, что нужно сделать до переноса в код'
             }
           ]
-        }
+        },
         // chapter 3
-        // {
-        //   id: 'chapter-2-3',
-        //   title: 'Вёрстка веб-плаката',
-        //   href: '/handbook/part_2/chapter_3/chapter_2_3.html',
-        //   articles: [
-        //     {
-        //       id: 'article-2-3-1',
-        //       title: 'Организация проекта',
-        //       href: '/handbook/part_2/chapter_3/project-structure.html'
-        //     },
-        //     {
-        //       id: 'article-2-3-2',
-        //       title: 'Grid, Flex и Absolute на практике',
-        //       href: '/handbook/part_2/chapter_3/grid-flex-absolute.html'
-        //     },
-        //     {
-        //       id: 'article-2-3-3',
-        //       title: 'Относительные и абсолютные величины',
-        //       href: '/handbook/part_2/chapter_3/units.html'
-        //     },
-        //     {
-        //       id: 'article-2-3-4',
-        //       title: 'Использование SVG в',
-        //       href: '/handbook/part_2/chapter_3/working-with-svg.html'
-        //     },
-        //     {
-        //       id: 'article-2-3-5',
-        //       title: 'Вёрстка адаптивов',
-        //       href: '/handbook/part_2/chapter_3/media-quireies.html'
-        //     }
-        //   ]
-        // },
+        {
+          id: 'chapter-2-3',
+          title: 'Вёрстка веб-плаката',
+          href: '/handbook/part_2/chapter_3/chapter_2_3.html',
+          articles: [
+            {
+              id: 'article-2-3-1',
+              title: 'Организация проекта',
+              href: '/handbook/part_2/chapter_3/project-structure.html'
+            },
+            {
+              id: 'article-2-3-2',
+              title: 'Grid, Flex и Absolute на практике',
+              href: '/handbook/part_2/chapter_3/grid-flex-absolute.html'
+            },
+            {
+              id: 'article-2-3-3',
+              title: 'Относительные и абсолютные величины',
+              href: '/handbook/part_2/chapter_3/units.html'
+            },
+            {
+              id: 'article-2-3-4',
+              title: 'Использование SVG',
+              href: '/handbook/part_2/chapter_3/working-with-svg.html'
+            },
+            {
+              id: 'article-2-3-5',
+              title: 'Вёрстка адаптивов',
+              href: '/handbook/part_2/chapter_3/media-quireies.html'
+            }
+          ]
+        },
         // chapter 4
         // {
         //   id: 'chapter-2-4',
