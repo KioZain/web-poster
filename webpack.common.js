@@ -326,7 +326,7 @@ const pages = [
     ]
   },
   {
-    template: 'handbook/part_2/chapter_3/media-queries.html',
+    template: 'handbook/part_2/chapter_3/media-quireies.html',
     chunks: [
       'menubar',
       'index',
@@ -349,6 +349,7 @@ const pages = [
       'preview'
     ]
   },
+
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 

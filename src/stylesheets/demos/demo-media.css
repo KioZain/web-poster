@@ -1,0 +1,489 @@
+/* ======================
+   Вёрстка адаптивов — демо-стили
+   ====================== */
+
+/* --- 0a. @media: базовый пример --- */
+
+[data-demo='media-basic'] {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: auto;
+}
+
+[data-demo='media-basic'] .media-box {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fe3904;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  [data-demo='media-basic'] .media-box {
+    background: #9eff70;
+    color: black;
+  }
+}
+
+/* --- 0b. @media min-width: mobile-first --- */
+
+[data-demo='media-minwidth'] {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+[data-demo='media-minwidth'] .mf-col {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+[data-demo='media-minwidth'] .mf-col:nth-child(1) {
+  background: #fe3904;
+  color: white;
+}
+[data-demo='media-minwidth'] .mf-col:nth-child(2) {
+  background: #9eff70;
+}
+[data-demo='media-minwidth'] .mf-col:nth-child(3) {
+  background: #7adff1;
+}
+
+@media (min-width: 768px) {
+  [data-demo='media-minwidth'] {
+    flex-direction: row;
+  }
+  [data-demo='media-minwidth'] .mf-col {
+    flex: 1;
+  }
+}
+
+/* --- 0c. @media range --- */
+
+[data-demo='media-range'] {
+  padding: 20px;
+  font-weight: 500;
+  min-height: auto;
+}
+
+[data-demo='media-range'] .range-box {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  background: #7adff1;
+  transition: background 0.3s ease;
+}
+
+[data-demo='media-range'] .range-label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  [data-demo='media-range'] .range-box {
+    background: #fe96e4;
+    color: white;
+  }
+}
+
+@media (min-width: 1025px) {
+  [data-demo='media-range'] .range-box {
+    background: #fe3904;
+    color: white;
+  }
+}
+
+/* --- 0d. @container --- */
+
+[data-demo='container-query'] {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+}
+
+[data-demo='container-query'] .container-wide {
+  flex: 2;
+  container-type: inline-size;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+[data-demo='container-query'] .container-narrow {
+  flex: 1;
+  container-type: inline-size;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+[data-demo='container-query'] .adaptive-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+[data-demo='container-query'] .adaptive-card .card-img {
+  width: 100%;
+  height: 60px;
+  background: #fe3904;
+  border-radius: 4px;
+}
+
+[data-demo='container-query'] .adaptive-card .card-text {
+  font-size: 12px;
+  color: #444;
+}
+
+@container (min-width: 300px) {
+  .adaptive-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .adaptive-card .card-img {
+    width: 80px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+}
+
+/* --- 1. Stretch: flex-grow --- */
+
+[data-demo='stretch-flex'] {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  height: 280px;
+}
+
+[data-demo='stretch-flex'] .sidebar {
+  width: 160px;
+  flex-shrink: 0;
+  background: #fe3904;
+  color: white;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  border-radius: 8px;
+}
+
+[data-demo='stretch-flex'] .main {
+  flex: 1;
+  background: #9eff70;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  border-radius: 8px;
+}
+
+/* --- 2. Stretch: процентная ширина --- */
+
+[data-demo='stretch-percent'] {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+}
+
+[data-demo='stretch-percent'] .card {
+  width: 33.33%;
+  padding: 24px 16px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+[data-demo='stretch-percent'] .card:nth-child(1) {
+  background: #fe3904;
+  color: white;
+}
+[data-demo='stretch-percent'] .card:nth-child(2) {
+  background: #9eff70;
+}
+[data-demo='stretch-percent'] .card:nth-child(3) {
+  background: #7adff1;
+}
+
+/* --- 3. Stretch: max-width --- */
+
+[data-demo='stretch-maxwidth'] {
+  padding: 20px;
+  min-height: auto;
+}
+
+[data-demo='stretch-maxwidth'] .text-block {
+  width: 100%;
+  max-width: 480px;
+  color: #fe3904;
+  border: 2px solid #fe3904;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* --- 4. Scale: vw-единицы --- */
+
+[data-demo='scale-vw'] {
+  position: relative;
+  height: 280px;
+  /* background: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+[data-demo='scale-vw'] .scale-title {
+  font-size: 7vw;
+  /* color: white; */
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+
+[data-demo='scale-vw'] .scale-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: #9eff70;
+  width: 18vw;
+  height: 18vw;
+  top: 8%;
+  right: 5%;
+}
+
+[data-demo='scale-vw'] .scale-rect {
+  position: absolute;
+  background: #9eff70;
+  width: 12vw;
+  height: 25vw;
+  bottom: 5%;
+  left: 8%;
+  border-radius: 4px;
+}
+
+/* --- 5. Scale: clamp --- */
+
+[data-demo='scale-clamp'] {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 500;
+  min-height: auto;
+}
+
+[data-demo='scale-clamp'] .clamp-h1 {
+  font-size: clamp(28px, 5vw, 72px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: black;
+}
+
+[data-demo='scale-clamp'] .clamp-body {
+  font-size: clamp(14px, 1.5vw, 20px);
+  line-height: 1.6;
+  color: #444;
+  max-width: 600px;
+}
+
+[data-demo='scale-clamp'] .clamp-gap-demo {
+  display: flex;
+  gap: clamp(8px, 2vw, 32px);
+}
+
+[data-demo='scale-clamp'] .clamp-gap-demo .box {
+  flex: 1;
+  padding: clamp(12px, 2vw, 32px);
+  background: #f0f0f0;
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* --- 6. Scale: zoom через html font-size --- */
+
+[data-demo='scale-root'] {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 16px;
+  min-height: auto;
+}
+
+[data-demo='scale-root'] .root-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+[data-demo='scale-root'] .root-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+[data-demo='scale-root'] .root-box {
+  padding: 1rem;
+  background: #f0f0f0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+[data-demo='scale-root'] .root-note {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* --- 7. Switch: media query --- */
+
+[data-demo='switch-media'] {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+}
+
+[data-demo='switch-media'] .col {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+[data-demo='switch-media'] .col:nth-child(1) {
+  background: #fe3904;
+  color: white;
+}
+[data-demo='switch-media'] .col:nth-child(2) {
+  background: #9eff70;
+}
+[data-demo='switch-media'] .col:nth-child(3) {
+  background: #7adff1;
+}
+
+@media (max-width: 600px) {
+  [data-demo='switch-media'] {
+    flex-direction: column;
+  }
+}
+
+/* --- 8. Switch: grid auto-fit --- */
+
+[data-demo='switch-autofit'] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+[data-demo='switch-autofit'] .grid-card {
+  padding: 24px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+[data-demo='switch-autofit'] .grid-card:nth-child(1) {
+  background: #fe3904;
+  color: white;
+}
+[data-demo='switch-autofit'] .grid-card:nth-child(2) {
+  background: #9eff70;
+}
+[data-demo='switch-autofit'] .grid-card:nth-child(3) {
+  background: #7adff1;
+}
+[data-demo='switch-autofit'] .grid-card:nth-child(4) {
+  background: #fe96e4;
+  color: white;
+}
+
+/* --- 9. Комбинация SSS --- */
+
+[data-demo='sss-combo'] {
+  position: relative;
+  min-height: 280px;
+  background: #111;
+  overflow: hidden;
+  padding: clamp(16px, 3vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+[data-demo='sss-combo'] .sss-title {
+  font-size: clamp(24px, 5vw, 64px);
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+[data-demo='sss-combo'] .sss-subtitle {
+  font-size: clamp(12px, 1.5vw, 18px);
+  color: #aaa;
+  margin-top: 8px;
+  z-index: 2;
+  position: relative;
+}
+
+[data-demo='sss-combo'] .sss-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(8px, 1.5vw, 20px);
+  margin-top: clamp(16px, 3vw, 40px);
+  z-index: 2;
+  position: relative;
+}
+
+[data-demo='sss-combo'] .sss-card {
+  padding: clamp(12px, 2vw, 24px);
+  border-radius: 8px;
+  font-size: clamp(11px, 1.2vw, 14px);
+}
+
+[data-demo='sss-combo'] .sss-card:nth-child(1) {
+  background: #fe3904;
+  color: white;
+}
+[data-demo='sss-combo'] .sss-card:nth-child(2) {
+  background: #9eff70;
+}
+[data-demo='sss-combo'] .sss-card:nth-child(3) {
+  background: #7adff1;
+}
+
+[data-demo='sss-combo'] .sss-decor {
+  position: absolute;
+  border-radius: 50%;
+  background: #fe3904;
+  opacity: 0.15;
+  width: 25vw;
+  height: 25vw;
+  top: -5%;
+  right: -3%;
+  z-index: 1;
+}

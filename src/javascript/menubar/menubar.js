@@ -2,40 +2,74 @@ import lottie from 'lottie-web'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-import animationData from '../../animations/LogoAnim.json'
+// import animationData from '../../animations/LogoAnim.json'
 import S_Search from '../components/S_Search.jsx'
 
 // logo lottie
-const logoContainer = document.getElementById('logoAnimation')
 
-if (logoContainer) {
-  const logoAnim = lottie.loadAnimation({
-    container: logoContainer,
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    animationData: animationData
-  })
+const CONFIG = {
+  scrollThreshold: 50,
+  snapDuration: 700,
+  snapEasing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+};
 
-  const logoLink = logoContainer.closest('.A_Logo')
-  let isPlaying = false
+// ─── INIT ─────────────────────────────────────────────────────────────────────
 
-  logoLink.addEventListener('mouseenter', () => {
-    logoAnim.goToAndPlay(0)
-    isPlaying = true
-  })
+const card = document.querySelector('.A_Logo__card');
+if (!card) throw new Error('.A_Logo__card не найден');
+card.style.animation = 'none';
+let currentAngle = 0;
+let accumulatedY = 0;
+let isSnapping = false;
 
-  logoLink.addEventListener('mouseleave', () => {
-    if (!isPlaying) {
-      logoAnim.goToAndStop(0)
-    }
-  })
 
-  logoAnim.addEventListener('complete', () => {
-    isPlaying = false
-    logoAnim.goToAndStop(0)
-  })
+function snapTo(targetAngle) {
+  if (isSnapping) return;
+  isSnapping = true;
+
+  card.style.transition = `transform ${CONFIG.snapDuration}ms ${CONFIG.snapEasing}`;
+  card.style.transform = `rotateY(${targetAngle}deg)`;
+
+  card.addEventListener('transitionend', () => {
+    isSnapping = false;
+    card.style.transition = 'none';
+  }, { once: true });
 }
+
+function flip(direction) {
+  currentAngle -= direction * 180;
+  snapTo(currentAngle);
+  accumulatedY = 0;
+}
+
+
+function onScroll(delta) {
+  if (isSnapping) return;
+
+  accumulatedY += delta;
+
+  if (accumulatedY >= CONFIG.scrollThreshold) {
+    flip(+1);
+  } else if (accumulatedY <= -CONFIG.scrollThreshold) {
+    flip(-1);
+  }
+}
+
+window.addEventListener('wheel', (e) => {
+  onScroll(e.deltaY);
+}, { passive: true });
+
+let touchStartY = 0;
+
+window.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+window.addEventListener('touchmove', (e) => {
+  const delta = touchStartY - e.touches[0].clientY;
+  touchStartY = e.touches[0].clientY;
+  onScroll(delta);
+}, { passive: true });
 
 // toggle menu
 const header = document.getElementById('siteHeader')

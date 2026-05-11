@@ -99,6 +99,7 @@
       grid-column: 1 / -1;
       max-width: 486px;
       margin: 0 auto;
+      padding: var(--space-20);
       /* height: 240px; */
 
       p.light {
@@ -293,7 +294,7 @@
 .W_HomePageWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(6rem, 10vw, 10rem);
+  gap: clamp(4rem, 10vw, 10rem);
   margin-top: clamp(2rem, 10vw, 3rem);
 }
 .W_MarqueeContent {

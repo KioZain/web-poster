@@ -1,6 +1,6 @@
 .carousel-wrapper {
   width: 100%;
-  height: clamp(300px, 20vw, 440px);
+  height: clamp(240px, 20vw, 440px);
   position: relative;
   overflow: hidden;
   margin-top: auto;
