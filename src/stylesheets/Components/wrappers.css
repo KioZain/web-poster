@@ -170,7 +170,7 @@
 .W_HandbookPageWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, -0.167rem + 3.472vw, 4.5rem);
+  /* gap: clamp(2.5rem, -0.167rem + 3.472vw, 2rem); */
   margin-top: var(--header-offset);
 }
 .W_HanbookPageWrapper {
@@ -184,6 +184,14 @@
       grid-column: 1/-1;
     }
   }
+}
+.W_TabContent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, -0.167rem + 3.472vw, 4.5rem);
+}
+.W_TabContent[hidden] {
+  display: none;
 }
 
 .W_ArticlePage {

@@ -518,16 +518,22 @@ button.A_Tab {
   font-weight: 500;
   font-family: 'Aeonik Pro';
   position: relative;
+  color: var(--gray-light);
+  cursor: pointer;
 
-  p:last-child {
-    font-size: 1rem;
+  p {
     color: var(--gray-light);
   }
 
-  &.inactive {
+  &:hover {
     p {
-      color: var(--gray-light);
-      cursor: not-allowed;
+      color: var(--gray-medium);
+    }
+  }
+
+  &.active {
+    p {
+      color: var(--gray-base);
     }
   }
 }

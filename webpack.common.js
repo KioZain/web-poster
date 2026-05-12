@@ -16,7 +16,7 @@ const pages = [
     template: 'about.html',
     chunks: ['index', 'menubar']
   },
-  { template: 'handbook.html', chunks: ['index', 'menubar'] },
+  { template: 'handbook.html', chunks: ['index', 'menubar', 'tabs'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
   { template: 'modules.html', chunks: ['index', 'menubar', 'tabs-modules'] },
   {
@@ -400,6 +400,7 @@ module.exports = {
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     rating: './src/javascript/rating.js',
     preview: './src/javascript/preview.js',
+    tabs: './src/javascript/tabs.js',
     'poster-page': './src/javascript/poster-page.js',
     'tabs-modules': './src/javascript/tabs-modules.js',
     'handbook-nav': './src/javascript/handbook-nav.js',

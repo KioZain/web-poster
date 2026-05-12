@@ -16,6 +16,12 @@ import cover_2_2_2 from '../../images/handbook/covers/handbook_2-2-2.webp'
 import cover_2_2_3 from '../../images/handbook/covers/handbook_2-2-3.webp'
 import cover_2_2_4 from '../../images/handbook/covers/handbook_2-2-4.webp'
 import cover_2_2_5 from '../../images/handbook/covers/handbook_2-2-5.webp'
+//  --
+import cover_2_3_1 from '../../images/handbook/covers/handbook_2-3-1.webp'
+import cover_2_3_2 from '../../images/handbook/covers/handbook_2-3-2.webp'
+import cover_2_3_3 from '../../images/handbook/covers/handbook_2-3-3.webp'
+import cover_2_3_4 from '../../images/handbook/covers/handbook_2-3-4.webp'
+import cover_2_3_5 from '../../images/handbook/covers/handbook_2-3-5.webp'
 
 const handbookNavData = {
   parts: [
@@ -198,7 +204,7 @@ const handbookNavData = {
               id: 'article-2-2-3',
               title: 'Адаптивный и респонсивный дизайн',
               href: '/handbook/part_2/chapter_2/adaptive-responsive.html',
-              cover: cover_2_2_2,
+              cover: cover_2_2_3,
               readingTime: 6,
               articleType: 'Дизайн',
               description:
@@ -235,27 +241,47 @@ const handbookNavData = {
             {
               id: 'article-2-3-1',
               title: 'Организация проекта',
-              href: '/handbook/part_2/chapter_3/project-structure.html'
+              href: '/handbook/part_2/chapter_3/project-structure.html',
+              cover: cover_2_3_1,
+              articleType: 'Кодинг',
+              readingTime: 6,
+              description: 'Структура папок, именование файлов, подключение стилей'
             },
             {
               id: 'article-2-3-2',
               title: 'Grid, Flex и Absolute на практике',
-              href: '/handbook/part_2/chapter_3/grid-flex-absolute.html'
+              href: '/handbook/part_2/chapter_3/grid-flex-absolute.html',
+              cover: cover_2_3_2,
+              articleType: 'Кодинг',
+              readingTime: 12,
+              description: 'Три подхода к вёрстке с примерами кода. Как использовать и комбинировать'
             },
             {
               id: 'article-2-3-3',
               title: 'Относительные и абсолютные величины',
-              href: '/handbook/part_2/chapter_3/units.html'
+              href: '/handbook/part_2/chapter_3/units.html',
+              cover: cover_2_3_3,
+              articleType: 'Кодинг',
+              readingTime: 8,
+              description: 'Как различные единицы измерения влияют на поведение макета'
             },
             {
               id: 'article-2-3-4',
               title: 'Использование SVG',
-              href: '/handbook/part_2/chapter_3/working-with-svg.html'
+              href: '/handbook/part_2/chapter_3/working-with-svg.html',
+              cover: cover_2_3_4,
+              articleType: 'Кодинг',
+              readingTime: 7,
+              description: 'Особенности работы с SVG форматом и как можно его анимировать'
             },
             {
               id: 'article-2-3-5',
               title: 'Вёрстка адаптивов',
-              href: '/handbook/part_2/chapter_3/media-quireies.html'
+              href: '/handbook/part_2/chapter_3/media-quireies.html',
+              cover: cover_2_3_5,
+              articleType: 'Кодинг',
+              readingTime: 12,
+              description: 'Несколько видов типичных технических решений в вёрстке адаптивного дизайна'
             }
           ]
         },
