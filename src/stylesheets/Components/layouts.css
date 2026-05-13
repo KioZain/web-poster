@@ -4,6 +4,10 @@
   gap: var(--grid-gap);
   position: relative;
   margin-bottom: 10rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: var(--space-20);
+  }
 }
 .L_ArticlesPreviewSection {
   display: flex;
@@ -27,6 +31,10 @@
   }
 
   @media screen and (max-width: 768px) {
+    gap: var(--space-24);
+  }
+
+  &.tab {
     gap: var(--space-24);
   }
 }
