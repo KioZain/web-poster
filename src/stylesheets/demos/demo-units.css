@@ -1,0 +1,302 @@
+[data-demo='units-px'] {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 20px;
+  font-weight: 500;
+  min-height: auto;
+}
+
+[data-demo='units-px'] .box-px-small {
+  width: 100px;
+  height: 100px;
+  background: #fe3904;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-px'] .box-px-medium {
+  width: 200px;
+  height: 100px;
+  background: #9eff70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-px'] .box-px-large {
+  width: 300px;
+  height: 100px;
+  background: #7adff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-percent'] {
+  padding: 20px;
+  min-height: auto;
+  font-weight: 500;
+}
+
+[data-demo='units-percent'] .parent {
+  width: 100%;
+  /* background: #f0f0f0; */
+  /* padding: 16px; */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+[data-demo='units-percent'] .child-50 {
+  width: 50%;
+  padding: 16px;
+  background: #fe3904;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-percent'] .child-75 {
+  width: 75%;
+  padding: 16px;
+  background: #9eff70;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-percent'] .child-100 {
+  width: 100%;
+  padding: 16px;
+  background: #7adff1;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+[data-demo='units-viewport'] {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  padding: 20px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-demo='units-viewport'] .vw-bar {
+  width: 50%;
+  height: 48px;
+  background: #fe3904;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+[data-demo='units-viewport'] .vh-box {
+  width: 120px;
+  height: 30%;
+  background: #9eff70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+[data-demo='units-viewport'] .vw-text {
+  font-size: 5vw;
+  color: white;
+  font-weight: bold;
+  margin-top: 6px;
+  background: #7adff1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+[data-demo='units-vw-poster'] {
+  position: relative;
+  height: 280px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+[data-demo='units-vw-poster'] .poster-title {
+  font-size: 8vw;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  z-index: 3;
+}
+
+[data-demo='units-vw-poster'] .poster-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: #fe3904;
+  width: 15vw;
+  height: 15vw;
+  top: 10%;
+  left: 5%;
+}
+
+[data-demo='units-vw-poster'] .poster-circle-2 {
+  position: absolute;
+  border-radius: 50%;
+  background: #9eff70;
+  width: 10vw;
+  height: 10vw;
+  bottom: 10%;
+  right: 8%;
+}
+
+[data-demo='units-rem'] {
+  padding: 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+[data-demo='units-rem'] .text-1rem {
+  font-size: 1rem;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+[data-demo='units-rem'] .text-1-5rem {
+  font-size: 1.5rem;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+[data-demo='units-rem'] .text-2rem {
+  font-size: 2rem;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+[data-demo='units-rem'] .text-3rem {
+  font-size: 3rem;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+[data-demo='units-text-compare'] {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: auto;
+}
+
+[data-demo='units-text-compare'] .text-fixed {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+[data-demo='units-text-compare'] .text-fluid {
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+[data-demo='units-text-compare'] .label {
+  font-size: 12px;
+  color: #999;
+  margin-top: -12px;
+}
+
+[data-demo='units-clamp'] {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-height: auto;
+}
+
+[data-demo='units-clamp'] .clamp-title {
+  font-size: clamp(24px, 5vw, 64px);
+  font-weight: bold;
+  color: black;
+  line-height: 1.1;
+}
+
+[data-demo='units-clamp'] .clamp-subtitle {
+  font-size: clamp(14px, 2vw, 24px);
+  color: #666;
+  line-height: 1.4;
+}
+
+[data-demo='units-when'] {
+  position: relative;
+  height: 280px;
+  background: #111;
+  overflow: hidden;
+}
+
+[data-demo='units-when'] .decor-vw {
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  background: #fe3904;
+  opacity: 0.6;
+  top: 10%;
+  left: 8%;
+}
+
+[data-demo='units-when'] .decor-vw-2 {
+  position: absolute;
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  background: #fe3904;
+  opacity: 0.6;
+  bottom: 15%;
+  right: 12%;
+}
+
+[data-demo='units-when'] .content-px {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  color: white;
+}
+
+[data-demo='units-when'] .content-px h2 {
+  font-size: clamp(20px, 4vw, 48px);
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  color: white;
+}
+
+[data-demo='units-when'] .content-px p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 400px;
+  opacity: 0.8;
+  margin: 0;
+  color: white;
+}

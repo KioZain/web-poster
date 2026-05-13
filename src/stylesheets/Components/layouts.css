@@ -4,6 +4,10 @@
   gap: var(--grid-gap);
   position: relative;
   margin-bottom: 10rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: var(--space-20);
+  }
 }
 .L_ArticlesPreviewSection {
   display: flex;
@@ -29,9 +33,14 @@
   @media screen and (max-width: 768px) {
     gap: var(--space-24);
   }
+
+  &.tab {
+    gap: var(--space-24);
+  }
 }
 .L_Chapter {
   grid-column: span 9;
+  height: 100%;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -47,9 +56,9 @@
     margin-top: var(--space-24);
   }
 
-  .W_ArticleButtonsNavigation {
+  /* .W_ArticleButtonsNavigation {
     margin-top: auto;
-  }
+  } */
 }
 
 @container chapter (width < 638px) {

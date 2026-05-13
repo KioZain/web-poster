@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Организация проекта</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Организация проекта</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Организация проекта</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">5 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-3-1.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Вы&nbsp;открываете VS&nbsp;Code, создаёте новую папку и&nbsp;видите
+            перед собой пустое пространство. Куда класть HTML? Куда складывать
+            картинки? Нужен&nbsp;ли отдельный файл для CSS или можно писать всё
+            в&nbsp;одном месте? Эти вопросы возникают у&nbsp;каждого, кто
+            впервые собирает веб-проект.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Минимальная структура</h3>
+            <p class="article">
+              Откройте любой студенческий репозиторий с&nbsp;веб-плакатом,
+              и&nbsp;вы увидите примерно одну и&nbsp;ту&nbsp;же картину. Вот как
+              выглядит типичная структура проекта:
+            </p>
+          </div>
+
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="css">TEXT</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock active"
+                data-lang="css"
+              ><code class="language-css">
+my-poster/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── img/
+│   ├── background.webp
+│   ├── illustration.png
+│   └── sprite-sheet.png
+├── fonts/
+│   ├── MyFont-Regular.woff2
+│   └── MyFont-Bold.woff2
+└── README.md
+      </code></pre>
+            </div>
+          </div>
+
+          <p class="article">
+            Выглядит просто, и&nbsp;это намеренно. Веб-плакат&nbsp;&mdash; это
+            одностраничный проект, и&nbsp;ему не&nbsp;нужна архитектура большого
+            приложения. Но&nbsp;даже в рамках одной страницы порядок
+            в&nbsp;файлах экономит время и&nbsp;нервы. Разберём каждый элемент.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Точка входа в&nbsp;проекте</h3>
+            <p class="article">
+              Файл <code>index.html</code> &mdash; это ваш плакат. Когда кто-то
+              открывает ссылку на&nbsp;проект, браузер ищет именно этот файл.
+              Название <code>index</code> &mdash; не&nbsp;случайное,
+              а&nbsp;конвенциональное. Веб-серверы (включая GitHub Pages,
+              на&nbsp;котором вы&nbsp;будете размещать плакат) автоматически
+              отдают файл с&nbsp;таким именем при обращении к корневой папке
+              проекта.
+            </p>
+            <p class="article">
+              Внутри index.html происходит подключение всех остальных файлов.
+              CSS подключается в&nbsp;секции <code>&lt;head&gt;</code> через тег
+              <code>&lt;link&gt;</code>. JavaScript подключается перед
+              закрывающим тегом <code>&lt;/body&gt;</code> через тег
+              <code>&lt;script&gt;</code>. Изображения вставляются через
+              <code>&lt;img&gt;</code> или используются как
+              <code>background-image</code> в&nbsp;CSS. Всё сходится
+              в&nbsp;одной точке.
+            </p>
+            <p class="article">
+              Обратите внимание на&nbsp;два мета-тега в
+              <code>&lt;head&gt;</code>. Первый
+              (<code>charset="UTF-8&quot;</code>) обеспечивает корректное
+              отображение кириллицы. Второй (viewport) говорит мобильным
+              браузерам отображать страницу в&nbsp;реальном масштабе,
+              а&nbsp;не&nbsp;сжимать десктопную версию до&nbsp;ширины телефона.
+              Без этого тега ваш адаптивный дизайн на&nbsp;мобильном просто
+              не&nbsp;сработает.
+            </p>
+          </div>
+
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="HTML">HTML</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock"
+                data-lang="html"
+              ><code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Название плаката&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- Здесь содержимое плаката --&gt;
+
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Подключение стилей</h3>
+            <p class="article">
+              Можно&nbsp;ли писать CSS прямо внутри HTML, в&nbsp;теге
+              <code>&lt;style&gt;</code> Можно. Будет&nbsp;ли это работать?
+              Будет. Стоит&nbsp;ли так делать? В&nbsp;большинстве
+              случаев&nbsp;&mdash; нет.
+            </p>
+            <p class="article">
+              Отдельный CSS-файл проще редактировать, потому что
+              вы&nbsp;работаете с одним типом кода за&nbsp;раз. Его проще
+              отлаживать, потому что DevTools в&nbsp;браузере покажет вам,
+              из&nbsp;какого именно файла пришло каждое правило. И&nbsp;его
+              проще переиспользовать, если вы&nbsp;вдруг решите создать второй
+              HTML-файл (например, страницу-заглушку или альтернативную версию
+              плаката).
+            </p>
+            <p class="article">
+              Для большинства веб-плакатов одного файла
+              <code>style.css</code> достаточно. Если стилей становится очень
+              много (больше 300&ndash;400&nbsp;строк), можно разделить
+              их&nbsp;на&nbsp;несколько файлов по&nbsp;логическим блокам
+              и&nbsp;подключить каждый отдельным тегом
+              <code>&lt;link /&gt;</code>.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Порядок внутри CSS-файла тоже имеет значение. Хорошая практика
+                &mdash; начинать с&nbsp;общих правил (сброс стилей, шрифты,
+                переменные), затем описывать крупные блоки сверху вниз
+                по&nbsp;порядку появления на&nbsp;странице, а&nbsp;анимации
+                (<code>@keyframes</code>) группировать в конце файла. Так
+                вы&nbsp;всегда будете знать, где искать нужное правило.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Подключаем скрипты</h3>
+            <p class="article">
+              Та&nbsp;же логика, что и&nbsp;с&nbsp;CSS. JavaScript можно впрямо
+              в&nbsp;HTML через тег
+              <code>&lt;script&gt;</code>, но&nbsp;лучше вынести
+              в&nbsp;отдельный файл. Обратите внимание, что скрипт подключается
+              перед закрывающим <code>&lt;/body&gt;</code>, а&nbsp;не&nbsp;в
+              <code>&lt;head&gt;</code>. К моменту выполнения скрипта все
+              HTML-элементы уже должны существовать на&nbsp;странице, иначе
+              JavaScript не&nbsp;сможет их&nbsp;найти и обработать.
+            </p>
+            <p class="article">
+              Если ваш плакат статичный (только HTML и&nbsp;CSS, без
+              интерактивности), папка <code>js/</code> вам не&nbsp;нужна. Не
+              создавайте пустых файлов на&nbsp;всякий случай. Это только
+              засоряет проект.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Куда кладем картинки</h3>
+            <p class="article">
+              Папка <code>img/</code> &mdash; это склад всех растровых
+              изображений проекта. Здесь живут фотографии, иллюстрации,
+              спрайтовые листы, фоновые текстуры. SVG-файлы тоже можно хранить
+              здесь, хотя некоторые разработчики выделяют для них отдельную
+              папку <code>svg/</code>.
+            </p>
+            <p class="article">
+              <b>Самая частая ошибка&nbsp;&mdash; называть файлы как попало</b>.
+              IMG_20240315_001.jpg, Снимок экрана 2024-03-15.png, фон (копия)
+              (2).webp&nbsp;&mdash; всё это реальные примеры
+              из&nbsp;студенческих репозиториев. Через неделю
+              вы&nbsp;не&nbsp;вспомните, что в&nbsp;каком файле, и&nbsp;будете
+              открывать каждый по&nbsp;очереди.
+            </p>
+            <p class="article">
+              Называйте файлы по&nbsp;содержанию, на&nbsp;латинице, через дефис.
+              Например: hero-background.webp, robot-illustration.png,
+              toaster-sprite.png, snow-element-01.svg. Никаких пробелов,
+              кириллицы и&nbsp;спецсимволов в именах&nbsp;&mdash; они могут
+              вызвать проблемы на&nbsp;сервере.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Подключение шрифтов</h3>
+            <p class="article">
+              Подключение шрифтов&nbsp;&mdash; одна из&nbsp;тех вещей, которая
+              кажется простой, но&nbsp;на&nbsp;которой спотыкаются снова
+              и&nbsp;снова. Давайте разберём оба способа, чтобы у&nbsp;вас был
+              готовый шаблон, который можно скопировать и&nbsp;адаптировать под
+              свой проект.
+            </p>
+            <p class="article">
+              <b>Способ&nbsp;1: локальные шрифты через @font-face </b>
+            </p>
+            <p class="article">
+              Если вы&nbsp;скачали файлы шрифта (например, с&nbsp;Google Fonts
+              или fontsquirrel.com), положите их&nbsp;в&nbsp;папку
+              <code>fonts/</code> и подключите через
+              <code>@font-face</code> в&nbsp;самом начале вашего CSS-файла:
+            </p>
+          </div>
+
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="css">CSS</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock active"
+                data-lang="css"
+              ><code class="language-css">
+@font-face {
+  font-family: 'AeonikPro';
+  src: url('../fonts/AeonikPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AeonikPro';
+  src: url('../fonts/AeonikPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Несколько моментов, на&nbsp;которых обычно спотыкаются. Путь
+              <code>../fonts/</code> начинается с&nbsp;двух точек, потому что
+              CSS-файл лежит в&nbsp;папке <code>css/</code>, и&nbsp;чтобы
+              добраться до папки <code>fonts/</code>, нужно сначала выйти
+              на&nbsp;уровень выше. Если&nbsp;бы CSS лежал в&nbsp;корне проекта
+              рядом с <code>fonts/</code>, путь был&nbsp;бы просто
+              fonts/AeonikPro-Regular.woff2. Свойство
+              <code>font-family</code> &mdash;&nbsp;это имя, которое
+              вы&nbsp;придумываете сами. Оно может быть любым, но&nbsp;должно
+              совпадать с&nbsp;тем, что вы&nbsp;потом используете в&nbsp;стилях.
+            </p>
+
+            <p class="article">
+              Свойство <code>font-weight</code> различает начертания одного и
+              того&nbsp;же шрифта. Если вы&nbsp;подключите и&nbsp;Regular (400),
+              и&nbsp;Bold (700) под одним <code>font-family</code>, браузер сам
+              подберёт нужное начертание, когда вы&nbsp;напишете
+              <code>font-weight: bold</code> в CSS. Свойство
+              <code>font-display: swap</code> говорит браузеру сначала показать
+              текст системным шрифтом, а&nbsp;потом подменить кастомным, когда
+              тот загрузится. Без этого текст может быть невидимым, пока шрифт
+              грузится.
+            </p>
+
+            <p class="article">
+              После подключения шрифт используется как обычно:
+            </p>
+          </div>
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="css">CSS</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock active"
+                data-lang="css"
+              ><code class="language-css">
+body {
+  font-family: 'AeonikPro', Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'AeonikPro', Arial, sans-serif;
+  font-weight: 700;
+}
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Обратите внимание на&nbsp;запасные шрифты после
+              <code>'AeonikPro'</code>. Если кастомный шрифт по&nbsp;какой-то
+              причине не&nbsp;загрузится, браузер отобразит текст в&nbsp;Arial,
+              а&nbsp;если и&nbsp;его нет &mdash; в&nbsp;любом системном
+              <code>sans-serif</code>. Никогда не&nbsp;оставляйте font-family
+              с&nbsp;одним значением.
+            </p>
+
+            <p class="article">
+              <b>Способ&nbsp;2: Google Fonts через &lt;link /&gt;</b>
+            </p>
+
+            <p class="article">
+              Если шрифт доступен на&nbsp;Google Fonts, подключить его можно
+              одной строкой в&nbsp;HTML, без скачивания файлов и&nbsp;без
+              <code>@font-face</code>:
+            </p>
+          </div>
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="html">HTML</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <pre
+                class="A_CodeBlock"
+                data-lang="html"
+              ><code class="language-markup">
+&lt;head&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Первые два тега preconnect ускоряют загрузку, заранее устанавливая
+              соединение с&nbsp;серверами Google. Третий тег подключает сам
+              шрифт. В параметре <code>family</code> указано название шрифта
+              и&nbsp;нужные начертания (400 и&nbsp;700), а
+              <code>display=swap</code> работает так же, как
+              <code>font-display: swap</code> в <code>@font-face</code>.
+            </p>
+
+            <p class="article">
+              После подключения шрифт используется в&nbsp;CSS:
+            </p>
+          </div>
+
+          <div class="S_CodeArea">
+            <div class="O_CodeBar">
+              <div class="M_CodeTabs">
+                <button class="A_CodeTab" data-lang="css">CSS</button>
+              </div>
+              <div class="A_CopyButton-container"></div>
+            </div>
+
+            <div class="O_CodeContent">
+              <div class="A_LineNumbers"></div>
+              <!-- HTML code -->
+              <!-- Css Code -->
+              <pre
+                class="A_CodeBlock active"
+                data-lang="css"
+              ><code class="language-css">
+body {
+  font-family: 'Inter', Arial, sans-serif;
+}
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Сделайте README.md</h3>
+            <p class="article">
+              Файл README.md&nbsp;&mdash; это текстовое описание проекта,
+              которое GitHub отображает на&nbsp;главной странице репозитория.
+              Он&nbsp;не&nbsp;влияет на&nbsp;работу плаката, но&nbsp;важен для
+              всех, кто откроет ваш репозиторий: преподавателей, будущих
+              работодателей, других студентов.
+            </p>
+            <p class="article">
+              Хороший README для веб-плаката включает название проекта
+              и&nbsp;краткое описание концепции, ссылку на&nbsp;живой плакат
+              (GitHub Pages), автора и&nbsp;год создания. Это занимает пять
+              минут, но&nbsp;делает репозиторий профессиональным.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Чего не&nbsp;должно быть в&nbsp;проекте</h3>
+
+            <p class="article">
+              Несколько вещей, которые стоит убрать из&nbsp;репозитория перед
+              публикацией.
+            </p>
+            <ol class="C_List">
+              <li>
+                Файлы Figma, PSD и&nbsp;другие макеты. Они тяжёлые
+                и&nbsp;не&nbsp;имеют отношения к&nbsp;работающему плакату.
+                Храните их&nbsp;отдельно.
+              </li>
+              <li>
+                Папка .DS_Store (на&nbsp;macOS) и&nbsp;Thumbs.db
+                (на&nbsp;Windows). Это системные файлы, которые создаются
+                автоматически. Добавьте их&nbsp;в .gitignore, чтобы они
+                не&nbsp;попадали в&nbsp;репозиторий.
+              </li>
+              <li>
+                Неиспользуемые файлы. Если вы&nbsp;экспериментировали
+                с&nbsp;картинкой, которая в&nbsp;итоге не&nbsp;вошла
+                в&nbsp;плакат, удалите&nbsp;её. Каждый файл в проекте должен
+                быть подключён и&nbsp;использоваться.
+              </li>
+              <li>
+                Скриншоты и&nbsp;превью в&nbsp;корне проекта. Если нужны
+                картинки для README, создайте для них подпапку docs/ или
+                screenshots/.
+              </li>
+            </ol>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://code.visualstudio.com/">Редактор VS-Code</a>
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files"
+                  >Гайд MDN по&nbsp;организации файлов веб-проекта</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://fonts.google.com/">Google fonts</a>
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-3-1"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

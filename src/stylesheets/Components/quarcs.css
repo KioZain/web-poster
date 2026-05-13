@@ -150,6 +150,10 @@
   align-items: flex-end;
 }
 
+.Q_CalloutIcon {
+  border-radius: 8px;
+}
+
 .Q_CheckBox {
   appearance: none;
   -webkit-appearance: none;

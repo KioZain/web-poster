@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Использование SVG</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Использование SVG</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Использование SVG</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">7 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-3-4.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!---------------------- Start ---------------------->
+          <p id="first" class="article">
+            В статье про подготовку графики мы упоминали SVG как формат для
+            векторных элементов и обещали вернуться к нему подробнее. SVG — это
+            полноценная разметка, которую можно встраивать прямо в HTML и
+            стилизовать через CSS. SVG открывает возможности, недоступные
+            растровым форматам: анимацию отдельных элементов, реакцию на
+            <code>hover</code>, эффект рисующейся линии. И всё это без единой
+            строки JavaScript!
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Как добавить SVG</h3>
+            <p class="article">
+              Прежде чем анимировать, разберёмся, как SVG попадает на страницу.
+              Способ вставки определяет, что вы сможете с ним делать.
+            </p>
+            <p class="article">
+              Через тег <code>&lt;img&gt;</code> — самый простой способ. SVG
+              вставляется как обычная картинка:
+              <code>&lt;img src="icon.svg"&gt;</code>. Работает, но вы теряете
+              доступ к внутренним элементам. Нельзя менять цвета, анимировать
+              отдельные части, реагировать на <code>:hover</code>. По сути, SVG
+              ведёт себя как статичная PNG картинка, которая просто
+              масштабируемая.
+            </p>
+            <p class="article">
+              Через CSS <code>background-image</code> аналогично
+              <code>&lt;img&gt;</code>. Удобно для фоновых паттернов и декора,
+              но стилизовать изнутри невозможно.
+            </p>
+            <p class="article">
+              Inline, прямо в HTML. Вы вставляете код SVG непосредственно в
+              разметку страницы. Это открывает полный доступ к каждому элементу
+              внутри SVG. Можно задавать классы отдельным фигурам, менять их
+              <code>fill</code> и <code>stroke</code> через CSS, анимировать
+              через <code>transition</code> и <code>@keyframes</code>, вешать
+              <code>hover</code>-эффекты. Для веб-плаката это единственный
+              способ, который имеет смысл, когда вам нужна интерактивность.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Как получить SVG-код для inline-вставки? Экспортируйте фигуру из
+                Figma как SVG, откройте файл в текстовом редакторе и вы увидите
+                XML-разметку с тегами
+                <code>&lt;svg&gt;</code>, <code>&lt;path&gt;</code>,
+                <code>&lt;circle&gt;</code>, <code>&lt;rect&gt;</code>.
+                Скопируйте её целиком и вставьте прямо в HTML. Перед вставкой
+                прогоните код через
+                <a href="https://svgomg.net/">svgomg.net</a> и это уберёт лишние
+                метаданные и сократит размер.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Fill и Stroke</h3>
+            <p class="article">
+              Каждый SVG-элемент имеет два визуальных свойства.
+              <code>fill</code> — это заливка, цвет внутренней области.
+              <code>stroke</code> — это обводка, линия по контуру фигуры. Оба
+              управляются через CSS точно так же, как <code>color</code> или
+              <code>background</code> у обычных HTML элементов.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-inline">
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <polygon
+                  class="star"
+                  points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"
+                />
+              </svg>
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <circle class="circle-outline" cx="12" cy="12" r="10" />
+              </svg>
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <rect
+                  class="rect-dual"
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="3"
+                />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="html">
+                    HTML
+                  </button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg width="80" height="80" viewBox="0 0 24 24"&gt;
+  &lt;polygon class="star"
+    points="12,2 15,9 22,9 16,14
+            18,21 12,17 6,21 8,14 2,9 9,9"/&gt;
+&lt;/svg&gt;
+ 
+&lt;svg width="80" height="80" viewBox="0 0 24 24"&gt;
+  &lt;circle class="circle-outline"
+    cx="12" cy="12" r="10"/&gt;
+&lt;/svg&gt;
+
+&lt;svg width="80" height="80" viewBox="0 0 24 24"&gt;
+  &lt;rect
+    class="rect-dual"
+    x="3"
+    y="3"
+    width="18"
+    height="18"
+    rx="3"
+  /&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.star {
+  fill: #FE3904;
+  stroke: none;
+}
+ 
+.circle-outline {
+  fill: none;
+  stroke: #9EFF70;
+  stroke-width: 3;
+}
+/* fill — заливка, stroke — обводка.
+   Это два свойства, которыми вы
+   будете управлять чаще всего. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Звёздочка залита красным без обводки. Круг наоборот без заливки,
+              но с зелёной обводкой. Прямоугольник совмещает оба свойства. Этих
+              двух инструментов достаточно для огромного количества визуальных
+              эффектов.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Hover на SVG-элементах</h3>
+            <p class="article">
+              Поскольку inline SVG-элементам можно задавать классы, к ним
+              применяются все те же CSS-псевдоклассы, что и к обычным
+              HTML-элементам. В первую очередь
+              <code>:hover</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-hover-fill">
+              <svg width="100" height="100" viewBox="0 0 24 24">
+                <circle
+                  class="hover-shape hover-circle"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+              </svg>
+              <svg width="100" height="100" viewBox="0 0 24 24">
+                <rect
+                  class="hover-shape hover-rect"
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="2"
+                />
+              </svg>
+              <svg width="100" height="100" viewBox="0 0 24 24">
+                <polygon
+                  class="hover-shape hover-star"
+                  points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"
+                />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg width="100" height="100" viewBox="0 0 24 24"&gt;
+  &lt;circle class="hover-circle"
+    cx="12" cy="12" r="10"/&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.hover-circle {
+  fill: #FE3904;
+  transition: fill 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+ 
+.hover-circle:hover {
+  fill: #9EFF70;
+  transform: scale(1.15);
+}
+/* transition делает смену плавной.
+   Наведите курсор — круг сменит цвет
+   и немного увеличится. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Наведите курсор на каждую фигуру. Круг меняет <code>fill</code> и
+              увеличивается. Прямоугольник получает заливку, которой у него
+              изначально не было. Звёздочка меняет цвет и поворачивается. Всё
+              это — через <code>transition</code>, без JavaScript.
+            </p>
+            <p class="article">
+              <code>hover</code> можно вешать как на отдельный SVG-элемент, так
+              и на родительский <code>&lt;svg&gt;</code>, чтобы при наведении на
+              всю иконку менялись её внутренние части. Второй подход удобнее,
+              когда нужно координировать несколько изменений одновременно.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-hover-transform">
+              <svg
+                class="icon-plus"
+                width="120"
+                height="120"
+                viewBox="0 0 24 24"
+                style="cursor: pointer"
+              >
+                <circle class="bg" cx="12" cy="12" r="11" />
+                <path class="cross" d="M12,6 L12,18 M6,12 L18,12" fill="none" />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="html">
+                    HTML
+                  </button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg class="icon-plus" viewBox="0 0 24 24"&gt;
+  &lt;circle class="bg" cx="12" cy="12" r="11"/&gt;
+  &lt;path class="cross"
+    d="M12,6 L12,18 M6,12 L18,12"
+    fill="none"/&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.icon-plus .cross {
+  stroke: white;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+  transform-origin: 12px 12px;
+}
+ 
+.icon-plus:hover .cross {
+  transform: rotate(90deg);
+}
+/* transform-origin: 12px 12px — центр
+   SVG-холста (viewBox 0 0 24 24).
+   Без этого вращение будет
+   вокруг левого верхнего угла. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Здесь <code>hover</code> стоит на родительском
+              <code>&lt;svg&gt;</code>. При наведении фон круга меняет цвет, а
+              крестик <code>path</code> поворачивается на 90 градусов,
+              превращаясь из плюса в крестик закрытия. Обратите внимание на
+              <code>transform-origin: 12px 12px</code> — это центр SVG-холста
+              при <code>viewBox 0 0 24 24</code>. Без явного указания
+              <code>transform-origin</code> SVG-элементы вращаются вокруг левого
+              верхнего угла холста, а не вокруг своего центра. Это самая частая
+              ошибка при анимации SVG.
+            </p>
+            <p class="article">
+              <code>transform-origin</code> в SVG работает иначе, чем в HTML. У
+              HTML элементов по умолчанию точка вращения является центром
+              элемента. У SVG элементов — верхний левый угол SVG-холста
+              <code>0, 0</code>. Чтобы вращать фигуру вокруг её собственного
+              центра, нужно задать <code>transform-origin</code> явно. Для
+              холста <code>viewBox="0 0 24 24"</code> центр — это
+              <code>12px 12px</code>, для <code>viewBox="0 0 100 100"</code> —
+              <code>50px 50px</code>.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Анимации с SVG</h3>
+            <p class="article">
+              <code>hover</code>-эффекты срабатывают при наведении. Если нужна
+              анимация, которая работает постоянно — пульсация, вращение,
+              подпрыгивание — используйте <code>@keyframes</code>, точно так же,
+              как для обычных HTML элементов.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-keyframes-pulse">
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <circle class="pulse-circle" cx="12" cy="12" r="10" />
+              </svg>
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <rect
+                  class="spin-rect"
+                  x="4"
+                  y="4"
+                  width="16"
+                  height="16"
+                  rx="2"
+                />
+              </svg>
+              <svg width="80" height="80" viewBox="0 0 24 24">
+                <polygon
+                  class="bounce-star"
+                  points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"
+                />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg viewBox="0 0 24 24"&gt;
+  &lt;circle class="pulse-circle" cx="12" cy="12" r="10"/&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.pulse-circle {
+  fill: #FE3904;
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+ 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+/* transform-origin: center — обязательно.
+   Без него SVG-элемент масштабируется
+   от верхнего левого угла холста. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Три фигуры, три разных анимации. Круг пульсирует через
+              <code>scale</code> и <code>opacity</code>. Прямоугольник вращается
+              через <code>rotate 360deg</code>. Звёздочка подпрыгивает через
+              <code>translateY</code>. Все три используют
+              <code>transform-origin: center</code> для корректного поведения и
+              <code>infinite</code> для бесконечного цикла.
+            </p>
+            <p class="article">
+              Для веб-плаката такие анимации полезны для декоративных SVG
+              элементов. Мерцающие звёзды, вращающиеся шестерёнки, пульсирующие
+              точки — всё это создаёт визуальную среду, не требуя взаимодействия
+              со стороны зрителя.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Эффект рисующейся линии</h3>
+            <p class="article">
+              Это, пожалуй, самый эффектный CSS-трюк, доступный только с SVG.
+              Линия как будто рисуется на экране, постепенно проявляясь от
+              начала к концу. Технически за ним стоят два свойства:
+              <code>stroke-dasharray</code> и <code>stroke-dashoffset</code>.
+            </p>
+            <p class="article">
+              <code>stroke-dasharray</code> превращает сплошную обводку в
+              пунктир и задаёт длину штриха и промежутка. Если задать длину
+              штриха равной длине всего пути, получится один штрих во всю линию
+              и визуально линия выглядит сплошной.
+              <code>stroke-dashoffset</code> сдвигает этот штрих вдоль пути.
+              Если сдвинуть его на всю длину, штрих уедет за пределы видимой
+              области и линия пропадёт. Анимация возвращает
+              <code>offset</code> к нулю, и штрих постепенно въезжает обратно,
+              создавая эффект рисования.
+            </p>
+            <p class="article">
+              Атрибут <code>pathLength="100"</code> на SVG-элементе упрощает
+              расчёт. Он говорит браузеру: «Считай, что длина этого пути
+              составляет 100 единиц, независимо от реальной длины». После этого
+              <code>stroke-dasharray: 100</code> и
+              <code>stroke-dashoffset: 100</code> всегда будут правильными
+              значениями, без необходимости вычислять длину пути через
+              JavaScript.
+            </p>
+          </div>
+
+          <!-- 5. Line draw: stroke-dashoffset -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-line-draw">
+              <svg width="200" height="200" viewBox="0 0 100 100">
+                <path
+                  class="draw-path"
+                  d="M10,50 Q50,10 90,50 Q50,90 10,50"
+                  pathLength="100"
+                />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg viewBox="0 0 100 100"&gt;
+  &lt;path class="draw-path"
+    d="M10,50 Q50,10 90,50 Q50,90 10,50"
+    pathLength="100"/&gt;
+&lt;/svg&gt;
+&lt;!-- pathLength="100" упрощает расчёт:
+     длина пути всегда 100 единиц --&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.draw-path {
+  fill: none;
+  stroke: #9EFF70;
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw 3s ease forwards
+             infinite alternate;
+}
+ 
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+/* stroke-dasharray: 100 — штрих длиной
+   во всю линию.
+   stroke-dashoffset: 100 — сдвигаем штрих
+   так, что линия невидима.
+   Анимация возвращает offset к 0 —
+   линия рисуется. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Фигура в виде знака бесконечности рисуется и стирается в
+              бесконечном цикле. Три CSS-свойства и один
+              <code>@keyframes</code>.
+            </p>
+            <p class="article">
+              Тот же эффект можно привязать к <code>hover</code> через
+              <code>transition</code> вместо <code>animation</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-line-draw-hover">
+              <p>Наведи курсор в центр</p>
+              <svg
+                width="240"
+                height="120"
+                viewBox="0 0 120 60"
+                style="cursor: pointer"
+              >
+                <path
+                  class="draw-hover-path"
+                  d="M10,50 L30,10 L50,40 L70,15 L90,45 L110,10"
+                  pathLength="100"
+                />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg viewBox="0 0 120 60"&gt;
+  &lt;path class="draw-hover-path"
+    d="M10,50 L30,10 L50,40
+       L70,15 L90,45 L110,10"
+    pathLength="100"/&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.draw-hover-path {
+  fill: none;
+  stroke: #FE3904;
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1.5s ease;
+}
+ 
+svg:hover .draw-hover-path {
+  stroke-dashoffset: 0;
+}
+/* Тот же принцип, но через transition
+   вместо animation. Линия рисуется
+   при наведении и стирается
+   когда курсор уходит. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Наведите курсор — зигзагообразная линия нарисуется. Уберите курсор —
+            сотрётся обратно. <code>transition</code> на
+            <code>stroke-dashoffset</code> создаёт плавный переход, а
+            длительность 1.5 секунды даёт время насладиться эффектом.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Комбинация приёмов</h3>
+            <p class="article">
+              Самые интересные результаты получаются, когда вы совмещаете
+              несколько SVG-анимаций в одном элементе. Смена <code>fill</code>,
+              рисующаяся обводка и масштабирование могут работать одновременно.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="svg-combo">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 100 100"
+                style="cursor: pointer"
+              >
+                <circle class="combo-bg" cx="50" cy="50" r="48" />
+                <circle
+                  class="combo-ring"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  pathLength="283"
+                />
+                <polygon class="combo-icon" points="40,30 40,70 72,50" />
+              </svg>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;svg viewBox="0 0 100 100"&gt;
+  &lt;circle class="combo-bg" cx="50" cy="50" r="48"/&gt;
+  &lt;circle class="combo-ring" cx="50" cy="50" r="45"/&gt;
+  &lt;polygon class="combo-icon"
+    points="40,30 40,70 72,50"/&gt;
+&lt;/svg&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.combo-ring {
+  fill: none;
+  stroke: #FE3904;
+  stroke-width: 2;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.8s ease;
+}
+ 
+svg:hover .combo-ring {
+  stroke-dashoffset: 0;
+  stroke: #9EFF70;
+}
+ 
+svg:hover .combo-icon {
+  fill: white;
+  transform: scale(1.1);
+}
+/* При наведении: кольцо рисуется,
+   иконка увеличивается, цвета меняются.
+   Три перехода работают одновременно. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Наведите курсор на кнопку воспроизведения. Три вещи происходят
+            одновременно: кольцо «рисуется» по кругу и меняет цвет с красного на
+            зелёный, треугольник-иконка увеличивается и белеет, фон затемняется.
+            Каждый элемент имеет свой <code>transition</code>, и все они
+            срабатывают от одного <code>:hover</code> на родительском
+            <code>&lt;svg&gt;</code>.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Чего SVG не может</h3>
+            <p class="article">
+              SVG не подходит для фотографий. Растровые изображения, фото,
+              скриншоты, сканы, то это точно JPEG, WebP или AVIF. SVG хорош
+              только для графики, которую можно описать кривыми и
+              геометрическими формами.
+            </p>
+            <p class="article">
+              Сложные SVG из Figma могут быть тяжёлыми. Если иллюстрация
+              содержит сотни
+              <code>path</code> элементов с тысячами точек, SVG-файл может
+              оказаться тяжелее PNG. Прогоняйте такие файлы через svgomg.net и
+              сравнивайте размеры.
+            </p>
+            <p class="article">
+              Анимация сложных <code>path</code> данных требует JavaScript. CSS
+              позволяет анимировать <code>fill</code>, <code>stroke</code>
+              <code>transform</code> и <code>stroke-dashoffset</code>. Если вам
+              нужно морфить одну форму в другую — менять сам путь
+              <code>d="..."</code> — потребуется JavaScript-библиотека вроде
+              GSAP с плагином MorphSVG.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Хорошее правило: если фигуру можно нарисовать в Illustrator или
+                Figma с помощью Pen Tool, то она подходит для SVG. Если её можно
+                получить только фотографией или сложным растровым рендером, то
+                используйте WebP или AVIF.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://css-tricks.com/using-svg"
+                  >Гайд CSS-Tricks по способам вставки SVG</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://svgomg.net">Оптимизатор SVG</a>
+              </li>
+              <li class="A_ListLink">
+                <a href="https://css-tricks.com/svg-line-animation-works ">
+                  Разбор эффекта рисующейся линии</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://gsap.com">
+                  Анимации с SVG на стероидах от GSAP</a
+                >
+              </li>
+            </ol>
+          </div>
+          <!----------------------End ---------------------->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-3-4"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

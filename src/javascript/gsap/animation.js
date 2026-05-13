@@ -122,13 +122,13 @@ const W = container.offsetWidth
 const H = container.offsetHeight
 const sq = 6
 const gap = 2
-const fast = 0.6
-const slow = 0.9
+const fast = 0.4
+const slow = 0.6
 
-gsap.set('#lt', { x: -(sq + gap), y: -(sq + gap) })
-gsap.set('#rt', { x: gap, y: -(sq + gap) })
-gsap.set('#lb', { x: -(sq + gap), y: gap })
-gsap.set('#rb', { x: gap, y: gap })
+gsap.set('#lt', { x: -(sq + gap), y: -(sq + gap), visibility: 'visible' })
+gsap.set('#rt', { x: gap, y: -(sq + gap), visibility: 'visible' })
+gsap.set('#lb', { x: -(sq + gap), y: gap, visibility: 'visible' })
+gsap.set('#rb', { x: gap, y: gap, visibility: 'visible' })
 // gsap.set('.text-go-gsap', { visibility: 'visible' })
 // gsap.set('#buttonsGsap', { visibility: 'visible' })
 
@@ -144,9 +144,9 @@ tl.to('#lt', { x: -W / 2, duration: fast, ease: 'power2.inOut' }, 0)
   .to('#lb', { y: H / 2 - sq, duration: slow, ease: 'power2.inOut' }, '<')
   .to('#rb', { y: H / 2 - sq, duration: slow, ease: 'power2.inOut' }, '<')
 
-gsap.registerPlugin(SplitText)
 const split = SplitText.create('.text-go-gsap', { type: 'words' })
 gsap.set(split.words, { opacity: 0 })
+gsap.set('.text-go-gsap', { visibility: 'visible' })
 const totalDuration = tl.duration()
 const textDelay = 0.5
 const wordsCount = split.words.length
@@ -159,11 +159,11 @@ const buttons = document.querySelector('#buttonsGsap')
 const buttonsDuration = 0.5
 const buttonsStart = totalDuration - buttonsDuration - 0.15
 
-const videoStart = textDelay - 0.4 // появляется за 0.4s до текста
+const videoStart = textDelay - 0.4
 
 tl.fromTo(
   '.A_VideoContainer',
-  { opacity: 0, y: 40 },
+  { opacity: 0, y: 40, visibility: 'visible' },
   { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
   videoStart
 )

@@ -302,11 +302,11 @@
         display: flex;
         align-items: center;
       }
-
+      /* 
       input {
         width: 1rem;
         height: 1rem;
-      }
+      } */
     }
   }
 }
@@ -384,7 +384,13 @@
     max-width: 586px;
   }
   @media screen and (max-width: 768px) {
-    padding: var(--space-32) 0;
+    padding: var(--space-20) var(--space-12);
+
+    .M_HeadingContainer {
+      p.subtitle.light {
+        font-size: 17px;
+      }
+    }
   }
   @media screen and (max-width: 486px) {
     .M_HeadingContainer {
@@ -512,6 +518,12 @@
   margin-top: -1px;
   text-decoration: none;
   position: relative;
+  transition: all 0.3 ease-out;
+
+  img {
+    transition: transform 0.2s ease-out;
+    transform-origin: center;
+  }
 
   .A_Tag {
     margin: auto 0;
@@ -608,6 +620,20 @@
 
     p.count {
       grid-column: 1/3;
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
+    p {
+      color: var(--gray-soft);
+    }
+    span {
+      color: var(--gray-soft);
+      border: 1px solid var(--gray-soft);
     }
   }
 }
@@ -745,13 +771,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: var(--space-12);
+  padding: var(--space-16);
 }
 .O_CodeContent {
   display: flex;
   flex-direction: row;
   gap: var(--space-12);
-  padding: 0 var(--space-12) var(--space-12);
+  padding: 0 var(--space-16) var(--space-16);
 
   & .A_CodeBlock {
     display: none;
@@ -998,6 +1024,14 @@
 
     @media screen and (max-width: 768px) {
       padding: var(--space-20);
+      background-size: cover 110%;
+
+      .M_TitleText {
+        p.subtitle {
+          font-size: 17px;
+          color: var(--gray-soft);
+        }
+      }
     }
 
     @media screen and (max-width: 486px) {

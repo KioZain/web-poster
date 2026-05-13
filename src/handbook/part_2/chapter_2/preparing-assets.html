@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Подготовка графики и фотографий</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Подготовка графики и фотографий</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Подготовка графики и&nbsp;фотографий</h1>
+            <div class="A_Tag">Дизайн</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">4 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-2-5.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Макет готов, адаптивы продуманы, и&nbsp;вы&nbsp;переходите
+            к&nbsp;сборке. Но&nbsp;прежде чем вставлять изображения в&nbsp;HTML,
+            их&nbsp;нужно подготовить. Необработанные картинки&nbsp;&mdash; одна
+            из&nbsp;самых частых причин, почему страница загружается медленно,
+            а&nbsp;анимации подтормаживают. В&nbsp;этой статье разберём, как
+            оптимизировать растровую графику, чем заменить тяжёлые GIF-анимации
+            и&nbsp;что стоит знать про SVG.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Форматы изображений</h3>
+            <p class="article">
+              Начнём с&nbsp;того, в&nbsp;каком формате сохранять картинки. Выбор
+              формата напрямую влияет на&nbsp;размер файла&nbsp;и,
+              соответственно, на&nbsp;скорость загрузки.
+            </p>
+            <p class="article">
+              <b>JPEG</b>&nbsp;&mdash; классический формат для фотографий
+              и&nbsp;сложных изображений с&nbsp;плавными градиентами.
+              Поддерживает сжатие с потерями, что позволяет уменьшить вес файла
+              за&nbsp;счёт незначительной потери качества. Не&nbsp;поддерживает
+              прозрачность.
+            </p>
+            <p class="article">
+              <b>PNG</b>&nbsp;&mdash; формат для графики с&nbsp;чёткими краями,
+              текстом и прозрачностью. Сжатие без потерь, поэтому файлы тяжелее,
+              чем JPEG. Используйте PNG, когда нужен прозрачный фон или когда
+              изображение содержит мелкий текст и&nbsp;чёткие линии, которые
+              JPEG размоет.
+            </p>
+            <p class="article">
+              <b>WebP</b>&nbsp;&mdash; современный формат от&nbsp;Google,
+              который совмещает достоинства обоих предыдущих. Поддерживает
+              сжатие с&nbsp;потерями и без, прозрачность и&nbsp;даже анимацию.
+              При сопоставимом визуальном качестве файлы WebP весят
+              на&nbsp;25&ndash;35% меньше, чем JPEG или PNG. Поддерживается
+              более чем&nbsp;95% браузеров, так что в&nbsp;2025 году его можно
+              использовать без оглядки.
+            </p>
+            <p class="article">
+              <b>AVIF</b>&nbsp;&mdash; самый новый формат, построенный
+              на&nbsp;видеокодеке AV1. Сжимает ещё эффективнее, чем WebP,
+              особенно фотографии. Поддержка чуть ниже (около&nbsp;93%
+              браузеров), но&nbsp;быстро растёт. Если вы&nbsp;хотите минимальный
+              размер файлов, AVIF&nbsp;&mdash; лучший выбор для фотографического
+              контента.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Правила оптимизации</h3>
+            <p class="article">
+              Несколько конкретных рекомендаций, которые стоит применять к
+              каждому изображению перед вставкой в&nbsp;плакат.
+            </p>
+            <p class="article">
+              Сначала ресайз, потом сжатие. Если ваш плакат отображается на
+              экране шириной 1440&nbsp;пикселей, нет смысла вставлять фотографию
+              шириной 4000&nbsp;пикселей. Уменьшите изображение до&nbsp;нужного
+              размера перед сжатием. Для Retina-экранов (2x) достаточно
+              удвоенного размера: если картинка на&nbsp;макете занимает
+              600&nbsp;пикселей, экспортируйте её&nbsp;шириной
+              1200&nbsp;пикселей.
+            </p>
+            <p class="article">
+              Качество сжатия JPEG/WebP: 75&ndash;85%. Это диапазон,
+              в&nbsp;котором визуальная потеря качества почти незаметна,
+              а&nbsp;размер файла уменьшается в&nbsp;два-три раза
+              по&nbsp;сравнению со&nbsp;стопроцентным качеством. Ниже&nbsp;70%
+              начинают появляться артефакты, особенно на градиентах
+              и&nbsp;мелких деталях.
+            </p>
+            <p class="article">
+              Храните исходники отдельно. Всегда сохраняйте мастер-файл в
+              максимальном качестве (TIFF или PNG без сжатия). Оптимизированные
+              версии генерируйте из&nbsp;него. Повторное сжатие уже сжатого JPEG
+              &mdash; верный способ получить кашу из&nbsp;артефактов.
+            </p>
+            <p class="article">
+              Используйте <code>&lt;picture&gt;</code> для подстраховки.
+              HTML-элемент <code>&lt;picture&gt;</code> позволяет указать
+              несколько версий изображения, и&nbsp;браузер выберет&nbsp;ту,
+              которую он поддерживает. Это способ использовать AVIF для
+              современных браузеров и&nbsp;JPEG как запасной вариант.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Быстрая проверка: откройте DevTools в&nbsp;браузере (F12 &rarr;
+                вкладка Network &rarr; фильтр Img) и&nbsp;посмотрите, сколько
+                весят ваши изображения. Если одна картинка весит больше
+                500&nbsp;КБ&nbsp;&mdash; это сигнал, что она
+                не&nbsp;оптимизирована. Общий вес всех изображений на странице
+                в&nbsp;идеале не&nbsp;должен превышать 2&ndash;3&nbsp;МБ.
+              </p>
+            </div>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Правило, которое сэкономит вам часы отладки: если элемент несёт
+              информацию (текст, заголовок, описание), он&nbsp;должен стоять
+              в&nbsp;потоке документа (Flexbox или Grid). Если элемент
+              декоративный (фоновая фигура, летающий объект, анимированная
+              текстура), его можно позиционировать абсолютно. Смешивать эти
+              роли&nbsp;&mdash; верный путь к тому, что на&nbsp;мобильном макет
+              развалится.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Почему лучше без GIF</h3>
+            <p class="article">
+              GIF&nbsp;&mdash; формат из&nbsp;1987&nbsp;года,
+              и&nbsp;он&nbsp;до&nbsp;сих пор используется для анимированных
+              картинок. Проблема в&nbsp;том, что он&nbsp;крайне неэффективен.
+              GIF поддерживает только 256&nbsp;цветов, не&nbsp;умеет сжимать
+              видеопоследовательности и&nbsp;генерирует огромные файлы.
+              Трёхсекундная GIF-анимация размером 400&times;400 пикселей может
+              весить 2&ndash;5&nbsp;МБ, что для одного элемента на&nbsp;странице
+              совершенно избыточно.
+            </p>
+            <p class="article">
+              Если вам нужна зацикленная анимация с фотографическим качеством,
+              используйте видео. HTML-элемент <code>&lt;video&gt;</code> с
+              атрибутами <code>autoplay</code>, <code>loop</code>,
+              <code>muted</code> и <code>playsinline</code> ведёт себя визуально
+              точно так же, как GIF, но весит в десять-двадцать раз меньше.
+              Формат MP4 поддерживается всеми браузерами. Но для веб-плаката
+              есть ещё более элегантное решение.
+            </p>
+            <p class="article"><b>Но есть ещё более элегантное решение.</b></p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Спрайтовая CSS анимация</h3>
+            <p class="article">
+              Если вам нужна покадровая анимация из&nbsp;нескольких рисованных
+              кадров (например, персонаж моргает, объект трансформируется,
+              иконка переключается между состояниями), вместо GIF можно
+              использовать спрайтовый лист в&nbsp;связке с&nbsp;CSS-анимацией
+              через steps().
+            </p>
+            <p class="article">
+              <b>Спрайтовый лист</b>&nbsp;&mdash; это одно изображение,
+              в&nbsp;котором все кадры анимации расположены в&nbsp;ряд. Разберём
+              принцип на&nbsp;примере проекта
+              <a
+                href="https://www.bryanbraun.com/2014/03/15/how-i-rebuilt-flying-toasters-using-only-css-animations/"
+                >Flying Toasters
+              </a>
+              фронтенд-разработчика Брайана Брауна, который воссоздал
+              классическую заставку After Dark из&nbsp;90-х целиком на&nbsp;CSS.
+            </p>
+            <p class="article">
+              Браун взял изображение тостера в&nbsp;четырёх фазах взмаха крыльев
+              и склеил их&nbsp;в&nbsp;одну горизонтальную полоску размером
+              256&times;64&nbsp;пикселя. Каждый кадр&nbsp;&mdash; 64&times;64.
+            </p>
+            <p class="article">
+              Дальше в&nbsp;HTML создаётся простой div,
+              а&nbsp;в&nbsp;CSS&nbsp;&mdash; контейнер размером одного кадра,
+              который работает как окошко. Через это окошко виден только один
+              фрагмент спрайтового листа:
+            </p>
+          </div>
+
+          <figure class="A_ImageArticle">
+            <img
+              src="../../../images/handbook/preparing assets/toastpreview.webp"
+              alt="Картинка"
+            />
+            <figcaption>
+              Воссозданная анимация из
+              <a href="https://en.wikipedia.org/wiki/After_Dark_(software)"
+                >After Dark</a
+              >, Брайан Браун
+            </figcaption>
+          </figure>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea">
+              <div class="toaster"></div>
+            </div>
+
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <!-- HTML code -->
+                <!-- Css Code -->
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.toaster {
+  position: absolute;
+  background: url('toaster-sprite.png');
+  width: 64px;
+  height: 64px;
+}
+
+@keyframes flap {
+  from { background-position: 0px; }
+  to { background-position: -256px; }
+}
+
+.animated {
+  animation: flap 0.4s steps(4) infinite alternate;
+}
+      </code></pre>
+              </div>
+            </div>
+
+            <figure class="A_ImageArticle">
+              <img
+                src="../../../images/handbook/preparing assets/toaster.webp"
+                alt="Картинка"
+              />
+              <figcaption>Спрайтовый лист тостера</figcaption>
+            </figure>
+
+            <div class="M_ParagraphArticle">
+              <p class="article">
+                Разберём, что здесь происходит. Контейнер .toaster имеет размер
+                одного кадра (64&times;64&nbsp;пикселя) и&nbsp;показывает только
+                один фрагмент спрайта. Анимация <code>flap</code> сдвигает
+                <code>background-position</code> от&nbsp;нуля до&nbsp;минус
+                256&nbsp;пикселей, то&nbsp;есть прокручивает всю полоску слева
+                направо. А <code>steps(4)</code> &mdash;&nbsp;это&nbsp;то, что
+                делает магию. Вместо плавного скольжения анимация разбивается
+                ровно на&nbsp;4&nbsp;дискретных шага, по&nbsp;одному
+                на&nbsp;каждый кадр. Браузер не&nbsp;интерполирует промежуточные
+                состояния, а&nbsp;переключает позицию рывком, создавая эффект
+                покадровой анимации. Значение <code>alternate</code> заставляет
+                анимацию проигрываться в обратном порядке после каждого цикла,
+                так что крылья тостера машут туда-сюда.
+              </p>
+            </div>
+
+            <div class="M_ParagraphArticle">
+              <p class="article">
+                Результат визуально идентичен GIF, но&nbsp;файл весит
+                в&nbsp;разы меньше, потому что это один статичный PNG
+                с&nbsp;эффективным сжатием. К&nbsp;тому
+                же&nbsp;вы&nbsp;полностью контролируете скорость воспроизведения
+                через
+                <code>animation-duration</code>, можете поставить анимацию на
+                паузу через <code>animation-play-state: paused</code> и
+                комбинировать покадровую анимацию с&nbsp;любыми другими
+                CSS-трансформациями.
+              </p>
+            </div>
+
+            <div class="A_ExtraCallout">
+              <square></square>
+              <h4>
+                Спрайтовые анимации особенно хороши для иллюстративных элементов
+                в&nbsp;веб-плакате. Мигающий глаз персонажа, вращающаяся
+                шестерёнка, переключающиеся надписи&nbsp;&mdash; всё это можно
+                реализовать через один PNG-файл и&nbsp;несколько строк CSS.
+                А&nbsp;если спрайт сохранить в&nbsp;WebP, размер файла
+                уменьшится ещё на&nbsp;треть. Принцип, который Браун использовал
+                для летающих тостеров, применим к&nbsp;любому покадровому
+                движению в&nbsp;вашем плакате.
+              </h4>
+            </div>
+
+            <div class="M_ParagraphArticle">
+              <h3>SVG для вектора</h3>
+              <p class="article">
+                SVG (Scalable Vector Graphics)&nbsp;&mdash; это формат векторной
+                графики, который описывает изображение не&nbsp;пикселями,
+                а&nbsp;математическими формулами. Линии, кривые, фигуры,
+                текст&nbsp;&mdash; всё хранится как код, а&nbsp;не&nbsp;как
+                растровая сетка. Это даёт два преимущества: файл обычно весит
+                очень мало, и&nbsp;изображение не&nbsp;теряет качества при любом
+                масштабе.
+              </p>
+              <p class="article">
+                Для веб-плаката SVG полезен в&nbsp;нескольких случаях. Иконки и
+                логотипы отлично ложатся в&nbsp;SVG, потому что остаются чёткими
+                на любом экране. Простые иллюстрации из&nbsp;геометрических форм
+                можно описать в&nbsp;SVG и&nbsp;анимировать прямо через CSS.
+                Декоративные элементы вроде линий, кругов и&nbsp;многоугольников
+                проще и&nbsp;легче создавать в&nbsp;SVG, чем экспортировать
+                из&nbsp;Figma как PNG.
+              </p>
+              <p class="article">
+                SVG&nbsp;&mdash; тема достаточно обширная,
+                и&nbsp;мы&nbsp;подробно разберём её&nbsp;в отдельной статье. Как
+                эскортировать из&nbsp;Figma, как встраивать в HTML, как
+                анимировать отдельные элементы и&nbsp;какие есть ограничения.
+                Пока достаточно запомнить простое правило: если изображение
+                можно нарисовать кривыми (в&nbsp;Illustrator или Figma) &mdash;
+                скорее всего, оно лучше подойдёт как SVG, а&nbsp;не&nbsp;как
+                PNG.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Чеклист для подготовки</h3>
+            <p class="article">
+              Перед тем как добавлять картинку в HTML, пройдитесь по нескольким
+              пунктам.
+            </p>
+            <ol class="C_List">
+              <li>
+                <b>Нужный&nbsp;ли размер? </b>Изображение не&nbsp;должно быть
+                больше, чем его отображаемый размер на&nbsp;экране
+                (с&nbsp;учётом 2x&nbsp;для Retina). &mdash;&nbsp;до 480 пикселей
+              </li>
+              <li>
+                <b>Нужный&nbsp;ли формат?</b> Фотографии&nbsp;&mdash; WebP или
+                AVIF. Графика с прозрачностью&nbsp;&mdash; WebP или PNG.
+                Векторные элементы&nbsp;&mdash; SVG. Покадровая
+                анимация&nbsp;&mdash; спрайт + CSS.
+              </li>
+              <li>
+                <b>Оптимизировано&nbsp;ли? </b>Качество JPEG/WebP выставлено на
+                75&ndash;85%. Файл прогнан через оптимизатор (Squoosh, TinyPNG,
+                ImageOptim).
+              </li>
+              <li>
+                <b>Не&nbsp;слишком&nbsp;ли тяжёлый? </b>Одно
+                изображение&nbsp;&mdash; не&nbsp;больше 200&ndash;500&nbsp;КБ.
+                Если больше&nbsp;&mdash; пересмотрите размер или качество
+                сжатия.
+              </li>
+            </ol>
+          </div>
+
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://squoosh.app/"
+                  >Инструмент от Google для сжатия и конвертации изображений</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://tinypng.com/">
+                  Онлайн-сервис для сжатия PNG и JPEG</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://www.bryanbraun.com/2014/03/15/how-i-rebuilt-flying-toasters-using-only-css-animations/"
+                  >How I rebuilt "Flying Toasters" using only CSS animations
+                </a>
+              </li>
+              <li class="A_ListLink">
+                <a href="https://svgomg.net/">Онлайн-оптимизатор SVG-файлов </a>
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-2-5"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

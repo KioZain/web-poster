@@ -115,6 +115,9 @@
 #buttonsGsap {
   opacity: 0;
 }
+.text-go-gsap {
+  visibility: hidden;
+}
 
 .S_IntroAbout {
   display: flex;
@@ -184,7 +187,7 @@ header.S_Header {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--grid-gap);
-  row-gap: var(--space-12);
+  row-gap: var(--space-16);
   width: 100%;
 
   a.A_Button {
@@ -206,7 +209,7 @@ header.S_Header {
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
-  padding: clamp(0.75rem, 3vw, 4rem) 0;
+  padding: clamp(1.5rem, 3vw, 4rem) 0;
   /* margin-top: var(--header-offset); */
   /* background: navajowhite; */
 
@@ -335,7 +338,7 @@ header.S_Header {
   flex-direction: column;
 }
 .S_CodeArea {
-  border-radius: 4px;
+  border-radius: 12px;
   /* border: 1px solid var(--gray-lightest); */
   background: white;
 }

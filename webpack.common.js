@@ -16,7 +16,7 @@ const pages = [
     template: 'about.html',
     chunks: ['index', 'menubar']
   },
-  { template: 'handbook.html', chunks: ['index', 'menubar'] },
+  { template: 'handbook.html', chunks: ['index', 'menubar', 'tabs'] },
   { template: 'posters.html', chunks: ['index', 'menubar', 'posters'] },
   { template: 'modules.html', chunks: ['index', 'menubar', 'tabs-modules'] },
   {
@@ -227,6 +227,129 @@ const pages = [
       'preview'
     ]
   },
+  {
+    template: 'handbook/part_2/chapter_2/refining-layout.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_2/adaptive-responsive.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_2/creating-breakpoints.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_2/preparing-assets.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  // Chapter 2
+
+  {
+    template: 'handbook/part_2/chapter_3/chapter_2_3.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/grid-flex-absolute.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/project-structure.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/units.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/media-quireies.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_3/working-with-svg.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
@@ -277,6 +400,7 @@ module.exports = {
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     rating: './src/javascript/rating.js',
     preview: './src/javascript/preview.js',
+    tabs: './src/javascript/tabs.js',
     'poster-page': './src/javascript/poster-page.js',
     'tabs-modules': './src/javascript/tabs-modules.js',
     'handbook-nav': './src/javascript/handbook-nav.js',

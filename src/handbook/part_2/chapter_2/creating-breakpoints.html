@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доработка главного экрана</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Разработка адаптивов</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Разработка адаптивов</h1>
+            <div class="A_Tag">Дизайн</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">5 минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-2-4.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!-- Start -->
+          <p id="first" class="article">
+            Итак, вы&nbsp;знаете, чем респонсивный дизайн отличается
+            от&nbsp;адаптивного, разобрались с&nbsp;брейкпоинтами
+            и&nbsp;относительными единицами. Теперь пора рисовать адаптивные
+            версии макета в&nbsp;Figma. Это этап, на&nbsp;котором допускают
+            больше всего ошибок, и&nbsp;многие из&nbsp;них обнаруживаются только
+            в&nbsp;момент вёрстки, когда переделывать уже поздно. Давайте
+            разберём, на&nbsp;что обращать внимание и&nbsp;чего избегать.
+          </p>
+          <div class="M_ParagraphArticle">
+            <h3>Думайте экранами</h3>
+            <p class="article">
+              Ярослав Субботин описывает самую частую ошибку студентов так:
+              плакат рисуется как одна длинная &laquo;колбаса&raquo;
+              в&nbsp;Figma, на&nbsp;которую накидываются элементы так, чтобы
+              смотрелось красиво целиком. А потом выясняется, что
+              в&nbsp;реальном браузере зритель видит страницу не&nbsp;целиком,
+              а&nbsp;экран за&nbsp;экраном, и&nbsp;при скролле композиция
+              распадается.
+            </p>
+            <p class="article">
+              Веб-плакат&nbsp;&mdash; это не&nbsp;печатный лист, который
+              мы&nbsp;видим разом. Это последовательность видимых областей.
+              Каждый экран (viewport) &mdash; отдельная сцена с&nbsp;собственным
+              визуальным центром. Когда вы&nbsp;рисуете макет, делите его
+              на&nbsp;экраны прямо в&nbsp;Figma. Положите полупрозрачные фреймы
+              размером 1440&times;900 (десктоп) или 390&times;844 (мобильный)
+              поверх макета и&nbsp;проверьте, как выглядит каждый кадр
+              по&nbsp;отдельности. Если какой-то из&nbsp;них пустой или
+              перегруженный, это сигнал к&nbsp;доработке.
+            </p>
+          </div>
+
+          <figure class="A_ImageArticle">
+            <img
+              src="../../../images/handbook/adaptivie create/adaptiveiguess.png"
+              alt="Картинка"
+            />
+            <figcaption>
+              Пример корректного адаптива, CTRL + Z, Дарья Бушенева, 2023
+            </figcaption>
+          </figure>
+
+          <div class="M_ParagraphArticle">
+            <h3>Абсолютная любовь и&nbsp;боль</h3>
+            <p class="article">
+              Отдельного разговора заслуживает <code>position: absolute</code>.
+              Это, пожалуй, самая болезненная тема для студентов, и&nbsp;вот
+              почему.
+            </p>
+            <p class="article">
+              Абсолютное позиционирование позволяет разместить элемент
+              в&nbsp;любой точке экрана по&nbsp;точным координатам. В&nbsp;Figma
+              это выглядит просто: перетащил объект куда хочется, записал
+              координаты, перенёс в&nbsp;код. Проблема в&nbsp;том, что эти
+              координаты фиксированные. Они привязаны к конкретному размеру
+              экрана, и&nbsp;когда окно становится уже или шире, элементы
+              начинают налезать друг на&nbsp;друга, уезжать за&nbsp;край или
+              собираться в&nbsp;кучу.
+            </p>
+            <p class="article">
+              Анна Комкова описывает ситуацию со&nbsp;стороны преподавателей:
+              кураторы по&nbsp;дизайну просят студентов делать &laquo;более
+              блочные макеты, менее многослойные, чтобы люди не&nbsp;только
+              на&nbsp;позишенах всё делали, а&nbsp;у&nbsp;них была возможность
+              поработать с&nbsp;адаптивной вёрсткой&raquo;. Иными словами, чем
+              больше в&nbsp;макете абсолютного позиционирования, тем сложнее
+              сделать адаптивную версию.
+            </p>
+            <p class="article">
+              Это не&nbsp;значит, что <code>position: absolute</code> нельзя
+              использовать вообще. Он&nbsp;отлично работает для декоративных
+              элементов, которые &laquo;плавают&raquo; поверх основной вёрстки,
+              для хаотичных и&nbsp;непрерывных композиций
+              на&nbsp;viewport-единицах, и&nbsp;для одноэкранных плакатов, где
+              всё привязано к&nbsp;размеру окна. Проблемы начинаются, когда
+              абсолютами выстраивается структура всей страницы, включая
+              текстовые блоки, навигацию и&nbsp;информационные секции.
+            </p>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Правило, которое сэкономит вам часы отладки: если элемент несёт
+              информацию (текст, заголовок, описание), он&nbsp;должен стоять
+              в&nbsp;потоке документа (Flexbox или Grid). Если элемент
+              декоративный (фоновая фигура, летающий объект, анимированная
+              текстура), его можно позиционировать абсолютно. Смешивать эти
+              роли&nbsp;&mdash; верный путь к тому, что на&nbsp;мобильном макет
+              развалится.
+            </h4>
+          </div>
+
+          <figure class="A_ImageArticle">
+            <img
+              src="https://portfolio.hse.ru/imagecache/userprojects/198183/4582103_w1120_m3_s1.jpg"
+              alt="Картинка"
+              class="poster"
+            />
+            <figcaption>
+              Пример хорошего блочного дизайна, CTRL + Z, Дарья Бушенева, 2023
+            </figcaption>
+          </figure>
+
+          <div class="M_PreviewPoster">
+            <div class="A_PreviewHeader">
+              <p class="subtitle">CTRL + Z</p>
+              <img
+                class="close"
+                src="../../../images/icons/Q_close.svg"
+                alt=""
+              />
+            </div>
+            <iframe
+              src="https://dariabusheneva.github.io/CTRL_Z/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%"
+              height="480"
+              frameborder="4"
+            ></iframe>
+            <button class="A_Button secondary">
+              Посмотреть плакат
+              <img src="../../../images/icons/Q_Expand.svg" alt="" />
+            </button>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Красные флаги в макете</h3>
+            <p class="article">
+              Есть несколько вещей, которые сигнализируют о&nbsp;проблемах ещё
+              до того, как вы&nbsp;написали первую строку кода. Если
+              вы&nbsp;замечаете что-то из&nbsp;этого списка в&nbsp;своём макете,
+              стоит остановиться и&nbsp;пересмотреть подход.
+            </p>
+            <p class="article">
+              Все элементы стоят на&nbsp;абсолютных координатах в&nbsp;пикселях.
+              Если в Figma каждый объект размещён вручную через
+              <code>x</code>/<code>y</code>
+              без привязки к сетке или контейнеру, в коде он тоже будет стоять
+              на фиксированных координатах. При изменении размера окна ничего не
+              перестроится.
+            </p>
+            <p class="article">
+              Текст задан фиксированным кеглем без системы. Если заголовок —
+              48px, подзаголовок — 32px, а основной текст — 16px, и нигде не
+              продумано, что будет на мобильном экране, типографика на телефоне
+              будет либо слишком крупной, либо потребует ручной корректировки в
+              каждом брейкпоинте.
+            </p>
+            <p class="article">
+              Макет нарисован только для одной ширины экрана. Если у вас есть
+              только десктопная версия на 1440 пикселей и больше ничего, вы
+              узнаете о проблемах адаптивности только в момент вёрстки. К этому
+              моменту менять композицию будет мучительно.
+            </p>
+            <p class="article">
+              Элементы перекрывают друг друга по замыслу, но без продуманной
+              логики слоёв. Наложение в Figma — это один <code>z-index</code>,
+              наложение в&nbsp;коде&nbsp;&mdash; это система позиционирования.
+              Если вы&nbsp;не понимаете, какой элемент лежит выше какого
+              и&nbsp;почему, в&nbsp;браузере перекрытия будут вести себя
+              непредсказуемо.
+            </p>
+            <p class="article">
+              Горизонтальные раскладки без плана &laquo;а&nbsp;что на&nbsp;узком
+              экране?&raquo; Три колонки по&nbsp;30% ширины красиво смотрятся
+              на&nbsp;десктопе. На&nbsp;телефоне шириной 390 пикселей каждая
+              колонка окажется шириной 117&nbsp;пикселей, и&nbsp;текст внутри
+              станет нечитаемым. Нужен брейкпоинт, который перестроит колонки
+              в&nbsp;одну вертикальную стопку.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Советы по&nbsp;Figma</h3>
+            <p class="article">
+              Несколько практических советов, которые упростят переход
+              от&nbsp;макета к&nbsp;коду.
+            </p>
+            <ol class="C_List">
+              <li>
+                <b>Рисуйте на&nbsp;этапе концепта минимум две версии макета:</b>
+                десктоп (1440&nbsp;пикселей) и&nbsp;мобильную
+                (390&nbsp;пикселей). Планшетная версия (768&nbsp;пикселей)
+                желательна, но&nbsp;не&nbsp;обязательна на&nbsp;раннем этапе.
+                Две крайние точки дадут вам понимание, как содержимое
+                перестраивается.
+              </li>
+              <li>
+                <b>Используйте Auto Layout в&nbsp;Figma</b>. Этот инструмент
+                имитирует поведение <code>Flexbox</code> в <code>CSS</code>.
+                Если ваш макет в&nbsp;Figma собран на&nbsp;Auto Layout, его
+                будет гораздо проще перевести в&nbsp;код, потому что логика
+                размещения уже совпадает.
+              </li>
+              <li>
+                <b>Обрачивайте всё в&nbsp;Auto Layout</b>. Не&nbsp;размещайте
+                каждый объект отдельно на&nbsp;холсте. Соберите логические
+                группы (секция заголовка, блок с&nbsp;описанием, карточка
+                с&nbsp;иллюстрацией) в&nbsp;фреймы, а&nbsp;потом выстраивайте
+                эти фреймы через Auto Layout. В&nbsp;коде это станет div-ами
+                с&nbsp;Flexbox или Grid внутри.
+              </li>
+              <li>
+                <b>Отделяйте декоративные элементы от&nbsp;структурных</b>.
+                В&nbsp;Figma можно маркировать слои: структурные фреймы (те, что
+                поедут на <code>Flexbox</code>) и&nbsp;декоративные объекты (те,
+                что будут на <code>position: absolute</code>). Это поможет вам
+                и&nbsp;на&nbsp;этапе вёрстки, и&nbsp;при ревью макета.
+              </li>
+            </ol>
+          </div>
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Попробуйте сжать ваш десктопный фрейм в&nbsp;Figma до&nbsp;390
+                пикселей по ширине. Не&nbsp;рисовать мобильную версию заново,
+                а&nbsp;именно сжать текущую (не&nbsp;через scale на&nbsp;клавишу
+                K). То, что сломается первым, &mdash;&nbsp;это&nbsp;то, что
+                потребует адаптивной доработки в&nbsp;первую очередь.
+              </p>
+            </div>
+          </div>
+          <!---------------------- End of the content ---------------------->
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://habr.com/ru/companies/simpleone/articles/881168/"
+                  >Статья на Хабре про адаптивный дизайн</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://medium.com/@aidapacheva/%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4-%D0%B2-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5-%D0%B0%D0%B4%D0%B0%D0%BF%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D0%B8-%D0%B2%D0%B5%D0%B1-%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2-c8532d409c80"
+                  >Новый подход в дизайне адаптивности</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout"
+                  >Гайд по Auto Layout</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-2-4"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 .carousel-wrapper {
   width: 100%;
-  height: clamp(300px, 20vw, 440px);
+  height: clamp(240px, 20vw, 440px);
   position: relative;
   overflow: hidden;
   margin-top: auto;
@@ -225,5 +225,24 @@ section.blurred {
 
     backdrop-filter: blur(4px);
     background: rgba(255, 255, 255, 0.1);
+  }
+}
+.toaster {
+  position: absolute;
+  background-image: url('../images/handbook/preparing\ assets/toaster-sprite.gif');
+  width: 64px;
+  height: 64px;
+  animation: flap 0.4s steps(4) infinite alternate;
+  transform: translateX(-45%);
+  left: 45%;
+  top: 35%;
+  transform: scale(1.5);
+}
+@keyframes flap {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -256px;
   }
 }

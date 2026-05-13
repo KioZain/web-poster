@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вёрстка адаптивов</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Вёрстка адаптивов</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Вёрстка адаптивов</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">8 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-3-5.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!--Start -->
+          <p id="first" class="article">
+            В&nbsp;предыдущих статьях мы&nbsp;разобрали теорию адаптивности
+            и&nbsp;обсудили, как готовить макеты в&nbsp;Figma. Теперь переходим
+            к&nbsp;коду. Но&nbsp;прежде чем говорить о&nbsp;конкретных подходах,
+            нужно разобраться с&nbsp;инструментом, на котором строится большая
+            часть адаптивной вёрстки&nbsp;&mdash; медиа-запросами.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Медиа-запросы @media</h3>
+            <p class="article">
+              Медиа-запрос&nbsp;&mdash; это условие в&nbsp;CSS, которое
+              проверяет характеристики устройства и&nbsp;применяет стили только
+              в&nbsp;том случае, если условие выполняется. Синтаксис выглядит
+              так:
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="media-basic">
+              <div class="media-box">
+                Я красный на десктопе и зелёный на мобильном. Сужайте окно до
+                768px.
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box"&gt;Текст...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.box {
+  background: #FE3904;
+  color: white;
+}
+ 
+@media (max-width: 768px) {
+  .box {
+    background: #9EFF70;
+    color: black;
+  }
+}
+/* @media — условие.
+   Стили внутри сработают, только если
+   ширина экрана ≤ 768px.
+   На более широких экранах
+   браузер их проигнорирует. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Внутри <code>@media</code> вы&nbsp;пишете обычные CSS-правила. Они
+              сработают только на&nbsp;экранах шириной
+              до&nbsp;768&nbsp;пикселей. На&nbsp;более широких экранах браузер
+              проигнорирует всё, что написано внутри этого блока.
+            </p>
+            <p class="article">
+              Условие <code>max-width</code> означает если ширина экрана не
+              больше указанного значения. Условие
+              <code>min-width</code> работает наоборот. Если ширина
+              не&nbsp;меньше. На&nbsp;практике
+              <code>min-width</code> используется чаще, потому что соответствует
+              подходу mobile-first, когда базовые стили пишутся для маленького
+              экрана, а&nbsp;через <code>min-width</code> добавляются правила
+              для больших.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="media-minwidth">
+              <div class="mf-col">Блок 1</div>
+              <div class="mf-col">Блок 2</div>
+              <div class="mf-col">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="col"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="col"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Базовые стили — для мобильного */
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+/* Расширение — для десктопа */
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
+  .col {
+    flex: 1;
+  }
+}
+/* mobile-first: сначала стопка,
+   потом ряд. Добавлять легче,
+   чем убирать. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              В&nbsp;этом примере базовая раскладка лежит вертикальная стопка.
+              При ширине от&nbsp;768 пикселей блоки перестраиваются
+              в&nbsp;горизонтальный ряд. Медиа-запросы можно комбинировать через
+              <code>and</code>:
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="media-range">
+              <div class="range-box">
+                Я меняю цвет в зависимости от ширины окна
+              </div>
+              <div class="range-label">
+                ≤480px — голубой / 481–1024px — розовый / ≥1025px — красный
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box"&gt;Текст...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Мобильный (базовый) */
+.box { background: #7ADFF1; }
+ 
+/* Планшет */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .box { background: #FE96E4; color: white; }
+}
+ 
+/* Десктоп */
+@media (min-width: 1025px) {
+  .box { background: #FE3904; color: white; }
+}
+/* and комбинирует условия.
+   Три диапазона — три разных стиля. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Условие срабатывает только в&nbsp;диапазоне от&nbsp;481
+              до&nbsp;1024&nbsp;пикселей, которое представляет собой типичный
+              планшетный размер. Это позволяет создать стили, которые работают
+              только на&nbsp;планшетах, не затрагивая мобильные
+              и&nbsp;десктопные экраны.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Stretch: растягивай</h3>
+            <p class="article">
+              Stretch&nbsp;&mdash; самый простой из&nbsp;трёх приёмов. Элемент
+              занимает доступное пространство и&nbsp;тянется вместе
+              с&nbsp;контейнером. Когда окно браузера становится шире, элемент
+              становится шире. Когда уже, он сужается. Структура при этом
+              не&nbsp;меняется, количество колонок остаётся прежним, просто
+              каждая колонка становится чуть шире или уже.
+            </p>
+            <p class="article">
+              Технически stretch реализуется через относительные единицы:
+              проценты,
+              <code>flex: 1</code>, <code>fr</code> в&nbsp;Grid. Элемент
+              не&nbsp;имеет фиксированной ширины в&nbsp;пикселях, вместо этого
+              он&nbsp;получает долю от родителя.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="stretch-flex">
+              <div class="sidebar">Боковая панель (160px)</div>
+              <div class="main">
+                Основное содержимое (flex: 1 — занимает всё оставшееся)
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="layout"&gt;
+  &lt;aside class="sidebar"&gt;Боковая панель&lt;/aside&gt;
+  &lt;main class="main"&gt;Содержимое&lt;/main&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.layout {
+  display: flex;
+  gap: 12px;
+}
+ 
+.sidebar {
+  width: 160px;
+  flex-shrink: 0;
+}
+ 
+.main {
+  flex: 1;
+}
+/* sidebar фиксирован, main растягивается.
+   На широком экране main шире,
+   на узком — уже. Sidebar не меняется. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            В этом примере боковая панель фиксирована на 160px, а основное
+            содержимое занимает всё оставшееся пространство через
+            <code>flex: 1</code>. На широком экране main шире, на узком уже, но
+            пропорция сохраняется. Sidebar при этом не меняется — он стабильный
+            якорь.
+          </p>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="stretch-percent">
+              <div class="card">33.33%</div>
+              <div class="card">33.33%</div>
+              <div class="card">33.33%</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="cards"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.cards {
+  display: flex;
+  gap: 12px;
+}
+ 
+.card {
+  width: 33.33%;
+}
+/* Три карточки всегда занимают
+   равные доли. Сужается окно —
+   сужаются карточки. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Три карточки по <code>33.33%</code> ширины. Сужается окно &mdash;
+              сужаются карточки, но&nbsp;их&nbsp;всегда три в&nbsp;ряд.
+            </p>
+            <p class="article">
+              Stretch работает отлично до&nbsp;определённого предела. Проблема
+              начинается, когда элементы растягиваются слишком сильно. Текстовый
+              блок шириной 100% на&nbsp;экране 2560 пикселей превращается в
+              нечитаемую простыню. Строка текста становится длиной в&nbsp;200
+              символов, и&nbsp;глаз теряет начало следующей строки.
+            </p>
+            <p class="article">
+              Решение&nbsp;&mdash; ограничитель <code>max-width</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="stretch-maxwidth">
+              <div class="text-block">
+                Текстовый блок растягивается по ширине, но никогда не становится
+                шире 480 пикселей. На узком экране он займёт 100%, на широком —
+                остановится на 480px. Это сохраняет комфортную длину строки для
+                чтения.
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="text-block"&gt;Текстовый блок...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.text-block {
+  width: 100%;
+  max-width: 480px;
+}
+/* Stretch с ограничителем.
+   Блок тянется, но не бесконечно.
+   max-width не даёт тексту растянуться
+   до нечитаемой ширины. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Блок тянется по&nbsp;ширине, но&nbsp;останавливается
+            на&nbsp;480&nbsp;пикселях. На&nbsp;узком экране он&nbsp;занимает
+            100%, на&nbsp;широком не&nbsp;расползается. Это stretch с верхней
+            границей, и&nbsp;это один из&nbsp;самых полезных паттернов для
+            текстового содержимого.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Stretch хорошо подходит для раскладки секций и&nbsp;контейнеров.
+                Но для текстовых блоков всегда добавляйте
+                <code>max-width</code> &mdash;&nbsp;оптимальная длина строки для
+                чтения составляет 50&ndash;75&nbsp;символов, что соответствует
+                примерно 480&ndash;640 пикселям при стандартном размере шрифта.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Scale: масштабируй</h3>
+            <p class="article">
+              Scale&nbsp;&mdash; это пропорциональное увеличение или уменьшение
+              всех размеров на&nbsp;странице. Если stretch меняет только ширину
+              элементов, то&nbsp;scale меняет всё: шрифты, отступы, промежутки,
+              размеры декоративных элементов. Композиция остаётся той&nbsp;же,
+              просто становится крупнее или мельче.
+            </p>
+            <p class="article">
+              Самый прямолинейный способ реализовать scale&nbsp;&mdash; задать
+              все размеры в&nbsp;viewport-единицах.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="scale-vw">
+              <div class="scale-rect"></div>
+              <div class="scale-circle"></div>
+              <div class="scale-title">Scale</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;section class="poster"&gt;
+  &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;div class="rect"&gt;&lt;/div&gt;
+  &lt;h1&gt;Scale&lt;/h1&gt;
+&lt;/section&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+h1 { font-size: 7vw; }
+ 
+.circle {
+  width: 18vw;
+  height: 18vw;
+}
+ 
+.rect {
+  width: 12vw;
+  height: 25vw;
+}
+/* Все размеры в vw — вся композиция
+   масштабируется пропорционально.
+   Уменьшенная копия самой себя
+   на любом экране. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Заголовок 7vw, круг 18vw, прямоугольник 12vw. Вся композиция
+              &mdash; уменьшенная или увеличенная копия самой себя при любой
+              ширине окна. Для хаотичных и&nbsp;непрерывных веб-плакатов, где
+              важно сохранить пропорции, этот подход работает хорошо.
+            </p>
+            <p class="article">
+              Проблема чистого vw&nbsp;&mdash; отсутствие границ.
+              На&nbsp;маленьком экране шрифт может стать нечитаемым,
+              на&nbsp;огромном&nbsp;&mdash; неприлично крупным. Поэтому
+              на&nbsp;практике scale реализуется через <code>clamp()</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="scale-clamp">
+              <div class="clamp-h1">Заголовок на clamp()</div>
+              <div class="clamp-body">
+                Текст масштабируется плавно, но никогда не становится меньше
+                14px и больше 20px. Комфортная читаемость на любом устройстве.
+              </div>
+              <div class="clamp-gap-demo">
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;h1&gt;Заголовок на clamp()&lt;/h1&gt;
+&lt;p&gt;Текст...&lt;/p&gt;
+&lt;div class="row"&gt;
+  &lt;div class="box"&gt;A&lt;/div&gt;
+  &lt;div class="box"&gt;B&lt;/div&gt;
+  &lt;div class="box"&gt;C&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+h1 { font-size: clamp(28px, 5vw, 72px); }
+p  { font-size: clamp(14px, 1.5vw, 20px); }
+ 
+.row {
+  display: flex;
+  gap: clamp(8px, 2vw, 32px);
+}
+ 
+.box {
+  padding: clamp(12px, 2vw, 32px);
+}
+/* clamp() работает для всего:
+   шрифтов, отступов, промежутков.
+   Scale с верхней и нижней границей. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>clamp()</code> работает для всего: шрифтов, отступов,
+              промежутков. Заголовок масштабируется
+              от&nbsp;28&nbsp;до&nbsp;72&nbsp;пикселей. Промежутки между
+              карточками&nbsp;&mdash; от&nbsp;8&nbsp;до&nbsp;32&nbsp;пикселей.
+              Все значения плавно подстраиваются под ширину окна,
+              но&nbsp;остаются в&nbsp;комфортном диапазоне.
+            </p>
+            <p class="article">
+              Есть ещё один способ реализовать scale, который удобен для блочных
+              структур: менять <code>font-size</code> корневого элемента
+              <code>&lt;html&gt;</code> через media query.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="scale-root">
+              <div class="root-title">Заголовок (2rem)</div>
+              <div class="root-text">
+                Текст абзаца (1rem). Все размеры привязаны к базовому font-size
+                в html.
+              </div>
+              <div class="root-box">
+                Блок с padding: 1rem и border-radius: 0.5rem
+              </div>
+              <div class="root-note">
+                Измените font-size у html с 16px на 14px и всё уменьшится
+                пропорционально
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;h1&gt;Заголовок (2rem)&lt;/h1&gt;
+&lt;p&gt;Текст абзаца (1rem)&lt;/p&gt;
+&lt;div class="box"&gt;Блок с padding: 1rem&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+html { font-size: 16px; }
+ 
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+}
+ 
+h1   { font-size: 2rem; }    /* 32px → 28px */
+p    { font-size: 1rem; }    /* 16px → 14px */
+.box { padding: 1rem; }      /* 16px → 14px */
+ 
+/* Один media query на html —
+   и вся типографика + отступы
+   масштабируются разом. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Когда вся типографика и&nbsp;отступы заданы в <code>rem</code>,
+              достаточно изменить одно значение в <code>:root</code>, чтобы
+              масштабировать всё разом. На&nbsp;десктопе
+              <code>html { font-size: 16px }</code>, на&nbsp;мобильном
+              <code>html { font-size: 14px }</code> и&nbsp;заголовки, текст,
+              padding, gap уменьшаются пропорционально. Это по&nbsp;сути тот
+              самый scale-фактор, но&nbsp;реализованный через систему rem.
+            </p>
+          </div>
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Scale через <code>clamp()</code> и&nbsp;scale через
+              <code>rem</code> + media query. Это два разных инструмента для
+              одной цели. <code>clamp()</code> даёт плавное масштабирование без
+              точек перелома. <code>rem</code> + media query даёт ступенчатое
+              масштабирование в&nbsp;конкретных точках. Для веб-плаката
+              <code>clamp()</code> обычно удобнее, потому что требует меньше
+              media queries и&nbsp;работает более органично.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Switch: переключай</h3>
+            <p class="article">
+              Switch&nbsp;&mdash; это перестроение раскладки при достижении
+              определённой ширины экрана. Если stretch и&nbsp;scale работают
+              плавно, то&nbsp;switch скорее похож на&nbsp;скачок. Три колонки
+              превращаются в&nbsp;одну. Горизонтальное меню сворачивается
+              в&nbsp;бургер. Боковая панель прячется. Структура меняется
+              качественно, а&nbsp;не&nbsp;количественно.
+            </p>
+            <p class="article">
+              Технически switch реализуется двумя способами: через media queries
+              и&nbsp;через CSS Grid с <code>auto-fit</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="switch-media">
+              <div class="col">Колонка 1</div>
+              <div class="col">Колонка 2</div>
+              <div class="col">Колонка 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;Колонка 1&lt;/div&gt;
+  &lt;div class="col"&gt;Колонка 2&lt;/div&gt;
+  &lt;div class="col"&gt;Колонка 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.row {
+  display: flex;
+  gap: 12px;
+}
+ 
+.col { flex: 1; }
+ 
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+/* На широком три колонки в ряд.
+   На узком стопка.
+   Одно правило в media query
+   полностью меняет раскладку. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Классический switch через media query. На&nbsp;широком экране три
+              колонки стоят в&nbsp;ряд (<code>flex-direction: row</code> по
+              умолчанию). На&nbsp;узком перестраиваются в&nbsp;стопку (<code
+                >flex-direction: column</code
+              >). Одно правило в&nbsp;одном media query и&nbsp;раскладка
+              полностью меняется.
+            </p>
+            <p class="article">
+              Второй способ&nbsp;&mdash; автоматический switch через Grid.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="switch-autofit">
+              <div class="grid-card">Карточка 1</div>
+              <div class="grid-card">Карточка 2</div>
+              <div class="grid-card">Карточка 3</div>
+              <div class="grid-card">Карточка 4</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="grid"&gt;
+  &lt;div class="card"&gt;Карточка 1&lt;/div&gt;
+  &lt;div class="card"&gt;Карточка 2&lt;/div&gt;
+  &lt;div class="card"&gt;Карточка 3&lt;/div&gt;
+  &lt;div class="card"&gt;Карточка 4&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+/* Switch без media queries.
+   Браузер сам решает, сколько колонок
+   помещается. Каждая не уже 200px. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>repeat(auto-fit, minmax(200px, 1fr))</code> создаёт столько
+              колонок, сколько помещается в&nbsp;контейнер, при условии что
+              каждая не уже 200&nbsp;пикселей. На&nbsp;широком экране четыре
+              карточки в&nbsp;ряд. Сужаете окно&nbsp;&mdash; три, потом две,
+              потом одна. Браузер перестраивает раскладку сам, без единого media
+              query. Это switch, встроенный в&nbsp;Grid.
+            </p>
+            <p class="article">
+              Switch следует применять осознанно. Каждый media query &mdash;
+              самостоятельная раскладка, которую нужно тестировать. Для
+              веб-плаката обычно достаточно одного-двух переключений: десктоп
+              &rarr; мобильный, иногда с&nbsp;промежуточным планшетным
+              состоянием.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Что использовать</h3>
+            <p class="article">
+              Подведём итог, привязав три подхода к&nbsp;композиционным
+              структурам, которые мы&nbsp;разбирали ранее.
+            </p>
+            <p class="article">
+              <b>Блочная структура</b>&nbsp;&mdash; здесь работают все три.
+              Stretch для контейнеров и&nbsp;секций (<code>flex: 1</code>,
+              проценты). Scale для типографики и&nbsp;отступов
+              (<code>clamp</code>, <code>rem</code>). Switch для перестроения
+              колонок в&nbsp;стопку на&nbsp;мобильном <code>@media</code> или
+              <code>auto-fit</code>.
+            </p>
+            <p class="article">
+              <b>Хаотичная структура</b>&nbsp;&mdash; в&nbsp;первую очередь
+              scale. Все размеры в vw, позиции в&nbsp;процентах. Композиция
+              масштабируется как единое целое. Switch может потребоваться только
+              для текстовых элементов, которые становятся нечитаемыми
+              на&nbsp;маленьком экране.
+            </p>
+            <p class="article">
+              <b>Непрерывная структура</b>&nbsp;&mdash; аналогично хаотичной,
+              преимущественно <code>scale</code> через <code>vw</code>.
+              Вертикальный скролл сохраняется, элементы пропорционально
+              уменьшаются. Switch применяется точечно для текстовых блоков.
+            </p>
+            <p class="article">
+              <b> Одноэкранный формат</b>&nbsp;&mdash; почти целиком scale. Всё
+              привязано к <code>vw</code> и <code>vh</code>, чтобы плакат
+              занимал ровно один экран на&nbsp;любом устройстве. Switch
+              минимален или отсутствует.
+            </p>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://habr.com/ru/companies/simpleone/articles/881168/"
+                  >Cтатья о подходе к адаптивному дизайну</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://min-max-calculator.9elements.com"
+                  >Визуальный калькулятор clamp()</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://css-tricks.com/a-complete-guide-to-css-media-queries"
+                  >Полный гайд по media queries</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries"
+                >
+                  Документация MDN по @container</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://https://ishadeed.com/article/container-queries-are-finally-here/"
+                >
+                  Подробная статья с визуальными примерами по @container</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-3-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

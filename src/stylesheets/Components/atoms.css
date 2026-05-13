@@ -1,15 +1,60 @@
 .A_Logo {
   width: 90px;
   height: 40px;
-  /* background-color: red; */
   cursor: pointer;
   position: relative;
+  display: block;
+  perspective: 300px; /* 🔧 глубина 3D */
+  text-decoration: none;
+}
 
-  #logoAnimation {
-    top: -40%;
-    left: 0%;
-    position: absolute;
+.A_Logo__card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: logoSpinFlip 3s ease-in-out infinite; /* 🔧 3s — скорость */
+}
+
+/*
+  🔧 Пауза на обороте:
+  — 40%/60% → текущая (пауза 20% цикла)
+  — 50%/50% → без паузы
+  — 30%/70% → долгая пауза
+*/
+@keyframes logoSpinFlip {
+  0% {
+    transform: rotateY(0deg);
   }
+  40% {
+    transform: rotateY(-180deg);
+  }
+  60% {
+    transform: rotateY(-180deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+.A_Logo__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.A_Logo__face--front {
+  background-image: url('../../images/logo-front.svg');
+}
+
+.A_Logo__face--back {
+  transform: rotateY(180deg); /* ВАЖНО: не удалять */
+  background-image: url('../../images/logo-back.svg');
 }
 
 .A_DVDLogo {
@@ -21,6 +66,7 @@
     position: absolute;
     width: 140px;
     height: 90px;
+    line-height: 0.8;
   }
   h1 {
     line-height: 40px;
@@ -28,6 +74,7 @@
 }
 
 .A_VideoContainer {
+  visibility: hidden;
   max-width: 720px;
   padding: 8px;
   /* width: 100%; */
@@ -471,16 +518,22 @@ button.A_Tab {
   font-weight: 500;
   font-family: 'Aeonik Pro';
   position: relative;
+  color: var(--gray-light);
+  cursor: pointer;
 
-  p:last-child {
-    font-size: 1rem;
+  p {
     color: var(--gray-light);
   }
 
-  &.inactive {
+  &:hover {
     p {
-      color: var(--gray-light);
-      cursor: not-allowed;
+      color: var(--gray-medium);
+    }
+  }
+
+  &.active {
+    p {
+      color: var(--gray-base);
     }
   }
 }
@@ -888,7 +941,7 @@ button.A_Tab {
     width: 100%;
     object-fit: cover;
     /* border-radius: 4px; */
-    aspect-ratio: 5 / 3;
+    /* aspect-ratio: 5 / 3;s */
   }
   img.poster {
     width: 100%;

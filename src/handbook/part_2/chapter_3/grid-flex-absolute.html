@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid, Flex и Absolute на практике</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            •
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            •
+            <span class="caption-caps">Grid, Flex и Absolute на практике</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Grid, Flex и&nbsp;Absolute <br />на&nbsp;практике</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">8 минуты чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/handbook_2-3-2.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <!--Start -->
+          <p id="first" class="article">
+            По&nbsp;умолчанию HTML-элементы выстраиваются сверху вниз, каждый
+            с&nbsp;новой строки. Это называется нормальным потоком. Для
+            веб-плаката такого поведения недостаточно, поэтому в&nbsp;CSS
+            существуют три инструмента, позволяющих управлять расположением
+            элементов: <code>Flexbox</code>, <code>Grid</code> и&nbsp;абсолютное
+            позиционирование. В&nbsp;этой статье разберём каждый из&nbsp;них
+            с&nbsp;примерами кода и&nbsp;живыми демонстрациями.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Нормальный поток</h3>
+            <p class="article">
+              Прежде чем менять расположение элементов, стоит понять, как они
+              ведут себя без вмешательства.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="normal-flow">
+              <div class="box box-1">Блок 1</div>
+              <div class="box box-2">Блок 2</div>
+              <div class="box box-3">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="html">
+                    HTML
+                  </button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="container"&gt;
+  &lt;div class="box box-1"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.box {
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Каждый <code>div</code> занял всю ширину и&nbsp;встал под
+            предыдущим. Элементы не&nbsp;знают друг о&nbsp;друге,
+            не&nbsp;выстраиваются в&nbsp;ряд, не&nbsp;делят пространство. Они
+            просто падают вниз, как книги, положенные в стопку.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Flexbox в&nbsp;ряд</h3>
+            <p class="article">
+              <code>Flexbox</code> &mdash;&nbsp;это способ управления элементами
+              вдоль одной оси. Вы&nbsp;берёте контейнер, говорите ему
+              <code>display: flex</code>, и&nbsp;все дочерние элементы мгновенно
+              перестраиваются в&nbsp;горизонтальный ряд.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-row">
+              <div class="box box-1">Блок 1</div>
+              <div class="box box-2">Блок 2</div>
+              <div class="box box-3">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="flex-container"&gt;
+  &lt;div class="box box-1"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.flex-container {
+  display: flex;
+}
+/* Одна строка — и блоки встают в ряд */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Блоки больше не&nbsp;падают вниз. Они встали в&nbsp;ряд, каждый
+            занял ширину по&nbsp;содержимому. Это произошло потому, что
+            <code>Flexbox</code> по умолчанию выстраивает элементы вдоль
+            горизонтальной оси (row). Давайте разберём свойства, которыми
+            вы&nbsp;будете пользоваться чаще всего.
+          </p>
+
+          <p class="article">
+            <code>gap</code> задаёт промежутки между элементами. Это удобнее,
+            чем прописывать <code>margin</code> каждому блоку
+            по&nbsp;отдельности.
+          </p>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-gap">
+              <div class="box box-1">Блок 1</div>
+              <div class="box box-2">Блок 2</div>
+              <div class="box box-3">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="flex-container"&gt;
+  &lt;div class="box box-1"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.flex-container {
+  display: flex;
+  gap: 16px;
+}
+/* gap задаёт промежутки между элементами */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            <code>justify-content</code> управляет распределением элементов
+            вдоль основной оси. Значение <code>space-between</code> раскидывает
+            блоки по&nbsp;краям, а&nbsp;свободное пространство распределяет
+            между ними. Значение <code>center</code> собирает всё в&nbsp;центр.
+          </p>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-between">
+              <div class="box box-1">Блок 1</div>
+              <div class="box box-2">Блок 2</div>
+              <div class="box box-3">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="flex-container"&gt;
+  &lt;div class="box box-1"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* Блоки раскидываются по краям,
+   свободное место — между ними */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            <code>align-items</code> управляет выравниванием вдоль поперечной
+            оси. Это полезно, когда блоки разной высоты. Значение
+            <code>center</code> выравнивает их&nbsp;по&nbsp;вертикальному
+            центру. Значение <code>stretch</code> (по&nbsp;умолчанию)
+            растягивает все блоки до&nbsp;высоты самого высокого.
+          </p>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-align">
+              <div class="box box-1">Высокий</div>
+              <div class="box box-2">Средний</div>
+              <div class="box box-3">Очень высокий</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="flex-container"&gt;
+  &lt;div class="box box-1"&gt;Высокий&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Средний&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Очень высокий&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 200px;
+}
+/* Блоки разной высоты выравниваются
+   по вертикальному центру */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            <code>flex</code> на&nbsp;дочернем элементе управляет тем, как блок
+            делит свободное пространство. Значение <code>flex: 1</code> говорит
+            элементу занять всё доступное пространство поровну с&nbsp;соседями.
+            Это типичная раскладка для секции веб-плаката с&nbsp;несколькими
+            колонками.
+          </p>
+
+          <!-- 6. Flexbox: flex: 1 -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-equal">
+              <div class="box box-1">Блок 1</div>
+              <div class="box box-2">Блок 2</div>
+              <div class="box box-3">Блок 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="flex-container"&gt;
+  &lt;div class="box box-1"&gt;Блок 1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;Блок 2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Блок 3&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.flex-container {
+  display: flex;
+  gap: 16px;
+}
+ 
+.box {
+  flex: 1;
+}
+/* flex: 1 — каждый блок берёт
+   равную долю свободного пространства */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            <code>Flexbox</code> думает одномерно. Если вам нужно выстроить
+            элементы в&nbsp;одну линию. Например, горизонтально или вертикально,
+            то <code>Flexbox</code> подходит идеально. Если нужна сетка
+            из&nbsp;строк и столбцов одновременно, переходите к
+            <code>Grid</code>.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Flexbox: вертикальные секции</h3>
+            <p class="article">
+              Самый частый случай использования <code>Flexbox</code> в
+              веб-плакате&nbsp;&mdash; вертикальная раскладка секций на&nbsp;всю
+              высоту экрана. Свойство
+              <code>flex-direction: column</code> возвращает элементы в
+              вертикальную ось, но&nbsp;уже с&nbsp;возможностями
+              <code>Flexbox</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="flex-poster">
+              <section class="hero">Первый экран</section>
+              <section class="content">Содержимое</section>
+              <section class="footer">Финал</section>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="poster"&gt;
+  &lt;section class="hero"&gt;Первый экран&lt;/section&gt;
+  &lt;section class="content"&gt;Содержимое&lt;/section&gt;
+  &lt;section class="footer"&gt;Финал&lt;/section&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.poster {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FE3904;
+  color: white;
+  font-size: 48px;
+}
+/* Вложенный flex центрирует содержимое
+   по обеим осям — 4 строки кода */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Обратите внимание на&nbsp;вложенный <code>display: flex</code> с
+              <code>align-items: center</code> и
+              <code>justify-content: center</code> на&nbsp;секции
+              <code>.hero</code>. Это центрирует содержимое по&nbsp;обеим осям
+              одновременно. Четыре строки CSS&nbsp;и&nbsp;текст идеально
+              посередине экрана. Это один из&nbsp;самых полезных паттернов
+              <code>Flexbox</code>.
+            </p>
+            <p class="article">
+              Свойство <code>min-height: 100vh</code> делает секцию высотой в
+              один экран. Единица <code>vh</code> &mdash; это один процент
+              от&nbsp;высоты видимого окна браузера. Значение
+              <code>100vh</code> означает полная высота экрана.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Grid: двумерная сетка</h3>
+            <p class="article">
+              Если <code>Flexbox</code> управляет элементами вдоль одной оси, то
+              <code>Grid</code> работает сразу в&nbsp;двух направлениях.
+              Вы&nbsp;задаёте контейнеру количество колонок, а&nbsp;строки
+              создаются автоматически.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="grid-basic">
+              <div class="box box-1">1</div>
+              <div class="box box-2">2</div>
+              <div class="box box-3">3</div>
+              <div class="box box-4">4</div>
+              <div class="box box-5">5</div>
+              <div class="box box-6">6</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="grid-container"&gt;
+  &lt;div class="box box-1"&gt;1&lt;/div&gt;
+  &lt;div class="box box-2"&gt;2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;3&lt;/div&gt;
+  &lt;div class="box box-4"&gt;4&lt;/div&gt;
+  &lt;div class="box box-5"&gt;5&lt;/div&gt;
+  &lt;div class="box box-6"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+/* 1fr 1fr 1fr — три равные колонки.
+   Можно записать: repeat(3, 1fr) */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Свойство <code>grid-template-columns</code> создаёт три колонки
+              равной ширины. Единица <code>fr</code> означает одна доля
+              свободного пространства. Три раза <code>1fr</code> &mdash; три
+              равных доли. Можно записать короче: <code>repeat(3, 1fr)</code>.
+              Шесть элементов в&nbsp;три колонки&nbsp;&mdash; получается два
+              ряда.
+            </p>
+            <p class="article">
+              <code>grid-template-columns</code> принимает разные значения:
+              <code>1fr 1fr 1fr</code> &mdash;&nbsp;три равных колонки,
+              <code>200px 1fr 1fr</code> &mdash;&nbsp;левая фиксированная,
+              остальные гибкие, <code>1fr 2fr 1fr</code> &mdash; широкая
+              центральная. Экспериментируйте с&nbsp;пропорциями, чтобы найти
+              нужную раскладку.
+            </p>
+            <p class="article">
+              По&nbsp;умолчанию <code>Grid</code> заполняет ячейки
+              по&nbsp;порядку, слева направо, сверху вниз.
+              Но&nbsp;вы&nbsp;можете разместить элемент в&nbsp;конкретной
+              позиции с&nbsp;помощью <code>grid-column</code> и
+              <code>grid-row</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="grid-span">
+              <div class="box box-wide">Широкий блок</div>
+              <div class="box box-2">2</div>
+              <div class="box box-3">3</div>
+              <div class="box box-4">4</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="grid-container"&gt;
+  &lt;div class="box box-wide"&gt;Широкий блок&lt;/div&gt;
+  &lt;div class="box box-2"&gt;2&lt;/div&gt;
+  &lt;div class="box box-3"&gt;3&lt;/div&gt;
+  &lt;div class="box box-4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+ 
+.box-wide {
+  grid-column: 1 / 3;
+}
+/* 1 / 3 — начать с линии 1,
+   закончить на линии 3 (две колонки) */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Запись <code>grid-column: 1 / 3</code> означает: &laquo;начни
+            с&nbsp;первой линии сетки и&nbsp;закончи на&nbsp;третьей&raquo;.
+            Линии нумеруются начиная с единицы, и&nbsp;их&nbsp;всегда
+            на&nbsp;одну больше, чем колонок. В&nbsp;сетке из&nbsp;трёх
+            колонок&nbsp;&mdash; четыре линии. Элемент от&nbsp;линии
+            1&nbsp;до&nbsp;линии 3&nbsp;занимает две колонки.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Grid: модульная раскладка</h3>
+            <p class="article">
+              Вот пример, приближённый к&nbsp;реальному веб-плакату. Три блока
+              разного размера формируют модульную композицию.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="grid-poster">
+              <div class="title">Высотки</div>
+              <div class="image"></div>
+              <div class="description">
+                Описание пчелиной строительной компании
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="poster-grid"&gt;
+  &lt;div class="title"&gt;Высотки&lt;/div&gt;
+  &lt;div class="image"&gt;&lt;/div&gt;
+  &lt;div class="description"&gt;Описание пчелиной строительной компании&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.poster-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  height: 100vh;
+}
+ 
+.image {
+  grid-row: 1 / 3;
+  grid-column: 2;
+}
+/* image занимает правую колонку
+   на всю высоту (обе строки) */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Здесь комбинация <code>Grid</code> и <code>Flexbox</code>:
+              контейнер использует <code>Grid</code> для общей раскладки, а
+              ячейка <code>.title</code> внутри себя использует
+              <code>Flexbox</code> для центрирования текста. Это типичный
+              паттерн&nbsp;&mdash; <code>Grid</code> для структуры,
+              <code>Flexbox</code> для содержимого.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Адаптивность Grid-раскладки можно сделать одной строкой, без
+                <code>media queries</code>. Свойство
+                <code
+                  >grid-template-columns: repeat(auto-fit, minmax(250px,
+                  1fr))</code
+                >
+                создаёт столько колонок, сколько помещается в контейнер, при
+                условии что каждая не уже 250 пикселей. На широком экране их
+                будет четыре, на узком — одна. Браузер решает сам.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Absolute: вне потока</h3>
+            <p class="article">
+              Абсолютное позиционирование вырывает элемент из нормального
+              потока. Он больше не занимает место среди соседей и не влияет на
+              их расположение. Вместо этого он привязывается к ближайшему
+              родителю с
+              <code>position: relative</code> и&nbsp;размещается
+              по&nbsp;заданным координатам.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="absolute-basic">
+              <div class="box box-2">Я&nbsp;в&nbsp;потоке</div>
+              <div class="box box-absolute">Я&nbsp;абсолютный</div>
+              <div class="box box-3">Я&nbsp;тоже в&nbsp;потоке</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="container"&gt;
+  &lt;div class="box box-1"&gt;Я в потоке&lt;/div&gt;
+  &lt;div class="box box-absolute"&gt;Я абсолютный&lt;/div&gt;
+  &lt;div class="box box-3"&gt;Я тоже в потоке&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.container {
+  position: relative;
+  min-height: 200px;
+}
+ 
+.box-absolute {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 180px;
+}
+/* Элемент выпал из потока.
+   Соседи не знают о нём
+   и не оставляют для него место. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Лаймовый и&nbsp;голубой блоки стоят друг под другом так, словно
+              красного блока не&nbsp;существует. Он&nbsp;выпал из&nbsp;потока
+              и&nbsp;занял позицию по&nbsp;координатам
+              <code>top: 30px</code> и <code>right: 20px</code> относительно
+              контейнера с <code>position: relative</code>. Элемент с
+              <code>position: absolute</code> невидим для своих
+              соседей&nbsp;&mdash; они не знают о&nbsp;нём
+              и&nbsp;не&nbsp;оставляют для него место.
+            </p>
+            <p class="article">
+              Координаты задаются свойствами <code>top</code>,
+              <code>right</code>, <code>bottom</code>, <code>left</code>. Они
+              отмеряют расстояние от&nbsp;соответствующего края родителя с
+              <code>position: relative</code>. Если ни&nbsp;у&nbsp;одного
+              родителя нет <code>position: relative</code>, элемент
+              привязывается к&nbsp;краям окна браузера, что обычно нежелательно.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Absolute: декоративные элементы</h3>
+            <p class="article">
+              В&nbsp;контексте веб-плаката абсолютное позиционирование отлично
+              работает для декоративных элементов, которые плавают поверх
+              основной вёрстки.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="absolute-decor">
+              <div class="title">Кружочки</div>
+              <div class="floating-circle circle-1"></div>
+              <div class="floating-circle circle-2"></div>
+              <div class="floating-circle circle-3"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;section class="hero-section"&gt;
+  &lt;h1 class="title"&gt;Кружочки&lt;/h1&gt;
+  &lt;div class="floating-circle circle-1"&gt;&lt;/div&gt;
+  &lt;div class="floating-circle circle-2"&gt;&lt;/div&gt;
+  &lt;div class="floating-circle circle-3"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  overflow: hidden;
+}
+ 
+.title {
+  color: white;
+  font-size: 80px;
+  z-index: 2;
+}
+ 
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+ 
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: #FE3904;
+  top: 10%;
+  left: 5%;
+  animation: drift 8s ease-in-out infinite alternate;
+}
+ 
+@keyframes drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(30px, -40px); }
+}
+/* Flex центрирует заголовок.
+   Absolute размещает круги.
+   z-index управляет наложением. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Здесь три техники работают вместе. <code>Flexbox</code> центрирует
+              заголовок. <code>Absolute</code> размещает круги
+              по&nbsp;координатам. А <code>z-index</code> управляет порядком
+              наложения&nbsp;&mdash; заголовок с <code>z-index: 2</code> всегда
+              поверх кругов с <code>z-index: 1</code>. Свойство
+              <code>overflow: hidden</code> на контейнере обрезает круги, если
+              анимация вынесет их&nbsp;за&nbsp;границу секции.
+            </p>
+            <p class="article">
+              Координаты заданы в&nbsp;процентах&nbsp;&mdash;
+              <code>top: 10%</code>,
+              <code>left: 5%</code> &mdash;&nbsp;а&nbsp;не&nbsp;в&nbsp;пикселях.
+              При изменении размера окна круги сохраняют свои относительные
+              позиции. Для декоративных элементов это оптимальный подход.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Когда что использовать</h3>
+            <p class="article">
+              <code>Flexbox</code> подходит для линейных раскладок: секции
+              страницы друг под другом, несколько блоков в&nbsp;ряд,
+              центрирование содержимого, распределение пространства.
+            </p>
+            <p class="article">
+              <code>Grid</code> подходит для двумерных раскладок: модульные
+              сетки с&nbsp;ячейками разного размера, колоночные структуры,
+              адаптивные раскладки, которые перестраиваются автоматически.
+            </p>
+            <p class="article">
+              <code>Absolute</code> подходит для элементов вне потока:
+              декоративные фигуры поверх содержимого, наложения
+              и&nbsp;перекрытия.
+            </p>
+            <p class="article">
+              Все три инструмента свободно комбинируются. <code>Grid</code> для
+              общей раскладки страницы, <code>Flexbox</code> для центрирования
+              внутри ячеек, <code>Absolute</code> для декоративных элементов
+              поверх. Это не&nbsp;конкуренция, а&nbsp;разделение обязанностей.
+            </p>
+            <p class="article">
+              Если элемент несёт информацию&nbsp;&mdash; текст,
+              заголовок&nbsp;&mdash; он&nbsp;должен стоять в&nbsp;потоке через
+              <code>Flexbox</code> или <code>Grid</code>. Если элемент
+              декоративный&nbsp;&mdash; фоновая фигура, летающий
+              объект&nbsp;&mdash; его можно позиционировать абсолютно. Это
+              убережёт вас от&nbsp;макетов, которые рассыпаются
+              на&nbsp;мобильных экранах.
+            </p>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от лендинга и сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория · 5 минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-3-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

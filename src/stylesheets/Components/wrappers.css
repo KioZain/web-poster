@@ -80,6 +80,11 @@
   align-items: center;
   position: relative;
 }
+
+.W_HeadingContainer .Q_HandleSquare {
+  visibility: hidden;
+}
+
 .W_AboutCards {
   width: 100%;
   max-width: var(--index-max);
@@ -94,6 +99,7 @@
       grid-column: 1 / -1;
       max-width: 486px;
       margin: 0 auto;
+      padding: var(--space-20);
       /* height: 240px; */
 
       p.light {
@@ -164,7 +170,7 @@
 .W_HandbookPageWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, -0.167rem + 3.472vw, 4.5rem);
+  /* gap: clamp(2.5rem, -0.167rem + 3.472vw, 2rem); */
   margin-top: var(--header-offset);
 }
 .W_HanbookPageWrapper {
@@ -178,6 +184,14 @@
       grid-column: 1/-1;
     }
   }
+}
+.W_TabContent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, -0.167rem + 3.472vw, 4.5rem);
+}
+.W_TabContent[hidden] {
+  display: none;
 }
 
 .W_ArticlePage {
@@ -288,7 +302,7 @@
 .W_HomePageWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(6rem, 10vw, 10rem);
+  gap: clamp(4rem, 10vw, 10rem);
   margin-top: clamp(2rem, 10vw, 3rem);
 }
 .W_MarqueeContent {

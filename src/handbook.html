@@ -56,272 +56,578 @@
         />
         <!-- TabsHere -->
         <div class="C_Tabs">
-          <button class="A_Tab">
+          <button class="A_Tab active" data-tab="all">
             <p>Весь материал</p>
             <p>По частям</p>
             <div class="Q_HandleLine lt"></div>
           </button>
-          <button class="A_Tab inactive">
+          <button class="A_Tab" data-tab="theory">
             <p>Теория</p>
-            <p>15</p>
+            <p>11</p>
             <div class="Q_HandleLine lt"></div>
           </button>
-          <button class="A_Tab inactive">
+          <button class="A_Tab" data-tab="design">
             <p>Дизайн</p>
-            <p>10</p>
+            <p>5</p>
             <div class="Q_HandleLine lt"></div>
           </button>
-          <button class="A_Tab inactive">
+          <button class="A_Tab" data-tab="code">
             <p>Код и вёрстка</p>
-            <p>17</p>
+            <p>5</p>
             <div class="Q_HandleLine lt"></div>
             <div class="Q_HandleLine rt"></div>
           </button>
         </div>
       </div>
-      <!-- FirstPart -->
-      <div class="L_ArticlesPreviewSection">
-        <div class="S_SectionAbout">
-          <div class="W_SectionAboutInfo">
-            <div class="O_AboutPartAction">
-              <div class="M_HeadingContainer">
-                <div class="A_IconText">
-                  <img
-                    src="images/icons/Q_Time.svg"
-                    alt="Q_Time"
-                    width="24"
-                    height="24"
-                  />
-                  <p class="subtitle light">30 минут</p>
-                </div>
 
-                <h2>Знакомство <br />с форматом веб-плаката</h2>
+      <div class="W_TabContent" id="tab-all">
+        <!-- FirstPart -->
+        <div class="L_ArticlesPreviewSection">
+          <div class="S_SectionAbout">
+            <div class="W_SectionAboutInfo">
+              <div class="O_AboutPartAction">
+                <div class="M_HeadingContainer">
+                  <div class="A_IconText">
+                    <img
+                      src="images/icons/Q_Time.svg"
+                      alt="Q_Time"
+                      width="24"
+                      height="24"
+                    />
+                    <p class="subtitle light">30 минут</p>
+                  </div>
+
+                  <h2>Знакомство <br />с форматом веб-плаката</h2>
+                </div>
+              </div>
+
+              <div class="O_AboutInfo">
+                <div class="M_Markers">
+                  <div class="A_CircleMarker">
+                    <div class="Q_Circle">
+                      <p class="subtitle">2</p>
+                    </div>
+                    <p>Части</p>
+                  </div>
+                  <div class="A_CircleMarker">
+                    <div class="Q_Circle">
+                      <p class="subtitle">32</p>
+                    </div>
+                    <p>Главы</p>
+                  </div>
+                </div>
+                <div class="A_CaptionText">
+                  <div class="Q_HandleSquare rt"></div>
+                  <div class="Q_HandleSquare rb"></div>
+                  <p class="body-other">
+                    Теоретическая часть для тех, кто хочет понять, что такое
+                    веб-плакат, чем он&nbsp;отличается от&nbsp;сайта
+                    и&nbsp;почему это интересный формат для творческих
+                    экспериментов с&nbsp;кодом.
+                  </p>
+                </div>
               </div>
             </div>
-
-            <div class="O_AboutInfo">
-              <div class="M_Markers">
-                <div class="A_CircleMarker">
-                  <div class="Q_Circle">
-                    <p class="subtitle">2</p>
-                  </div>
-                  <p>Части</p>
-                </div>
-                <div class="A_CircleMarker">
-                  <div class="Q_Circle">
-                    <p class="subtitle">32</p>
-                  </div>
-                  <p>Главы</p>
-                </div>
-              </div>
-              <div class="A_CaptionText">
-                <div class="Q_HandleSquare rt"></div>
-                <div class="Q_HandleSquare rb"></div>
-                <p class="body-other">
-                  Теоретическая часть для тех, кто хочет понять, что такое
-                  веб-плакат, чем он&nbsp;отличается от&nbsp;сайта и&nbsp;почему
-                  это интересный формат для творческих экспериментов
-                  с&nbsp;кодом.
-                </p>
-              </div>
+            <a id="shimer" class="A_Button" href="handbook/part_1/part_1.html"
+              >Перейти к изучению</a
+            >
+          </div>
+          <!-- Chapers -->
+          <div class="S_Chapters">
+            <div class="M_Columns">
+              <p class="body-other number">Номер</p>
+              <p class="body-other">Глава</p>
+              <p class="body-other">Материал</p>
+              <p class="body-other">Категория</p>
+            </div>
+            <!-- Chapters of handbook -->
+            <div class="C_Chapters">
+              <a
+                class="O_Chapter"
+                href="handbook/part_1/chapter_1/chapter_1.html"
+              >
+                <p class="body bold">01</p>
+                <p class="body bold">Что такое веб-плакат</p>
+                <p class="body bold">4 статьи</p>
+                <span class="A_Tag article-type" data-count="4">Теория</span>
+                <p class="body">Перейти</p>
+              </a>
+              <a
+                class="O_Chapter"
+                href="handbook/part_1/chapter_2/chapter_2.html"
+              >
+                <p class="body bold">02</p>
+                <p class="body bold">Зачем делать веб-плакат</p>
+                <p class="body bold">2 статьи</p>
+                <span class="A_Tag article-type" data-count="2">Теория</span>
+                <p class="body">Перейти</p>
+              </a>
+              <a
+                class="O_Chapter"
+                href="handbook/part_1/chapter_3/chapter_3.html"
+              >
+                <p class="body bold">03</p>
+                <p class="body bold">Примеры и насмотренность</p>
+                <p class="body bold">2 статьи</p>
+                <span class="A_Tag article-type" data-count="2">Теория</span>
+                <p class="body">Перейти</p>
+              </a>
             </div>
           </div>
-          <a id="shimer" class="A_Button" href="handbook/part_1/part_1.html"
-            >Перейти к изучению</a
-          >
         </div>
-        <!-- Chapers -->
-        <div class="S_Chapters">
-          <div class="M_Columns">
-            <p class="body-other number">Номер</p>
-            <p class="body-other">Глава</p>
-            <p class="body-other">Материал</p>
-            <p class="body-other">Категория</p>
+        <!-- DividerBanner -->
+        <div class="O_DividerBanner">
+          <div class="W_BannerContent">
+            <div class="W_BannerText">
+              <div class="M_ChapterHeading">
+                <h2>Готовые решения для вашего веб-плаката</h2>
+                <h4>
+                  Библиотека популярных и типовых решений в CSS и JS для вашего
+                  веб-плаката
+                </h4>
+              </div>
+              <a id="shimer" href="modules.html" class="A_Button"
+                >Перейти к модулям</a
+              >
+            </div>
+            <div class="A_Illustration">
+              <img src="./images/banner_illustration.svg" alt="кортиночка" />
+              <div class="Q_HandleSquare lt"></div>
+              <div class="Q_HandleSquare lb"></div>
+              <div class="Q_HandleSquare rt"></div>
+              <div class="Q_HandleSquare rb"></div>
+            </div>
           </div>
-          <!-- Chapters of handbook -->
-          <div class="C_Chapters">
-            <a
-              class="O_Chapter"
-              href="handbook/part_1/chapter_1/chapter_1.html"
+        </div>
+        <div class="L_ArticlesPreviewSection">
+          <div class="S_SectionAbout">
+            <div class="W_SectionAboutInfo">
+              <div class="O_AboutPartAction">
+                <div class="M_HeadingContainer">
+                  <div class="A_IconText">
+                    <img
+                      src="images/icons/Q_Time.svg"
+                      alt="Q_Time"
+                      width="24"
+                      height="24"
+                    />
+                    <p class="subtitle light">1 час, 35 минут</p>
+                  </div>
+
+                  <h2>Дизайн и разработка <br />веб-плаката</h2>
+                </div>
+              </div>
+
+              <div class="O_AboutInfo">
+                <div class="M_Markers">
+                  <div class="A_CircleMarker">
+                    <div class="Q_Circle">
+                      <p class="subtitle">6</p>
+                    </div>
+                    <p>Глав</p>
+                  </div>
+                  <div class="A_CircleMarker">
+                    <div class="Q_Circle">
+                      <p class="subtitle">21</p>
+                    </div>
+                    <p>Статья</p>
+                  </div>
+                </div>
+                <div class="A_CaptionText">
+                  <div class="Q_HandleSquare rt"></div>
+                  <div class="Q_HandleSquare rb"></div>
+                  <p class="body-other">
+                    Практическая часть проводит от&nbsp; самой идеи
+                    до&nbsp;публикации работы. Каждая глава&nbsp;&mdash; этап
+                    процесса. Сначала понимаем, что хотим сделать, только потом
+                    проектируем.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a id="shimer" class="A_Button" href="handbook/part_2/part_2.html"
+              >Перейти к изучениию</a
             >
-              <p class="body bold">01</p>
-              <p class="body bold">Что такое веб-плакат</p>
-              <p class="body bold">4 статьи</p>
-              <span class="A_Tag article-type" data-count="4">Теория</span>
-              <p class="body">Перейти</p>
-            </a>
-            <a
-              class="O_Chapter"
-              href="handbook/part_1/chapter_2/chapter_2.html"
-            >
-              <p class="body bold">02</p>
-              <p class="body bold">Зачем делать веб-плакат</p>
-              <p class="body bold">2 статьи</p>
-              <span class="A_Tag article-type" data-count="2">Теория</span>
-              <p class="body">Перейти</p>
-            </a>
-            <a
-              class="O_Chapter"
-              href="handbook/part_1/chapter_3/chapter_3.html"
-            >
-              <p class="body bold">03</p>
-              <p class="body bold">Примеры и насмотренность</p>
-              <p class="body bold">2 статьи</p>
-              <span class="A_Tag article-type" data-count="2">Теория</span>
-              <p class="body">Перейти</p>
-            </a>
+          </div>
+          <!-- Chapers -->
+          <div class="S_Chapters">
+            <div class="M_Columns">
+              <p class="body-other number">Номер</p>
+              <p class="body-other">Глава</p>
+              <p class="body-other">Материал</p>
+              <p class="body-other">Категория</p>
+            </div>
+            <div class="C_Chapters">
+              <a
+                class="O_Chapter"
+                href="handbook/part_2/chapter_1/chapter_2_1.html"
+              >
+                <p class="body bold">01</p>
+                <p class="body bold">Идея и концепция</p>
+                <p class="body bold">3 статьи</p>
+                <span class="A_Tag article-type" data-count="3">Теория</span>
+                <p class="body">Перейти</p>
+              </a>
+              <a
+                class="O_Chapter"
+                href="handbook/part_2/chapter_2/chapter_2_2.html"
+              >
+                <p class="body bold">02</p>
+                <p class="body bold">Разработка макета</p>
+                <p class="body bold">5 статей</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Перейти</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_3/chapter_2_3.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">03</p>
+                <p class="body bold">Вёрстка веб-плаката</p>
+                <p class="body bold">5 статей</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Перейти</p>
+              </a>
+              <span class="O_Chapter inactive">
+                <p class="body bold">04</p>
+                <p class="body bold">Анимация в CSS</p>
+                <p class="body bold">3 статьи</p>
+                <span class="A_Tag article-type" data-count="3">Кодинг</span>
+                <p class="body">Скоро</p>
+              </span>
+              <span class="O_Chapter inactive">
+                <p class="body bold">05</p>
+                <p class="body bold">Интерактивность с JavaScript</p>
+                <p class="body bold">3 статьи</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Скоро</p>
+              </span>
+              <span class="O_Chapter inactive">
+                <p class="body bold">06</p>
+                <p class="body bold">Публикация и продвижение</p>
+                <p class="body bold">3 статьи</p>
+                <span class="A_Tag article-type" data-count="3">Кодинг</span>
+                <p class="body">Скоро</p>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-      <!-- DividerBanner -->
-      <div class="O_DividerBanner">
-        <div class="W_BannerContent">
-          <div class="W_BannerText">
-            <div class="M_ChapterHeading">
-              <h2>Готовые решения для вашего веб-плаката</h2>
-              <h4>
-                Библиотека популярных и типовых решений в CSS и JS для вашего
-                веб-плаката
-              </h4>
+      <!-- other parts -->
+
+      <div class="W_TabContent" id="tab-theory" hidden>
+        <div class="L_ArticlesPreviewSection tab">
+          <div class="S_SectionAbout">
+            <div class="W_SectionAboutInfo">
+              <div class="O_AboutPartAction">
+                <div class="M_HeadingContainer">
+                  <div class="A_IconText">
+                    <img
+                      src="images/icons/Q_Time.svg"
+                      alt="Q_Time"
+                      width="24"
+                      height="24"
+                    />
+                    <p class="subtitle light">40 минут · 11 статей</p>
+                  </div>
+
+                  <h2>Теория веб-плаката</h2>
+                </div>
+              </div>
             </div>
-            <a id="shimer" href="modules.html" class="A_Button"
-              >Перейти к модулям</a
-            >
           </div>
-          <div class="A_Illustration">
-            <img src="./images/banner_illustration.svg" alt="кортиночка" />
-            <div class="Q_HandleSquare lt"></div>
-            <div class="Q_HandleSquare lb"></div>
-            <div class="Q_HandleSquare rt"></div>
-            <div class="Q_HandleSquare rb"></div>
+          <!-- Chapers -->
+          <div class="S_Chapters">
+            <div class="M_Columns">
+              <p class="body-other number">Номер</p>
+              <p class="body-other">Статья</p>
+              <p class="body-other">Время чтения</p>
+              <p class="body-other">Материал</p>
+            </div>
+            <div class="C_Chapters">
+              <a
+                class="O_Chapter"
+                href="handbook/part_1/chapter_1/about_webposter.html"
+              >
+                <p class="body bold">01</p>
+                <p class="body bold">Особенности формата</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="3">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a class="O_Chapter" href="handbook/part_1/chapter_1/">
+                <p class="body bold">02</p>
+                <p class="body bold">Отличие от классического плаката</p>
+                <p class="body bold">4 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_1/chapter_1/print-vs-web.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">03</p>
+                <p class="body bold">Отличие от лендинга и сайта</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_1/chapter_1/static-dynamic.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">04</p>
+                <p class="body bold">Статичный и динамичный веб-плакат</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_1/chapter_2/why-create.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">05</p>
+                <p class="body bold">Зачем создавать веб-плакат</p>
+                <p class="body bold">4 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_1/chapter_2/further-development.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">06</p>
+                <p class="body bold">Во что можно развить веб-плакат</p>
+                <p class="body bold">5 минут</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <!--  -->
+              <a
+                href="handbook/part_1/chapter_3/selected-works.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">07</p>
+                <p class="body bold">Избранные веб-плакаты 2019-2015</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+
+              <a
+                href="handbook/part_1/chapter_3/selected-works.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">08</p>
+                <p class="body bold">Как пользоваться каталогом</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <!--  -->
+              <a
+                href="handbook/part_2/chapter_1/finding-idea.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">09</p>
+                <p class="body bold">Как придумать тему</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_1/defining-style.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">10</p>
+                <p class="body bold">Как определить стиль</p>
+                <p class="body bold">6 минут</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_1/modules-overview.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">11</p>
+                <p class="body bold">Статичные и динамичные модули</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Теория</span>
+                <p class="body">Читать</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- SecondPart -->
-      <div class="L_ArticlesPreviewSection blured">
-        <!-- <div class="blur-content"></div> -->
-        <!-- <div class="O_UnavaliableContent"> -->
-        <!-- <img
-            style="width: 24px; margin: 0 auto"
-            src="./images/icons/lock-24.svg"
-            alt=""
-          />
-          <div class="M_TitleText">
-            <p class="subtitle">Материал в разработке</p>
-            <p class="small">
-              Следите за обновлениями <br />
-              в <a href="https://t.me/+BTbWFdc_ReNhNzAy">telegram канале</a>
-            </p>
-          </div> -->
-        <!-- </div> -->
-        <div class="S_SectionAbout">
-          <div class="W_SectionAboutInfo">
-            <div class="O_AboutPartAction">
-              <div class="M_HeadingContainer">
-                <div class="A_IconText">
-                  <img
-                    src="images/icons/Q_Time.svg"
-                    alt="Q_Time"
-                    width="24"
-                    height="24"
-                  />
-                  <p class="subtitle light">1 час, 35 минут</p>
-                </div>
-
-                <h2>Дизайн и разработка <br />веб-плаката</h2>
-              </div>
-            </div>
-
-            <div class="O_AboutInfo">
-              <div class="M_Markers">
-                <div class="A_CircleMarker">
-                  <div class="Q_Circle">
-                    <p class="subtitle">6</p>
+      <div class="W_TabContent" id="tab-design" hidden>
+        <div class="L_ArticlesPreviewSection tab">
+          <div class="S_SectionAbout">
+            <div class="W_SectionAboutInfo">
+              <div class="O_AboutPartAction">
+                <div class="M_HeadingContainer">
+                  <div class="A_IconText">
+                    <img
+                      src="images/icons/Q_Time.svg"
+                      alt="Q_Time"
+                      width="24"
+                      height="24"
+                    />
+                    <p class="subtitle light">23 минуты · 5 статей</p>
                   </div>
-                  <p>Глав</p>
+
+                  <h2>Дизайн веб-плаката</h2>
                 </div>
-                <div class="A_CircleMarker">
-                  <div class="Q_Circle">
-                    <p class="subtitle">21</p>
-                  </div>
-                  <p>Статья</p>
-                </div>
-              </div>
-              <div class="A_CaptionText">
-                <div class="Q_HandleSquare rt"></div>
-                <div class="Q_HandleSquare rb"></div>
-                <p class="body-other">
-                  Практическая часть проводит от&nbsp; самой идеи
-                  до&nbsp;публикации работы. Каждая глава&nbsp;&mdash; этап
-                  процесса. Сначала понимаем, что хотим сделать, только потом
-                  проектируем.
-                </p>
               </div>
             </div>
           </div>
-          <a id="shimer" class="A_Button" href="handbook/part_2/part_2.html"
-            >Перейти к изучениию</a
-          >
-        </div>
-        <!-- Chapers -->
-        <div class="S_Chapters">
-          <div class="M_Columns">
-            <p class="body-other number">Номер</p>
-            <p class="body-other">Глава</p>
-            <p class="body-other">Материал</p>
-            <p class="body-other">Категория</p>
-          </div>
-          <div class="C_Chapters">
-            <a
-              class="O_Chapter"
-              href="handbook/part_2/chapter_1/chapter_2_1.html"
-            >
-              <p class="body bold">01</p>
-              <p class="body bold">Идея и концепция</p>
-              <p class="body bold">3 статьи</p>
-              <span class="A_Tag article-type" data-count="3">Теория</span>
-              <p class="body">Перейти</p>
-            </a>
-            <a
-              class="O_Chapter"
-              href="handbook/part_2/chapter_2/chapter_2_2.html"
-            >
-              <p class="body bold">02</p>
-              <p class="body bold">Разработка макета</p>
-              <p class="body bold">6 статей</p>
-              <span class="A_Tag article-type" data-count="6">Дизайн</span>
-              <p class="body">Перейти</p>
-            </a>
-            <span class="O_Chapter inactive">
-              <p class="body bold">03</p>
-              <p class="body bold">Вёрстка веб-плаката</p>
-              <p class="body bold">5 статей</p>
-              <span class="A_Tag article-type" data-count="5">Кодинг</span>
-              <p class="body">Скоро</p>
-            </span>
-            <span class="O_Chapter inactive">
-              <p class="body bold">04</p>
-              <p class="body bold">Анимация в CSS</p>
-              <p class="body bold">3 статьи</p>
-              <span class="A_Tag article-type" data-count="3">Кодинг</span>
-              <p class="body">Скоро</p>
-            </span>
-            <span class="O_Chapter inactive">
-              <p class="body bold">05</p>
-              <p class="body bold">Интерактивность с JavaScript</p>
-              <p class="body bold">3 статьи</p>
-              <span class="A_Tag article-type" data-count="5">Кодинг</span>
-              <p class="body">Скоро</p>
-            </span>
+          <!-- Chapers -->
+          <div class="S_Chapters">
+            <div class="M_Columns">
+              <p class="body-other number">Номер</p>
+              <p class="body-other">Статья</p>
+              <p class="body-other">Время чтения</p>
+              <p class="body-other">Материал</p>
+            </div>
+            <div class="C_Chapters">
+              <a
+                href="handbook/part_2/chapter_2/grid-composition.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">01</p>
+                <p class="body bold">Сетка и композиция</p>
+                <p class="body bold">6 минут</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_2/refining-layout.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">02</p>
+                <p class="body bold">Доработка главного экрана</p>
+                <p class="body bold">3 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_2/adaptive-responsive.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">03</p>
+                <p class="body bold">Адаптивный и респонсивный дизайн</p>
+                <p class="body bold">6 минут</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_2/adaptive-responsive.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">04</p>
+                <p class="body bold">Разработка адаптивов</p>
+                <p class="body bold">4 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_2/preparing-assets.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">05</p>
+                <p class="body bold">Подготовка графики и фотографий</p>
+                <p class="body bold">4 минуты</p>
+                <span class="A_Tag article-type" data-count="5">Дизайн</span>
+                <p class="body">Читать</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Articles Second -->
+      <div class="W_TabContent" id="tab-code" hidden>
+        <div class="L_ArticlesPreviewSection tab">
+          <div class="S_SectionAbout">
+            <div class="W_SectionAboutInfo">
+              <div class="O_AboutPartAction">
+                <div class="M_HeadingContainer">
+                  <div class="A_IconText">
+                    <img
+                      src="images/icons/Q_Time.svg"
+                      alt="Q_Time"
+                      width="24"
+                      height="24"
+                    />
+                    <p class="subtitle light">42 минуты · 5 статей</p>
+                  </div>
+
+                  <h2>Разработка веб-плаката</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Chapers -->
+          <div class="S_Chapters">
+            <div class="M_Columns">
+              <p class="body-other number">Номер</p>
+              <p class="body-other">Статья</p>
+              <p class="body-other">Время чтения</p>
+              <p class="body-other">Материал</p>
+            </div>
+            <div class="C_Chapters">
+              <a
+                href="handbook/part_2/chapter_3/project-structure.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">01</p>
+                <p class="body bold">Организация проекта</p>
+                <p class="body bold">6 минут</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_3/grid-flex-absolute.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">02</p>
+                <p class="body bold">Grid, Flex и Absolute на практике</p>
+                <p class="body bold">12 минут</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Читать</p>
+              </a>
+              <a href="handbook/part_2/chapter_3/units.html" class="O_Chapter">
+                <p class="body bold">03</p>
+                <p class="body bold">Относительные и абсолютные величины</p>
+                <p class="body bold">8 минут</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_3/working-with-svg.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">04</p>
+                <p class="body bold">Использование SVG</p>
+                <p class="body bold">7 минут</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Читать</p>
+              </a>
+              <a
+                href="handbook/part_2/chapter_3/media-quireies.html"
+                class="O_Chapter"
+              >
+                <p class="body bold">05</p>
+                <p class="body bold">Вёрстка адаптивов</p>
+                <p class="body bold">12 минут</p>
+                <span class="A_Tag article-type" data-count="5">Кодинг</span>
+                <p class="body">Читать</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- LastChapter -->
-    <!-- <div class="W_LastChapter"></div> -->
+
     <footerbar></footerbar>
   </body>
 </html>

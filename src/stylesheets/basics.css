@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.5rem, 1.429rem + 1.19vw, 2.5rem);
+  font-size: clamp(1.25rem, 1.429rem + 1.19vw, 2.5rem);
   line-height: 105%;
   font-weight: 500;
 }
@@ -118,10 +118,13 @@ p.article {
   line-height: 150%;
 
   code {
-    display: inline-block;
-    height: 24px;
-    /* background: rgba(122, 223, 241, 0.5); */
+    height: 22px;
+    font-size: 17px;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
     background: rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     font-family: 'Aeonik Mono';
     padding: 0px 4px;
