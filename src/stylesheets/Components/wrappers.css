@@ -124,11 +124,6 @@
   }
 }
 
-.W_PostersWrap {
-  grid-column: 4 / 13;
-  position: relative;
-}
-
 .W_PostersPage,
 .W_ModulesPage {
   display: flex;
