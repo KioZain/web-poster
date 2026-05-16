@@ -195,7 +195,7 @@ const handbookNavData = {
               title: 'Доработка главного экрана',
               href: '/handbook/part_2/chapter_2/refining-layout.html',
               cover: cover_2_2_2,
-              readingTime: 6,
+              readingTime: 3,
               articleType: 'Дизайн',
               description:
                 'О важности первого экрана и какие особенности стоит учитывать при его разработке'
