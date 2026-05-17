@@ -349,6 +349,55 @@ const pages = [
       'preview'
     ]
   },
+  // chapter 4
+  {
+    template: 'handbook/part_2/chapter_4/chapter_2_4.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_4/keyframes.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_4/timing-functions.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_4/transitions.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview'
+    ]
+  },
 
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },

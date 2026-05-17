@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вёрстка веб-плаката</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- Breadcrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Анимации в CSS</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- PageContainer -->
+    <div class="W_HanbookPageWrapper margin-container">
+      <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+      <div class="L_Chapter">
+        <div class="O_ChapterHead">
+          <div class="M_HeadingContainer">
+            <div class="A_IconText">
+              <p class="subtitle light">II&nbsp;часть &middot; 4&nbsp;глава</p>
+            </div>
+            <h1>Анимации в CSS</h1>
+          </div>
+          <h4>
+            Движение как инструмент коммуникации. Рассматриваем анимации через
+            @keyframes, управление характером движения через timing-функции и
+            создание интерактивных реакций через hover.
+          </h4>
+        </div>
+        <div class="C_Articles handbook">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="keyframes.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/placeholder.webp"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Кодинг &middot; 10&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Базовые анимации и @keyframes</h4>
+                <p class="body">
+                  Синтаксис keyframes, свойство animation и как запустить
+                  анимацию в браузере
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="timing-functions.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/placeholder.webp"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Кодинг &middot; 7&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Timing-функции и характер движения</h4>
+                <p class="body">
+                  Как темп анимации влияет на восприятие пользователя
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- ThirdArticle -->
+          <a class="O_CardArticle" href="transitions.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/placeholder.webp"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Кодинг &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Transition и hover-эффекты</h4>
+                <p class="body">
+                  Особенности ховера и как сгладить переходы между анимациями
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="W_ArticleButtonsNavigation"
+          data-chapter-id="chapter-2-4"
+        ></div>
+      </div>
+    </div>
+
+    <footerbar></footerbar>
+  </body>
+</html>

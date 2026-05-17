@@ -25,3 +25,6 @@
 @import 'stylesheets/demos/demo-units.css';
 @import 'stylesheets/demos/demo-svg.css';
 @import 'stylesheets/demos/demo-media.css';
+@import 'stylesheets/demos/demo-keyframes.css';
+@import 'stylesheets/demos/demo-timing.css';
+@import 'stylesheets/demos/demo-transition.css';

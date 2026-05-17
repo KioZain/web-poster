@@ -1,0 +1,667 @@
+[data-demo='kf-from-to'] {
+  position: relative;
+  height: 280px;
+  padding: 20px;
+  font-weight: 500;
+}
+
+[data-demo='kf-from-to'] .box {
+  width: 50px;
+  height: 50px;
+  background: #fe3904;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: kf-slide 3s linear infinite alternate;
+}
+
+@keyframes kf-slide {
+  from {
+    left: 20px;
+  }
+  to {
+    left: calc(100% - 70px);
+  }
+}
+
+/* --- 2. Процентные шаги --- */
+
+[data-demo='kf-percent'] {
+  position: relative;
+  height: 280px;
+  padding: 20px;
+}
+
+[data-demo='kf-percent'] .box {
+  width: 50px;
+  height: 50px;
+  background: #9eff70;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: kf-zigzag 4s ease-in-out infinite;
+}
+
+@keyframes kf-zigzag {
+  0% {
+    left: 20px;
+    top: 20px;
+  }
+  25% {
+    left: calc(100% - 70px);
+    top: 20px;
+  }
+  50% {
+    left: calc(100% - 70px);
+    top: calc(100% - 70px);
+  }
+  75% {
+    left: 20px;
+    top: calc(100% - 70px);
+  }
+  100% {
+    left: 20px;
+    top: 20px;
+  }
+}
+
+/* --- 3. animation-duration --- */
+
+[data-demo='kf-duration'] {
+  position: relative;
+  min-height: auto;
+  padding: 20px;
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+[data-demo='kf-duration'] .track {
+  position: relative;
+  height: 50px;
+  background: #f3f3f3;
+  /* border: 2px solid var(--beautiful-blue); */
+  border-radius: 8px;
+}
+
+[data-demo='kf-duration'] .runner {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  position: absolute;
+}
+
+[data-demo='kf-duration'] .fast {
+  background: #fe3904;
+  animation: kf-run 1s linear infinite alternate;
+}
+
+[data-demo='kf-duration'] .medium {
+  background: #9eff70;
+  animation: kf-run 3s linear infinite alternate;
+}
+
+[data-demo='kf-duration'] .slow {
+  background: #7adff1;
+  animation: kf-run 6s linear infinite alternate;
+}
+
+@keyframes kf-run {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 50px);
+  }
+}
+
+/* --- 4. animation-delay --- */
+
+[data-demo='kf-delay'] {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='kf-delay'] .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: kf-pop 1.2s ease-in-out infinite;
+}
+
+[data-demo='kf-delay'] .dot:nth-child(1) {
+  background: #fe3904;
+  animation-delay: 0s;
+}
+[data-demo='kf-delay'] .dot:nth-child(2) {
+  background: #9eff70;
+  animation-delay: 0.2s;
+}
+[data-demo='kf-delay'] .dot:nth-child(3) {
+  background: #7adff1;
+  animation-delay: 0.4s;
+}
+[data-demo='kf-delay'] .dot:nth-child(4) {
+  background: #fe96e4;
+  animation-delay: 0.6s;
+}
+[data-demo='kf-delay'] .dot:nth-child(5) {
+  background: #fe3904;
+  animation-delay: 0.8s;
+}
+
+@keyframes kf-pop {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* --- 5. animation-direction --- */
+
+[data-demo='kf-direction'] {
+  position: relative;
+  height: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+[data-demo='kf-direction'] .track {
+  position: relative;
+  height: 44px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+[data-demo='kf-direction'] .label {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+
+[data-demo='kf-direction'] .mover {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  position: absolute;
+}
+
+[data-demo='kf-direction'] .dir-normal {
+  background: #fe3904;
+  animation: kf-run 2s linear infinite normal;
+}
+
+[data-demo='kf-direction'] .dir-reverse {
+  background: #9eff70;
+  animation: kf-run 2s linear infinite reverse;
+}
+
+[data-demo='kf-direction'] .dir-alternate {
+  background: #7adff1;
+  animation: kf-run 2s linear infinite alternate;
+}
+
+[data-demo='kf-direction'] .dir-alt-rev {
+  background: #fe96e4;
+  animation: kf-run 2s linear infinite alternate-reverse;
+}
+
+/* --- 6. animation-fill-mode (демо с конечной анимацией) --- */
+
+[data-demo='kf-fillmode'] {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='kf-fillmode'] .fill-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+[data-demo='kf-fillmode'] .fill-none {
+  background: #fe3904;
+  animation: kf-grow 2s ease 1s 1 normal none;
+}
+
+[data-demo='kf-fillmode'] .fill-forwards {
+  background: #fe3904;
+  animation: kf-grow 2s ease 1s 1 normal forwards;
+  color: black;
+}
+
+[data-demo='kf-fillmode'] .fill-infinite {
+  background: #9eff70;
+  color: black;
+  animation: kf-grow 2s ease infinite alternate;
+}
+
+@keyframes kf-grow {
+  to {
+    transform: scale(1.4);
+    background: #9eff70;
+  }
+}
+
+/* --- 7. animation-play-state: paused --- */
+
+[data-demo='kf-paused'] {
+  position: relative;
+  height: 280px;
+  cursor: pointer;
+}
+
+[data-demo='kf-paused'] .orbit-center {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+[data-demo='kf-paused'] .orbit-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: kf-orbit-spin 6s linear infinite;
+}
+
+[data-demo='kf-paused']:hover .orbit-ring {
+  animation-play-state: paused;
+}
+
+[data-demo='kf-paused'] .planet {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+[data-demo='kf-paused'] .planet-1 {
+  background: #fe3904;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-demo='kf-paused'] .planet-2 {
+  background: #9eff70;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-demo='kf-paused'] .planet-3 {
+  background: #7adff1;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+}
+
+[data-demo='kf-paused'] .pause-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+
+@keyframes kf-orbit-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+[data-demo='kf-paused'] {
+  background: #111;
+}
+
+/* --- 8. Несколько свойств в одном keyframe --- */
+
+[data-demo='kf-multi-props'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='kf-multi-props'] .morph {
+  width: 80px;
+  height: 80px;
+  background: #fe3904;
+  animation: kf-morph 4s ease-in-out infinite;
+}
+
+@keyframes kf-morph {
+  0% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 8px;
+    background: #fe3904;
+  }
+  25% {
+    transform: scale(1.3) rotate(90deg);
+    border-radius: 50%;
+    background: #9eff70;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    border-radius: 8px;
+    background: #7adff1;
+  }
+  75% {
+    transform: scale(1.2) rotate(270deg);
+    border-radius: 50%;
+    background: #fe96e4;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    border-radius: 8px;
+    background: #fe3904;
+  }
+}
+
+/* --- 9. Две анимации на одном элементе --- */
+
+[data-demo='kf-two-anims'] {
+  position: relative;
+  height: 280px;
+}
+
+[data-demo='kf-two-anims'] .dual {
+  width: 50px;
+  height: 50px;
+  background: #fe3904;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation:
+    kf-run 3s linear infinite alternate,
+    kf-color-shift 2s ease-in-out infinite;
+}
+
+@keyframes kf-color-shift {
+  0%,
+  100% {
+    background: #fe3904;
+    border-radius: 8px;
+  }
+  50% {
+    background: #9eff70;
+    border-radius: 50%;
+  }
+}
+
+/* --- 10. Каскад с задержкой (stagger) --- */
+
+[data-demo='kf-stagger'] {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+  padding-bottom: 40px;
+}
+
+[data-demo='kf-stagger'] .bar {
+  width: 24px;
+  background: #fe3904;
+  border-radius: 4px 4px 0 0;
+  animation: kf-bar 1.4s ease-in-out infinite alternate;
+}
+
+[data-demo='kf-stagger'] .bar:nth-child(1) {
+  animation-delay: 0s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(6) {
+  animation-delay: 0.5s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(7) {
+  animation-delay: 0.6s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(8) {
+  animation-delay: 0.7s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(9) {
+  animation-delay: 0.8s;
+}
+[data-demo='kf-stagger'] .bar:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes kf-bar {
+  from {
+    height: 20px;
+  }
+  to {
+    height: 180px;
+  }
+}
+
+/* --- 11. Бегущая строка --- */
+
+[data-demo='kf-marquee'] {
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: black;
+}
+
+[data-demo='kf-marquee'] .marquee-track {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  animation: kf-marquee 8s linear infinite;
+}
+
+[data-demo='kf-marquee'] .marquee-text {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  flex-shrink: 0;
+}
+
+@keyframes kf-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- 12. Что нельзя анимировать --- */
+
+[data-demo='kf-cant'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  padding: 20px;
+}
+
+[data-demo='kf-cant'] .can-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+[data-demo='kf-cant'] .can-yes {
+  background: #9eff70;
+  color: black;
+  animation: kf-can-yes 2s ease-in-out infinite alternate;
+}
+
+@keyframes kf-can-yes {
+  to {
+    transform: translateY(-20px);
+    opacity: 0.5;
+    background: #7adff1;
+  }
+}
+
+[data-demo='kf-cant'] .can-no {
+  background: #fe3904;
+  /* display нельзя анимировать — элемент просто стоит */
+}
+
+[data-demo='kf-cant'] .can-no-2 {
+  background: #fe96e4;
+  /* font-family нельзя плавно анимировать */
+}
+
+/* --- 13. Композиция: плакатный эффект --- */
+
+[data-demo='kf-poster'] {
+  position: relative;
+  height: 280px;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-demo='kf-poster'] .poster-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  z-index: 3;
+  position: relative;
+  animation: kf-poster-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes kf-poster-pulse {
+  from {
+    letter-spacing: 2px;
+  }
+  to {
+    letter-spacing: 12px;
+  }
+}
+
+[data-demo='kf-poster'] .poster-bg-line {
+  position: absolute;
+  height: 2px;
+  background: #fe3904;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+[data-demo='kf-poster'] .line-1 {
+  width: 100%;
+  top: 20%;
+  animation: kf-line-slide 5s linear infinite;
+}
+
+[data-demo='kf-poster'] .line-2 {
+  width: 100%;
+  top: 50%;
+  animation: kf-line-slide 7s linear infinite reverse;
+}
+
+[data-demo='kf-poster'] .line-3 {
+  width: 100%;
+  top: 80%;
+  animation: kf-line-slide 4s linear infinite;
+}
+
+@keyframes kf-line-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+[data-demo='kf-poster'] .poster-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+  animation: kf-float 6s ease-in-out infinite alternate;
+}
+
+[data-demo='kf-poster'] .pc-1 {
+  width: 100px;
+  height: 100px;
+  background: #fe3904;
+  opacity: 0.3;
+  top: 5%;
+  left: 5%;
+}
+
+[data-demo='kf-poster'] .pc-2 {
+  width: 60px;
+  height: 60px;
+  background: #9eff70;
+  opacity: 0.3;
+  bottom: 10%;
+  right: 10%;
+  animation-duration: 8s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes kf-float {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(30px, -20px);
+  }
+}

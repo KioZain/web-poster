@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition и hover-эффекты</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Transition и hover-эффекты</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Transition и hover-эффекты</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">8&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            Keyframes создают анимации, которые играют сами по себе. Transition
+            — это другой инструмент. Он делает плавными переходы между
+            состояниями, которые вызываются конкретным событием: наведением
+            курсора, получением фокуса, добавлением класса через JavaScript.
+            Если keyframes — режиссёр, который запускает сцену по своему
+            расписанию, то transition скорее актёр, который реагирует на
+            зрителя.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>transition vs @keyframes</h3>
+            <p class="article">
+              Прежде чем разбирать синтаксис, стоит зафиксировать границу между
+              двумя инструментами.
+            </p>
+            <p class="article">
+              <code>@keyframes</code> задаёт анимацию, которая проигрывается
+              автоматически. Она может быть бесконечной, многокадровой, с
+              промежуточными точками. Элемент двигается, пульсирует, вращается —
+              без участия зрителя.
+            </p>
+            <p class="article">
+              <code>transition</code> задаёт плавный переход между двумя
+              состояниями. Он срабатывает только при изменении свойства — через
+              <code>:hover</code>, <code>:focus</code>, <code>:active</code> или
+              через JavaScript. Нет изменения — нет перехода. Transition всегда
+              работает между двумя точками, без промежуточных кадров.
+            </p>
+            <p class="article">
+              Проще говоря: нужна постоянная анимация — используйте keyframes.
+              Нужна реакция на действие зрителя — используйте transition.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Анатомия transition</h3>
+            <p class="article">
+              Transition пишется на базовом состоянии элемента (не на
+              <code>:hover</code>). Это самая частая ошибка начинающих, поэтому
+              сразу покажем разницу.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-basic">
+              <div>
+                <div class="no-transition"></div>
+                <div class="label">без transition</div>
+              </div>
+              <div>
+                <div class="with-transition"></div>
+                <div class="label">с transition</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="no-transition"&gt;&lt;/div&gt;
+&lt;div class="with-transition"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.no-transition:hover {
+  background: #9EFF70;
+  transform: scale(1.2);
+}
+/* Без transition — мгновенный скачок */
+ 
+.with-transition {
+  transition: background 0.3s ease,
+              transform 0.3s ease;
+}
+ 
+.with-transition:hover {
+  background: #9EFF70;
+  transform: scale(1.2);
+}
+/* С transition — плавный переход.
+   transition пишется на БАЗОВОМ состоянии,
+   а не на :hover. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Левый квадрат меняет цвет и масштаб мгновенно — скачком. Правый
+              делает то же самое, но плавно. Разница — одна строка:
+              <code>transition: background 0.3s ease, transform 0.3s ease</code
+              >.
+            </p>
+            <p class="article">
+              Свойство <code>transition</code> принимает четыре значения через
+              пробел: какое свойство анимировать, за какое время, с какой
+              timing-функцией и с какой задержкой. Последнее — опционально.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-props">
+              <div class="prop-box prop-fast">0.15s</div>
+              <div class="prop-box prop-medium">0.4s</div>
+              <div class="prop-box prop-slow">1s</div>
+              <div class="prop-box prop-delay">0.3s + delay 0.5s</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="fast"&gt;0.15s&lt;/div&gt;
+&lt;div class="medium"&gt;0.4s&lt;/div&gt;
+&lt;div class="slow"&gt;1s&lt;/div&gt;
+&lt;div class="delay"&gt;0.3s + delay&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.fast   { transition: transform 0.15s ease; }
+.medium { transition: transform 0.4s ease; }
+.slow   { transition: transform 1s ease; }
+ 
+/* transition: свойство duration timing delay */
+.delay  { transition: transform 0.3s ease 0.5s; }
+ 
+/* 0.5s delay — переход начнётся через
+   полсекунды после наведения.
+   Полезно для вложенных элементов:
+   сначала карточка, потом текст внутри. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Четыре квадрата с разной скоростью. 0.15 секунды — мгновенная
+              реакция, подходит для мелких элементов вроде иконок и кнопок. 0.4
+              секунды — комфортный темп для большинства hover-эффектов. 1
+              секунда — замедленное, созерцательное движение. Четвёртый квадрат
+              показывает
+              <code>transition-delay: 0.5s</code> — переход начинается через
+              полсекунды после наведения.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Оптимальная длительность transition для hover-эффектов с 0.2–0.4
+                секунды. Короче и зритель не успеет заметить переход. Длиннее и
+                интерфейс начнёт казаться вялым. Для крупных элементов можно
+                увеличить до 0.5–0.6 секунд.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Галерея hover-эффектов</h3>
+            <p class="article">
+              Вот восемь приёмов, которые вы можете использовать в веб-плакате.
+              Все реализованы через transition — наведите курсор на каждый блок.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-gallery">
+              <div class="hover-item h-scale">scale</div>
+              <div class="hover-item h-rotate">rotate</div>
+              <div class="hover-item h-color">color</div>
+              <div class="hover-item h-opacity">opacity</div>
+              <div class="hover-item h-shadow">shadow + lift</div>
+              <div class="hover-item h-radius">radius</div>
+              <div class="hover-item h-width">scaleX</div>
+              <div class="hover-item h-multi">всё сразу</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="h-scale"&gt;scale&lt;/div&gt;
+&lt;div class="h-rotate"&gt;rotate&lt;/div&gt;
+&lt;div class="h-color"&gt;color&lt;/div&gt;
+&lt;div class="h-opacity"&gt;opacity&lt;/div&gt;
+&lt;div class="h-shadow"&gt;shadow + lift&lt;/div&gt;
+&lt;div class="h-radius"&gt;radius&lt;/div&gt;
+&lt;div class="h-width"&gt;scaleX&lt;/div&gt;
+&lt;div class="h-multi"&gt;всё сразу&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.h-scale:hover  { transform: scale(1.08); }
+.h-rotate:hover { transform: rotate(12deg); }
+.h-color:hover  { background: black; color: white; }
+.h-opacity:hover { opacity: 0.4; }
+ 
+.h-shadow:hover {
+  box-shadow: 0 8px 24px rgba(254,57,4,0.4);
+  transform: translateY(-4px);
+}
+ 
+.h-radius:hover { border-radius: 50%; }
+.h-width:hover  { transform: scaleX(1.15); }
+ 
+.h-multi:hover {
+  background: #FE3904;
+  transform: scale(1.1) rotate(5deg);
+  border-radius: 50%;
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <b>scale</b> — элемент увеличивается. Самый частый hover-эффект.
+              Подходит для карточек, кнопок, интерактивных зон.
+            </p>
+
+            <p class="article">
+              <b>rotate</b> — поворот. Здесь с cubic-bezier для упругости:
+              элемент проворачивается чуть дальше и пружинит обратно.
+            </p>
+            <p class="article">
+              <b>color</b> — смена фона и цвета текста. Подходит для текстовых
+              блоков и ссылок.
+            </p>
+            <p class="article">
+              <b>opacity</b> — затухание. Элемент становится полупрозрачным,
+              намекая «здесь можно нажать».
+            </p>
+            <p class="article">
+              <b>shadow + lift</b> — тень и подъём вверх через
+              <code>translateY(-4px)</code>. Создаёт ощущение, что элемент
+              приподнялся над страницей. Классика карточного дизайна.
+            </p>
+            <p class="article">
+              <b>radius</b> — скругление углов. Квадрат превращается в круг.
+              Простой, но визуально яркий эффект.
+            </p>
+            <p class="article">
+              <b>scaleX</b> — растягивание по горизонтали. Подходит для кнопок и
+              навигационных элементов.
+            </p>
+            <p class="article">
+              <b>всё сразу</b> — цвет, масштаб, поворот и скругление
+              одновременно. Показывает, что transition без проблем обрабатывает
+              несколько свойств параллельно.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Несколько transition</h3>
+            <p class="article">
+              Когда нужно анимировать несколько свойств, каждое перечисляется
+              через запятую. Это позволяет задать разную длительность и
+              timing-функцию для каждого свойства.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-multi">
+              <div class="multi-card">
+                <h3>Карточка</h3>
+                <p>Наведите, чтобы увидеть четыре transition одновременно</p>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="card"&gt;
+  &lt;h3&gt;Карточка&lt;/h3&gt;
+  &lt;p&gt;Наведите...&lt;/p&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.card {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.4s ease;
+}
+ 
+.card:hover {
+  background: #2a2a2a;
+  border-color: #FE3904;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(254,57,4,0.2);
+}
+ 
+.card:hover h3 {
+  color: #FE3904;
+}
+/* Каждое свойство — своя строка
+   в transition. Можно задать разную
+   duration: shadow медленнее (0.4s),
+   остальные быстрее (0.3s). */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Карточка при наведении меняет фон, цвет рамки, положение
+              (поднимается на 8px) и тень. Четыре transition работают
+              одновременно. Обратите внимание, что shadow длится 0.4 секунды, а
+              остальные — 0.3. Тень чуть запаздывает и догоняет, создавая
+              каскадное ощущение.
+            </p>
+            <p class="article">
+              Заголовок внутри карточки тоже меняет цвет. Его transition написан
+              на самом элементе <code>h3</code>, а hover — на родителе
+              <code>.card:hover h3</code>. Это паттерн «hover на родителе,
+              эффект на ребёнке».
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>transition: all</h3>
+            <p class="article">
+              Вместо перечисления конкретных свойств можно написать
+              <code>transition: all 0.3s ease</code>. Это применит одинаковый
+              переход ко всем изменяемым свойствам. Удобно для прототипирования,
+              но у подхода есть минус: все свойства будут двигаться с одинаковым
+              timing и duration.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-all-vs">
+              <div class="box-all">transition: all 0.3s</div>
+              <div class="box-specific">
+                transform 0.3s bounce, background 0.5s
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box-all"&gt;...&lt;/div&gt;
+&lt;div class="box-specific"&gt;...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* all — удобно, но грубо */
+.box-all {
+  transition: all 0.3s ease;
+}
+ 
+/* Конкретные свойства — контроль */
+.box-specific {
+  transition:
+    transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
+    background 0.5s ease;
+}
+/* С all все свойства переходят одинаково.
+   С конкретными — у каждого свой характер.
+   transform пружинит (bounce),
+   background плавно меняется (ease). */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Левый блок использует <code>transition: all 0.3s ease</code> — все
+            изменения происходят одинаково. Правый перечисляет свойства по
+            отдельности: transform получает упругую кривую cubic-bezier
+            (пружинит), а background — плавный ease длительностью 0.5 секунды.
+            Результат ощутимо живее, потому что у каждого свойства свой
+            характер.
+          </p>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              <code>transition: all</code> может вызвать нежелательные побочные
+              эффекты. Если где-то в CSS случайно изменится padding или width
+              при hover, <code>all</code> подхватит и это. Для финальной версии
+              плаката лучше перечислять конкретные свойства. Для экспериментов и
+              прототипов — <code>all</code> вполне допустим.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Ограничения transition</h3>
+            <p class="article">Transition умеет многое, но не всё.</p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-limits">
+              <div class="limit-box limit-ok">transform + opacity</div>
+              <div class="limit-box limit-display">display → opacity</div>
+              <div class="limit-box limit-height">height auto → px</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="limit-ok"&gt;...&lt;/div&gt;
+&lt;div class="limit-display"&gt;...&lt;/div&gt;
+&lt;div class="limit-height"&gt;...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* ✓ transform и opacity — лучший выбор */
+.limit-ok {
+  transition: transform 0.3s, opacity 0.3s;
+}
+ 
+/* ✗ display: none → block нельзя.
+   Обходной путь: opacity 1 → 0 */
+.limit-display {
+  transition: opacity 0.3s ease;
+}
+.limit-display:hover { opacity: 0; }
+ 
+/* ⚠ height: auto → px — не работает.
+   Нужно указать конкретные числа */
+.limit-height {
+  height: 90px;
+  transition: height 0.4s ease;
+}
+.limit-height:hover { height: 140px; }
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>display: none → block</code> — transition не может сделать
+              этот переход плавным. Элемент просто появляется мгновенно.
+              Обходной путь: вместо скрытия через display используйте
+              <code>opacity: 0</code> с <code>pointer-events: none</code>, и
+              анимируйте opacity.
+            </p>
+            <p class="article">
+              <code>height: auto</code> — transition не умеет интерполировать
+              между <code>auto</code> и конкретным значением. Если вам нужно
+              развернуть блок с неизвестной высотой, задайте
+              <code>max-height</code> с запасом (например,
+              <code>max-height: 0 → max-height: 500px</code>) и анимируйте его.
+            </p>
+            <p class="article">
+              <b>Transition всегда двусторонний.</b> Когда вы убираете курсор,
+              переход происходит в обратную сторону с тем же duration. Если
+              нужно, чтобы появление было быстрым, а исчезновение медленным,
+              можно задать разные transition для базового состояния и для hover.
+            </p>
+            <p class="article">
+              Наконец, transition не поддерживает промежуточные кадры. Если
+              нужна анимация с тремя и более состояниями, используйте
+              @keyframes. Transition — это всегда точка A и точка B.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Hover на родителе</h3>
+            <p class="article">
+              Часто нужно, чтобы при наведении на контейнер менялись несколько
+              элементов внутри него. Для этого hover вешается на родителя, а
+              transition — на каждый дочерний элемент.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tr-parent">
+              <div class="card-parent">
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-title">Название</div>
+                  <div class="card-desc">Описание элемента плаката</div>
+                  <div class="card-arrow">→</div>
+                </div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="card"&gt;
+  &lt;div class="card-image"&gt;&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="card-title"&gt;Название&lt;/div&gt;
+    &lt;div class="card-desc"&gt;Описание...&lt;/div&gt;
+    &lt;div class="card-arrow"&gt;→&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.card-image {
+  transition: transform 0.4s ease;
+}
+ 
+.card-title {
+  transition: color 0.3s ease;
+}
+ 
+.card-arrow {
+  transition: transform 0.3s ease;
+}
+ 
+/* Hover на родителе — эффект на детях */
+.card:hover .card-image {
+  transform: scale(1.08);
+}
+ 
+.card:hover .card-title {
+  color: #FE3904;
+}
+ 
+.card:hover .card-arrow {
+  transform: translateX(6px);
+}
+/* Три элемента реагируют одновременно,
+   но каждый по-своему.
+   Hover зона — вся карточка. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Наведите на карточку. Картинка слегка увеличивается (scale).
+              Заголовок краснеет. Стрелка сдвигается вправо. Три элемента
+              реагируют одновременно, но каждый по-своему. При этом hover-зона —
+              вся карточка, а не каждый элемент в отдельности. Это значит, что
+              зрителю не нужно целиться в мелкий заголовок или стрелку,
+              достаточно навести на карточку в любом месте.
+            </p>
+            <p class="article">
+              Для веб-плаката этот паттерн полезен в интерактивных секциях.
+              Зритель наводит курсор на зону, и несколько элементов внутри неё
+              оживают, подсказывая: «здесь можно что-то сделать».
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Transition пишется на элементе, который меняется, а не на
+                родителе. Hover пишется на родителе, указывая на ребёнка через
+                селектор
+                <code>.parent:hover .child</code>. Если перепутать и написать
+                transition на hover — плавным будет только появление эффекта, а
+                исчезновение произойдёт мгновенно.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition"
+                  >Полная документация MDN по transition</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://US/docs/Web/CSS/:hover"
+                  >Псевдокласс :hover и его особенности
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://tympanus.net/codrops/css_reference/transition">
+                  Справка Codrops с визуальными примерами</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://codepen.io/search/pens?q=hover+effect">
+                  Коллекция hover-эффектов на CodePen</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-4-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

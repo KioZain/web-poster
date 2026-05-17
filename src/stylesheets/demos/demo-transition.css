@@ -1,0 +1,429 @@
+[data-demo='tr-basic'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='tr-basic'] .no-transition {
+  width: 80px;
+  height: 80px;
+  background: #fe3904;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+[data-demo='tr-basic'] .no-transition:hover {
+  background: #9eff70;
+  transform: scale(1.2);
+}
+
+[data-demo='tr-basic'] .with-transition {
+  width: 80px;
+  height: 80px;
+  background: #fe3904;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+[data-demo='tr-basic'] .with-transition:hover {
+  background: #9eff70;
+  transform: scale(1.2);
+}
+
+[data-demo='tr-basic'] .label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* --- 2. Свойства transition --- */
+
+[data-demo='tr-props'] {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+[data-demo='tr-props'] .prop-box {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
+
+[data-demo='tr-props'] .prop-fast {
+  background: #fe3904;
+  transition: transform 0.15s ease;
+}
+[data-demo='tr-props'] .prop-fast:hover {
+  transform: scale(1.3);
+}
+
+[data-demo='tr-props'] .prop-medium {
+  background: #9eff70;
+  color: black;
+  transition: transform 0.4s ease;
+}
+[data-demo='tr-props'] .prop-medium:hover {
+  transform: scale(1.3);
+}
+
+[data-demo='tr-props'] .prop-slow {
+  background: #7adff1;
+  color: black;
+  transition: transform 1s ease;
+}
+[data-demo='tr-props'] .prop-slow:hover {
+  transform: scale(1.3);
+}
+
+[data-demo='tr-props'] .prop-delay {
+  background: #fe96e4;
+  transition: transform 0.3s ease 0.5s;
+}
+[data-demo='tr-props'] .prop-delay:hover {
+  transform: scale(1.3);
+}
+
+/* --- 3. Галерея hover-эффектов --- */
+
+[data-demo='tr-gallery'] {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+  height: 280px;
+}
+
+[data-demo='tr-gallery'] .hover-item {
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-demo='tr-gallery'] .h-scale {
+  background: #fe3904;
+  transition: transform 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-scale:hover {
+  transform: scale(1.08);
+}
+
+[data-demo='tr-gallery'] .h-rotate {
+  background: #9eff70;
+  color: black;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-demo='tr-gallery'] .h-rotate:hover {
+  transform: rotate(12deg);
+}
+
+[data-demo='tr-gallery'] .h-color {
+  background: #7adff1;
+  color: black;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-color:hover {
+  background: black;
+  color: white;
+}
+
+[data-demo='tr-gallery'] .h-opacity {
+  background: #fe96e4;
+  transition: opacity 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-opacity:hover {
+  opacity: 0.4;
+}
+
+[data-demo='tr-gallery'] .h-shadow {
+  background: #fe3904;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-shadow:hover {
+  box-shadow: 0 8px 24px rgba(254, 57, 4, 0.4);
+  transform: translateY(-4px);
+}
+
+[data-demo='tr-gallery'] .h-radius {
+  background: #9eff70;
+  color: black;
+  transition: border-radius 0.4s ease;
+}
+[data-demo='tr-gallery'] .h-radius:hover {
+  border-radius: 50%;
+}
+
+[data-demo='tr-gallery'] .h-width {
+  background: #7adff1;
+  color: black;
+  transition: transform 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-width:hover {
+  transform: scaleX(1.15);
+}
+
+[data-demo='tr-gallery'] .h-multi {
+  background: black;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-radius 0.3s ease;
+}
+[data-demo='tr-gallery'] .h-multi:hover {
+  background: #fe3904;
+  transform: scale(1.1) rotate(5deg);
+  border-radius: 50%;
+}
+
+/* --- 4. transition на нескольких свойствах --- */
+
+[data-demo='tr-multi'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  background: #111;
+}
+
+[data-demo='tr-multi'] .multi-card {
+  width: 200px;
+  padding: 32px 24px;
+  background: #222;
+  border-radius: 12px;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.4s ease;
+}
+
+[data-demo='tr-multi'] .multi-card:hover {
+  background: #2a2a2a;
+  border-color: #fe3904;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(254, 57, 4, 0.2);
+}
+
+[data-demo='tr-multi'] .multi-card h3 {
+  color: white;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+[data-demo='tr-multi'] .multi-card:hover h3 {
+  color: #fe3904;
+}
+
+[data-demo='tr-multi'] .multi-card p {
+  color: #888;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- 5. transition-property: all vs конкретные --- */
+
+[data-demo='tr-all-vs'] {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='tr-all-vs'] .box-all {
+  width: 120px;
+  height: 120px;
+  background: #fe3904;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+[data-demo='tr-all-vs'] .box-all:hover {
+  background: #9eff70;
+  color: black;
+  transform: scale(1.15) rotate(5deg);
+  border-radius: 50%;
+}
+
+[data-demo='tr-all-vs'] .box-specific {
+  width: 100px;
+  height: 100px;
+  background: #7adff1;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-align: center;
+}
+
+[data-demo='tr-all-vs'] .box-specific:hover {
+  background: #fe96e4;
+  color: white;
+  transform: scale(1.15) rotate(5deg);
+  border-radius: 50%;
+}
+
+/* --- 6. Чего transition не может --- */
+
+[data-demo='tr-limits'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='tr-limits'] .limit-box {
+  width: 120px;
+  height: 120px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+[data-demo='tr-limits'] .limit-ok {
+  background: #9eff70;
+  color: black;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+[data-demo='tr-limits'] .limit-ok:hover {
+  transform: translateY(-10px);
+  opacity: 0.6;
+}
+
+[data-demo='tr-limits'] .limit-display {
+  background: #fe3904;
+  /* display: block; */
+}
+[data-demo='tr-limits'] .limit-display:hover {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-demo='tr-limits'] .limit-height {
+  background: #7adff1;
+  color: black;
+  height: 90px;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+[data-demo='tr-limits'] .limit-height:hover {
+  height: 140px;
+}
+
+/* --- 7. Hover на родителе → эффект на детях --- */
+
+[data-demo='tr-parent'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+[data-demo='tr-parent'] .card-parent {
+  width: 220px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+[data-demo='tr-parent'] .card-image {
+  width: 100%;
+  height: 120px;
+  background: #fe3904;
+  transition: transform 0.4s ease;
+}
+
+[data-demo='tr-parent'] .card-body {
+  padding: 16px;
+}
+
+[data-demo='tr-parent'] .card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  transition: color 0.3s ease;
+}
+
+[data-demo='tr-parent'] .card-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+[data-demo='tr-parent'] .card-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+[data-demo='tr-parent'] .card-parent:hover .card-image {
+  transform: scale(1.08);
+}
+
+[data-demo='tr-parent'] .card-parent:hover .card-title {
+  color: #fe3904;
+}
+
+[data-demo='tr-parent'] .card-parent:hover .card-arrow {
+  transform: translateX(6px);
+}

@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Базовые анимации и @keyframes</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Базовые анимации и @keyframes</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>
+              Базовые анимации <br />
+              и @keyframes
+            </h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">10&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            CSS-анимации через <code>@keyframes</code> &mdash; это&nbsp;то, что
+            делает веб-плакат живым. Элементы двигаются, пульсируют, вращаются,
+            меняют цвет и&nbsp;форму без единой строки JavaScript. В&nbsp;этой
+            статье разберём, как устроены keyframes, какие свойства управляют
+            поведением анимации и&nbsp;как комбинировать несколько анимаций для
+            создания сложных композиций.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Структура @keyframes</h3>
+            <p class="article">
+              Анимация в&nbsp;CSS состоит из&nbsp;двух частей.
+              Первая&nbsp;&mdash; блок
+              <code>@keyframes</code>, который описывает, что именно происходит.
+              Вторая&nbsp;&mdash; свойство
+              <code>animation</code> на&nbsp;элементе, которое подключает этот
+              блок и&nbsp;задаёт параметры воспроизведения.
+            </p>
+            <p class="article">
+              Начнём с&nbsp;простейшего варианта: анимация от&nbsp;одного
+              состояния к другому.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-from-to">
+              <div class="box"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.box {
+  width: 50px;
+  height: 50px;
+  background: #FE3904;
+  position: absolute;
+  animation: slide 3s linear infinite alternate;
+}
+ 
+@keyframes slide {
+  from { left: 20px; }
+  to   { left: calc(100% - 70px); }
+}
+/* from — начальное состояние.
+   to — конечное. alternate возвращает
+   обратно вместо резкого прыжка. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Внутри <code>@keyframes slide</code> описаны два кадра:
+              <code>from</code> (начальное состояние) и
+              <code>to</code> (конечное). Браузер плавно интерполирует все
+              промежуточные значения. Свойство <code>animation</code> на
+              элементе связывает всё вместе: имя анимации (<code>slide</code>),
+              длительность (<code>3s</code>), характер движения
+              (<code>linear</code>), количество повторений
+              (<code>infinite</code>) и&nbsp;направление (<code>alternate</code>
+              &mdash; туда-обратно).
+            </p>
+            <p class="article">
+              Вместо <code>from</code> и <code>to</code> можно использовать
+              процентные значения, что даёт больше контроля. Проценты позволяют
+              задать сколько угодно промежуточных точек.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-percent">
+              <div class="box"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+@keyframes zigzag {
+  0%   { left: 20px;  top: 20px; }
+  25%  { left: calc(100% - 70px); top: 20px; }
+  50%  { left: calc(100% - 70px); top: calc(100% - 70px); }
+  75%  { left: 20px;  top: calc(100% - 70px); }
+  100% { left: 20px;  top: 20px; }
+}
+/* Проценты позволяют задать
+   промежуточные точки.
+   0% и 100% совпадают —
+   цикл бесшовный. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Здесь четыре промежуточные точки: 0%, 25%, 50%, 75% и&nbsp;100%.
+            Элемент проходит по&nbsp;квадратной траектории: правый верхний угол,
+            правый нижний, левый нижний и&nbsp;обратно в&nbsp;начало.
+            Значения&nbsp;0% и&nbsp;100% совпадают, поэтому цикл
+            бесшовный&nbsp;&mdash; нет рывка при переходе к следующей итерации.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                <code>from</code> &mdash;&nbsp;это то&nbsp;же самое, что
+                <code>0%</code>. Для <code>to</code> &mdash;&nbsp;то&nbsp;же,
+                что <code>100%</code>. Для двухкадровых анимаций
+                <code>from/to</code> читается проще. Для многокадровых
+                используйте проценты
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Свойства animation</h3>
+            <p class="article">
+              Свойство <code>animation</code> &mdash; это сокращённая запись
+              (shorthand), которая объединяет несколько отдельных свойств.
+              Давайте разберём каждое.
+            </p>
+            <p class="article">
+              <b>animation-duration</b>&nbsp;&mdash; длительность одного цикла
+              анимации. Определяет скорость&nbsp;и, что важнее, характер.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-duration">
+              <div class="track"><div class="runner fast"></div></div>
+              <div class="track"><div class="runner medium"></div></div>
+              <div class="track"><div class="runner slow"></div></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="track"&gt;&lt;div class="runner fast"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="track"&gt;&lt;div class="runner medium"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="track"&gt;&lt;div class="runner slow"&gt;&lt;/div&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.fast   { animation: run 1s linear infinite alternate; }
+.medium { animation: run 3s linear infinite alternate; }
+.slow   { animation: run 6s linear infinite alternate; }
+ 
+/* Одна и та же анимация,
+   три разных duration.
+   1s — нервозно, 3s — спокойно,
+   6s — медитативно. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Одна и&nbsp;та&nbsp;же анимация с&nbsp;тремя разными duration.
+              Красный пробегает за&nbsp;1&nbsp;секунду, зелёный&nbsp;&mdash;
+              за&nbsp;3, голубой&nbsp;&mdash; за&nbsp;6. Визуальный характер
+              совершенно разный, хотя траектория одинаковая.
+            </p>
+            <p class="article">
+              <b>animation-delay</b>&nbsp;&mdash; задержка перед первым
+              запуском. Полезна для создания каскадных эффектов, когда одна
+              и&nbsp;та&nbsp;же анимация запускается на&nbsp;нескольких
+              элементах с&nbsp;небольшим сдвигом.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-delay">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="dot"&gt;&lt;/div&gt;
+&lt;div class="dot"&gt;&lt;/div&gt;
+&lt;div class="dot"&gt;&lt;/div&gt;
+&lt;div class="dot"&gt;&lt;/div&gt;
+&lt;div class="dot"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.dot {
+  animation: pop 1.2s ease-in-out infinite;
+}
+ 
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.dot:nth-child(4) { animation-delay: 0.6s; }
+.dot:nth-child(5) { animation-delay: 0.8s; }
+ 
+@keyframes pop {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50%      { transform: scale(1.5); opacity: 1; }
+}
+/* Одна анимация, разные delay —
+   получается волна. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Пять кругов, одна анимация, разные delay с&nbsp;шагом
+              0.2&nbsp;секунды. Получается волна, бегущая слева направо. Это
+              один из&nbsp;самых простых и&nbsp;в&nbsp;то&nbsp;же время
+              эффектных приёмов для веб-плаката.
+            </p>
+            <p class="article">
+              <b>animation-direction</b>&nbsp;&mdash; направление
+              воспроизведения. Четыре варианта.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-direction">
+              <div class="track">
+                <div class="mover dir-normal"></div>
+                <div class="label">normal</div>
+              </div>
+              <div class="track">
+                <div class="mover dir-reverse"></div>
+                <div class="label">reverse</div>
+              </div>
+              <div class="track">
+                <div class="mover dir-alternate"></div>
+                <div class="label">alternate</div>
+              </div>
+              <div class="track">
+                <div class="mover dir-alt-rev"></div>
+                <div class="label">alternate-reverse</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="mover dir-normal"&gt;&lt;/div&gt;
+&lt;div class="mover dir-reverse"&gt;&lt;/div&gt;
+&lt;div class="mover dir-alternate"&gt;&lt;/div&gt;
+&lt;div class="mover dir-alt-rev"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.dir-normal    { animation-direction: normal; }
+.dir-reverse   { animation-direction: reverse; }
+.dir-alternate { animation-direction: alternate; }
+.dir-alt-rev   { animation-direction: alternate-reverse; }
+ 
+/* normal — от from к to, прыжок назад.
+   reverse — от to к from.
+   alternate — туда-обратно.
+   alternate-reverse — обратно-туда. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>normal</code> &mdash;&nbsp;от&nbsp;from к&nbsp;to, потом
+              резкий прыжок в&nbsp;начало.
+              <code>reverse</code> &mdash;&nbsp;от&nbsp;to&nbsp;к&nbsp;from.
+              <code>alternate</code> &mdash; туда-обратно, без рывков.
+              <code>alternate-reverse</code> &mdash; обратно-туда. Для
+              бесконечных анимаций <code>alternate</code> почти всегда лучший
+              выбор, потому что он исключает резкий сброс в&nbsp;начальное
+              состояние.
+            </p>
+            <p class="article">
+              <b>animation-iteration-count</b>&nbsp;&mdash; количество
+              повторений. <code>infinite</code> &mdash;&nbsp;бесконечно. Число
+              например, <code>3</code> &mdash; конечное количество циклов. Для
+              декоративных анимаций в&nbsp;веб-плакате вы&nbsp;почти всегда
+              будете использовать <code>infinite</code>.
+            </p>
+            <p class="article">
+              <b>animation-fill-mode</b>&nbsp;&mdash; что происходит
+              с&nbsp;элементом до&nbsp;и&nbsp;после анимации. Это свойство имеет
+              значение только для конечных анимаций не <code>infinite</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-fillmode">
+              <div class="fill-box fill-none">none</div>
+              <div class="fill-box fill-forwards">forwards</div>
+              <div class="fill-box fill-infinite">infinite</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="fill-none"&gt;...&lt;/div&gt;
+&lt;div class="fill-forwards"&gt;...&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* animation-fill-mode: none (по умолчанию)
+   После завершения элемент прыгает
+   в исходное состояние */
+.fill-none {
+  animation: grow 2s ease 1s 1 normal none;
+}
+ 
+/* forwards — элемент остаётся
+   в конечном состоянии */
+.fill-forwards {
+  animation: grow 2s ease 1s 1 normal forwards;
+}
+ 
+@keyframes grow {
+  to { transform: scale(1.4); background: #9EFF70; }
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            <code>none</code> по&nbsp;умолчанию&nbsp;&mdash; после завершения
+            элемент прыгает в&nbsp;исходное состояние, как будто анимации
+            не&nbsp;было. <code>forwards</code> &mdash;&nbsp;элемент остаётся
+            в&nbsp;конечном состоянии. Третий блок использует
+            <code>infinite</code>, поэтому fill-mode ему не&nbsp;нужен,
+            он&nbsp;просто крутится бесконечно.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Пауза анимации</h3>
+            <p class="article">
+              Отдельного внимания заслуживает свойство
+              <code>animation-play-state</code>. Оно принимает два значения:
+              <code>running</code> по&nbsp;умолчанию и <code>paused</code>. При
+              переключении в <code>paused</code> анимация замораживается в
+              текущей точке. Не&nbsp;сбрасывается, не&nbsp;перезапускается,
+              а&nbsp;именно встаёт на&nbsp;паузу. При возврате к
+              <code>running</code> продолжается с&nbsp;того&nbsp;же места.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-paused">
+              <div class="orbit-center"></div>
+              <div class="orbit-ring">
+                <div class="planet planet-1"></div>
+                <div class="planet planet-2"></div>
+                <div class="planet planet-3"></div>
+              </div>
+              <div class="pause-hint">
+                Наведите курсор&nbsp;&mdash; анимация встанет на&nbsp;паузу
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="orbit-ring"&gt;
+  &lt;div class="planet planet-1"&gt;&lt;/div&gt;
+  &lt;div class="planet planet-2"&gt;&lt;/div&gt;
+  &lt;div class="planet planet-3"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.orbit-ring {
+  animation: spin 6s linear infinite;
+}
+ 
+.container:hover .orbit-ring {
+  animation-play-state: paused;
+}
+ 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* paused замораживает анимацию
+   в текущей точке.
+   При уходе курсора — продолжение
+   с того же места. Не сброс. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Три планеты вращаются вокруг центра. Наведите курсор и&nbsp;орбита
+              замрёт. Уберите и&nbsp;продолжает с&nbsp;того&nbsp;же угла. Это
+              реализуется одной строкой с&nbsp;ховером
+            </p>
+
+            <p class="article">
+              Для веб-плаката <code>animation-play-state</code> полезен
+              в&nbsp;двух случаях. Первый&nbsp;&mdash; дать зрителю возможность
+              остановить движение, чтобы рассмотреть детали. Второй&nbsp;&mdash;
+              обратная логика: запустить анимацию только при наведении.
+              В&nbsp;таком случае базовое состояние &mdash; <code>paused</code>,
+              а&nbsp;при hover&nbsp;&mdash; <code>running</code>.
+            </p>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              <code>animation-play-state: paused</code> замораживает все текущие
+              анимации элемента, включая составные. Если на&nbsp;элементе две
+              анимации через запятую, пауза остановит обе. Нельзя поставить на
+              паузу одну из&nbsp;двух анимаций на&nbsp;одном элементе.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Несколько свойств keyframe</h3>
+            <p class="article">
+              Внутри каждого кадра <code>0%</code>, <code>25%</code>,
+              <code>to</code> и&nbsp;так далее можно менять сколько угодно
+              CSS-свойств одновременно. Браузер будет интерполировать каждое из
+              них параллельно.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-multi-props">
+              <div class="morph"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="morph"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+@keyframes morph {
+  0%  {
+    transform: scale(1) rotate(0deg);
+    border-radius: 8px;
+    background: #FE3904;
+  }
+  25% {
+    transform: scale(1.3) rotate(90deg);
+    border-radius: 50%;
+    background: #9EFF70;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    border-radius: 8px;
+    background: #7ADFF1;
+  }
+  /* В одном keyframe можно менять
+     сколько угодно свойств одновременно */
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Здесь в&nbsp;одном keyframe одновременно меняются
+              <code>transform</code>,
+              <code>border-radius</code> от&nbsp;квадрата к&nbsp;кругу
+              и&nbsp;обратно и <code>background</code> смена цвета. Четыре
+              кадра&nbsp;&mdash; четыре состояния, и&nbsp;все переходы
+              происходят плавно.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Две анимации на&nbsp;одном элементе</h3>
+            <p class="article">
+              Иногда удобнее разделить движение на&nbsp;две независимые
+              анимации, каждая со&nbsp;своим ритмом. Для этого в&nbsp;свойстве
+              <code>animation</code> перечисляются две анимации через запятую.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-two-anims">
+              <div class="dual"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="dual"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.dual {
+  animation:
+    run 3s linear infinite alternate,
+    color-shift 2s ease-in-out infinite;
+}
+ 
+@keyframes run {
+  from { left: 0; }
+  to   { left: calc(100% - 50px); }
+}
+ 
+@keyframes color-shift {
+  0%, 100% { background: #FE3904; border-radius: 8px; }
+  50%      { background: #9EFF70; border-radius: 50%; }
+}
+/* Две анимации через запятую.
+   Каждая со своим duration и timing.
+   Работают параллельно, не мешая
+   друг другу. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Элемент двигается слева направо анимация <code>run</code>, 3
+              секунды, linear и&nbsp;одновременно меняет цвет и&nbsp;форму
+              анимация <code>color-shift</code>, 2&nbsp;секунды, ease-in-out.
+              Два ритма наложены друг на&nbsp;друга и&nbsp;создают сложный
+              визуальный рисунок, хотя каждая анимация по&nbsp;отдельности
+              простая.
+            </p>
+            <p class="article">
+              Это тот&nbsp;же принцип, который мы&nbsp;видели в&nbsp;спрайтовой
+              анимации Flying Toasters: одна анимация отвечает
+              за&nbsp;покадровое переключение, другая&nbsp;&mdash;
+              за&nbsp;перемещение.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Каскады и&nbsp;бегущие строки</h3>
+            <p class="article">
+              Два приёма, которые часто встречаются в&nbsp;веб-плакатах.
+            </p>
+            <p class="article">
+              <b>Каскад</b>&nbsp;&mdash; одна анимация на&nbsp;нескольких
+              элементах с нарастающим delay.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-stagger">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="bar"&gt;&lt;/div&gt;
+&lt;div class="bar"&gt;&lt;/div&gt;
+&lt;!-- ...повторить 10 раз --&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.bar {
+  width: 24px;
+  background: #FE3904;
+  animation: bar 1.4s ease-in-out infinite alternate;
+}
+ 
+.bar:nth-child(1)  { animation-delay: 0s; }
+.bar:nth-child(2)  { animation-delay: 0.1s; }
+.bar:nth-child(3)  { animation-delay: 0.2s; }
+/* ...и так далее с шагом 0.1s */
+ 
+@keyframes bar {
+  from { height: 20px; }
+  to   { height: 180px; }
+}
+/* Эквалайзер. Одна анимация,
+   10 элементов, сдвиг по 0.1s.
+   Простейший способ создать
+   волнообразное движение. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Десять полосок, одна анимация <code>bar</code>, задержка
+              увеличивается на&nbsp;0.1 секунды с&nbsp;каждым элементом.
+              Получается эквалайзер. Этот паттерн можно применить к&nbsp;чему
+              угодно: буквам в заголовке, карточкам, декоративным фигурам.
+            </p>
+            <p class="article">
+              <b>Бегущая строка</b>&nbsp;&mdash; текст или элементы бесконечно
+              сдвигаются за&nbsp;пределы экрана.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-marquee">
+              <div class="marquee-track">
+                <span class="marquee-text">ВЕБ-ПЛАКАТ</span>
+                <span class="marquee-text">&bull;</span>
+                <span class="marquee-text">ШКОЛА ДИЗАЙНА</span>
+                <span class="marquee-text">&bull;</span>
+                <span class="marquee-text">ВЕБ-ПЛАКАТ</span>
+                <span class="marquee-text">&bull;</span>
+                <span class="marquee-text">ШКОЛА ДИЗАЙНА</span>
+                <span class="marquee-text">&bull;</span>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="marquee-track"&gt;
+  &lt;span&gt;ВЕБ-ПЛАКАТ&lt;/span&gt;
+  &lt;span&gt;•&lt;/span&gt;
+  &lt;span&gt;ШКОЛА ДИЗАЙНА&lt;/span&gt;
+  &lt;!-- Текст дублируется для бесшовности --&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  animation: marquee 8s linear infinite;
+}
+ 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* Сдвигаем на -50% — ровно половину
+   дублированного контента.
+   Когда первая копия уехала,
+   вторая встала на её место.
+   Цикл бесшовный. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Хитрость в&nbsp;том, что содержимое дублируется. Анимация сдвигает
+              весь блок на
+              <code>-50%</code>. Когда первая копия текста уезжает влево, вторая
+              оказывается ровно на&nbsp;том месте, где была первая. Цикл
+              бесшовный. Этот приём используется во&nbsp;множестве студенческих
+              веб-плакатов для создания фоновых текстовых лент.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Что можно и&nbsp;нельзя анимировать</h3>
+            <p class="article">
+              Не&nbsp;все CSS-свойства поддаются плавной анимации. Это важно
+              знать, чтобы не&nbsp;тратить время на&nbsp;отладку того, что
+              просто не&nbsp;работает.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="kf-cant">
+              <div class="can-box can-yes">transform opacity background ✓</div>
+              <div class="can-box can-no">display ✗</div>
+              <div class="can-box can-no-2">font-family ✗</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="can-yes"&gt;Анимируется&lt;/div&gt;
+&lt;div class="can-no"&gt;display ✗&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Можно анимировать: */
+/* transform, opacity, background,
+   color, width, height, margin,
+   padding, border-radius,
+   fill, stroke, stroke-dashoffset */
+ 
+/* Нельзя плавно анимировать: */
+/* display, font-family, position,
+   grid-template-columns, content */
+ 
+/* Лучше всего: transform и opacity.
+   Они не вызывают перерисовку
+   макета (reflow) и работают
+   на GPU — самые плавные. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Хорошо анимируются <code>transform</code> (translate, rotate,
+              scale), <code>opacity</code>, <code>background-color</code>,
+              <code>color</code>, <code>width</code>, <code>height</code>,
+              <code>padding</code>, <code>margin</code>,
+              <code>border-radius</code>, а&nbsp;также SVG-свойства
+              <code>fill</code>, <code>stroke</code> и
+              <code>stroke-dashoffset</code>.
+            </p>
+            <p class="article">
+              Не&nbsp;анимируются плавно <code>display</code>. Элемент
+              не&nbsp;может плавно появляться через
+              <code>display: none → block</code>,
+              <code>font-family</code> нельзя интерполировать между шрифтами,
+              <code>position</code>, <code>grid-template-columns</code>,
+              <code>content</code>.
+            </p>
+            <p class="article">
+              Среди анимируемых свойств есть два &laquo;чемпиона&raquo; по
+              производительности:
+              <code>transform</code> и <code>opacity</code>. Они обрабатываются
+              на&nbsp;GPU и&nbsp;не&nbsp;вызывают перерасчёт макета reflow. Если
+              у&nbsp;вас есть выбор между анимацией <code>left</code> и
+              <code>transform: translateX</code>, второй вариант будет работать
+              значительно плавнее, особенно на&nbsp;мобильных устройствах.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Правило для производительных анимаций: двигайте элементы через
+                <code>transform: translate()</code>, масштабируйте через
+                <code>transform: scale()</code>, вращайте через
+                <code>transform: rotate()</code>, показывайте и&nbsp;скрывайте
+                через <code>opacity</code>. Если вам нужно анимировать
+                <code>width</code> или <code>height</code>, попробуйте заменить
+                это на <code>transform: scale()</code>. Результат визуально
+                похож, но&nbsp;в&nbsp;разы плавнее.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://animista.net "
+                  >Визуальный генератор CSS-анимаций</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://keyframes.app/animate "
+                  >Интерактивный редактор keyframes
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a
+                  href="https://https://ishadeed.com/article/container-queries-are-finally-here/"
+                >
+                  Какие CSS-свойства вызывают reflow, repaint или compositing</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-4-1"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

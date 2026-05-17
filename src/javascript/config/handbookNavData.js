@@ -286,28 +286,28 @@ const handbookNavData = {
           ]
         },
         // chapter 4
-        // {
-        //   id: 'chapter-2-4',
-        //   title: 'Анимации в CSS',
-        //   href: '/handbook/part_2/chapter_3/chapter_2_4.html',
-        //   articles: [
-        //     {
-        //       id: 'article-2-4-1',
-        //       title: 'Базовые анимации и @keyframes',
-        //       href: '/handbook/part_2/chapter_4/keyframes.html'
-        //     },
-        //     {
-        //       id: 'article-2-4-2',
-        //       title: 'Timing-функции и характер движения',
-        //       href: '/handbook/part_2/chapter_4/timing-functions.html'
-        //     },
-        //     {
-        //       id: 'article-2-4-3',
-        //       title: 'Transition и hover-эффекты',
-        //       href: '/handbook/part_2/chapter_4/transitions.html'
-        //     }
-        //   ]
-        // },
+        {
+          id: 'chapter-2-4',
+          title: 'Анимации в CSS',
+          href: '/handbook/part_2/chapter_4/chapter_2_4.html',
+          articles: [
+            {
+              id: 'article-2-4-1',
+              title: 'Базовые анимации и @keyframes',
+              href: '/handbook/part_2/chapter_4/keyframes.html'
+            },
+            {
+              id: 'article-2-4-2',
+              title: 'Timing-функции и характер движения',
+              href: '/handbook/part_2/chapter_4/timing-functions.html'
+            },
+            {
+              id: 'article-2-4-3',
+              title: 'Transition и hover-эффекты',
+              href: '/handbook/part_2/chapter_4/transitions.html'
+            }
+          ]
+        },
         // chapter 5
         // {
         //   id: 'chapter-2-5',

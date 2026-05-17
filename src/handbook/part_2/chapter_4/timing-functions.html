@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timing-функции и характер движения</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps"
+              >Timing-функции и характер движения
+            </span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Timing-функции и характер движения</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">7&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            В предыдущей статье мы разобрали, как @keyframes задают что
+            происходит. Теперь поговорим о том, как это происходит.
+            Timing-функция определяет характер движения между ключевыми кадрами:
+            равномерно ли элемент перемещается, разгоняется ли в начале,
+            тормозит ли в конце, дёргается ли рывками. Это то, что отличает
+            механическое движение от живого.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Пять встроенных функций</h3>
+            <p class="article">
+              CSS предоставляет пять готовых timing-функций. Все они описывают,
+              как распределяется скорость анимации по времени.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-builtin">
+              <div class="track">
+                <div class="dot tf-linear"></div>
+                <div class="label">linear</div>
+              </div>
+              <div class="track">
+                <div class="dot tf-ease"></div>
+                <div class="label">ease</div>
+              </div>
+              <div class="track">
+                <div class="dot tf-ease-in"></div>
+                <div class="label">ease-in</div>
+              </div>
+              <div class="track">
+                <div class="dot tf-ease-out"></div>
+                <div class="label">ease-out</div>
+              </div>
+              <div class="track">
+                <div class="dot tf-ease-in-out"></div>
+                <div class="label">ease-in-out</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="dot tf-linear"&gt;&lt;/div&gt;
+&lt;div class="dot tf-ease"&gt;&lt;/div&gt;
+&lt;div class="dot tf-ease-in"&gt;&lt;/div&gt;
+&lt;div class="dot tf-ease-out"&gt;&lt;/div&gt;
+&lt;div class="dot tf-ease-in-out"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.tf-linear     { animation-timing-function: linear; }
+.tf-ease       { animation-timing-function: ease; }
+.tf-ease-in    { animation-timing-function: ease-in; }
+.tf-ease-out   { animation-timing-function: ease-out; }
+.tf-ease-in-out { animation-timing-function: ease-in-out; }
+ 
+/* Одна дистанция, одна длительность,
+   пять разных характеров движения.
+   Следите за тем, как каждая точка
+   ускоряется и замедляется. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Пять точек проходят одну и ту же дистанцию за одно и то же время.
+              Но характер движения у каждой совершенно разный.
+            </p>
+            <p class="article">
+              <code>linear</code> — постоянная скорость от начала до конца. Нет
+              ускорения и замедления. Движение выглядит механическим, как
+              конвейерная лента. Хорошо подходит для бесконечных вращений и
+              бегущих строк, где плавность не нужна.
+            </p>
+            <p class="article">
+              <code>ease</code> — значение по умолчанию. Быстрый старт,
+              замедление к концу. Похоже на то, как ведёт себя тяжёлый предмет,
+              которому дали толчок.
+            </p>
+            <p class="article">
+              <code>ease-in</code> — медленный старт, ускорение к концу. Элемент
+              как будто набирает обороты. Полезно, когда что-то уходит с экрана
+              — объект ускоряется и исчезает за краем.
+            </p>
+            <p class="article">
+              <code>ease-out</code> — быстрый старт, замедление к концу. Как
+              будто элемент прилетел и притормаживает. Хорошо для появления:
+              объект влетает и плавно встаёт на место.
+            </p>
+            <p class="article">
+              <code>ease-in-out</code> — медленный старт, ускорение в середине,
+              замедление к концу. Самая «живая» из встроенных функций.
+              Напоминает дыхание или качание маятника. Для большинства
+              декоративных анимаций в веб-плакате это оптимальный выбор.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-compare">
+              <div class="comp-box comp-linear">linear</div>
+              <div class="comp-box comp-easeio">ease-in-out</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="box-linear"&gt;&lt;/div&gt;
+&lt;div class="box-easeio"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.box-linear {
+  animation: run 3s linear infinite alternate;
+}
+ 
+.box-easeio {
+  animation: run 3s ease-in-out infinite alternate;
+}
+ 
+/* linear — робот. Одна скорость
+   от начала до конца.
+   ease-in-out — живое существо.
+   Разгоняется, едет, тормозит. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            На крупном масштабе разница особенно заметна.
+            <code>linear</code> движется равномерно, как робот.
+            <code>ease-in-out</code> разгоняется, набирает скорость и мягко
+            тормозит, как живое существо. Если не знаете, какую функцию выбрать,
+            начните с <code>ease-in-out</code> — она работает почти всегда.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Если вы не указываете timing-функцию, браузер использует
+                <code>ease</code>, а не <code>linear</code>. Это значит, что
+                <code>animation: slide 3s infinite</code> уже имеет ускорение.
+                Для равномерного движения (бегущие строки, вращения) нужно явно
+                прописать <code>linear</code>.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>cubic-bezier()</h3>
+            <p class="article">
+              Пять встроенных функций — это частные случаи более общей записи
+              <code>cubic-bezier(x1, y1, x2, y2)</code>. Четыре числа задают
+              форму кривой, которая определяет распределение скорости. Вместо
+              того чтобы объяснять математику, проще показать на примерах.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-bezier">
+              <div class="track">
+                <div class="dot bz-snappy"></div>
+                <div class="label">snappy (0.5, 0, 0.2, 1)</div>
+              </div>
+              <div class="track">
+                <div class="dot bz-bounce"></div>
+                <div class="label">bounce (0.34, 1.56, 0.64, 1)</div>
+              </div>
+              <div class="track">
+                <div class="dot bz-sluggish"></div>
+                <div class="label">sluggish (0.8, 0, 0.7, 1)</div>
+              </div>
+              <div class="track">
+                <div class="dot bz-dramatic"></div>
+                <div class="label">dramatic (0.9, 0, 0.1, 1)</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="dot snappy"&gt;&lt;/div&gt;
+&lt;div class="dot bounce"&gt;&lt;/div&gt;
+&lt;div class="dot sluggish"&gt;&lt;/div&gt;
+&lt;div class="dot dramatic"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.snappy {
+  animation-timing-function:
+    cubic-bezier(0.5, 0, 0.2, 1);
+}
+ 
+.bounce {
+  animation-timing-function:
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* cubic-bezier(x1, y1, x2, y2) —
+   четыре числа задают кривую.
+   y > 1 создаёт «пролёт»: элемент
+   проскакивает конечную точку
+   и возвращается. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>snappy</code> (0.5, 0, 0.2, 1) — быстро срывается с места и
+              плавно останавливается. Ощущение решительности.
+            </p>
+            <p class="article">
+              <code>bounce</code> (0.34, 1.56, 0.64, 1) — элемент проскакивает
+              конечную точку и возвращается. Значение <code>y</code> больше
+              единицы создаёт этот эффект «пролёта». Ощущение упругости, как у
+              резинового мячика.
+            </p>
+            <p class="article">
+              <code>sluggish</code> (0.8, 0, 0.7, 1) — долго разгоняется,
+              медленно тормозит. Ощущение тяжести и инерции.
+            </p>
+            <p class="article">
+              <code>dramatic</code> (0.9, 0, 0.1, 1) — почти не двигается в
+              начале и конце, резко проносится в середине. Ощущение контраста,
+              как у затяжного вдоха перед прыжком.
+            </p>
+            <p class="article">
+              Запоминать числа не нужно. Откройте cubic-bezier.com, подвигайте
+              контрольные точки кривой и скопируйте результат. Визуальный
+              редактор превращает абстрактные четыре числа в понятный
+              инструмент.
+            </p>
+          </div>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Встроенные функции в терминах cubic-bezier: <code>linear</code> =
+              (0, 0, 1, 1). <code>ease</code> = (0.25, 0.1, 0.25, 1).
+              <code>ease-in</code> = (0.42, 0, 1, 1). <code>ease-out</code> =
+              (0, 0, 0.58, 1). <code>ease-in-out</code> = (0.42, 0, 0.58, 1).
+              Это просто пресеты, как шрифтовые пары — удобно для быстрого
+              старта, но свои значения дают более точный контроль.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>steps(): дискретное движение</h3>
+            <p class="article">
+              Все предыдущие функции создают плавное движение — браузер
+              интерполирует промежуточные значения.
+              <code>steps()</code> работает иначе. Он разбивает анимацию на
+              фиксированное количество рывков, без интерполяции между ними.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-steps-frame">
+              <div class="clock">
+                <div class="hand"></div>
+              </div>
+              <div class="blink-text">СИГНАЛ</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="clock"&gt;
+  &lt;div class="hand"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="blink-text"&gt;СИГНАЛ&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Часовая стрелка: 12 шагов = 12 позиций */
+.hand {
+  animation: clock 12s steps(12) infinite;
+}
+ 
+@keyframes clock {
+  to { transform: rotate(360deg); }
+}
+ 
+/* Мигание: 2 шага = вкл/выкл */
+.blink-text {
+  animation: blink 1s steps(2) infinite;
+}
+ 
+@keyframes blink {
+  to { opacity: 0; }
+}
+/* steps(2) — самый резкий переход.
+   Никакой плавности, чистое
+   переключение между состояниями. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>steps(4)</code> — четыре дискретные позиции, элемент прыгает
+              между ними. <code>steps(8)</code> — восемь позиций, движение чуть
+              плавнее, но всё ещё рывковое. <code>steps(16)</code> — уже похоже
+              на плавное, но с лёгким «желе-эффектом». <code>linear</code> внизу
+              для сравнения — полная плавность.
+            </p>
+            <p class="article">
+              <code>steps()</code> полезен в двух контекстах. Первый —
+              спрайтовые анимации, которые мы разбирали в статье про подготовку
+              графики. Там <code>steps()</code> переключает кадры спрайтового
+              листа без интерполяции. Второй — стилистическое решение, когда
+              нужно покадровое, «механическое» движение.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-steps">
+              <div class="track">
+                <div class="dot st-4"></div>
+                <div class="label">steps(4)</div>
+              </div>
+              <div class="track">
+                <div class="dot st-8"></div>
+                <div class="label">steps(8)</div>
+              </div>
+              <div class="track">
+                <div class="dot st-16"></div>
+                <div class="label">steps(16)</div>
+              </div>
+              <div class="track">
+                <div class="dot st-lin"></div>
+                <div class="label">linear (для сравнения)</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="dot st-4"&gt;&lt;/div&gt;
+&lt;div class="dot st-8"&gt;&lt;/div&gt;
+&lt;div class="dot st-16"&gt;&lt;/div&gt;
+&lt;div class="dot st-linear"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+.st-4  { animation-timing-function: steps(4); }
+.st-8  { animation-timing-function: steps(8); }
+.st-16 { animation-timing-function: steps(16); }
+ 
+/* steps() отключает интерполяцию.
+   Вместо плавного движения — рывки.
+   4 шага = 4 дискретные позиции.
+   Чем больше шагов, тем ближе
+   к плавному движению. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Часовая стрелка с <code>steps(12)</code> — 12 позиций за полный
+              оборот, как на настоящих часах. Текст «Сигнал» с
+              <code>steps(2)</code> — чистое мигание: видимый → невидимый, без
+              плавного затухания. Два шага — это минимум, и он создаёт самый
+              резкий из возможных переходов.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Timing-функция как настроение</h3>
+            <p class="article">
+              Вот, пожалуй, самое практическое, что можно сказать о
+              timing-функциях. Характер движения — это настроение. Не
+              абстрактная кривая, а ощущение, которое зритель получает от
+              анимации. И выбор timing-функции — дизайнерское решение, такое же,
+              как выбор цвета или шрифта.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="tf-mood">
+              <div class="mood-box mood-nervous">нервозность</div>
+              <div class="mood-box mood-calm">спокойствие</div>
+              <div class="mood-box mood-mechanical">механика</div>
+              <div class="mood-box mood-elastic">упругость</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="css">CSS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="mood-nervous"&gt;&lt;/div&gt;
+&lt;div class="mood-calm"&gt;&lt;/div&gt;
+&lt;div class="mood-mechanical"&gt;&lt;/div&gt;
+&lt;div class="mood-elastic"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="css"
+                ><code class="language-css">
+/* Нервозность: быстро, linear, мелко */
+.nervous {
+  animation: shake 0.15s linear infinite alternate;
+}
+ 
+/* Спокойствие: медленно, ease-in-out */
+.calm {
+  animation: breathe 4s ease-in-out infinite alternate;
+}
+ 
+/* Механика: steps, ровные рывки */
+.mechanical {
+  animation: tick 2s steps(4) infinite;
+}
+ 
+/* Упругость: cubic-bezier с y > 1 */
+.elastic {
+  animation: bounce 1.5s
+    cubic-bezier(0.34, 1.56, 0.64, 1)
+    infinite alternate;
+}
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">Четыре квадрата, четыре настроения.</p>
+            <p class="article">
+              Нервозность — <code>linear</code>, 0.15 секунды, амплитуда 3
+              пикселя. Мелкая быстрая дрожь. Подходит для элементов, передающих
+              сбой, тревогу, нестабильность. Именно так сделан эффект в
+              веб-плакате «Доигрались».
+            </p>
+            <p class="article">
+              Спокойствие — <code>ease-in-out</code>, 4 секунды, масштаб 1 →
+              1.15. Медленная пульсация, похожая на дыхание. Подходит для
+              фоновых элементов, которые должны создавать ощущение жизни, не
+              отвлекая внимание.
+            </p>
+            <p class="article">
+              Механика — <code>steps(4)</code>, 2 секунды, вращение на 360
+              градусов. Ровные рывки, как шестерёнка. Подходит для элементов,
+              связанных с техникой, промышленностью, цифровой эстетикой.
+            </p>
+            <p class="article">
+              Упругость — <code>cubic-bezier(0.34, 1.56, 0.64, 1)</code>, 1.5
+              секунды. Элемент проскакивает конечную точку и пружинит обратно.
+              Подходит для игривых, энергичных интерфейсов.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Когда выбираете timing-функцию, задайте себе вопрос: «Какой
+                характер у этого движения?» Если элемент — это механизм,
+                используйте <code>linear</code> или <code>steps</code>. Если
+                живое существо — <code>ease-in-out</code> или кастомный
+                <code>cubic-bezier</code> с мягким ускорением. Если энергичный
+                персонаж — <code>cubic-bezier</code> с <code>y > 1</code> для
+                эффекта упругости. Технология следует за метафорой.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://cubic-bezier.com ">Конструктор кривых</a>
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://easings.net "
+                  >Галерея готовых кривых с названиями и визуализацией
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://animista.net">
+                  Генератор анимаций, где можно переключать timing-функции</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-4-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

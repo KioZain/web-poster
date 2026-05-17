@@ -1,0 +1,346 @@
+[data-demo='tf-builtin'] {
+  position: relative;
+  padding: 20px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[data-demo='tf-builtin'] .track {
+  position: relative;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+[data-demo='tf-builtin'] .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+[data-demo='tf-builtin'] .label {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: #999;
+}
+
+[data-demo='tf-builtin'] .tf-linear {
+  background: #fe3904;
+  animation: tf-run 2.5s linear infinite alternate;
+}
+[data-demo='tf-builtin'] .tf-ease {
+  background: #9eff70;
+  animation: tf-run 2.5s ease infinite alternate;
+}
+[data-demo='tf-builtin'] .tf-ease-in {
+  background: #7adff1;
+  animation: tf-run 2.5s ease-in infinite alternate;
+}
+[data-demo='tf-builtin'] .tf-ease-out {
+  background: #fe96e4;
+  animation: tf-run 2.5s ease-out infinite alternate;
+}
+[data-demo='tf-builtin'] .tf-ease-in-out {
+  background: white;
+  border: 2px solid black;
+  animation: tf-run 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes tf-run {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 40px);
+  }
+}
+
+[data-demo='tf-compare'] {
+  position: relative;
+  height: 280px;
+  /* background: #111; */
+  overflow: hidden;
+}
+
+[data-demo='tf-compare'] .comp-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+[data-demo='tf-compare'] .comp-linear {
+  background: #fe3904;
+  top: 40%;
+  transform: translateY(-100%);
+  animation: tf-run 3s linear infinite alternate;
+}
+
+[data-demo='tf-compare'] .comp-easeio {
+  background: #9eff70;
+  color: black;
+  top: 60%;
+  animation: tf-run 3s ease-in-out infinite alternate;
+}
+
+[data-demo='tf-compare'] .comp-label {
+  position: absolute;
+  font-size: 11px;
+  color: #666;
+}
+
+[data-demo='tf-compare'] .comp-label-1 {
+  top: 28%;
+  left: 20px;
+  color: #fe3904;
+}
+[data-demo='tf-compare'] .comp-label-2 {
+  top: 78%;
+  left: 20px;
+  color: #9eff70;
+}
+
+/* --- 3. cubic-bezier --- */
+
+[data-demo='tf-bezier'] {
+  position: relative;
+  min-height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[data-demo='tf-bezier'] .track {
+  position: relative;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+[data-demo='tf-bezier'] .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+[data-demo='tf-bezier'] .label {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: #999;
+}
+
+[data-demo='tf-bezier'] .bz-snappy {
+  background: #fe3904;
+  animation: tf-run 2s cubic-bezier(0.5, 0, 0.2, 1) infinite alternate;
+}
+
+[data-demo='tf-bezier'] .bz-bounce {
+  background: #9eff70;
+  animation: tf-run 2s cubic-bezier(0.34, 1, 0.64, 1) infinite alternate;
+}
+
+[data-demo='tf-bezier'] .bz-sluggish {
+  background: #7adff1;
+  animation: tf-run 2s cubic-bezier(0.8, 0, 0.7, 1) infinite alternate;
+}
+
+[data-demo='tf-bezier'] .bz-dramatic {
+  background: #fe96e4;
+  animation: tf-run 2s cubic-bezier(0.9, 0, 0.1, 1) infinite alternate;
+}
+
+/* --- 4. steps() --- */
+
+[data-demo='tf-steps'] {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: auto;
+}
+
+[data-demo='tf-steps'] .track {
+  position: relative;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+[data-demo='tf-steps'] .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  position: absolute;
+}
+
+[data-demo='tf-steps'] .label {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+}
+
+[data-demo='tf-steps'] .st-4 {
+  background: #fe3904;
+  animation: tf-run 2s steps(4) infinite alternate;
+}
+[data-demo='tf-steps'] .st-8 {
+  background: #9eff70;
+  animation: tf-run 2s steps(8) infinite alternate;
+}
+[data-demo='tf-steps'] .st-16 {
+  background: #7adff1;
+  animation: tf-run 2s steps(16) infinite alternate;
+}
+[data-demo='tf-steps'] .st-lin {
+  background: #fe96e4;
+  animation: tf-run 2s linear infinite alternate;
+}
+
+[data-demo='tf-steps-frame'] {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  /* background: #111; */
+}
+
+[data-demo='tf-steps-frame'] .clock {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fe3904;
+  border-radius: 50%;
+  position: relative;
+}
+
+[data-demo='tf-steps-frame'] .hand {
+  width: 3px;
+  height: 30px;
+  background: #fe3904;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  animation: tf-clock 12s steps(12) infinite;
+}
+
+@keyframes tf-clock {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[data-demo='tf-steps-frame'] .blink-text {
+  color: #fe3904;
+  font-size: 24px;
+  font-weight: 500;
+  animation: tf-blink 1s steps(2) infinite;
+}
+
+@keyframes tf-blink {
+  to {
+    opacity: 0;
+  }
+}
+
+[data-demo='tf-mood'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  background: #111;
+}
+
+[data-demo='tf-mood'] .mood-box {
+  width: 15%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+[data-demo='tf-mood'] .mood-nervous {
+  background: #fe3904;
+  animation: tf-shake 0.15s linear infinite alternate;
+}
+
+@keyframes tf-shake {
+  from {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  to {
+    transform: translateX(3px) rotate(2deg);
+  }
+}
+
+[data-demo='tf-mood'] .mood-calm {
+  background: #7adff1;
+  color: white;
+  animation: tf-breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes tf-breathe {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+[data-demo='tf-mood'] .mood-mechanical {
+  background: #9eff70;
+  color: black;
+  animation: tf-tick 2s steps(4) infinite;
+}
+
+@keyframes tf-tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[data-demo='tf-mood'] .mood-elastic {
+  background: #fe96e4;
+  animation: tf-elastic 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite
+    alternate;
+}
+
+@keyframes tf-elastic {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
