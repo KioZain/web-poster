@@ -22,6 +22,10 @@ import cover_2_3_2 from '../../images/handbook/covers/handbook_2-3-2.webp'
 import cover_2_3_3 from '../../images/handbook/covers/handbook_2-3-3.webp'
 import cover_2_3_4 from '../../images/handbook/covers/handbook_2-3-4.webp'
 import cover_2_3_5 from '../../images/handbook/covers/handbook_2-3-5.webp'
+//  --
+import cover_2_4_1 from '../../images/handbook/covers/handbook_2-4-1.webp'
+import cover_2_4_2 from '../../images/handbook/covers/handbook_2-4-2.webp'
+import cover_2_4_3 from '../../images/handbook/covers/handbook_2-4-3.webp'
 
 const handbookNavData = {
   parts: [
@@ -245,7 +249,8 @@ const handbookNavData = {
               cover: cover_2_3_1,
               articleType: 'Кодинг',
               readingTime: 6,
-              description: 'Структура папок, именование файлов, подключение стилей'
+              description:
+                'Структура папок, именование файлов, подключение стилей'
             },
             {
               id: 'article-2-3-2',
@@ -254,7 +259,8 @@ const handbookNavData = {
               cover: cover_2_3_2,
               articleType: 'Кодинг',
               readingTime: 12,
-              description: 'Три подхода к вёрстке с примерами кода. Как использовать и комбинировать'
+              description:
+                'Три подхода к вёрстке с примерами кода. Как использовать и комбинировать'
             },
             {
               id: 'article-2-3-3',
@@ -263,7 +269,8 @@ const handbookNavData = {
               cover: cover_2_3_3,
               articleType: 'Кодинг',
               readingTime: 8,
-              description: 'Как различные единицы измерения влияют на поведение макета'
+              description:
+                'Как различные единицы измерения влияют на поведение макета'
             },
             {
               id: 'article-2-3-4',
@@ -272,7 +279,8 @@ const handbookNavData = {
               cover: cover_2_3_4,
               articleType: 'Кодинг',
               readingTime: 7,
-              description: 'Особенности работы с SVG форматом и как можно его анимировать'
+              description:
+                'Особенности работы с SVG форматом и как можно его анимировать'
             },
             {
               id: 'article-2-3-5',
@@ -281,7 +289,8 @@ const handbookNavData = {
               cover: cover_2_3_5,
               articleType: 'Кодинг',
               readingTime: 12,
-              description: 'Несколько видов типичных технических решений в вёрстке адаптивного дизайна'
+              description:
+                'Несколько видов типичных технических решений в вёрстке адаптивного дизайна'
             }
           ]
         },
@@ -290,24 +299,39 @@ const handbookNavData = {
           id: 'chapter-2-4',
           title: 'Анимации в CSS',
           href: '/handbook/part_2/chapter_4/chapter_2_4.html',
+
           articles: [
             {
               id: 'article-2-4-1',
               title: 'Базовые анимации и @keyframes',
-              href: '/handbook/part_2/chapter_4/keyframes.html'
+              href: '/handbook/part_2/chapter_4/keyframes.html',
+              cover: cover_2_4_1,
+              articleType: 'Кодинг',
+              readingTime: 10,
+              description:
+                'Синтаксис keyframes, свойство animation и как запустить анимацию в браузере'
             },
             {
               id: 'article-2-4-2',
               title: 'Timing-функции и характер движения',
-              href: '/handbook/part_2/chapter_4/timing-functions.html'
+              href: '/handbook/part_2/chapter_4/timing-functions.html',
+              cover: cover_2_4_2,
+              articleType: 'Кодинг',
+              readingTime: 7,
+              description: 'Как темп анимации влияет на восприятие пользователя'
             },
             {
               id: 'article-2-4-3',
               title: 'Transition и hover-эффекты',
-              href: '/handbook/part_2/chapter_4/transitions.html'
+              href: '/handbook/part_2/chapter_4/transitions.html',
+              cover: cover_2_4_3,
+              articleType: 'Кодинг',
+              readingTime: 5,
+              description:
+                'Особенности ховера и как сгладить переходы между анимациями'
             }
           ]
-        },
+        }
         // chapter 5
         // {
         //   id: 'chapter-2-5',
