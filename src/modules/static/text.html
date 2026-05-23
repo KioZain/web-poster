@@ -59,7 +59,34 @@
     <div class="L_Module">
       <!-- Content here -->
       <div class="W_ArticlePage modules margin-container">
-        <div class="S_LeftNavBar"></div>
+        <div class="S_LeftNavBar">
+          <div class="W_CollapsingLists">
+            <!-- Статичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Статичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="movement.html" class="A_ListItem">Движение</a>
+                <a href="rotation.html" class="A_ListItem">Вращение</a>
+                <a href="transformation.html" class="A_ListItem"
+                  >Трансформация</a
+                >
+                <a href="hover.html" class="A_ListItem">Ховер</a>
+                <a href="text.html" class="A_ListItem">Текст</a>
+              </div>
+            </div>
+
+            <!-- Динамичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Динамичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="../dynamic/click.html" class="A_ListItem">Клик</a>
+                <a href="../dynamic/drag.html" class="A_ListItem"
+                  >Перетаскивание</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="O_ArticleContent">
           <p class="subtitle">Содержание</p>
           <div class="C_AticleLinks"></div>
@@ -78,7 +105,7 @@
             </p>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="gradient" class="M_ParagraphArticle">
             <h3>Градиентный текст <span class="copy"></span></h3>
             <p class="article">
               Текст, залитый плавным переходом цвета вместо однотонной заливки.
@@ -133,7 +160,7 @@
             </div>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="border" class="M_ParagraphArticle">
             <h3>Контурный текст <span class="copy"></span></h3>
             <p class="article">
               Буквы превращаются в контуры, сохраняя только обводку. На крупном
@@ -184,7 +211,7 @@
             </div>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="blur" class="M_ParagraphArticle">
             <h3>Блюр <span class="copy"></span></h3>
             <p class="article">
               Несколько значений <code>text-shadow</code>, наложенных друг на
@@ -214,7 +241,7 @@
 
           <layers></layers>
 
-          <div class="M_ParagraphArticle">
+          <div id="perletter" class="M_ParagraphArticle">
             <h3>Посимвольная анимация <span class="copy"></span></h3>
             <p class="article">
               Каждая буква появляется отдельно, со своей задержкой. Буквы могут
@@ -273,7 +300,7 @@
             </div>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="glitch" class="M_ParagraphArticle">
             <h3>Глитч <span class="copy"></span></h3>
             <p class="article">
               Одна из адаптированных версий глитча для типографики. Текст на
@@ -314,7 +341,7 @@
 
           <glitchletters></glitchletters>
 
-          <div class="M_ParagraphArticle">
+          <div id="typewriter" class="M_ParagraphArticle">
             <h3>Печатная машинка <span class="copy"></span></h3>
             <p class="article">
               Текст появляется посимвольно, словно его набирают в реальном
@@ -372,7 +399,7 @@
             </div>
           </div>
 
-          <div class="M_ParagraphArticle">
+          <div id="circle-text" class="M_ParagraphArticle">
             <h3>Текст по кругу <span class="copy"></span></h3>
             <p class="article">
               Буквы выстраиваются по окружности, формируя круговую надпись.

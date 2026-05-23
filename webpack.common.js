@@ -52,7 +52,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -64,7 +65,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -76,7 +78,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -88,7 +91,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
 
@@ -106,7 +110,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -118,7 +123,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // Chapter 3
@@ -135,7 +141,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -147,7 +154,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // ----------------------------------------------------------
@@ -162,7 +170,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // Chapter 2
@@ -175,7 +184,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // Finding idea
@@ -188,7 +198,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -200,7 +211,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -212,7 +224,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -224,7 +237,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -236,7 +250,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -248,7 +263,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -260,7 +276,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -272,7 +289,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // Chapter 2
@@ -286,7 +304,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -298,7 +317,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -310,7 +330,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -322,7 +343,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -334,7 +356,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -346,7 +369,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   // chapter 4
@@ -359,7 +383,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -371,7 +396,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -383,7 +409,8 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
   {
@@ -395,10 +422,10 @@ const pages = [
       'codestyle',
       'anchorlinks',
       'rating',
-      'preview'
+      'preview',
+      'sharing'
     ]
   },
-
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
@@ -422,6 +449,28 @@ const pages = [
   {
     template: 'modules/static/hover.html',
     chunks: ['menubar', 'index', 'codestyle', 'anchorlinks', 'modules-nav']
+  },
+  {
+    template: 'modules/dynamic/click.html',
+    chunks: [
+      'menubar',
+      'index',
+      'codestyle',
+      'anchorlinks',
+      'modules-nav',
+      'demo-click'
+    ]
+  },
+  {
+    template: 'modules/dynamic/drag.html',
+    chunks: [
+      'menubar',
+      'index',
+      'codestyle',
+      'anchorlinks',
+      'modules-nav',
+      'demo-drag'
+    ]
   }
 ]
 
@@ -448,13 +497,17 @@ module.exports = {
     codestyle: './src/javascript/codestyle.js',
     anchorlinks: './src/javascript/components/anchorlinks/anchorlinks.js',
     rating: './src/javascript/rating.js',
+    sharing: './src/javascript/sharing.js',
     preview: './src/javascript/preview.js',
     tabs: './src/javascript/tabs.js',
     'poster-page': './src/javascript/poster-page.js',
     'tabs-modules': './src/javascript/tabs-modules.js',
     'handbook-nav': './src/javascript/handbook-nav.js',
     'modules-nav': './src/javascript/modules-nav.js',
-    'gsap-animation': './src/javascript/gsap/animation.js'
+    'gsap-animation': './src/javascript/gsap/animation.js',
+    // dymanic
+    'demo-click': './src/javascript/demo/click.js',
+    'demo-drag': './src/javascript/demo/drag.js'
   },
 
   output: {
@@ -528,6 +581,14 @@ module.exports = {
         priority: 'replace'
       }
     ]),
+    // new HtmlWebpackPartialsPlugin([
+    //   {
+    //     path: path.join(__dirname, './src/partials/handbook-nav.html'),
+    //     location: 'handbook-nav',
+    //     template_filename: '*',
+    //     priority: 'replace'
+    //   }
+    // ]),
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, './src/partials/rate.html'),
@@ -952,6 +1013,15 @@ module.exports = {
       {
         path: path.join(__dirname, './src/partials/demos/hover/magnetic.html'),
         location: 'magnetic',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    // sharing
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/sharing.html'),
+        location: 'sharing',
         template_filename: '*',
         priority: 'replace'
       }

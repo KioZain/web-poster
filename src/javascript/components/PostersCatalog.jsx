@@ -5,7 +5,8 @@ import {
   extractAvailableFilters,
   createEmptyFilters
 } from '../utils/filterPosters.js'
-import { POSTERS_PER_PAGE } from '../config/airtable.js'
+// import { POSTERS_PER_PAGE } from '../config/airtable.js'
+const POSTERS_PER_PAGE = 42
 import S_Filters from './filters/S_Filters.jsx'
 import S_FiltersRow from './filters/S_FiltersRow.jsx'
 import PostersGrid from './C_PostersGrid.jsx'

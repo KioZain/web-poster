@@ -112,6 +112,31 @@ input.A_SearchInput {
 }
 
 /* Buttons */
+.A_ShareButton {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  border-radius: 50%;
+  background-color: rgba(212, 212, 212, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.telegram {
+    background-image: url('../../images/icons/telegramShare.svg');
+  }
+  &.vk {
+    background-image: url('../../images/icons/vkShare.svg');
+  }
+  &.share {
+    background-image: url('../../images/icons/linkShare.svg');
+  }
+
+  &:hover {
+    background-color: rgba(212, 212, 212, 0.6);
+  }
+}
 
 .A_TelegramButton {
   height: 40px;
@@ -501,6 +526,16 @@ button.A_TabModule {
 
   &:hover {
     color: var(--gray-soft);
+  }
+
+  &:last-child.active::before {
+    background: linear-gradient(
+      241deg,
+      #fe96e4 4.39%,
+      #fe3904 32.16%,
+      #fe3904 70.75%,
+      #fe96e4 94.79%
+    );
   }
 }
 

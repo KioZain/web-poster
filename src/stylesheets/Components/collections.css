@@ -149,9 +149,34 @@ ol.C_List {
   padding-left: 1.8rem;
 
   a {
-    /* width: fit-content; */
     display: flex;
     align-items: center;
+  }
+}
+
+.C_Social {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  margin-top: 0.5rem;
+}
+
+.C_ModulesLinks {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  padding-left: 4px;
+
+  a {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: rgba(212, 212, 212, 0.25);
+      cursor: pointer;
+    }
   }
 }
 .C_FilterModalContent {
