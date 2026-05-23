@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Клик | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Клик</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover dynamic">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/DynamicModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Клик</h2>
+            <p class="subtitle">
+              Динамические элементы и события с помощью обработчика клика и
+              касаний
+            </p>
+          </div>
+          <div style="opacity: 0.7" class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="white"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p style="color: white" class="subtitle">
+              3 минуты чтения · 5 решений
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar">
+          <div class="W_CollapsingLists">
+            <!-- Статичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Статичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="../static/movement.html" class="A_ListItem"
+                  >Движение</a
+                >
+                <a href="../static/rotation.html" class="A_ListItem"
+                  >Вращение</a
+                >
+                <a href="../static/transformation.html" class="A_ListItem"
+                  >Трансформация</a
+                >
+                <a href="../static/hover.html" class="A_ListItem">Ховер</a>
+                <a href="../static/text.html" class="A_ListItem">Текст</a>
+              </div>
+            </div>
+
+            <!-- Динамичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Динамичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="click.html" class="A_ListItem">Клик</a>
+                <a href="drag.html" class="A_ListItem">Перетаскивание</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <div id="about" class="M_ParagraphArticle">
+            <h3>О модуле <span class="copy"></span></h3>
+            <p class="article">
+              С этого модуля начинается JavaScript. Ховер из предыдущего модуля
+              реагировал на присутствие курсора, но это непроизвольное действие.
+              Клик всегда осознанный, и именно поэтому он открывает совершенно
+              другой уровень интерактивности. Зритель больше не наблюдает за
+              плакатом, он взаимодействует с ним.
+            </p>
+            <p class="article">
+              В JavaScript клик ловится через метод
+              <code>addEventListener</code>. Вы указываете элемент, тип события
+              <code>click</code> и функцию, которая выполнится в момент нажатия.
+              Внутри этой функции доступен объект события <code>event</code> с
+              информацией о том, где и как произошёл клик. Дальше всё зависит от
+              того, что вы решите сделать с этой информацией.
+            </p>
+          </div>
+
+          <div id="click-switch" class="M_ParagraphArticle">
+            <h3>Переключение свойств <span class="copy"></span></h3>
+            <p class="article">
+              Самый базовый сценарий взаимодействия с кликом. Нажал на объект —
+              он изменился. Нажал ещё раз — вернулся в исходное состояние. За
+              это отвечает метод <code>classList.toggle()</code>, который
+              добавляет CSS-класс, если его нет, и убирает, если есть.
+            </p>
+
+            <p class="article">
+              Вся визуальная работа остаётся в CSS. JavaScript знает только
+              одно: класс
+              <code>active</code> нужно включить или выключить. Какие именно
+              свойства при этом изменятся, определяется в стилях. Это позволяет
+              менять поведение без правки кода, просто переписав CSS-правило для
+              <code>.active</code>.
+            </p>
+            <p class="article">
+              В примере ниже четыре объекта реагируют на клик по-разному, хотя
+              JavaScript-код для каждого из них одинаковый. Разница целиком в
+              CSS: один меняет фон, другой масштабируется, третий скругляет
+              углы, четвёртый поворачивается.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Метод <code>querySelectorAll</code> находит все элементы с
+                классом <code>toggle-box</code> внутри превью-зоны. Цикл
+                <code>forEach</code> вешает на каждый из них обработчик клика.
+                Внутри обработчика
+                <code>classList.toggle('active')</code> переключает класс.
+                CSS-правило <code>transition: all 0.3s ease</code> на элементе
+                обеспечивает плавность перехода между состояниями.
+              </p>
+            </details>
+          </div>
+          <!-- Toggle -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="click-toggle-props">
+              <div class="toggle-box toggle-bg">фон</div>
+              <div class="toggle-box toggle-scale">скейл</div>
+              <div class="toggle-box toggle-radius">радиус</div>
+              <div class="toggle-box toggle-rotate">поворот</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="toggle-box toggle-bg"&gt;фон&lt;/div&gt;
+&lt;div class="toggle-box toggle-scale"&gt;скейл&lt;/div&gt;
+&lt;div class="toggle-box toggle-radius"&gt;радиус&lt;/div&gt;
+&lt;div class="toggle-box toggle-rotate"&gt;поворот&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.toggle-box {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+ 
+.toggle-bg.active { background: #9eff70; color: black; }
+.toggle-scale.active { transform: scale(1.4); }
+.toggle-radius.active { border-radius: 50%; }
+.toggle-rotate.active { transform: rotate(45deg); }
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+root.querySelectorAll('.toggle-box').forEach(box => {
+  box.addEventListener('click', () => {
+    box.classList.toggle('active')
+  })
+})
+/* classList.toggle — включает класс,
+   если его нет, и выключает, если есть.
+   CSS делает всю визуальную работу. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Обратите внимание, что JavaScript здесь минимален. Он выполняет роль
+            выключателя, а вся анимация и визуальное оформление живут в CSS. Это
+            разделение обязанностей, к которому стоит стремиться: JS управляет
+            состоянием, CSS отвечает за внешний вид.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                <code>classList.toggle</code> — это швейцарский нож для
+                интерактивности в веб-плакатах. Один вызов заменяет конструкцию
+                из <code>if/else</code> с <code>classList.add</code> и
+                <code>classList.remove</code>. Практически любой эффект по клику
+                можно свести к переключению одного CSS-класса.
+              </p>
+            </div>
+          </div>
+
+          <div id="click-another-element" class="M_ParagraphArticle">
+            <h3>Воздействие на другой элемент <span class="copy"></span></h3>
+            <p class="article">
+              В предыдущем паттерне элемент менял сам себя. Здесь клик
+              происходит на кнопке, а визуальный эффект применяется к соседнему
+              объекту. Это разделение триггера и цели, которое открывает гораздо
+              больше возможностей для построения интерактивных сцен.
+            </p>
+            <p class="article">
+              Кнопка остаётся кнопкой. Квадрат рядом с ней трансформируется:
+              меняет цвет, скругляется, поворачивается и увеличивается.
+              Повторный клик возвращает всё обратно. JavaScript находит оба
+              элемента через <code>querySelector</code> и связывает их: событие
+              на одном, эффект на другом.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Функция находит два элемента внутри превью-зоны: кнопку
+                <code>trigger-btn</code> и целевой блок <code>target-box</code>.
+                Обработчик клика вешается на кнопку, но
+                <code>classList.toggle('morphed')</code> вызывается на целевом
+                блоке. CSS-класс <code>.morphed</code> описывает трансформацию:
+                смена фона, скругление, поворот и масштабирование одновременно.
+              </p>
+              <p class="article">
+                Кубическая функция
+                <code>cubic-bezier(0.34, 1.56, 0.64, 1)</code> в
+                <code>transition</code> создаёт эффект «перелёта» — объект
+                слегка проскакивает конечное состояние и пружинисто
+                возвращается.
+              </p>
+            </details>
+          </div>
+
+          <!-- click effects -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="click-affect-other">
+              <button class="trigger-btn">Кликни</button>
+              <div class="target-box"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;button class="trigger"&gt;нажми&lt;/button&gt;
+&lt;div class="target"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.target {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+ 
+.target.morphed {
+  background: #9eff70;
+  border-radius: 50%;
+  transform: rotate(180deg) scale(1.2);
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const btn = root.querySelector('.trigger-btn')
+const target = root.querySelector('.target-box')
+ 
+btn.addEventListener('click', () => {
+  target.classList.toggle('morphed')
+})
+/* Клик на кнопке, а меняется квадрат.
+   Элемент-триггер и элемент-цель
+   могут быть любыми. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div id="click-switching" class="M_ParagraphArticle">
+            <h3>Циклическое переключение <span class="copy"></span></h3>
+            <p class="article">
+              Клик не обязан быть бинарным «включил — выключил». Объект может
+              проходить через несколько состояний по кругу. Каждое состояние
+              выглядит по-разному, а JavaScript считает номер текущего состояния
+              и записывает его в
+              <code>data-atribute</code> элемента.
+            </p>
+            <p class="article">
+              CSS подхватывает значение <code>data-state</code> через селектор
+              атрибутов <code>[data-state="1"]</code> и применяет
+              соответствующее визуальное оформление. В результате JavaScript
+              хранит только число, а CSS решает, как это число выглядит.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Текущее состояние хранится в HTML-атрибуте
+                <code>data-state</code>. При каждом клике JavaScript считывает
+                его через <code>dataset.state</code>, увеличивает на единицу и
+                записывает обратно. Оператор остатка <code>%</code> (модуло)
+                зацикливает счётчик: при
+                <code>totalStates = 4</code> последовательность идёт 0, 1, 2, 3,
+                0, 1, 2, 3...
+              </p>
+              <p class="article">
+                CSS-селекторы вида <code>[data-state="1"]</code> реагируют на
+                изменение атрибута и автоматически применяют нужные стили.
+                JavaScript не знает ничего о цветах, формах или трансформациях.
+                Он просто переключает число.
+              </p>
+            </details>
+          </div>
+
+          <!-- cycle repeating -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="click-cycle">
+              <div class="cycle-box" data-state="0">0</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="cycle-box" data-state="0"&gt;0&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.cycle-box { transition: all 0.4s ease; }
+ 
+.cycle-box[data-state="1"] {
+  background: #9eff70;
+  border-radius: 50%;
+}
+.cycle-box[data-state="2"] {
+  background: #3898e2;
+  transform: rotate(45deg);
+}
+.cycle-box[data-state="3"] {
+  background: #febbed;
+  transform: scale(0.7);
+  border-radius: 50%;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const box = root.querySelector('.cycle-box')
+const totalStates = 4
+ 
+box.addEventListener('click', () => {
+  let state = parseInt(box.dataset.state)
+  state = (state + 1) % totalStates
+  box.dataset.state = state
+  box.textContent = state
+})
+/* dataset.state хранит текущее состояние.
+   Оператор % зацикливает: 0 → 1 → 2 → 3 → 0.
+   CSS-селектор [data-state="N"] задаёт
+   визуальное оформление каждого состояния. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Паттерн с <code>data-атрибутами</code> и CSS-селекторами
+                атрибутов удобен тем, что состояние видно прямо в HTML при
+                инспекции. Откройте DevTools, найдите элемент, и вы сразу
+                увидите <code>data-state="2"</code>. Это упрощает отладку по
+                сравнению с подходом через множество CSS-классов.
+              </p>
+            </div>
+          </div>
+
+          <div id="click-creating-elements" class="M_ParagraphArticle">
+            <h3>Создание элементов <span class="copy"></span></h3>
+            <p class="article">
+              До сих пор JavaScript работал с элементами, которые уже
+              существовали в разметке. Здесь при каждом клике создаётся новый
+              элемент, которого раньше не было. Кликнул в любую точку
+              превью-зоны — в этом месте появился цветной круг, который
+              расширился и затух. Кликнул ещё раз — ещё один круг. Каждый живёт
+              отдельно и удаляется после завершения анимации.
+            </p>
+            <p class="article">
+              Это мощный приём для веб-плакатов, потому что он позволяет зрителю
+              буквально рисовать на экране. Следы от кликов, брызги, частицы,
+              вспышки — всё это строится на одном и том же принципе: создать
+              элемент, позиционировать его, добавить анимацию, удалить после
+              завершения.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Метод <code>document.createElement('div')</code> создаёт новый
+                элемент. Координаты клика пересчитываются из глобальных
+                (<code>clientX/Y</code>) в локальные через
+                <code>getBoundingClientRect()</code>, чтобы круг появлялся точно
+                под курсором, а не где-то в углу страницы.
+              </p>
+
+              <p class="article">
+                Цвет выбирается случайно из массива через
+                <code>Math.random()</code>. Элемент добавляется в DOM через
+                <code>root.appendChild(dot)</code>, после чего CSS-анимация
+                <code>@keyframes</code> автоматически запускается. Когда
+                анимация завершается, событие
+                <code>animationend</code> срабатывает и
+                <code>dot.remove()</code> удаляет элемент из DOM, чтобы страница
+                не засорялась десятками невидимых <code>div</code>.
+              </p>
+
+              <p class="article">
+                Свойство <code>pointer-events: none</code> на создаваемых
+                элементах важно: без него клики по расходящимся кругам будут
+                перехватываться ими, а не проваливаться сквозь них к
+                превью-зоне.
+              </p>
+            </details>
+          </div>
+          <!-- on click -->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="click-spawn">
+              <div class="spawn-hint">Кликайте в любое место</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="area"&gt;
+  &lt;div class="hint"&gt;Кликайте в любое место&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.spawned {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: fade 1.5s ease forwards;
+}
+ 
+@keyframes fade {
+  0%   { transform: translate(-50%,-50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(3); opacity: 0; }
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const colors = ['#fe3904','#9eff70','#82e1f1','#febbed','#3898e2']
+ 
+root.addEventListener('click', (e) => {
+  const rect = root.getBoundingClientRect()
+  const dot = document.createElement('div')
+  dot.className = 'spawned'
+  dot.style.left = (e.clientX - rect.left) + 'px'
+  dot.style.top = (e.clientY - rect.top) + 'px'
+  dot.style.background = colors[Math.floor(Math.random() * colors.length)]
+  root.appendChild(dot)
+  dot.addEventListener('animationend', () => dot.remove())
+})
+/* createElement создаёт элемент на лету.
+   getBoundingClientRect пересчитывает координаты
+   относительно превью-зоны, а не окна.
+   animationend удаляет элемент после анимации,
+   чтобы DOM не засорялся. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Если не удалять созданные элементы после анимации, DOM будет
+                расти с каждым кликом. На сотне кликов это незаметно, но на
+                тысяче страница начнёт тормозить. Всегда подписывайтесь на
+                <code>animationend</code> и вызывайте <code>remove()</code>,
+                если элемент больше не нужен.
+              </p>
+            </div>
+          </div>
+
+          <div id="click-collection" class="M_ParagraphArticle">
+            <h3>Работа с коллекцией <span class="copy"></span></h3>
+            <p class="article">
+              Пятнадцать ячеек в сетке. Клик по ячейке выделяет её, повторный
+              клик снимает выделение. Счётчик внизу показывает, сколько ячеек
+              выбрано. Этот паттерн демонстрирует работу с группой однотипных
+              элементов, где каждый элемент независим, но все вместе они
+              формируют общее состояние.
+            </p>
+            <p class="article">
+              Приём часто встречается в веб-плакатах с интерактивными сетками,
+              мозаиками, пиксель-артом.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+              <p class="article">
+                <code>querySelectorAll</code> находит все ячейки.
+                <code>forEach</code> вешает на каждую обработчик. При клике
+                <code>classList.toggle</code> переключает состояние конкретной
+                ячейки. Затем
+                <code>querySelectorAll('.cell.selected').length</code>
+                пересчитывает общее количество выбранных ячеек по всей сетке и
+                обновляет текст счётчика.
+              </p>
+
+              <p class="article">
+                Обратите внимание, что пересчёт происходит заново при каждом
+                клике, а не хранится в отдельной переменной. Это менее
+                оптимальный подход с точки зрения производительности, но более
+                надёжный: количество всегда соответствует реальному состоянию
+                DOM, без риска рассинхрона между переменной и визуалом.
+              </p>
+            </details>
+          </div>
+
+          <!--collection-->
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="click-collection">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="counter">Выбрано: 0</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="cell"&gt;&lt;/div&gt;
+&lt;!-- ...15 ячеек --&gt;
+&lt;div class="counter"&gt;Выбрано: 0&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.cell {
+  background: #f0f0f0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+ 
+.cell.selected {
+  background: #fe3904;
+  transform: scale(0.85);
+  border-radius: 50%;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const cells = root.querySelectorAll('.cell')
+const counter = root.querySelector('.counter')
+ 
+cells.forEach(cell => {
+  cell.addEventListener('click', () => {
+    cell.classList.toggle('selected')
+    const count = root.querySelectorAll('.cell.selected').length
+    counter.textContent = `Выбрано: ${count}`
+  })
+})
+/* querySelectorAll возвращает все элементы.
+   forEach вешает обработчик на каждый.
+   После каждого клика пересчитываем
+   количество выбранных через .length. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div id="click-reading" class="M_ParagraphArticle">
+            <h3>Чтение data-атрибутов <span class="copy"></span></h3>
+            <p class="article">
+              HTML-элементы могут хранить произвольные данные в атрибутах
+              <code>data</code>. JavaScript читает эти данные через свойство
+              <code>dataset</code> и использует их для визуальных изменений. В
+              примере ниже каждый цветной квадрат в палитре хранит свой цвет и
+              название в <code>data-color</code> и <code>data-name</code>. При
+              клике эти значения извлекаются и применяются к соседнему блоку.
+            </p>
+            <p class="article">
+              Этот подход позволяет хранить все данные в HTML, а JavaScript
+              делает только одно: читает и применяет. Чтобы добавить новый цвет
+              в палитру, достаточно добавить один <code>div</code> в разметку с
+              нужными атрибутами, JS-код менять не придётся.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+              <p class="article">
+                Атрибут <code>data-color="#fe3904"</code> в HTML становится
+                доступен в JavaScript как <code>element.dataset.color</code>.
+                Аналогично <code>data-name="красный"</code> становится
+                <code>element.dataset.name</code>. Это стандартный механизм
+                HTML5 для хранения пользовательских данных на элементах.
+              </p>
+              <p class="article">
+                При клике на квадрат палитры JavaScript считывает его
+                <code>dataset.color</code> и <code>dataset.name</code>, затем
+                применяет цвет к фону блока <code>.canvas</code> и обновляет
+                текстовые подписи. Отдельно проверяется яркость цвета, чтобы
+                подпись оставалась читаемой: на светлых фонах текст становится
+                чёрным.
+              </p>
+              <p class="article">
+                Класс <code>.active-swatch</code> управляет рамкой вокруг
+                текущего выбранного цвета. <code>forEach</code> снимает рамку со
+                всех квадратов, затем <code>classList.add</code> ставит её на
+                кликнутый.
+              </p>
+            </details>
+
+            <!-- data from click-->
+            <div class="W_PreviewCodeArea">
+              <div class="M_PreviewArea" data-demo="click-data-attr">
+                <div class="palette">
+                  <div
+                    class="swatch active-swatch"
+                    data-color="#fe3904"
+                    data-name="красный"
+                    style="background: #fe3904"
+                  ></div>
+                  <div
+                    class="swatch"
+                    data-color="#9eff70"
+                    data-name="зелёный"
+                    style="background: #9eff70"
+                  ></div>
+                  <div
+                    class="swatch"
+                    data-color="#82e1f1"
+                    data-name="голубой"
+                    style="background: #82e1f1"
+                  ></div>
+                  <div
+                    class="swatch"
+                    data-color="#febbed"
+                    data-name="розовый"
+                    style="background: #febbed"
+                  ></div>
+                  <div
+                    class="swatch"
+                    data-color="#3898e2"
+                    data-name="синий"
+                    style="background: #3898e2"
+                  ></div>
+                </div>
+                <div class="canvas" style="background: #fe3904">
+                  <div class="canvas-label" style="color: white">красный</div>
+                  <div class="canvas-value">#fe3904</div>
+                </div>
+              </div>
+              <div class="S_CodeArea">
+                <div class="O_CodeBar">
+                  <div class="M_CodeTabs">
+                    <button class="A_CodeTab" data-lang="html">HTML</button>
+                    <button class="A_CodeTab" data-lang="css">CSS</button>
+                    <button class="A_CodeTab active" data-lang="js">JS</button>
+                  </div>
+                  <div class="A_CopyButton-container"></div>
+                </div>
+                <div class="O_CodeContent">
+                  <div class="A_LineNumbers"></div>
+                  <pre
+                    class="A_CodeBlock"
+                    data-lang="html"
+                  ><code class="language-markup">
+&lt;div class="swatch"
+  data-color="#fe3904"
+  data-name="красный"
+  style="background:#fe3904"&gt;&lt;/div&gt;
+&lt;!-- ...остальные цвета --&gt;
+ 
+&lt;div class="canvas"&gt;
+  &lt;div class="canvas-label"&gt;&lt;/div&gt;
+  &lt;div class="canvas-value"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                  <pre
+                    class="A_CodeBlock"
+                    data-lang="css"
+                  ><code class="language-css">
+.canvas {
+  transition: background-color 0.4s ease;
+}
+ 
+.swatch {
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+ 
+.swatch.active-swatch {
+  border-color: black;
+}
+      </code></pre>
+                  <pre
+                    class="A_CodeBlock active"
+                    data-lang="js"
+                  ><code class="language-javascript">
+const swatches = root.querySelectorAll('.swatch')
+const canvas = root.querySelector('.canvas')
+const label = root.querySelector('.canvas-label')
+const value = root.querySelector('.canvas-value')
+ 
+swatches.forEach(sw => {
+  sw.addEventListener('click', () => {
+    const color = sw.dataset.color
+    const name = sw.dataset.name
+ 
+    canvas.style.backgroundColor = color
+    label.textContent = name
+    value.textContent = color
+ 
+    const bright = ['#9eff70','#82e1f1','#febbed']
+    label.style.color = bright.includes(color) ? 'black' : 'white'
+ 
+    swatches.forEach(s => s.classList.remove('active-swatch'))
+    sw.classList.add('active-swatch')
+  })
+})
+/* dataset.color и dataset.name —
+   данные из HTML-атрибутов data-*.
+   Клик читает их и применяет к canvas.
+   Никакого хардкода в JS —
+   все значения хранятся в разметке. */
+      </code></pre>
+                </div>
+              </div>
+            </div>
+
+            <p class="article"><click-data-attr></click-data-attr></p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Паттерн с <code>data-атрибутами</code> отлично работает для
+                интерактивных палитр, фильтров, переключателей тем. Вся
+                конфигурация живёт в HTML, JavaScript остаётся универсальным.
+                Когда дизайнер хочет поменять цвета или добавить новые, он
+                правит только разметку, не заглядывая в скрипт.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

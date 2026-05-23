@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Перетаскивание | Web Poster</title>
+  </head>
+  <body>
+    <menubar></menubar>
+    <!-- BreadCrumbs -->
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../index.html"> Главная </a>
+            •
+            <a class="caption-caps" href="../../modules.html"> Модули </a>
+            •
+            <span class="caption-caps"> Перетаскивание</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ModuleCover -->
+    <div class="O_ModulePageCover dynamic">
+      <img
+        class="Q_ModulesCover"
+        src="../../images/modules/DynamicModuleCover.webp"
+        alt=""
+      />
+      <div class="W_ModuleCoverWrapper margin-container">
+        <div class="O_ModuleHeadText">
+          <div class="M_TitleTextMedium">
+            <h2>Перетаскивание</h2>
+            <p class="subtitle">
+              Добавляем подвижность элементам и управляем их свойствами через
+              перетаскивание
+            </p>
+          </div>
+          <div style="opacity: 0.7" class="A_IconText">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.5 12C20.5 7.58172 16.9183 4 12.5 4C8.08172 4 4.5 7.58172 4.5 12C4.5 16.4183 8.08172 20 12.5 20C16.9183 20 20.5 16.4183 20.5 12ZM11.5 8.4209C11.5 7.86861 11.9477 7.4209 12.5 7.4209C13.0523 7.4209 13.5 7.86861 13.5 8.4209V12.4043L16.1914 13.3018C16.7152 13.4765 16.9979 14.0426 16.8232 14.5664C16.6485 15.0902 16.0824 15.3729 15.5586 15.1982L12.1836 14.0732C11.7754 13.937 11.5 13.5553 11.5 13.125V8.4209ZM22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z"
+                fill="white"
+              />
+            </svg>
+            <!-- --------------------Time to read-------------------- -->
+            <p style="color: white" class="subtitle light">10 минут чтения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="L_Module">
+      <!-- Content here -->
+      <div class="W_ArticlePage modules margin-container">
+        <div class="S_LeftNavBar"></div>
+        <div class="O_ArticleContent">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <div class="W_ArticleContentContainer">
+          <!-- ---------------------------- -->
+          <!-- <div class="A_Toast">
+            <span class="check"></span>
+            Ссылка скопирована
+          </div> -->
+
+          <!-- template ends here -->
+
+          <div id="about" class="M_ParagraphArticle">
+            <h3>О модуле <span class="copy"></span></h3>
+            <p class="article">
+              В JavaScript перетаскивание складывается из трёх событий, которые
+              работают в связке. <code>mousedown</code> фиксирует момент нажатия
+              и запоминает начальные координаты.
+              <code>mousemove</code> отслеживает движение курсора и обновляет
+              положение объекта в реальном времени.
+              <code>mouseup</code> завершает перетаскивание и отпускает объект.
+              Все три события нужно координировать между собой через общее
+              состояние, обычно через переменную-флаг <code>isDragging</code>.
+            </p>
+            <p class="article">
+              Есть момент, который часто ловит врасплох. На мобильных
+              устройствах
+              <code>mouse</code> события не работают. Вместо них браузер
+              генерирует <code>touch</code> события: <code>touchstart</code>,
+              <code>touchmove</code>, <code>touchend</code>. Координаты хранятся
+              не в <code>event.clientX</code>, а в
+              <code>event.touches[0].clientX</code>. Если вы хотите, чтобы
+              перетаскивание работало на телефонах и планшетах, нужно слушать
+              обе группы событий. Об этом подробнее в паттернах ниже.
+            </p>
+          </div>
+
+          <div id="free-drag" class="M_ParagraphArticle">
+            <h3>Свободное перемещение <span class="copy"></span></h3>
+            <p class="article">
+              Объект следует за курсором, пока зажата кнопка мыши. Отпустили и
+              объект остаётся там, где вы его оставили. Базовый паттерн
+              перетаскивания, на котором строятся все остальные.
+            </p>
+
+            <p class="article">
+              При <code>mousedown</code> запоминается смещение курсора
+              относительно левого верхнего угла объекта. Это нужно для того,
+              чтобы объект не прыгал к курсору в момент нажатия, а двигался от
+              той точки, за которую его схватили.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Обработчик <code>mousemove</code> вешается на <code>root</code>,
+                а не на сам объект. Если повесить на объект, то при быстром
+                движении курсор может убежать с элемента, и перетаскивание
+                оборвётся. <code>root</code> перехватывает движение по всей
+                превью-зоне.
+              </p>
+              <p class="article">
+                Координаты пересчитываются через
+                <code>root.getBoundingClientRect()</code>, чтобы
+                позиционирование работало относительно превью-зоны, а не окна.
+              </p>
+              <p class="article">
+                Для мобильных устройств добавлены обработчики
+                <code>touchstart</code>, <code>touchmove</code> и
+                <code>touchend</code>. Координаты считываются из
+                <code>event.touches[0]</code> вместо самого <code>event</code>.
+                Вызов <code>event.preventDefault()</code> в
+                <code>touchmove</code> предотвращает скролл страницы, пока палец
+                двигает объект.
+              </p>
+              <!-- сюда -->
+            </details>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="drag-free">
+              <div class="drag-free-box">тяни</div>
+              <div class="drag-hint">Перетащите квадрат</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="drag-free-box"&gt;тяни&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.drag-free-box {
+  position: absolute;
+  width: 70px; height: 70px;
+  background: #fe3904;
+  border-radius: 10px;
+  cursor: grab;
+}
+ 
+.drag-free-box.dragging {
+  cursor: grabbing;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transform: scale(1.08);
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const box = root.querySelector('.drag-free-box')
+let isDragging = false
+let offsetX = 0, offsetY = 0
+ 
+box.addEventListener('mousedown', (e) => {
+  isDragging = true
+  const rect = box.getBoundingClientRect()
+  offsetX = e.clientX - rect.left
+  offsetY = e.clientY - rect.top
+  box.classList.add('dragging')
+})
+ 
+root.addEventListener('mousemove', (e) => {
+  if (!isDragging) return
+  const rootRect = root.getBoundingClientRect()
+  box.style.left = (e.clientX - rootRect.left - offsetX) + 'px'
+  box.style.top = (e.clientY - rootRect.top - offsetY) + 'px'
+})
+ 
+root.addEventListener('mouseup', () => {
+  isDragging = false
+  box.classList.remove('dragging')
+})
+ 
+/* Для мобильных добавьте touchstart/touchmove/touchend.
+   Координаты берутся из event.touches[0].clientX/Y.
+   В touchmove обязателен event.preventDefault(),
+   иначе страница будет скроллиться вместе
+   с перетаскиванием. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Без <code>event.preventDefault()</code> в обработчике
+                <code>touchmove</code> мобильный браузер будет одновременно
+                перетаскивать объект и скроллить страницу. Палец двигается вниз,
+                объект едет вниз, и вся страница тоже едет. Всегда вызывайте
+                <code>preventDefault()</code> для <code>touchmove</code>, когда
+                перетаскивание активно
+              </p>
+            </div>
+          </div>
+
+          <div id="drag-with-grid" class="M_ParagraphArticle">
+            <h3>Перетаскивание с привязкой <span class="copy"></span></h3>
+            <p class="article">
+              Объект перемещается свободно, но при отпускании прилипает к
+              ближайшей ячейке невидимой сетки. Движение остаётся плавным, а
+              финальная позиция всегда аккуратная и выровненная. Это полезно для
+              конструкторов, раскладок и любых ситуаций, где нужен порядок.
+            </p>
+
+            <p class="article">
+              Во время перетаскивания объект двигается свободно, следуя за
+              курсором. Привязка срабатывает только при <code>mouseup</code>. В
+              этот момент текущие координаты округляются до ближайшего кратного
+              размеру ячейки через
+              <code>Math.round(x / cellSize) * cellSize</code>.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Сетка отрисована через CSS <code>background</code> с
+                повторяющимся градиентом, чтобы зритель видел, к каким точкам
+                привязывается объект. Плавность прилипания обеспечивается
+                <code>transition</code> на элементе, который временно включается
+                при отпускании и выключается при следующем захвате, чтобы не
+                тормозить перемещение.
+              </p>
+            </details>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="drag-snap">
+              <div class="drag-snap-box">snap</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="drag-snap-box"&gt;snap&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+/* Визуальная сетка через CSS-градиент */
+[data-demo="drag-snap"] {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+ 
+.drag-snap-box {
+  position: absolute;
+  width: 60px; height: 60px;
+  background: #9eff70;
+  cursor: grab;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const cellSize = 60
+ 
+// При mouseup — привязка к ближайшей ячейке
+function endDrag() {
+  isDragging = false
+  const x = parseFloat(box.style.left) || 0
+  const y = parseFloat(box.style.top) || 0
+  const snappedX = Math.round(x / cellSize) * cellSize
+  const snappedY = Math.round(y / cellSize) * cellSize
+  box.style.transition = 'left 0.2s ease, top 0.2s ease'
+  box.style.left = snappedX + 'px'
+  box.style.top = snappedY + 'px'
+}
+ 
+/* Math.round округляет до ближайшего
+   кратного cellSize. При перемещении
+   transition отключается, чтобы объект
+   не тормозил за курсором. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Размер ячейки сетки удобно хранить в CSS-переменной
+                <code>--cell-size</code> и считывать из JavaScript через
+                <code>getComputedStyle</code>. Тогда дизайнер может менять шаг
+                сетки в стилях, не трогая код
+              </p>
+            </div>
+          </div>
+
+          <div id="drag-with-borders" class="M_ParagraphArticle">
+            <h3>Перетаскивание с границами <span class="copy"></span></h3>
+            <p class="article">
+              Объект можно двигать только внутри заданной области. При
+              достижении границы контейнера он останавливается и не выходит за
+              пределы. Это ограничение делает взаимодействие предсказуемым и
+              предотвращает ситуацию, когда зритель потерял элемент за краем
+              экрана.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                После вычисления новой позиции она зажимается через
+                <code>Math.max</code> и <code>Math.min</code> в допустимый
+                диапазон. Для левого края это <code>Math.max(0, x)</code>, для
+                правого это
+                <code>Math.min(containerWidth - elementWidth, x)</code>. То же
+                самое для вертикальной оси.
+              </p>
+              <p class="article">
+                Ширина и высота контейнера считываются через
+                <code>root.offsetWidth</code> и <code>root.offsetHeight</code>.
+                Размеры самого элемента считываются аналогично. Разница между
+                ними определяет максимально допустимую позицию.
+              </p>
+              <p class="article">
+                Визуально объект упирается в стенки контейнера. Для мягкости
+                можно добавить лёгкий отскок или пружинящий эффект через CSS
+                <code>transition</code>, но в базовом варианте достаточно
+                жёсткого ограничения.
+              </p>
+            </details>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="drag-bounds">
+              <div class="drag-bounds-box">тяни</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="drag-bounds-box"&gt;тяни&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+[data-demo="drag-bounds"] {
+  border: 2px dashed rgba(255,255,255,0.15);
+}
+ 
+.drag-bounds-box {
+  position: absolute;
+  width: 70px; height: 70px;
+  background: #82e1f1;
+  cursor: grab;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function moveDrag(clientX, clientY) {
+  if (!isDragging) return
+  const rootRect = root.getBoundingClientRect()
+  let x = clientX - rootRect.left - offsetX
+  let y = clientY - rootRect.top - offsetY
+ 
+  // Ограничение границами контейнера
+  const maxX = root.offsetWidth - box.offsetWidth
+  const maxY = root.offsetHeight - box.offsetHeight
+  x = Math.max(0, Math.min(maxX, x))
+  y = Math.max(0, Math.min(maxY, y))
+ 
+  box.style.left = x + 'px'
+  box.style.top = y + 'px'
+}
+/* Math.max(0, ...) не даёт уйти за левый/верхний край.
+   Math.min(max, ...) не даёт уйти за правый/нижний. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div id="drop-areas" class="M_ParagraphArticle">
+            <h3>Зоны сброса <span class="copy"></span></h3>
+            <p class="article">
+              Объект можно перетащить на одну из нескольких целевых зон. Если
+              объект отпущен над зоной, он приземляется в неё. Если мимо —
+              возвращается на исходную позицию. Это паттерн для сортировок,
+              категоризации, игровых механик внутри плаката.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                При <code>mouseup</code> JavaScript проверяет, пересекается ли
+                объект с какой-либо из целевых зон. Для этого сравниваются
+                прямоугольники объекта и зон через
+                <code>getBoundingClientRect()</code>. Если центр объекта
+                попадает внутрь прямоугольника зоны, объект считается сброшенным
+                туда.
+              </p>
+
+              <p class="article">
+                При попадании объект анимированно перемещается в центр зоны
+                через
+                <code>transition</code>. Зона визуально подсвечивается для
+                обратной связи. Если объект не попал ни в одну зону, он
+                возвращается на начальную позицию, которая запоминается в момент
+                <code>mousedown</code>.
+              </p>
+
+              <p class="article">
+                Подсветка зон во время перетаскивания реализуется через проверку
+                пересечения в <code>mousemove</code>. Зона, над которой сейчас
+                находится объект, получает CSS-класс <code>.drag-over</code>,
+                который добавляет ей рамку или фон.
+              </p>
+            </details>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="drag-drop-zones">
+              <div class="drag-item"></div>
+              <div class="drop-zone drop-zone-1">зона 1</div>
+              <div class="drop-zone drop-zone-2">зона 2</div>
+              <div class="drop-zone drop-zone-3">зона 3</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="drag-item"&gt;&lt;/div&gt;
+&lt;div class="drop-zone"&gt;зона 1&lt;/div&gt;
+&lt;div class="drop-zone"&gt;зона 2&lt;/div&gt;
+&lt;div class="drop-zone"&gt;зона 3&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.drop-zone {
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+ 
+.drop-zone.drag-over {
+  border-color: #9eff70;
+  background: rgba(158,255,112,0.08);
+}
+ 
+.drop-zone.zone-filled {
+  border-color: #9eff70;
+  border-style: solid;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function endDrag() {
+  const itemRect = item.getBoundingClientRect()
+  const cx = itemRect.left + itemRect.width / 2
+  const cy = itemRect.top + itemRect.height / 2
+ 
+  zones.forEach(zone => {
+    const zr = zone.getBoundingClientRect()
+    const isOver = cx > zr.left && cx < zr.right
+                && cy > zr.top && cy < zr.bottom
+ 
+    if (isOver) {
+      // Приземляемся в центр зоны
+      const rootRect = root.getBoundingClientRect()
+      item.style.left = (zr.left - rootRect.left
+        + (zr.width - item.offsetWidth) / 2) + 'px'
+      item.style.top = (zr.top - rootRect.top
+        + (zr.height - item.offsetHeight) / 2) + 'px'
+      zone.classList.add('zone-filled')
+    }
+  })
+ 
+  if (!landed) {
+    // Мимо — возвращаемся на старт
+    item.style.left = startX + 'px'
+    item.style.top = startY + 'px'
+  }
+}
+/* getBoundingClientRect возвращает прямоугольник
+   элемента. Сравниваем центр объекта
+   с границами зон, чтобы определить попадание. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                На мобильных устройствах <code>touchmove</code> с
+                <code>preventDefault()</code> блокирует скролл, что ожидаемо при
+                перетаскивании. Но если зоны сброса расположены ниже видимой
+                области, зритель не сможет до них доскроллить, потому что
+                перетаскивание уже активно. Размещайте все зоны так, чтобы они
+                были видны одновременно с перетаскиваемым объектом
+              </p>
+            </div>
+          </div>
+
+          <div id="drag-sort" class="M_ParagraphArticle">
+            <h3>Сортировка списка <span class="copy"></span></h3>
+            <p class="article">
+              Элементы списка можно менять местами перетаскиванием. Зритель
+              хватает элемент, тянет его вверх или вниз, остальные элементы
+              раздвигаются, освобождая место. При отпускании элемент занимает
+              новую позицию. Паттерн для ранжирования, приоритизации,
+              пользовательских порядков.
+            </p>
+
+            <p class="article">
+              При захвате элемента создаётся его визуальная копия, которая
+              следует за курсором, а оригинал получает полупрозрачность. Через
+              <code>mousemove</code> JavaScript определяет, над каким элементом
+              списка находится курсор, и вставляет плейсхолдер (пустое
+              пространство) в нужное место через <code>insertBefore</code>.
+            </p>
+
+            <p class="article">
+              Этот паттерн сложнее предыдущих и требует аккуратной работы с
+              координатами. На мобильных устройствах обязателен
+              <code>preventDefault()</code> в <code>touchmove</code>, иначе
+              вместо сортировки страница будет скроллиться.
+            </p>
+
+            <details class="A_More">
+              <summary>
+                <img
+                  src="../../images/icons/Q_chevron-down.svg"
+                  alt=""
+                  class="chevron"
+                />Объяснение
+              </summary>
+
+              <p class="article">
+                Определение целевой позиции основано на сравнении
+                <code>clientY</code> курсора с серединами элементов списка. Если
+                курсор выше середины элемента, плейсхолдер ставится перед ним.
+                Если ниже, после него.
+              </p>
+
+              <p class="article">
+                При <code>mouseup</code> визуальная копия удаляется, а оригинал
+                перемещается на позицию плейсхолдера через
+                <code>insertBefore</code>. Переупорядочивание происходит
+                непосредственно в DOM, без отдельного массива данных.
+              </p>
+            </details>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="drag-sort">
+              <div class="drag-sort-list">
+                <div class="drag-sort-item">Первый элемент</div>
+                <div class="drag-sort-item">Второй элемент</div>
+                <div class="drag-sort-item">Третий элемент</div>
+                <div class="drag-sort-item">Четвёртый элемент</div>
+                <div class="drag-sort-item">Пятый элемент</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="drag-sort-list"&gt;
+  &lt;div class="drag-sort-item"&gt;Первый&lt;/div&gt;
+  &lt;div class="drag-sort-item"&gt;Второй&lt;/div&gt;
+  &lt;div class="drag-sort-item"&gt;Третий&lt;/div&gt;
+  &lt;div class="drag-sort-item"&gt;Четвёртый&lt;/div&gt;
+  &lt;div class="drag-sort-item"&gt;Пятый&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.drag-sort-item {
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: white;
+  cursor: grab;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+ 
+.drag-sort-item.sort-dragging {
+  opacity: 0.4;
+}
+ 
+.drag-sort-placeholder {
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: 8px;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+items.forEach(item => {
+  item.addEventListener('mousedown', (e) => {
+    draggedEl = item
+    item.classList.add('sort-dragging')
+ 
+    // Создаём плейсхолдер на месте элемента
+    placeholder = document.createElement('div')
+    placeholder.className = 'drag-sort-placeholder'
+    placeholder.style.height = item.offsetHeight + 'px'
+    list.insertBefore(placeholder, item.nextSibling)
+  })
+})
+ 
+function handleMove(clientY) {
+  // Определяем, над каким элементом курсор
+  const siblings = [...list.querySelectorAll(
+    '.drag-sort-item:not(.sort-dragging)'
+  )]
+  for (const sibling of siblings) {
+    const mid = sibling.getBoundingClientRect().top
+              + sibling.offsetHeight / 2
+    if (clientY < mid) {
+      list.insertBefore(placeholder, sibling)
+      return
+    }
+  }
+  list.appendChild(placeholder)
+}
+ 
+/* При mouseup элемент вставляется
+   на место плейсхолдера через insertBefore.
+   Переупорядочивание происходит в DOM —
+   без отдельного массива данных. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Для отзывчивости добавьте CSS
+                <code>transition: transform 0.15s ease</code> на элементы
+                списка. Когда они раздвигаются, чтобы освободить место, движение
+                будет плавным, а не рывковым. Без
+                <code>transition</code> перестановка выглядит механически
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footerbar></footerbar>
+  </body>
+</html>

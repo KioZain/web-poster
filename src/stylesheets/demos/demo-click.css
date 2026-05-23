@@ -1,0 +1,301 @@
+[data-demo='click-toggle-props'] {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-toggle-props'] .toggle-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-align: center;
+  user-select: none;
+}
+
+[data-demo='click-toggle-props'] .toggle-bg {
+  background: var(--identity-red, #fe3904);
+  color: white;
+}
+
+[data-demo='click-toggle-props'] .toggle-bg.active {
+  background: var(--identity-green, #9eff70);
+  color: black;
+}
+
+[data-demo='click-toggle-props'] .toggle-scale {
+  background: var(--identity-light-blue, #82e1f1);
+}
+
+[data-demo='click-toggle-props'] .toggle-scale.active {
+  transform: scale(1.4);
+}
+
+[data-demo='click-toggle-props'] .toggle-radius {
+  background: var(--identity-pink, #febbedff);
+}
+
+[data-demo='click-toggle-props'] .toggle-radius.active {
+  border-radius: 50%;
+}
+
+[data-demo='click-toggle-props'] .toggle-rotate {
+  background: var(--identity-blue, #3898e2);
+  color: white;
+}
+
+[data-demo='click-toggle-props'] .toggle-rotate.active {
+  transform: rotate(45deg);
+}
+
+/* --- 2. Клик на один → эффект на другом --- */
+
+[data-demo='click-affect-other'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-affect-other'] .trigger-btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--identity-red, #fe3904);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+[data-demo='click-affect-other'] .trigger-btn:active {
+  transform: scale(0.9);
+}
+
+[data-demo='click-affect-other'] .target-box {
+  width: 100px;
+  height: 100px;
+  background: var(--identity-light-blue, #82e1f1);
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-demo='click-affect-other'] .target-box.morphed {
+  background: var(--identity-green, #9eff70);
+  border-radius: 50%;
+  transform: rotate(180deg) scale(1.2);
+}
+
+/* --- 3. Клик: циклическое переключение состояний --- */
+
+[data-demo='click-cycle'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-cycle'] .cycle-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+  background: var(--identity-red, #fe3904);
+  color: white;
+}
+
+[data-demo='click-cycle'] .cycle-box[data-state='1'] {
+  background: var(--identity-green, #9eff70);
+  color: black;
+  border-radius: 50%;
+}
+
+[data-demo='click-cycle'] .cycle-box[data-state='2'] {
+  background: var(--identity-blue, #3898e2);
+  color: white;
+  transform: rotate(45deg);
+}
+
+[data-demo='click-cycle'] .cycle-box[data-state='3'] {
+  background: var(--identity-pink, #febbedff);
+  color: black;
+  transform: scale(0.7);
+  border-radius: 50%;
+}
+
+[data-demo='click-cycle'] .cycle-hint {
+  position: absolute;
+  bottom: 12px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* --- 4. Клик: добавление элементов --- */
+
+[data-demo='click-spawn'] {
+  position: relative;
+  height: 280px;
+  cursor: crosshair;
+  overflow: hidden;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-spawn'] .spawned {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: click-spawn-fade 1.5s ease forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes click-spawn-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+[data-demo='click-spawn'] .spawn-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #999;
+  pointer-events: none;
+}
+
+/* --- 5. Клик: работа с коллекцией --- */
+
+[data-demo='click-collection'] {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 16px;
+  min-height: auto;
+  /* height: 280px; */
+  align-content: start;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-collection'] .cell {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f0f0f0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+[data-demo='click-collection'] .cell.selected {
+  background: var(--identity-red, #fe3904);
+  transform: scale(0.85);
+  border-radius: 50%;
+}
+
+[data-demo='click-collection'] .cell.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+[data-demo='click-collection'] .counter {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  padding: 4px 0;
+}
+
+/* --- 6. Клик: получение данных из атрибутов --- */
+
+[data-demo='click-data-attr'] {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='click-data-attr'] .palette {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+[data-demo='click-data-attr'] .swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 3px solid transparent;
+}
+
+[data-demo='click-data-attr'] .swatch:active {
+  transform: scale(0.85);
+}
+
+[data-demo='click-data-attr'] .swatch.active-swatch {
+  border-color: black;
+}
+
+[data-demo='click-data-attr'] .canvas {
+  flex: 1;
+  border-radius: 12px;
+  transition: background-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+[data-demo='click-data-attr'] .canvas-label {
+  font-size: 13px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+[data-demo='click-data-attr'] .canvas-value {
+  font-size: 11px;
+  font-family: monospace;
+  opacity: 0.6;
+}

@@ -110,6 +110,16 @@
       height: 6rem;
     }
   }
+
+  &.dynamic {
+    background: linear-gradient(
+      241deg,
+      #fe96e4 4.39%,
+      #fe3904 32.16%,
+      #fe3904 70.75%,
+      #fe96e4 94.79%
+    );
+  }
 }
 
 .Q_PageCover {

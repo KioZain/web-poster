@@ -28,3 +28,5 @@
 @import 'stylesheets/demos/demo-keyframes.css';
 @import 'stylesheets/demos/demo-timing.css';
 @import 'stylesheets/demos/demo-transition.css';
+@import 'stylesheets/demos/demo-click.css';
+@import 'stylesheets/demos/demo-drag.css';

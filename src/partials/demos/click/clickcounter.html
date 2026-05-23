@@ -1,0 +1,67 @@
+<div class="W_PreviewCodeArea">
+  <div class="M_PreviewArea" data-demo="click-counter">
+    <div class="demo-counter-number">0</div>
+  </div>
+  <div class="S_CodeArea">
+    <div class="O_CodeBar">
+      <div class="M_CodeTabs">
+        <button class="A_CodeTab" data-lang="html">HTML</button>
+        <button class="A_CodeTab" data-lang="css">CSS</button>
+        <button class="A_CodeTab active" data-lang="js">JS</button>
+      </div>
+      <div class="A_CopyButton-container"></div>
+    </div>
+
+    <div class="O_CodeContent">
+      <div class="A_LineNumbers"></div>
+
+      <pre class="A_CodeBlock" data-lang="html"><code class="language-markup">
+&lt;div class="M_PreviewArea" data-demo="click-counter"&gt;
+  &lt;div class="demo-counter-number"&gt;0&lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
+      <pre class="A_CodeBlock" data-lang="css"><code class="language-css">
+.demo-counter-number {
+  font-size: 96px;
+  font-weight: 900;
+  color: #fff;
+  user-select: none;
+}
+ 
+.demo-counter-number.bounce {
+  animation: click-counter-bounce 0.3s ease-out;
+}
+ 
+@keyframes click-counter-bounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.3); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+      </code></pre>
+
+      <pre
+        class="A_CodeBlock active"
+        data-lang="js"
+      ><code class="language-javascript">
+function initClickCounter(root) {
+  let count = 0
+  const display = root.querySelector('.demo-counter-number')
+ 
+  root.addEventListener('click', () => {
+    count++
+    display.textContent = count
+ 
+    // Перезапуск CSS-анимации:
+    // убираем класс, ждём новый кадр, добавляем обратно
+    display.classList.remove('bounce')
+    requestAnimationFrame(() => {
+      display.classList.add('bounce')
+    })
+  })
+}
+      </code></pre>
+    </div>
+  </div>
+</div>

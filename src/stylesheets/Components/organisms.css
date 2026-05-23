@@ -245,6 +245,17 @@
   justify-content: center;
   align-items: center;
   height: 270px;
+
+  &.dynamic {
+    h2,
+    p {
+      color: var(--white-500);
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
 }
 
 .O_ModuleRow {
@@ -969,8 +980,8 @@
       fill: var(--gray-soft);
     }
   }
-  @media screen and (max-width: 1024px) {
-    grid-column: 1/6;
+  @media screen and (max-width: 786px) {
+    grid-column: 1/-1;
   }
 }
 

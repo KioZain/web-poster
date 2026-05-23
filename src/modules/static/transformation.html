@@ -59,7 +59,34 @@
     <div class="L_Module">
       <!-- Content here -->
       <div class="W_ArticlePage modules margin-container">
-        <div class="S_LeftNavBar"></div>
+        <div class="S_LeftNavBar">
+          <div class="W_CollapsingLists">
+            <!-- Статичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Статичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="movement.html" class="A_ListItem">Движение</a>
+                <a href="rotation.html" class="A_ListItem">Вращение</a>
+                <a href="transformation.html" class="A_ListItem"
+                  >Трансформация</a
+                >
+                <a href="hover.html" class="A_ListItem">Ховер</a>
+                <a href="text.html" class="A_ListItem">Текст</a>
+              </div>
+            </div>
+
+            <!-- Динамичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Динамичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="../dynamic/click.html" class="A_ListItem">Клик</a>
+                <a href="../dynamic/drag.html" class="A_ListItem"
+                  >Перетаскивание</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="O_ArticleContent">
           <p class="subtitle">Содержание</p>
           <div class="C_AticleLinks"></div>
@@ -78,7 +105,7 @@
               предыдущих. Чуть меньше объяснений, чуть больше кода и примеров.
             </p>
           </div>
-          <div class="M_ParagraphArticle">
+          <div id="scale" class="M_ParagraphArticle">
             <h3>Масштабирование <span class="copy"></span></h3>
             <p class="article">
               Объект увеличивается или уменьшается.
@@ -133,7 +160,7 @@
             </div>
           </div>
           <scale></scale>
-          <div id="about" class="M_ParagraphArticle">
+          <div id="assimetry" class="M_ParagraphArticle">
             <h3>Ассиметрия <span class="copy"></span></h3>
             <p class="article">
               <code>scaleX</code> и <code>scaleY</code> работают по отдельности
@@ -170,7 +197,7 @@
             </div>
           </div>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="skew" class="M_ParagraphArticle">
             <h3>Скос <span class="copy"></span></h3>
             <p class="article">
               <code>skewX</code> и <code>skewY</code> наклоняют элемент,
@@ -225,7 +252,7 @@
             </div>
           </div>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="reflect" class="M_ParagraphArticle">
             <h3>Отражение <span class="copy"></span></h3>
             <p class="article">
               <code>scaleX(-1)</code> зеркалит элемент по горизонтали.
@@ -256,7 +283,7 @@
           </div>
           <flip></flip>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="squash" class="M_ParagraphArticle">
             <h3>Сквош и стретч <span class="copy"></span></h3>
             <p class="article">
               Принцип из классической анимации Диснея, когда объект при движении
@@ -301,7 +328,7 @@
             </div>
           </div>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="perspective-skew" class="M_ParagraphArticle">
             <h3>Перспективный наклон <span class="copy"></span></h3>
             <p class="article">
               Приём создаёт ощущение глубины у плоских элементов. Текстовый блок
@@ -332,7 +359,7 @@
 
           <perspective></perspective>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="morph" class="M_ParagraphArticle">
             <h3>Морфинг формы <span class="copy"></span></h3>
             <p class="article">
               <code>clip-path: polygon()</code> позволяет вырезать из элемента
@@ -379,7 +406,7 @@
             </div>
           </div>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="glitch" class="M_ParagraphArticle">
             <h3>Глитч <span class="copy"></span></h3>
             <p class="article">
               Эффект, когда элемент разрывается на горизонтальные полосы,
@@ -411,7 +438,7 @@
 
           <glitch></glitch>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="order" class="M_ParagraphArticle">
             <h3>Порядок трансформаций <span class="copy"></span></h3>
             <p class="article">
               Это концептуальный паттерн, который объясняет почему
@@ -436,7 +463,7 @@
           </div>
           <order></order>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="3d-x" class="M_ParagraphArticle">
             <h3>Трёхмерная раскладка <span class="copy"></span></h3>
             <p class="article">
               Несколько плоских элементов, расположенных в 3D-пространстве через
@@ -462,7 +489,7 @@
           </div>
           <spread></spread>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="explosion" class="M_ParagraphArticle">
             <h3>Взрыв <span class="copy"></span></h3>
             <p class="article">
               Группа объектов, изначально собранных в одной точке или в
@@ -500,7 +527,7 @@
             </div>
           </div>
 
-          <div id="about" class="M_ParagraphArticle">
+          <div id="breathing" class="M_ParagraphArticle">
             <h3>Дышащая геометрия <span class="copy"></span></h3>
             <p class="article">
               Несколько пересекающихся геометрических фигур, каждая из которых
