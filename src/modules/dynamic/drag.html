@@ -59,7 +59,36 @@
     <div class="L_Module">
       <!-- Content here -->
       <div class="W_ArticlePage modules margin-container">
-        <div class="S_LeftNavBar"></div>
+        <div class="S_LeftNavBar">
+          <div class="W_CollapsingLists">
+            <!-- Статичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Статичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="../static/movement.html" class="A_ListItem"
+                  >Движение</a
+                >
+                <a href="../static/rotation.html" class="A_ListItem"
+                  >Вращение</a
+                >
+                <a href="../static/transformation.html" class="A_ListItem"
+                  >Трансформация</a
+                >
+                <a href="../static/hover.html" class="A_ListItem">Ховер</a>
+                <a href="../static/text.html" class="A_ListItem">Текст</a>
+              </div>
+            </div>
+
+            <!-- Динамичные модули -->
+            <div class="O_PartList">
+              <p class="body bold">Динамичные модули</p>
+              <div class="C_ModulesLinks">
+                <a href="click.html" class="A_ListItem">Клик</a>
+                <a href="drag.html" class="A_ListItem">Перетаскивание</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="O_ArticleContent">
           <p class="subtitle">Содержание</p>
           <div class="C_AticleLinks"></div>
@@ -570,8 +599,8 @@ function endDrag() {
  
   zones.forEach(zone => {
     const zr = zone.getBoundingClientRect()
-    const isOver = cx > zr.left && cx < zr.right
-                && cy > zr.top && cy < zr.bottom
+    const isOver = cx &gt; zr.left &amp;&amp; cx &lt; zr.right
+                &amp;&amp; cy &gt; zr.top &amp;&amp; cy &lt; zr.bottom
  
     if (isOver) {
       // Приземляемся в центр зоны
