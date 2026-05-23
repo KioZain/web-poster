@@ -205,8 +205,8 @@
                   class="A_CodeBlock active"
                   data-lang="js"
                 ><code class="language-javascript">
-root.querySelectorAll('.toggle-box').forEach(box => {
-  box.addEventListener('click', () => {
+root.querySelectorAll('.toggle-box').forEach(box =&gt; {
+  box.addEventListener('click', () =&gt; {
     box.classList.toggle('active')
   })
 })
@@ -330,7 +330,7 @@ root.querySelectorAll('.toggle-box').forEach(box => {
 const btn = root.querySelector('.trigger-btn')
 const target = root.querySelector('.target-box')
  
-btn.addEventListener('click', () => {
+btn.addEventListener('click', () =&gt; {
   target.classList.toggle('morphed')
 })
 /* Клик на кнопке, а меняется квадрат.
@@ -433,7 +433,7 @@ btn.addEventListener('click', () => {
 const box = root.querySelector('.cycle-box')
 const totalStates = 4
  
-box.addEventListener('click', () => {
+box.addEventListener('click', () =&gt; {
   let state = parseInt(box.dataset.state)
   state = (state + 1) % totalStates
   box.dataset.state = state
@@ -566,7 +566,7 @@ box.addEventListener('click', () => {
                 ><code class="language-javascript">
 const colors = ['#fe3904','#9eff70','#82e1f1','#febbed','#3898e2']
  
-root.addEventListener('click', (e) => {
+root.addEventListener('click', (e) =&gt; {
   const rect = root.getBoundingClientRect()
   const dot = document.createElement('div')
   dot.className = 'spawned'
@@ -574,7 +574,7 @@ root.addEventListener('click', (e) => {
   dot.style.top = (e.clientY - rect.top) + 'px'
   dot.style.background = colors[Math.floor(Math.random() * colors.length)]
   root.appendChild(dot)
-  dot.addEventListener('animationend', () => dot.remove())
+  dot.addEventListener('animationend', () =&gt; dot.remove())
 })
 /* createElement создаёт элемент на лету.
    getBoundingClientRect пересчитывает координаты
@@ -707,8 +707,8 @@ root.addEventListener('click', (e) => {
 const cells = root.querySelectorAll('.cell')
 const counter = root.querySelector('.counter')
  
-cells.forEach(cell => {
-  cell.addEventListener('click', () => {
+cells.forEach(cell =&gt; {
+  cell.addEventListener('click', () &gt; {
     cell.classList.toggle('selected')
     const count = root.querySelectorAll('.cell.selected').length
     counter.textContent = `Выбрано: ${count}`
@@ -863,8 +863,8 @@ const canvas = root.querySelector('.canvas')
 const label = root.querySelector('.canvas-label')
 const value = root.querySelector('.canvas-value')
  
-swatches.forEach(sw => {
-  sw.addEventListener('click', () => {
+swatches.forEach(sw =&gt; {
+  sw.addEventListener('click', () =&gt; {
     const color = sw.dataset.color
     const name = sw.dataset.name
  
@@ -875,7 +875,7 @@ swatches.forEach(sw => {
     const bright = ['#9eff70','#82e1f1','#febbed']
     label.style.color = bright.includes(color) ? 'black' : 'white'
  
-    swatches.forEach(s => s.classList.remove('active-swatch'))
+    swatches.forEach(s =&gt; s.classList.remove('active-swatch'))
     sw.classList.add('active-swatch')
   })
 })

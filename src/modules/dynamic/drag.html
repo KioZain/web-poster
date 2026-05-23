@@ -224,7 +224,7 @@ const box = root.querySelector('.drag-free-box')
 let isDragging = false
 let offsetX = 0, offsetY = 0
  
-box.addEventListener('mousedown', (e) => {
+box.addEventListener('mousedown', (e) =&gt; {
   isDragging = true
   const rect = box.getBoundingClientRect()
   offsetX = e.clientX - rect.left
@@ -232,14 +232,14 @@ box.addEventListener('mousedown', (e) => {
   box.classList.add('dragging')
 })
  
-root.addEventListener('mousemove', (e) => {
+root.addEventListener('mousemove', (e) =&gt; {
   if (!isDragging) return
   const rootRect = root.getBoundingClientRect()
   box.style.left = (e.clientX - rootRect.left - offsetX) + 'px'
   box.style.top = (e.clientY - rootRect.top - offsetY) + 'px'
 })
  
-root.addEventListener('mouseup', () => {
+root.addEventListener('mouseup', () =&gt; {
   isDragging = false
   box.classList.remove('dragging')
 })
@@ -597,7 +597,7 @@ function endDrag() {
   const cx = itemRect.left + itemRect.width / 2
   const cy = itemRect.top + itemRect.height / 2
  
-  zones.forEach(zone => {
+  zones.forEach(zone =&gt; {
     const zr = zone.getBoundingClientRect()
     const isOver = cx &gt; zr.left &amp;&amp; cx &lt; zr.right
                 &amp;&amp; cy &gt; zr.top &amp;&amp; cy &lt; zr.bottom
@@ -755,8 +755,8 @@ function endDrag() {
                   class="A_CodeBlock active"
                   data-lang="js"
                 ><code class="language-javascript">
-items.forEach(item => {
-  item.addEventListener('mousedown', (e) => {
+items.forEach(item =&gt; {
+  item.addEventListener('mousedown', (e) =&gt; {
     draggedEl = item
     item.classList.add('sort-dragging')
  
@@ -776,7 +776,7 @@ function handleMove(clientY) {
   for (const sibling of siblings) {
     const mid = sibling.getBoundingClientRect().top
               + sibling.offsetHeight / 2
-    if (clientY < mid) {
+    if (clientY &lt; mid) {
       list.insertBefore(placeholder, sibling)
       return
     }
