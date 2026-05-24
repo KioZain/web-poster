@@ -126,6 +126,14 @@
       grid-column: 1 / -1;
     }
   }
+
+  @media screen and (max-width: 1600px) {
+    .A_CaptionText {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 .M_ModuleDescription {
