@@ -651,11 +651,13 @@ button.A_Tab {
 }
 
 .A_Poster {
+  width: 100%;
   position: relative;
   border-radius: 2px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   text-decoration: none;
+  aspect-ratio: 5 / 7;
 
   img {
     width: 100%;
@@ -681,7 +683,6 @@ button.A_Tab {
     backdrop-filter: blur(2px);
     pointer-events: none;
     opacity: 0;
-    /* Убираем transform отсюда полностью */
     transition: opacity 0.3s ease-in-out;
 
     h4,
@@ -692,7 +693,6 @@ button.A_Tab {
 
   &:hover .W_PosterAbout {
     opacity: 1;
-    /* transform тоже убираем отсюда */
   }
 
   @media screen and (max-width: 768px) {

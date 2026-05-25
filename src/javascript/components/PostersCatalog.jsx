@@ -60,13 +60,11 @@ function PostersCatalog() {
         onReset={handleResetFilters}
       />
 
-      <div className="W_PostersWrap">
-        <PostersGrid
-          posters={visiblePosters}
-          hasMore={hasMore}
-          onLoadMore={handleLoadMore}
-        />
-      </div>
+      <PostersGrid
+        posters={visiblePosters}
+        hasMore={hasMore}
+        onLoadMore={handleLoadMore}
+      />
     </div>
   )
 }
