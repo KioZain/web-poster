@@ -1,0 +1,217 @@
+/* --- 1. mousemove: координаты --- */
+
+[data-demo='cursor-coords'] {
+  position: relative;
+  height: 280px;
+  cursor: crosshair;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-coords'] .coords-display {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  color: #999;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+[data-demo='cursor-coords'] .cursor-dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: var(--identity-red, #fe3904);
+  box-shadow: var(--inner-shadow);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.1s,
+    height 0.1s;
+}
+
+/* --- following element --- */
+
+[data-demo='cursor-follow'] {
+  position: relative;
+  height: 280px;
+  cursor: none;
+  overflow: hidden;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-follow'] .follower {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--identity-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    left 0.15s ease-out,
+    top 0.15s ease-out,
+    width 0.2s,
+    height 0.2s;
+}
+
+[data-demo='cursor-follow'] .follower-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--identity-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* --- eyes watching --- */
+
+[data-demo='cursor-eyes'] {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-eyes'] .eye {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-demo='cursor-eyes'] .pupil {
+  width: 28px;
+  height: 28px;
+  background: var(--identity-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* --- running away from --- */
+
+[data-demo='cursor-repel'] {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-repel'] .repel-item {
+  box-shadow: var(--inner-shadow);
+  position: absolute;
+  border-radius: 8px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+/* --- tilt --- */
+
+[data-demo='cursor-tilt'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  perspective: 600px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-tilt'] .tilt-card {
+  box-shadow: var(--inner-shadow);
+  width: 200px;
+  height: 260px;
+  background: var(--identity-red, #fe3904);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+[data-demo='cursor-tilt'] .tilt-card .tilt-sub {
+  font-size: 12px;
+  font-weight: normal;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+/* ---paralax --- */
+
+[data-demo='cursor-parallax'] {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-parallax'] .parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+}
+
+[data-demo='cursor-parallax'] .par-shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* --- drawing line --- */
+
+[data-demo='cursor-trail'] {
+  position: relative;
+  height: 280px;
+  cursor: crosshair;
+  overflow: hidden;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='cursor-trail'] .trail-dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: trail-fade 1s ease forwards;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--inner-shadow);
+}
+
+@keyframes trail-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+
+[data-demo='cursor-trail'] .trail-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #555;
+  pointer-events: none;
+}

@@ -426,6 +426,92 @@ const pages = [
       'sharing'
     ]
   },
+  // chapter 5
+  {
+    template: 'handbook/part_2/chapter_5/chapter_2_5.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_5/events.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing',
+      'demo-js-basics'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_5/randomness.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing',
+      'demo-js-randomisation'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_5/cursor.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing',
+      'demo-js-cursor'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_6/chapter_2_6.html',
+    chunks: ['menubar', 'index', 'handbook-nav', 'codestyle', 'anchorlinks']
+  },
+  {
+    template: 'handbook/part_2/chapter_6/github-pages.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing'
+    ]
+  },
+  {
+    template: 'handbook/part_2/chapter_6/promotion.html',
+    chunks: [
+      'menubar',
+      'index',
+      'handbook-nav',
+      'codestyle',
+      'anchorlinks',
+      'rating',
+      'preview',
+      'sharing'
+    ]
+  },
 
   // { template: 'handbook/part_1/chapter_1/another_article.html', chunks: ['page'] },
 
@@ -507,7 +593,10 @@ module.exports = {
     'gsap-animation': './src/javascript/gsap/animation.js',
     // dymanic
     'demo-click': './src/javascript/demo/click.js',
-    'demo-drag': './src/javascript/demo/drag.js'
+    'demo-drag': './src/javascript/demo/drag.js',
+    'demo-js-basics': './src/javascript/demo/basics.js',
+    'demo-js-randomisation': './src/javascript/demo/random.js',
+    'demo-js-cursor': './src/javascript/demo/cursor.js'
   },
 
   output: {

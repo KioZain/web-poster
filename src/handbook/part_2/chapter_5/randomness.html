@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рандомизация и&nbsp;случайность</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Рандомизация и&nbsp;случайность</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Рандомизация и&nbsp;случайность</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">8&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            В&nbsp;предыдущей статье мы&nbsp;научились управлять элементами
+            по&nbsp;клику, переключать состояния и&nbsp;менять содержимое. Всё
+            это&nbsp;&mdash; предсказуемые реакции на&nbsp;предсказуемые
+            действия. Теперь добавим случайность. С помощью
+            <code>Math.random()</code> веб-плакат перестаёт быть одинаковым при
+            каждом просмотре&nbsp;&mdash; элементы меняют позиции, цвета,
+            размеры и порядок. Это&nbsp;то, что сближает формат с&nbsp;creative
+            coding и&nbsp;делает каждое взаимодействие со&nbsp;страницей немного
+            другим.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Math.random()</h3>
+            <p class="article">
+              Всё начинается с&nbsp;одного метода.
+              <code>Math.random()</code> возвращает случайное дробное число
+              от&nbsp;0 (включительно) до&nbsp;1 (не&nbsp;включительно). Само
+              по&nbsp;себе это число бесполезно, но&nbsp;из&nbsp;него строятся
+              все остальные формулы.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-basic">
+              <div class="rand-display">0.0000</div>
+              <button class="rand-btn">Math.random()</button>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+Math.random()              // 0.0 ... 0.999
+Math.random() * 10         // 0.0 ... 9.999
+Math.floor(Math.random() * 10)  // 0, 1, 2 ... 9
+ 
+/* Math.random() — дробное от 0 до 1 (не включая 1).
+   Умножаем на диапазон, Math.floor округляет вниз.
+   Это базовая формула для любой случайности. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">Три формулы, которые стоит запомнить.</p>
+            <p class="article">
+              <code>Math.random()</code> &mdash;&nbsp;дробное
+              от&nbsp;0&nbsp;до&nbsp;0.999. Полезно для прозрачности
+              и&nbsp;пропорций.
+            </p>
+            <p class="article">
+              <code>Math.random() * N</code> &mdash;&nbsp;дробное
+              от&nbsp;0&nbsp;до&nbsp;N.&nbsp;Полезно для размеров
+              и&nbsp;координат.
+            </p>
+            <p class="article">
+              <code>Math.floor(Math.random() * N)</code> &mdash;&nbsp;целое
+              от&nbsp;0&nbsp;до&nbsp;N&minus;1. Полезно для индексов массива
+              и&nbsp;дискретных значений.
+            </p>
+            <p class="article">
+              Из&nbsp;этих трёх комбинаций строится вся случайность, которую
+              мы&nbsp;будем использовать дальше.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Число в&nbsp;диапазоне от&nbsp;A до&nbsp;B:
+                <code>A + Math.random() * (B - A)</code>. Например, случайный
+                размер от&nbsp;20&nbsp;до&nbsp;80&nbsp;пикселей:
+                <code>20 + Math.random() * 60</code>. Случайная прозрачность от
+                0.3 до&nbsp;1: <code>0.3 + Math.random() * 0.7</code>. Запомните
+                эту формулу&nbsp;&mdash; она универсальна.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Случайный выбор из&nbsp;палитры</h3>
+            <p class="article">
+              Самое частое применение рандома в&nbsp;веб-плакате&nbsp;&mdash;
+              случайный цвет из заданной палитры. Вы&nbsp;определяете массив
+              допустимых цветов и выбираете из&nbsp;него случайный элемент.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-color">
+              <div class="color-box"></div>
+              <div class="color-box"></div>
+              <div class="color-box"></div>
+              <div class="color-box"></div>
+              <div class="color-box"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const colors = ['#fe3904','#9eff70','#82e1f1','#febbed','#3898e2']
+ 
+box.addEventListener('click', () =&gt; {
+  const i = Math.floor(Math.random() * colors.length)
+  box.style.backgroundColor = colors[i]
+  box.style.borderRadius = Math.random() &gt;0.5 ? '50%' : '8px'
+  box.style.transform = `scale(${0.8 + Math.random() * 0.5})`
+})
+/* Math.random() &gt;0.5 — случайное условие,
+   монетка: true или false.
+   0.8 + Math.random() * 0.5 —
+   число в диапазоне от 0.8 до 1.3. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Каждый клик задаёт квадрату случайный цвет, форму и&nbsp;масштаб.
+            Обратите внимание на&nbsp;запись
+            <code>Math.random() &gt;0.5</code> &mdash; это случайное условие,
+            которое работает как бросок монетки: в&nbsp;половине случаев true,
+            в&nbsp;половине false. Удобно для бинарных решений вроде &laquo;круг
+            или квадрат&raquo;.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Массив: список значений</h3>
+            <p class="article">
+              Массив&nbsp;&mdash; это упорядоченный список значений, записанный
+              в квадратных скобках. Каждый элемент имеет индекс, начиная
+              с&nbsp;нуля. Свойство
+              <code>.length</code> возвращает количество элементов. Формула
+              <code>Math.floor(Math.random() * arr.length)</code> даёт случайный
+              индекс, который гарантированно попадает в&nbsp;пределы массива.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-array">
+              <div class="phrase">Нажми кнопку</div>
+              <button class="shuffle-btn">Случайная фраза</button>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const phrases = [
+  'Дизайн — это код',
+  'Ошибки — это прогресс',
+  'Браузер — это холст',
+  'CSS — это магия',
+]
+ 
+const i = Math.floor(Math.random() * phrases.length)
+display.textContent = phrases[i]
+ 
+/* Массив — список значений в [ ].
+   phrases.length — сколько элементов.
+   phrases[i] — элемент по индексу.
+   Формула Math.floor(Math.random() * arr.length)
+   даёт случайный индекс. Запомните её. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Массив фраз, кнопка выбирает случайную и&nbsp;выводит на&nbsp;экран.
+            Маленький штрих &mdash;
+            <code>opacity</code> на&nbsp;мгновение сбрасывается до&nbsp;нуля
+            и&nbsp;через <code>setTimeout</code> возвращается обратно, создавая
+            лёгкий эффект смены. Массив можно заполнить чем угодно: цветами,
+            координатами, URL-адресами, CSS-классами, HTML-тегами.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Случайное позиционирование</h3>
+            <p class="article">
+              Когда вы&nbsp;умеете генерировать случайные числа, вы&nbsp;можете
+              создавать элементы со&nbsp;случайными позициями, размерами
+              и&nbsp;свойствами. Это уже ближе к&nbsp;тому, что в&nbsp;creative
+              coding называется генеративной графикой.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-position">
+              <div class="pos-hint">Кликните — точки перемешаются</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.rand-dot {
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* transition делает перемешивание
+   анимированным — точки перелетают,
+   а не телепортируются. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+for (let i = 0; i < 12; i++) {
+  const dot = document.createElement('div')
+  const size = 10 + Math.random() * 30
+  dot.style.width = size + 'px'
+  dot.style.height = size + 'px'
+  dot.style.left = Math.random() * 90 + '%'
+  dot.style.top = Math.random() * 85 + '%'
+  root.appendChild(dot)
+}
+/* for создаёт 12 точек.
+   Каждая получает случайный размер (10–40px),
+   случайную позицию (в процентах от контейнера)
+   и случайный цвет из палитры. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            12&nbsp;точек, каждая со&nbsp;случайным размером (10&mdash;40px),
+            позицией и&nbsp;цветом из&nbsp;палитры. Клик перемешивает
+            их&nbsp;&mdash; все точки перелетают на&nbsp;новые случайные
+            позиции. CSS <code>transition</code> делает перемещение
+            анимированным: точки не&nbsp;телепортируются, а&nbsp;плавно
+            перелетают. Эта связка&nbsp;JS (вычислил новые координаты) + CSS
+            (анимировал переход) &mdash; типичный паттерн для динамичных
+            веб-плакатов.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Генерация элементов циклом</h3>
+            <p class="article">
+              Следующий шаг&nbsp;&mdash; создавать элементы целиком через
+              JavaScript, а&nbsp;не размечать их&nbsp;вручную в&nbsp;HTML. Цикл
+              <code>for</code> позволяет создать десятки элементов
+              с&nbsp;разными параметрами за&nbsp;несколько строк.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-generate">
+              <button class="gen-btn">Перегенерировать</button>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function generate() {
+  root.querySelectorAll('.gen-item').forEach(el =&gt; el.remove())
+  const count = 15 + Math.floor(Math.random() * 20)
+ 
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('div')
+    el.style.width = (10 + Math.random() * 60) + 'px'
+    el.style.height = (10 + Math.random() * 40) + 'px'
+    el.style.left = Math.random() * 95 + '%'
+    el.style.top = Math.random() * 85 + '%'
+    el.style.transform = `rotate(${Math.random() * 360}deg)`
+    root.appendChild(el)
+  }
+}
+/* Каждый вызов: удаляем старые, создаём новые.
+   Даже количество элементов случайное (15–35).
+   Размер, позиция, поворот — всё через Math.random().
+   Каждый клик — новая композиция. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            При каждом клике старые элементы удаляются <code>remove()</code>,
+            и&nbsp;создаются новые&nbsp;&mdash;
+            от&nbsp;15&nbsp;до&nbsp;35&nbsp;штук. Каждый со&nbsp;случайным
+            размером, позицией, поворотом, цветом и&nbsp;прозрачностью.
+            По&nbsp;сути, каждый клик создаёт новую абстрактную композицию.
+            Именно так устроен плакат &laquo;Склянка&raquo; из&nbsp;нашей
+            подборки&nbsp;&mdash; при каждой загрузке страница пересобирается.
+          </p>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+
+            <h4>
+              <code>document.createElement('div')</code> создаёт элемент,
+              но&nbsp;не добавляет его на&nbsp;страницу. Чтобы он&nbsp;стал
+              видимым, нужно вставить его через
+              <code>root.appendChild(element)</code>. А&nbsp;чтобы удалить
+              &mdash;&nbsp;<code>element.remove()</code>. Создание
+              и&nbsp;удаление элементов на лету&nbsp;&mdash; это&nbsp;то, чего
+              CSS не&nbsp;умеет и&nbsp;для чего нужен JavaScript.
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Объект с набором свойств</h3>
+            <p class="article">
+              Когда у&nbsp;случайного элемента много параметров (имя, цвет,
+              размер, скорость), удобно описать их&nbsp;как объект&nbsp;&mdash;
+              набор свойств с&nbsp;именами.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-object">
+              <div class="creature">
+                <div class="creature-body"></div>
+                <div class="creature-name"></div>
+                <div class="creature-stats"></div>
+              </div>
+              <div class="creature">
+                <div class="creature-body"></div>
+                <div class="creature-name"></div>
+                <div class="creature-stats"></div>
+              </div>
+              <div class="creature">
+                <div class="creature-body"></div>
+                <div class="creature-name"></div>
+                <div class="creature-stats"></div>
+              </div>
+              <div class="creature">
+                <div class="creature-body"></div>
+                <div class="creature-name"></div>
+                <div class="creature-stats"></div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function makeCreature() {
+  return {
+    name: names[Math.floor(Math.random() * names.length)],
+    face: faces[Math.floor(Math.random() * faces.length)],
+    color: colors[Math.floor(Math.random() * colors.length)],
+    size: 40 + Math.floor(Math.random() * 40),
+    energy: Math.floor(Math.random() * 100)
+  }
+}
+/* Объект { } — набор свойств с именами.
+   Функция makeCreature() каждый раз
+   возвращает нового персонажа
+   со случайными параметрами.
+   Клик на каждом — перегенерация. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Функция <code>makeCreature()</code> возвращает объект с&nbsp;пятью
+              свойствами: имя, символ, цвет, размер и&nbsp;энергия. Каждое
+              свойство выбирается случайно из&nbsp;своего массива или диапазона.
+              Клик на&nbsp;любом существе пересоздаёт его с&nbsp;новыми
+              параметрами.
+            </p>
+            <p class="article">
+              Объект в&nbsp;JavaScript записывается в&nbsp;фигурных скобках:
+              <code>{ name: 'Blob', color: '#fe3904', size: 60 }</code>.
+              Свойства читаются через точку: <code>creature.name</code>,
+              <code>creature.color</code>. Это способ группировать связанные
+              данные вместе, вместо того чтобы хранить их&nbsp;в&nbsp;отдельных
+              переменных.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Перемешивание массива</h3>
+            <p class="article">
+              Иногда нужно не&nbsp;выбрать один случайный элемент,
+              а&nbsp;перемешать весь массив&nbsp;&mdash; изменить порядок
+              элементов, как карты в&nbsp;колоде. Для этого существует алгоритм
+              Фишера-Йейтса.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-shuffle">
+              <div class="shuffle-row"></div>
+              <button class="shuffle-trigger">Перемешать</button>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function shuffle(arr) {
+  const copy = [...arr]
+  for (let i = copy.length - 1; i &gt;0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+/* Алгоритм Фишера-Йейтса.
+   Проходим массив с конца, каждый элемент
+   меняем местами со случайным.
+   [...arr] — копия, чтобы не менять оригинал.
+   Результат — честное перемешивание. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Шесть пронумерованных блоков. Кнопка перемешивает их&nbsp;порядок.
+            Алгоритм проходит массив с&nbsp;конца и&nbsp;каждый элемент меняет
+            местами со случайным из&nbsp;оставшихся. Запись
+            <code>[...arr]</code> создаёт копию массива, чтобы не&nbsp;менять
+            оригинал. Это важно, когда вам нужно перемешивать одни
+            и&nbsp;те&nbsp;же данные многократно.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Собираем всё вместе</h3>
+            <p class="article">
+              Финальный пример объединяет всё, что мы&nbsp;разобрали. Восемь
+              фигур со случайными размерами, формами, позициями
+              и&nbsp;прозрачностью. Клик перегенерирует всю композицию,
+              а&nbsp;CSS transition анимирует переход &mdash;&nbsp;фигуры
+              перелетают, морфятся и&nbsp;меняют цвет.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="rand-composition">
+              <div class="comp-hint">Кликайте для перегенерации</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.comp-shape {
+  position: absolute;
+  transition: all 0.6s ease;
+}
+/* transition на фигурах — при перегенерации
+   они не телепортируются,
+   а плавно перелетают на новые места. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+function randomize() {
+  shapes.forEach(shape =&gt; {
+    const size = 20 + Math.random() * 120
+    const isCircle = Math.random() &gt;0.4
+    shape.style.width = size + 'px'
+    shape.style.height = size + 'px'
+    shape.style.borderRadius = isCircle ? '50%' : '4px'
+    shape.style.left = Math.random() * 85 + '%'
+    shape.style.top = Math.random() * 75 + '%'
+    shape.style.opacity = (0.2 + Math.random() * 0.5).toFixed(2)
+  })
+}
+/* 8 фигур пересобираются при каждом клике.
+   Размер, форма, позиция, прозрачность —
+   всё случайное. CSS transition анимирует
+   переход между состояниями.
+   Каждый клик — новый плакат. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Это, по&nbsp;сути, простейший генеративный плакат. Заголовок
+              фиксирован, а&nbsp;фон каждый раз новый. Добавьте сюда
+              <code>setInterval</code> &mdash;&nbsp;и&nbsp;композиция будет
+              пересобираться автоматически каждые несколько секунд, без участия
+              зрителя.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Случайность работает лучше всего в&nbsp;рамках ограничений. Пять
+                цветов из&nbsp;палитры, а&nbsp;не&nbsp;бесконечный
+                <code>hsl(Math.random()*360, 70%, 50%)</code>. Размеры
+                от&nbsp;20&nbsp;до 120&nbsp;пикселей,
+                а&nbsp;не&nbsp;от&nbsp;1&nbsp;до&nbsp;1000. Чем уже диапазон
+                случайности &mdash; тем целостнее результат. Полный хаос редко
+                выглядит хорошо, а контролируемая случайность в&nbsp;заданных
+                рамках создаёт живые и&nbsp;при этом гармоничные композиции.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://javascript.info/number"
+                  >Числа в JavaScript, включая Math-методы</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://generativeartistry.com"
+                  >Пошаговые туториалы по генеративному дизайну на canvas
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://openprocessing.org">
+                  Галерея creative coding проектов на p5.js</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://en.wikipedia.org/wiki/Fisher–Yates_shuffle">
+                  Алгоритм перемешивания Фишера-Йейтса</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://bost.ocks.org/mike/shuffle">
+                  Визуальное объяснение алгоритма от Майка Бостока (создателя
+                  D3.js)</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <sharing></sharing>
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-5-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

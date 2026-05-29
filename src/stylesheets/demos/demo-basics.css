@@ -1,0 +1,297 @@
+/* ---  querySelector and addEventListener --- */
+
+[data-demo='js-intro-click'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-intro-click'] .demo-btn {
+  padding: 16px 32px;
+  background: var(--identity-red, #fe3904);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: var(--inner-shadow);
+}
+
+[data-demo='js-intro-click'] .demo-btn:active {
+  transform: scale(0.95);
+}
+
+[data-demo='js-intro-click'] .demo-btn.clicked {
+  background: var(--identity-green, #9eff70);
+  color: black;
+}
+
+/* --- classList: add, remove --- */
+
+[data-demo='js-classlist'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-classlist'] .target {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+[data-demo='js-classlist'] .target.red {
+  background: var(--identity-red, #fe3904);
+  box-shadow: var(--inner-shadow);
+}
+[data-demo='js-classlist'] .target.round {
+  border-radius: 50%;
+}
+[data-demo='js-classlist'] .target.big {
+  transform: scale(1.4);
+}
+
+[data-demo='js-classlist'] .btn-row {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 1rem;
+}
+
+[data-demo='js-classlist'] .ctrl-btn {
+  padding: 8px 14px;
+  border: 1px solid var(--gray-lightest);
+  color: var(--gray-soft);
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+[data-demo='js-classlist'] .ctrl-btn:active {
+  opacity: 0.7;
+}
+
+/* --- style --- */
+
+[data-demo='js-style-direct'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-style-direct'] .style-box {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  box-shadow: var(--inner-shadow);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* --- querySelectorAll --- */
+
+[data-demo='js-query-all'] {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-query-all'] .card {
+  width: 70px;
+  height: 90px;
+  background: #f0f0f0;
+  box-shadow: var(--inner-shadow);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  user-select: none;
+}
+
+[data-demo='js-query-all'] .card.flipped {
+  background: var(--identity-red, #fe3904);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* --- others --- */
+
+[data-demo='js-events'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-events'] .event-box {
+  width: 160px;
+  height: 160px;
+  background: #f0f0f0;
+  box-shadow: var(--inner-shadow);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-demo='js-events'] .event-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #999;
+}
+
+/* --- textContent--- */
+
+[data-demo='js-text-content'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-text-content'] .display {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--identity-red, #fe3904);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+[data-demo='js-text-content'] .counter-btns {
+  display: flex;
+  gap: 12px;
+}
+
+[data-demo='js-text-content'] .counter-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background: white;
+  font-size: 24px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+[data-demo='js-text-content'] .counter-btn:active {
+  transform: scale(0.9);
+  background: black;
+  color: white;
+}
+
+/* ---  if / else --- */
+
+[data-demo='js-conditions'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-conditions'] .light {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: none;
+}
+
+[data-demo='js-conditions'] .light.on {
+  background: #ffe040;
+  box-shadow: 0 0 60px 20px rgba(255, 224, 64, 0.5);
+}
+
+[data-demo='js-conditions'] .light-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: #999;
+}
+
+/* ---  setTimeout и setInterval --- */
+
+[data-demo='js-timers'] {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-family: 'Aeonik Pro', Helvetica, Arial, sans-serif;
+}
+
+[data-demo='js-timers'] .timer-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+[data-demo='js-timers'] .timer-delay {
+  border: 2px solid var(--identity-red, #fe3904);
+}
+
+[data-demo='js-timers'] .timer-delay.fired {
+  background: var(--identity-red, #fe3904);
+  color: white;
+}
+
+[data-demo='js-timers'] .timer-interval {
+  border: 2px solid var(--identity-blue, #3898e2);
+}
+
+[data-demo='js-timers'] .timer-interval .tick-count {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--identity-blue, #3898e2);
+  line-height: 1;
+}

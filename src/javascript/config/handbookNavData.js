@@ -331,53 +331,48 @@ const handbookNavData = {
                 'Особенности ховера и как сгладить переходы между анимациями'
             }
           ]
-        }
+        },
         // chapter 5
-        // {
-        //   id: 'chapter-2-5',
-        //   title: 'Интерактив с JavaScript',
-        //   href: '/handbook/part_2/chapter_5/chapter_2_5.html',
-        //   articles: [
-        //     {
-        //       id: 'article-2-5-1',
-        //       title: 'Добавление интерактивных элементов',
-        //       href: '/handbook/part_2/chapter_5/events.html'
-        //     },
-        //     {
-        //       id: 'article-2-5-2',
-        //       title: 'Случайность и генеративность',
-        //       href: '/handbook/part_2/chapter_5/randomness.html'
-        //     },
-        //     {
-        //       id: 'article-2-5-5',
-        //       title: 'Добавление звука',
-        //       href: '/handbook/part_2/chapter_5/scroll-animations.html'
-        //     }
-        //   ]
-        // },
+        {
+          id: 'chapter-2-5',
+          title: 'Интерактив с JavaScript',
+          href: '/handbook/part_2/chapter_5/chapter_2_5.html',
+          articles: [
+            {
+              id: 'article-2-5-1',
+              title: 'Добавление интерактивных элементов',
+              href: '/handbook/part_2/chapter_5/events.html'
+            },
+            {
+              id: 'article-2-5-2',
+              title: 'Случайность и генеративность',
+              href: '/handbook/part_2/chapter_5/randomness.html'
+            },
+            {
+              id: 'article-2-5-3',
+              title: 'Динамический курсор',
+              href: '/handbook/part_2/chapter_5/cursor.html'
+            }
+          ]
+        },
         // ---------chapter 6----------
-        // {
-        //   id: 'chapter-2-6',
-        //   title: 'Публикация и продвижение',
-        //   href: '/handbook/part_2/chapter_6/chapter_2_6.html',
-        //   articles: [
-        //     {
-        //       id: 'article-2-6-1',
-        //       title: 'Чек-лист перед публикацией',
-        //       href: '/handbook/part_2/chapter_6/cheklist.html'
-        //     },
-        //     {
-        //       id: 'article-2-6-2',
-        //       title: 'Публикация на GitHub Pages',
-        //       href: '/handbook/part_2/chapter_6/github-pages.html'
-        //     },
-        //     {
-        //       id: 'article-2-6-3',
-        //       title: 'Где рассказать о своём плакате',
-        //       href: '/handbook/part_2/chapter_6/promotion.html'
-        //     }
-        //   ]
-        // }
+        {
+          id: 'chapter-2-6',
+          title: 'Публикация и продвижение',
+          href: '/handbook/part_2/chapter_6/chapter_2_6.html',
+          articles: [
+            {
+              id: 'article-2-6-2',
+              title: 'Публикация на GitHub Pages',
+              href: '/handbook/part_2/chapter_6/github-pages.html'
+            },
+            {
+              id: 'article-2-6-3',
+              title: 'Где рассказать о своём плакате',
+              href: '/handbook/part_2/chapter_6/promotion.html'
+            }
+          ]
+        }
       ]
     }
   ]

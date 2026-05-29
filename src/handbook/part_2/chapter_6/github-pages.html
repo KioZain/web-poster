@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Публикация на GitHub Pages</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Публикация на GitHub Pages</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+
+          <div class="M_HeadingContainer">
+            <h1>Публикация на GitHub Pages</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">6&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            Плакат готов, работает в браузере, анимации крутятся, интерактив
+            откликается. Осталось последнее — превратить папку с файлами в
+            ссылку, которую можно отправить кому угодно. Для этого мы
+            воспользуемся GitHub Pages — бесплатным хостингом, который
+            превращает ваш репозиторий в живой сайт. Никаких серверов, никаких
+            доменов, никакой оплаты. Загрузили файлы — получили ссылку.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Что такое GitHub</h3>
+            <p class="article">
+              GitHub — это платформа для хранения кода. По сути, облачная папка
+              для вашего проекта, которую можно открыть с любого компьютера.
+              Каждый проект на GitHub называется репозиторием. В нашем случае
+              репозиторий — это та самая папка с
+              <code>index.html</code>, <code>css/</code>, <code>js/</code>,
+              <code>img/</code> и всем остальным, что мы собирали на протяжении
+              учебника.
+            </p>
+            <p class="article">
+              Профессиональные разработчики работают с GitHub через командную
+              строку и систему контроля версий Git. Это мощный инструмент, но
+              для публикации веб-плаката он не нужен. Мы разберём два простых
+              способа: загрузку через браузер и через приложение GitHub Desktop.
+            </p>
+            <p class="article">
+              Если у вас ещё нет аккаунта на GitHub, зайдите на github.com и
+              зарегистрируйтесь. Это займёт пару минут.
+            </p>
+          </div>
+          <p class="article">
+            **[Рекомендация: скриншот главной страницы github.com с кнопкой Sign
+            up.]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Загрузка через браузер</h3>
+            <p class="article">
+              Самый быстрый путь загрузить файлы прямо через веб-интерфейс
+              GitHub. Никаких программ, всё в браузере.
+            </p>
+            <p class="article"><b>Шаг 1. Создайте репозиторий.</b></p>
+            <p class="article">
+              На странице GitHub нажмите кнопку «New» (зелёная, в левой панели)
+              или перейдите по адресу github.com/new. В поле «Repository name»
+              введите название проекта на латинице, без пробелов. Например,
+              <code>my-web-poster</code> или <code>clinic-poster</code>. Это
+              название станет частью будущей ссылки. Оставьте репозиторий
+              публичным (Public) и нажмите «Create repository».
+            </p>
+          </div>
+          <p class="article">
+            **[Рекомендация: скриншот страницы создания репозитория. Поле
+            Repository name заполнено «my-web-poster», выбрано Public, остальные
+            настройки по умолчанию.]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <p class="article"><b> Шаг 2. Загрузите файлы.</b></p>
+            <p class="article">
+              После создания GitHub покажет пустой репозиторий с несколькими
+              вариантами начала работы. Нажмите ссылку «uploading an existing
+              file». Откроется зона загрузки — перетащите в неё все файлы и
+              папки вашего проекта. Просто выделите содержимое папки проекта в
+              проводнике (Finder на Mac) и перетяните в окно браузера.
+            </p>
+            <p class="article">
+              Дождитесь загрузки всех файлов. Внизу страницы будет поле «Commit
+              changes» — оставьте сообщение по умолчанию или напишите что-нибудь
+              вроде «первая загрузка». Нажмите зелёную кнопку «Commit changes».
+            </p>
+          </div>
+
+          <p class="article">
+            **[Рекомендация: скриншот зоны drag-and-drop на GitHub. Файлы
+            перетаскиваются из окна Finder/проводника в окно браузера. Подпись:
+            «Перетащите все файлы проекта — папки css/, js/, img/ и файл
+            index.html».]**
+          </p>
+
+          <p class="article">
+            **[Рекомендация: скриншот загруженных файлов перед коммитом. Список
+            файлов виден, внизу — поле Commit changes с зелёной кнопкой.]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <p class="article"><b>Шаг 3. Проверьте структуру.</b></p>
+            <p class="article">
+              После загрузки вы увидите содержимое репозитория. Убедитесь, что
+              <code>index.html</code> лежит в корне, а не внутри вложенной
+              папки. Если вы случайно перетащили саму папку проекта (а не её
+              содержимое), структура будет выглядеть как
+              <code>my-web-poster/index.html</code> вместо просто
+              <code>index.html</code>. GitHub Pages ищет
+              <code>index.html</code> именно в корне репозитория, и если его там
+              нет, сайт не заработает.
+            </p>
+          </div>
+
+          <p class="article">
+            **[Рекомендация: два скриншота рядом. Левый — правильная структура:
+            index.html, css/, js/, img/ в корне репозитория (зелёная рамка).
+            Правый — неправильная: одна папка my-poster внутри которой всё лежит
+            (красная рамка). Подпись: «index.html должен быть в корне, а не
+            внутри вложенной папки».]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>GitHub Desktop</h3>
+            <p class="article">
+              Если вы планируете обновлять плакат после первой загрузки, удобнее
+              установить приложение GitHub Desktop. Оно синхронизирует папку на
+              вашем компьютере с репозиторием на GitHub без командной строки.
+            </p>
+            <p class="article"><b> Шаг 1. Установите и войдите.</b></p>
+            <p class="article">
+              Скачайте GitHub Desktop с desktop.github.com, установите и войдите
+              в свой аккаунт GitHub.
+            </p>
+            <p class="article">
+              **[Рекомендация: скриншот начального экрана GitHub Desktop после
+              входа в аккаунт.]**
+            </p>
+            <p class="article">
+              <b> Шаг 2. Создайте репозиторий из существующей папки.</b>
+            </p>
+            <p class="article">
+              Выберите «Add», «Add Existing Repository» и укажите папку вашего
+              проекта. Если GitHub Desktop скажет, что это не репозиторий,
+              нажмите «create a repository» в появившейся подсказке. Заполните
+              имя и нажмите «Create Repository».
+            </p>
+          </div>
+          <p class="article">
+            **[Рекомендация: скриншот диалога создания репозитория в GitHub
+            Desktop. Поле Local Path указывает на папку проекта.]**
+          </p>
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <b>Шаг 3. Сделайте коммит и опубликуйте.</b>
+            </p>
+            <p class="article">
+              В левой панели вы увидите список всех файлов проекта с пометкой
+              «new». Внизу введите краткое описание (например, «первая версия»)
+              и нажмите «Commit to main». После этого нажмите «Publish
+              repository» в верхней панели. Убедитесь, что галочка «Keep this
+              code private» снята, иначе GitHub Pages не сможет показать сайт.
+            </p>
+          </div>
+
+          <p class="article">
+            **[Рекомендация: скриншот GitHub Desktop с заполненным коммитом.
+            Слева — список файлов, внизу — поле Summary с текстом «первая
+            версия», кнопка Commit to main.]**
+          </p>
+          <p class="article">
+            **[Рекомендация: скриншот кнопки Publish repository. Галочка Keep
+            this code private снята.]**
+          </p>
+          <p class="article">
+            Теперь ваш проект на GitHub. Дальнейшие изменения загружаются ещё
+            проще: сохраняете файлы на компьютере → открываете GitHub Desktop,
+            пишете описание ,жмёте «Commit» и жмёте Push origin. Два клика, и
+            обновления на сервере.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Включаем GitHub Pages</h3>
+            <p class="article">
+              Файлы на GitHub, но пока это просто хранилище кода. Чтобы
+              превратить репозиторий в работающий сайт, нужно включить GitHub
+              Pages.
+            </p>
+            <p class="article">
+              <b> Шаг 1.</b> Откройте репозиторий на github.com. Перейдите во
+              вкладку «Settings» (шестерёнка в верхней панели репозитория).
+            </p>
+            <p class="article">
+              <b>Шаг 2.</b> В левом боковом меню найдите раздел «Pages».
+            </p>
+            <p class="article">
+              <b> Шаг 3.</b> В секции «Source» выберите ветку «main» и папку «/
+              (root)». Нажмите «Save».
+            </p>
+          </div>
+          <p class="article">
+            **[Рекомендация: скриншот страницы Settings → Pages. Выпадающее меню
+            Source раскрыто, выбрано «main» и «/ (root)». Кнопка Save
+            подсвечена.]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <b> Шаг 4.</b> Подождите одну-две минуты. Обновите страницу.
+              Вверху появится зелёная плашка с вашей ссылкой:
+              <b>https://ваш-логин.github.io/название-репозитория/</b>
+            </p>
+
+            <p class="article">
+              Это и есть адрес вашего веб-плаката. Откройте его в браузере — вы
+              увидите свой <code>index.html</code>, работающий как полноценный
+              сайт.
+            </p>
+          </div>
+
+          <p class="article">
+            **[Рекомендация: скриншот страницы Pages с зелёной плашкой «Your
+            site is live at https://...». Ссылка подчёркнута.]**
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Типичные проблемы</h3>
+            <p class="article">
+              <b>Cтраница пустая или 404.</b> Проверьте, что
+              <code>index.html</code> лежит в корне репозитория. Если он внутри
+              вложенной папки, GitHub Pages его не найдёт.
+            </p>
+            <p class="article">
+              <b> Картинки не загружаются.</b> Проверьте пути в HTML и CSS. Они
+              должны быть относительными: <code>img/background.webp</code>, а не
+              <code>C:/Users/student/project/img/background.webp</code> или
+              <code>/img/background.webp</code>. Путь начинается без слеша и без
+              буквы диска.
+            </p>
+            <p class="article">
+              <b> Шрифты не отображаются.</b> Если вы подключаете шрифты
+              локально через <code>@font-face</code>, убедитесь, что путь
+              <code>../fonts/MyFont.woff2</code> правильный и файлы шрифтов
+              действительно загружены в репозиторий. Если используете Google
+              Fonts через <code><link /></code> — шрифты загрузятся
+              автоматически, пока есть интернет.
+            </p>
+            <p class="article">
+              <b> CSS или JS не работают.</b> Проверьте пути подключения в
+              <code>index.html</code>. Частая ошибка — лишний слеш в начале:
+              <code>href="/css/style.css"</code> не сработает на GitHub Pages.
+              Правильно: <code>href="css/style.css"</code>.
+            </p>
+            <p class="article">
+              <b>Обновления не видны.</b> GitHub Pages кэширует старую версию.
+              Попробуйте открыть ссылку в приватном окне браузера (Ctrl+Shift+N
+              / Cmd+Shift+N) или добавьте <code>?v=2</code> в конец ссылки,
+              чтобы обойти кэш.
+            </p>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Перед загрузкой на GitHub откройте свой
+                <code>index.html</code> прямо с диска (двойным кликом по файлу)
+                и убедитесь, что всё работает локально. Если плакат не работает
+                на вашем компьютере, он не заработает и на GitHub Pages.
+                Проблема всегда в коде или путях, а не в хостинге.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>README файл</h3>
+            <p class="article">
+              Когда репозиторий опубликован, добавьте файл
+              <code>README.md</code> — он отображается на главной странице
+              вашего репозитория и служит визитной карточкой проекта.
+            </p>
+            <p class="article">
+              Создайте файл прямо на GitHub: нажмите «Add file» → «Create new
+              file», назовите его <code>README.md</code> и добавьте несколько
+              строк:
+            </p>
+            <p class="article">
+              Ссылка на живой плакат в README — это самое важное. Любой, кто
+              откроет ваш репозиторий преподаватель, потенциальный работодатель,
+              другой студент сможет сразу перейти к результату, не разбираясь в
+              файлах.
+            </p>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a href="https://github.com"
+                  >Регистрация и работа с репозиториями</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://desktop.github.com"
+                  >Приложение GitHub Desktop для macOS и Windows
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a
+                  href="https://docs.github.com/en/pages/getting-started-with-github-pages"
+                >
+                  Пошаговый гайд по GitHub Pages</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://validator.w3.org">
+                  Валидатор HTML, проверяет разметку на ошибки</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://jigsaw.w3.org/css-validator"> Валидатор CSS</a>
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <sharing></sharing>
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-5-2"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

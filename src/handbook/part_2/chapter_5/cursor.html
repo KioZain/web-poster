@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Курсор и&nbsp;движение мыши</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Курсор и&nbsp;движение мыши</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Курсор и&nbsp;движение мыши</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">6&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            Клик&nbsp;&mdash; одно действие в&nbsp;один момент, а&nbsp;движение
+            мыши&nbsp;&mdash; непрерывный поток координат, который обновляется
+            десятки раз в&nbsp;секунду. Событие
+            <code>mousemove</code> открывает совершенно другой уровень
+            интерактивности: элементы могут следовать за&nbsp;курсором, убегать
+            от него, наклоняться в&nbsp;его сторону, создавать след
+            из&nbsp;частиц.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Координаты курсора</h3>
+            <p class="article">
+              Всё начинается с&nbsp;получения позиции мыши. Событие
+              <code>mousemove</code> передаёт объект <code>e</code>,
+              в&nbsp;котором хранятся координаты: <code>e.clientX</code> и
+              <code>e.clientY</code> &mdash;&nbsp;позиция курсора относительно
+              окна браузера. Чтобы пересчитать их&nbsp;относительно нашего
+              контейнера, вычитаем позицию контейнера через
+              <code>getBoundingClientRect()</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-coords">
+              <div class="coords-display">x: 0&nbsp;y: 0</div>
+              <div class="cursor-dot"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+root.addEventListener('mousemove', (e) =&gt; {
+  const rect = root.getBoundingClientRect()
+  const x = Math.round(e.clientX - rect.left)
+  const y = Math.round(e.clientY - rect.top)
+ 
+  dot.style.left = x + 'px'
+  dot.style.top = y + 'px'
+  display.textContent = `x: ${x}  y: ${y}`
+})
+/* e.clientX / clientY — координаты курсора
+   относительно окна браузера.
+   getBoundingClientRect() пересчитывает
+   их относительно нашего контейнера. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Красная точка следует за&nbsp;курсором, координаты обновляются
+            в&nbsp;реальном времени. Это базовый паттерн: каждый последующий
+            пример строится на этих двух строках&nbsp;&mdash; получить
+            <code>rect</code>, вычесть из <code>clientX/Y</code>.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Следящий элемент с&nbsp;инерцией</h3>
+            <p class="article">
+              Если поставить на&nbsp;элемент CSS <code>transition</code>,
+              он&nbsp;будет догонять курсор с&nbsp;задержкой. Разница
+              в&nbsp;скорости между точкой (без transition) и&nbsp;кольцом
+              (с&nbsp;transition 0.15s) создаёт ощущение веса и инерции.
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-follow">
+              <div class="follower"></div>
+              <div class="follower-dot"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.follower {
+  border: 2px solid #9eff70;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: left 0.15s ease-out,
+              top 0.15s ease-out;
+}
+ 
+.follower-dot {
+  background: #9eff70;
+  pointer-events: none;
+}
+/* Точка — без transition (точная).
+   Кольцо — с transition 0.15s (отстаёт).
+   Разница в скорости создаёт
+   ощущение инерции и мягкости. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+root.addEventListener('mousemove', (e) =&gt; {
+  const rect = root.getBoundingClientRect()
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+ 
+  dot.style.left = x + 'px'
+  dot.style.top = y + 'px'
+  follower.style.left = x + 'px'
+  follower.style.top = y + 'px'
+})
+/* Оба элемента получают одни координаты,
+   но кольцо движется медленнее из-за
+   CSS transition. Одна строка CSS —
+   и у курсора появляется хвост. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Точка&nbsp;&mdash; точная, кольцо&nbsp;&mdash; мягкое. Одна строка
+            CSS, а&nbsp;характер движения совершенно другой. Попробуйте также
+            нажать кнопку мыши внутри превью&nbsp;&mdash; кольцо сжимается при
+            <code>mousedown</code> и возвращается при <code>mouseup</code>. Это
+            добавляет тактильности.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                <code>pointer-events: none</code> на&nbsp;следящем элементе
+                обязателен. Без него курсор при наведении будет цеплять сам
+                следящий элемент, и&nbsp;координаты начнут прыгать.
+                <code>cursor: none</code> на&nbsp;контейнере прячет системный
+                курсор, чтобы на&nbsp;экране был виден только ваш кастомный.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Глаза, которые следят</h3>
+            <p class="article">
+              Классический приём&nbsp;&mdash; зрачки, которые поворачиваются
+              в&nbsp;сторону курсора. Для этого нужна одна математическая
+              функция:
+              <code>Math.atan2(dy, dx)</code>, которая вычисляет угол между
+              двумя точками.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-eyes">
+              <div class="eye"><div class="pupil"></div></div>
+              <div class="eye"><div class="pupil"></div></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="eye"&gt;&lt;div class="pupil"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="eye"&gt;&lt;div class="pupil"&gt;&lt;/div&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+root.addEventListener('mousemove', (e) =&gt; {
+  eyes.forEach(eye =&gt; {
+    const pupil = eye.querySelector('.pupil')
+    const eyeRect = eye.getBoundingClientRect()
+    const ex = eyeRect.left + eyeRect.width / 2
+    const ey = eyeRect.top + eyeRect.height / 2
+ 
+    const angle = Math.atan2(e.clientY - ey, e.clientX - ex)
+    const maxDist = 18
+    const dx = Math.cos(angle) * maxDist
+    const dy = Math.sin(angle) * maxDist
+ 
+    pupil.style.transform =
+      `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`
+  })
+})
+/* Math.atan2 вычисляет угол
+   от центра глаза к курсору.
+   Math.cos/sin переводят угол
+   в смещение по x и y.
+   maxDist ограничивает — зрачок
+   не вылетает за край глаза. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>Math.atan2</code> возвращает угол в&nbsp;радианах.
+              <code>Math.cos(angle)</code> и
+              <code>Math.sin(angle)</code> переводят этот угол обратно в
+              смещение по&nbsp;x&nbsp;и&nbsp;y. Параметр
+              <code>maxDist</code> ограничивает &mdash; зрачок не&nbsp;может
+              уехать дальше 18&nbsp;пикселей от&nbsp;центра глаза, поэтому
+              он&nbsp;всегда остаётся внутри.
+            </p>
+
+            <p class="article">
+              Этот&nbsp;же принцип работает для любого элемента, который должен
+              смотреть на&nbsp;курсор: стрелки, указатели, иллюстрации
+              с&nbsp;вращающимися частями.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Элементы, которые убегают</h3>
+            <p class="article">
+              Обратная логика: вместо следовать за&nbsp;курсором
+              и&nbsp;отталкиваться от него. Для каждого элемента вычисляется
+              расстояние до&nbsp;курсора. Если оно меньше порогового значения,
+              элемент сдвигается в противоположную сторону.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-repel"></div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.repel-item {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* Упругая кривая делает отталкивание
+   пружинистым — элементы отскакивают. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+root.addEventListener('mousemove', (e) =&gt; {
+  items.forEach(item =&gt; {
+    const dist = Math.hypot(mx - ex, my - ey)
+    const threshold = 100
+ 
+    if (dist < threshold) {
+      const angle = Math.atan2(ey - my, ex - mx)
+      const force = (threshold - dist) / threshold * 40
+      item.style.transform =
+        `translate(${Math.cos(angle)*force}px, ${Math.sin(angle)*force}px)`
+    } else {
+      item.style.transform = 'translate(0, 0)'
+    }
+  })
+})
+/* Math.hypot — расстояние между точками.
+   Если курсор ближе threshold —
+   вычисляем угол и силу отталкивания.
+   Чем ближе курсор, тем сильнее сдвиг. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              <code>Math.hypot(dx, dy)</code> вычисляет расстояние между точками
+              (гипотенузу). Если курсор ближе 100 пикселей&nbsp;&mdash;
+              вычисляем угол и силу отталкивания. Чем ближе курсор, тем сильнее
+              сдвиг. CSS transition с&nbsp;упругой кривой делает отскок
+              пружинистым.
+            </p>
+            <p class="article">
+              Для веб-плаката этот приём хорош на&nbsp;типографических
+              элементах: буквы или слова разлетаются при наведении
+              и&nbsp;собираются обратно, когда курсор уходит.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Наклон карточки (tilt)</h3>
+            <p class="article">
+              Позиция курсора внутри элемента нормализуется в&nbsp;диапазон
+              от&nbsp;&minus;0.5 до&nbsp;0.5 и&nbsp;переводится в&nbsp;угол
+              наклона через <code>rotateX</code> и <code>rotateY</code>.
+              Получается 3D-эффект карточки, которая наклоняется вслед
+              за&nbsp;курсором.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-tilt">
+              <div class="tilt-card">
+                Крутой ховер
+                <div class="tilt-sub">наведите и&nbsp;двигайте</div>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.tilt-card {
+  perspective: 600px;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+}
+/* perspective на родителе задаёт глубину.
+   preserve-3d сохраняет 3D-трансформации. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+card.addEventListener('mousemove', (e) =&gt; {
+  const rect = card.getBoundingClientRect()
+  const x = (e.clientX - rect.left) / rect.width - 0.5
+  const y = (e.clientY - rect.top) / rect.height - 0.5
+ 
+  card.style.transform =
+    `rotateY(${x * 20}deg) rotateX(${-y * 20}deg)`
+})
+ 
+card.addEventListener('mouseleave', () =&gt; {
+  card.style.transform = 'rotateY(0) rotateX(0)'
+})
+/* Позиция курсора нормализуется в -0.5...0.5.
+   Умножаем на 20° — максимальный наклон.
+   При уходе курсора карточка
+   плавно возвращается в исходное положение. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            CSS-свойство <code>perspective</code> на&nbsp;родителе задаёт
+            глубину перспективы.
+            <code>transform-style: preserve-3d</code> сохраняет трёхмерность.
+            При уходе курсора (<code>mouseleave</code>) карточка плавно
+            возвращается в&nbsp;нулевое положение. Максимальный угол наклона
+            здесь&nbsp;&plusmn;10&deg;, что достаточно для ощущения объёма без
+            нереалистичного выворачивания.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Параллакс слоёв</h3>
+            <p class="article">
+              Параллакс&nbsp;&mdash; это когда элементы на&nbsp;разном
+              расстоянии от&nbsp;зрителя движутся с&nbsp;разной скоростью.
+              Ближние&nbsp;&mdash; быстрее, дальние &mdash; медленнее.
+              В&nbsp;контексте курсора это реализуется через несколько слоёв,
+              каждый из&nbsp;которых сдвигается на&nbsp;позицию курсора,
+              умноженную на&nbsp;свой коэффициент глубины.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-parallax"></div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const depths = [0.02, 0.04, 0.07]
+ 
+// Три слоя с разной глубиной
+depths.forEach(depth =&gt; {
+  const layer = document.createElement('div')
+  layer.dataset.depth = depth
+  // ...добавляем случайные фигуры в слой
+})
+ 
+root.addEventListener('mousemove', (e) =&gt; {
+  const x = (e.clientX - rect.left) / rect.width - 0.5
+  const y = (e.clientY - rect.top) / rect.height - 0.5
+ 
+  layers.forEach(layer =&gt; {
+    const d = parseFloat(layer.dataset.depth)
+    layer.style.transform =
+      `translate(${x * d * -800}px, ${y * d * -800}px)`
+  })
+})
+/* Три слоя, три скорости.
+   Ближний (depth 0.07) сдвигается сильнее.
+   Дальний (0.02) — слабее.
+   Разница скоростей = ощущение глубины. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Три слоя с&nbsp;коэффициентами 0.02, 0.04 и&nbsp;0.07. Ближний слой
+            (0.07) сдвигается сильнее, создавая иллюзию, что он&nbsp;ближе
+            к&nbsp;зрителю. Разница в&nbsp;скорости между слоями рождает
+            ощущение глубины из&nbsp;плоских элементов. CSS transition
+            на&nbsp;слоях сглаживает движение.
+          </p>
+
+          <div class="A_ExtraCallout">
+            <square></square>
+            <h4>
+              Параллакс&nbsp;&mdash; один из&nbsp;самых распространённых приёмов
+              в&nbsp;студенческих веб-плакатах. Он&nbsp;превращает плоскую
+              страницу в&nbsp;пространство с глубиной, и&nbsp;при этом
+              не&nbsp;требует ни&nbsp;canvas, ни&nbsp;WebGL&nbsp;&mdash; только
+              <code>transform: translate</code> и&nbsp;простая арифметика
+            </h4>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Рисование следа</h3>
+            <p class="article">
+              Каждое движение мыши создаёт новый элемент в&nbsp;позиции курсора.
+              CSS-анимация затушёвывает его, а <code>animationend</code> удаляет
+              из&nbsp;DOM, чтобы не&nbsp;засорять страницу.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="cursor-trail">
+              <div class="trail-hint">Рисуйте мышью</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+@keyframes trail-fade {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.2); }
+}
+/* Каждая точка появляется и затухает.
+   animationend удаляет её из DOM. */
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+let lastTime = 0
+ 
+root.addEventListener('mousemove', (e) =&gt; {
+  if (Date.now() - lastTime < 30) return
+  lastTime = Date.now()
+ 
+  const dot = document.createElement('div')
+  dot.className = 'trail-dot'
+  dot.style.left = (e.clientX - rect.left) + 'px'
+  dot.style.top = (e.clientY - rect.top) + 'px'
+  dot.style.width = (6 + Math.random() * 14) + 'px'
+  dot.style.height = dot.style.width
+  root.appendChild(dot)
+  dot.addEventListener('animationend', () =&gt; dot.remove())
+})
+/* Date.now() дросселирует создание точек:
+   не чаще одной за 30мс.
+   Без этого на быстрых мониторах
+   DOM засоряется сотнями элементов. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconWarning.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Для мобильных устройств
+                <code>mousemove</code> не&nbsp;работает. Эквивалент &mdash;
+                <code>touchmove</code>, координаты берутся из
+                <code>e.touches[0].clientX</code>. Если ваш плакат рассчитан на
+                мобильный просмотр, предусмотрите альтернативное поведение:
+                замените курсорную интерактивность на&nbsp;реакцию
+                на&nbsp;скролл, наклон устройства
+                (<code>deviceorientation</code>) или касание.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"
+                  >Документация MDN по&nbsp;событиям мыши</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"
+                  >getBoundingClientRect на&nbsp;MDN
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2"
+                >
+                  Math.atan2, вычисление угла</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot"
+                >
+                  Math.hypot, расстояние между точками</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://tympanus.net/codrops">
+                  Интерактивные эффекты с&nbsp;мышью, множество демо</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a href="https://codepen.io/search/pens?q=mousemove+effect">
+                  Коллекция mousemove-эффектов на&nbsp;CodePen</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <sharing></sharing>
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-5-3"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>

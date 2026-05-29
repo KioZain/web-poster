@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление интерактивных элементов</title>
+    <analytics></analytics>
+  </head>
+  <body>
+    <menubar></menubar>
+    <div class="O_BreadCrumbs">
+      <div class="W_NavCrumbs margin-container">
+        <button class="A_NavigationMenuButton"></button>
+        <nav class="M_Breadcrumbs">
+          <div class="W_BreadCrumbsContainer">
+            <a class="caption-caps" href="../../../handbook.html"> Учебник </a>
+            &bull;
+            <a class="caption-caps" href="../part_2.html">
+              Создание веб-плаката
+            </a>
+            &bull;
+            <span class="caption-caps">Добавление интерактивных элементов</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="S_ArticleHead">
+      <div class="W_ArticleHead margin-container">
+        <div class="O_ArticleHead">
+          <!-- --------------------Article Name-------------------- -->
+          <div class="M_HeadingContainer">
+            <h1>Добавление интерактивных элементов</h1>
+            <div class="A_Tag">Кодинг</div>
+          </div>
+          <div class="A_IconText">
+            <img
+              src="../../../images/icons/Q_Time.svg"
+              alt="Q_Time"
+              width="24"
+              height="24"
+            />
+            <!-- --------------------Time to read-------------------- -->
+            <p class="subtitle light">8&nbsp;минут чтения</p>
+          </div>
+        </div>
+        <div class="Q_ArticleHeroImage">
+          <img
+            src="../../../images/handbook/covers/placeholder.webp"
+            alt="hero image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="L_ArticleBars">
+      <div class="W_ArticlePage margin-container">
+        <!-- HandbookNavigation -->
+        <div class="S_LeftNavBar" id="handbook-nav-root"></div>
+        <!-- ArticleNavigation -->
+        <div class="O_ArticleContent article-anchors">
+          <p class="subtitle">Содержание</p>
+          <div class="C_AticleLinks"></div>
+        </div>
+        <!-- Article Content -->
+        <article class="W_ArticleContentContainer">
+          <p id="first" class="article">
+            CSS-анимации и hover-эффекты делают плакат живым, но их возможности
+            ограничены: движение либо бесконечное, либо привязано к наведению
+            курсора. JavaScript снимает эти ограничения. С ним плакат может
+            реагировать на клик, отслеживать движение мыши, менять содержимое,
+            запускать события по таймеру и хранить состояние между действиями
+            зрителя. В этой статье разберём базовые инструменты, от которых
+            отталкивается вся интерактивность в веб-плакате.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Найти и подключить</h3>
+            <p class="article">
+              Вся работа с JavaScript в браузере строится на двух действиях:
+              найти HTML-элемент и повесить на него обработчик события. Для
+              этого существуют два метода, которые вы будете использовать в
+              каждом проекте.
+            </p>
+            <p class="article">
+              <code>querySelector</code> находит элемент на странице по
+              CSS-селектору. Точно так же, как вы выбираете элемент в CSS через
+              <code>.class</code> или <code>#id</code>, вы передаёте тот же
+              селектор в <code>querySelector</code>, и JavaScript возвращает вам
+              этот элемент.
+            </p>
+            <p class="article">
+              <code>addEventListener</code> привязывает к элементу функцию,
+              которая выполнится при наступлении события. Событие — это что-то,
+              что происходит: клик, наведение, нажатие клавиши, скролл.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-intro-click">
+              <button class="demo-btn">Нажми на меня</button>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;button class="demo-btn"&gt;Нажми на меня&lt;/button&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.demo-btn {
+  padding: 16px 32px;
+  background: #fe3904;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+ 
+.demo-btn.clicked {
+  background: #9eff70;
+  color: black;
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const btn = document.querySelector('.demo-btn')
+ 
+btn.addEventListener('click', () &gt; {
+  btn.classList.toggle('clicked')
+})
+ 
+/* querySelector — находит элемент по CSS-селектору.
+   addEventListener — вешает обработчик на событие.
+   Это два метода, которые вы будете
+   использовать в каждом проекте. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Две строки: найти кнопку, повесить обработчик на клик. Внутри
+            обработчика
+            <code>classList.toggle</code>, который переключает CSS-класс.
+            Визуальная работа остаётся на стороне CSS, JavaScript только
+            управляет, когда класс включить и выключить.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Управление классами</h3>
+            <p class="article">
+              Самый чистый способ менять внешний вид элемента из JavaScript —
+              переключать CSS-классы. Вы описываете все визуальные состояния в
+              CSS, а JavaScript решает, какой класс когда активен.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-classlist">
+              <div class="target"></div>
+              <div class="btn-row">
+                <button class="ctrl-btn" data-action="red">цвет</button>
+                <button class="ctrl-btn" data-action="round">форма</button>
+                <button class="ctrl-btn" data-action="big">размер</button>
+                <button class="ctrl-btn" data-action="reset">сброс</button>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="target"&gt;&lt;/div&gt;
+&lt;button data-action="red"&gt;цвет&lt;/button&gt;
+&lt;button data-action="round"&gt;форма&lt;/button&gt;
+&lt;button data-action="big"&gt;размер&lt;/button&gt;
+&lt;button data-action="reset"&gt;сброс&lt;/button&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.target { transition: all 0.3s ease; }
+.target.red { background: #fe3904; }
+.target.round { border-radius: 50%; }
+.target.big { transform: scale(1.4); }
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const target = document.querySelector('.target')
+ 
+document.querySelectorAll('.ctrl-btn').forEach(btn &gt; {
+  btn.addEventListener('click', () =&gt; {
+    const action = btn.dataset.action
+ 
+    if (action === 'reset') {
+      target.className = 'target'
+    } else {
+      target.classList.toggle(action)
+    }
+  })
+})
+ 
+/* classList.add('x') — добавить класс.
+   classList.remove('x') — убрать.
+   classList.toggle('x') — переключить.
+   className = 'target' — сбросить все
+   классы до одного базового. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Три кнопки добавляют элементу разные классы: <code>red</code>,
+            <code>round</code>, <code>big</code>. Каждый клик переключает свой
+            класс через <code>toggle</code>. Кнопка «сброс» обнуляет все классы
+            через <code>className = 'target'</code>. Классы комбинируются: можно
+            одновременно включить цвет, форму и размер.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                CSS — это предпочтительный подход для большинства задач. Вы
+                держите визуальную логику в CSS (переходы, анимации, цвета), а
+                JavaScript отвечает только за переключение состояний. Код
+                остаётся чистым, а визуальные изменения легко корректировать без
+                правки JS.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Прямая запись свойств</h3>
+            <p class="article">
+              Иногда CSS-классов недостаточно, потому что значение нужно
+              вычислить динамически — случайный цвет, угол поворота, координата
+              клика. В таких случаях свойства записываются напрямую через
+              <code>element.style</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-style-direct">
+              <div class="style-box"></div>
+              <div class="style-box"></div>
+              <div class="style-box"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="style-box"&gt;&lt;/div&gt;
+&lt;div class="style-box"&gt;&lt;/div&gt;
+&lt;div class="style-box"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const colors = ['#fe3904','#9eff70','#82e1f1','#febbed','#3898e2']
+ 
+document.querySelectorAll('.style-box').forEach(box &gt; {
+  box.addEventListener('click', () &gt; {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)]
+    box.style.backgroundColor = randomColor
+    box.style.borderRadius = Math.random() &gt;0.5 ? '50%' : '8px'
+    box.style.transform = `rotate(${Math.random() * 30 - 15}deg)`
+  })
+})
+ 
+/* element.style.property — запись
+   CSS-свойства напрямую из JS.
+   Используйте camelCase:
+   background-color → backgroundColor.
+   classList + CSS — чище.
+   style — гибче (динамические значения). */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Каждый клик задаёт квадрату случайный цвет, случайную форму (круг
+              или прямоугольник) и случайный поворот. Эти значения невозможно
+              заранее описать в CSS, потому что они генерируются на лету.
+            </p>
+            <p class="article">
+              Обратите внимание на запись свойств: в CSS это
+              <code>background-color</code>, а в JavaScript —
+              <code>backgroundColor</code> (camelCase). Дефис в JavaScript — это
+              оператор вычитания, поэтому все составные CSS-свойства
+              записываются слитно с заглавной буквой.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Работа с группой элементов</h3>
+            <p class="article">
+              <code>querySelector</code> находит один элемент — первый, который
+              подходит под селектор. Если на странице пять карточек с классом
+              <code>.card</code>, он вернёт только первую. Для работы с группой
+              существует <code>querySelectorAll</code>, который возвращает все
+              подходящие элементы. Дальше <code>forEach</code> обходит каждый и
+              вешает обработчик.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-query-all">
+              <div class="card">♠</div>
+              <div class="card">♥</div>
+              <div class="card">♦</div>
+              <div class="card">♣</div>
+              <div class="card">★</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab" data-lang="css">CSS</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="card"&gt;♠&lt;/div&gt;
+&lt;div class="card"&gt;♥&lt;/div&gt;
+&lt;div class="card"&gt;♦&lt;/div&gt;
+&lt;div class="card"&gt;♣&lt;/div&gt;
+&lt;div class="card"&gt;★&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="css"
+                ><code class="language-css">
+.card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+ 
+.card.flipped {
+  background: #fe3904;
+  color: white;
+  transform: rotateY(180deg);
+}
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const cards = document.querySelectorAll('.card')
+ 
+cards.forEach(card &gt; {
+  card.addEventListener('click', () &gt; {
+    card.classList.toggle('flipped')
+  })
+})
+ 
+/* querySelectorAll возвращает список
+   всех элементов с этим селектором.
+   forEach обходит каждый и вешает
+   обработчик. Без forEach обработчик
+   получил бы только первый элемент. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Пять карточек с символами. Клик на любую переворачивает именно её,
+            не затрагивая остальные. Без <code>forEach</code> обработчик получил
+            бы только первая карточка, остальные четыре остались бы мёртвыми.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Несколько событий на одном элементе</h3>
+            <p class="article">
+              На один элемент можно повесить сколько угодно обработчиков разных
+              событий. Это позволяет создавать многоуровневую реакцию: одно
+              поведение при наведении, другое при нажатии, третье при
+              отпускании.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div
+              class="M_PreviewArea"
+              data-demo="js-events"
+              style="position: relative"
+            >
+              <div class="event-box">наведи, кликни или зажми</div>
+              <div class="event-label"></div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="event-box"&gt;наведи, кликни или зажми&lt;/div&gt;
+&lt;div class="event-label"&gt;&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const box = document.querySelector('.event-box')
+const label = document.querySelector('.event-label')
+ 
+box.addEventListener('mouseenter', () &gt; {
+  box.style.background = '#82e1f1'
+  label.textContent = 'mouseenter'
+})
+ 
+box.addEventListener('mouseleave', () &gt; {
+  box.style.background = '#f0f0f0'
+  label.textContent = 'mouseleave'
+})
+ 
+box.addEventListener('mousedown', () &gt; {
+  box.style.background = '#fe3904'
+  box.style.color = 'white'
+  box.style.transform = 'scale(0.92)'
+  label.textContent = 'mousedown'
+})
+ 
+box.addEventListener('mouseup', () &gt; {
+  box.style.transform = 'scale(1)'
+  label.textContent = 'mouseup'
+})
+ 
+/* Одному элементу — несколько обработчиков.
+   mouseenter/mouseleave — наведение.
+   mousedown/mouseup — нажатие/отпускание.
+   click — полный клик (down + up).
+   Полный список: MDN → Event reference. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Квадрат реагирует на четыре события:
+              <code>mouseenter</code> (курсор вошёл),
+              <code>mouseleave</code> (курсор ушёл),
+              <code>mousedown</code> (кнопка мыши нажата),
+              <code>mouseup</code> (кнопка отпущена). Каждое событие меняет и
+              внешний вид элемента, и текст подписи внизу. Попробуйте навести,
+              нажать и отпустить — вы увидите, в каком порядке срабатывают
+              события.
+            </p>
+            <ol class="C_List">
+              <li>
+                <code>click</code>, <code>dblclick</code>,
+                <code>mouseenter</code>
+              </li>
+              <li>
+                <code>mouseup</code>, <code>mousemove</code>, <code>wheel</code>
+              </li>
+              <li>
+                <code>keydown</code>, <code>keyup</code>,
+                <code>touchstart</code>
+              </li>
+            </ol>
+
+            <p class="article">
+              <code>touchend</code>, <code>scroll</code>, <code>resize</code>.
+              Запоминать все не нужно. Когда вам понадобится конкретное событие,
+              ищите «MDN Event reference» — это полный справочник, который
+              покрывает всё.
+            </p>
+          </div>
+          <div class="M_ParagraphArticle">
+            <h3>Изменение текста</h3>
+            <p class="article">
+              JavaScript может менять текст внутри элемента через свойство
+              <code>textContent</code>. Это полезно для счётчиков, статусов,
+              подписей и любого содержимого, которое зависит от действий
+              зрителя.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-text-content">
+              <div class="display">0</div>
+              <div class="counter-btns">
+                <button class="counter-btn minus">−</button>
+                <button class="counter-btn plus">+</button>
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="display"&gt;0&lt;/div&gt;
+&lt;button class="minus"&gt;−&lt;/button&gt;
+&lt;button class="plus"&gt;+&lt;/button&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const display = document.querySelector('.display')
+let count = 0
+ 
+document.querySelector('.plus').addEventListener('click', () &gt; {
+  count++
+  display.textContent = count
+})
+ 
+document.querySelector('.minus').addEventListener('click', () &gt; {
+  count--
+  display.textContent = count
+})
+ 
+/* textContent заменяет текст элемента.
+   Переменная count хранит число
+   между кликами — это состояние.
+   Каждый клик обновляет и число,
+   и то, что видит зритель. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="M_ParagraphArticle">
+            <p class="article">
+              Счётчик: кнопка «+» увеличивает число, кнопка «−» уменьшает.
+              Переменная
+              <code>count</code> хранит текущее значение между кликами — это
+              состояние. Каждый клик обновляет и переменную, и то, что видит
+              зритель на экране.
+            </p>
+          </div>
+
+          <div class="M_ParagraphArticle">
+            <h3>Условия if / else</h3>
+            <p class="article">
+              Когда нужно выполнить разное действие в зависимости от текущего
+              состояния, используется <code>if / else</code>. Это способ
+              сказать: «Если условие выполняется — сделай одно, иначе — другое».
+            </p>
+          </div>
+          <div class="W_PreviewCodeArea">
+            <div
+              class="M_PreviewArea"
+              data-demo="js-conditions"
+              style="position: relative"
+            >
+              <div class="light"></div>
+              <div class="light-label">выкл</div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="light"&gt;&lt;/div&gt;
+&lt;div class="light-label"&gt;выкл&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+const light = document.querySelector('.light')
+const label = document.querySelector('.light-label')
+let isOn = false
+ 
+light.addEventListener('click', () &gt; {
+  isOn = !isOn
+ 
+  if (isOn) {
+    light.classList.add('on')
+    label.textContent = 'вкл'
+  } else {
+    light.classList.remove('on')
+    label.textContent = 'выкл'
+  }
+})
+ 
+/* if (условие) { ... } else { ... }
+   Проверяет и выполняет один из двух блоков.
+   !isOn инвертирует: true → false, false → true.
+   Каждый клик переключает лампочку. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Лампочка. Клик переключает переменную <code>isOn</code> между
+            <code>true</code> и <code>false</code>. Если <code>isOn</code> —
+            добавляем класс <code>on</code> и показываем текст «вкл». Иначе —
+            убираем класс и показываем «выкл». Запись
+            <code>isOn = !isOn</code> инвертирует значение:
+            <code>true</code> становится <code>false</code> и наоборот.
+          </p>
+
+          <div class="M_ParagraphArticle">
+            <h3>Таймеры</h3>
+            <p class="article">
+              Не всё должно происходить мгновенно. Иногда нужно отложить
+              действие или выполнять его с регулярным интервалом. Для этого
+              существуют два метода.
+            </p>
+            <p class="article">
+              <code>setTimeout</code> — выполняет функцию один раз через
+              заданное время. Тысяча миллисекунд — одна секунда.
+            </p>
+            <p class="article">
+              <code>setInterval</code> — выполняет функцию многократно с
+              заданным интервалом, пока не остановлен через
+              <code>clearInterval</code>.
+            </p>
+          </div>
+
+          <div class="W_PreviewCodeArea">
+            <div class="M_PreviewArea" data-demo="js-timers">
+              <div class="timer-circle timer-delay">нажми<br />(delay 1s)</div>
+              <div class="timer-circle timer-interval">
+                <div class="tick-count">0</div>
+                тики
+              </div>
+            </div>
+            <div class="S_CodeArea">
+              <div class="O_CodeBar">
+                <div class="M_CodeTabs">
+                  <button class="A_CodeTab" data-lang="html">HTML</button>
+                  <button class="A_CodeTab active" data-lang="js">JS</button>
+                </div>
+                <div class="A_CopyButton-container"></div>
+              </div>
+              <div class="O_CodeContent">
+                <div class="A_LineNumbers"></div>
+                <pre
+                  class="A_CodeBlock"
+                  data-lang="html"
+                ><code class="language-markup">
+&lt;div class="timer-delay"&gt;нажми (delay 1s)&lt;/div&gt;
+&lt;div class="timer-interval"&gt;&lt;div class="tick-count"&gt;0&lt;/div&gt;тики&lt;/div&gt;
+      </code></pre>
+                <pre
+                  class="A_CodeBlock active"
+                  data-lang="js"
+                ><code class="language-javascript">
+/* setTimeout — выполнить один раз через N мс */
+const delayCircle = document.querySelector('.timer-delay')
+delayCircle.addEventListener('click', () &gt; {
+  setTimeout(() &gt; {
+    delayCircle.classList.toggle('fired')
+  }, 1000)
+})
+ 
+/* setInterval — выполнять каждые N мс */
+const tickDisplay = document.querySelector('.tick-count')
+const intervalCircle = document.querySelector('.timer-interval')
+let ticks = 0
+let intervalId = null
+ 
+intervalCircle.addEventListener('click', () &gt; {
+  if (intervalId) {
+    clearInterval(intervalId)
+    intervalId = null
+  } else {
+    intervalId = setInterval(() &gt; {
+      ticks++
+      tickDisplay.textContent = ticks
+    }, 500)
+  }
+})
+/* clearInterval останавливает таймер.
+   Клик запускает/останавливает счётчик. */
+      </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="article">
+            Левый круг: клик запускает <code>setTimeout</code> с задержкой 1
+            секунда. Через секунду круг меняет цвет. Правый круг: клик запускает
+            <code>setInterval</code>, который каждые 500 мс увеличивает счётчик.
+            Повторный клик останавливает его через <code>clearInterval</code>.
+          </p>
+
+          <div class="O_CallOut">
+            <img
+              src="../../../images/icons/Q_CallOutIconAdvice.svg"
+              alt=""
+              class="Q_CalloutIcon"
+            />
+            <div class="W_CalloutTextExpand">
+              <p class="subtitle">
+                Для веб-плаката
+                <code>setInterval</code> полезен для циклических процессов,
+                которые не получается реализовать через CSS-анимации:
+                переключение текстового контента, обновление данных,
+                последовательные действия по расписанию. Но если анимацию можно
+                сделать на CSS — делайте на CSS. Он работает плавнее и не
+                нагружает основной поток JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <div class="M_UsefullLinks">
+            <h3>Полезные ссылки</h3>
+            <ol>
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector "
+                  >querySelector на MDN</a
+                >
+              </li>
+
+              <li class="A_ListLink">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+                  >addEventListener на MDN
+                </a>
+              </li>
+
+              <li class="A_ListLink">
+                <a href="https://javascript.info">
+                  Cовременный учебник JavaScript на русском, начните с раздела
+                  «Документ»</a
+                >
+              </li>
+              <li class="A_ListLink">
+                <a
+                  href="https://learn.javascript.ru/introduction-browser-events "
+                >
+                  Cобытия в браузере, наглядно и с примерами</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <!-- End -->
+          <sharing></sharing>
+          <rate></rate>
+        </article>
+      </div>
+    </div>
+    <!-- ReadMore -->
+    <div class="S_ReadMore">
+      <div class="W_ReadMore margin-container">
+        <h3>Читайте также</h3>
+        <div class="C_Articles">
+          <!-- FirstArticle -->
+          <a class="O_CardArticle" href="print-vs-web.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-2.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;классического плаката</h4>
+              </div>
+            </div>
+          </a>
+          <!-- SecondArticle -->
+          <a class="O_CardArticle" href="./poster-vs-website.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-3.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Отличие от&nbsp;лендинга и&nbsp;сайта</h4>
+              </div>
+            </div>
+          </a>
+          <!-- Third Article -->
+          <a class="O_CardArticle" href="./static-dynamic.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-1-4.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Статичные и&nbsp;динамичные веб-плакаты</h4>
+              </div>
+            </div>
+          </a>
+          <!-- FourthArticle -->
+          <a class="O_CardArticle" href="../chapter_2/why-create.html">
+            <div class="Q_ArticleImage">
+              <img
+                src="../../../images/handbook/covers/handbook_1-2-1.png"
+                alt=""
+              />
+            </div>
+            <div class="M_ArticleCardBio">
+              <p class="caption-caps">Теория &middot; 5&nbsp;минут</p>
+              <div class="M_AboutArticle">
+                <h4>Зачем делать веб-плакат</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Buttons To switch -->
+    <div
+      data-article-id="article-2-5-1"
+      class="W_ArticleButtonsNavigation margin-container"
+    ></div>
+    <footerbar> </footerbar>
+  </body>
+</html>
