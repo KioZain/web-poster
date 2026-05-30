@@ -26,6 +26,13 @@ import cover_2_3_5 from '../../images/handbook/covers/handbook_2-3-5.webp'
 import cover_2_4_1 from '../../images/handbook/covers/handbook_2-4-1.webp'
 import cover_2_4_2 from '../../images/handbook/covers/handbook_2-4-2.webp'
 import cover_2_4_3 from '../../images/handbook/covers/handbook_2-4-3.webp'
+//  --
+import cover_2_5_1 from '../../images/handbook/covers/handbook_2-5-1.webp'
+import cover_2_5_2 from '../../images/handbook/covers/handbook_2-5-2.webp'
+import cover_2_5_3 from '../../images/handbook/covers/handbook_2-5-3.webp'
+//  --
+import cover_2_6_1 from '../../images/handbook/covers/hanbook_2-6-1.webp'
+import cover_2_6_2 from '../../images/handbook/covers/handbook_2-6-2.webp'
 
 const handbookNavData = {
   parts: [
@@ -341,17 +348,32 @@ const handbookNavData = {
             {
               id: 'article-2-5-1',
               title: 'Добавление интерактивных элементов',
-              href: '/handbook/part_2/chapter_5/events.html'
+              href: '/handbook/part_2/chapter_5/events.html',
+              cover: cover_2_5_1,
+              articleType: 'Кодинг',
+              readingTime: 8,
+              description:
+                'Как отслеживать действия пользователя и менять страницу в ответ'
             },
             {
               id: 'article-2-5-2',
               title: 'Случайность и генеративность',
-              href: '/handbook/part_2/chapter_5/randomness.html'
+              href: '/handbook/part_2/chapter_5/randomness.html',
+              cover: cover_2_5_2,
+              articleType: 'Кодинг',
+              readingTime: 8,
+              description:
+                ' Сучайные позиции, цвета, выбор элементов. Простой способ сделать плакат случайным живым'
             },
             {
               id: 'article-2-5-3',
               title: 'Динамический курсор',
-              href: '/handbook/part_2/chapter_5/cursor.html'
+              href: '/handbook/part_2/chapter_5/cursor.html',
+              cover: cover_2_5_3,
+              articleType: 'Кодинг',
+              readingTime: 7,
+              description:
+                '  Добавляем обычному курсору крутых процедурных эффектов с помощью отслуживания его координат'
             }
           ]
         },
@@ -362,14 +384,24 @@ const handbookNavData = {
           href: '/handbook/part_2/chapter_6/chapter_2_6.html',
           articles: [
             {
-              id: 'article-2-6-2',
+              id: 'article-2-6-1',
               title: 'Публикация на GitHub Pages',
-              href: '/handbook/part_2/chapter_6/github-pages.html'
+              href: '/handbook/part_2/chapter_6/github-pages.html',
+              cover: cover_2_6_1,
+              articleType: 'Кодинг',
+              readingTime: 8,
+              description:
+                'Пошаговая инструкция как превратить локальную папку в публичную ссылку в интернете'
             },
             {
-              id: 'article-2-6-3',
+              id: 'article-2-6-2',
               title: 'Где рассказать о своём плакате',
-              href: '/handbook/part_2/chapter_6/promotion.html'
+              href: '/handbook/part_2/chapter_6/promotion.html',
+              cover: cover_2_6_2,
+              articleType: 'Теория',
+              readingTime: 6,
+              description:
+                'Выбираем площадки и тематические сообщества, чтобы весь мир   увидел ваш проект'
             }
           ]
         }

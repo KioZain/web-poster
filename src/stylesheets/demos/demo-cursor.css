@@ -90,7 +90,8 @@
 [data-demo='cursor-eyes'] .pupil {
   width: 28px;
   height: 28px;
-  background: var(--identity-blue);
+  background: var(--beautiful-blue);
+  box-shadow: var(--inner-shadow);
   border-radius: 50%;
   position: absolute;
   top: 50%;
