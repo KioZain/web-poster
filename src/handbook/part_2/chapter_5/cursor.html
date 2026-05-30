@@ -344,7 +344,7 @@ root.addEventListener('mousemove', (e) =&gt; {
     const dist = Math.hypot(mx - ex, my - ey)
     const threshold = 100
  
-    if (dist < threshold) {
+    if (dist &lt; threshold) {
       const angle = Math.atan2(ey - my, ex - mx)
       const force = (threshold - dist) / threshold * 40
       item.style.transform =
@@ -568,7 +568,7 @@ root.addEventListener('mousemove', (e) =&gt; {
 let lastTime = 0
  
 root.addEventListener('mousemove', (e) =&gt; {
-  if (Date.now() - lastTime < 30) return
+  if (Date.now() - lastTime &lt; 30) return
   lastTime = Date.now()
  
   const dot = document.createElement('div')
